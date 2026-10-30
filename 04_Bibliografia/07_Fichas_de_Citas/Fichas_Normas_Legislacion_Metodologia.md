@@ -2,7 +2,7 @@
 
 **Tesis:** Diseño de un sistema de gestión de la calidad basado en la norma ISO 9001 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF, Potosí.
 
-Generado el 2026-10-30. Fichas verificadas: **217**. Archivo de datos: `Fichas_Normas_Legislacion_Metodologia.json` (mismo contenido, formato del contexto maestro). Entradas BibLaTeX: `05_Tesis_LaTeX/bib/normas_legislacion_metodologia.bib`.
+Generado el 2026-10-30. Fichas verificadas: **298**. Archivo de datos: `Fichas_Normas_Legislacion_Metodologia.json` (mismo contenido, formato del contexto maestro). Entradas BibLaTeX: `05_Tesis_LaTeX/bib/normas_legislacion_metodologia.bib`.
 
 ## Cómo leer estas fichas
 
@@ -576,7 +576,7 @@ Generado el 2026-10-30. Fichas verificadas: **217**. Archivo de datos: `Fichas_N
 - **Paráfrasis:** La «maduración» es el cambio natural de los participantes durante el estudio que puede confundirse con el efecto del tratamiento; en obra, el aprendizaje de la cuadrilla entre losas es un análogo que debe declararse.
 - **Uso sugerido:** Cap.2 sección de metodología (validez interna y limitaciones) | Cap.3 Discusión (limitaciones) (curva de aprendizaje de la cuadrilla entre la primera y las siguientes losas)
 
-**hernandez2018-24** · PDF p. 198 · cita: p. 159 · Cap. 7, Tabla 7.1 (instrumentación y selección) · *definicion*
+**hernandez2018-24** · PDF p. 198 · cita: p. 159 · Cap. 7, Tabla 7.1 (instrumentación) · *definicion*
 > «Instrumentación Las pruebas o instrumentos aplicados a los distintos grupos que participan en el experimento no sean equivalentes»
 - **Paráfrasis:** La amenaza de «instrumentación» surge cuando se usan instrumentos no equivalentes entre grupos; por eso la línea base y los escenarios simulados deben medirse con el mismo cómputo y los mismos precios unitarios.
 - **Uso sugerido:** Cap.2 sección de metodología (validez interna y limitaciones) | Cap.3 Discusión (limitaciones)
@@ -1230,3 +1230,555 @@ Generado el 2026-10-30. Fichas verificadas: **217**. Archivo de datos: `Fichas_N
 > «37.1. Plazo de registro: Máximo veinte (20) días hábiles computables a partir de la fecha de resolución de Contrato, incumplimiento a la Orden de Compra u Orden de Servicio.»
 - **Paráfrasis:** La entidad debe registrar en el SICOES la resolución del contrato (Formulario 600) dentro de los 20 días hábiles siguientes a la fecha de resolución.
 - **Uso sugerido:** Cap.1 marco legal (resolución del contrato y saldo de obra) | Cap.3 Discusión (contrato paralizado y saldo de 2.234,60 m²)
+
+
+## 8. D.S. N.º 5321 de 23 de enero de 2025 y su Anexo (ajuste de precios de materiales importados)
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/Bolivia_DS5321_2025_Ajuste_Precios_Materiales_Importados_Obras.pdf`
+- **Clave BibLaTeX:** `ds5321_2025`
+- **Referencia (APA 7):** Estado Plurinacional de Bolivia. (2025, 23 de enero). *Decreto Supremo N.º 5321: mecanismos operativos para el ajuste de precios unitarios de materiales de construcción, maquinaria y equipos, importados, en contratos de obra en ejecución*. Gaceta Oficial del Estado Plurinacional de Bolivia. http://www.gacetaoficialdebolivia.gob.bo/normas/verGratis_gob/280603
+
+- **Fuente:** texto de consulta de la Gaceta Oficial; sin paginación impresa ni número de edición (se cita por artículo). Firmado por Luis Alberto Arce Catacora el 23/01/2025. El Anexo es un archivo aparte (`Bolivia_DS5321_2025_Anexo_Materiales_Importados.pdf`) que forma parte del mismo decreto. La URL proviene de `bib/00_base.bib` (no figura en el PDF).
+- **Cronología de la serie:** D.S. 5321 (plazo para el contrato modificatorio hasta el 30/05/2025) → D.S. 5406 (amplía a contratos llave en mano y extiende el plazo al 31/10/2025) → D.S. 5452 (redefine la fórmula y el ajuste en contratos llave en mano) → D.S. 5597 (2026, nuevo régimen hasta el 31/12/2026). Las fórmulas del D.S. 5321 son imágenes sin texto; su versión vigente está en el D.S. 5452 (ficha 10).
+- **Relación con el caso:** el Anexo incluye el acero corrugado (ítem 8 de la obra) entre los materiales importados ajustables; no incluye cemento ni viguetas pretensadas.
+
+**ds5321_2025-01** · PDF p. 1 · cita: s. p. · Art. 1 (Objeto) · *requisito_normativo*
+> «el presente Decreto Supremo tiene por objeto establecer mecanismos operativos para el ajuste de precios unitarios de materiales de construcción, maquinaria y equipos, importados, así como otorgar un anticipo adicional para la adquisición de los mismos, en los contratos de obra en ejecución, suscritos por entidades públicas.»
+- **Paráfrasis:** El D.S. 5321 creó, de forma excepcional, mecanismos para ajustar los precios unitarios de materiales, maquinaria y equipos importados y para otorgar anticipos adicionales en contratos de obra pública en ejecución.
+- **Uso sugerido:** Introducción (contexto de crisis y alza de materiales) | Cap.1 marco legal (ajuste de precios) | Cap.3 Discusión (supuesto de precios constantes del modelo)
+
+**ds5321_2025-02** · PDF p. 1 · cita: s. p. · Art. 3, parág. I · *requisito_normativo*
+> «podrán efectuar el ajuste de precios unitarios de los materiales de construcción, maquinaria y equipos, importados, detallados en el Anexo del presente Decreto Supremo, a través de un contrato modificatorio que debe ser suscrito hasta el 30 de mayo de 2025.»
+- **Paráfrasis:** El ajuste solo procedía para los materiales del Anexo y mediante un contrato modificatorio suscrito hasta el 30 de mayo de 2025 (plazo ampliado luego por el D.S. 5406).
+- **Uso sugerido:** Introducción (contexto de crisis y alza de materiales) | Cap.1 marco legal (ajuste de precios) | Cap.3 Discusión (supuesto de precios constantes del modelo)
+
+**ds5321_2025-03** · PDF p. 1 · cita: s. p. · Art. 3, parág. III · *metodo*
+> «El ajuste de precios unitarios se realizará únicamente sobre el precio del material importado señalado en el numeral 1 (materiales) del Formulario B-2 (Análisis de Precios Unitarios) de la propuesta adjudicada o documento similar que incluya este tipo de información.»
+- **Paráfrasis:** El ajuste afecta solo al precio del material importado consignado en el rubro de materiales del análisis de precios unitarios (Formulario B-2) de la propuesta.
+- **Uso sugerido:** Introducción (contexto de crisis y alza de materiales) | Cap.1 marco legal (ajuste de precios) | Cap.3 Discusión (supuesto de precios constantes del modelo)
+
+**ds5321_2025-04** · PDF p. 2 · cita: s. p. · Art. 4, parág. I · *requisito_normativo*
+> «El ajuste de precios unitarios en los contratos de obra en ejecución será efectuado mediante contrato modificatorio, por única vez, pudiendo aplicarse porcentajes adicionales a los establecidos en el Decreto Supremo N° 0181, de acuerdo a disponibilidad financiera, sustentado con informes técnico, financiero y legal.»
+- **Paráfrasis:** El ajuste se formaliza por única vez con un contrato modificatorio que puede superar los porcentajes del art. 89 de las NB-SABS, según disponibilidad financiera y con informes técnico, financiero y legal.
+- **Uso sugerido:** Introducción (contexto de crisis y alza de materiales) | Cap.1 marco legal (ajuste de precios) | Cap.3 Discusión (supuesto de precios constantes del modelo) | Cap.1 (excepción a los límites del art. 89 NB-SABS)
+
+**ds5321_2025-05** · PDF p. 2 · cita: s. p. · Art. 4, parág. II, inc. b) · *requisito_normativo*
+> «El contratista debe actualizar la Garantía de Cumplimiento de Contrato de acuerdo al monto total del contrato resultante del contrato modificatorio por ajustes de precios unitarios.»
+- **Paráfrasis:** Tras el ajuste, el contratista debe actualizar la garantía de cumplimiento al nuevo monto total del contrato.
+- **Uso sugerido:** Cap.1 marco legal (garantías)
+
+**ds5321_2025-06** · PDF p. 1 · cita: s. p. · Anexo, numeral 1 (Materiales de acero) · *dato*
+> «1 MATERIALES DE ACERO 1.1 Acero corrugado 1.2 Acero liso 1.3 Acero pretensado»
+- **Paráfrasis:** El Anexo del D.S. 5321 incluye entre los materiales importados ajustables el acero corrugado, el liso y el pretensado, además de perfiles, pletinas y planchas.
+- **Uso sugerido:** Introducción (contexto de crisis y alza de materiales) | Cap.1 marco legal (ajuste de precios) | Cap.3 Discusión (supuesto de precios constantes del modelo) (ítem 8: acero estructural)
+
+
+## 9. D.S. N.º 5406 de 28 de mayo de 2025 (modifica el D.S. 5321)
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/Bolivia_DS5406_2025_Modifica_DS5321_Ampliacion_Plazos.pdf`
+- **Clave BibLaTeX:** `ds5406_2025`
+- **Referencia (APA 7):** Estado Plurinacional de Bolivia. (2025, 28 de mayo). *Decreto Supremo N.º 5406: modificaciones al Decreto Supremo N.º 5321, de 23 de enero de 2025*. Gaceta Oficial del Estado Plurinacional de Bolivia.
+
+- Texto de consulta de la Gaceta Oficial; sin paginación impresa ni número de edición. Amplía el D.S. 5321 a los contratos llave en mano y extiende hasta el 31/10/2025 el plazo para los contratos modificatorios y los anticipos adicionales; su disposición adicional única modifica además el D.S. 5353 (gasto en combustibles de las entidades públicas).
+
+**ds5406_2025-01** · PDF p. 1 · cita: s. p. · Art. 2, parág. I (nuevo art. 1 del D.S. 5321) · *requisito_normativo*
+> «en los contratos de obra y contratos llave en mano, que se encuentren en ejecución, suscritos por entidades públicas.»
+- **Paráfrasis:** El D.S. 5406 extendió el objeto del D.S. 5321 a los contratos llave en mano en ejecución, además de los contratos de obra.
+- **Uso sugerido:** Cap.1 marco legal (ajuste de precios 2025) | Cap.3 Discusión (contexto del contrato)
+
+**ds5406_2025-02** · PDF p. 2 · cita: s. p. · Art. 2, parág. III (nuevo art. 3.I del D.S. 5321) · *requisito_normativo*
+> «podrán efectuar el ajuste de precios unitarios de los materiales de construcción, maquinaria y equipos, importados, detallados en el Anexo del presente Decreto Supremo, a través de un contrato modificatorio que debe ser suscrito hasta el 31 de octubre de 2025.»
+- **Paráfrasis:** El plazo para suscribir el contrato modificatorio de ajuste de precios de materiales importados se amplió hasta el 31 de octubre de 2025.
+- **Uso sugerido:** Cap.1 marco legal (ajuste de precios 2025) | Cap.3 Discusión (contexto del contrato)
+
+**ds5406_2025-03** · PDF p. 2 · cita: s. p. · Art. 2, parág. V (nuevo art. 5.I del D.S. 5321) · *requisito_normativo*
+> «La entidad pública podrá otorgar, hasta el 31 de octubre de 2025, uno o varios anticipos adicionales para los contratos de obra y contratos llave en mano, que se encuentren en ejecución»
+- **Paráfrasis:** Hasta el 31 de octubre de 2025 las entidades podían otorgar anticipos adicionales para adquirir materiales importados pendientes.
+- **Uso sugerido:** Cap.1 marco legal (ajuste de precios 2025) | Cap.3 Discusión (contexto del contrato)
+
+**ds5406_2025-04** · PDF p. 2 · cita: s. p. · Art. 2, parág. VII (nueva DA segunda del D.S. 5321) · *requisito_normativo*
+> «De manera excepcional, hasta el 31 de octubre de 2025, se faculta a las entidades públicas realizar el ajuste de precios, pudiendo aplicar porcentajes adicionales a los establecidos en el Decreto Supremo Nº 0181»
+- **Paráfrasis:** Hasta el 31 de octubre de 2025 también se autorizó ajustar el precio del diésel y las gasolinas importados, aun por encima de los porcentajes de las NB-SABS.
+- **Uso sugerido:** Cap.1 marco legal (ajuste de precios 2025) | Cap.3 Discusión (contexto del contrato) (combustibles: diésel y gasolinas)
+
+
+## 10. D.S. N.º 5452 de 3 de septiembre de 2025 (modifica e incorpora disposiciones en el D.S. 5321) — OCR
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/Bolivia_DS5452_2025_Modifica_DS5321_Ajuste_Precios.pdf`  
+- **PDF con OCR (capa de texto generada con tesseract, `spa`):** `/tmp/claude-0/-home-user-TesisSGC/c22f603c-c695-5c98-b48f-e99a1e2bf286/scratchpad/normas/ocr/Bolivia_DS5452_2025_OCR.pdf`
+- **Clave BibLaTeX:** `ds5452_2025`
+- **Referencia (APA 7):** Estado Plurinacional de Bolivia. (2025, 3 de septiembre). *Decreto Supremo N.º 5452: modificaciones e incorporaciones en el Decreto Supremo N.º 5321, de 23 de enero de 2025*. Gaceta Oficial del Estado Plurinacional de Bolivia.
+
+- **Sin capa de texto:** el PDF original (2 páginas, texto vectorizado) se procesó con tesseract (`spa`, 300 ppp); todas las fichas llevan `capa_de_texto: false` y se verificaron en el PDF con OCR. El OCR transcribe «N°» como «N*»; las fórmulas se leyeron en la imagen.
+- **Fórmulas vigentes (leídas en la imagen, PDF 1–2):** Vᵢ = PAᵢ − PIᵢ, donde PAᵢ es el precio unitario del material, maquinaria o equipo «al momento de su cotización o proforma» y PIᵢ el precio unitario inicial señalado en el contrato; y MCM = Σᵢ₌₁ⁿ (Vᵢ × Cᵢ), donde Cᵢ es la cantidad «por aplicar (saldo) a la obra». Este es el mecanismo legal de ajuste; el modelo de la tesis trabaja a precios constantes del contrato para aislar el efecto del SGC.
+- Firmado en La Paz el 03/09/2025 (Luis Alberto Arce Catacora). Sin número de edición de la Gaceta en el PDF.
+
+**ds5452_2025-01** · PDF p. 1 · cita: s. p. · Art. 1 (Objeto) · *dato* · OCR
+> «El presente Decreto Supremo tiene por objeto realizar modificaciones e incorporaciones en el Decreto Supremo N* 5321, de 23 de enero de 2025.»
+- **Paráfrasis:** El D.S. 5452 modifica e incorpora disposiciones en el D.S. 5321 sobre ajuste de precios de materiales importados.
+- **Uso sugerido:** Cap.1 marco legal (fórmula oficial de ajuste de precios) | Cap.2 modelo de costos (por qué se trabaja a precios constantes) | Cap.3 Discusión
+- **Nota:** OCR: «N*» corresponde a «N°» en la imagen.
+
+**ds5452_2025-02** · PDF p. 1 · cita: s. p. · Art. 2 (nuevo art. 3.IV, inc. a) del D.S. 5321) · *metodo* · OCR
+> «a) La entidad pública determinará la variación de precios aplicando la siguiente fórmula para cada material, maquinaria o equipo:»
+- **Paráfrasis:** La variación de precio de cada material se calcula como la diferencia entre su precio unitario al momento de la cotización o proforma y el precio unitario inicial del contrato (Vᵢ = PAᵢ − PIᵢ).
+- **Uso sugerido:** Cap.1 marco legal (fórmula oficial de ajuste de precios) | Cap.2 modelo de costos (por qué se trabaja a precios constantes) | Cap.3 Discusión
+
+**ds5452_2025-03** · PDF p. 2 · cita: s. p. · Art. 2 (nuevo art. 3.IV, inc. b) del D.S. 5321), definición de Cᵢ · *metodo* · OCR
+> «No se considerarán las cantidades de los materiales/maquinania/equipo utilizados y adquiridos en la obra previo a la vigencia del contrato modificatorio»
+- **Paráfrasis:** El monto del contrato modificatorio es la suma de las variaciones de precio multiplicadas por las cantidades pendientes (saldo) de cada material; no se ajustan las cantidades ya utilizadas o adquiridas antes de su vigencia.
+- **Uso sugerido:** Cap.1 marco legal (fórmula oficial de ajuste de precios) | Cap.2 modelo de costos (por qué se trabaja a precios constantes) | Cap.3 Discusión
+- **Nota:** OCR: «maquinania» corresponde a «maquinaria» en la imagen.
+
+**ds5452_2025-04** · PDF p. 1 · cita: s. p. · Art. 2 (nuevo art. 3.III del D.S. 5321) · *requisito_normativo* · OCR
+> «De manera excepcional por la situación económica y el incremento de precios, en contratos llave en mano en ejecución, en sustitución de los documentos señalados, se elaborará un informe técnico que justifique el ajuste de precios del material importado.»
+- **Paráfrasis:** En contratos llave en mano en ejecución, a falta del Formulario B-2, el ajuste del material importado se justifica con un informe técnico, en atención a la situación económica y al alza de precios.
+- **Uso sugerido:** Cap.1 marco legal (fórmula oficial de ajuste de precios) | Cap.2 modelo de costos (por qué se trabaja a precios constantes) | Cap.3 Discusión
+
+**ds5452_2025-05** · PDF p. 2 · cita: s. p. · Fecha y lugar · *dato* · OCR
+> «Es dado en la Casa Grande del Pueblo de la ciudad de La Paz, a los tres días del mes de septiembre del año dos mil veinticinco.»
+- **Paráfrasis:** El D.S. 5452 se dictó en La Paz el 3 de septiembre de 2025.
+- **Uso sugerido:** Bibliografía (fecha del decreto)
+
+
+## 11. D.S. N.º 5597 de 30 de marzo de 2026 (ajuste de precios en contratos de obra)
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/Bolivia_DS5597_2026_Ajuste_Precios_Materiales_Contratos_Obra.pdf`
+- **Clave BibLaTeX:** `ds5597_2026`
+- **Referencia (APA 7):** Estado Plurinacional de Bolivia. (2026, 30 de marzo). *Decreto Supremo N.º 5597: mecanismos operativos para el ajuste de precios de materiales de construcción, maquinaria y equipo en contratos de obra y llave en mano*. Gaceta Oficial del Estado Plurinacional de Bolivia. http://www.gacetaoficialdebolivia.gob.bo/normas/verGratis_gob/281136
+
+- Texto de consulta de la Gaceta Oficial (© 2025); sin paginación impresa ni número de edición. Firmado por Rodrigo Paz Pereira en el Palacio de Gobierno el 30/03/2026. La URL proviene de `bib/00_base.bib`.
+- **Relevancia para el caso:** a diferencia del D.S. 5321, alcanza a todos los materiales (no solo importados) y a contratos sin orden de proceder; permite contratos modificatorios por encima de los límites de las NB-SABS hasta el 31/12/2026; y su **disposición adicional quinta** prevé la resolución del contrato por «situación ajena a las partes», asimilable a caso fortuito, sin registro del contratista como impedido ni ejecución de la garantía. La carta notariada de la obra (05/01/2026) es anterior a este decreto: su aplicabilidad al caso debe valorarla la asesoría legal de la UATF (no se afirma aquí).
+
+**ds5597_2026-01** · PDF p. 1 · cita: s. p. · Considerandos · *dato*
+> «Que el Estado Plurinacional de Bolivia enfrenta una crisis económica y financiera de carácter estructural heredada, que ha obligado al Gobierno Nacional a la adopción de medidas para estabilizar la economía, las cuales inciden en el costo de los insumos utilizados en la construcción.»
+- **Paráfrasis:** El propio decreto reconoce una crisis económica y financiera estructural cuyas medidas de estabilización encarecieron los insumos de la construcción.
+- **Uso sugerido:** Introducción (planteamiento del problema: alza de precios 2026) | Cap.1 marco legal (ajuste de precios 2026)
+
+**ds5597_2026-02** · PDF p. 1 · cita: s. p. · Art. 1 (Objeto) · *requisito_normativo*
+> «tiene por objeto establecer, de manera excepcional, mecanismos operativos para el ajuste de precios de materiales de construcción, maquinaria y equipo en los contratos de obra y contratos llave en mano suscritos por las entidades públicas.»
+- **Paráfrasis:** El D.S. 5597 establece, de forma excepcional, mecanismos de ajuste de precios de materiales, maquinaria y equipo en contratos de obra y llave en mano de entidades públicas.
+- **Uso sugerido:** Introducción (planteamiento del problema: alza de precios 2026) | Cap.1 marco legal (ajuste de precios 2026)
+
+**ds5597_2026-03** · PDF p. 1 · cita: s. p. · Art. 2 (Ámbito de aplicación) · *requisito_normativo*
+> «El presente Decreto Supremo es aplicable a los contratos de obra y contratos llave en mano, que no cuenten con orden de proceder y aquellos que se encuentren en ejecución»
+- **Paráfrasis:** Se aplica a contratos de obra y llave en mano suscritos bajo las NB-SABS hasta su vigencia, tanto en ejecución como sin orden de proceder.
+- **Uso sugerido:** Introducción (planteamiento del problema: alza de precios 2026) | Cap.1 marco legal (ajuste de precios 2026)
+
+**ds5597_2026-04** · PDF p. 1 · cita: s. p. · Art. 3, parág. II · *metodo*
+> «El ajuste de precios se realizará únicamente sobre el precio del material señalado en el numeral 1 (materiales) del Formulario B-2 (Análisis de Precios Unitarios) o documento similar que incluya este tipo de información, sin considerar los costos indirectos establecidos en el contrato vigente.»
+- **Paráfrasis:** El ajuste recae solo en el componente de materiales del análisis de precios unitarios (Formulario B-2), sin incluir los costos indirectos.
+- **Uso sugerido:** Introducción (planteamiento del problema: alza de precios 2026) | Cap.1 marco legal (ajuste de precios 2026) | Cap.2 modelo de costos (componente de materiales del precio unitario)
+
+**ds5597_2026-05** · PDF p. 2 · cita: s. p. · Art. 3, parág. IV · *requisito_normativo*
+> «No estarán sujetos al ajuste de precios aquellos materiales, maquinaria y equipo que hayan sido ajustados en el marco del Decreto Supremo N° 5321, de 23 de enero de 2025 y sus modificaciones.»
+- **Paráfrasis:** No se puede volver a ajustar lo que ya se ajustó con el D.S. 5321 y sus modificaciones.
+- **Uso sugerido:** Introducción (planteamiento del problema: alza de precios 2026) | Cap.1 marco legal (ajuste de precios 2026)
+
+**ds5597_2026-06** · PDF p. 2 · cita: s. p. · Art. 4, parág. I · *requisito_normativo*
+> «El ajuste de precios en los contratos de obra y contratos llave en mano será efectuado mediante contrato modificatorio, a ser suscrito por única vez hasta el 31 de diciembre de 2026, pudiendo aplicarse porcentajes adicionales a los establecidos en el Decreto Supremo N° 0181»
+- **Paráfrasis:** El ajuste se formaliza con un único contrato modificatorio, suscrito hasta el 31 de diciembre de 2026, que puede exceder los porcentajes del art. 89 de las NB-SABS según disponibilidad financiera.
+- **Uso sugerido:** Introducción (planteamiento del problema: alza de precios 2026) | Cap.1 marco legal (ajuste de precios 2026) | Cap.1 (excepción a los límites del art. 89)
+
+**ds5597_2026-07** · PDF p. 3 · cita: s. p. · Disposición adicional tercera · *requisito_normativo*
+> «De manera excepcional, la entidad contratante podrá modificar el alcance del contrato de obra o contrato llave en mano, sin que afecte su funcionalidad, mediante contrato modificatorio a ser suscrito por única vez hasta el 31 de diciembre de 2026»
+- **Paráfrasis:** Hasta el 31 de diciembre de 2026 la entidad puede, por única vez, modificar el alcance del contrato sin afectar su funcionalidad, aun por encima de los porcentajes de las NB-SABS.
+- **Uso sugerido:** Cap.1 marco legal (resolución por situación ajena a las partes) | Cap.3 Discusión (paralización y resolución del contrato de la obra)
+
+**ds5597_2026-08** · PDF p. 3 · cita: s. p. · Disposición adicional quinta, parág. I · *requisito_normativo*
+> «cuando se identifique la necesidad del incremento de precio de los materiales, maquinaria y equipo, y este no sea viable, podrá tener lugar la resolución de contrato por una situación ajena a las partes»
+- **Paráfrasis:** Si el incremento de precios de materiales, maquinaria y equipo es necesario pero no viable, el contrato puede resolverse por una situación ajena a las partes.
+- **Uso sugerido:** Cap.1 marco legal (resolución por situación ajena a las partes) | Cap.3 Discusión (paralización y resolución del contrato de la obra)
+
+**ds5597_2026-09** · PDF p. 3 · cita: s. p. · Disposición adicional quinta, parág. I · *requisito_normativo*
+> «medida que será una decisión de la entidad contratante con aceptación del Contratista. Esta inviabilidad podrá considerarse como caso fortuito.»
+- **Paráfrasis:** Esa resolución la decide la entidad con aceptación del contratista, y la inviabilidad del ajuste puede considerarse caso fortuito.
+- **Uso sugerido:** Cap.1 marco legal (resolución por situación ajena a las partes) | Cap.3 Discusión (paralización y resolución del contrato de la obra)
+
+**ds5597_2026-10** · PDF p. 3 · cita: s. p. · Disposición adicional quinta, parág. II · *requisito_normativo*
+> «no corresponderá el registro como impedido en el Sistema de Contrataciones Estatales – SICOES, ni la ejecución de la garantía de cumplimiento de contrato.»
+- **Paráfrasis:** Resuelto el contrato por esta vía, el contratista no se registra como impedido en el SICOES ni se ejecuta su garantía de cumplimiento.
+- **Uso sugerido:** Cap.1 marco legal (resolución por situación ajena a las partes) | Cap.3 Discusión (paralización y resolución del contrato de la obra)
+
+**ds5597_2026-11** · PDF p. 3 · cita: s. p. · Disposición adicional quinta, parág. III · *requisito_normativo*
+> «La resolución de contrato efectuada en el marco de la presente Disposición, no dará lugar a reconocimiento de daños y perjuicios a favor del contratista»
+- **Paráfrasis:** Esta resolución no genera derecho del contratista a daños y perjuicios en ninguna vía.
+- **Uso sugerido:** Cap.1 marco legal (resolución por situación ajena a las partes) | Cap.3 Discusión (paralización y resolución del contrato de la obra)
+
+
+## 12. D.S. N.º 5600 de 6 de abril de 2026 (contrataciones directas; deroga el art. 83 bis del D.S. 0181)
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/Bolivia_DS5600_2026_Contrataciones_Directas_Deroga_Art83bis.pdf`
+- **Clave BibLaTeX:** `ds5600_2026`
+- **Referencia (APA 7):** Estado Plurinacional de Bolivia. (2026, 6 de abril). *Decreto Supremo N.º 5600: abrogación y derogación de autorizaciones de contrataciones directas*. Gaceta Oficial del Estado Plurinacional de Bolivia.
+
+- Texto de consulta de la Gaceta Oficial; sin paginación impresa ni número de edición. Es la modificación de las NB-SABS posterior al texto compilado de 2025. Su efecto para la tesis es indirecto: confirma que la contratación del saldo de la obra debe seguir el D.S. 0181 (por ejemplo, la contratación por excepción del art. 65 c tras una resolución), no autorizaciones de contratación directa por normativa específica.
+
+**ds5600_2026-01** · PDF p. 1 · cita: s. p. · Art. 1 (Objeto) · *requisito_normativo*
+> «la presente norma tiene por objeto abrogar y derogar las autorizaciones de contrataciones directas establecidas en decretos supremos, como excepción al Decreto Supremo Nº 0181»
+- **Paráfrasis:** El D.S. 5600 deja sin efecto las autorizaciones de contratación directa dispuestas por decretos supremos como excepción a las NB-SABS, para transparentar las contrataciones públicas.
+- **Uso sugerido:** Cap.1 marco legal (vigencia de las NB-SABS en 2026; contratación del saldo de obra)
+
+**ds5600_2026-02** · PDF p. 1 · cita: s. p. · Art. 2, parág. II · *requisito_normativo*
+> «Se deroga el Artículo 83 Bis del Decreto Supremo Nº 0181, incorporado por el Artículo 5 del Decreto Supremo N° 4453, de 14 de enero de 2021, modificado por el Decreto Supremo Nº 5216, de 4 de septiembre de 2024.»
+- **Paráfrasis:** Deroga el art. 83 bis de las NB-SABS, introducido en 2021 y modificado en 2024, por lo que el texto compilado de 2025 debe leerse con esta salvedad.
+- **Uso sugerido:** Cap.1 marco legal (vigencia de las NB-SABS en 2026; contratación del saldo de obra)
+
+**ds5600_2026-03** · PDF p. 1 · cita: s. p. · Disposición transitoria primera · *requisito_normativo*
+> «Las entidades públicas que hayan iniciado procesos de contratación directa de bienes, obras y servicios con anterioridad a la vigencia del presente Decreto Supremo, deben concluir los mismos aplicando la norma vigente al momento de su inicio.»
+- **Paráfrasis:** Los procesos de contratación directa iniciados antes de su vigencia concluyen con la norma vigente a su inicio.
+- **Uso sugerido:** Cap.1 marco legal (vigencia de las NB-SABS en 2026; contratación del saldo de obra)
+
+**ds5600_2026-04** · PDF p. 2 · cita: s. p. · Fecha y lugar · *dato*
+> «Es dado en el Palacio de Gobierno, a los seis días del mes de abril del año dos mil veintiséis.»
+- **Paráfrasis:** El D.S. 5600 se dictó el 6 de abril de 2026.
+- **Uso sugerido:** Bibliografía (fecha del decreto)
+
+
+## 13. R.M. MEFP N.º 048 de 4 de marzo de 2024 (aprueba nuevos modelos de DBC de obras)
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/MEFP_RM048_2024_Aprueba_Modelos_DBC_Obras.pdf`
+- **Clave BibLaTeX:** `rm048_2024`
+- **Referencia (APA 7):** Ministerio de Economía y Finanzas Públicas. (2024, 4 de marzo). *Resolución Ministerial N.º 048: aprueba el Reglamento de Contrataciones con Apoyo de Medios Electrónicos y los modelos de documento base de contratación de obras (ANPE y Licitación Pública)*.
+
+- El PDF es un escaneo con capa de texto propia (generada por el escáner): las citas son literales de esa capa, que contiene errores menores de reconocimiento (p. ej., «O 4 MAR, 2024» por «04 MAR. 2024», «modalidade»); no tiene paginación impresa (s. p.) ni datos de publicación en Gaceta.
+- **Consecuencia para la tesis:** la R.M. 048/2024 sustituye los modelos de DBC de obras aprobados por la R.M. 021/2022 y se aplica a los procesos iniciados desde su vigencia (20 días hábiles después de su publicación). El proceso de la obra (CUCE 25-0143-…, gestión 2025) debió regirse por el modelo de 2024, no por el de 2022 que está en el repositorio: las cláusulas del DBC 2022 (ficha 14) son una referencia que debe contrastarse con el DBC y el contrato reales publicados en el SICOES.
+
+**rm048_2024-01** · PDF p. 1 · cita: s. p. · Encabezado · *dato*
+> «RESOLUCIÓN MINISTERIAL N° 048 La Paz, O 4 MAR, 2024 VISTOS Y CONSIDERANDO»
+- **Paráfrasis:** La resolución es la R.M. N.º 048 del Ministerio de Economía y Finanzas Públicas, de 4 de marzo de 2024.
+- **Uso sugerido:** Bibliografía (número y fecha de la R.M.)
+- **Nota:** Capa de texto del escáner: «O 4 MAR, 2024» corresponde a «04 MAR. 2024».
+
+**rm048_2024-02** · PDF p. 2 · cita: s. p. · Considerandos · *dato*
+> «es necesario aprobar un nuevo Reglamento de Contrataciones con Apoyo de Medios Electrónicos, nuevos modelos de DBC de obras en las modalidades de ANPE y Licitación Pública, así como modificar el Manual de Operaciones del SICOES.»
+- **Paráfrasis:** El MEFP justificó la R.M. 048/2024 en la necesidad de un nuevo reglamento de contrataciones electrónicas (con subasta electrónica de obras) y de nuevos modelos de DBC de obras.
+- **Uso sugerido:** Cap.1 marco legal (modelo de DBC aplicable a la obra) | Nota metodológica sobre el uso del modelo de DBC 2022
+
+**rm048_2024-03** · PDF p. 2 · cita: s. p. · Resuelve segundo · *requisito_normativo*
+> «Aprobar los Modelos de Documento Base de Contratación - DBC de obras, en las modalidades de Apoyo Nacional a la Producción y Empleo - ANPE Licitación Pública.»
+- **Paráfrasis:** La R.M. 048/2024 aprueba los nuevos modelos de DBC de obras para las modalidades ANPE y Licitación Pública.
+- **Uso sugerido:** Cap.1 marco legal (modelo de DBC aplicable a la obra) | Nota metodológica sobre el uso del modelo de DBC 2022
+- **Nota:** La capa de texto omite la «y» entre «ANPE» y «Licitación Pública».
+
+**rm048_2024-04** · PDF p. 2 · cita: s. p. · Resuelve tercero · *requisito_normativo*
+> «aprobados por los subíndices ii. de los incisos a) y b) del punto resolutivo TERCERO de la Resolución Ministerial N° 021 de 2 de febrero de 2022»
+- **Paráfrasis:** Deja sin efecto los modelos de DBC de obras (ANPE y Licitación Pública) aprobados por la R.M. 021 de 2 de febrero de 2022, que quedan reemplazados por los nuevos.
+- **Uso sugerido:** Cap.1 marco legal (modelo de DBC aplicable a la obra) | Nota metodológica sobre el uso del modelo de DBC 2022
+
+**rm048_2024-05** · PDF p. 3 · cita: s. p. · Resuelve quinto, parág. II · *requisito_normativo*
+> «Todo proceso de contratación de obras en las modalidades ANPE y Licitación Pública, iniciado a partir de la aplicación de la presente Resolución, incluyendo aquellos que cuenten con segundas o siguientes convocatorias de procesos declarados desiertos, así como nuevas convocatorias, se realizarán conforme los modelos de DBC aprobados en Anexo.»
+- **Paráfrasis:** Todo proceso de contratación de obras iniciado desde la aplicación de la R.M. 048/2024 debe usar los nuevos modelos de DBC; los iniciados antes concluyen con la norma anterior.
+- **Uso sugerido:** Cap.1 marco legal (modelo de DBC aplicable a la obra) | Nota metodológica sobre el uso del modelo de DBC 2022
+
+**rm048_2024-06** · PDF p. 3 · cita: s. p. · Resuelve sexto · *requisito_normativo*
+> «La presente Resolución Ministerial será publicada conforme a normativa vigente, siendo aplicable a los veinte (20) días hábiles, computables a partir del día hábil siguiente de su publicación.»
+- **Paráfrasis:** La R.M. 048/2024 se aplica a los veinte días hábiles de su publicación.
+- **Uso sugerido:** Cap.1 marco legal (modelo de DBC aplicable a la obra) | Nota metodológica sobre el uso del modelo de DBC 2022
+
+
+## 14. Modelo de DBC de obras — Licitación Pública (R.M. MEFP N.º 021/2022, sustituido)
+
+- **Archivo:** `04_Bibliografia/06_Legislacion_Bolivia/MEFP_RM021_2022_Modelo_DBC_Obras_LP_SUSTITUIDO.pdf`
+- **Clave BibLaTeX:** `dbc2022`
+- **Referencia (APA 7):** Ministerio de Economía y Finanzas Públicas. (2022). *Modelo de documento base de contratación de obras: Licitación Pública* [Aprobado por Resolución Ministerial N.º 021 de 2 de febrero de 2022; sustituido por la R.M. N.º 048/2024].
+
+- **Paginación:** portada sin número; preliminares en romanos (PDF 2–4); desde la PDF 5 el número impreso = PDF − 4 (PDF 75 → p. 71). El modelo de contrato es el Anexo 6 (PDF 63–92, pp. 59–88).
+- **Vigencia:** este modelo fue **sustituido** por la R.M. 048/2024 (ficha 13). Sus cláusulas se fichan porque describen las figuras contractuales (Fiscal, Supervisor, Libro de Órdenes, ensayos a cargo del contratista, planillas, multas, resolución, garantías) con las que la tesis diseña el SGC, pero deben confrontarse con el contrato real de la obra antes de afirmar que rigen en ella.
+- **Fórmula de multas por mora (leída en la imagen, p. 78):** Mᵢ = (2/3) · (DMᵢ / nᵢ) · MHᵢ, con DMᵢ días de mora del hito i, nᵢ días pactados para el hito y MHᵢ monto del hito; multa acumulada Mₐ = M₁ + … + Mₖ; resolución optativa al 10 % y obligatoria al 20 % del monto del contrato.
+- **Roles (síntesis):** el Fiscal de Obra es el representante de la entidad que exige el cumplimiento del contrato a través del Supervisor y controla al Supervisor; el Supervisor ejerce la inspección técnica, aprueba planillas y es «responsable directo» del control de calidad; el contratista asume el costo de los ensayos y la obligación de cumplir las especificaciones.
+
+**dbc2022-01** · PDF p. 1 · cita: s. p. · Portada · *dato*
+> «MODELO DE DOCUMENTO BASE DE CONTRATACIÓN DE OBRAS LICITACIÓN PÚBLICA Aprobado Mediante Resolución Ministerial N° 021 de 2 de febrero de 2022»
+- **Paráfrasis:** El modelo de DBC de obras por licitación pública del repositorio es el aprobado por la R.M. 021 de 2 de febrero de 2022, elaborado en el marco del D.S. 0181.
+- **Uso sugerido:** Bibliografía (identificación del modelo)
+
+**dbc2022-02** · PDF p. 24 · cita: p. 20 · Parte I, num. 32 (Modificaciones al contrato) · *requisito_normativo*
+> «En todos los casos son responsables por los resultados de la aplicación de los instrumentos de modificación descritos, el FISCAL DE OBRA, SUPERVISOR y CONTRATISTA.»
+- **Paráfrasis:** Fiscal de Obra, Supervisor y contratista responden conjuntamente por los resultados de las órdenes de trabajo, órdenes de cambio y contratos modificatorios.
+- **Uso sugerido:** Cap.1 marco legal (modificaciones de obra) | Cap.3 Discusión (contrato modificatorio)
+
+**dbc2022-03** · PDF p. 24 · cita: p. 20 · Parte I, num. 32, inc. a) (Orden de Trabajo) · *definicion*
+> «La Orden de Trabajo se aplica cuando se realiza un ajuste o redistribución de cantidades de obra, siempre que no existan modificaciones del precio de contrato, ni plazos en el mismo, ni se introduzcan ítems nuevos»
+- **Paráfrasis:** La orden de trabajo redistribuye cantidades de obra sin cambiar precio, plazo ni crear ítems; la emite el Supervisor por carta o en el Libro de Órdenes.
+- **Uso sugerido:** Cap.1 marco legal (modificaciones de obra) | Cap.3 Discusión (contrato modificatorio)
+
+**dbc2022-04** · PDF p. 66 · cita: p. 62 · Cláusula séptima (Garantías) · *requisito_normativo*
+> «equivalente al siete por ciento (7%) del monto total del Contrato.»
+- **Paráfrasis:** La garantía de cumplimiento del contrato de obra es del 7 % del monto total y se ejecuta a solo requerimiento de la entidad ante incumplimiento.
+- **Uso sugerido:** Cap.1 marco legal (garantías)
+
+**dbc2022-05** · PDF p. 67 · cita: p. 63 · Cláusula séptima (Garantías) · *requisito_normativo*
+> «El SUPERVISOR llevará el control directo de la vigencia de la (s) garantía (s) en cuanto al monto y plazo, a efectos de requerir su ampliación al CONTRATISTA, o solicitar a la ENTIDAD su ejecución.»
+- **Paráfrasis:** El Supervisor controla la vigencia y el monto de las garantías y pide su ampliación o su ejecución.
+- **Uso sugerido:** Cap.1 marco legal (Fiscal y Supervisor) | Cap.2 asignación de responsabilidades del SGC (matriz de roles)
+
+**dbc2022-06** · PDF p. 71 · cita: p. 67 · Cláusula vigésima (Fuerza mayor y caso fortuito) · *requisito_normativo*
+> «En ningún caso y bajo ninguna circunstancia, se considerará como causa de Fuerza Mayor el mal tiempo que no sea notablemente fuera de lo común en el área de ejecución de la Obra»
+- **Paráfrasis:** El mal tiempo que no sea notablemente anormal en la zona no es fuerza mayor, porque el contratista debía preverlo en su cronograma.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato) (lluvia del 21/11/2025 anotada en el Libro de Órdenes)
+
+**dbc2022-07** · PDF p. 71 · cita: p. 67 · Cláusula vigésima · *requisito_normativo*
+> «tampoco se considerarán como fuerza mayor o caso fortuito, las demoras en la entrega en la obra de los materiales, equipos e implementos necesarios, por ser obligación del CONTRATISTA tomar y adoptar todas las previsiones necesarias para evitar demoras por dichas contingencias.»
+- **Paráfrasis:** Las demoras en la entrega de materiales no constituyen fuerza mayor ni caso fortuito, porque prever el abastecimiento es obligación del contratista; de ahí el valor de un plan de abastecimiento dentro del SGC.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato) (carta de Import Export Las Lomas sobre la entrega parcial del fierro)
+
+**dbc2022-08** · PDF p. 71 · cita: p. 67 · Cláusula vigésima · *requisito_normativo*
+> «el CONTRATISTA deberá solicitar al FISCAL la emisión de un certificado de constancia de la existencia del hecho de fuerza mayor, caso fortuito u otras causas debidamente justificadas, dentro de los tres (3) días hábiles de ocurrido el hecho»
+- **Paráfrasis:** Para justificar demoras por fuerza mayor o caso fortuito, el contratista debe pedir al Fiscal un certificado de constancia dentro de los tres días hábiles del hecho, con sus respaldos.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato)
+
+**dbc2022-09** · PDF p. 72 · cita: p. 68 · Cláusula vigésima primera, 21.2.1, inc. g) · *requisito_normativo*
+> «g) Por negligencia reiterada en tres (3) oportunidades en el cumplimiento de las especificaciones, planos, o de instrucciones escritas del SUPERVISOR.»
+- **Paráfrasis:** La negligencia reiterada (tres veces) en el cumplimiento de especificaciones, planos o instrucciones escritas del Supervisor es causal de resolución atribuible al contratista.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato) | Cap.2 (las no conformidades registradas sustentan esta causal)
+
+**dbc2022-10** · PDF p. 72 · cita: p. 68 · Cláusula vigésima primera, 21.2.1, incs. i)-j) · *requisito_normativo*
+> «i) De manera optativa cuando el monto de la multa acumulada alcance el diez por ciento (10%) del monto total del contrato. j) De manera obligatoria cuando el monto de la multa acumulada alcance el veinte por ciento (20%) del monto total del contrato.»
+- **Paráfrasis:** La resolución es optativa cuando las multas acumuladas llegan al 10 % del monto del contrato y obligatoria cuando llegan al 20 %.
+- **Uso sugerido:** Cap.1 marco legal (multas) | Cap.2 costos de no calidad (penalidades)
+
+**dbc2022-11** · PDF p. 73 · cita: p. 69 · Cláusula vigésima primera, 21.2.3 · *metodo*
+> «la ENTIDAD o el CONTRATISTA darán aviso escrito mediante carta notariada, a la otra parte, de su intención de resolver el CONTRATO, estableciendo claramente la causal que se aduce.»
+- **Paráfrasis:** La resolución se inicia con una carta notariada de intención que expresa la causal; si en quince días hábiles no se enmiendan las fallas, se notifica por la misma vía que la resolución se hizo efectiva.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato) (carta notariada de 05/01/2026)
+
+**dbc2022-12** · PDF p. 74 · cita: p. 70 · Cláusula vigésima primera, 21.3 · *requisito_normativo*
+> «la ENTIDAD se encontrase con situaciones fuera de control de las partes que imposibiliten la ejecución o conclusión de la obra, o vayan contra los intereses del Estado, la ENTIDAD en cualquier momento, mediante carta notariada dirigida al CONTRATISTA, suspenderá los trabajos y resolverá el CONTRATO total o parcialmente.»
+- **Paráfrasis:** Ante situaciones fuera del control de las partes que impidan concluir la obra, la entidad puede suspender los trabajos y resolver total o parcialmente el contrato mediante carta notariada.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato)
+
+**dbc2022-13** · PDF p. 74 · cita: p. 70 · Cláusula vigésima primera, 21.3 · *metodo*
+> «El CONTRATISTA conjuntamente con el SUPERVISOR, procederán con la medición del trabajo ejecutado hasta la fecha de suspensión, el avalúo de los materiales en obra que pudieran ser empleados posteriormente»
+- **Paráfrasis:** Tras la resolución, contratista y Supervisor miden lo ejecutado hasta la suspensión y valoran los materiales en obra aprovechables; con ello el Supervisor elabora la planilla de medición final.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato) | Cap.1 marco legal (medición y pago) | Cap.3 Discusión (cómputo del acero y planilla de cierre, a verificar por la Supervisión) (PAO N.º 3 de resolución)
+
+**dbc2022-14** · PDF p. 75 · cita: p. 71 · Cláusula vigésima quinta (Libro de Órdenes) · *requisito_normativo*
+> «Bajo su responsabilidad y en la obra, el CONTRATISTA llevará un Libro de Órdenes de Trabajo con páginas numeradas y dos copias, el mismo que deberá ser aperturado con participación de Notario de Fe Pública en la fecha en que el CONTRATISTA reciba la Orden de Proceder.»
+- **Paráfrasis:** El contratista lleva en obra un Libro de Órdenes foliado, con dos copias, abierto ante notario de fe pública al recibir la orden de proceder.
+- **Uso sugerido:** Cap.1 marco legal (Libro de Órdenes) | Cap.2 control de la información documentada | Cap.3 (análisis del Libro de Órdenes del ítem 13)
+
+**dbc2022-15** · PDF p. 75 · cita: p. 71 · Cláusula vigésima quinta · *requisito_normativo*
+> «En este libro el SUPERVISOR anotará las instrucciones, órdenes y observaciones impartidas al CONTRATISTA, que se refieran a los trabajos, cada orden llevará fecha y firma del SUPERVISOR y la constancia firmada del Superintendente de Obra de haberla recibido.»
+- **Paráfrasis:** En el Libro de Órdenes el Supervisor registra instrucciones y observaciones con fecha y firma, y el superintendente firma su recepción; es el registro formal de la ejecución.
+- **Uso sugerido:** Cap.1 marco legal (Libro de Órdenes) | Cap.2 control de la información documentada | Cap.3 (análisis del Libro de Órdenes del ítem 13)
+
+**dbc2022-16** · PDF p. 75 · cita: p. 71 · Cláusula vigésima quinta · *requisito_normativo*
+> «en el caso de los días de lluvia que puedan afectar la ruta crítica del cronograma de ejecución de la obra, el día en que suceda el hecho a efectos de que el SUPERVISOR se pronuncie de forma objetiva.»
+- **Paráfrasis:** El contratista puede registrar en el Libro de Órdenes, el mismo día, hechos como lluvias que afecten la ruta crítica, para que el Supervisor se pronuncie objetivamente.
+- **Uso sugerido:** Cap.1 marco legal (Libro de Órdenes) | Cap.2 control de la información documentada | Cap.3 (análisis del Libro de Órdenes del ítem 13) (asiento del 21/11/2025)
+
+**dbc2022-17** · PDF p. 75 · cita: p. 71 · Cláusula vigésima quinta · *requisito_normativo*
+> «Las comunicaciones cursadas entre partes, sólo entrarán en vigor cuando sean efectuadas y entregadas por escrito, a través del Libro de Órdenes o notas oficiales.»
+- **Paráfrasis:** Solo tienen efecto las comunicaciones escritas, por el Libro de Órdenes o por notas oficiales.
+- **Uso sugerido:** Cap.1 marco legal (Libro de Órdenes) | Cap.2 control de la información documentada | Cap.3 (análisis del Libro de Órdenes del ítem 13)
+
+**dbc2022-18** · PDF p. 75 · cita: p. 71 · Cláusula vigésima sexta, 26.1 (Fiscalización) · *definicion*
+> «a) Exigir a través del SUPERVISOR el cumplimiento del Contrato de Obra. b) Exigir directamente el cumplimiento del Contrato de SUPERVISIÓN TÉCNICA, realizando seguimiento y control de los actos del SUPERVISOR en la SUPERVISIÓN Técnica de la Obra.»
+- **Paráfrasis:** El Fiscal de Obra, nombrado por la entidad, exige el cumplimiento del contrato de obra a través del Supervisor y controla directamente al Supervisor; además vela por el buen uso de los recursos y conoce los certificados de obra.
+- **Uso sugerido:** Cap.1 marco legal (Fiscal y Supervisor) | Cap.2 asignación de responsabilidades del SGC (matriz de roles)
+
+**dbc2022-19** · PDF p. 76 · cita: p. 72 · Cláusula vigésima sexta, 26.1 · *definicion*
+> «El FISCAL tiene funciones diferentes a las del SUPERVISOR, por lo que no está facultado para suplantar en el ejercicio de sus funciones específicas y responsabilidades al SUPERVISOR.»
+- **Paráfrasis:** Fiscal y Supervisor tienen funciones distintas: el Fiscal no puede sustituir al Supervisor en sus funciones y responsabilidades específicas.
+- **Uso sugerido:** Cap.1 marco legal (Fiscal y Supervisor) | Cap.2 asignación de responsabilidades del SGC (matriz de roles)
+
+**dbc2022-20** · PDF p. 76 · cita: p. 72 · Cláusula vigésima sexta, 26.3 (Supervisión técnica) · *definicion*
+> «denominada en este Contrato el SUPERVISOR, con todas las facultades inherentes al buen desempeño de las funciones de SUPERVISIÓN e inspección técnica»
+- **Paráfrasis:** El Supervisor es el consultor (individual o firma) contratado para la supervisión e inspección técnica de la obra, con todas las facultades necesarias para ello.
+- **Uso sugerido:** Cap.1 marco legal (Fiscal y Supervisor) | Cap.2 asignación de responsabilidades del SGC (matriz de roles)
+
+**dbc2022-21** · PDF p. 76 · cita: p. 72 · Cláusula vigésima sexta, 26.3, inc. f) · *requisito_normativo*
+> «f) Realizar mediciones conjuntas con el CONTRATISTA de la obra ejecutada y aprobar los Certificados o Planillas de avance de obra.»
+- **Paráfrasis:** El Supervisor mide junto con el contratista la obra ejecutada y aprueba las planillas de avance.
+- **Uso sugerido:** Cap.1 marco legal (medición y pago) | Cap.3 Discusión (cómputo del acero y planilla de cierre, a verificar por la Supervisión)
+
+**dbc2022-22** · PDF p. 77 · cita: p. 73 · Cláusula vigésima sexta, 26.3 · *requisito_normativo*
+> «Será responsabilidad directa de la SUPERVISIÓN, el control de calidad y el cumplimiento de las especificaciones del contrato.»
+- **Paráfrasis:** El control de calidad y el cumplimiento de las especificaciones son responsabilidad directa de la Supervisión.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales)
+
+**dbc2022-23** · PDF p. 77 · cita: p. 73 · Cláusula vigésima sexta, 26.6 (Inspección de la calidad de los materiales) · *requisito_normativo*
+> «Todos los materiales a ser utilizados en la Obra deberán cumplir estrictamente con las Especificaciones Técnicas pertinentes y estarán sujetos a inspección, examen y ensayos dispuestos por la SUPERVISIÓN en cualquier momento»
+- **Paráfrasis:** Todos los materiales deben cumplir las especificaciones técnicas y pueden ser inspeccionados y ensayados por orden de la Supervisión, en el lugar de producción o en obra, antes de incorporarse.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales)
+
+**dbc2022-24** · PDF p. 77 · cita: p. 73 · Cláusula vigésima sexta, 26.6 · *requisito_normativo*
+> «antes de su incorporación a la misma. Los costos para la realización de ensayos están a cargo del CONTRATISTA.»
+- **Paráfrasis:** El costo de los ensayos de materiales corre por cuenta del contratista, por lo que es un costo de evaluación que el modelo de costos de la calidad debe imputarle.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) | Cap.2 costos de la calidad (evaluación a cargo del contratista)
+
+**dbc2022-25** · PDF p. 77 · cita: p. 73 · Cláusula vigésima sexta, 26.9 (Almacenamiento y acopio) · *requisito_normativo*
+> «Los materiales almacenados, serán inspeccionados y aprobados por la SUPERVISIÓN antes de su uso en la Obra, para verificar si cumplen los requisitos especificados en el momento de ser utilizados.»
+- **Paráfrasis:** Los materiales acopiados deben ser inspeccionados y aprobados por la Supervisión antes de usarse, para comprobar que siguen cumpliendo los requisitos.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales)
+
+**dbc2022-26** · PDF p. 78 · cita: p. 74 · Cláusula vigésima sexta, 26.10, inc. c) · *requisito_normativo*
+> «La SUPERVISIÓN estará autorizada para llamar la atención del CONTRATISTA sobre cualquier discordancia del trabajo con los planos o especificaciones, para suspender todo trabajo mal ejecutado y rechazar material defectuoso.»
+- **Paráfrasis:** La Supervisión puede observar discordancias con planos o especificaciones, suspender trabajos mal ejecutados y rechazar materiales defectuosos, ratificando por escrito en el Libro de Órdenes.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) | Cap.2 tratamiento de no conformidades
+
+**dbc2022-27** · PDF p. 78 · cita: p. 74 · Cláusula vigésima sexta, 26.10, inc. d) · *requisito_normativo*
+> «Ningún trabajo será cubierto o puesto fuera de vista sin la previa aprobación de la SUPERVISIÓN.»
+- **Paráfrasis:** Ningún trabajo puede cubrirse sin aprobación previa de la Supervisión, como el armado de la losa antes del hormigonado (solicitud del 20/11/2025 y autorización del 28/11/2025).
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) (punto de espera antes del vaciado de la losa)
+
+**dbc2022-28** · PDF p. 78 · cita: p. 74 · Cláusula vigésima sexta, 26.11 (Pruebas) · *requisito_normativo*
+> «Si la SUPERVISIÓN ordena al CONTRATISTA realizar alguna prueba que no esté contemplada en las especificaciones a fin de verificar si algún trabajo tiene defectos y la prueba revela que los tiene, el costo de la prueba y las muestras serán de cargo del CONTRATISTA.»
+- **Paráfrasis:** Las pruebas adicionales que revelan defectos corren a cargo del contratista; si no hay defecto, se tratan como evento compensable.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) | Cap.2 costos de falla
+
+**dbc2022-29** · PDF p. 78 · cita: p. 74 · Cláusula vigésima sexta, 26.12 (Corrección de defectos) · *definicion*
+> «Toda parte de la Obra que no cumpla con los requerimientos de las especificaciones, planos u otros documentos del Contrato, será considerada trabajo defectuoso.»
+- **Paráfrasis:** Es trabajo defectuoso toda parte de la obra que no cumple especificaciones, planos u otros documentos del contrato, y debe removerse y reemplazarse a satisfacción de la Supervisión.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) | Cap.2 definición contractual de no conformidad
+
+**dbc2022-30** · PDF p. 79 · cita: p. 75 · Cláusula vigésima séptima (Medición de cantidades) · *requisito_normativo*
+> «Las obras deberán medirse netas, excepto cuando los documentos de Contrato prescriban un procedimiento diferente. No se medirán volúmenes excedentes cuya ejecución no haya sido aprobada por escrito por el SUPERVISOR.»
+- **Paráfrasis:** La obra se mide neta y no se pagan volúmenes excedentes sin aprobación escrita del Supervisor; es el criterio contra el cual debe verificarse el cómputo del acero de la losa.
+- **Uso sugerido:** Cap.1 marco legal (medición y pago) | Cap.3 Discusión (cómputo del acero y planilla de cierre, a verificar por la Supervisión)
+
+**dbc2022-31** · PDF p. 79 · cita: p. 75 · Cláusula vigésima séptima · *metodo*
+> «Los resultados de las mediciones efectuadas conjuntamente y los cálculos respectivos se consignarán en una planilla especial que será elaborada por el CONTRATISTA en dos ejemplares»
+- **Paráfrasis:** Las mediciones conjuntas y sus cálculos se registran en una planilla que prepara el contratista y controla y aprueba el Supervisor.
+- **Uso sugerido:** Cap.1 marco legal (medición y pago) | Cap.3 Discusión (cómputo del acero y planilla de cierre, a verificar por la Supervisión)
+
+**dbc2022-32** · PDF p. 79 · cita: p. 75 · Cláusula vigésima octava (Forma de pago) · *metodo*
+> «El pago será paralelo al progreso de la obra, a este fin mensualmente y dentro de los cinco (5) días hábiles siguientes a cada mes vencido, el CONTRATISTA presentará al SUPERVISOR, para su revisión en versión definitiva, una planilla o certificado de pago debidamente firmado»
+- **Paráfrasis:** Los pagos siguen el avance: el contratista presenta mensualmente la planilla al Supervisor, que la aprueba o devuelve en tres días hábiles y la remite al Fiscal antes del pago.
+- **Uso sugerido:** Cap.1 marco legal (medición y pago) | Cap.3 Discusión (cómputo del acero y planilla de cierre, a verificar por la Supervisión)
+
+**dbc2022-33** · PDF p. 81 · cita: p. 77 · Cláusula trigésima, 30.4, inc. b) (Orden de Cambio) · *requisito_normativo*
+> «El incremento o disminución mediante Orden de Cambio (una o varias sumadas) solo admite el máximo del cinco por ciento (5%) del monto total de Contrato.»
+- **Paráfrasis:** Las órdenes de cambio, sumadas, admiten como máximo un 5 % del monto del contrato.
+- **Uso sugerido:** Cap.1 marco legal (modificaciones de obra) | Cap.3 Discusión (contrato modificatorio)
+
+**dbc2022-34** · PDF p. 81 · cita: p. 77 · Cláusula trigésima, 30.4, inc. c) (Contrato Modificatorio) · *requisito_normativo*
+> «Esta modalidad de modificación de la obra sólo es admisible hasta el diez por ciento (10%) del monto original del contrato e independiente de la emisión de Orden (es) de Cambio.»
+- **Paráfrasis:** El contrato modificatorio, reservado a casos extraordinarios, solo admite hasta el 10 % del monto original, con independencia de las órdenes de cambio.
+- **Uso sugerido:** Cap.1 marco legal (modificaciones de obra) | Cap.3 Discusión (contrato modificatorio)
+
+**dbc2022-35** · PDF p. 82 · cita: p. 78 · Cláusula trigésima, 30.5 · *requisito_normativo*
+> «La Orden de Trabajo, Orden de Cambio o Contrato Modificatorio, deben ser emitidos y suscritos de forma previa a la ejecución de los trabajos por parte del CONTRATISTA, en ninguno de los casos constituye un documento regularizador de procedimiento de ejecución de obra»
+- **Paráfrasis:** Los instrumentos de modificación deben emitirse antes de ejecutar los trabajos y no pueden usarse para regularizar trabajos ya hechos, salvo emergencia declarada.
+- **Uso sugerido:** Cap.1 marco legal (modificaciones de obra) | Cap.3 Discusión (contrato modificatorio)
+
+**dbc2022-36** · PDF p. 82 · cita: p. 78 · Cláusula trigésima segunda (Morosidad y penalidades) · *requisito_normativo*
+> «el CONTRATISTA se constituirá en mora sin necesidad de ningún previo requerimiento de la ENTIDAD obligándose a ésta última, aplicar una multa por cada día calendario de retraso de acuerdo a la siguiente fórmula:»
+- **Paráfrasis:** Si un hito verificable del cronograma vence sin concluirse, el contratista entra en mora automáticamente y se le aplica una multa diaria Mᵢ = (2/3)·(DMᵢ/nᵢ)·MHᵢ (fórmula leída en la imagen).
+- **Uso sugerido:** Cap.1 marco legal (multas) | Cap.2 costos de no calidad (penalidades)
+
+**dbc2022-37** · PDF p. 83 · cita: p. 79 · Cláusula trigésima segunda · *requisito_normativo*
+> «En todos los casos de resolución de contrato por causas atribuibles al CONTRATISTA, la ENTIDAD no podrá cobrar multas que excedan el veinte por ciento (20%) del monto total del contrato.»
+- **Paráfrasis:** En la resolución por causas atribuibles al contratista, las multas cobrables no pueden superar el 20 % del monto del contrato; se descuentan en la liquidación final.
+- **Uso sugerido:** Cap.1 marco legal (multas) | Cap.2 costos de no calidad (penalidades)
+
+**dbc2022-38** · PDF p. 86 · cita: p. 82 · Cláusula trigésima tercera, 33.1 · *requisito_normativo*
+> «El CONTRATISTA y su representante en la obra están obligados a conocer minuciosamente los planos, instrucciones, especificaciones técnicas y demás documentos de la Obra que le fueron proporcionados.»
+- **Paráfrasis:** El contratista debe conocer a fondo planos y especificaciones y consultar sus dudas al Supervisor antes de ejecutar; de lo contrario asume los costos de subsanación.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) (revisión de planos y ET antes de ejecutar)
+
+**dbc2022-39** · PDF p. 86 · cita: p. 82 · Cláusula trigésima tercera, 33.2 · *requisito_normativo*
+> «EL CONTRATISTA no podrá entregar obra defectuosa o mal ejecutada aduciendo errores, defectos y omisiones en los planos y especificaciones técnicas, debiendo el trabajo erróneo o defectuoso ser subsanado y enmendado por su exclusiva cuenta.»
+- **Paráfrasis:** El contratista no puede justificar obra defectuosa en errores de planos o especificaciones: debe corregirla a su costo, lo que refuerza la revisión documental previa que propone el SGC.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) | Cap.3 Discusión (discrepancias Plano 02 vs. ET)
+
+**dbc2022-40** · PDF p. 87 · cita: p. 83 · Cláusula trigésima tercera, 33.10 · *requisito_normativo*
+> «El CONTRATISTA custodiará todos los materiales, equipo y todo trabajo ejecutado, hasta la Recepción Definitiva de la obra, por la ENTIDAD.»
+- **Paráfrasis:** El contratista custodia materiales, equipo y obra ejecutada hasta la recepción definitiva.
+- **Uso sugerido:** Cap.1 marco legal (control de calidad contractual) | Cap.2 PPI y procedimiento de control de materiales | Cap.3 Discusión (probetas, certificados y garantías de materiales) (custodia de materiales en obra)
+
+**dbc2022-41** · PDF p. 89 · cita: p. 85 · Cláusula trigésima sexta (Suspensión de los trabajos) · *requisito_normativo*
+> «el SUPERVISOR podrá ordenar la suspensión temporal de la obra por condiciones meteorológicas excepcionalmente desfavorables, por la inseguridad total de las obras o de una parte de las mismas o si se presentan situaciones de Fuerza Mayor.»
+- **Paráfrasis:** El Supervisor puede suspender temporalmente la obra por clima excepcionalmente desfavorable, inseguridad o fuerza mayor; si la suspensión supera 15 días y afecta la ruta crítica, se amplía el plazo mediante orden de cambio.
+- **Uso sugerido:** Cap.1 marco legal (fuerza mayor, suspensión y resolución) | Cap.3 Discusión (paralización y resolución del contrato)
+
+**dbc2022-42** · PDF p. 89 · cita: p. 85 · Cláusula trigésima séptima (Comisión de Recepción) · *requisito_normativo*
+> «La Comisión de Recepción tiene la responsabilidad de efectuar la recepción, provisional y/o definitiva de las obras contratadas, en concordancia con lo establecido en el Documento Base de Contratación»
+- **Paráfrasis:** La Comisión de Recepción, que integra el Fiscal de la obra, recibe la obra en sus etapas provisional y definitiva verificando especificaciones, términos y condiciones del contrato.
+- **Uso sugerido:** Cap.1 marco legal (recepción y cierre)
+
+**dbc2022-43** · PDF p. 90 · cita: p. 86 · Cláusula trigésima octava, 38.1 (Liquidación de saldos) · *requisito_normativo*
+> «Dentro de los diez (10) días calendario siguientes a la fecha de Recepción Provisional, el SUPERVISOR elaborará una planilla de cantidades finales de obra, con base a la Obra efectiva y realmente ejecutada»
+- **Paráfrasis:** La planilla de cantidades finales debe basarse en la obra efectiva y realmente ejecutada, criterio clave para verificar cómputos que incluyan elementos no ejecutados.
+- **Uso sugerido:** Cap.1 marco legal (medición y pago) | Cap.3 Discusión (cómputo del acero y planilla de cierre, a verificar por la Supervisión) | Cap.1 marco legal (recepción y cierre)
+
+**dbc2022-44** · PDF p. 91 · cita: p. 87 · Cláusula trigésima octava, 38.2 (Recepción Definitiva) · *requisito_normativo*
+> «Ningún otro documento que no sea el Acta de Recepción Definitiva de la Obra podrá considerarse como una admisión de que el contrato, o alguna parte del mismo, ha sido debidamente ejecutado»
+- **Paráfrasis:** Solo el acta de recepción definitiva acredita que el contrato, o una parte de él, fue debidamente ejecutado; las planillas pagadas no equivalen a aceptación.
+- **Uso sugerido:** Cap.1 marco legal (recepción y cierre)
+
+**dbc2022-45** · PDF p. 92 · cita: p. 88 · Cláusula trigésima novena (Cierre de contrato) · *requisito_normativo*
+> «El cierre de Contrato deberá ser acreditado con un CERTIFICADO DE CUMPLIMIENTO DE CONTRATO, otorgado por la ENTIDAD, luego de la recepción definitiva»
+- **Paráfrasis:** El contrato se cierra con el certificado de cumplimiento que emite la entidad después de la recepción definitiva y de la liquidación.
+- **Uso sugerido:** Cap.1 marco legal (recepción y cierre)
+
+## 15. Síntesis para la redacción
+
+### Requisitos de ACI CODE-318-25 para el control del hormigón de la losa (página impresa; PDF = impresa + 1)
+
+| Requisito | Sección | Página |
+|---|---|---|
+| Materiales: cemento según Tabla 26.4.1.1.1(a); áridos ASTM C33/C330; agua ASTM C1602 | 26.4.1.1.1, 26.4.1.2.1, 26.4.1.4.1 | pp. 568–570 |
+| Dosificación: sin segregación, durable, con los mismos materiales de la obra; documentarla y someterla a revisión antes de usarla o cambiarla | 26.4.3.1, 26.4.4.1 | pp. 576–577 |
+| Almacenamiento sin deterioro ni contaminación; producción según ASTM C94/C685 | 26.5.1.1 | p. 578 |
+| Colocación sin segregación ni juntas frías; continuidad por paño; compactación | 26.5.2.2 | pp. 579–580 |
+| Curado: retener humedad 7 días a ≥ 50 °F (10 °C), o 3 días si se alcanza 0,7 f′c; eficacia ≥ 85 % de probetas normalizadas | 26.5.3.2(a), (e) | pp. 581–582 |
+| Tiempo frío y caluroso: plan de hormigonado del contratista revisado por el profesional responsable; sin hielo en áridos, encofrados ni terreno; 95 °F máx. al colocar (comentario) | 26.5.4–26.5.5 | pp. 583–584 |
+| Armaduras: certificados de fábrica; limpias al vaciar; tolerancias de la Tabla 26.6.2.1(a); fijadas para no desplazarse | 26.6.1.2, 26.6.2 | pp. 587–589 |
+| Ensayo de resistencia = promedio de ≥ 2 cilindros (ASTM C172, C31, C39) a 28 días | 26.12.1.1(a) | p. 601 |
+| Muestreo: 1 vez al día, cada 150 yd³ (≈ 114,7 m³) y cada 5000 ft² (≈ 464,5 m²) de losa; mínimo 5 ensayos por mezcla; aleatorio | 26.12.2.1 | p. 603 |
+| Aceptación: promedio de 3 consecutivos ≥ f′c y ningún ensayo < f′c − 500 psi si f′c ≤ 5000 psi (≈ 214,8 kg/cm² para H25) | 26.12.3.1 | p. 603 |
+| Probetas curadas en obra para desencofrar o retirar puntales | 26.12.4.1 | p. 604 |
+| Investigación de resultados bajos: núcleos (3 por ensayo), aceptables si promedio ≥ 0,85 f′c y ninguno < 0,75 f′c; luego cap. 27 | 26.12.7 (no 26.12.6) | pp. 606–607 |
+| Inspección por profesional o inspector calificado; registros ≥ 2 años; registro de vaciados y temperaturas; inspección continua de la mezcla y periódica de armado, curado y encofrados | 26.13 | pp. 608–611 |
+
+### Artículos clave de la legislación (citar por artículo; las NB-SABS compiladas tienen página = PDF)
+
+| Tema | Fuente | Localizador |
+|---|---|---|
+| Responsabilidad por la función pública (administrativa, ejecutiva, civil, penal) | Ley 1178 | arts. 1 c), 28–31; jurisdicción coactiva fiscal, art. 47 |
+| Control interno previo y posterior | Ley 1178 | arts. 13–14 |
+| Fuerza mayor y caso fortuito | D.S. 0181 | art. 5 c) y p) (compilado pp. 20 y 22) |
+| Garantía de cumplimiento 7 %, vigente hasta la recepción definitiva | D.S. 0181 | art. 21 I b) (pp. 35–36) |
+| Recepción provisional y definitiva | D.S. 0181 | art. 39 (p. 54) |
+| Contrato modificatorio ≤ 10 %; orden de cambio ≤ 5 %; ambos ≤ 15 % (LP) o ≤ 10 % (ANPE); ítems nuevos con precios negociados | D.S. 0181 | art. 89 (pp. 91–93) |
+| Contratación por excepción tras una resolución | D.S. 0181 | art. 65 c) (p. 71) |
+| Registro de la resolución en el SICOES (20 días hábiles) | Manual SICOES en el compilado | num. 37.1 (p. 264) |
+| Ajuste de precios de materiales importados (acero corrugado en el Anexo) | D.S. 5321 → 5406 → 5452 | arts. 1, 3 y 4; Anexo num. 1 |
+| Ajuste de precios 2026 por encima de los límites del art. 89, hasta el 31/12/2026; resolución como caso fortuito sin ejecución de garantía | D.S. 5597 | arts. 1–4; DA tercera y quinta |
+| Supervisor responsable directo del control de calidad; ensayos a cargo del contratista; trabajos no se cubren sin aprobación | DBC 2022 (sustituido) | cl. 26.3, 26.6, 26.10 (pp. 72–74) |
+| Libro de Órdenes | DBC 2022 | cl. 25 (p. 71) |
+| Medición neta; sin pago de excedentes no aprobados; planilla final con obra realmente ejecutada | DBC 2022 | cl. 27 (p. 75) y 38.1 (p. 86) |
+| Multas por mora y resolución al 10 %/20 % | DBC 2022 | cl. 21.2.1 i)-j) (p. 68) y 32 (pp. 78–79) |
+
+### Páginas de Hernández-Sampieri y Mendoza (2018) más útiles (número impreso)
+
+| Tema | Páginas |
+|---|---|
+| Ruta cuantitativa | 5–7 |
+| Alcances (exploratorio 106, descriptivo 108, correlacional 109, explicativo 110–112, mixtos 113) | 104–116 |
+| Hipótesis (definición 124; de investigación 127; direccionales 129–131; nula 133; prueba 135) | 122–140 |
+| Definición operacional | 137–138 |
+| Diseño y experimento | 150–151 |
+| Validez interna y amenazas (Tabla 7.1: historia, maduración, instrumentación, selección, mortalidad…) | 158–159 |
+| Preexperimentos y preprueba-posprueba con un grupo (G M1 X M2) | 161–163 |
+| Cuasiexperimentos | 173 |
+| No experimentales: definición, transeccionales, retrospectivos, longitudinales | 174–183 |
+| Censo y muestra no probabilística | 196, 200, 215 |
+| Confiabilidad, validez, validez de contenido y de expertos | 228–239 |
+| Nivel de significancia 0,05 | 341–342 |
+| Supuestos paramétricos (normalidad), prueba *t*, no paramétricos, tabla de pruebas (Wilcoxon solo nombrada) | 343–372 |
+| No están en la obra impresa: Shapiro-Wilk, simulación Monte Carlo, V de Aiken | — |
+
+### Normas de pago incluidas en el `.bib` (sin PDF en el repositorio; no fichadas textualmente)
+
+`iso9001_2026` (ISO 9001:2026), `iso9000_2026` (ISO 9000:2026), `ibnorca9001_2026` (NB/ISO 9001:2026), `iso10005_2018` (ISO 10005:2018), `iso10006_2017` (ISO 10006:2017), `nb997_2016` (NB 997:2016), `nb1225001_2017` (NB 1225001-1:2017), `cbh87` (CBH-87, 1987; autor y editor por verificar), `astmc31` (C31/C31M-26b), `astmc39` (C39/C39M-26), `astmc143` (C143/C143M-26b), `astmc172` (C172/C172M-25) y `astma615` (A615/A615M-26), con las ediciones de `Bibliografia_Recomendada.md`.
+
+### Pendientes y advertencias
+
+1. **Claves duplicadas** con `bib/00_base.bib` (aci318_2025, hernandez2018, ds0181_2009, ds5321_2025, ds5597_2026, iso9001_2026, iso9000_2026, ibnorca9001_2026, iso10005_2018, nb997_2016, nb1225001_2017): biber conserva la primera definición; el coordinador debe dejar una sola (las de este archivo están contrastadas con los PDF).
+2. **NB 1225001:** ni la NBDS ni la R.M. 271/2023 la declaran obligatoria; la obligatoriedad documentada es la de la NBDS. La R.M. MOPSV 172/2020 mencionada en `Bibliografia_Recomendada.md` no está en el repositorio. Tampoco hay en él texto del D.S. 22976/1991 sobre la CBH-87.
+3. **DBC:** el modelo de 2022 fue sustituido por la R.M. 048/2024; descargar del SICOES el DBC y el contrato reales de la obra (CUCE 25-0143-00-1531493-1-1) antes de afirmar qué cláusulas rigen.
+4. **Hernández-Sampieri** no cubre Shapiro-Wilk, Monte Carlo ni V de Aiken: buscar fuentes específicas (nivel 1 o 3) para esas técnicas.
+5. **Gaceta Oficial:** ninguno de los PDF de decretos indica número de edición; las referencias lo omiten.
