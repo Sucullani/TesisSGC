@@ -38,6 +38,7 @@ sys.path.insert(0, str(AQUI))
 
 from tesis_docx import bibliografia, compilacion, libreoffice, word          # noqa: E402
 from tesis_docx.graficos import Graficos                                   # noqa: E402
+from tesis_docx import latex as modulo_latex                              # noqa: E402
 from tesis_docx.latex import Fuente, Transformador, leer_aux               # noqa: E402
 
 RAIZ = AQUI.parents[1]
@@ -59,20 +60,28 @@ def metadatos(fuente):
 
 
 def main():
+    global DIR_TESIS
     ap = argparse.ArgumentParser(description='Convierte la tesis LaTeX en un .docx con formato APA 7.')
     ap.add_argument('--salida', default=str(SALIDA), help='ruta del .docx (por defecto: %(default)s)')
+    ap.add_argument('--dir-tesis', default=str(RAIZ / '05_Tesis_LaTeX'),
+                    help='carpeta de la tesis LaTeX (por defecto: %(default)s)')
     ap.add_argument('--trabajo', default=str(TRABAJO), help='carpeta de archivos intermedios y caché')
     ap.add_argument('--sin-compilar', action='store_true', help='no compila LaTeX; usa el último .aux válido')
     ap.add_argument('--aux', help='usar este .aux en lugar de compilar')
     ap.add_argument('--regenerar-plantilla', action='store_true', help='vuelve a crear plantilla_apa.docx')
     ap.add_argument('--tabla-pt', type=float, default=12, help='tamaño de letra en tablas (APA: 12)')
     ap.add_argument('--formulario-pt', type=float, default=10, help='tamaño de letra en formularios con cuadrícula')
+    ap.add_argument('--dpi-tikz', type=int, default=300, help='resolución de las figuras TikZ (mín. 200)')
+    ap.add_argument('--dpi-pdf', type=int, default=150, help='resolución de las páginas de \\includepdf')
+    ap.add_argument('--latex-rapido', action='store_true',
+                    help='una sola pasada de pdflatex -draftmode en lugar de latexmk (basta para el .aux)')
     ap.add_argument('--pdf', nargs='?', const='auto', help='exporta también un PDF con LibreOffice')
     ap.add_argument('--sin-paginas', action='store_true',
                     help='no usa LibreOffice para escribir los números de página del índice')
     args = ap.parse_args()
 
     t0 = time.time()
+    DIR_TESIS = Path(args.dir_tesis).resolve()
     trabajo = Path(args.trabajo).resolve()
     trabajo.mkdir(parents=True, exist_ok=True)
     avisos = []
@@ -90,13 +99,15 @@ def main():
             ruta_aux, origen = DIR_TESIS / 'build' / 'tesis.aux', '05_Tesis_LaTeX/build/tesis.aux'
     else:
         paso('Compilando la tesis con latexmk (carpeta temporal) para obtener el .aux...')
-        ruta_aux, origen = compilacion.compilar_tesis(DIR_TESIS, trabajo, avisos)
+        ruta_aux, origen = compilacion.compilar_tesis(DIR_TESIS, trabajo, avisos,
+                                                      usar_latexmk=not args.latex_rapido)
     paso('.aux: %s (%s)' % (ruta_aux, origen))
 
     # 2-3. LaTeX -> LaTeX para pandoc (+ figuras)
     paso('Aplanando y transformando la fuente LaTeX...')
     fuente = Fuente(DIR_TESIS, avisos=avisos).cargar()
-    graficos = Graficos(DIR_TESIS, trabajo, fuente, avisos)
+    graficos = Graficos(DIR_TESIS, trabajo, fuente, avisos, dpi_tikz=max(200, args.dpi_tikz),
+                        dpi_pdf=args.dpi_pdf)
     aux = leer_aux(ruta_aux) if ruta_aux else {}
     tr = Transformador(fuente, graficos, avisos, aux)
     latex = tr.procesar()
@@ -130,8 +141,9 @@ def main():
         print(r.stderr)
         sys.exit('pandoc terminó con error.')
     advertencias_pandoc = [l for l in r.stderr.splitlines() if l.strip()]
-    sin_cita = sorted(set(l.split('citation')[-1].strip() for l in advertencias_pandoc
-                          if 'Citeproc: citation' in l and 'not found' in l))
+    import re as _re
+    sin_cita = sorted(set(m.group(1) for l in advertencias_pandoc
+                          for m in [_re.search(r'citation (\S+) not found', l)] if m))
 
     # 5. posproceso
     paso('Posproceso con python-docx...')
@@ -151,6 +163,8 @@ def main():
         if paginas and not args.sin_paginas:
             n = libreoffice.escribir_paginas(salida, paginas)
             paso('Números de página escritos en %d entradas de los índices.' % n)
+
+    graficos.limpiar_cache()
 
     # informe
     informe = []
@@ -179,6 +193,8 @@ def main():
         informe.append('Advertencias de pandoc: %s' % ' | '.join(otros[:10]))
     for a in avisos:
         informe.append('Aviso: %s' % a)
+    for a in modulo_latex.ERRORES:
+        informe.append('Aviso (conversión): %s' % a)
     if graficos.registro:
         informe.append('Errores TikZ: %s' % ' | '.join(graficos.registro))
     texto = '\n'.join(informe)

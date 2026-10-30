@@ -54,6 +54,7 @@ class Graficos:
         self.dpi_pdf = dpi_pdf
         self.dpi_img = dpi_img
         self.registro = []
+        self.usados = set()
 
     # ------------------------------------------------------------------
     def resolver(self, nombre, extensiones=('.pdf', '.png', '.jpg', '.jpeg', '.PDF', '.PNG', '.JPG')):
@@ -84,11 +85,31 @@ class Graficos:
             op[k.strip()] = v if _ else True
         return op
 
-    def _pdf_a_png(self, ruta_pdf, pagina, dpi, prefijo):
+    @staticmethod
+    def _recortar_blanco(png, ancho_cm, alto_cm, margen=0.015):
+        """Recorta los márgenes blancos de un plano (deja un 1,5 % de margen)."""
+        from PIL import ImageChops, ImageOps
+        with Image.open(png) as im:
+            gris = ImageOps.invert(im.convert('L'))
+            gris = gris.point(lambda v: 255 if v > 25 else 0)
+            caja = gris.getbbox()
+            if not caja:
+                return ancho_cm, alto_cm
+            w, h = im.size
+            mx, my = int(w * margen), int(h * margen)
+            caja = (max(0, caja[0] - mx), max(0, caja[1] - my), min(w, caja[2] + mx), min(h, caja[3] + my))
+            if (caja[2] - caja[0]) * (caja[3] - caja[1]) > 0.92 * w * h:
+                return ancho_cm, alto_cm
+            im.crop(caja).save(png)
+        return ancho_cm * (caja[2] - caja[0]) / w, alto_cm * (caja[3] - caja[1]) / h
+
+    def _pdf_a_png(self, ruta_pdf, pagina, dpi, prefijo, recortar=False):
         st = ruta_pdf.stat()
-        clave = _hash(VERSION_CACHE, str(ruta_pdf), str(st.st_size), str(int(st.st_mtime)), str(pagina), str(dpi))
+        clave = _hash(VERSION_CACHE, str(ruta_pdf), str(st.st_size), str(int(st.st_mtime)), str(pagina), str(dpi),
+                      str(recortar))
         destino = self.dir / ('%s_%s.png' % (prefijo, clave))
         meta = destino.with_suffix('.json')
+        self.usados.update({destino.name, meta.name})
         if destino.is_file() and meta.is_file():
             return destino, json.loads(meta.read_text())
         doc = pymupdf.open(str(ruta_pdf))
@@ -98,8 +119,10 @@ class Graficos:
         pg = doc[pagina - 1]
         pix = pg.get_pixmap(dpi=dpi, alpha=False)
         pix.save(str(destino))
-        info = {'ancho_cm': pg.rect.width / 72 * 2.54, 'alto_cm': pg.rect.height / 72 * 2.54,
-                'px': [pix.width, pix.height]}
+        ancho_cm, alto_cm = pg.rect.width / 72 * 2.54, pg.rect.height / 72 * 2.54
+        if recortar:
+            ancho_cm, alto_cm = self._recortar_blanco(destino, ancho_cm, alto_cm)
+        info = {'ancho_cm': ancho_cm, 'alto_cm': alto_cm, 'px': [pix.width, pix.height]}
         meta.write_text(json.dumps(info))
         doc.close()
         return destino, info
@@ -127,6 +150,7 @@ class Graficos:
                 nat_h = im.height / float(dpi) * 2.54
             if ruta.suffix.lower() not in ('.png', '.jpg', '.jpeg'):
                 destino = self.dir / ('graf_%s.png' % _hash(str(ruta)))
+                self.usados.add(destino.name)
                 with Image.open(ruta) as im:
                     im.convert('RGB').save(destino)
                 png = destino
@@ -135,6 +159,7 @@ class Graficos:
             try:
                 a = float(angulo)
                 destino = self.dir / ('rot_%s.png' % _hash(str(png), str(a)))
+                self.usados.add(destino.name)
                 if not destino.is_file():
                     with Image.open(png) as im:
                         im.rotate(a, expand=True, fillcolor='white').save(destino)
@@ -183,7 +208,7 @@ class Graficos:
                 paginas.append(int(parte))
         res = []
         for p in paginas:
-            png, info = self._pdf_a_png(ruta, p, self.dpi_pdf, 'pdfpag')
+            png, info = self._pdf_a_png(ruta, p, self.dpi_pdf, 'pdfpag', recortar=True)
             if not png:
                 self.avisos.append('La página %d de %s no existe.' % (p, ruta.name))
                 continue
@@ -234,6 +259,7 @@ class Graficos:
         for k, clave in enumerate(claves):
             png = self.dir_tikz / ('tikz_%s.png' % clave)
             meta = png.with_suffix('.json')
+            self.usados.update({png.name, meta.name})
             if png.is_file() and meta.is_file():
                 info = json.loads(meta.read_text())
                 resultados[k] = (str(png), info['ancho_cm'], info['alto_cm'])
@@ -266,3 +292,13 @@ class Graficos:
                     self.avisos.append('No se pudo compilar la figura TikZ n.º %d (ver %s).'
                                        % (k + 1, self.dir_tikz / ('figura_tikz_%d.log' % (k + 1))))
         return resultados
+
+    def limpiar_cache(self):
+        """Borra de la caché las imágenes que ya no usa la tesis (versiones anteriores)."""
+        n = 0
+        for carpeta, prefijos in ((self.dir, ('graf_', 'pdfpag_', 'rot_')), (self.dir_tikz, ('tikz_',))):
+            for f in carpeta.iterdir():
+                if f.name.startswith(prefijos) and f.name not in self.usados:
+                    f.unlink()
+                    n += 1
+        return n

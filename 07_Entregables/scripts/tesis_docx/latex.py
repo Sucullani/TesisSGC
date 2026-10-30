@@ -16,6 +16,7 @@ import re
 from pathlib import Path
 
 ANCHO_UTIL_CM = 16.51          # 21,59 cm - 2 x 2,54 cm
+ERRORES = []                   # problemas no fatales de la transformación (se informan al final)
 ALTO_UTIL_CM = 22.86           # 27,94 cm - 2 x 2,54 cm
 
 # --------------------------------------------------------------------------
@@ -160,7 +161,11 @@ def reemplazar_comando(s, nombre, funcion, n_obl=1, n_opc=0, estrella=False):
             salida.append(s[pos:m.end()])
             pos = m.end()
             continue
-        nuevo = funcion(opc, obl, bool(m.group(1)))
+        try:
+            nuevo = funcion(opc, obl, bool(m.group(1)))
+        except Exception as e:      # un comando mal formado no detiene la conversión
+            ERRORES.append('No se pudo convertir \\%s (%s: %s); se deja sin cambios.' % (nombre, type(e).__name__, e))
+            nuevo = None
         salida.append(s[pos:m.start()])
         salida.append(s[m.start():fin] if nuevo is None else nuevo)
         pos = fin
@@ -216,7 +221,12 @@ def transformar_entornos(s, nombre, funcion):
         ib, fb, ie, fe = r
         real = re.match(r'\\begin\{([^}]*)\}', s[ib:fb]).group(1)
         salida.append(s[pos:ib])
-        salida.append(funcion(real, s[fb:ie]))
+        try:
+            salida.append(funcion(real, s[fb:ie]))
+        except Exception as e:      # un entorno mal formado no detiene la conversión
+            ERRORES.append('No se pudo convertir el entorno %s (%s: %s) cerca de «%s»; se deja sin cambios.'
+                           % (real, type(e).__name__, e, texto_plano(s[fb:fb + 80])))
+            salida.append(s[ib:fe])
         pos = fe
     salida.append(s[pos:])
     return ''.join(salida)
@@ -347,10 +357,31 @@ def texto_plano(latex):
     return t.strip()
 
 
+_ANCHOS_TNR = {}
+for _c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÑÜ':
+    _ANCHOS_TNR[_c] = 0.70
+for _c in 'IJ':
+    _ANCHOS_TNR[_c] = 0.38
+for _c in 'MW':
+    _ANCHOS_TNR[_c] = 0.92
+for _c in 'abcdeghknopquvxyzáéóúñü':
+    _ANCHOS_TNR[_c] = 0.50
+for _c in 'fijlrstí':
+    _ANCHOS_TNR[_c] = 0.31
+for _c in 'mw':
+    _ANCHOS_TNR[_c] = 0.75
+for _c in '0123456789':
+    _ANCHOS_TNR[_c] = 0.50
+for _c in ' .,;:\'’!|':
+    _ANCHOS_TNR[_c] = 0.26
+
+
 def ancho_texto_cm(txt, pt=12.0, negrita=False):
-    """Ancho aproximado de un texto en Times New Roman."""
-    factor = 0.50 if negrita else 0.47     # ancho medio de un carácter en em
-    return len(txt) * factor * pt * 2.54 / 72.0
+    """Ancho aproximado de un texto en Times New Roman (anchos medios por tipo de carácter)."""
+    em = sum(_ANCHOS_TNR.get(c, 0.55) for c in txt)
+    if negrita:
+        em *= 1.08
+    return em * pt * 2.54 / 72.0
 
 
 # --------------------------------------------------------------------------
@@ -821,7 +852,7 @@ class Transformador:
                 if c != '{':
                     i += 1
                     continue
-                antes = s[:i].rstrip(' \t')
+                antes = s[max(0, i - 120):i].rstrip(' \t')
                 es_argumento = bool(re.search(r'(\\[A-Za-z@]+\*?|[\]}^_=]|\\begin\{[^}]*\})$', antes))
                 try:
                     contenido, fin = leer_grupo(s, i)
@@ -880,9 +911,20 @@ class Transformador:
             while k < len(cuerpo) and cuerpo[k] == '[':
                 _, k = leer_opcional(cuerpo, k)
                 k = saltar_blancos(cuerpo, k)
+            ancho = None
             if k < len(cuerpo) and cuerpo[k] == '{':
-                _, k = leer_grupo(cuerpo, k)
-            return '\n' + cuerpo[k:] + '\n'
+                arg, k = leer_grupo(cuerpo, k)
+                ancho = a_cm(arg)
+            contenido = cuerpo[k:]
+            if ancho:
+                # \linewidth dentro de la minipage = ancho de la minipage
+                def r_graf(m):
+                    return re.sub(r'([0-9]*[.,]?[0-9]*)\\(linewidth|textwidth|columnwidth|hsize)',
+                                  lambda mm: '%.3fcm' % ((float(mm.group(1).replace(',', '.'))
+                                                         if mm.group(1) not in ('', '.') else 1.0) * ancho),
+                                  m.group(0))
+                contenido = re.sub(r'\\includegraphics\*?\s*\[[^\]]*\]', r_graf, contenido)
+            return '\n' + contenido + '\n'
         s = transformar_entornos(s, r'minipage', r_minipage)
         s = transformar_entornos(s, r'adjustbox', lambda n, c: re.sub(r'^\s*\{[^}]*\}', '', c))
         s = transformar_entornos(s, r'landscape|pdflscape|subequations|samepage|flushleft|small|footnotesize',
@@ -1070,6 +1112,11 @@ class Transformador:
                     continue
                 if env in ENTORNOS_FLOTANTES_TABLA or env in ENTORNOS_FLOTANTES_FIGURA:
                     pila.append(env)
+                if env in ('longtable', 'xltabular'):
+                    # longtable hace \refstepcounter{table} al comenzar, tenga o no \caption
+                    # (por eso la tesis usa \setcounter{table}{0} tras la lista de abreviaturas)
+                    self.c['table'] += 1
+                    self.ref_actual = (self._fmt('table'), 'table', '')
                 salida.append(m.group(0))
                 pos = m.end()
             elif g['eenv']:
@@ -1097,8 +1144,10 @@ class Transformador:
                 largo = obl[0]
                 etiquetas = re.findall(r'\\label\s*\{([^{}]*)\}', largo)
                 largo = re.sub(r'\\label\s*\{[^{}]*\}', '', largo)
+                en_longtable = bool(pila) and pila[-1] in ('longtable', 'xltabular') and not g['capof']
                 if tipo_f and not estrella:
-                    self.c[tipo_f] += 1
+                    if not en_longtable:
+                        self.c[tipo_f] += 1
                     num = self._fmt(tipo_f)
                     self.ref_actual = (num, tipo_f, opc[0] if opc[0] is not None else largo)
                     marca = '⟦C:%s:%s⟧' % ('tabla' if tipo_f == 'table' else 'figura', num)
@@ -1526,6 +1575,31 @@ class Transformador:
         total = sum(anchos)
         if total > ANCHO_UTIL_CM:
             anchos = [a * ANCHO_UTIL_CM / total for a in anchos]
+        # Ninguna columna más estrecha que su palabra más larga (evita «Códi-go»)
+        minimos = [0.0] * n
+        for es_enc, filas in ((True, enc), (False, cuerpo_f)):
+            for f_ in filas:
+                j = 0
+                for celda in f_['celdas']:
+                    m = re.match(r'\\multicolumn\{(\d+)\}', celda)
+                    span = int(m.group(1)) if m else 1
+                    if span == 1 and j < n:
+                        palabras = texto_plano(celda).split()
+                        if palabras:
+                            w = max(ancho_texto_cm(p, negrita=es_enc or '\\textbf' in celda) for p in palabras)
+                            minimos[j] = max(minimos[j], min(w * 1.04, 4.0) + relleno + 0.1)
+                    j += span
+        for _ in range(4):
+            deficit = sum(max(0.0, minimos[j] - anchos[j]) for j in range(n))
+            if deficit < 0.01:
+                break
+            holgura = [max(0.0, anchos[j] - minimos[j]) for j in range(n)]
+            total_h = sum(holgura)
+            if total_h <= 0:
+                break
+            factor = min(1.0, deficit / total_h)
+            anchos = [max(anchos[j], minimos[j]) if minimos[j] > anchos[j] else anchos[j] - holgura[j] * factor
+                      for j in range(n)]
         return [round(a, 3) for a in anchos]
 
     # ------------------------------------------------------------------
@@ -1552,6 +1626,8 @@ class Transformador:
             if m:
                 escala = float(m.group(1))
             cuerpo = re.sub(r'⟦(ANCHOCM|ESCALA):[0-9.]+⟧', '', cuerpo)
+            # \ref dentro del dibujo: se resuelven aquí (la compilación aislada no tiene .aux)
+            cuerpo = self.resolver_referencias(cuerpo, faltante='??')
             codigos.append(('\\begin{tikzpicture}' + cuerpo + '\\end{tikzpicture}', ancho, escala))
             return '⟦TIKZ:%d⟧' % (len(codigos) - 1)
         s = transformar_entornos(s, r'tikzpicture', r_tikz)
@@ -1833,6 +1909,13 @@ class Transformador:
                                   % (e['nivel'], e['bm'], e['texto'], e['nivel']))
             else:
                 lista = self.lot if tipo == 'lot' else self.lof
+                # orden del documento = orden de numeración (las longtable se procesan aparte)
+                def clave(e):
+                    return [int(p) if p.isdigit() else (1000 + ord(p[0])) for p in re.split(r'[.\-]', e['num']) if p]
+                try:
+                    lista = sorted(lista, key=clave)
+                except (TypeError, ValueError, IndexError):
+                    pass
                 nombre = nombres['tablename' if tipo == 'lot' else 'figurename']
                 for e in lista:
                     partes.append('\\begin{indicefig}⟦TOCREF:%s⟧%s %s. %s\\end{indicefig}\n\n'
@@ -1854,10 +1937,10 @@ class Transformador:
             return {'num': a['num'], 'tipo': a.get('tipo'), 'titulo': a.get('titulo', '')}
         return None
 
-    def resolver_referencias(self, s):
+    def resolver_referencias(self, s, faltante=None):
         def falta(nombre):
             self.refs_faltantes.append(nombre)
-            return '\\textcolor{pendientecolor}{\\textbf{??}}'
+            return faltante if faltante is not None else '\\textcolor{pendientecolor}{\\textbf{??}}'
 
         def r_ref(o, b, e):
             res = []

@@ -453,6 +453,7 @@ class Posproceso:
 
     # ------------------------------------------------------------------
     def ejecutar(self):
+        self._preliminares = self._marcadores_preliminares()
         self.marcadores_bm()
         self.titulos()
         self.tablas()
@@ -749,14 +750,14 @@ class Posproceso:
                         ancla = nt
 
     # ------------------------------------------------------------------
-    def _campo_pageref(self, destino_bm):
+    def _campo_pageref(self, destino_bm, romano=False):
         runs = []
         for tipo in ('begin', 'instr', 'separate', 'valor', 'end'):
             r = OxmlElement('w:r')
             if tipo == 'instr':
                 it = OxmlElement('w:instrText')
                 it.set('{http://www.w3.org/XML/1998/namespace}space', 'preserve')
-                it.text = ' PAGEREF %s \\h ' % destino_bm
+                it.text = ' PAGEREF %s \\h%s ' % (destino_bm, ' \\* roman' if romano else '')
                 r.append(it)
             elif tipo == 'valor':
                 t = OxmlElement('w:t')
@@ -767,7 +768,21 @@ class Posproceso:
             runs.append(r)
         return runs
 
+    def _marcadores_preliminares(self):
+        """Marcadores (⟦BM:..⟧ y títulos) situados antes del inicio de la numeración arábiga."""
+        nombres = set()
+        for e in self.body:
+            if e.tag == qn('w:p') and re.search(r'⟦SECCION:arabic⟧', texto_p(e)):
+                return nombres
+            for t in e.iter(qn('w:t')):
+                for m in re.finditer(r'⟦BM:([A-Za-z0-9_]+)⟧', t.text or ''):
+                    nombres.add(m.group(1))
+            for b in ([e] if e.tag == qn('w:bookmarkStart') else e.iter(qn('w:bookmarkStart'))):
+                nombres.add(b.get(qn('w:name')))
+        return set()
+
     def indices(self):
+        preliminares = getattr(self, '_preliminares', set())
         for p, m in self.marcador(r'⟦TOCREF:([A-Za-z0-9_]+)⟧'):
             destino = m.group(1)
             quitar_en_texto(p, r'⟦TOCREF:[A-Za-z0-9_]+⟧')
@@ -778,7 +793,7 @@ class Posproceso:
             tab = OxmlElement('w:r')
             tab.append(OxmlElement('w:tab'))
             hl.append(tab)
-            for r in self._campo_pageref(destino):
+            for r in self._campo_pageref(destino, romano=destino in preliminares):
                 hl.append(r)
             p.append(hl)
 
@@ -974,8 +989,7 @@ class Posproceso:
             sig = e.getnext()
             if sig is None or sig.tag != qn('w:p'):
                 continue
-            if estilo_de(sig) in ('NotaAPA', 'FiguraAPA', 'Caption', 'Heading1', 'Heading2', 'Heading3',
-                                  'TOCHeading'):
+            if estilo_de(sig) in ('NotaAPA', 'FiguraAPA', 'Caption', 'Heading1', 'TOCHeading'):
                 continue
             sp = pPr(sig).find(qn('w:spacing'))
             if sp is None or not sp.get(qn('w:before')):
@@ -1002,7 +1016,19 @@ class Posproceso:
     def ajustes(self):
         ajustes = self.doc.settings.element
         if ajustes.find(qn('w:updateFields')) is None:
-            ajustes.append(el('w:updateFields', w_val='true'))
+            # posición según el esquema de settings.xml (antes de hdrShapeDefaults, compat, rsids...)
+            nuevo = el('w:updateFields', w_val='true')
+            posteriores = ('hdrShapeDefaults', 'footnotePr', 'endnotePr', 'compat', 'docVars', 'rsids',
+                           'mathPr', 'attachedSchema', 'themeFontLang', 'clrSchemeMapping',
+                           'doNotIncludeSubdocsInStats', 'doNotAutoCompressPictures', 'forceUpgrade', 'captions',
+                           'readModeInkLockDown', 'smartTagType', 'schemaLibrary', 'shapeDefaults',
+                           'doNotEmbedSmartTags', 'decimalSymbol', 'listSeparator')
+            for h in ajustes:
+                if h.tag.split('}')[-1] in posteriores:
+                    h.addprevious(nuevo)
+                    break
+            else:
+                ajustes.append(nuevo)
         props = self.doc.core_properties
         meta = self.datos.get('metadatos', {})
         props.title = meta.get('titulo', '')

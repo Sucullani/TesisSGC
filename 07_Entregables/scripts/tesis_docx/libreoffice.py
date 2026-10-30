@@ -107,6 +107,33 @@ def escribir_paginas(ruta_docx, paginas):
     """Pone el número de página calculado como valor guardado de cada PAGEREF."""
     doc = Document(str(ruta_docx))
     cambiados = 0
+    # Formato de numeración de la sección de cada marcador (romanos en las páginas preliminares)
+    body = doc.element.body
+    bloques = list(body)
+    fines = []
+    for i, e in enumerate(bloques):
+        sp = e if e.tag == qn('w:sectPr') else (e.find('.//' + qn('w:sectPr')) if e.tag == qn('w:p') else None)
+        if sp is not None:
+            pn = sp.find(qn('w:pgNumType'))
+            fines.append((i, pn.get(qn('w:fmt')) if pn is not None else 'decimal'))
+    formato = {}
+    for i, e in enumerate(bloques):
+        for b in ([e] if e.tag == qn('w:bookmarkStart') else e.iter(qn('w:bookmarkStart'))):
+            fmt = next((f for j, f in fines if j >= i), 'decimal')
+            formato[b.get(qn('w:name'))] = fmt
+
+    def romano(n):
+        vals = [(1000, 'm'), (900, 'cm'), (500, 'd'), (400, 'cd'), (100, 'c'), (90, 'xc'), (50, 'l'),
+                (40, 'xl'), (10, 'x'), (9, 'ix'), (5, 'v'), (4, 'iv'), (1, 'i')]
+        r = ''
+        for v, t in vals:
+            while n >= v:
+                r, n = r + t, n - v
+        return r
+    paginas = dict(paginas)
+    for nombre, valor in list(paginas.items()):
+        if formato.get(nombre) == 'lowerRoman' and str(valor).isdigit():
+            paginas[nombre] = romano(int(valor))
     for p in doc.element.body.iter(qn('w:p')):
         runs = list(p.iter(qn('w:r')))
         destino = None

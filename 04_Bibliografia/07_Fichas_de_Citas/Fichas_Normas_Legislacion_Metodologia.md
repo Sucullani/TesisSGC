@@ -1777,7 +1777,7 @@ Generado el 2026-10-30. Fichas verificadas: **298**. Archivo de datos: `Fichas_N
 
 ### Pendientes y advertencias
 
-1. **Claves duplicadas** con `bib/00_base.bib` (aci318_2025, hernandez2018, ds0181_2009, ds5321_2025, ds5597_2026, iso9001_2026, iso9000_2026, ibnorca9001_2026, iso10005_2018, nb997_2016, nb1225001_2017): biber conserva la primera definición; el coordinador debe dejar una sola (las de este archivo están contrastadas con los PDF).
+1. **Claves duplicadas** con `bib/00_base.bib` al generar este archivo: `ds0181_2009`, `ds5321_2025`, `ds5597_2026`, `ibnorca9001_2026`, `iso10005_2018`, `iso9000_2026`, `iso9001_2026`, `nb1225001_2017`, `nb997_2016`. Biber conserva la primera definición que carga (00_base.bib) y avisa «Duplicate entry key»; conviene dejar una sola (las de este archivo están contrastadas con los PDF: fecha completa, autor corporativo, ISBN).
 2. **NB 1225001:** ni la NBDS ni la R.M. 271/2023 la declaran obligatoria; la obligatoriedad documentada es la de la NBDS. La R.M. MOPSV 172/2020 mencionada en `Bibliografia_Recomendada.md` no está en el repositorio. Tampoco hay en él texto del D.S. 22976/1991 sobre la CBH-87.
 3. **DBC:** el modelo de 2022 fue sustituido por la R.M. 048/2024; descargar del SICOES el DBC y el contrato reales de la obra (CUCE 25-0143-00-1531493-1-1) antes de afirmar qué cláusulas rigen.
 4. **Hernández-Sampieri** no cubre Shapiro-Wilk, Monte Carlo ni V de Aiken: buscar fuentes específicas (nivel 1 o 3) para esas técnicas.
