@@ -1,35 +1,259 @@
 % =====================================================================
 %  CAPÍTULO 3. PRESENTACIÓN DE RESULTADOS Y ANÁLISIS DE LOS MISMOS
+%  Las cifras del modelo de costos y de la simulación se citan SIEMPRE con
+%  las macros de 06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo.tex
+%  y con las tablas de esa carpeta (\tablamodelo{...}); no se escriben a mano.
+%  Las cifras del diagnóstico provienen de las secciones 2.5 y 2.6.
+%  Versión oficial de la planilla de cierre: PAO N.º 3 firmada (Exp., p. 2).
 % =====================================================================
 \chapter{PRESENTACIÓN DE RESULTADOS Y ANÁLISIS DE LOS MISMOS}
 \label{cap:resultados}
 
-\guia{Según el Taller 5, los resultados se presentan en tablas y gráficos fáciles de entender. Se describen en pasado, en párrafos y sin juicios de valor, y responden a cada objetivo con la metodología de análisis definida. La interpretación y el contraste con la teoría y los antecedentes van en la sección de discusión.}
+Este capítulo presenta los resultados de la aplicación del modelo de investigación del Capítulo~\ref{cap:diseno}, en el orden de los objetivos específicos. La Sección~\ref{sec:res-diagnostico} resume el diagnóstico de la primera losa (OE1) y la Sección~\ref{sec:res-linea-base}, su línea base de desperdicio y de costo de no calidad (OE2). El producto del OE3 es el propio SGC, cuyos componentes se presentaron en la Sección~\ref{sec:diseno-sgc}; sus costos de prevención y evaluación son una entrada del escenario con SGC. Las Secciones~\ref{sec:res-determinista} y~\ref{sec:res-montecarlo} presentan los resultados del modelo de costos con los valores más probables de los parámetros y con la simulación de Monte Carlo (OE4); la Sección~\ref{sec:res-contraste}, el contraste de las hipótesis (OE5); la Sección~\ref{sec:res-sensibilidad}, el análisis de sensibilidad y los escenarios complementarios; la Sección~\ref{sec:res-conciliacion}, la magnitud de las diferencias de cantidades que habría detectado el procedimiento de conciliación; y la Sección~\ref{sec:resultados-expertos}, el estado de la validación por juicio de expertos. Conforme a la guía del Seminario de Grado, los resultados se describen en pasado y sin interpretarlos, con tablas y figuras que los complementan \parencite[diapositivas~3 y~4]{barrios2021resultados}; su interpretación y su contraste con el marco teórico y los antecedentes se reservan para la discusión (Sección~\ref{sec:discusion}). Las cifras del modelo provienen del programa del Anexo~\ref{anx:modelo} y están expresadas a precios constantes del contrato.
 
 % ---------------------------------------------------------------------
-\section{Resultados del diagnóstico y de la línea base}
-\guia{OE1 y OE2. Porcentaje de cumplimiento de la norma ISO~9001:2026 por cláusula (gráfico de barras); no conformidades por categoría (Pareto); diagrama de Ishikawa; tabla de índices de desperdicio y costo de no calidad de la primera losa por material.}
+\section{Resultados del diagnóstico de la primera losa}
+\label{sec:res-diagnostico}
+
+La lista de verificación C.1, aplicada a la evidencia documental de la primera losa, dio un cumplimiento global del 19,8~\% de los 48 requisitos aplicables de la norma ISO~9001:2026, con 9,5 puntos de 48 posibles. Ningún requisito se cumplió plenamente: 19 se cumplieron de forma parcial y 29 no dejaron evidencia de cumplimiento. Por cláusula, el cumplimiento varió entre el 10,0~\% de la mejora y el 25,0~\% del contexto, del apoyo y de la evaluación del desempeño; la operación, que reúne 14 requisitos, quedó en el 17,9~\%, con 9 requisitos sin cumplir (Tabla~\ref{tab:brechas-iso} y Figura~\ref{fig:brechas-iso}). Todas las cláusulas se ubicaron en el rango «deficiente o no implementado», de 0 a 25~\%, de la escala de \textcite[p.~42]{mamanicalsina2025}.
+
+El análisis documental identificó 22 no conformidades respecto de la norma, del contrato, de las especificaciones técnicas y de la normativa del hormigón (Tabla~\ref{tab:nc}). La medición y la gestión reunieron seis cada una, el 54,5~\% del total; les siguieron los materiales, con cuatro, el método, con tres, la mano de obra, con dos, y el medio ambiente, con una, y no se identificaron no conformidades atribuibles a la maquinaria (Figura~\ref{fig:pareto-nc}). Las no conformidades se agruparon en nueve brechas, B1 a B9, que orientaron el diseño del SGC (Sección~\ref{sec:diseno-sgc}). El diagrama de Ishikawa identificó como causa raíz común la falta de un sistema de gestión de la calidad del ítem: el control se confió a la verificación puntual de la Supervisión antes de cada vaciado, sin criterios escritos, registros ni seguimiento (Figura~\ref{fig:ishikawa}).
+
+La Tabla~\ref{tab:sintesis-diagnostico} reúne los demás indicadores del diagnóstico. Todos ellos describen la ausencia de dos tipos de registro: los que debían demostrar la conformidad del producto antes de pagarlo, como los ensayos del hormigón de la losa y los certificados de los materiales previos a su colocación, y los que debían respaldar las cantidades medidas y pagadas, como los registros de consumo, las planillas de armado del acero y la conciliación entre documentos. Por esa razón, de los cuatro materiales de la losa solo dos tuvieron un dato documental para la línea base (Sección~\ref{sec:res-linea-base}).
+
+\begin{table}[H]
+\caption{Síntesis de los resultados del diagnóstico de la primera losa}
+\label{tab:sintesis-diagnostico}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{5.2cm}LP{2.9cm}@{}}
+\toprule
+\textbf{Indicador} & \textbf{Resultado} & \textbf{Detalle} \\
+\midrule
+Cumplimiento global de los requisitos de ISO~9001:2026 & 19,8~\% (9,5 puntos en 48 requisitos aplicables) & Tabla~\ref{tab:brechas-iso} \\
+Requisitos cumplidos, cumplidos en parte y no cumplidos & 0, 19 y 29 & Tabla~\ref{tab:lista-iso-resumen} \\
+Cláusulas con menor cumplimiento & Mejora, 10,0~\%; planificación, 12,5~\%; operación, 17,9~\% & Tabla~\ref{tab:brechas-iso} \\
+No conformidades identificadas & 22: medición, 6; gestión, 6; materiales, 4; método, 3; mano de obra, 2; medio ambiente, 1 & Tabla~\ref{tab:nc} y Figura~\ref{fig:pareto-nc} \\
+Ensayos de resistencia del hormigón de la losa & Ninguno; el criterio de superficie del ACI~318-25 exigía al menos 3 muestras & Tabla~\ref{tab:probetas} \\
+Certificación de la losa para pago & 08/12/2025, antes del 26/12/2025, primera fecha en que su hormigón podía tener 28 días & Sección~\ref{sec:analisis-documental} \\
+No conformidades, rechazos o retrabajos asentados en el Libro de Órdenes & 0 en 24 asientos; 8 de 8 vaciados autorizados el mismo día de la solicitud & Tabla~\ref{tab:libro-ordenes} \\
+Certificados de materiales anteriores al armado de la losa & Ninguno; sin certificados de las barras de 6 y 10~mm & Sección~\ref{sec:analisis-documental} \\
+Remisiones, kardex o vales de los materiales de la losa & Ninguno & Sección~\ref{sec:analisis-documental} \\
+Cifras distintas del acero acumulado del ítem~8 & Tres en las planillas (52.424,65; 50.561,84 y 50.509,49~kg) y una cuarta en el cómputo de cierre (50.509,23~kg) & Tabla~\ref{tab:acero-grupos} \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con base en el diagnóstico de la Sección~\ref{sec:diagnostico}, donde se citan las fuentes documentales de cada dato.}
+\end{table}
 
 % ---------------------------------------------------------------------
-\section{Resultados de la aplicación del SGC en el control de materiales}
-\guia{OE4. Índice de desperdicio por material y por paño en la segunda losa, comparado con la línea base (tabla y gráfico de barras agrupadas). Porcentaje de lotes conformes y de paños liberados sin observaciones.}
+\section{Línea base de desperdicio y de costo de no calidad}
+\label{sec:res-linea-base}
+
+Las cantidades teóricas de la primera losa, calculadas paño por paño con los planos 01 a 03, fueron de \QteoVig{}~m de viguetas, \QteoEps{} piezas de complemento de EPS, \QteoHor{}~\mtres{} de hormigón y \QteoAce{}~kg de acero por \mdos{} (Tabla~\ref{tab:cantidades-teoricas}). Solo dos materiales tuvieron una cantidad documentada con la cual compararlas (Tabla~\ref{tab:linea-base}). Del EPS se entregaron 2.350 piezas, es decir, 2,117 piezas por \mdos{}, y su índice de desperdicio resultó de \IDMsinEps{}; con los otros supuestos de cálculo de las piezas teóricas, el índice varió entre 3,4 y 5,9~\%. Del acero de la losa se pagaron 4.171,18~kg en el ítem~8, es decir, 3,76~kg/\mdos{}, un \IDMsinAce{} más que la cantidad teórica; con los otros supuestos sobre los nervios y los negativos, la diferencia varió entre 9,2 y 38,3~\%. Como esa cantidad es la pagada y no la consumida, el índice del acero se usó como una aproximación de su desperdicio. Para las viguetas y el hormigón no existieron notas de entrega, remisiones ni volúmenes por vaciado, por lo que su índice no pudo medirse; el modelo adoptó para ellos desperdicios más probables de \IDMsinVig{}, supuesto por el autor, y de \IDMsinHor{}, tomado de la literatura (Tabla~\ref{tab:parametros-linea-base}).
+
+Los materiales se valoraron con el análisis de precios unitarios de referencia, cuyos factores de calibración al precio del contrato fueron \KappaTrece{} para el ítem~13 y \KappaAcero{} para el acero (Anexo~\ref{anx:apu}). El costo teórico de los materiales resultó de Bs~\CMteo/\mdos{}: Bs~\CostoVig{} de viguetas, Bs~\CostoEps{} de EPS, Bs~\CostoHor{} de hormigón y Bs~\CostoAce{} de acero, dentro de un costo directo teórico de Bs~\CDteo/\mdos{}. Con los valores más probables de los parámetros, el índice de desperdicio ponderado por el costo de los materiales fue de \IDMsinDet{}, y el costo de no calidad de la línea base, de Bs~\CNCsinDet/\mdos{}, el \CNCsinDetPct{} del costo unitario sin SGC. El acero y los retrabajos fueron los componentes de mayor costo, seguidos del hormigón, mientras que las viguetas y el EPS tuvieron los menores (Figura~\ref{fig:cnc-componente}).
+
+Al incorporar la incertidumbre de los parámetros, el índice de desperdicio ponderado medio de la línea base fue de \IDMsinMedia{} y su costo de no calidad medio, de Bs~\CNCsinMedia/\mdos{} (Tabla~\ref{tab:montecarlo}). Ambas medias superaron a los valores más probables porque las distribuciones del desperdicio de hormigón y de la fracción de retrabajo tienen su moda más cerca del mínimo que del máximo. La Tabla~\ref{tab:idm-material} presenta el índice de cada material: el hormigón y el acero tuvieron los índices más altos de la línea base, tanto en su valor más probable como en su media simulada.
+
+\begin{table}[H]
+\caption{Índice de desperdicio por material sin SGC y con SGC}
+\label{tab:idm-material}
+% La tabla generada tiene encabezados largos en columnas «r»: se reduce para
+% que quepa en el ancho del texto (en Word, la conversión quita la reducción).
+\resizebox{\linewidth}{!}{\begin{minipage}{1.33\linewidth}\setlength{\tabcolsep}{4pt}\tablamodelo{tab_idm_por_material}\end{minipage}}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}). Moda: valor más probable de la distribución triangular; media MC: promedio de los \MCiter{} escenarios de la simulación de Monte Carlo. El IDM sin SGC del plastoformo (EPS) y del acero es el documentado en la primera losa; el de las viguetas es un supuesto del autor y el del hormigón proviene de la literatura (Tabla~\ref{tab:parametros-linea-base}). IDM con SGC = IDM sin SGC $\times$ (1 $-$ eficacia), según la ecuación~\eqref{eq:efecto-sgc}; las fuentes de las eficacias se detallan en el Anexo~\ref{anx:modelo}.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\caption{Costo de no calidad por componente sin SGC y con SGC, con los valores más probables de los parámetros}
+\label{fig:cnc-componente}
+\includegraphics[width=0.92\linewidth]{fig_cnc_por_componente}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}). El costo de cada material es su costo teórico por \mdos{} multiplicado por su índice de desperdicio (primer término de la ecuación~\ref{eq:cnc-modelo}); el de los retrabajos es la fracción $\rho$ del costo directo teórico. Precios constantes del contrato.}
+\end{figure}
 
 % ---------------------------------------------------------------------
-\section{Resultados del control de calidad de materiales y del hormigón}
-\guia{Resultados de asentamiento y de resistencia a compresión a 28 días de la losa: media, desviación estándar, coeficiente de variación y cumplimiento de los criterios de aceptación (sección~\ref{sec:contraste} y Tabla~\ref{tab:ppi}). Comparar con los resultados de la línea base (Tabla~\ref{tab:probetas}).}
+\section{Resultado del modelo con los valores más probables}
+\label{sec:res-determinista}
+
+Con los valores más probables de todos los parámetros, el costo unitario de ejecución bajó de Bs~\CUsinDet/\mdos{} sin SGC a Bs~\CUconDet/\mdos{} con SGC, una reducción relativa de \rDet{} (Tabla~\ref{tab:resultado-determinista}). El SGC redujo el costo de no calidad de Bs~\CNCsinDet{} a Bs~\CNCconDet/\mdos{} y el índice de desperdicio ponderado de \IDMsinDet{} a \IDMconDet{}, y añadió un costo de prevención y evaluación de Bs~\CCconDet/\mdos{}. Cada componente del costo de no calidad disminuyó en la proporción de su eficacia más probable (Figura~\ref{fig:cnc-componente}). En el saldo de 2.234,60~\mdos{}, la diferencia de costo unitario equivalió a un ahorro de Bs~\AhorroDet{}. En ambos escenarios, la suma del costo directo teórico, el costo de no calidad y el costo de la calidad reprodujo el costo unitario calculado por el programa (ecuación~\ref{eq:cu-modelo}); esa comprobación manual es la verificación del modelo prevista en la Sección~\ref{sec:validacion}.
+
+\begin{table}[H]
+\caption{Resultado del modelo de costos con los valores más probables de los parámetros}
+\label{tab:resultado-determinista}
+\begin{tabularx}{\linewidth}{@{}Lrr@{}}
+\toprule
+\textbf{Indicador} & \textbf{Sin SGC (control)} & \textbf{Con SGC (tratamiento)} \\
+\midrule
+Costo directo teórico, $CD_{teo}$ (Bs/\mdos{}) & \CDteo & \CDteo \\
+Costo de no calidad, $CNC$ (Bs/\mdos{}) & \CNCsinDet & \CNCconDet \\
+Costo de no calidad en porcentaje del costo unitario & \CNCsinDetPct & \CNCconDetPct \\
+Costo de la calidad del SGC, $CC$ (Bs/\mdos{}) & 0,00 & \CCconDet \\
+Costo de la calidad en porcentaje del costo unitario & 0,00~\% & \CCconDetPct \\
+Costo unitario de ejecución, $CU$ (Bs/\mdos{}) & \CUsinDet & \CUconDet \\
+Índice de desperdicio ponderado, $IDM$ & \IDMsinDet & \IDMconDet \\
+Reducción relativa del costo unitario, $r$ & --- & \rDet \\
+Ahorro en el saldo de 2.234,60~\mdos{} (Bs) & --- & \AhorroDet \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}), con las modas de las distribuciones triangulares y a precios constantes del contrato. $CU = CD_{teo} + CNC + CC$ (ecuación~\ref{eq:cu-modelo}); $r$ según la ecuación~\eqref{eq:r-modelo}; ahorro $= (CU_{\text{sin}} - CU_{\text{con}}) \times 2.234{,}60$~\mdos{}. Los porcentajes del costo de no calidad y del costo de la calidad se refieren al costo unitario de cada escenario. El escenario de control no incluye costos de prevención ni de evaluación, porque en la primera losa no se registraron.}
+\end{table}
 
 % ---------------------------------------------------------------------
-\section{Resultados de costos}
-\guia{Costo unitario con y sin SGC a precios constantes (ecuación~\ref{eq:cu}), comparado con el precio contractual de Bs~215,68/\mdos{}. Costos de la calidad y de no calidad (ecuación~\ref{eq:cnc}). Ahorro proyectado en el saldo de 2.234,60~\mdos{}.}
+\section{Resultados de la simulación de Monte Carlo}
+\label{sec:res-montecarlo}
+
+La simulación generó \MCiter{} escenarios con la semilla \MCsemilla{}. En cada uno se muestrearon los parámetros inciertos y se calcularon el escenario de control y el de tratamiento con los mismos valores de la línea base; la Tabla~\ref{tab:montecarlo} resume los resultados. El costo unitario medio fue de Bs~\CUsinMedia/\mdos{} sin SGC y de Bs~\CUconMedia/\mdos{} con SGC. La media del escenario de control coincidió, salvo el error de muestreo, con el precio contractual de la losa usado en la calibración, de Bs~\PUlosa/\mdos{}. En la distribución acumulada, la curva del escenario con SGC quedó a la izquierda de la del escenario de control en todo su recorrido, es decir, con un costo menor para cada nivel de probabilidad (Figura~\ref{fig:acumulada}).
+
+La reducción relativa del costo unitario tuvo una media de \rMedia{}, una desviación estándar de \rDesv{} y una mediana de \rPcincuenta{}; el 90~\% central de los escenarios quedó entre \rPcinco{} y \rPnoventaycinco{} (Figura~\ref{fig:histograma}). Una pequeña parte de los escenarios tuvo una reducción negativa, en la que el SGC costó más de lo que ahorró, y una parte mínima alcanzó el umbral de la hipótesis general; sus probabilidades se presentan en la Sección~\ref{sec:res-contraste}. El error estándar de la media de $r$ al final de las iteraciones fue de \SEr{}, y su media acumulada se estabilizó mucho antes de completarlas (Figura~\ref{fig:convergencia}).
+
+El costo de no calidad medio bajó de Bs~\CNCsinMedia{} a Bs~\CNCconMedia/\mdos{}, una reducción del \CNCreduccionPct{}, a cambio de un costo de la calidad medio de Bs~\CCconMedia/\mdos{}; el índice de desperdicio ponderado medio bajó de \IDMsinMedia{} a \IDMconMedia{}. En el saldo de 2.234,60~\mdos{}, el ahorro esperado fue de Bs~\AhorroMedia{}, con un intervalo entre los percentiles 5 y 95 de Bs~\AhorroPcinco{} a Bs~\AhorroPnoventaycinco{}. El límite inferior negativo indica que en al menos el 5~\% de los escenarios el costo del SGC superó la reducción de las pérdidas y de los retrabajos.
+
+\begin{table}[H]
+\caption{Resultados de la simulación de Monte Carlo del costo de ejecución del saldo de la losa}
+\label{tab:montecarlo}
+\tablamodelo{tab_resultados_montecarlo}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}); \MCiter{} escenarios con semilla fija y precios constantes del contrato. P5, P50 y P95: percentiles 5, 50 y 95. El ahorro en el saldo es $(CU_{\text{sin}} - CU_{\text{con}}) \times 2.234{,}60$~\mdos{}; un valor negativo indica que el costo del SGC superó la reducción de las pérdidas y de los retrabajos.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\caption{Distribución de la reducción relativa del costo unitario en los escenarios simulados}
+\label{fig:histograma}
+\includegraphics[width=0.92\linewidth]{fig_histograma_reduccion}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}); \MCiter{} escenarios. La línea continua indica la media de $r$ y la discontinua, el umbral de la hipótesis general (5~\%).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{Distribución acumulada del costo unitario de ejecución sin SGC y con SGC}
+\label{fig:acumulada}
+\includegraphics[width=0.92\linewidth]{fig_acumulada_costo_unitario}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}). La línea punteada indica el precio contractual de la losa, Bs~\PUlosa/\mdos{}, que suma el precio del ítem~13 (Bs~\PUitemTrece/\mdos{}) y el del acero de la losa medido en el ítem~8 (Bs~\PUaceroLosa/\mdos{}).}
+\end{figure}
 
 % ---------------------------------------------------------------------
 \section{Contraste de hipótesis}
-\guia{Para cada hipótesis presentar: estadístico de prueba, valor $p$, decisión (se rechaza o no $H_0$) y conclusión en palabras. Incluir la prueba de normalidad.}
+\label{sec:res-contraste}
+
+Las probabilidades de la Tabla~\ref{tab:contraste-resultados} se estimaron como la proporción de los \MCiter{} escenarios en que se cumplió la condición de cada hipótesis alterna, y se compararon con el criterio de 0,95 de las reglas de decisión de la Tabla~\ref{tab:reglas-decision}, equivalente a un nivel de significancia de 0,05 en un contraste unilateral.
+
+Para la hipótesis general, la probabilidad de que la reducción del costo unitario fuera igual o mayor que el 5~\% resultó de \PHG{}, muy inferior al criterio de 0,95. La decisión fue, por tanto, «\DecHG»: con el umbral del 5~\% planteado en la hipótesis, la evaluación \emph{ex ante} no sustentó una reducción del costo unitario de esa magnitud. La reducción que se alcanzó con una probabilidad del 95~\%, es decir, el percentil 5 de $r$, fue de \rPcinco{}, prácticamente nula, y la probabilidad de que el SGC redujera el costo unitario en cualquier magnitud, $P(r > 0)$, fue de \PRpos{}.
+
+El resultado de la hipótesis general se explica por la composición del costo unitario de la línea base (Tabla~\ref{tab:resultado-determinista}). El SGC solo actúa sobre el costo de no calidad, que con los valores más probables representó el \CNCsinDetPct{} del costo unitario sin SGC; el resto es el costo directo teórico de construir la losa según los planos, que no depende del sistema. Además, el SGC tiene su propio costo, de Bs~\CCconDet/\mdos{}, el \CCconDetPct{} del costo unitario con SGC. Por eso, aun si el sistema eliminara todo el desperdicio y todos los retrabajos, es decir, con una eficacia del 100~\%, la reducción máxima teórica sería de \rMaxTeorico{}, apenas superior al umbral; alcanzar el 5~\% exige que el SGC elimine casi la totalidad de las pérdidas (Sección~\ref{sec:res-sensibilidad}).
+
+Para las hipótesis específicas, la probabilidad de que el índice de desperdicio ponderado con SGC fuera menor que el de la línea base resultó de \PHEuno{}, y la de que el costo de no calidad con SGC fuera menor que el de la línea base, de \PHEdos{}. Las decisiones fueron «\DecHEuno» para HE1 y «\DecHEdos» para HE2. Ambas probabilidades resultaron iguales a la unidad porque el modelo asigna al SGC una eficacia positiva en todos los escenarios, con un mínimo del 10~\% para cada material y para los retrabajos (Anexo~\ref{anx:modelo}). La aceptación de HE1 y HE2 es, por tanto, condicional a que el sistema se aplique en obra, condición que se examina con el escenario de SGC no aplicado (Sección~\ref{sec:res-escenarios}).
+
+\begin{table}[H]
+\caption{Contraste de las hipótesis con las reglas de decisión probabilísticas}
+\label{tab:contraste-resultados}
+\tablamodelo{tab_contraste_hipotesis}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}). Probabilidad estimada: proporción de los \MCiter{} escenarios en que se cumple la condición de la hipótesis alterna (H1); reglas de decisión de la Tabla~\ref{tab:reglas-decision}, equivalentes a un nivel de significancia de 0,05 en un contraste unilateral. H0: hipótesis nula; $IDM$: índice de desperdicio ponderado; $CNC$: costo de no calidad.}
+\end{table}
+
+% ---------------------------------------------------------------------
+\section{Sensibilidad, punto de equilibrio y escenarios complementarios}
+\label{sec:res-sensibilidad}
+
+\subsection{Sensibilidad a los parámetros del modelo}
+\label{sec:res-tornado}
+
+La Figura~\ref{fig:tornado} muestra el resultado de llevar cada parámetro a su mínimo y a su máximo, con los demás en su valor más probable. Los parámetros que más variaron la reducción del costo unitario fueron el costo del SGC, la fracción de retrabajo sin SGC y la eficacia del SGC sobre los retrabajos, seguidos de la eficacia sobre el acero y del desperdicio de hormigón de la línea base; los parámetros de las viguetas y del EPS tuvieron el menor efecto. El costo del SGC fue el único parámetro que, en uno de sus extremos, su valor máximo, volvió negativa la reducción, y ninguno alcanzó el umbral del 5~\% en su extremo favorable. La correlación de rangos de Spearman entre los valores simulados de los parámetros y $r$ identificó los mismos tres parámetros principales: la fracción de retrabajo sin SGC, la eficacia sobre los retrabajos y el costo del SGC, este último con signo negativo (archivo \texttt{resumen\_resultados.json} del modelo).
+
+\begin{figure}[H]
+\centering
+\caption{Sensibilidad de la reducción del costo unitario a cada parámetro del modelo}
+\label{fig:tornado}
+\includegraphics[width=0.78\linewidth]{fig_tornado_sensibilidad}
+\nota{Elaboración propia con el modelo de costos (Anexo~\ref{anx:modelo}). Cada barra muestra la reducción $r$ que se obtiene al llevar el parámetro a su mínimo y a su máximo, con los demás en su valor más probable. La línea continua indica el caso con los valores más probables (\rDet) y la discontinua, el umbral de la hipótesis general (5~\%). En el costo del SGC, el extremo izquierdo de la barra corresponde a su valor máximo.}
+\end{figure}
+
+\subsection{Punto de equilibrio de la eficacia del SGC}
+\label{sec:res-equilibrio}
+
+Con una eficacia uniforme, igual para todos los materiales y para los retrabajos, y con los demás parámetros en su valor más probable, el SGC compensó su propio costo, es decir, $r = 0$, con una eficacia de \KequilibrioCero{}, y alcanzó el umbral de la hipótesis general con una eficacia de \KequilibrioUmbral{}; con una eficacia del 100~\%, la reducción fue de \rMaxTeorico{}. La eficacia necesaria para alcanzar el umbral superó los máximos de todos los rangos de eficacia adoptados de la literatura, que son del 70~\% para las viguetas, el EPS y el hormigón, del 80~\% para el acero y del 89~\% para los retrabajos (Anexo~\ref{anx:modelo}).
+
+\subsection{Robustez ante variantes de los supuestos}
+\label{sec:res-variantes}
+
+La Tabla~\ref{tab:variantes} presenta el resultado del modelo con variantes de los supuestos principales. En todas ellas, la probabilidad de alcanzar el umbral del 5~\% fue prácticamente nula. Excluir del costo del SGC los ensayos del hormigón, que el contrato ya pone a cargo de la contratista, y suponer un desperdicio de hormigón y de acero más alto aumentaron ligeramente la reducción media, mientras que el rendimiento de mano de obra de \textcite[p.~151]{alcon2009}, que reduce el factor de calibración del análisis de precios unitarios, la disminuyó. Dos variantes cambiaron el balance del sistema: con una eficacia más baja, la reducción media fue prácticamente nula y el costo disminuyó solo en cerca de la mitad de los escenarios; con el costo del SGC duplicado, la reducción media fue negativa y el costo disminuyó en menos de un tercio de los escenarios.
+
+\begin{table}[H]
+\caption{Robustez del resultado ante variantes de los supuestos principales}
+\label{tab:variantes}
+\tablamodelo{tab_variantes}
+\nota{Elaboración propia con el modelo de costos y el programa \texttt{variantes.py} de la carpeta del modelo (Anexo~\ref{anx:modelo}); cada variante repite las \MCiter{} iteraciones con la misma semilla. Caso principal: parámetros del Anexo~\ref{anx:modelo}. Sin ensayos de hormigón: se excluye su costo del SGC, porque el contrato pone los ensayos a cargo de la contratista \parencite[p.~102]{uatf2025pao2}. Mano de obra según \textcite[p.~151]{alcon2009}: 1,00~h/\mdos{} de albañil y de ayudante en el análisis de precios unitarios de referencia del ítem~13, lo que reduce el factor de calibración $\kappa$ y el precio de valoración de los materiales. Eficacia más baja: la moda de cada eficacia se desplaza a la mitad de la distancia entre el mínimo y la moda original, y el máximo se iguala a la moda original. Costo del SGC duplicado: mínimo, moda y máximo de cada componente multiplicados por dos. Desperdicio más alto: la moda del desperdicio de hormigón y de acero se desplaza al punto medio entre la moda original y el máximo. La última columna es la reducción con una eficacia del 100~\%, calculada con los valores más probables.}
+\end{table}
+
+\subsection{Escenarios complementarios}
+\label{sec:res-escenarios}
+
+En el escenario de SGC no aplicado, el sistema se pagó, pero no se aplicó en obra en el \PiFalla{} de los escenarios, con una eficacia nula. La reducción media bajó a \rMediaFalla{} y la probabilidad de que el costo disminuyera, a \PRposFalla{}. En los escenarios en que el sistema no se aplicó, el desperdicio y el costo de no calidad con SGC fueron iguales a los de la línea base; como esos escenarios fueron el \PiFalla{} del total, la probabilidad de HE1 y de HE2 quedó por debajo del criterio de 0,95.
+
+El escenario con costos ocultos de no calidad añadió a la fracción de retrabajo de la línea base una fracción de fallas ocultas, como las pérdidas de tiempo, las demoras y la pérdida de productividad \parencite[p.~5418]{khadim2023}, con un máximo igual al promedio del 8,59~\% del costo total que \textcite[p.~5421]{khadim2023} estimaron en 25 proyectos de edificación; el SGC las redujo con la misma eficacia que a los retrabajos. En ese escenario, la reducción media fue de \rMediaOcultos{}, con un percentil 5 de \rPcincoOcultos{}, y la probabilidad de alcanzar el umbral del 5~\% fue de \PHGocultos{}, también inferior al criterio de 0,95.
+
+% ---------------------------------------------------------------------
+\section{Beneficio de la conciliación de cantidades}
+\label{sec:res-conciliacion}
+
+El modelo de costos mide el efecto del SGC sobre el costo de ejecutar la losa, pero no incluye el control de las cantidades medidas y pagadas, que es la función del procedimiento de conciliación PCM-04 (Sección~\ref{sec:sgc-operacion}). Para estimar la magnitud de ese beneficio, los controles de la Tabla~\ref{tab:tolerancias} se aplicaron a las diferencias de cantidades documentadas en la ejecución de la primera losa y en el cierre del contrato, y cada diferencia se valoró al precio unitario del contrato (Tabla~\ref{tab:conciliacion-magnitud}). Se trata de inconsistencias documentales que la Supervisión y la Fiscalización deben verificar con los respaldos que no formaron parte de la documentación revisada, y no de pagos indebidos confirmados.
+
+Las dos diferencias de mayor magnitud se encontraron en el cómputo de cierre de la versión digital de la planilla. En él, la línea de acero de la losa figuró como 3~$\times$~4.171,18~kg para una sola losa ejecutada: 8.342,36~kg más que en la Planilla N.\textsuperscript{o}~2, equivalentes a unos Bs~139.783 a precio contractual. En el mismo cómputo, el acero de los demás elementos bajó 10.257,78~kg sin un desglose que lo explique, de modo que el total del ítem~8 disminuyó en lugar de aumentar. La planilla de cierre firmada, que esta tesis adopta como versión oficial, descontó 1.862,81~kg del acero acumulado hasta la Planilla N.\textsuperscript{o}~2, por Bs~31.212,95, y su versión digital descontó 1.915,16~kg, por Bs~32.090,11; la diferencia entre ambas versiones fue de 52,35~kg de acero, unos Bs~877,17, además del pago de la limpieza general.
+
+El control de cuantía también habría dado una alerta sobre el acero de la losa pagado en la Planilla N.\textsuperscript{o}~2, cuya cuantía de 3,76~kg/\mdos{} superó en un 16,75~\% a la cuantía teórica de los planos, por encima de la tolerancia de $\pm 5$~\%; esa alerta habría exigido la planilla de armado, que no existió, y la definición de los nervios y de los negativos que los planos no detallan. El control del ítem de pago habría obligado, además, a definir con el análisis de precios unitarios contractual si el ítem~13 incluye el acero de la parrilla y de los negativos, como indica su especificación técnica, mientras que ese acero se pagó en el ítem~8. Fuera del acero, la excavación del ítem~4 se corrigió en $-$5,66~\mtres{} (Bs~$-$403,14) en la Planilla N.\textsuperscript{o}~2, después de haberse certificado en la N.\textsuperscript{o}~1.
+
+Ninguna de estas diferencias se detectó en la planilla del mes en que se originó: las del cómputo de cierre aparecieron más de tres meses después de pagada la primera losa, la cuantía del acero de la losa no se contrastó con los planos y la excavación del ítem~4 se corrigió en la planilla siguiente. Con el PCM-04, cada una habría generado una alerta antes de presentar la planilla correspondiente (Tabla~\ref{tab:conciliacion-acero}). El componente del SGC que realiza esta conciliación, el control de almacén y conciliación de cantidades, tiene un costo más probable de Bs~820 para todo el saldo (Anexo~\ref{anx:modelo}). Las diferencias de la Tabla~\ref{tab:conciliacion-magnitud} son de distinta naturaleza que el ahorro estimado por el modelo, porque se refieren a cantidades medidas y pagadas y no al costo de ejecutar la losa; aun así, varias de ellas superan por sí solas el ahorro esperado del SGC en todo el saldo, de Bs~\AhorroMedia{}.
+
+\begin{table}[H]
+\caption{Diferencias de cantidades documentadas y control del PCM-04 que las habría detectado}
+\label{tab:conciliacion-magnitud}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}LP{3.3cm}P{2.2cm}P{3.5cm}@{}}
+\toprule
+\textbf{Diferencia documentada} & \textbf{Magnitud} & \textbf{Valor a precio contractual (Bs)} & \textbf{Control del PCM-04 y umbral} \\
+\midrule
+Línea «losa alivianada» del cómputo de cierre, versión digital: 3~$\times$~4.171,18~kg para una sola losa ejecutada & +8.342,36~kg; cuantía de 11,28 frente a 3,76~kg/\mdos{} & 139.783,25 & Cuantía de acero de la losa: $\pm 5$~\% del valor de planos \\
+\addlinespace
+Acero de los demás elementos en el mismo cómputo, sin desglose que explique la reducción & $-$10.257,78~kg & $-$171.877,72 & Pago frente a medición y coherencia entre documentos, por elemento \\
+\addlinespace
+Descuento de acero en la planilla de cierre firmada (versión oficial) respecto del acumulado de la Planilla N.\textsuperscript{o}~2 & $-$1.862,81~kg ($-$3,55~\%) & $-$31.212,95 & Pago frente a medición: cualquier diferencia \\
+\addlinespace
+Diferencia entre la versión firmada y la versión digital de la planilla de cierre & 52,35~kg de acero y la limpieza general & 877,17 y 2.566,96 & Coherencia entre documentos: cualquier diferencia \\
+\addlinespace
+Acero de la losa pagado en la Planilla N.\textsuperscript{o}~2 frente a la cantidad teórica de los planos & +598,38~kg (+16,75~\%); 3,76 frente a 3,22~kg/\mdos{} & 10.026,36 & Cuantía de acero de la losa: $\pm 5$~\%; exige la planilla de armado \\
+\addlinespace
+Acero de la losa pagado en el ítem~8, que la especificación técnica también incluye entre los materiales del ítem~13 & 4.171,18~kg & 69.891,62 & Ítem de pago: superposición distinta de cero; se define con el APU contractual \\
+\addlinespace
+Excavación del ítem~4 certificada en la Planilla N.\textsuperscript{o}~1 y corregida en la N.\textsuperscript{o}~2 & $-$5,66~\mtres{} & $-$403,14 & Medición frente a planos: $\pm 1$~\% \\
+\addlinespace
+Acero autorizado en la tabla de tiempos de la ampliación de plazo N.\textsuperscript{o}~2 frente al contrato modificatorio & +7.797,95~kg (85.777,46 frente a 77.979,51~kg) & --- & Coherencia entre documentos: cualquier diferencia \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia (cálculos propios) con base en \textcite[pp.~16, 18--20]{uatf2025pao2}, \textcite[pp.~2, 12, 17, 25]{uatf_item13}, \textcite[hoja «Cómputos métricos», filas 375 a 541]{uatf_pao3}, \textcite[p.~3]{uatf_et} y la Tabla~\ref{tab:acero-grupos}. Controles y umbrales de la Tabla~\ref{tab:tolerancias}. El acero se valoró con el precio unitario contractual del ítem~8 (Bs~16,75584/kg), y la excavación, con el monto de su corrección. Las filas no son sumables, porque varias se refieren al mismo acero. Son inconsistencias documentales que deben verificar la Supervisión y la Fiscalización; no constituyen pagos indebidos confirmados.}
+\end{table}
 
 % ---------------------------------------------------------------------
 \section{Validación del SGC por juicio de expertos}
-\guia{Tabla con el coeficiente V de Aiken por criterio (pertinencia, claridad, suficiencia y aplicabilidad) y las observaciones de los expertos incorporadas al SGC.}
+\label{sec:resultados-expertos}
 
-% ---------------------------------------------------------------------
-\section{Discusión de resultados}
-\guia{Contrastar los resultados con los antecedentes y el marco teórico. ¿Los índices de desperdicio y la reducción de costos son coherentes con lo reportado en otras investigaciones? Explicar las coincidencias y las diferencias, las limitaciones del estudio y el alcance de la validez de los resultados.}
+La validación de contenido del SGC y de sus instrumentos se planificó con el procedimiento de la Sección~\ref{sec:validacion}. Al menos tres ingenieros civiles con experiencia en supervisión de obras, control de calidad del hormigón o gestión de la calidad deben calificar, con el formato C.8 del Anexo~\ref{anx:instrumentos}, 22 componentes del sistema ---15 componentes del diseño y 7 formatos--- en cuatro criterios: pertinencia, claridad, suficiencia y aplicabilidad, con una escala de 1 a 4. Para cada componente y criterio se calcula el coeficiente V de Aiken (ecuación~\ref{eq:aiken}); se aceptan los componentes con $V \geq 0{,}70$ y los demás se corrigen con las observaciones de los expertos, que se registran junto con su opinión sobre la aplicabilidad del sistema. Las fichas firmadas, el cálculo del coeficiente y los currículos resumidos de los expertos se incorporan al Anexo~D.
+
+Hasta el cierre de esta versión no se aplicó el formato a los expertos, por lo que no se reportan coeficientes ni observaciones. La Tabla~\ref{tab:aiken} es la plantilla de resultados que se completará con esa aplicación. La validación no modifica el contraste de las hipótesis de la Sección~\ref{sec:res-contraste}, que se basa en el modelo de costos, pero forma parte del OE5 y condiciona la aplicabilidad del SGC y de sus formatos. \pendiente{la aplicación del juicio de expertos corresponde al postulante: aplicar el formato C.8 a al menos tres expertos, calcular el coeficiente V de Aiken por componente y criterio, completar la Tabla~\ref{tab:aiken} y el Anexo~D, describir las observaciones incorporadas al SGC y actualizar la conclusión del OE5. No deben registrarse resultados sin las fichas firmadas.}
+
+\begin{table}[H]
+\caption{Coeficiente V de Aiken por criterio de validación del SGC}
+\label{tab:aiken}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}LQ{1.6cm}Q{1.7cm}Q{1.7cm}Q{3.0cm}Q{2.2cm}@{}}
+\toprule
+\textbf{Criterio} & \textbf{Jueces ($n$)} & \textbf{$V$ media} & \textbf{$V$ mínima} & \textbf{Componentes con $V < 0{,}70$} & \textbf{Decisión} \\
+\midrule
+Pertinencia & & & & & \\
+Claridad & & & & & \\
+Suficiencia & & & & & \\
+Aplicabilidad & & & & & \\
+\midrule
+Global (cuatro criterios) & & & & & \\
+\bottomrule
+\end{tabularx}
+\nota{Tabla por completar con los formatos C.8 aplicados a los expertos (Anexo~\ref{anx:instrumentos}). $V = S/[n\,(c-1)]$, con $c = 4$ categorías (ecuación~\ref{eq:aiken}); el valor global usa la suma de los cuatro criterios, $V = S/[4\,n\,(c-1)]$. $V$ media y $V$ mínima: sobre los 22 componentes evaluados. Se acepta un componente si $V \geq 0{,}70$ en cada criterio.}
+\end{table}
