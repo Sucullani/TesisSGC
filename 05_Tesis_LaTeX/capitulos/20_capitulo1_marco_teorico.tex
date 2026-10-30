@@ -96,4 +96,385 @@ La síntesis anterior permite delimitar el vacío de conocimiento en cuatro punt
 \end{enumerate}
 En consecuencia, no se encontraron estudios bolivianos que apliquen un SGC a la ejecución en obra de las losas alivianadas con viguetas pretensadas ni que cuantifiquen su efecto en el costo unitario y en el desperdicio de materiales. Esta tesis aborda ese vacío: diseña un SGC basado en la norma ISO~9001:2026 para el proceso constructivo de la losa, centrado en el control de materiales, y evalúa su efecto comparando un escenario de control (sin SGC) con uno de tratamiento (con SGC), con el cálculo explícito de la incertidumbre.
 
-% [CONTINÚA: 1.2]
+% ---------------------------------------------------------------------
+\section{La calidad en la construcción}
+\label{sec:calidad-construccion}
+
+\subsection{Conceptos de calidad, control, aseguramiento y gestión de la calidad}
+
+En el vocabulario de la familia de normas ISO~9000, la calidad es el grado en que un conjunto de características inherentes de un objeto cumple con los requisitos, y un requisito es una necesidad o expectativa establecida, generalmente implícita u obligatoria \parencite{iso9000_2026}. Las tesis del repositorio recogen estas definiciones en su versión de 2015 \parencite[pp.~21--22]{mamanicalsina2025}. La definición es relativa: no existe una calidad absoluta, sino conformidad con requisitos definidos. Por eso se acerca a la de Crosby, «la conformidad con los requisitos», más que a la de Juran, «la aptitud para el uso», que pone el acento en el usuario \parencite[pp.~24, 31]{cepeda2017}. En una obra, los requisitos están en los documentos de construcción (planos, especificaciones técnicas y normas referidas), y la inspección consiste en observar, verificar y documentar la conformidad de los materiales y los trabajos con esos documentos \parencite[pp.~39, 43]{aci318_2025}. En la losa del Edificio de Posgrado son requisitos, por ejemplo, un hormigón de 250~kg/\cmdos{} con al menos 400~kg/\mtres{} de cemento, complementos de 100~$\times$~50~$\times$~20~cm y viguetas con certificación de IBNORCA e ISO \parencite[p.~3]{uatf_et}. El incumplimiento de un requisito es una no conformidad \parencite[p.~21]{mamanicalsina2025}.
+
+A partir de esas definiciones se distinguen cuatro conceptos que van de lo particular a lo general \parencite{iso9000_2026}:
+\begin{itemize}
+  \item El \textbf{control de la calidad} es la parte de la gestión de la calidad orientada a cumplir los requisitos. Comprende la inspección, los ensayos y la decisión de aceptar o rechazar. Actúa sobre el producto ya elaborado: detecta, pero no previene.
+  \item El \textbf{aseguramiento de la calidad} es la parte orientada a dar confianza en que se cumplirán los requisitos. Consiste en acciones planificadas, sistemáticas y demostrables dentro del sistema de la calidad \parencite[p.~21]{alfaro2011}. Es un control preventivo, que busca la certeza anticipada de que los materiales son los indicados y cumplen las normas \parencite[p.~60]{cajias2023}.
+  \item La \textbf{gestión de la calidad} comprende la política y los objetivos de la calidad y los procesos para alcanzarlos mediante la planificación, el aseguramiento, el control y la mejora de la calidad.
+  \item El \textbf{sistema de gestión de la calidad} (SGC) es la parte del sistema de gestión de una organización que establece la política, los objetivos y los procesos para lograr resultados respecto de la calidad.
+\end{itemize}
+
+La diferencia entre control y aseguramiento se aprecia en el hormigón de una losa. Romper probetas a los 28 días es control: confirma o no la resistencia cuando el hormigón ya está colocado. Aprobar la dosificación antes de usarla, exigir que el muestreo lo haga un técnico calificado y no autorizar el vaciado hasta verificar el armado son acciones de aseguramiento, porque dan confianza antes de que el error ocurra. La gestión de la calidad integra ambas cosas con la planificación y la mejora.
+
+\subsection{Evolución del enfoque de la calidad}
+
+La forma de entender la calidad pasó de la inspección del producto terminado a la gestión de todo el sistema (Tabla~\ref{tab:evolucion}). Según \textcite[p.~9]{alfaro2011}, en la producción en masa de inicios del siglo~XX la calidad se buscó mediante la inspección final: se separaban los productos aceptables de los defectuosos al final del proceso y estos se rehacían o se desechaban, con el consiguiente aumento del costo. Entre 1920 y 1940 el control de la calidad se convirtió en una función de ingeniería, y en 1924 Walter Shewhart introdujo en la Western Electric la primera carta de control, base del control estadístico de procesos \parencite[pp.~11--12]{aguilar2016}. La Segunda Guerra Mundial difundió estas técnicas, y en 1946 se fundaron la ASQC en Estados Unidos y la JUSE en Japón \parencite[p.~14]{alfaro2011}.
+
+En la posguerra, Deming presentó en Japón un ciclo de mejora de cuatro etapas, que hoy se conoce como planificar, hacer, verificar y actuar (PHVA), y propuso dejar de depender de la inspección masiva para lograr la calidad \parencite[pp.~14, 17--18]{aguilar2016}. Juran organizó la gestión de la calidad en tres procesos, la planificación, el control y la mejora, conocidos como su trilogía \parencite[p.~19]{aguilar2016}. Feigenbaum formuló el control total de la calidad, según el cual la calidad se controla en todas las etapas, desde el diseño hasta la venta; hasta entonces, los esfuerzos se habían dirigido a corregir y no a prevenir \parencite[p.~14]{alfaro2011}. Crosby definió la calidad como conformidad con los requisitos, propuso la meta de cero defectos y sostuvo que siempre es más barato hacer bien las cosas la primera vez y que la medida del desempeño es el costo de la calidad \parencite[pp.~29--30]{cepeda2017}; su modelo de costos de conformidad y de no conformidad equivale al de prevención, evaluación y fallas \parencite[p.~47]{graciavillar2007}.
+
+La normalización llegó después. La ISO, fundada en 1947, creó en 1979 el comité técnico TC~176 y publicó en 1987 la serie ISO~9000, cuyas normas ISO~9001, 9002 y 9003 eran modelos contractuales de aseguramiento de la calidad entre cliente y proveedor \parencite[pp.~15--16]{alfaro2011}. La revisión del año 2000 pasó del aseguramiento a la gestión de la calidad, basada en principios y en el enfoque a procesos \parencite[pp.~19--20]{alfaro2011}. Las ediciones de 2008 y 2015 mantuvieron esa orientación \parencite[p.~14]{zurita2024}, y la de 2015 incorporó el enfoque basado en riesgos y la estructura de alto nivel común a las normas de sistemas de gestión \parencite[p.~20]{mamanicalsina2025}. La edición vigente es la ISO~9001:2026 (sección~\ref{sec:iso2026}).
+
+\begin{table}[H]
+\caption{Etapas de la evolución del enfoque de la calidad}
+\label{tab:evolucion}
+\begin{tabularx}{\linewidth}{@{}P{2.9cm}P{3.6cm}P{3.9cm}L@{}}
+\toprule
+\textbf{Etapa} & \textbf{Enfoque} & \textbf{Aportes representativos} & \textbf{Lectura en la ejecución de una losa} \\
+\midrule
+Inspección final (inicios del siglo~XX) & Separar lo conforme de lo defectuoso al final del proceso & Departamentos de inspección; producto rehecho o desechado & Revisión visual de la losa terminada: el defecto se descubre cuando ya está incorporado \\
+\addlinespace
+Control estadístico (1920--1950) & Controlar la variabilidad del proceso con datos & Carta de control de Shewhart (1924) & Aceptación del hormigón con criterios estadísticos por vaciado \\
+\addlinespace
+Control total y aseguramiento (1950--1980) & Prevenir en todas las etapas y dar confianza al cliente & Ciclo PHVA (Deming), trilogía (Juran), control total (Feigenbaum), cero defectos y costo de la calidad (Crosby) & Recepción de materiales, plan de la calidad y puntos de espera antes del vaciado \\
+\addlinespace
+Normalización del aseguramiento (1987--2000) & Modelos contractuales de aseguramiento entre cliente y proveedor & Serie ISO~9000 de 1987 y 1994 & Exigencia contractual de certificados de calidad y de ensayos \\
+\addlinespace
+Gestión de la calidad (2000 en adelante) & Sistema basado en principios, procesos, riesgos y mejora continua & ISO~9001:2000, 2008, 2015 y 2026 & SGC del proceso constructivo, con indicadores, no conformidades y mejora de una losa a la siguiente \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en \textcite[pp.~9--20]{alfaro2011}, \textcite[pp.~11--19]{aguilar2016}, \textcite[pp.~26--31]{cepeda2017} y \textcite[p.~14]{zurita2024}. La última columna es de elaboración propia.}
+\end{table}
+
+En la construcción esta evolución está incompleta. \textcite[p.~11]{pons2014} señala que el modelo tradicional de gestión de proyectos mantiene un control de calidad ineficaz, basado en métodos estadísticos que están lejos de garantizar la calidad, y \textcite[p.~11]{alfaro2011} advierte que la inspección por sí sola no mejora las etapas previas, aunque entre el 60~\% y el 70~\% de los defectos se originan en fases como el diseño o la selección de proveedores y subcontratistas. En la primera losa del Edificio de Posgrado, el control se limitó a la verificación previa al vaciado, sin registros de recepción de materiales ni ensayos del hormigón de la losa (sección~\ref{sec:analisis-documental}), una práctica propia de la etapa de inspección.
+
+\subsection{Principios de la gestión de la calidad}
+
+La gestión de la calidad se fundamenta en principios que orientan a la dirección. La edición 2000 de la norma enunciaba ocho \parencite[p.~199]{romero2007}, y la de 2015 los redujo a siete: enfoque al cliente, liderazgo, compromiso de las personas, enfoque a procesos, mejora, toma de decisiones basada en la evidencia y gestión de las relaciones \parencite[p.~59]{pena2024}. Esta tesis adopta esa formulación, que es la que recogen las fuentes del repositorio. \pendiente{verificar en el texto de la ISO~9000:2026 si se mantienen los siete principios y su denominación}
+
+Los principios no son requisitos verificables, sino fundamentos; su valor depende de que se apliquen. \textcite[p.~152]{pradoroman2018} sostienen que la norma solo produce beneficios cuando se implanta junto con el desarrollo interno de principios como la sistematización de los procesos, la mejora continua, la participación de toda la empresa y el enfoque al cliente. En las constructoras chilenas estudiadas por \textcite[p.~205]{romero2007}, la participación del personal fue el principio mejor valorado (6,3 sobre 7) y la relación contractual con los proveedores el peor (5,3). La Tabla~\ref{tab:principios} traduce cada principio a la ejecución de una losa alivianada.
+
+\begin{table}[H]
+\caption{Principios de la gestión de la calidad y su lectura en la ejecución de una losa}
+\label{tab:principios}
+\begin{tabularx}{\linewidth}{@{}P{3.3cm}P{4.6cm}L@{}}
+\toprule
+\textbf{Principio} & \textbf{Idea central} & \textbf{Lectura en la ejecución de la losa} \\
+\midrule
+Enfoque al cliente & Comprender y cumplir las necesidades actuales y futuras del cliente & La entidad contratante requiere una losa conforme a los planos y a las especificaciones, pagada según lo realmente ejecutado; sus requisitos se convierten en criterios de aceptación por paño \\
+\addlinespace
+Liderazgo & Los líderes establecen la unidad de propósito y la dirección & El director de obra aprueba el plan de la calidad, asigna los recursos y no permite vaciar un paño que no haya sido liberado \\
+\addlinespace
+Compromiso de las personas & Personas competentes y comprometidas en todos los niveles & Capacitación de armadores y albañiles en el montaje de viguetas y complementos y en el vibrado; autocontrol del capataz \\
+\addlinespace
+Enfoque a procesos & Las actividades se gestionan como procesos interrelacionados & Abastecimiento, apuntalamiento, montaje, armado, hormigonado, curado y desapuntalamiento con entradas, salidas y controles definidos \\
+\addlinespace
+Mejora & La mejora del desempeño es un objetivo permanente & Las no conformidades y los desperdicios de una losa ajustan los procedimientos de la siguiente \\
+\addlinespace
+Toma de decisiones basada en la evidencia & Las decisiones se basan en el análisis de datos & El hormigón se acepta con ensayos a 28 días y las cantidades se pagan conciliadas con registros, no con estimaciones \\
+\addlinespace
+Gestión de las relaciones & Relaciones mutuamente beneficiosas con proveedores y partes interesadas & Pedidos exactos por paño; evaluación de los proveedores de viguetas, complementos, acero y hormigón; comunicación oportuna con la Supervisión \\
+\bottomrule
+\end{tabularx}
+\nota{Las dos primeras columnas se elaboraron con base en \textcite[pp.~55, 59]{pena2024}; la tercera es de elaboración propia.}
+\end{table}
+
+% ---------------------------------------------------------------------
+\section{Sistema de gestión de la calidad según la norma ISO~9001:2026}
+\label{sec:sgc-iso}
+
+\subsection{Estructura de la norma y ciclo PHVA}
+
+La norma ISO~9001 especifica los requisitos de un SGC y es la única de la familia ISO~9000 que admite certificación; la ISO~9000 aporta los fundamentos y el vocabulario, la ISO~9004 orienta el éxito sostenido de la organización y la ISO~19011 guía las auditorías \parencite[p.~17]{zurita2024}. Después de la primera edición de 1987 se publicaron las de 1994, 2000, 2008 y 2015 \parencite[p.~14]{zurita2024}. La sexta edición, ISO~9001:2026, se publicó el 16 de septiembre de 2026, sustituye a la de 2015 y conserva su estructura de cláusulas \parencite{iso9001_2026}; en Bolivia, el Instituto Boliviano de Normalización y Calidad (IBNORCA) la adoptó como NB/ISO~9001:2026 \parencite{ibnorca9001_2026}.
+
+Las cláusulas 0 a 3 son introductorias (introducción, objeto y campo de aplicación, referencias normativas, y términos y definiciones), y las cláusulas 4 a 10 contienen los requisitos del sistema \parencite[p.~15]{zurita2024}. Su contenido general, común a las ediciones de 2015 y 2026, es el siguiente \parencite{iso9001_2026}:
+\begin{itemize}
+  \item \textbf{Cláusula 4, contexto de la organización:} cuestiones externas e internas, necesidades y expectativas de las partes interesadas, alcance del sistema y procesos.
+  \item \textbf{Cláusula 5, liderazgo:} compromiso de la alta dirección, enfoque al cliente, política de la calidad, y roles, responsabilidades y autoridades.
+  \item \textbf{Cláusula 6, planificación:} acciones para abordar riesgos y oportunidades, objetivos de la calidad y planificación de los cambios.
+  \item \textbf{Cláusula 7, apoyo:} recursos (personas, infraestructura, ambiente de trabajo, recursos de seguimiento y medición, y conocimientos), competencia, toma de conciencia, comunicación e información documentada.
+  \item \textbf{Cláusula 8, operación:} planificación y control operacional, requisitos de los productos y servicios, diseño y desarrollo, control de los procesos, productos y servicios suministrados externamente, producción, liberación y control de las salidas no conformes.
+  \item \textbf{Cláusula 9, evaluación del desempeño:} seguimiento, medición, análisis y evaluación; auditoría interna, y revisión por la dirección.
+  \item \textbf{Cláusula 10, mejora:} no conformidades, acciones correctivas y mejora continua.
+\end{itemize}
+
+Esta estructura sigue el ciclo PHVA de Deming \parencite[pp.~15--16]{zurita2024}. La planificación (cláusula~6) parte del contexto (cláusula~4) y del liderazgo (cláusula~5), que ocupa el centro del sistema; hacer corresponde al apoyo y a la operación (cláusulas 7 y 8); verificar, a la evaluación del desempeño (cláusula~9); y actuar, a la mejora (cláusula~10). Las entradas del sistema son el contexto, los requisitos del cliente y las necesidades de las partes interesadas, y sus salidas son los productos conformes, la satisfacción del cliente y los resultados del SGC (Figura~\ref{fig:iso-phva}). El ciclo funciona en dos escalas: en el sistema completo y en cada proceso. En una obra, cada losa, e incluso cada paño, puede recorrerlo; la Figura~\ref{fig:phva} del capítulo~2 lo aplica a la ejecución de la losa del Edificio de Posgrado.
+
+\begin{figure}[H]
+\centering
+\caption{Estructura de la norma ISO~9001 representada en el ciclo PHVA}
+\label{fig:iso-phva}
+\begin{tikzpicture}[
+  font=\footnotesize,
+  ext/.style={draw, rounded corners=2pt, align=center, text width=2.35cm,
+              minimum height=1.2cm, fill=gray!8},
+  fase/.style={draw, thick, rounded corners=3pt, align=center, text width=2.45cm,
+               minimum height=1.25cm},
+  ciclo/.style={-{Stealth[length=2.6mm]}, very thick, black!65},
+  flecha/.style={-{Stealth[length=2.6mm]}, thick}]
+  \node[fase, fill=blue!6]   (P) at (0, 2.15)   {\textbf{Planificar}\\ Planificación (6)};
+  \node[fase, fill=green!7]  (H) at (2.95, 0)   {\textbf{Hacer}\\ Apoyo (7)\\ Operación (8)};
+  \node[fase, fill=orange!9] (V) at (0, -2.15)  {\textbf{Verificar}\\ Evaluación del\\ desempeño (9)};
+  \node[fase, fill=red!6]    (A) at (-2.95, 0)  {\textbf{Actuar}\\ Mejora (10)};
+  \node[circle, draw, very thick, fill=white, align=center, minimum size=1.75cm,
+        inner sep=1pt] (L) at (0,0) {\textbf{Liderazgo}\\ (5)};
+  \draw[ciclo] (P.east)  to[out=0,   in=90]  (H.north);
+  \draw[ciclo] (H.south) to[out=-90, in=0]   (V.east);
+  \draw[ciclo] (V.west)  to[out=180, in=-90] (A.south);
+  \draw[ciclo] (A.north) to[out=90,  in=180] (P.west);
+  \node[draw, dashed, rounded corners=6pt, fit=(P)(H)(V)(A), inner sep=8pt,
+        label={[font=\footnotesize\itshape]above:Sistema de gestión de la calidad (4)}] (SGC) {};
+  \node[ext, anchor=east] (E1) at ($(SGC.west)+(-0.55,1.5)$)  {Organización y su contexto (4)};
+  \node[ext, anchor=east] (E2) at ($(SGC.west)+(-0.55,0)$)    {Requisitos del cliente};
+  \node[ext, anchor=east] (E3) at ($(SGC.west)+(-0.55,-1.5)$) {Necesidades y expectativas de las partes interesadas (4)};
+  \node[ext, anchor=west] (S1) at ($(SGC.east)+(0.55,1.5)$)   {Resultados del SGC};
+  \node[ext, anchor=west] (S2) at ($(SGC.east)+(0.55,0)$)     {Satisfacción del cliente};
+  \node[ext, anchor=west] (S3) at ($(SGC.east)+(0.55,-1.5)$)  {Productos y servicios conformes};
+  \foreach \e in {E1,E2,E3} \draw[flecha] (\e.east) -- (\e.east -| SGC.west);
+  \foreach \s in {S1,S2,S3} \draw[flecha] (\s.west -| SGC.east) -- (\s.west);
+\end{tikzpicture}
+\nota{Elaborado con base en la estructura de cláusulas de la norma \parencite{iso9001_2026} y en \textcite[pp.~15--16]{zurita2024}. Los números entre paréntesis indican la cláusula correspondiente. La aplicación del ciclo a la losa se presenta en la Figura~\ref{fig:phva}.}
+\end{figure}
+
+El enfoque a procesos sostiene que los resultados son más coherentes y previsibles cuando las actividades se entienden y gestionan como procesos interrelacionados que funcionan como un sistema \parencite[p.~59]{pena2024}. Los procesos suelen clasificarse en estratégicos, operativos y de apoyo, y su representación en un mapa de procesos es el punto de partida de toda mejora \parencite[pp.~18, 50]{zurita2024}. En la losa, el proceso operativo es la ejecución (apuntalamiento, montaje, armado, hormigonado, curado y desapuntalamiento); los procesos de apoyo son las compras, el almacén y el laboratorio; y los estratégicos, la dirección de la obra y la gestión de la calidad.
+
+\subsection{Pensamiento basado en riesgos}
+
+La edición de 2015 incorporó el enfoque basado en riesgos como base para prevenir problemas y aprovechar oportunidades \parencite[p.~20]{mamanicalsina2025}. El riesgo se entiende como el efecto de la incertidumbre sobre los resultados esperados \parencite[p.~22]{mamanicalsina2025}, y la norma exige determinar los riesgos y las oportunidades que pueden afectar la conformidad de los productos y la satisfacción del cliente, planificar acciones proporcionales a su efecto e integrarlas en los procesos (cláusula~6.1) \parencite{iso9001_2026}. Así, el SGC se concibe como una herramienta de prevención: a partir del contexto y de las partes interesadas se identifican los riesgos y se decide cuáles eliminar, controlar o aceptar, sin perjuicio de actuar sobre las no conformidades que ocurran \parencite[pp.~57--58]{pena2024}.
+
+En la ejecución de una losa alivianada, los riesgos principales son conocidos, y la mayoría se controla con medidas sencillas aplicadas en el momento oportuno:
+\begin{itemize}
+  \item rotura o fisuración de viguetas en el transporte, la descarga o el montaje, que obliga a devolverlas o a reemplazarlas \parencite[p.~116]{alcon2009};
+  \item colocación de los complementos sobre viguetas sin apuntalar, con riesgo de deformación o incluso de caída de la losa por el tránsito del personal \parencite[hoja~3]{concretec2016plastoformo};
+  \item complementos pisados y deformados, que aumentan el consumo de hormigón de la carpeta de compresión \parencite[hoja~3]{concretec2016plastoformo};
+  \item segregación y cangrejeras por un vaciado o un vibrado deficientes, primera causa de observación en la estructura estudiada por \textcite[p.~17]{muro2020};
+  \item curado insuficiente en tiempo frío, que en Potosí, a 3.650~m~s.~n.~m., exige un plan de hormigonado en tiempo frío \parencite[sección~26.5.4.2]{aci318_2025};
+  \item desabastecimiento y alza de precios de los insumos, como ocurrió con el cemento y el acero en 2025 \parencite{fancesa2025,laslomas2025}.
+\end{itemize}
+La matriz de riesgos del capítulo~2 (Tabla~\ref{tab:riesgos}) valora estos riesgos y asigna a cada uno su control.
+
+\subsection{Novedades de la edición 2026}
+\label{sec:iso2026}
+
+La ISO~9001:2026 no cambia la lógica del sistema: conserva las cláusulas 4 a 10, el ciclo PHVA, el enfoque a procesos y el pensamiento basado en riesgos. Sus cambios, descritos aquí de forma general, refuerzan cuatro aspectos \parencite{iso9001_2026}:
+\begin{itemize}
+  \item la cultura de la calidad y el comportamiento ético, como parte del liderazgo;
+  \item el cambio climático, como cuestión del contexto que la organización debe considerar cuando es pertinente para su sistema;
+  \item el tratamiento de los riesgos y de las oportunidades;
+  \item la planificación de los cambios, para que se realicen de forma controlada.
+\end{itemize}
+La norma de fundamentos y vocabulario también se actualizó en 2026 como ISO~9000:2026 \parencite{iso9000_2026}. Las organizaciones certificadas con la edición de 2015 tienen un periodo de transición hasta el 30 de septiembre de 2029. \pendiente{citar la fuente oficial del periodo de transición (organismo de acreditación o de certificación)}
+
+Estos cambios tienen una lectura directa en la losa. El comportamiento ético se refleja en medir y pagar solo cantidades conciliadas con registros. La consideración del clima, en la planificación ante las lluvias y las bajas temperaturas de Potosí. La planificación de los cambios, en la gestión documentada de toda sustitución de materiales o de diseño, como las modificaciones estructurales que se hicieron en la obra por la falta de viguetas de los tamaños requeridos \parencite[p.~11]{uatf2025pao2}.
+
+\subsection{Planes de la calidad según la norma ISO~10005:2018}
+
+Un plan de la calidad especifica qué procesos, procedimientos y recursos se aplicarán, quién los aplicará y cuándo, para cumplir los requisitos de un objeto concreto: un producto, un proyecto o un contrato \parencite{iso10005_2018}. Es el instrumento natural de una obra, porque permite aplicar los principios de la ISO~9001 a un proyecto único aunque la empresa no tenga un SGC certificado. La norma ISO~10005:2018 orienta su elaboración y propone que el plan defina, según corresponda, el alcance, las entradas, los objetivos de la calidad, las responsabilidades, el control de la información documentada, los recursos, la comunicación con el cliente y con las partes interesadas, el control de los procesos y productos suministrados externamente, la producción, la identificación y la trazabilidad, la preservación, el control de las salidas no conformes, el seguimiento y la medición, y las auditorías \parencite{iso10005_2018}. Una vez elaborado, el plan se revisa, se acepta, se aplica y se actualiza cuando cambian las condiciones.
+
+En la obra, el plan se concreta en el programa o plan de puntos de inspección (PPI). Para cada inspección se definen el criterio de aprobación, el lote, la frecuencia y el responsable, y se señalan los puntos de parada, en los que la actividad no puede continuar hasta obtener la conformidad \parencite[anexo~4]{muro2020}. El plan también fija las condiciones de suministro, recepción, control, almacenamiento y manipulación de cada material \parencite[p.~83]{cepeda2017}. Su ausencia es frecuente: en la muestra de \textcite[p.~80]{gudiel2020}, el control dependía del criterio de quien dirigía cada obra.
+
+\subsection{Gestión de la calidad en proyectos según la norma ISO~10006:2017}
+
+La norma ISO~10006:2017 da directrices para la gestión de la calidad en los proyectos. Un proyecto es un proceso único y temporal, con actividades coordinadas y fechas de inicio y fin, y la norma orienta la aplicación de los principios y las prácticas de la gestión de la calidad a los procesos de gestión del proyecto, sin ser una guía de dirección de proyectos \parencite{iso10006_2017}. Dos ideas de este enfoque son pertinentes para el caso. Primero, la calidad depende de varias organizaciones ---entidad contratante, contratista, Supervisión, Fiscalización, proveedores y laboratorio---, cuyas responsabilidades deben definirse de antemano. Segundo, la calidad del producto depende también de procesos de gestión del proyecto como el control de los cambios, el abastecimiento, la programación y la comunicación. En la primera losa del Edificio de Posgrado, las demoras de materiales, las lluvias y las modificaciones del contrato afectaron la ejecución (sección~\ref{sec:analisis-documental}), lo que confirma que el SGC de una obra no puede limitarse a inspeccionar el producto.
+
+\subsection{Evidencia empírica sobre ISO~9001 en la construcción}
+
+Los estudios empíricos sobre ISO~9001 en constructoras coinciden en que sus beneficios son reales, pero graduales y condicionados a una implantación efectiva. Entre los efectos internos de la norma, \textcite[p.~156]{pradoroman2018} incluyen el mejor uso de los recursos, la reducción de los costos de inspección, logística y producción, la disminución de las no conformidades y de los gastos por mala calidad, y el cumplimiento de los plazos. En su muestra, los efectos sobre los procesos organizativos y las operaciones fueron muy relevantes para el 74,4~\% y el 53,7~\% de las empresas, y los financieros solo para el 34,2~\%; además, las mejoras internas aparecieron de forma gradual después de la implantación \parencite[pp.~163--164]{pradoroman2018}. Los propios autores advierten un posible sesgo, porque respondieron los responsables de calidad \parencite[p.~165]{pradoroman2018}. \textcite[pp.~1139--1140]{shaikh2020} encontraron que la inspección del material antes de su uso es uno de los elementos más aplicados de la norma (índice de importancia relativa de 0,83), mientras que el rechazo de los materiales no conformes es el menos aplicado (0,66), aunque la disminución del desperdicio de material es la segunda ventaja percibida. Según \textcite[p.~43]{dzul2009}, el 43~\% de las empresas certificadas de la Comunidad Valenciana redujo sus costos totales al implantar su sistema, aun después de descontar los gastos de implantación y certificación, dato que estos autores toman de un estudio anterior. En Brasil, \textcite[p.~106]{maciel2016} refieren que el nivel de pérdidas en la construcción disminuyó con la adopción de planes de calidad y de certificaciones ISO desde los años noventa.
+
+La evidencia también señala los límites. En las constructoras chilenas, el 40~\% del personal cree que los indicadores se miden solo para cumplir y no retroalimentan los procesos, y la mayoría percibe la norma como una fuente de trabajo adicional \parencite[pp.~202, 208]{romero2007}. Para la tesis, la lección es doble: el SGC de la losa debe concentrarse en controles operativos con registros e indicadores útiles, y su efecto no puede suponerse completo. Por eso, en la evaluación \emph{ex ante} la eficacia del sistema se trata como un parámetro incierto y no como un supuesto de eficacia total (sección~\ref{sec:modelo-simulacion}).
+
+% ---------------------------------------------------------------------
+\section{Costos de la calidad}
+\label{sec:costos-calidad}
+
+\subsection{Modelo de prevención, evaluación y fallas}
+
+Los costos de la calidad son la suma de los costos de conformidad y de no conformidad: los primeros son el precio de prevenir la mala calidad, por ejemplo mediante la inspección y la evaluación, y los segundos, el costo de no cumplir los requisitos \parencite[p.~44]{graciavillar2007}. El modelo genérico más empleado para clasificarlos sigue siendo el de prevención, evaluación y fallas (PEF, o PAF por sus siglas en inglés) \parencite[p.~43]{graciavillar2007}, que también es el que usan las empresas constructoras \parencite[p.~42]{dzul2009}. Sus cuatro categorías son las siguientes:
+\begin{itemize}
+  \item \textbf{Prevención:} costo de las actividades que evitan defectos desde el diseño, como la revisión de planos y especificaciones, los planes de aseguramiento de la calidad y la evaluación y capacitación de proveedores y del personal \parencite[p.~12]{alfaro2011}.
+  \item \textbf{Evaluación:} gastos para comprobar que una actividad se hizo bien, como la inspección y la prueba de los materiales comprados y las pruebas de aceptación en laboratorio \parencite[p.~49]{graciavillar2007}.
+  \item \textbf{Fallas internas:} costos de los errores detectados antes de que el cliente acepte el producto, como los desperdicios, la repetición del trabajo y los costos de suministro de materiales \parencite[p.~49]{graciavillar2007}.
+  \item \textbf{Fallas externas:} costos de las fallas que se detectan después de la entrega, como las garantías, las devoluciones y las reparaciones \parencite[p.~13]{alfaro2011}.
+\end{itemize}
+La prevención y la evaluación son costos controlables o de conformidad, y las fallas, costos resultantes o de no conformidad \parencite[p.~48]{graciavillar2007}. El costo total de la calidad ($CTC$) se expresa entonces como
+\begin{equation}
+  CTC = \underbrace{C_P + C_E}_{CC} \; + \; \underbrace{C_{FI} + C_{FE}}_{CNC}
+  \label{eq:ctc}
+\end{equation}
+donde $C_P$, $C_E$, $C_{FI}$ y $C_{FE}$ son los costos de prevención, evaluación, fallas internas y fallas externas; $CC$ es el costo de conformidad y $CNC$ el costo de no conformidad o de no calidad \parencite[p.~150]{zurita2024}. \textcite[p.~5416]{khadim2023} amplían el modelo: dividen las fallas en visibles (internas y externas) y ocultas, tangibles e intangibles, que no aparecen en la contabilidad. La Tabla~\ref{tab:paf} aplica las categorías a la ejecución de la losa.
+
+\begin{table}[H]
+\caption{Categorías del modelo de prevención, evaluación y fallas en la ejecución de la losa}
+\label{tab:paf}
+\begin{tabularx}{\linewidth}{@{}P{2.4cm}P{4.4cm}L@{}}
+\toprule
+\textbf{Categoría} & \textbf{Definición} & \textbf{Ejemplos en la ejecución de la losa} \\
+\midrule
+Prevención & Actividades para evitar defectos & Plan de la calidad y PPI; revisión de planos y especificaciones; capacitación del personal; evaluación de proveedores; planificación de los pedidos por paño \\
+\addlinespace
+Evaluación & Actividades para verificar la conformidad & Inspección de recepción de viguetas, complementos y acero; ensayos de asentamiento y de resistencia del hormigón; verificación del armado antes del vaciado; conciliación de cantidades \\
+\addlinespace
+Fallas internas & Errores detectados antes de la entrega & Viguetas rotas y complementos dañados; hormigón y acero desperdiciados; retrabajo del armado; reparación de cangrejeras; paralizaciones por material no conforme \\
+\addlinespace
+Fallas externas & Errores detectados después de la entrega & Reparación de fisuras o flechas de la losa recibida; descuentos por sobremedición en las planillas; extracción de núcleos y evaluaciones adicionales \\
+\addlinespace
+Fallas ocultas & Pérdidas que no se registran & Sobreconsumos no medidos, esperas y pérdidas de productividad, deterioro de la relación con el contratante \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en \textcite[pp.~12--13]{alfaro2011}, \textcite[pp.~46--49]{graciavillar2007} y \textcite[p.~5416]{khadim2023}. Los ejemplos son de elaboración propia.}
+\end{table}
+
+La relación entre las categorías explica por qué conviene prevenir. Según la regla 1-10-100 que recogen \textcite[p.~5407]{khadim2023}, prevenir cuesta menos que corregir y corregir cuesta menos que fallar: es preferible invertir una unidad en prevención que gastar diez en corrección o cien en una falla. \textcite[p.~49]{graciavillar2007} describen la relación con una curva (Figura~\ref{fig:costo-optimo}): cuando los costos controlables son bajos, los costos resultantes son altos, porque se gasta poco en prevenir o en detectar los errores; al aumentar la prevención y la evaluación, las fallas disminuyen, pero cada incremento es menos eficaz que el anterior. La suma de ambas curvas tiene un mínimo, el punto óptimo operativo provisional, en el que el costo total de la calidad es menor y el rendimiento de la inversión es máximo. Es provisional porque se desplaza a medida que la mejora reduce los errores; por eso los mismos autores recogen modelos más recientes que incorporan el costo y el valor de la mejora continua de los procesos \parencite[pp.~47--48]{graciavillar2007}.
+
+\begin{figure}[H]
+\centering
+\caption{Curvas de los costos de la calidad y punto óptimo operativo provisional}
+\label{fig:costo-optimo}
+\begin{tikzpicture}[x=1.0cm, y=0.58cm, font=\footnotesize]
+  \draw[-{Stealth[length=2.5mm]}] (0,0) -- (10.2,0);
+  \draw[-{Stealth[length=2.5mm]}] (0,0) -- (0,8.4) node[above] {Costo};
+  \node[anchor=north] at (5.1,-0.25) {Inversión en prevención y evaluación (nivel de conformidad) $\longrightarrow$};
+  \draw[very thick, blue!70!black, domain=0.5:9.6, samples=80, smooth]
+       plot (\x, {0.30*\x+0.018*\x*\x}) node[right] {Prevención y evaluación};
+  \draw[very thick, red!70!black, dashed, domain=0.5:9.6, samples=80, smooth]
+       plot (\x, {7.5/(\x+0.6)}) node[right] {Fallas internas y externas};
+  \draw[ultra thick, black, domain=0.5:9.6, samples=80, smooth]
+       plot (\x, {0.30*\x+0.018*\x*\x+7.5/(\x+0.6)}) node[right] {Costo total de la calidad};
+  \draw[densely dotted] (3.58,0) -- (3.58,3.10);
+  \fill (3.58,3.10) circle (2.2pt);
+  \node[align=left, anchor=west] (opt) at (4.6,6.4) {Punto óptimo\\ operativo provisional};
+  \draw[-{Stealth[length=2mm]}] (opt.west) to[out=180, in=80] (3.62,3.35);
+  \node[align=center, text=black!70] at (1.75,1.0) {Zona de fallas\\ elevadas};
+  \node[align=center, text=black!70] at (7.2,1.95) {Zona de rendimiento\\ decreciente};
+\end{tikzpicture}
+\nota{Adaptado de la figura~2 de \textcite[p.~49]{graciavillar2007}. Las curvas son ilustrativas y no representan datos de la obra.}
+\end{figure}
+
+La literatura muestra que muchas empresas operan a la izquierda del óptimo. En los proyectos estudiados por \textcite[p.~5420]{khadim2023}, el costo de las fallas visibles (2,34~\%) superó la inversión en conformidad (1,83~\%). En los fabricantes bolivianos de viguetas, antes de implantar el SGC, las fallas externas representaban el 50~\% del costo de la calidad y la prevención apenas el 16~\% \parencite[p.~143]{pajarito2015}, y en una empresa metalmecánica la prevención era nula y las fallas internas sumaban el 75,66~\% \parencite[p.~155]{zurita2024}. La recomendación que recogen \textcite[sección~2.2.1]{palanisamy2025} orienta la inversión: menos del 2~\% en prevención y evaluación aumenta inevitablemente los costos de falla, y más del 4~\% probablemente no tiene retorno. El óptimo no implica cero fallas: los estándares de costo deben admitir un margen controlado de no calidad aceptable, porque no existe el proceso perfecto \parencite[p.~53]{graciavillar2007}, y parte del desperdicio es inevitable cuando reducirlo cuesta más de lo que ahorra \parencite[p.~328]{formoso1999}. Por último, un sistema de costos de la calidad no resuelve por sí mismo los problemas: sirve para dimensionarlos y debe acompañarse de un proceso de mejora \parencite[p.~56]{graciavillar2007}.
+
+\subsection{Costo de no calidad y retrabajo}
+
+El retrabajo es el esfuerzo innecesario de rehacer una actividad o un proceso que se ejecutó incorrectamente la primera vez, según la definición que adoptan \textcite[p.~2]{forcada2017}. Los costos de no calidad son, en general, los gastos adicionales para rehacer o reparar lo que se hizo mal; incluyen el retrabajo, el reemplazo de materiales que no cumplen los requisitos y el tiempo para completar trabajos retrasados, y como nunca se presupuestan constituyen una pérdida neta \parencite[p.~38]{alfaro2011}. Su origen es la variabilidad de los procesos: una parte de lo que se produce no cumple la especificación y debe desecharse o rehacerse \parencite[p.~14]{koskela1992}. Las dos consecuencias principales de la mala calidad son la repetición del trabajo y la insatisfacción del cliente \parencite[p.~19]{pons2014}.
+
+Una parte de estos costos permanece oculta. \textcite[p.~5421]{khadim2023} concluyen que la mayor parte del costo de las fallas nunca llega a percibirse, y \textcite[p.~19]{alvarez2014} advierte sobre los reprocesos ocultos, errores que generan más errores, como una zapata vaciada con hormigón de menor resistencia que solo se detecta días después, cuando ya se avanzó con los trabajos siguientes. En una losa ocurre lo mismo: si no se toman probetas del hormigón de la carpeta, una resistencia insuficiente permanece oculta hasta que se manifiesta como fisuras o flechas.
+
+La Tabla~\ref{tab:coq-literatura} resume las magnitudes reportadas en la literatura revisada. Su lectura confirma lo señalado en el estado del arte: los valores dependen de la base de cálculo, del alcance de las fallas consideradas y del método, por lo que no deben compararse sin precisar estos tres aspectos.
+
+\begin{table}[H]
+\caption{Magnitud de los costos de la calidad y de la no calidad en la literatura revisada}
+\label{tab:coq-literatura}
+\begin{tabularx}{\linewidth}{@{}P{3.1cm}P{3.3cm}P{2.6cm}P{2.9cm}L@{}}
+\toprule
+\textbf{Fuente} & \textbf{Concepto} & \textbf{Valor} & \textbf{Base de cálculo} & \textbf{Tipo de dato} \\
+\midrule
+\textcite[p.~8]{forcada2017} & Retrabajo & 2,75~\% & Valor original del contrato & Medido en registros de no conformidad (40 proyectos) \\
+\addlinespace
+\textcite[pp.~5420--5423]{khadim2023} & Costo total de la calidad; fallas visibles; fallas ocultas; conformidad & 12,76~\%; 2,34~\%; 8,59~\%; 1,83~\% & Costo total del proyecto & Medido y estimado en 25 edificios; incluye fallas ocultas \\
+\addlinespace
+\textcite[sección~2.2]{palanisamy2025} & Costo total de la calidad & 1,571~\% a 12,29~\% & Valor del proyecto & Registrado en 16 edificios \\
+\addlinespace
+\textcite[pp.~5, 12]{alvarez2014} & Reprocesos; sin y con SGC & 6,59~\% (máx. 12,4~\%); 6,5~\% y 0,72~\% & Costo del proyecto; valor del contrato & Compilado de estudios publicados \\
+\addlinespace
+\textcite[p.~1]{gudiel2020} & No calidad del concreto armado & 2,7~\% a 5,1~\% & Costo de la partida & Estimado en edificios de Lima \\
+\addlinespace
+\textcite[p.~49]{muro2020} & Costo total de la calidad con plan de calidad & 0,55~\% & Presupuesto de la obra & Registrado en una obra \\
+\addlinespace
+\textcite[p.~42]{dzul2009} & Costos de la calidad & 8~\% a 15~\% & Costo total de la construcción & Estimación tomada de otros autores \\
+\addlinespace
+\textcite[p.~35]{koskela1992} & Costo de la mala calidad medido en obra & 10~\% a 20~\% & Costo total del proyecto & Compilado de otros estudios \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en las fuentes citadas. En los datos compilados o tomados de otros autores se cita la fuente consultada.}
+\end{table}
+
+Para esta tesis se derivan tres criterios. El costo de no calidad de la losa se expresa sobre una sola base, el costo del ítem; se separan las fallas documentadas de las estimadas; y la fracción de retrabajo y los costos del sistema se representan con rangos tomados de la literatura, no con valores únicos, en el modelo de evaluación \emph{ex ante} (sección~\ref{sec:modelo-simulacion}).
+
+% ---------------------------------------------------------------------
+\section{Pérdidas y desperdicio de materiales en la construcción}
+\label{sec:perdidas}
+
+\subsection{La nueva filosofía de producción y la construcción sin pérdidas}
+
+\textcite{koskela1992} propuso aplicar a la construcción la nueva filosofía de producción surgida en la industria manufacturera. Su aporte central es concebir la producción no solo como la conversión de insumos en productos, sino también como un flujo de material e información desde la materia prima hasta el producto final, en el que el material se procesa, se inspecciona, espera o se traslada \parencite[p.~15]{koskela1992}. Todas esas actividades consumen tiempo y costo, pero solo las de conversión agregan valor, entendido como el cumplimiento de los requisitos del cliente \parencite[pp.~15--16]{koskela1992}. Las demás son desperdicio: actividades que ocupan tiempo, recursos o espacio sin agregar valor \parencite[p.~17]{koskela1992}. Para mejorar los procesos de flujo, Koskela formuló once principios: reducir las actividades que no agregan valor, aumentar el valor del producto considerando los requisitos del cliente, reducir la variabilidad, reducir el tiempo de ciclo, simplificar, aumentar la flexibilidad, aumentar la transparencia, enfocar el control en el proceso completo, incorporar la mejora continua, equilibrar las mejoras de flujo y de conversión, y comparar con las mejores prácticas \parencite[p.~16]{koskela1992}.
+
+La aplicación de estos principios a todo el ciclo de vida de un proyecto se conoce como Lean Construction o construcción sin pérdidas \parencite[p.~26]{pons2014}. Su objetivo es reducir o eliminar las actividades que no agregan valor y optimizar las que sí lo hacen \parencite[p.~35]{porrasdiaz2014}, y concibe la producción a la vez como transformación, flujo y generación de valor \parencite[p.~36]{porrasdiaz2014}. \textcite[pp.~18--19]{pons2014} adapta a la construcción los siete desperdicios de la producción industrial ---sobreproducción, esperas, transporte innecesario, sobreprocesamiento, exceso de inventario, movimientos innecesarios y defectos de calidad--- y añade un octavo, el talento desaprovechado. El mismo autor explica por qué el desperdicio persiste: no se mide ni se cuantifica, y por eso no se conoce cuánto cuesta \parencite[p.~20]{pons2014}. Implantar este enfoque exige, ante todo, una cultura de mejora continua de la producción \parencite[p.~38]{porrasdiaz2014}.
+
+El enfoque de la construcción sin pérdidas y el SGC son complementarios. La ISO~9001 aporta la estructura de gestión: requisitos, procesos, registros, acciones correctivas y revisión por la dirección. La filosofía de Koskela aporta la mirada del flujo y la eliminación de lo que no agrega valor. Varios de sus principios coinciden con los de la gestión de la calidad: reducir la variabilidad y enfocar el control en el proceso completo equivale a gestionar por procesos; aumentar la transparencia, a decidir con evidencia; e incorporar la mejora continua, al ciclo PHVA. \textcite[p.~334]{formoso1999} concluyen que el control del desperdicio debe integrarse en la planificación y el control de la producción y que no basta con verificar, sino que hay que dar seguimiento a la eficiencia de los procesos. Esa es la función que cumple el control de materiales dentro del SGC propuesto.
+
+\subsection{Clasificación y causas de las pérdidas}
+
+\textcite[p.~328]{formoso1999} definen el desperdicio como toda pérdida producida por actividades que generan costos directos o indirectos sin agregar valor al producto desde el punto de vista del cliente, y lo clasifican con tres criterios:
+\begin{itemize}
+  \item \textbf{Según la posibilidad de control}, el desperdicio es inevitable o natural cuando reducirlo cuesta más de lo que ahorra, y evitable cuando su costo supera claramente el de prevenirlo \parencite[p.~328]{formoso1999}.
+  \item \textbf{Según su naturaleza}, distinguen nueve tipos, entre ellos la producción de productos defectuosos, que provoca retrabajo o la incorporación de materiales innecesarios, y los inventarios excesivos, que generan pérdidas por deterioro, malas condiciones de acopio, robo o vandalismo \parencite[p.~329]{formoso1999}.
+  \item \textbf{Según su origen}, una parte importante del desperdicio nace en etapas anteriores a la producción, como el diseño inadecuado, la falta de planificación y las fallas del sistema de suministro \parencite[p.~327]{formoso1999}.
+\end{itemize}
+Además, el desperdicio puede ser directo, cuando el material se retira como desmonte, o indirecto, cuando se coloca en la obra un material que no está previsto en los planos ni en las especificaciones, como un revoque más grueso de lo necesario \parencite[p.~15]{ccoyllo2016}. Este último, que \textcite[p.~106]{maciel2016} llaman pérdida incorporada, suele asociarse con un control de calidad deficiente \parencite[pp.~15--16]{ccoyllo2016}. En la losa, las viguetas rotas y los recortes de complementos y de acero son desperdicio directo, mientras que una carpeta de compresión más gruesa que la especificada o el hormigón que llena los complementos deformados son pérdidas incorporadas.
+
+En cuanto a las causas, \textcite[pp.~1, 9]{luangcharoenrat2019} depuraron 166 factores de la literatura hasta 28 y los agruparon en cuatro categorías. Según 178 contratistas, la categoría de mayor influencia es el diseño y la documentación, y los factores más influyentes son el cambio de diseño, las actitudes de trabajo descuidadas y el almacenamiento inadecuado de los materiales \parencite[pp.~12--13]{luangcharoenrat2019}. Las demás fuentes coinciden en que las causas dominantes son de gestión y no de motivación de los trabajadores \parencite[p.~327]{formoso1999}. La Tabla~\ref{tab:causas} organiza estas causas por categoría y muestra su manifestación en la losa.
+
+\begin{table}[H]
+\caption{Causas de las pérdidas de materiales por categoría y su manifestación en la losa}
+\label{tab:causas}
+\begin{tabularx}{\linewidth}{@{}P{2.9cm}P{1.3cm}P{5.6cm}L@{}}
+\toprule
+\textbf{Categoría} & \textbf{RII} & \textbf{Causas reportadas} & \textbf{Manifestación en la losa} \\
+\midrule
+Diseño y documentación & 0,656 & Cambios de diseño (RII~=~0,726), errores de diseño y de planos, problemas de documentación & Discrepancias entre planos y especificaciones; cambios de viguetas no documentados; pedidos hechos con medidas erróneas \\
+\addlinespace
+Recursos humanos & 0,642 & Actitudes de trabajo descuidadas (RII~=~0,679), personal poco calificado & Viguetas golpeadas, complementos pisados, vibrado deficiente \\
+\addlinespace
+Métodos y planificación & 0,603 & Planificación y programación ineficaces, falta de control y supervisión, retrabajos & Pedidos de hormigón con excedente por precaución \parencite[p.~53]{galarza2011}; vaciados sin verificación previa \\
+\addlinespace
+Materiales y adquisiciones & 0,595 & Almacenamiento inadecuado (RII~=~0,669), problemas de pedido, de manipulación y de transporte & Recepción sin control de cantidades \parencite[p.~32]{ccoyllo2016}; acopio de complementos y cemento expuestos a la intemperie \\
+\bottomrule
+\end{tabularx}
+\nota{RII: índice de importancia relativa (de 0 a 1) asignado por 178 contratistas. Las tres primeras columnas se elaboraron con base en \textcite[pp.~12--13]{luangcharoenrat2019}; la cuarta es de elaboración propia, salvo las citas indicadas.}
+\end{table}
+
+\subsection{Medición del desperdicio y valores de referencia}
+
+Toda pérdida es relativa a una referencia: para medirla hay que definir antes la cantidad necesaria. \textcite[p.~9]{galarza2011} considera desperdicio todo consumo de un material en cantidades mayores que las necesarias para elaborar el producto según los documentos técnicos; en el hormigón, por razones geométricas, la situación ideal es consumir un metro cúbico por cada metro cúbico de elemento. De forma equivalente, la pérdida de materiales es la diferencia entre la cantidad realmente empleada y la cantidad necesaria según el diseño \parencite[sección~2]{rossi2001}. El índice de desperdicio del material $i$ se expresa como
+\begin{equation}
+  IDM_i = \frac{Q_{\text{real},i} - Q_{\text{teórica},i}}{Q_{\text{teórica},i}} \times 100
+  \label{eq:idm-marco}
+\end{equation}
+donde $Q_{\text{teórica},i}$ es la cantidad que resulta de los planos y los cómputos, y $Q_{\text{real},i}$ la cantidad consumida. El capítulo~2 aplica este índice a cada material de la losa (ecuación~\ref{eq:idm}).
+
+La validez del índice depende de cómo se obtienen sus dos términos. La cantidad teórica debe calcularse con la geometría del elemento y, en el acero, con la planilla de despiece: \textcite[pp.~589--590]{abbott2008} mostraron que el método de asignación directa, que suma un porcentaje fijo de desperdicio a las longitudes, subestima el acero necesario, al punto de que habría que aplicar un 19,5~\% en lugar del 10~\% recomendado para igualar el cálculo optimizado. La cantidad real se obtiene de las guías de compra, de los registros de almacén y de los vales de salida \parencite[pp.~53, 64]{galarza2011}, complementados con inventarios periódicos del material acopiado en la obra \parencite[p.~331]{formoso1999}. La medición debe ser frecuente ---semanal o por vaciado--- para que permita corregir a tiempo y no solo constatar la pérdida al final de la obra \parencite[p.~334]{formoso1999}.
+
+Para valorar las pérdidas, \textcite[sección~4.5]{rossi2001} proponen calcular el costo de las pérdidas de materiales como la diferencia entre el consumo real y el teórico multiplicada por el costo unitario:
+\begin{equation}
+  CPM_i = \left(CR_i - CT_i\right) p_i
+  \label{eq:cpm}
+\end{equation}
+donde $CR_i$ es el consumo real del material $i$, $CT_i$ su consumo teórico y $p_i$ su costo unitario. Con este método, en dos obras de mampostería, las pérdidas sumaron el 38,5~\% y el 49,2~\% del costo de producción, con un mayor peso de la mano de obra que de los materiales \parencite[secciones~5.1 y 5.2]{rossi2001}. Las pérdidas, por tanto, no se limitan a los materiales: incluyen tiempos improductivos que el modelo de costos de la tesis considera a través del retrabajo.
+
+La Tabla~\ref{tab:desperdicio-ref} reúne los valores de referencia de desperdicio que reporta la literatura revisada. Los valores son muy dispersos y dependen del tipo de control; por eso sirven como rangos plausibles y no como metas. No se encontraron en el repositorio valores de referencia para viguetas pretensadas ni para complementos de poliestireno expandido.
+
+\begin{table}[H]
+\caption{Valores de referencia del desperdicio de materiales en la literatura revisada}
+\label{tab:desperdicio-ref}
+\begin{tabularx}{\linewidth}{@{}P{2.5cm}P{2.4cm}LP{3.4cm}@{}}
+\toprule
+\textbf{Material} & \textbf{Desperdicio} & \textbf{Condición} & \textbf{Fuente} \\
+\midrule
+Hormigón & 22~\% & Obra sin control en campo; compras frente al metrado del presupuesto & \textcite[p.~53]{galarza2011} \\
+Hormigón & 5~\% & Sótanos vaciados con bomba; igual al valor del presupuesto & \textcite[p.~73]{galarza2011} \\
+Hormigón & 2,8~\% & Torre vaciada con grúa y pedidos limitados al 2~\% sobre el metrado & \textcite[p.~73]{galarza2011} \\
+Hormigón en placas y muros & 9~\% y 23~\% & Pérdidas reales promedio, frente a un 3~\% a 6~\% previsto por el bombeo & \textcite[pp.~33, 69]{rojas2018} \\
+Hormigón premezclado & 1,5~\% a 13~\% & Compilación de estudios brasileños & \textcite[p.~106]{maciel2016} \\
+Mezcla de concreto & 5~\% & Valor aceptable de referencia según la Cámara Peruana de la Construcción & \textcite[p.~14]{ccoyllo2016} \\
+\addlinespace
+Acero de refuerzo & 7~\% y 4,04~\% & Presupuestado y obtenido con prearmado & \textcite[p.~75]{galarza2011} \\
+Acero de refuerzo & 3,75~\% & Con acero predimensionado & \textcite[p.~76]{galarza2011} \\
+Acero de refuerzo & 14,58~\% y 17,09~\% & Método convencional en dos edificios & \textcite[pp.~147, 169]{chino2024} \\
+Acero de refuerzo & 3,15~\% y 3,19~\% & Con despiece previo a la ejecución & \textcite[pp.~147, 169]{chino2024} \\
+Acero de refuerzo & 11~\% a 26~\% & Compilación de estudios brasileños & \textcite[p.~106]{maciel2016} \\
+Acero de refuerzo & 10~\% y menos de 1~\% & Cortado en obra y precortado en fábrica; dato que los autores toman de otra fuente & \textcite[p.~583]{abbott2008} \\
+Acero de refuerzo & 3~\% a 10~\% & Valores aceptables según el diámetro, de la Cámara Peruana de la Construcción & \textcite[p.~14]{ccoyllo2016} \\
+\addlinespace
+Materiales en general & 10~\% (5~\% a 30~\%) & Consumo excesivo promedio en obra según un estudio sueco & \textcite[p.~35]{koskela1992} \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en las fuentes citadas. Cuando el valor proviene de otro estudio, se cita la fuente consultada que lo reporta.}
+\end{table}
+
+% [CONTINÚA: 1.6]

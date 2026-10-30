@@ -569,3 +569,1324 @@ def expandir_macros(texto, macros, excluir=MACROS_ESPECIALES, max_vueltas=12):
         if not cambios:
             break
     return texto
+
+
+def dividir_por_caracter(s, car):
+    """Divide por un carácter (p. ej. ',') en el nivel superior de llaves."""
+    partes, actual, prof = [], [], 0
+    i = 0
+    while i < len(s):
+        c = s[i]
+        if c == '\\':
+            actual.append(s[i:i + 2])
+            i += 2
+            continue
+        if c == '{':
+            prof += 1
+        elif c == '}':
+            prof -= 1
+        if c == car and prof == 0:
+            partes.append(''.join(actual))
+            actual = []
+        else:
+            actual.append(c)
+        i += 1
+    partes.append(''.join(actual))
+    return partes
+
+
+def a_romano(n, mayus=False):
+    vals = [(1000, 'm'), (900, 'cm'), (500, 'd'), (400, 'cd'), (100, 'c'), (90, 'xc'),
+            (50, 'l'), (40, 'xl'), (10, 'x'), (9, 'ix'), (5, 'v'), (4, 'iv'), (1, 'i')]
+    r = ''
+    for v, t in vals:
+        while n >= v:
+            r += t
+            n -= v
+    return r.upper() if mayus else r
+
+
+def a_letra(n, mayus=True):
+    r = ''
+    while n > 0:
+        n, k = divmod(n - 1, 26)
+        r = chr(65 + k) + r
+    return r if mayus else r.lower()
+
+
+ENTORNOS_ECUACION = ('equation', 'equation*', 'align', 'align*', 'gather', 'gather*', 'multline',
+                     'multline*', 'eqnarray', 'eqnarray*', 'flalign', 'flalign*', 'alignat',
+                     'alignat*', 'displaymath')
+ENTORNOS_FLOTANTES_TABLA = ('table', 'table*', 'sidewaystable', 'sidewaystable*', 'longtable', 'longtable*', 'xltabular')
+ENTORNOS_FLOTANTES_FIGURA = ('figure', 'figure*', 'sidewaysfigure', 'sidewaysfigure*')
+NIVEL_SECCION = {'part': -1, 'chapter': 0, 'section': 1, 'subsection': 2, 'subsubsection': 3,
+                 'paragraph': 4, 'subparagraph': 5}
+
+EVENTO = re.compile(
+    r'\\(?:'
+    r'(?P<sec>chapter|section|subsection|subsubsection|paragraph|subparagraph)(?P<star>\*?)(?![A-Za-z@])'
+    r'|(?P<appendix>appendix)(?![A-Za-z@])'
+    r'|(?P<setc>setcounter|addtocounter)\s*\{(?P<cname>[A-Za-z]+)\}\s*\{(?P<cval>[^{}]*)\}'
+    r'|(?P<renew>renewcommand)\*?\s*\{?\\the(?P<thec>[A-Za-z]+)\}?'
+    r'|begin\{(?P<benv>[A-Za-z*]+)\}'
+    r'|end\{(?P<eenv>[A-Za-z*]+)\}'
+    r'|(?P<capof>captionof)(?P<capofstar>\*?)\s*\{(?P<capoftype>[A-Za-z]+)\}'
+    r'|(?P<cap>caption)(?P<capstar>\*?)(?![A-Za-z@])'
+    r'|label\s*\{(?P<label>[^{}]*)\}'
+    r'|(?P<dispmath>\[)'
+    r')')
+
+
+class Transformador:
+    """Convierte el cuerpo aplanado de la tesis en LaTeX apto para pandoc."""
+
+    def __init__(self, fuente, graficos, avisos, etiquetas_aux=None):
+        self.f = fuente
+        self.g = graficos
+        self.avisos = avisos
+        self.aux = etiquetas_aux or {}
+        self.etiquetas = {}      # etiqueta -> dict(num, tipo, titulo)
+        self.tablas = []         # datos de cada tabla para el posproceso
+        self.toc = []            # entradas del índice general
+        self.lot = []            # índice de tablas
+        self.lof = []            # índice de figuras
+        self.ecuaciones = 0
+        self.n_titulo = 0
+        self.refs_faltantes = []
+        # contadores (como en LaTeX)
+        self.c = {'chapter': 0, 'section': 0, 'subsection': 0, 'subsubsection': 0,
+                  'paragraph': 0, 'subparagraph': 0, 'table': 0, 'figure': 0, 'equation': 0}
+        self.apendice = False
+        self.modo_seccion = 'chapter'   # \thesection = \thechapter.\arabic{section}
+        self.ref_actual = (None, None, '')
+
+    # ------------------------------------------------------------------
+    def procesar(self):
+        s = self.f.cuerpo
+        for _ in range(3):
+            s = expandir_macros(s, self.f.macros)
+            s2 = self.f.resolver_inclusiones(s)
+            s2 = self.f.recoger_definiciones(s2)
+            if s2 == s:
+                break
+            s = s2
+        s = expandir_macros(s, self.f.macros)
+        s = reemplazar_comando(s, 'guia', lambda o, b, e: '', n_obl=1)
+        s = reemplazar_comando(s, 'pendiente', self._pendiente, n_obl=1)
+        s = self._simples(s)
+        s = self._normalizar_citas(s)
+        s = transformar_entornos(s, 'titlepage', self._portada)
+        s = reemplazar_comando(s, 'printbibliography', self._bibliografia, n_obl=0, n_opc=1)
+        s = self._envoltorios(s)
+        s = self.numerar(s)
+        s = transformar_entornos(s, r'(?:table|figure|sidewaystable|sidewaysfigure)\*?', self._flotante)
+        s = self.transformar_tablas(s)
+        s = reemplazar_comando(s, 'nota', lambda o, b, e: self._bloque_nota(b[0]), n_obl=1)
+        s = self.transformar_graficos(s)
+        s = self.transformar_listas(s)
+        s = self.transformar_titulos(s)
+        s = self._indices(s)
+        s = self.resolver_referencias(s)
+        s = self._limpiar(s)
+        s = self._restaurar_verbatim(s)
+        s = re.sub(r'\n{3,}', '\n\n', s)
+        return s
+
+    # ------------------------------------------------------------------
+    #  Marcas de borrador y sustituciones simples
+    def _pendiente(self, opc, obl, est):
+        if not self.f.borrador:
+            return ''
+        return '\\textcolor{pendientecolor}{\\textbf{[Pendiente:} %s\\textbf{]}}' % obl[0].strip()
+
+    def _simples(self, s):
+        s = reemplazar_comando(s, 'enquote', lambda o, b, e: '«%s»' % b[0], n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'texorpdfstring', lambda o, b, e: b[0], n_obl=2)
+        s = reemplazar_comando(s, 'hyperref', lambda o, b, e: b[0], n_obl=1, n_opc=1)
+        s = reemplazar_comando(s, 'hyperlink', lambda o, b, e: b[1], n_obl=2)
+        s = reemplazar_comando(s, 'hypertarget', lambda o, b, e: b[1], n_obl=2)
+        s = reemplazar_comando(s, 'foreignlanguage', lambda o, b, e: b[1], n_obl=2, n_opc=1)
+        s = reemplazar_comando(s, 'ensuremath', lambda o, b, e: '$%s$' % b[0], n_obl=1)
+        s = reemplazar_comando(s, 'mbox', lambda o, b, e: b[0], n_obl=1)
+        s = reemplazar_comando(s, 'makebox', lambda o, b, e: b[0], n_obl=1, n_opc=2)
+        s = reemplazar_comando(s, 'parbox', lambda o, b, e: b[1], n_obl=2, n_opc=3)
+        s = reemplazar_comando(s, 'makecell', lambda o, b, e: self._celda_multilinea(b[0]), n_obl=1, n_opc=1)
+        s = reemplazar_comando(s, 'shortstack', lambda o, b, e: self._celda_multilinea(b[0]), n_obl=1, n_opc=1)
+        s = reemplazar_comando(s, 'thead', lambda o, b, e: self._celda_multilinea(b[0]), n_obl=1, n_opc=1)
+        for cmd, car in (('textdegree', '°'), ('textpm', '±'), ('texttimes', '×'), ('textminus', '−'),
+                         ('textmu', 'µ'), ('textperthousand', '‰'), ('textordfeminine', 'ª'),
+                         ('textordmasculine', 'º'), ('euro', '€'), ('textregistered', '®'),
+                         ('texttrademark', '™'), ('textcopyright', '©'), ('textellipsis', '…'),
+                         ('guillemotleft', '«'), ('guillemotright', '»'), ('textquotedblleft', '“'),
+                         ('textquotedblright', '”'), ('textbullet', '•'), ('textendash', '–'),
+                         ('textemdash', '—')):
+            s = re.sub(r'\\' + cmd + r'(?![A-Za-z@])(\{\})?', car, s)
+        return s
+
+    def _celda_multilinea(self, txt):
+        return ' \\newline '.join(p.strip() for p in dividir_nivel_superior(txt, '\\\\'))
+
+    def _normalizar_citas(self, s):
+        """Quita ~ de las notas previas y posteriores de las citas (p.~9 -> p. 9)."""
+        pat = re.compile(r'\\(parencite|textcite|cite|citep|citet|autocite|footcite|citeauthor|citeyear|'
+                         r'citetitle|parencites|textcites|Parencite|Textcite|Cite)\*?((?:\s*\[[^\]]*\])+)')
+
+        def sust(m):
+            return m.group(0)[:len(m.group(0)) - len(m.group(2))] + m.group(2).replace('~', ' ')
+        return pat.sub(sust, s)
+
+    def _envoltorios(self, s):
+        """Quita \\resizebox, \\scalebox, minipage y adjustbox conservando el contenido."""
+        def r_resize(o, b, e):
+            ancho = a_cm(b[0]) if b[0].strip() != '!' else None
+            contenido = b[2]
+            if ancho and '\\begin{tikzpicture}' in contenido:
+                contenido = contenido.replace('\\begin{tikzpicture}', '\\begin{tikzpicture}⟦ANCHOCM:%.3f⟧' % ancho, 1)
+            return contenido
+        s = reemplazar_comando(s, 'resizebox', r_resize, n_obl=3, estrella=True)
+
+        def r_scale(o, b, e):
+            contenido = b[1]
+            try:
+                f = float(b[0].replace(',', '.'))
+            except ValueError:
+                f = None
+            if f and '\\begin{tikzpicture}' in contenido:
+                contenido = contenido.replace('\\begin{tikzpicture}', '\\begin{tikzpicture}⟦ESCALA:%.3f⟧' % f, 1)
+            return contenido
+        s = reemplazar_comando(s, 'scalebox', r_scale, n_obl=2, n_opc=1)
+        s = reemplazar_comando(s, 'adjustbox', lambda o, b, e: b[1], n_obl=2)
+
+        def r_minipage(nombre, cuerpo):
+            k = saltar_blancos(cuerpo, 0)
+            while k < len(cuerpo) and cuerpo[k] == '[':
+                _, k = leer_opcional(cuerpo, k)
+                k = saltar_blancos(cuerpo, k)
+            if k < len(cuerpo) and cuerpo[k] == '{':
+                _, k = leer_grupo(cuerpo, k)
+            return '\n' + cuerpo[k:] + '\n'
+        s = transformar_entornos(s, r'minipage', r_minipage)
+        s = transformar_entornos(s, r'adjustbox', lambda n, c: re.sub(r'^\s*\{[^}]*\}', '', c))
+        s = transformar_entornos(s, r'landscape|pdflscape|subequations|samepage|flushleft|small|footnotesize',
+                                 lambda n, c: c)
+        return s
+
+    # ------------------------------------------------------------------
+    #  Carátula
+    def _portada(self, nombre, cuerpo):
+        c = cuerpo
+        c = re.sub(r'\\vspace\*?\s*\{\s*\\fill\s*\}', '\n\n⟦VFILL⟧\n\n', c)
+        c = re.sub(r'\\vfill(?![A-Za-z])', '\n\n⟦VFILL⟧\n\n', c)
+
+        def r_vspace(o, b, e):
+            cm = a_cm(b[0])
+            return '\n\n⟦VSPACE:%.2f⟧\n\n' % cm if cm else '\n\n'
+        c = reemplazar_comando(c, 'vspace', r_vspace, n_obl=1, estrella=True)
+
+        def r_tabular(nombre_t, cuerpo_t):
+            k = saltar_blancos(cuerpo_t, 0)
+            if cuerpo_t[k:k + 1] == '[':
+                _, k = leer_opcional(cuerpo_t, k)
+            _, _, k = leer_argumentos(cuerpo_t, k, 1)
+            filas = [f for f in dividir_nivel_superior(cuerpo_t[k:], '\\\\') if f.strip()]
+            return '\n\n' + '\n\n'.join(' '.join(x.strip() for x in dividir_nivel_superior(f, '&')) for f in filas) + '\n\n'
+        c = transformar_entornos(c, r'tabular\*?|tabularx', r_tabular)
+
+        # Grupos {\large\bfseries texto\par} -> párrafos
+        salida, pos = [], 0
+        while True:
+            k = c.find('{', pos)
+            if k < 0:
+                break
+            if k > 0 and c[k - 1] == '\\' and es_inicio_comando(c, k - 1):
+                salida.append(c[pos:k + 1])
+                pos = k + 1
+                continue
+            # solo grupos «sueltos» (no argumentos de comandos)
+            antes = c[:k].rstrip(' \t')
+            if re.search(r'\\[A-Za-z@]+\*?$', antes) or antes.endswith(('}', ']')) and not antes.endswith('\\par}'):
+                txt, fin = leer_grupo(c, k)
+                salida.append(c[pos:fin])
+                pos = fin
+                continue
+            txt, fin = leer_grupo(c, k)
+            negrita = bool(re.search(r'\\(bfseries|bf)(?![A-Za-z])', txt))
+            cursiva = bool(re.search(r'\\(itshape|it|em)(?![A-Za-z])', txt))
+            txt = re.sub(r'\\(bfseries|bf|itshape|it|em|large|Large|LARGE|huge|Huge|normalsize|small|'
+                         r'footnotesize|scshape|sffamily|rmfamily|centering|par|selectfont)(?![A-Za-z])', '', txt).strip()
+            if negrita:
+                txt = '\\textbf{%s}' % txt
+            if cursiva:
+                txt = '\\emph{%s}' % txt
+            salida.append(c[pos:k])
+            salida.append('\n\n' + txt + '\n\n')
+            pos = fin
+        salida.append(c[pos:])
+        c = ''.join(salida)
+        c = re.sub(r'\\par(?![A-Za-z])', '\n\n', c)
+        c = re.sub(r'\\\\(\[[^\]]*\])?', '\n\n', c)
+        c = re.sub(r'\\(centering|setstretch\{[^}]*\}|singlespacing|onehalfspacing|doublespacing|'
+                   r'thispagestyle\{[^}]*\}|null|large|Large|LARGE|huge|Huge|bfseries|normalsize)(?![A-Za-z])', '', c)
+        return '\n\n\\begin{caratula}\n' + c.strip() + '\n\\end{caratula}\n\n⟦FINCARATULA⟧\n\n'
+
+    def _bibliografia(self, opc, obl, est):
+        opciones = opc[0] or ''
+        titulo = self.f.nombres.get('bibname', 'Bibliografía')
+        m = re.search(r'title\s*=\s*\{([^}]*)\}', opciones) or re.search(r'title\s*=\s*([^,\]]+)', opciones)
+        if m:
+            titulo = m.group(1).strip()
+        en_indice = 'bibintoc' in opciones or 'heading' not in opciones
+        r = '\n\n\\chapter*{%s}\n' % titulo
+        if en_indice:
+            r += '\\addcontentsline{toc}{chapter}{%s}\n' % titulo
+        return r + '\n\\begin{bibliografiaapa}\n⟦REFS⟧\n\\end{bibliografiaapa}\n\n'
+
+    # ------------------------------------------------------------------
+    #  Numeración (como LaTeX): títulos, leyendas, ecuaciones y etiquetas
+    def _fmt(self, contador):
+        c = self.c
+        cap = a_letra(c['chapter']) if self.apendice else str(c['chapter'])
+        if contador == 'chapter':
+            return cap
+        if contador == 'section':
+            return ('%s.%d' % (cap, c['section'])) if self.modo_seccion == 'chapter' else str(c['section'])
+        if contador == 'subsection':
+            return '%s.%d' % (self._fmt('section'), c['subsection'])
+        if contador == 'subsubsection':
+            return '%s.%d' % (self._fmt('subsection'), c['subsubsection'])
+        if contador == 'paragraph':
+            return '%s.%d' % (self._fmt('subsubsection'), c['paragraph'])
+        if contador in ('table', 'figure', 'equation'):
+            if self.f.contadores_por_capitulo.get(contador):
+                return '%s.%d' % (cap, c[contador])
+            return str(c[contador])
+        return str(c.get(contador, ''))
+
+    def _registrar_etiqueta(self, nombre, num, tipo, titulo=''):
+        self.etiquetas[nombre.strip()] = {'num': num, 'tipo': tipo, 'titulo': titulo}
+
+    def numerar(self, s):
+        salida = []
+        pos = 0
+        pila = []
+        while True:
+            m = EVENTO.search(s, pos)
+            if not m:
+                break
+            if not es_inicio_comando(s, m.start()):
+                salida.append(s[pos:m.end()])
+                pos = m.end()
+                continue
+            salida.append(s[pos:m.start()])
+            g = m.groupdict()
+            if g['sec']:
+                sec, estrella = g['sec'], g['star']
+                try:
+                    opc, obl, fin = leer_argumentos(s, m.end(), 1, 1)
+                except ValueError:
+                    salida.append(m.group(0))
+                    pos = m.end()
+                    continue
+                titulo = obl[0]
+                num = None
+                if not estrella:
+                    self.c[sec] += 1
+                    for inferior in ('section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph'):
+                        if NIVEL_SECCION[inferior] > NIVEL_SECCION[sec]:
+                            self.c[inferior] = 0
+                    if sec == 'chapter':
+                        for cc in ('table', 'figure', 'equation'):
+                            if self.f.contadores_por_capitulo.get(cc):
+                                self.c[cc] = 0
+                    if NIVEL_SECCION[sec] <= self.f.secnumdepth:
+                        num = self._fmt(sec)
+                    tipo = 'anexo' if (sec == 'chapter' and self.apendice) else sec
+                    self.ref_actual = (num, tipo, titulo)
+                txt = '\\%s%s' % (sec, estrella)
+                if opc[0] is not None:
+                    txt += '[%s]' % opc[0]
+                txt += '{%s%s}' % (('⟦H:%s⟧' % num) if num else '', titulo)
+                salida.append(txt)
+                pos = fin
+            elif g['appendix']:
+                self.apendice = True
+                self.c['chapter'] = 0
+                salida.append(m.group(0))
+                pos = m.end()
+            elif g['setc']:
+                nombre, val = g['cname'], g['cval'].strip()
+                try:
+                    v = int(val)
+                    if nombre in self.c:
+                        self.c[nombre] = v if g['setc'] == 'setcounter' else self.c[nombre] + v
+                except ValueError:
+                    pass
+                salida.append(m.group(0))
+                pos = m.end()
+            elif g['renew']:
+                contador = g['thec']
+                try:
+                    _, obl, fin = leer_argumentos(s, m.end(), 1)
+                except ValueError:
+                    salida.append(m.group(0))
+                    pos = m.end()
+                    continue
+                if contador == 'section':
+                    self.modo_seccion = 'chapter' if '\\thechapter' in obl[0] else 'plain'
+                salida.append('')   # la redefinición se descarta
+                pos = fin
+            elif g['benv']:
+                env = g['benv']
+                if env in ENTORNOS_ECUACION:
+                    r = buscar_entorno(s, re.escape(env), m.start())
+                    if not r:
+                        salida.append(m.group(0))
+                        pos = m.end()
+                        continue
+                    ib, fb, ie, fe = r
+                    salida.append(self._ecuacion(env, s[fb:ie], s[fe:]))
+                    pos = fe
+                    continue
+                if env in ENTORNOS_FLOTANTES_TABLA or env in ENTORNOS_FLOTANTES_FIGURA:
+                    pila.append(env)
+                salida.append(m.group(0))
+                pos = m.end()
+            elif g['eenv']:
+                env = g['eenv']
+                if pila and env == pila[-1]:
+                    pila.pop()
+                salida.append(m.group(0))
+                pos = m.end()
+            elif g['cap'] or g['capof']:
+                if g['capof']:
+                    tipo_f = 'table' if g['capoftype'] == 'table' else 'figure'
+                    estrella = g['capofstar']
+                else:
+                    estrella = g['capstar']
+                    tipo_f = None
+                    for env in reversed(pila):
+                        tipo_f = 'table' if env in ENTORNOS_FLOTANTES_TABLA else 'figure'
+                        break
+                try:
+                    opc, obl, fin = leer_argumentos(s, m.end(), 1, 1)
+                except ValueError:
+                    salida.append(m.group(0))
+                    pos = m.end()
+                    continue
+                largo = obl[0]
+                etiquetas = re.findall(r'\\label\s*\{([^{}]*)\}', largo)
+                largo = re.sub(r'\\label\s*\{[^{}]*\}', '', largo)
+                if tipo_f and not estrella:
+                    self.c[tipo_f] += 1
+                    num = self._fmt(tipo_f)
+                    self.ref_actual = (num, tipo_f, opc[0] if opc[0] is not None else largo)
+                    marca = '⟦C:%s:%s⟧' % ('tabla' if tipo_f == 'table' else 'figura', num)
+                else:
+                    marca = '⟦C:%s:-⟧' % ('tabla' if tipo_f == 'table' else 'figura')
+                for e in etiquetas:
+                    self._registrar_etiqueta(e, self.ref_actual[0], self.ref_actual[1], self.ref_actual[2])
+                txt = '\\caption'
+                if opc[0] is not None:
+                    txt += '[%s]' % opc[0]
+                txt += '{%s%s}' % (marca, largo)
+                salida.append(txt)
+                pos = fin
+            elif g['label'] is not None:
+                num, tipo, titulo = self.ref_actual
+                self._registrar_etiqueta(g['label'], num, tipo, titulo)
+                pos = m.end()
+            elif g['dispmath'] is not None:
+                # \[ ... \]
+                fin = m.end()
+                k = fin
+                while True:
+                    k = s.find('\\]', k)
+                    if k < 0 or es_inicio_comando(s, k):
+                        break
+                    k += 2
+                if k < 0:
+                    salida.append(m.group(0))
+                    pos = m.end()
+                    continue
+                salida.append(self._ecuacion('displaymath', s[fin:k], s[k + 2:]))
+                pos = k + 2
+            else:
+                salida.append(m.group(0))
+                pos = m.end()
+        salida.append(s[pos:])
+        return ''.join(salida)
+
+    def _limpiar_matematica(self, c):
+        c = re.sub(r'\\label\s*\{[^{}]*\}', '', c)
+        c = re.sub(r'\\(nonumber|notag)(?![A-Za-z])', '', c)
+        c = re.sub(r'\\tag\*?\s*\{[^{}]*\}', '', c)
+        c = c.replace('\\begin{split}', '\\begin{aligned}').replace('\\end{split}', '\\end{aligned}')
+        c = re.sub(r'\n\s*\n', '\n', c)
+        return c.strip()
+
+    def _continua_parrafo(self, resto):
+        m = re.match(r'[ \t]*(\n[ \t]*)?(\S)', resto)
+        if not m:
+            return False
+        siguiente = resto[m.start(2):m.start(2) + 30]
+        if re.match(r'\\(begin|end|section|subsection|subsubsection|chapter|paragraph|item|par\b|\[|caption|label)', siguiente):
+            return False
+        return siguiente[0] not in '⟦'
+
+    def _ecuacion(self, env, contenido, resto):
+        base = env.rstrip('*')
+        estrella = env.endswith('*') or env == 'displaymath'
+        if base == 'alignat':
+            contenido = re.sub(r'^\s*\{[^}]*\}', '', contenido)
+        if base in ('align', 'gather', 'eqnarray', 'flalign', 'alignat'):
+            lineas = [l for l in dividir_nivel_superior(contenido, '\\\\') if l.strip()]
+        else:
+            lineas = [' '.join(l.strip() for l in dividir_nivel_superior(contenido, '\\\\'))] \
+                if base == 'multline' else [contenido]
+        bloques = []
+        for linea in lineas:
+            etiquetas = re.findall(r'\\label\s*\{([^{}]*)\}', linea)
+            tag = re.search(r'\\tag\*?\s*\{([^{}]*)\}', linea)
+            sin_numero = estrella or re.search(r'\\(nonumber|notag)(?![A-Za-z])', linea)
+            if tag:
+                num = tag.group(1)
+            elif sin_numero:
+                num = None
+            else:
+                self.c['equation'] += 1
+                num = self._fmt('equation')
+            if num:
+                self.ref_actual = (num, 'equation', '')
+            for e in etiquetas:
+                self._registrar_etiqueta(e, num, 'equation')
+            tex = self._limpiar_matematica(linea)
+            if base in ('align', 'eqnarray', 'flalign', 'alignat'):
+                tex = ' '.join(p.strip() for p in dividir_nivel_superior(tex, '&'))
+            if not tex:
+                continue
+            bloques.append(('\n\n⟦EQ:%s⟧\n\n' % num if num else '\n\n') + '\\[ %s \\]\n\n' % tex)
+        r = ''.join(bloques)
+        if self._continua_parrafo(resto):
+            r += '⟦NI⟧'
+        return r
+
+    # ------------------------------------------------------------------
+    #  Flotantes (tablas y figuras con leyenda APA)
+    def _bloque_leyenda(self, tipo, num, corto, largo):
+        largo = largo.strip()
+        if not num or num == '-':
+            return '\n\n\\begin{apaleyenda}\\emph{%s}\\end{apaleyenda}\n\n' % largo
+        nombre = self.f.nombres['tablename' if tipo == 'tabla' else 'figurename']
+        bm = ('tab' if tipo == 'tabla' else 'fig') + re.sub(r'[^0-9A-Za-z]', '_', num)
+        (self.lot if tipo == 'tabla' else self.lof).append(
+            {'num': num, 'texto': (corto if corto is not None else largo).strip(), 'bm': bm})
+        return ('\n\n\\begin{apaleyenda}⟦BM:%s⟧\\textbf{%s %s}\\\\\n\\emph{%s}\\end{apaleyenda}\n\n'
+                % (bm, nombre, num, largo))
+
+    def _bloque_nota(self, texto):
+        texto = texto.strip()
+        texto = re.sub(r'^\\textit\{Nota\.?\}\s*', '', texto)
+        return '\n\n\\begin{apanota}\\emph{Nota.} %s\n\\end{apanota}\n\n' % texto
+
+    def _extraer_leyendas(self, cuerpo):
+        leyendas = []
+
+        def r_cap(o, b, e):
+            largo = b[0]
+            m = re.match(r'⟦C:(\w+):([^⟧]*)⟧', largo)
+            tipo = m.group(1) if m else None
+            num = m.group(2) if m else None
+            if m:
+                largo = largo[m.end():]
+            leyendas.append((tipo, num, o[0], largo))
+            return ''
+        cuerpo = reemplazar_comando(cuerpo, 'caption', r_cap, n_obl=1, n_opc=1, estrella=True)
+        return cuerpo, leyendas
+
+    def _flotante(self, nombre, cuerpo):
+        tipo = 'tabla' if 'table' in nombre else 'figura'
+        cuerpo = re.sub(r'^\s*\[[^\]]*\]', '', cuerpo)
+        cuerpo, leyendas = self._extraer_leyendas(cuerpo)
+        notas = []
+
+        def r_nota(o, b, e):
+            notas.append(b[0])
+            return ''
+        cuerpo = reemplazar_comando(cuerpo, 'nota', r_nota, n_obl=1)
+        partes = []
+        for t, num, corto, largo in leyendas[:1]:
+            partes.append(self._bloque_leyenda(tipo, num, corto, largo))
+        partes.append('\n\n' + cuerpo.strip() + '\n\n')
+        for n in notas:
+            partes.append(self._bloque_nota(n))
+        return ''.join(partes)
+
+    # ------------------------------------------------------------------
+    #  Tablas
+    def parsear_columnas(self, spec, prof=0):
+        cols = []
+        s = spec
+        # expandir *{n}{...}
+        for _ in range(10):
+            m = re.search(r'\*\s*\{(\d+)\}\s*\{', s)
+            if not m:
+                break
+            contenido, fin = leer_grupo(s, m.end() - 1)
+            s = s[:m.start()] + contenido * int(m.group(1)) + s[fin:]
+        i = 0
+        pendiente_decl = ''
+        n = len(s)
+        while i < n:
+            c = s[i]
+            if c in ' \t\n|':
+                i += 1
+                continue
+            if c in '@!<':
+                k = saltar_blancos(s, i + 1)
+                if k < n and s[k] == '{':
+                    _, i = leer_grupo(s, k)
+                else:
+                    i = k + 1
+                continue
+            if c == '>':
+                k = saltar_blancos(s, i + 1)
+                if k < n and s[k] == '{':
+                    decl, i = leer_grupo(s, k)
+                    pendiente_decl += decl
+                else:
+                    i = k + 1
+                continue
+            col = None
+            if c in 'lcr':
+                col = {'tipo': c, 'alin': c, 'ancho': None}
+                i += 1
+            elif c in 'pmb':
+                k = saltar_blancos(s, i + 1)
+                arg, i = leer_grupo(s, k)
+                col = {'tipo': 'p', 'alin': 'l', 'ancho': a_cm(arg)}
+            elif c == 'X':
+                col = {'tipo': 'X', 'alin': 'l', 'ancho': None}
+                i += 1
+            elif c == 'S':
+                col = {'tipo': 'r', 'alin': 'r', 'ancho': None}
+                i += 1
+                k = saltar_blancos(s, i)
+                if k < n and s[k] == '[':
+                    _, i = leer_opcional(s, k)
+            elif c in self.f.tipos_columna and prof < 5:
+                n_args, definicion = self.f.tipos_columna[c]
+                i += 1
+                for k_arg in range(n_args):
+                    k = saltar_blancos(s, i)
+                    arg, i = leer_grupo(s, k)
+                    definicion = definicion.replace('#%d' % (k_arg + 1), arg)
+                sub = self.parsear_columnas(definicion, prof + 1)
+                if len(sub) == 1:
+                    col = sub[0]
+                else:
+                    cols.extend(sub)
+                    continue
+            else:
+                i += 1
+                continue
+            if pendiente_decl:
+                if re.search(r'\\centering', pendiente_decl):
+                    col['alin'] = 'c'
+                elif re.search(r'\\(raggedleft|RaggedLeft)', pendiente_decl):
+                    col['alin'] = 'r'
+                elif re.search(r'\\(raggedright|RaggedRight)', pendiente_decl):
+                    col['alin'] = 'l'
+                pendiente_decl = ''
+            cols.append(col)
+        return cols
+
+    REGLAS = re.compile(r'\s*\\(toprule|midrule|bottomrule|hline|cmidrule|cline|addlinespace|specialrule|'
+                        r'morecmidrules|rowcolor|noalign|hdashline|cdashline|arrayrulecolor|pagebreak|newpage|'
+                        r'nopagebreak)(?![A-Za-z])')
+
+    def _extraer_reglas(self, fila):
+        reglas = []
+        while True:
+            m = self.REGLAS.match(fila)
+            if not m:
+                break
+            nombre = m.group(1)
+            i = m.end()
+            # argumentos posibles: (trim) [ancho] {a-b} ...
+            while True:
+                k = saltar_blancos(fila, i)
+                if k < len(fila) and fila[k] == '(':
+                    j = fila.find(')', k)
+                    i = j + 1 if j > 0 else k + 1
+                elif k < len(fila) and fila[k] == '[':
+                    _, i = leer_opcional(fila, k)
+                elif k < len(fila) and fila[k] == '{' and nombre in ('cmidrule', 'cline', 'specialrule', 'rowcolor',
+                                                                     'noalign', 'arrayrulecolor', 'cdashline'):
+                    _, i = leer_grupo(fila, k)
+                    if nombre != 'specialrule':
+                        nombre_args = None
+                else:
+                    break
+            reglas.append(nombre)
+            fila = fila[i:]
+        return reglas, fila
+
+    def _filas(self, texto):
+        filas = []
+        pendientes = []
+        for seg in dividir_nivel_superior(texto, '\\\\'):
+            reglas, resto = self._extraer_reglas(seg)
+            pendientes += reglas
+            # reglas al final de la fila (antes de \\) no son habituales; se ignoran
+            if not resto.strip():
+                continue
+            celdas = dividir_nivel_superior(resto, '&')
+            filas.append({'celdas': [self._limpiar_celda(x) for x in celdas], 'reglas': pendientes})
+            pendientes = []
+        return filas
+
+    def _limpiar_celda(self, c):
+        c = c.strip()
+        c = re.sub(r'\\(centering|raggedright|raggedleft|RaggedRight|RaggedLeft|arraybackslash|noindent|'
+                   r'hfill|small|footnotesize|scriptsize|normalsize)(?![A-Za-z])', '', c)
+        c = re.sub(r'\n\s*\n', ' \\\\newline ', c)
+        # \multicolumn{n}{spec}{texto}: se simplifica el formato de columna
+        def r_multi(o, b, e):
+            spec = self.parsear_columnas(b[1])
+            alin = spec[0]['alin'] if spec else 'l'
+            return '\\multicolumn{%s}{%s}{%s}' % (b[0].strip(), alin, b[2].strip())
+        c = reemplazar_comando(c, 'multicolumn', r_multi, n_obl=3)
+        c = c.replace('\n', ' ')
+        return c.strip()
+
+    def transformar_tablas(self, s):
+        def f(nombre, cuerpo):
+            con_ancho = nombre in ('tabularx', 'tabular*', 'tabulary', 'xltabular')
+            k = saltar_blancos(cuerpo, 0)
+            if not con_ancho and cuerpo[k:k + 1] == '[':
+                _, k = leer_opcional(cuerpo, k)
+            try:
+                _, obl, k = leer_argumentos(cuerpo, k, 2 if con_ancho else 1)
+            except ValueError:
+                self.avisos.append('Tabla %s con argumentos ilegibles; se omite.' % nombre)
+                return ''
+            ancho = a_cm(obl[0]) if con_ancho else None
+            resto = cuerpo[k:]
+            if re.search(r'\\begin\{(tabular|tabularx|longtable)', resto):
+                resto = transformar_entornos(resto, r'(?:tabular\*?|tabularx|tabulary)', self._tabla_anidada)
+            return self._convertir_tabla(nombre, obl[-1], ancho, resto)
+        return transformar_entornos(s, r'(?:tabular\*?|tabularx|tabulary|longtable\*?|xltabular)', f)
+
+    def _tabla_anidada(self, nombre, cuerpo):
+        k = saltar_blancos(cuerpo, 0)
+        if cuerpo[k:k + 1] == '[':
+            _, k = leer_opcional(cuerpo, k)
+        _, obl, k = leer_argumentos(cuerpo, k, 2 if nombre in ('tabularx', 'tabular*', 'tabulary') else 1)
+        filas = self._filas(cuerpo[k:])
+        return ' \\newline '.join(' '.join(f['celdas']) for f in filas)
+
+    def _convertir_tabla(self, nombre, spec, ancho_total, cuerpo):
+        cols = self.parsear_columnas(spec)
+        if not cols:
+            self.avisos.append('Tabla sin columnas reconocibles: {%s}' % spec)
+            return cuerpo
+        leyenda = ''
+        if 'longtable' in nombre or nombre == 'xltabular':
+            # \caption{...}\label{...}\\ dentro del longtable
+            m = re.search(r'\\caption\*?\s*(\[[^\]]*\])?\s*\{', cuerpo)
+            if m and es_inicio_comando(cuerpo, m.start()):
+                arg, fin = leer_grupo(cuerpo, m.end() - 1)
+                corto = m.group(1)[1:-1] if m.group(1) else None
+                mm = re.match(r'⟦C:(\w+):([^⟧]*)⟧', arg)
+                num = mm.group(2) if mm else None
+                largo = arg[mm.end():] if mm else arg
+                leyenda = self._bloque_leyenda('tabla', num, corto, largo)
+                # quitar hasta el \\ que cierra la fila de la leyenda
+                resto = cuerpo[fin:]
+                mm2 = re.match(r'\s*(\\label\{[^}]*\}\s*)*\\\\(\[[^\]]*\])?', resto)
+                cuerpo = cuerpo[:m.start()] + (resto[mm2.end():] if mm2 else resto)
+        segs = re.split(r'\\(endfirsthead|endhead|endfoot|endlastfoot)(?![A-Za-z])', cuerpo)
+        encabezado = None
+        if len(segs) > 1:
+            partes = {}
+            for j in range(1, len(segs), 2):
+                partes[segs[j]] = segs[j - 1]
+            encabezado = partes.get('endfirsthead', partes.get('endhead'))
+            cuerpo_filas = segs[-1]
+        else:
+            cuerpo_filas = cuerpo
+        if encabezado is not None:
+            enc = self._filas(encabezado)
+            cuerpo_f = self._filas(cuerpo_filas)
+            hay_reglas = any(f['reglas'] for f in enc + cuerpo_f) or bool(self.REGLAS.search(encabezado))
+            if cuerpo_f and cuerpo_f[0]['reglas']:
+                cuerpo_f[0]['reglas'] = []
+        else:
+            todas = self._filas(cuerpo_filas)
+            hay_reglas = any(f['reglas'] for f in todas) or bool(re.search(r'\\(bottomrule|hline)', cuerpo_filas))
+            corte = None
+            if todas and todas[0]['reglas']:
+                for j in range(1, len(todas)):
+                    if any(r in ('midrule', 'hline') for r in todas[j]['reglas']):
+                        corte = j
+                        break
+            if corte:
+                enc, cuerpo_f = todas[:corte], todas[corte:]
+                cuerpo_f[0]['reglas'] = []
+            else:
+                enc, cuerpo_f = [], todas
+                if cuerpo_f:
+                    cuerpo_f[0]['reglas'] = []
+        reglas_cuerpo = [j for j, f in enumerate(cuerpo_f) if any(r in ('midrule', 'hline') for r in f['reglas'])]
+        ncol = len(cols)
+        for f_ in enc + cuerpo_f:
+            ocupadas = 0
+            for c in f_['celdas']:
+                m = re.match(r'\\multicolumn\{(\d+)\}', c)
+                ocupadas += int(m.group(1)) if m else 1
+            if ocupadas > ncol:
+                self.avisos.append('Una fila de tabla tiene %d celdas y la tabla %d columnas: «%s»'
+                                   % (ocupadas, ncol, texto_plano(' & '.join(f_['celdas']))[:80]))
+        anchos = self._anchos(cols, enc, cuerpo_f, ancho_total)
+        k = len(self.tablas)
+        self.tablas.append({'anchos_cm': anchos, 'alin': [c['alin'] for c in cols],
+                            'n_encabezado': len(enc), 'reglas_cuerpo': reglas_cuerpo,
+                            'bordes': bool(hay_reglas), 'filas': len(enc) + len(cuerpo_f)})
+        lineas = ['\\begin{tabular}{%s}' % ''.join(c['alin'] for c in cols)]
+        if enc:
+            lineas.append('\\toprule')
+            for f_ in enc:
+                lineas.append(' & '.join(f_['celdas']) + ' \\\\')
+            lineas.append('\\midrule')
+        for f_ in cuerpo_f:
+            lineas.append(' & '.join(f_['celdas']) + ' \\\\')
+        if enc:
+            lineas.append('\\bottomrule')
+        lineas.append('\\end{tabular}')
+        return leyenda + '\n\n⟦TBL:%d⟧\n\n' % k + '\n'.join(lineas) + '\n\n'
+
+    def _anchos(self, cols, enc, cuerpo_f, ancho_total):
+        n = len(cols)
+        nat = [0.0] * n
+        for es_enc, filas in ((True, enc), (False, cuerpo_f)):
+            for f_ in filas:
+                j = 0
+                for celda in f_['celdas']:
+                    m = re.match(r'\\multicolumn\{(\d+)\}', celda)
+                    span = int(m.group(1)) if m else 1
+                    if span == 1 and j < n:
+                        txt = texto_plano(celda)
+                        if es_enc:
+                            w = max([ancho_texto_cm(p, negrita=True) for p in txt.split()] or [0])
+                        else:
+                            lineas = re.split(r'\\newline', celda)
+                            w = max(ancho_texto_cm(texto_plano(l)) for l in lineas)
+                        nat[j] = max(nat[j], w)
+                    j += span
+        relleno = 0.38
+        anchos = []
+        for j, c in enumerate(cols):
+            if c['ancho'] is not None:
+                anchos.append(c['ancho'] + relleno)
+            elif c['tipo'] == 'X':
+                anchos.append(None)
+            else:
+                anchos.append(min(max(nat[j], 0.8), 7.5) + relleno)
+        fijos = sum(a for a in anchos if a is not None)
+        nx = anchos.count(None)
+        if nx:
+            objetivo = ancho_total or ANCHO_UTIL_CM
+            resto = max(objetivo - fijos, 2.5 * nx)
+            anchos = [a if a is not None else resto / nx for a in anchos]
+        total = sum(anchos)
+        if total > ANCHO_UTIL_CM:
+            anchos = [a * ANCHO_UTIL_CM / total for a in anchos]
+        return [round(a, 3) for a in anchos]
+
+    # ------------------------------------------------------------------
+    #  Figuras: TikZ, \includegraphics e \includepdf
+    def _bloque_imagen(self, png, ancho_cm):
+        return '\n\n\\begin{apafigura}\n\\includegraphics[width=%.3fcm]{%s}\n\\end{apafigura}\n\n' % (ancho_cm, png)
+
+    def transformar_graficos(self, s):
+        codigos = []
+
+        def r_tikz(nombre, cuerpo):
+            ancho = escala = None
+            m = re.search(r'⟦ANCHOCM:([0-9.]+)⟧', cuerpo)
+            if m:
+                ancho = float(m.group(1))
+            m = re.search(r'⟦ESCALA:([0-9.]+)⟧', cuerpo)
+            if m:
+                escala = float(m.group(1))
+            cuerpo = re.sub(r'⟦(ANCHOCM|ESCALA):[0-9.]+⟧', '', cuerpo)
+            codigos.append(('\\begin{tikzpicture}' + cuerpo + '\\end{tikzpicture}', ancho, escala))
+            return '⟦TIKZ:%d⟧' % (len(codigos) - 1)
+        s = transformar_entornos(s, r'tikzpicture', r_tikz)
+        if codigos:
+            resultados = self.g.compilar_tikz([c[0] for c in codigos])
+
+            def r_marca(m):
+                k = int(m.group(1))
+                res = resultados[k]
+                if not res:
+                    return ('\n\n\\textcolor{pendientecolor}{\\textbf{[Figura TikZ %d no compilada: revise el '
+                            'registro de la conversión]}}\n\n' % (k + 1))
+                png, ancho_nat, alto_nat = res
+                _, ancho, escala = codigos[k]
+                w = ancho if ancho else ancho_nat * (escala or 1.0)
+                return self._bloque_imagen(png, self._ajustar(w, alto_nat * w / ancho_nat))
+            s = re.sub(r'⟦TIKZ:(\d+)⟧', r_marca, s)
+
+        def r_graf(o, b, e):
+            res = self.g.imagen(b[0].strip(), o[0] or '')
+            if not res:
+                return '\\textcolor{pendientecolor}{\\textbf{[Imagen no encontrada: %s]}}' % b[0].strip().replace('_', '\\_')
+            png, ancho, alto = res
+            return self._bloque_imagen(png, self._ajustar(ancho, alto))
+        s = reemplazar_comando(s, 'includegraphics', r_graf, n_obl=1, n_opc=1, estrella=True)
+
+        def r_pdf(o, b, e):
+            paginas = self.g.paginas_pdf(b[0].strip(), o[0] or '')
+            if not paginas:
+                return '\\textcolor{pendientecolor}{\\textbf{[No se pudo insertar el PDF %s]}}' % b[0].strip().replace('_', '\\_')
+            partes = []
+            for png, ancho, alto, horizontal in paginas:
+                if horizontal:
+                    w = self._ajustar(ancho, alto, max_ancho=ALTO_UTIL_CM - 0.3, max_alto=ANCHO_UTIL_CM - 1.4)
+                else:
+                    w = self._ajustar(ancho, alto, max_ancho=ANCHO_UTIL_CM, max_alto=ALTO_UTIL_CM - 1.6)
+                partes.append('\n\n⟦PDFPAG:%s⟧\n\n' % ('H' if horizontal else 'V') + self._bloque_imagen(png, w))
+            return ''.join(partes)
+        s = reemplazar_comando(s, 'includepdf', r_pdf, n_obl=1, n_opc=1)
+        return s
+
+    def _ajustar(self, ancho, alto, max_ancho=ANCHO_UTIL_CM, max_alto=ALTO_UTIL_CM - 4.5):
+        """Ancho final (cm) que respeta el ancho útil y una altura máxima."""
+        w = min(ancho, max_ancho)
+        if alto and ancho and alto * w / ancho > max_alto:
+            w = max_alto * ancho / alto
+        return w
+
+    # ------------------------------------------------------------------
+    #  Listas
+    def _dividir_items(self, cuerpo):
+        """Devuelve (preambulo, [(etiqueta_opcional, texto), ...])."""
+        posiciones = []
+        prof = 0
+        prof_env = 0
+        i = 0
+        n = len(cuerpo)
+        while i < n:
+            c = cuerpo[i]
+            if c == '\\':
+                if cuerpo.startswith('\\begin{', i):
+                    prof_env += 1
+                elif cuerpo.startswith('\\end{', i):
+                    prof_env -= 1
+                elif prof == 0 and prof_env == 0 and re.match(r'\\item(?![A-Za-z@])', cuerpo[i:]):
+                    posiciones.append(i)
+                i += 2
+                continue
+            if c == '{':
+                prof += 1
+            elif c == '}':
+                prof -= 1
+            i += 1
+        if not posiciones:
+            return cuerpo, []
+        items = []
+        for k, p in enumerate(posiciones):
+            fin = posiciones[k + 1] if k + 1 < len(posiciones) else n
+            t = cuerpo[p + 5:fin]
+            etiqueta = None
+            j = saltar_blancos(t, 0)
+            if t[j:j + 1] == '[':
+                etiqueta, j2 = leer_opcional(t, j)
+                t = t[j2:]
+            items.append((etiqueta, t.strip()))
+        return cuerpo[:posiciones[0]], items
+
+    def _render_etiqueta(self, plantilla, i):
+        r = plantilla
+        r = r.replace('\\arabic*', str(i)).replace('\\alph*', a_letra(i, False)).replace('\\Alph*', a_letra(i))
+        r = r.replace('\\roman*', a_romano(i)).replace('\\Roman*', a_romano(i, True))
+        return r
+
+    def transformar_listas(self, s):
+        def f(nombre, cuerpo):
+            cuerpo = transformar_entornos(cuerpo, r'(?:enumerate|itemize|description)\*?', f)
+            opciones = None
+            k = saltar_blancos(cuerpo, 0)
+            if cuerpo[k:k + 1] == '[':
+                opciones, k = leer_opcional(cuerpo, k)
+                cuerpo = cuerpo[k:]
+            base = nombre.rstrip('*')
+            plantilla = None
+            inicio = 1
+            if opciones:
+                for op in dividir_por_caracter(opciones, ','):
+                    clave, _, valor = op.partition('=')
+                    clave = clave.strip()
+                    if clave == 'label':
+                        plantilla = valor.strip()
+                        if plantilla.startswith('{') and plantilla.endswith('}'):
+                            plantilla = plantilla[1:-1]
+                    elif clave == 'start':
+                        try:
+                            inicio = int(valor)
+                        except ValueError:
+                            pass
+                    elif not valor and base == 'enumerate' and re.fullmatch(r'\s*[(\[]?[aAiI1][.)\]]?\s*', op):
+                        plantilla = op.strip().replace('a', '\\alph*').replace('A', '\\Alph*') \
+                            .replace('i', '\\roman*').replace('I', '\\Roman*').replace('1', '\\arabic*')
+            pre, items = self._dividir_items(cuerpo)
+            if not items:
+                return cuerpo
+            if base == 'itemize' and plantilla is not None:
+                plantilla = None      # viñetas normales
+            explicitas = any(e is not None for e, _ in items)
+            if nombre.endswith('*'):
+                partes = []
+                for j, (et, txt) in enumerate(items):
+                    etq = et if et is not None else (self._render_etiqueta(plantilla, j + inicio) if plantilla else
+                                                     ('(%d)' % (j + inicio) if base == 'enumerate' else '•'))
+                    partes.append(etq + '~' + re.sub(r'\s*\n\s*', ' ', txt))
+                return ' ' + ' '.join(partes) + ' '
+            if base == 'description':
+                return '\\begin{description}' + cuerpo + '\\end{description}'
+            if plantilla is not None or explicitas:
+                partes = ['\n\n\\begin{listaetiquetada}\n']
+                for j, (et, txt) in enumerate(items):
+                    if et is None:
+                        et = self._render_etiqueta(plantilla, j + inicio) if plantilla else (
+                            '%d.' % (j + inicio) if base == 'enumerate' else '•')
+                    partes.append('%s⟦TAB⟧%s\n\n' % (et, txt))
+                partes.append('\\end{listaetiquetada}\n\n')
+                return ''.join(partes)
+            return '\\begin{%s}%s%s\\end{%s}' % (base, pre, ''.join(
+                '\\item%s %s\n' % ('[%s]' % et if et is not None else '', txt) for et, txt in items), base)
+
+        salida = []
+        pos = 0
+        while True:
+            r = buscar_entorno(s, r'(?:enumerate|itemize|description)\*?', pos)
+            if not r:
+                break
+            ib, fb, ie, fe = r
+            real = re.match(r'\\begin\{([^}]*)\}', s[ib:fb]).group(1)
+            salida.append(s[pos:ib])
+            salida.append(f(real, s[fb:ie]))
+            if not real.endswith('*') and self._continua_parrafo(s[fe:]):
+                salida.append('\n\n⟦NI⟧')
+            pos = fe
+        salida.append(s[pos:])
+        return ''.join(salida)
+
+    # ------------------------------------------------------------------
+    #  Títulos, índice general y entradas manuales (\addcontentsline)
+    def transformar_titulos(self, s):
+        pat = re.compile(
+            r'\\(?:(?P<sec>chapter|section|subsection|subsubsection|paragraph|subparagraph)(?P<star>\*?)(?![A-Za-z@])'
+            r'|(?P<acl>addcontentsline)\s*\{(?P<aclf>[^{}]*)\}\s*\{(?P<acll>[^{}]*)\}'
+            r'|(?P<idx>tableofcontents|listoftables|listoffigures)(?![A-Za-z@])'
+            r'|(?P<appendix>appendix)(?![A-Za-z@]))')
+        niveles = {'part': 1, 'chapter': 1, 'section': 2, 'subsection': 3, 'subsubsection': 4,
+                   'paragraph': 5, 'subparagraph': 5}
+        max_nivel = self.f.tocdepth + 1
+        salida = []
+        pos = 0
+        ultimo = None          # (bm, fin_en_entrada) del último título sin entrada en el índice
+        pendientes = []        # entradas a la espera del siguiente destino
+        apendice = False
+
+        def agregar(nivel, texto, bm):
+            texto = re.sub(r'\\footnote\{[^{}]*\}', '', texto)
+            texto = re.sub(r'⟦H:[^⟧]*⟧', '', texto).strip()
+            if nivel <= max_nivel:
+                self.toc.append({'nivel': min(nivel, 3), 'texto': texto, 'bm': bm})
+
+        while True:
+            m = pat.search(s, pos)
+            if not m:
+                break
+            if not es_inicio_comando(s, m.start()):
+                salida.append(s[pos:m.end()])
+                pos = m.end()
+                continue
+            salida.append(s[pos:m.start()])
+            g = m.groupdict()
+            if g['appendix']:
+                apendice = True
+                pos = m.end()
+                continue
+            if g['idx']:
+                tipo = {'tableofcontents': 'toc', 'listoftables': 'lot', 'listoffigures': 'lof'}[g['idx']]
+                bm = 'idx' + tipo
+                for nivel, texto in pendientes:
+                    agregar(nivel, texto, bm)
+                pendientes = []
+                salida.append('\n\n⟦INDICE:%s⟧\n\n' % tipo)
+                ultimo = None
+                pos = m.end()
+                continue
+            if g['acl']:
+                try:
+                    texto, fin = leer_grupo(s, saltar_blancos(s, m.end()))
+                except ValueError:
+                    pos = m.end()
+                    continue
+                pos = fin
+                if g['aclf'].strip() != 'toc':
+                    continue
+                nivel = niveles.get(g['acll'].strip(), 2)
+                entre = s[ultimo[1]:m.start()] if ultimo else 'x'
+                if ultimo and re.fullmatch(r'(\s|\\phantomsection|\\label\{[^}]*\})*', entre):
+                    agregar(nivel, texto, ultimo[0])
+                    ultimo = None
+                else:
+                    pendientes.append((nivel, texto))
+                continue
+            # título
+            sec, estrella = g['sec'], g['star']
+            try:
+                opc, obl, fin = leer_argumentos(s, m.end(), 1, 1)
+            except ValueError:
+                salida.append(m.group(0))
+                pos = m.end()
+                continue
+            titulo = obl[0]
+            mm = re.match(r'⟦H:([^⟧]*)⟧', titulo)
+            num = mm.group(1) if mm else None
+            if mm:
+                titulo = titulo[mm.end():]
+            titulo = titulo.strip()
+            corto = opc[0].strip() if opc[0] is not None else titulo
+            nivel = niveles[sec]
+            self.n_titulo += 1
+            bm = 'tit%d' % self.n_titulo
+            for nv, texto in pendientes:
+                agregar(nv, texto, bm)
+            pendientes = []
+            if nivel == 1 and num:
+                nombre = self.f.nombres['appendixname' if apendice else 'chaptername']
+                visible = '%s %s\\\\ %s' % (nombre.upper(), num, titulo)
+                agregar(1, '%s %s. %s' % (nombre, num, corto), bm)
+            elif num:
+                visible = '%s. %s' % (num, titulo)
+                agregar(nivel, '%s %s' % (num, corto), bm)
+            else:
+                visible = titulo
+            if nivel >= 4 and not re.search(r'[.:?!]\s*$', visible):
+                visible += '.'
+            cmd = {1: 'section', 2: 'subsection', 3: 'subsubsection', 4: 'paragraph', 5: 'subparagraph'}[nivel]
+            salida.append('\n\n\\%s*{%s}\\label{%s}\n\n' % (cmd, visible, bm))
+            ultimo = (bm, fin) if (estrella or not num) else None
+            pos = fin
+        salida.append(s[pos:])
+        if pendientes:
+            self.avisos.append('Entradas de \\addcontentsline sin destino: %s' % pendientes)
+        return ''.join(salida)
+
+    def _indices(self, s):
+        nombres = self.f.nombres
+
+        def bloque(tipo):
+            titulo = {'toc': nombres.get('contentsname'), 'lot': nombres.get('listtablename'),
+                      'lof': nombres.get('listfigurename')}[tipo]
+            partes = ['\n\n\\begin{tituloindice}⟦BM:idx%s⟧%s\\end{tituloindice}\n\n' % (tipo, titulo)]
+            if tipo == 'toc':
+                for e in self.toc:
+                    partes.append('\\begin{indice%d}⟦TOCREF:%s⟧%s\\end{indice%d}\n\n'
+                                  % (e['nivel'], e['bm'], e['texto'], e['nivel']))
+            else:
+                lista = self.lot if tipo == 'lot' else self.lof
+                nombre = nombres['tablename' if tipo == 'lot' else 'figurename']
+                for e in lista:
+                    partes.append('\\begin{indicefig}⟦TOCREF:%s⟧%s %s. %s\\end{indicefig}\n\n'
+                                  % (e['bm'], nombre, e['num'], e['texto']))
+                if not lista:
+                    partes.append('\\begin{indicefig}(Sin entradas)\\end{indicefig}\n\n')
+            return ''.join(partes)
+        return re.sub(r'⟦INDICE:(toc|lot|lof)⟧', lambda m: bloque(m.group(1)), s)
+
+    # ------------------------------------------------------------------
+    #  Referencias cruzadas
+    def _buscar_etiqueta(self, nombre):
+        nombre = nombre.strip()
+        e = self.etiquetas.get(nombre)
+        if e and e['num']:
+            return e
+        a = self.aux.get(nombre)
+        if a:
+            return {'num': a['num'], 'tipo': a.get('tipo'), 'titulo': a.get('titulo', '')}
+        return None
+
+    def resolver_referencias(self, s):
+        def falta(nombre):
+            self.refs_faltantes.append(nombre)
+            return '\\textcolor{pendientecolor}{\\textbf{??}}'
+
+        def r_ref(o, b, e):
+            res = []
+            for nombre in b[0].split(','):
+                et = self._buscar_etiqueta(nombre)
+                res.append(et['num'] if et else falta(nombre.strip()))
+            return ', '.join(res)
+
+        def r_eqref(o, b, e):
+            et = self._buscar_etiqueta(b[0])
+            return '(%s)' % et['num'] if et else falta(b[0].strip())
+
+        prefijos = {'table': 'Tabla', 'figure': 'Figura', 'equation': 'ecuación', 'chapter': 'capítulo',
+                    'anexo': 'Anexo', 'section': 'sección', 'subsection': 'sección', 'subsubsection': 'sección',
+                    'paragraph': 'sección'}
+
+        def r_auto(o, b, e, mayus=False):
+            res = []
+            for nombre in b[0].split(','):
+                et = self._buscar_etiqueta(nombre)
+                if not et:
+                    res.append(falta(nombre.strip()))
+                    continue
+                pre = prefijos.get(et.get('tipo') or '', '')
+                num = '(%s)' % et['num'] if et.get('tipo') == 'equation' else et['num']
+                if mayus and pre:
+                    pre = pre[0].upper() + pre[1:]
+                res.append(('%s~%s' % (pre, num)) if pre else num)
+            return ', '.join(res)
+
+        def r_nameref(o, b, e):
+            et = self._buscar_etiqueta(b[0])
+            return et.get('titulo') or et['num'] if et else falta(b[0].strip())
+
+        def r_pageref(o, b, e):
+            a = self.aux.get(b[0].strip())
+            return a.get('pagina', '?') if a else falta(b[0].strip())
+
+        s = reemplazar_comando(s, 'eqref', r_eqref, n_obl=1)
+        s = reemplazar_comando(s, 'ref', r_ref, n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'autoref', r_auto, n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'cref', r_auto, n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'Autoref', lambda o, b, e: r_auto(o, b, e, True), n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'Cref', lambda o, b, e: r_auto(o, b, e, True), n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'nameref', r_nameref, n_obl=1, estrella=True)
+        s = reemplazar_comando(s, 'pageref', r_pageref, n_obl=1, estrella=True)
+        return s
+
+    def comparar_con_aux(self):
+        """Lista de diferencias entre la numeración calculada y la del .aux."""
+        difs = []
+        for nombre, a in self.aux.items():
+            e = self.etiquetas.get(nombre)
+            if e and e['num'] and a.get('num') and e['num'] != a['num']:
+                difs.append('%s: calculado %s / LaTeX %s' % (nombre, e['num'], a['num']))
+        return difs
+
+    # ------------------------------------------------------------------
+    #  Limpieza final
+    def _limpiar(self, s):
+        s = re.sub(r'\\pagenumbering\s*\{\s*(roman|Roman)\s*\}', '\n\n⟦SECCION:roman⟧\n\n', s)
+        s = re.sub(r'\\pagenumbering\s*\{\s*arabic\s*\}', '\n\n⟦SECCION:arabic⟧\n\n', s)
+        s = re.sub(r'\\frontmatter(?![A-Za-z])', '\n\n⟦SECCION:roman⟧\n\n', s)
+        s = re.sub(r'\\mainmatter(?![A-Za-z])', '\n\n⟦SECCION:arabic⟧\n\n', s)
+        con_args = {  # comando: (obligatorios, opcionales)
+            'setlength': (2, 0), 'addtolength': (2, 0), 'setstretch': (1, 0), 'vspace': (1, 0),
+            'thispagestyle': (1, 0), 'pagestyle': (1, 0), 'captionsetup': (1, 1), 'addtocontents': (2, 0),
+            'setcounter': (2, 0), 'addtocounter': (2, 0), 'stepcounter': (1, 0), 'enlargethispage': (1, 0),
+            'linespread': (1, 0), 'fontsize': (2, 0), 'color': (1, 1), 'setlist': (1, 1),
+            'pdfbookmark': (2, 1), 'hypersetup': (1, 0), 'graphicspath': (1, 0), 'sisetup': (1, 0),
+            'label': (1, 0), 'index': (1, 0), 'markboth': (2, 0), 'markright': (1, 0),
+            'renewcommand': (2, 1), 'newcounter': (1, 1), 'selectlanguage': (1, 0), 'hyphenation': (1, 0),
+            'newpage': (0, 0), 'definecolor': (3, 0), 'usetikzlibrary': (1, 0), 'tikzset': (1, 0),
+            'pgfplotsset': (1, 0), 'arrayrulecolor': (1, 0), 'rowcolors': (3, 0), 'newgeometry': (1, 0),
+            'restoregeometry': (0, 0), 'counterwithin': (2, 0), 'counterwithout': (2, 0),
+            'addbibresource': (1, 1), 'DeclareFieldFormat': (2, 1), 'titleformat': (2, 4),
+            'titlespacing': (4, 1), 'AtBeginEnvironment': (2, 0), 'AtEndEnvironment': (2, 0),
+            'newgeometry*': (1, 0), 'cftsetindents': (3, 0),
+        }
+        for cmd, (no, nopc) in con_args.items():
+            if no == 0 and nopc == 0:
+                continue
+            s = reemplazar_comando(s, cmd, lambda o, b, e: '', n_obl=no, n_opc=nopc, estrella=True)
+        s = reemplazar_comando(s, 'hspace', lambda o, b, e: ' ', n_obl=1, estrella=True)
+        s = re.sub(r'\\par(?![A-Za-z@])', '\n\n', s)
+        sueltos = ('centering', 'raggedright', 'RaggedRight', 'raggedleft', 'RaggedLeft', 'noindent', 'indent',
+                   'small', 'footnotesize', 'scriptsize', 'tiny', 'normalsize', 'large', 'Large', 'LARGE',
+                   'huge', 'Huge', 'singlespacing', 'onehalfspacing', 'doublespacing', 'begingroup',
+                   'endgroup', 'phantomsection', 'clearpage', 'newpage', 'cleardoublepage', 'pagebreak',
+                   'nopagebreak', 'FloatBarrier', 'vfill', 'hfill', 'medskip', 'smallskip', 'bigskip',
+                   'protect', 'relax', 'null', 'leavevmode', 'sloppy', 'fussy', 'allowbreak', 'nobreak',
+                   'appendix', 'backmatter', 'maketitle', 'arraybackslash', 'normalfont', 'restoregeometry',
+                   'linebreak', 'selectfont', 'unskip', 'ignorespaces', 'strut', 'break', 'filbreak',
+                   'goodbreak', 'needspace', 'frenchspacing', 'nonfrenchspacing', 'printindex',
+                   'listofabbreviations', 'tightlist')
+        s = re.sub(r'\\(' + '|'.join(sueltos) + r')(?![A-Za-z@])(\s*\[[^\]]*\])?', '', s)
+        s = re.sub(r'\\-', '', s)
+        s = re.sub(r'\\begin\{(center|flushleft|flushright)\}', r'\\begin{\1}', s)
+        return s
+
+    def _restaurar_verbatim(self, s):
+        def r(m):
+            txt = self.f.verbatim[int(m.group(1))].expandtabs(4).strip('\n')
+            txt = txt.replace('\\end{verbatim}', '\\end{verbatim }')
+            return '\n\n\\begin{verbatim}\n%s\n\\end{verbatim}\n\n' % txt
+        return re.sub(r'⟦VERB:(\d+)⟧', r, s)
+
+    # ------------------------------------------------------------------
+    def comandos_desconocidos(self, s):
+        """Comandos que quedan en el LaTeX final y que pandoc podría no conocer."""
+        conocidos = set('''textbf textit emph texttt textsc textsuperscript textsubscript underline textcolor
+            parencite textcite cite citep citet autocite footcite nocite citeauthor citeyear citetitle parencites
+            textcites Parencite Textcite Cite footnote url href includegraphics section subsection
+            subsubsection paragraph subparagraph label item begin end toprule midrule bottomrule multicolumn
+            multirow newline ldots dots textbackslash LaTeX TeX S P quad qquad textquotesingle textasciitilde
+            textrm textsf textup textmd textnormal uppercase MakeUppercase today'''.split())
+        sin_mate = re.sub(r'\\\[.*?\\\]', ' ', s, flags=re.S)
+        sin_mate = re.sub(r'(?<!\\)\$[^$]*\$', ' ', sin_mate)
+        sin_mate = re.sub(r'\\begin\{verbatim\}.*?\\end\{verbatim\}', ' ', sin_mate, flags=re.S)
+        encontrados = {}
+        for m in re.finditer(r'\\([A-Za-z@]+)', sin_mate):
+            if es_inicio_comando(sin_mate, m.start()) and m.group(1) not in conocidos:
+                encontrados[m.group(1)] = encontrados.get(m.group(1), 0) + 1
+        return encontrados
+
+
+def leer_aux(ruta):
+    """Lee \\newlabel del .aux (formato hyperref) -> {etiqueta: {num, pagina, titulo, tipo}}."""
+    res = {}
+    if not ruta or not Path(ruta).is_file():
+        return res
+    texto = Path(ruta).read_text(encoding='utf-8', errors='replace')
+    for m in re.finditer(r'\\newlabel\{([^{}]*)\}\{', texto):
+        nombre = m.group(1)
+        if '@' in nombre:
+            continue
+        try:
+            arg, _ = leer_grupo(texto, m.end() - 1)
+            partes = []
+            i = 0
+            while i < len(arg) and len(partes) < 5:
+                k = saltar_blancos(arg, i)
+                if k >= len(arg) or arg[k] != '{':
+                    break
+                p, i = leer_grupo(arg, k)
+                partes.append(p)
+        except ValueError:
+            continue
+        if not partes:
+            continue
+        ancla = partes[3] if len(partes) > 3 else ''
+        tipo = ancla.split('.')[0] if ancla else None
+        tipo = {'table': 'table', 'figure': 'figure', 'equation': 'equation', 'chapter': 'chapter',
+                'section': 'section', 'subsection': 'subsection', 'subsubsection': 'subsubsection',
+                'appendix': 'anexo'}.get(tipo, tipo)
+        res[nombre] = {'num': partes[0], 'pagina': partes[1] if len(partes) > 1 else '',
+                       'titulo': partes[2] if len(partes) > 2 else '', 'tipo': tipo}
+    return res
+
+
+def aux_completo(ruta):
+    if not ruta or not Path(ruta).is_file():
+        return False
+    return '\\@abspage@last' in Path(ruta).read_text(encoding='utf-8', errors='replace')

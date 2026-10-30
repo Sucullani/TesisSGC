@@ -1,0 +1,381 @@
+% =====================================================================
+%  ANEXO C. INSTRUMENTOS DE RECOLECCIÓN DE DATOS Y FORMATOS DEL SGC
+%  C.1 (lista de verificación ISO 9001:2026) se incluye desde
+%  capitulos/91a_lista_verificacion_iso9001.tex (otro archivo).
+%  C.2 a C.8: formatos listos para imprimir (tamaño carta).
+% =====================================================================
+\chapter{INSTRUMENTOS DE RECOLECCIÓN DE DATOS Y FORMATOS DEL SGC}
+\label{anx:instrumentos}
+
+% --- Utilidades locales para los formatos -----------------------------
+\providecommand{\casilla}{\framebox[1.9ex]{\rule{0pt}{1.3ex}}}
+\providecommand{\campo}[1]{#1~\hrulefill}
+\providecommand{\fila}{\rule{0pt}{0.58cm}}
+\providecommand{\firma}[1]{\parbox[b]{3.7cm}{\centering\rule{0pt}{0.75cm}\rule{3.4cm}{0.4pt}\\[-1pt]{\scriptsize #1}}}
+\newcommand{\cabeceraformato}[2]{%
+  \par\noindent{\footnotesize\setstretch{1}%
+  \renewcommand{\arraystretch}{1.35}%
+  \begin{tabular}{@{}|p{0.30\linewidth}|p{0.44\linewidth}|p{0.183\linewidth}|@{}}
+  \hline
+  \textbf{UATF -- Edificio de Posgrado} & \multirow{2}{=}{\centering\textbf{#2}} & \textbf{Código:} #1 \\
+  Ítem 13: losa alivianada h~=~25~cm & & Versión 0 \\
+  \hline
+  \end{tabular}\par}\smallskip}
+
+Este anexo reúne los instrumentos de recolección de datos de la investigación y los formatos del Sistema de Gestión de la Calidad (SGC) propuesto en la Sección~\ref{sec:diseno-sgc}. Los formatos C.2 a C.6 son los registros del SGC: se imprimen en tamaño carta, se llenan en obra y se archivan por losa y por paño. Los instrumentos C.7 y C.8 sirven a la investigación: la guía de entrevista para el diagnóstico (OE1) y el formato de validación por juicio de expertos (OE5). La relación de cada formato con el sistema es la siguiente:
+
+\begin{center}
+\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}P{1.0cm}LP{4.6cm}P{3.0cm}@{}}
+\toprule
+\textbf{Código} & \textbf{Formato o instrumento} & \textbf{Componente del SGC} & \textbf{Responsable} \\
+\midrule
+C.1 & Lista de verificación de requisitos ISO~9001:2026 & Diagnóstico y auditoría interna & Investigador; auditor \\
+C.2 & Fichas PPI de liberación por paño & Plan de puntos de inspección (Tabla~\ref{tab:ppi}) & Encargado de calidad; Supervisor \\
+C.3 & Ficha de recepción de materiales & PCM-01 (Tabla~\ref{tab:pcm01}) & Almacenero; encargado de calidad \\
+C.4 & Control de materiales y conciliación por paño & PCM-02, PCM-03 y PCM-04 & Almacenero; encargado de calidad \\
+C.5 & Registro de no conformidades y acción correctiva & PCM-05; procedimiento de NC & Encargado de calidad \\
+C.6 & Planilla de costos de la calidad (PAF) & Registro de costos de la calidad & Encargado de calidad \\
+C.7 & Guía de entrevista semiestructurada & Diagnóstico (OE1) & Investigador \\
+C.8 & Formato de validación por juicio de expertos & Validación (OE5) & Investigador; expertos \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\IfFileExists{capitulos/91a_lista_verificacion_iso9001.tex}{\input{capitulos/91a_lista_verificacion_iso9001}}{}
+
+% =====================================================================
+\clearpage
+\section*{C.2 Fichas PPI de liberación por paño}
+\addcontentsline{toc}{section}{C.2 Fichas PPI de liberación por paño}
+
+{\setstretch{1.15}\small
+\textbf{Uso.} Una ficha por paño. Marque C (conforme), NC (no conforme) o NA (no aplica). Los puntos de espera (H) no se superan sin la firma del Supervisor; los de aviso (W) se notifican a la Supervisión. Toda NC se registra en el formato C.5 con su número. Criterios: Tabla~\ref{tab:ppi} del plan de la calidad.\par}
+
+\cabeceraformato{C.2}{Ficha PPI de liberación del paño}
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|L|L|@{}}
+\hline
+\campo{Losa N.\textsuperscript{o}} & \campo{Paño N.\textsuperscript{o}} & \campo{Ejes} & \campo{Área (\mdos{})} \\
+\campo{Viguetas (Plano 03): n.\textsuperscript{o}} & \campo{Tipo y longitud} & \campo{Luz libre (m)} & \campo{Fecha de inicio} \\
+\hline
+\end{tabularx}\par}
+
+\newcommand{\ppiencabezado}[1]{%
+\multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{#1}} \\ \hline
+\textbf{N.\textsuperscript{o}} & \textbf{Punto de control} & \textbf{Criterio de aceptación} & \textbf{C} & \textbf{NC} & \textbf{NA} & \textbf{Observación o valor medido} \\ \hline}
+\newcommand{\ppifirmas}[2]{%
+\multicolumn{7}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\textbf{#1}\par #2\par\vspace{2pt}} \\ \hline}
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.25}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}|P{0.75cm}|P{3.3cm}|P{5.2cm}|Q{0.45cm}|Q{0.55cm}|Q{0.55cm}|P{3.85cm}|@{}}
+\hline
+\ppiencabezado{A. Apuntalamiento y encofrado --- punto de espera (H)}
+A1 & Ejes y niveles & Según el Plano~01; niveles de fondo de viga verificados & & & & \\ \hline
+A2 & Encofrado de vigas & Estanco, arriostrado y limpio; alero $\geq 20$~cm donde la vigueta corre paralela a la viga & & & & \\ \hline
+A3 & Soleras & Sección $\geq 2'' \times 4''$; una (luz de 2 a 4~m), dos (4,5 a 6~m) o tres (6,5 a 7,5~m), transversales a las viguetas & & & & N.\textsuperscript{o} de soleras: \\ \hline
+A4 & Puntales & Diámetro $\geq 4''$; separación de 0,80 a 1,00~m; sobre tabla o cuña; arriostrados en cruz & & & & Separación medida (m): \\ \hline
+A5 & Contraflecha & Según las instrucciones del fabricante & & & & Medida (mm): \\ \hline
+\ppifirmas{Liberación A}{\firma{Ejecutó (Capataz)}\hfill\firma{Verificó (encargado de calidad)}\hfill\firma{Liberó (Supervisor)}\hfill\firma{Fecha y hora}}
+\ppiencabezado{B. Viguetas y complementos EPS --- punto de aviso (W)}
+B1 & Viguetas & Número, tipo y longitud según el Plano~03; lote aceptado (ficha C.3) & & & & C.3 N.\textsuperscript{o}: \\ \hline
+B2 & Separación & 50~cm entre ejes & & & & \\ \hline
+B3 & Apoyos & $\geq 5$~cm si se vacía con la viga; $\geq 10$~cm sobre viga ya vaciada & & & & Mínimo medido (cm): \\ \hline
+B4 & Estado & Sin fisuras, golpes ni flecha & & & & \\ \hline
+B5 & Complementos EPS & Geometría aprobada; piezas enteras y ajustadas; sin huecos; cortes solo en bordes y nervios & & & & Piezas colocadas: \\ \hline
+B6 & Tránsito & Tablones o pasarelas colocados; no se pisan las piezas & & & & \\ \hline
+\ppifirmas{Conformidad B}{\firma{Ejecutó (Capataz)}\hfill\firma{Verificó (encargado de calidad)}\hfill\firma{Fecha}}
+\ppiencabezado{C. Nervios, armadura de distribución, negativos y continuidad --- punto de espera (H)}
+C1 & Nervios transversales & Ubicación y dimensiones según el Plano~02 & & & & \\ \hline
+C2 & Armadura de nervios & Según planos: número, diámetro y longitud & & & & \\ \hline
+C3 & Parrilla & $\phi$6~c/20~cm en ambas direcciones (Plano~02) & & & & Separación medida (cm): \\ \hline
+C4 & Negativos y continuidad & Según planos y lo exigido por el fabricante de viguetas & & & & \\ \hline
+C5 & Separadores y recubrimiento & Parrilla separada del EPS; separadores suficientes; recubrimiento según planos & & & & Recubrimiento (cm): \\ \hline
+C6 & Amarres y limpieza & Empalmes y amarres completos; barras sin barro, aceite ni óxido suelto & & & & \\ \hline
+C7 & Trazabilidad del acero & Certificado por colada y diámetro aceptado (ficha C.3) & & & & C.3 N.\textsuperscript{o}: \\ \hline
+\ppifirmas{Liberación C}{\firma{Ejecutó (Capataz)}\hfill\firma{Verificó (encargado de calidad)}\hfill\firma{Liberó (Supervisor)}\hfill\firma{Fecha y hora}}
+\ppiencabezado{D. Instalaciones embebidas --- punto de aviso (W)}
+D1 & Eléctricas & Ductos y cajas según planos de instalaciones & & & & \\ \hline
+D2 & Sanitarias y pases & Según planos; pases sellados & & & & \\ \hline
+D3 & Integridad & Sin cortes en viguetas ni en nervios & & & & \\ \hline
+\ppifirmas{Conformidad D}{\firma{Instalador}\hfill\firma{Verificó (encargado de calidad)}\hfill\firma{Fecha}}
+\ppiencabezado{E. Liberación para el vaciado y control del vaciado --- punto de espera (H)}
+E1 & Etapas previas & A, B, C y D conformes; ninguna NC abierta en el paño & & & & \\ \hline
+E2 & Superficie & Limpia, sin escombros, hielo ni agua estancada; humedecida & & & & \\ \hline
+E3 & Dosificación y existencias & Dosificación aprobada; cemento y áridos para el vaciado completo & & & & Bolsas disponibles / requeridas: \\ \hline
+E4 & Equipos y personal & Mezcladora, vibrador y vibrador de reserva; técnico de muestreo y moldes & & & & N.\textsuperscript{o} de muestras previstas: \\ \hline
+E5 & Clima & Pronóstico sin lluvia; si la temperatura mínima prevista es menor de 4,4~$^{\circ}$C, plan de tiempo frío activo & & & & T mín. prevista ($^{\circ}$C): \\ \hline
+E6 & Asentamiento & Dentro del rango de la dosificación (ASTM~C143) & & & & Valores (cm): \\ \hline
+E7 & Temperaturas & Hormigón registrada al muestrear; agua de amasado $> 5$~$^{\circ}$C & & & & T hormigón / agua ($^{\circ}$C): \\ \hline
+E8 & Colocación & Por franjas, continua, sin juntas frías; vibrado; tránsito sobre pasarelas sin pisar la parrilla & & & & \\ \hline
+E9 & Registro del vaciado & Hora de inicio y fin; volumen; pastones; bolsas de cemento; fotografía fechada de la toma de muestras & & & & Inicio / fin / \mtres{} / pastones / bolsas: \\ \hline
+\ppifirmas{Liberación E (antes de vaciar)}{\firma{Encargado de calidad}\hfill\firma{Liberó (Supervisor)}\hfill\firma{Libro de Órdenes, hoja N.\textsuperscript{o}}\hfill\firma{Fecha y hora}}
+\end{longtable}}
+
+\noindent{\small\setstretch{1.1}\textbf{F. Registro de curado (W).} Curado mínimo de 7 días con el hormigón a 10~$^{\circ}$C o más; si no se cumple la temperatura, se prolonga el curado.\par}
+\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{1.0cm}|P{2.0cm}|L|P{2.0cm}|P{2.0cm}|P{2.2cm}|P{2.0cm}|@{}}
+\hline
+\textbf{Día} & \textbf{Fecha} & \textbf{Método (riego, arpillera, plástico)} & \textbf{T mín. ambiente ($^{\circ}$C)} & \textbf{Protección contra helada} & \textbf{Responsable} & \textbf{Foto N.\textsuperscript{o}} \\ \hline
+1 & & & & & & \\ \hline
+2 & & & & & & \\ \hline
+3 & & & & & & \\ \hline
+4 & & & & & & \\ \hline
+5 & & & & & & \\ \hline
+6 & & & & & & \\ \hline
+7 & & & & & & \\ \hline
+\fila & & & & & & \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\setstretch{1.1}\textbf{G. Desapuntalamiento (H) y aceptación del paño.}\par}
+\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\linewidth}{@{}|P{0.75cm}|P{4.0cm}|L|Q{0.45cm}|Q{0.55cm}|P{3.4cm}|@{}}
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Punto de control} & \textbf{Criterio de aceptación} & \textbf{C} & \textbf{NC} & \textbf{Valor} \\ \hline
+G1 & Plazo desde el vaciado & $\geq 15$ días (luz $< 5$~m) o $\geq 21$ días (luz $> 5$~m) & & & Días: \\ \hline
+G2 & Cilindros curados en obra & Si la Supervisión los exige: todos $\geq$ la resistencia requerida para la etapa & & & kg/cm\textsuperscript{2}: \\ \hline
+G3 & Cargas y estado & Sin cargas de construcción excesivas; sin fisuras ni flechas visibles después del retiro & & & \\ \hline
+G4 & Aceptación para pago & Ensayos de aceptación del vaciado conformes; conciliación C.4 cerrada; ninguna NC abierta & & & Ensayos N.\textsuperscript{o}: \\ \hline
+\multicolumn{6}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\textbf{Liberación G}\par\firma{Encargado de calidad}\hfill\firma{Liberó (Supervisor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
+\end{tabularx}\par}
+
+% =====================================================================
+\clearpage
+\section*{C.3 Ficha de recepción de materiales}
+\addcontentsline{toc}{section}{C.3 Ficha de recepción de materiales}
+
+{\setstretch{1.15}\small
+\textbf{Uso.} Una ficha por entrega y por material, llenada \emph{antes} de colocar el material (PCM-01). Ningún material se coloca sin esta ficha aceptada. Complete solo el bloque del material recibido. Criterios: Tabla~\ref{tab:pcm01}.\par}
+
+\cabeceraformato{C.3}{Ficha de recepción de materiales}
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|L|@{}}
+\hline
+\campo{Ficha N.\textsuperscript{o}} & \campo{Fecha y hora} & \campo{Proveedor} \\
+\campo{Material} & \campo{Nota de remisión N.\textsuperscript{o}} & \campo{Factura N.\textsuperscript{o}} \\
+\campo{Orden de compra N.\textsuperscript{o}} & \campo{Lote o colada} & \campo{Destino (losa y paños)} \\
+\campo{Cantidad remitida} & \campo{Cantidad recibida (conteo)} & \campo{Unidad} \\
+\hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{1. Verificación documental}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{1.0cm}|Q{1.0cm}|Q{1.0cm}|P{4.2cm}|@{}}
+\hline
+\textbf{Documento} & \textbf{Sí} & \textbf{No} & \textbf{NA} & \textbf{Observación} \\ \hline
+Certificado de calidad firmado, con lote y cantidad & & & & \\ \hline
+Fecha del certificado anterior a la colocación & & & & \\ \hline
+Viguetas: conformidad con la NB~997 declarada en el certificado & & & & \\ \hline
+Acero: certificado por colada para cada diámetro entregado ($\phi$6, $\phi$8, $\phi$10, $\phi$12\ldots) & & & & \\ \hline
+Cemento: sello IBNORCA, tipo, clase y fecha de fabricación & & & & \\ \hline
+Remisión, factura y orden de compra coinciden en material y cantidad & & & & \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{2. Inspección física por material}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
+\noindent\textbf{a) Viguetas pretensadas} (muestra: cinco viguetas por entrega y tipo; inspección visual de todas)\par\smallskip
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{0.6cm}|Q{1.3cm}|Q{1.5cm}|Q{1.5cm}|Q{1.4cm}|Q{2.2cm}|Q{2.0cm}|L|Q{0.9cm}|@{}}
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Tipo} & \textbf{L teórica (mm)} & \textbf{L medida (mm)} & \textbf{$\Delta L$ (+30/$-$20)} & \textbf{Sección $a$, $b$, $h$ (+5/$-$2~mm)} & \textbf{Contraflecha y flecha lateral ($\leq L/300$)} & \textbf{Fisuras, oquedades, armadura visible} & \textbf{C / NC} \\ \hline
+1 & & & & & & & & \\ \hline
+2 & & & & & & & & \\ \hline
+3 & & & & & & & & \\ \hline
+4 & & & & & & & & \\ \hline
+5 & & & & & & & & \\ \hline
+\multicolumn{9}{|@{\,}l|}{\fila Defectos principales: \underline{\hspace{1.2cm}} (rechazo del lote si $> 2$) \qquad Defectos secundarios: \underline{\hspace{1.2cm}} (rechazo del lote si $> 4$)} \\ \hline
+\end{tabularx}
+
+\medskip
+\noindent\textbf{b) Complementos EPS} (muestra: cinco piezas; densidad = masa / volumen; declarada: 10~kg/\mtres{})\par\smallskip
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{0.6cm}|Q{1.6cm}|Q{1.6cm}|Q{1.6cm}|Q{1.6cm}|Q{1.8cm}|Q{1.9cm}|L|Q{0.9cm}|@{}}
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Largo (cm)} & \textbf{Ancho (cm)} & \textbf{Alto (cm)} & \textbf{Masa (kg)} & \textbf{Volumen (\mtres{})} & \textbf{Densidad (kg/\mtres{})} & \textbf{Estado (roturas, deformación)} & \textbf{C / NC} \\ \hline
+1 & & & & & & & & \\ \hline
+2 & & & & & & & & \\ \hline
+3 & & & & & & & & \\ \hline
+4 & & & & & & & & \\ \hline
+5 & & & & & & & & \\ \hline
+\end{tabularx}
+
+\medskip
+\noindent\textbf{c) Acero de refuerzo} (pesaje de tres barras por diámetro y colada; masa medida $\geq 94$~\% de la nominal)\par\smallskip
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{0.9cm}|Q{1.6cm}|Q{1.3cm}|Q{1.7cm}|Q{1.5cm}|Q{1.5cm}|Q{1.6cm}|Q{1.3cm}|L|Q{0.9cm}|@{}}
+\hline
+\textbf{$\phi$ (mm)} & \textbf{Colada} & \textbf{N.\textsuperscript{o} de barras} & \textbf{Masa de 3 barras (kg)} & \textbf{Longitud total (m)} & \textbf{Masa por metro (kg/m)} & \textbf{Nominal (kg/m)} & \textbf{\% de la nominal} & \textbf{Corrugado, óxido, aceite} & \textbf{C / NC} \\ \hline
+\fila & & & & & & & & & \\ \hline
+\fila & & & & & & & & & \\ \hline
+\fila & & & & & & & & & \\ \hline
+\fila & & & & & & & & & \\ \hline
+\end{tabularx}
+
+\medskip
+\noindent\textbf{d) Cemento, áridos y agua}\par\smallskip
+\noindent\begin{tabularx}{\linewidth}{@{}|P{2.2cm}|L|L|Q{0.9cm}|@{}}
+\hline
+\textbf{Material} & \textbf{Verificación} & \textbf{Resultado} & \textbf{C / NC} \\ \hline
+Cemento & Bolsas recibidas; bolsas rotas o con grumos, terrones o costras; fecha de fabricación & & \\ \hline
+Arena y grava & Volquete N.\textsuperscript{o}; volumen cubicado (\mtres{}); limpieza (sin arcilla ni materia orgánica); tamaño máximo $\leq$ mitad del espesor de la carpeta & & \\ \hline
+Agua & Fuente aprobada; limpieza; temperatura al amasar $> 5$~$^{\circ}$C & & \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{3. Decisión}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|@{}}
+\hline
+\casilla\ Aceptado \qquad \casilla\ Aceptado bajo concesión (autorización escrita de la Supervisión N.\textsuperscript{o} \underline{\hspace{1.8cm}}) \qquad \casilla\ Rechazado $\rightarrow$ NC N.\textsuperscript{o} \underline{\hspace{1.5cm}} (formato C.5) \\
+Identificación del lote aceptado (tarjeta verde) con el código \underline{\hspace{2.5cm}} \qquad Ingreso al kardex: fecha \underline{\hspace{2.2cm}} \\
+\firma{Recibió (Almacenero)}\hfill\firma{Inspeccionó y decidió (encargado de calidad)}\hfill\firma{Presenció (Supervisor)}\hfill\firma{Fecha} \\[2pt]
+\hline
+\end{tabularx}\par}
+
+% =====================================================================
+\clearpage
+\section*{C.4 Ficha de control de materiales y conciliación por paño}
+\addcontentsline{toc}{section}{C.4 Ficha de control de materiales y conciliación por paño}
+
+{\setstretch{1.15}\small
+\textbf{Uso.} La parte (a) se emite por cada despacho o devolución; la parte (b) se lleva por material en el almacén; la parte (c) se cierra al terminar cada paño y la parte (d) antes de cada planilla de avance (PCM-03 y PCM-04). Fórmulas: $Q_C = Q_D - Q_V$; $IDM = (Q_C - Q_T)/Q_T \times 100$; $\delta_{X/Y} = (Q_X - Q_Y)/Q_Y \times 100$; umbrales de alerta de la Tabla~\ref{tab:tolerancias}.\par}
+
+\cabeceraformato{C.4}{Control de materiales y conciliación por paño}
+
+\noindent{\small\textbf{(a) Vale de salida o de devolución}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{1.1cm}|Q{1.6cm}|Q{1.2cm}|L|Q{1.2cm}|Q{1.5cm}|Q{1.7cm}|P{2.0cm}|P{2.0cm}|@{}}
+\hline
+\textbf{Vale N.\textsuperscript{o}} & \textbf{Fecha} & \textbf{Paño} & \textbf{Material (tipo, $\phi$, longitud)} & \textbf{Unidad} & \textbf{Cantidad} & \textbf{Salida o devolución} & \textbf{Entregó (firma)} & \textbf{Recibió (firma)} \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{(b) Kardex del material:} \underline{\hspace{4cm}} \quad Unidad: \underline{\hspace{2cm}}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{1.6cm}|L|Q{1.5cm}|Q{1.5cm}|Q{1.6cm}|Q{1.5cm}|Q{1.8cm}|Q{1.6cm}|@{}}
+\hline
+\textbf{Fecha} & \textbf{Documento (C.3, vale, devolución)} & \textbf{Entrada} & \textbf{Salida} & \textbf{Devolución} & \textbf{Saldo} & \textbf{Inventario físico} & \textbf{Diferencia} \\ \hline
+\fila & & & & & & & \\ \hline
+\fila & & & & & & & \\ \hline
+\fila & & & & & & & \\ \hline
+\fila & & & & & & & \\ \hline
+\fila & & & & & & & \\ \hline
+\fila & & & & & & & \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{(c) Conciliación del paño} \quad Losa N.\textsuperscript{o} \underline{\hspace{1cm}} \quad Paño N.\textsuperscript{o} \underline{\hspace{1cm}} \quad Área (\mdos{}) \underline{\hspace{1.4cm}} \quad Fechas \underline{\hspace{3cm}}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{2.5pt}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{0.9cm}|Q{1.3cm}|Q{1.3cm}|Q{1.3cm}|Q{1.4cm}|Q{1.2cm}|Q{0.9cm}|Q{1.3cm}|Q{1.2cm}|Q{0.9cm}|@{}}
+\hline
+\textbf{Material} & \textbf{Unidad} & \textbf{$Q_T$ teórica (planos)} & \textbf{$Q_D$ despachada} & \textbf{$Q_V$ devuelta} & \textbf{$Q_C = Q_D - Q_V$} & \textbf{$IDM$ (\%)} & \textbf{Meta (\%)} & \textbf{$Q_M$ medida} & \textbf{$\delta_{M/T}$ (\%)} & \textbf{Alerta (S/N)} \\ \hline
+Viguetas tipo \underline{\hspace{0.6cm}} & m & & & & & & 1 & & & \\ \hline
+Viguetas tipo \underline{\hspace{0.6cm}} & m & & & & & & 1 & & & \\ \hline
+Complemento EPS & pza & & & & & & 3 & & & \\ \hline
+Acero $\phi$6 (parrilla) & kg & & & & & & 4 & & & \\ \hline
+Acero $\phi$ \underline{\hspace{0.5cm}} (nervios) & kg & & & & & & 4 & & & \\ \hline
+Acero $\phi$ \underline{\hspace{0.5cm}} (negativos) & kg & & & & & & 4 & & & \\ \hline
+Hormigón H25 & \mtres{} & & & & & & 3 & & & \\ \hline
+Cemento & bolsa & & & & & & & & & \\ \hline
+Arena & \mtres{} & & & & & & & & & \\ \hline
+Grava & \mtres{} & & & & & & & & & \\ \hline
+Alambre de amarre & kg & & & & & & & & & \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{(d) Conciliación acumulada para la planilla de avance N.\textsuperscript{o}} \underline{\hspace{1cm}} \quad Periodo \underline{\hspace{3.5cm}}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{2.5pt}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{1.25cm}|Q{1.25cm}|Q{1.25cm}|Q{1.1cm}|Q{1.1cm}|Q{1.25cm}|Q{1.25cm}|Q{1.1cm}|Q{1.0cm}|Q{0.9cm}|@{}}
+\hline
+\textbf{Ítem o material (ítem de pago)} & \textbf{$Q_T$ acum.} & \textbf{$Q_E$ acum. (remisiones)} & \textbf{$Q_C$ acum. (vales)} & \textbf{$I_F$ físico} & \textbf{$\Delta_I$} & \textbf{$Q_M$ acum. (medición)} & \textbf{$Q_P$ acum. (planilla)} & \textbf{$\delta_{P/M}$ (\%)} & \textbf{kg/\mdos{}} & \textbf{Alerta} \\ \hline
+Ítem 13 (\mdos{}) & & --- & --- & --- & --- & & & & --- & \\ \hline
+Acero de la losa (kg); ítem \underline{\hspace{0.5cm}} & & & & & & & & & & \\ \hline
+Viguetas (m) & & & & & & --- & --- & --- & --- & \\ \hline
+Complemento EPS (pza) & & & & & & --- & --- & --- & --- & \\ \hline
+Cemento (bolsas) & & & & & & --- & --- & --- & --- & \\ \hline
+Hormigón (\mtres{}) & & & & --- & --- & & & & --- & \\ \hline
+\multicolumn{11}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\fila Coherencia entre documentos (misma cifra en planilla, cómputo e informes): \casilla\ Sí \casilla\ No \qquad Acero de la losa pagado en un solo ítem: \casilla\ Sí \casilla\ No} \\ \hline
+\multicolumn{11}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\firma{Elaboró (encargado de calidad)}\hfill\firma{Revisó (Almacenero)}\hfill\firma{Aprobó (Supervisor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
+\end{tabularx}\par}
+
+% =====================================================================
+\clearpage
+\section*{C.5 Registro de no conformidades y acción correctiva}
+\addcontentsline{toc}{section}{C.5 Registro de no conformidades y acción correctiva}
+
+{\setstretch{1.15}\small
+\textbf{Uso.} Un registro por no conformidad (NC), abierto dentro de las 24~h de su detección y cerrado en 7 días o menos (objetivo OC9). Procedimiento: Figura~\ref{fig:flujo-nc}. El costo se traslada a la planilla C.6.\par}
+
+\cabeceraformato{C.5}{Registro de no conformidad y acción correctiva}
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.35}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|L|@{}}
+\hline
+\campo{NC N.\textsuperscript{o}} & \campo{Fecha de detección} & \campo{Detectada por} \\
+\campo{Losa / paño / lote} & \campo{Requisito incumplido (plano, ET, PPI, PCM, contrato)} & \campo{Referencia} \\
+\multicolumn{3}{|@{\,}l|}{Proceso: \casilla\ Recepción \casilla\ Almacén \casilla\ Ejecución del paño \casilla\ Hormigón \casilla\ Cantidades \casilla\ Documentos \quad Clasificación: \casilla\ Crítica \casilla\ Mayor \casilla\ Menor} \\
+\hline
+\end{tabularx}
+
+\medskip
+\noindent\begin{tabularx}{\linewidth}{@{}|L|@{}}
+\hline
+\textbf{1. Descripción de la no conformidad} (qué se encontró, dónde, magnitud; fotografía N.\textsuperscript{o}) \\
+\fila \\ \fila \\ \hline
+\textbf{2. Contención y corrección} \quad Paño o lote retenido: \casilla\ Sí \casilla\ No \quad Acción inmediata, responsable y fecha: \\
+\fila \\ \hline
+\textbf{3. Análisis de causa.} \emph{5 porqués:} \\
+1.~¿Por qué? \hrulefill \\
+2.~¿Por qué? \hrulefill \\
+3.~¿Por qué? \hrulefill \\
+4.~¿Por qué? \hrulefill \\
+5.~¿Por qué? \hrulefill \\
+\emph{Ishikawa (6M):} \casilla\ Mano de obra \casilla\ Método \casilla\ Materiales \casilla\ Maquinaria \casilla\ Medición \casilla\ Medio ambiente \qquad Causa raíz: \hrulefill \\
+\hline
+\end{tabularx}
+
+\medskip
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{0.7cm}|L|P{3.0cm}|P{2.2cm}|P{3.0cm}|@{}}
+\hline
+\multicolumn{5}{|@{\,}l|}{\textbf{4. Acción correctiva} (elimina la causa; la aprueba el Director de obra)} \\ \hline
+\textbf{N.\textsuperscript{o}} & \textbf{Acción} & \textbf{Responsable} & \textbf{Plazo} & \textbf{Recursos} \\ \hline
+1 & & & & \\ \hline
+2 & & & & \\ \hline
+3 & & & & \\ \hline
+\end{tabularx}
+
+\medskip
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|@{}}
+\hline
+\multicolumn{2}{|@{\,}l|}{\textbf{5. Verificación de la eficacia}} \\ \hline
+\campo{Fecha de verificación} & \campo{Evidencia (paños o lotes revisados)} \\
+\multicolumn{2}{|@{\,}l|}{¿Se repitió la NC? \casilla\ No (eficaz) \quad \casilla\ Sí (no eficaz: nuevo análisis de causa, punto 3)} \\ \hline
+\multicolumn{2}{|@{\,}l|}{\textbf{6. Costo asociado (precios constantes del contrato)} \quad Categoría: \casilla\ Falla interna \casilla\ Falla externa} \\ \hline
+\campo{Mano de obra: horas-hombre $\times$ costo horario = Bs} & \campo{Materiales: cantidad $\times$ precio = Bs} \\
+\campo{Equipo y ensayos = Bs} & \campo{\textbf{Total de la NC = Bs}} \\ \hline
+\multicolumn{2}{|@{\,}l|}{\textbf{7. Cierre} \quad Fecha de cierre \underline{\hspace{2.2cm}} \quad Días desde la detección \underline{\hspace{1.2cm}} (meta: $\leq 7$) \quad Actualizar: \casilla\ Riesgos \casilla\ PPI \casilla\ Procedimiento} \\
+\multicolumn{2}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\firma{Encargado de calidad}\hfill\firma{Director de obra}\hfill\firma{Supervisor (si es crítica o mayor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
+\end{tabularx}\par}
+
+\medskip
+\noindent{\small\textbf{Registro general de no conformidades de la losa N.\textsuperscript{o}} \underline{\hspace{1cm}}}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{}|Q{0.8cm}|Q{1.5cm}|Q{1.3cm}|Q{1.3cm}|L|Q{1.8cm}|Q{1.5cm}|Q{0.9cm}|Q{1.4cm}|@{}}
+\hline
+\textbf{NC N.\textsuperscript{o}} & \textbf{Fecha} & \textbf{Paño o lote} & \textbf{Clase} & \textbf{Descripción breve} & \textbf{Responsable} & \textbf{Fecha de cierre} & \textbf{Días} & \textbf{Costo (Bs)} \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\fila & & & & & & & & \\ \hline
+\end{tabularx}\par}
+
