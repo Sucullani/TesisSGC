@@ -422,6 +422,8 @@ class Fuente:
 
         def r_input(opc, obl, est):
             nombre = obl[0].strip()
+            if '#' in nombre:          # \input dentro de la definición de una macro
+                return None
             p = self.ruta(nombre)
             if not p:
                 self.avisos.append('No se encontró el archivo de \\input{%s}; se omite.' % nombre)
@@ -446,26 +448,62 @@ class Fuente:
         return texto
 
     # ---- macros
+    @staticmethod
+    def _leer_definicion(s, i):
+        """Lee {\\nombre}[n][defecto]{cuerpo} (o \\nombre sin llaves). Devuelve (nombre, n, defecto, cuerpo, fin)."""
+        k = saltar_blancos(s, i)
+        if k < len(s) and s[k] == '{':
+            nombre, k = leer_grupo(s, k)
+        else:
+            m = re.match(r'\\[A-Za-z@]+|\\.|.', s[k:])
+            nombre, k = m.group(0), k + len(m.group(0))
+        n, defecto = 0, None
+        k2 = saltar_blancos(s, k)
+        if k2 < len(s) and s[k2] == '[':
+            txt, k = leer_opcional(s, k2)
+            n = int(txt) if txt.strip().isdigit() else 0
+            k2 = saltar_blancos(s, k)
+            if k2 < len(s) and s[k2] == '[':
+                defecto, k = leer_opcional(s, k2)
+        k2 = saltar_blancos(s, k)
+        cuerpo, fin = leer_grupo(s, k2)
+        return nombre.strip(), n, defecto, cuerpo, fin
+
+    def _recoger(self, texto, comando, destino):
+        salida = []
+        pos = 0
+        pat = re.compile(r'\\' + comando + r'\*?(?![A-Za-z@])')
+        while True:
+            m = pat.search(texto, pos)
+            if not m:
+                break
+            if not es_inicio_comando(texto, m.start()):
+                salida.append(texto[pos:m.end()])
+                pos = m.end()
+                continue
+            try:
+                nombre, n, defecto, cuerpo, fin = self._leer_definicion(texto, m.end())
+            except (ValueError, AttributeError):
+                salida.append(texto[pos:m.end()])
+                pos = m.end()
+                continue
+            destino(nombre, n, defecto, cuerpo)
+            salida.append(texto[pos:m.start()])
+            pos = fin
+        salida.append(texto[pos:])
+        return ''.join(salida)
+
     def recoger_definiciones(self, texto):
         """Recoge \\newcommand/\\providecommand/\\newcolumntype y los elimina del texto."""
-        def r_new(opc, obl, est):
-            nombre = obl[0].strip()
-            if not nombre.startswith('\\'):
-                return ''
-            nombre = nombre[1:]
-            n = int(opc[0]) if opc[0] and opc[0].strip().isdigit() else 0
-            defecto = opc[1]
-            if nombre not in self.macros or True:
-                self.macros[nombre] = (n, defecto, obl[1])
-            return ''
-        for cmd in ('newcommand', 'providecommand', 'DeclareRobustCommand'):
-            texto = reemplazar_comando(texto, cmd, r_new, n_obl=2, n_opc=2, estrella=True)
+        def d_macro(nombre, n, defecto, cuerpo):
+            if nombre.startswith('\\'):
+                self.macros[nombre[1:]] = (n, defecto, cuerpo)
 
-        def r_col(opc, obl, est):
-            n = int(opc[0]) if opc[0] and opc[0].strip().isdigit() else 0
-            self.tipos_columna[obl[0].strip()] = (n, obl[1])
-            return ''
-        texto = reemplazar_comando(texto, 'newcolumntype', r_col, n_obl=2, n_opc=1)
+        def d_col(nombre, n, defecto, cuerpo):
+            self.tipos_columna[nombre] = (n, cuerpo)
+        for cmd in ('newcommand', 'providecommand', 'DeclareRobustCommand'):
+            texto = self._recoger(texto, cmd, d_macro)
+        texto = self._recoger(texto, 'newcolumntype', d_col)
         return texto
 
     def recoger_nombres(self, texto):
@@ -557,6 +595,10 @@ def expandir_macros(texto, macros, excluir=MACROS_ESPECIALES, max_vueltas=12):
             for k, a in enumerate(args, 1):
                 reemplazo = reemplazo.replace('#%d' % k, a)
             salida.append(texto[pos:m.start()])
+            # \bfseries\titulotesis -> \bfseries{}DISEÑO... (no fundir nombres de comandos)
+            previo = salida[-1] if salida[-1] else (salida[-2] if len(salida) > 1 else '')
+            if re.search(r'\\[A-Za-z@]+$', previo) and reemplazo[:1].isalpha():
+                reemplazo = '{}' + reemplazo
             # Si la expansión termina en un comando con letras y lo que sigue es una letra,
             # se protege con {} para no fundir nombres.
             if re.search(r'\\[A-Za-z@]+$', reemplazo) and fin < len(texto) and texto[fin].isalpha():

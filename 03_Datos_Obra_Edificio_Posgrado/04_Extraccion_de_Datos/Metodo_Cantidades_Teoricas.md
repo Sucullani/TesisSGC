@@ -108,8 +108,9 @@ V = A_paño × 0,25 − V_EPS − V_vigueta. Detalle:
 | Acero S1 | **3.573,1 kg** | **3,22 kg/m²** | Malla 2.685,3 kg (2,42 kg/m²) + negativos 330,4 (0,30) + nervios 557,4 (0,50). |
 | Acero S0 (sin nervios) | 3.015,7 kg | 2,72 kg/m² | Malla + negativos. |
 
-**Segunda y tercera losa** (paños homólogos × 2 = 2.219,68 m², como en el cómputo del contrato modificado): 1.062 viguetas / 4.410,2 m; EPS neto 4.476 pza (práctico 4.952); hormigón 158,6 m³; acero 7.146,2 kg (S1) o 6.031,4 kg (S0).
+**Segunda y tercera losa** (paños homólogos × 2 = 2.219,68 m²): 1.062 viguetas / 4.410,2 m; EPS neto 4.476 pza (práctico 4.952); hormigón 158,6 m³; acero 7.146,2 kg (S1) o 6.031,4 kg (S0).
 **Saldo de 2.234,60 m²** (consumos por m² × área): 4.439,8 m de vigueta (≈ 1.069 pza); EPS 4.506 pza; hormigón 159,7 m³; acero 7.194,2 kg (S1) o 6.072,0 kg (S0).
+> **Ojo [H]:** el cómputo del contrato modificado (expediente, pp. 18–19) **no** usa 2 × la primera losa. Para cada losa superior toma A1 = A34 = 38,11 m² (35,86 en la primera), A2 = A35 = 36,00 m² (34,67) y A40 = 28,76 m² (28,46). Resultan 1.117,30 m² por losa y 2.234,60 m² en total, que es el saldo. La diferencia (+7,46 m² por losa) está en los paños que en la primera losa cruza la viga plana curva. Para la simulación se recomienda usar los consumos por m² × 2.234,60 m² (filas «saldo»).
 
 ## 10. Comparación con lo entregado y lo computado; IDM preliminares [C]
 

@@ -379,3 +379,246 @@ Hormigón (\mtres{}) & & & & --- & --- & & & & --- & \\ \hline
 \fila & & & & & & & & \\ \hline
 \end{tabularx}\par}
 
+% =====================================================================
+\clearpage
+\section*{C.6 Planilla de costos de la calidad (modelo PAF)}
+\addcontentsline{toc}{section}{C.6 Planilla de costos de la calidad (modelo PAF)}
+
+{\setstretch{1.15}\small
+\textbf{Uso.} Una planilla por mes y una consolidada por losa. Todo costo se valora a precios constantes del contrato (precios del APU) y se registra una sola vez. Conceptos: Tabla~\ref{tab:paf}; ecuaciones \eqref{eq:cnc}, \eqref{eq:cfi-mat} y \eqref{eq:cu-paf}.\par}
+
+\cabeceraformato{C.6}{Planilla de costos de la calidad (PAF)}
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|L|@{}}
+\hline
+\campo{Losa N.\textsuperscript{o}} & \campo{Periodo: del} & \campo{al} \\
+\campo{Área ejecutada en el periodo $A$ (\mdos{})} & \campo{Precio unitario del ítem (Bs/\mdos{})} & \campo{$C_{\text{ítem}} = A \times PU$ (Bs)} \\
+\hline
+\end{tabularx}\par}
+
+\medskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.28}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}|P{1.0cm}|P{5.2cm}|Q{1.4cm}|Q{1.2cm}|Q{1.9cm}|Q{1.8cm}|P{2.4cm}|@{}}
+\hline
+\textbf{Cód.} & \textbf{Concepto} & \textbf{Cantidad} & \textbf{Unidad} & \textbf{Costo unitario (Bs)} & \textbf{Costo (Bs)} & \textbf{Registro de respaldo} \\ \hline
+\endfirsthead
+\hline
+\textbf{Cód.} & \textbf{Concepto} & \textbf{Cantidad} & \textbf{Unidad} & \textbf{Costo unitario (Bs)} & \textbf{Costo (Bs)} & \textbf{Registro de respaldo} \\ \hline
+\endhead
+\multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{Prevención ($C_P$)}} \\ \hline
+P1 & Plan de la calidad, PPI y procedimientos (elaboración y actualización) & & h & & & Parte de horas \\ \hline
+P2 & Capacitación del personal (charlas) & & h-h & & & Lista de asistencia \\ \hline
+P3 & Despiece y planillas de armado previas & & h & & & Planillas \\ \hline
+P4 & Evaluación de proveedores y auditoría interna & & h & & & Informe \\ \hline
+P5 & Materiales de protección (lluvia y tiempo frío) & & glb & & & Factura \\ \hline
+\multicolumn{5}{|r|}{\textbf{Subtotal $C_P$}} & & \\ \hline
+\multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{Evaluación ($C_E$)}} \\ \hline
+E1 & Ensayos de compresión (cilindros a 7 y 28 días) & & ensayo & & & Factura del laboratorio \\ \hline
+E2 & Ensayos de asentamiento y temperatura & & h & & & Planilla de muestreo \\ \hline
+E3 & Inspecciones del PPI y liberación de paños & & h & & & Fichas C.2 \\ \hline
+E4 & Recepción, pesajes, inventarios y conciliación & & h & & & Fichas C.3 y C.4 \\ \hline
+\multicolumn{5}{|r|}{\textbf{Subtotal $C_E$}} & & \\ \hline
+\multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{Fallas internas ($C_{FI}$)}} \\ \hline
+FI1 & Desperdicio de materiales sobre lo teórico, $C_{FI}^{\,mat}$ (detalle abajo) & & Bs & & & Ficha C.4 \\ \hline
+FI2 & Retrabajos y reparaciones & & h-h & & & Registros C.5 \\ \hline
+FI3 & Material no conforme repuesto & & & & & PCM-05; C.5 \\ \hline
+FI4 & Esperas de la cuadrilla por material faltante o no conforme & & h-h & & & Parte diario \\ \hline
+FI5 & Investigación de resistencias bajas (núcleos) & & núcleo & & & Informe del laboratorio \\ \hline
+\multicolumn{5}{|r|}{\textbf{Subtotal $C_{FI}$}} & & \\ \hline
+\multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{Fallas externas ($C_{FE}$)}} \\ \hline
+FE1 & Sobremediciones corregidas después de pagadas & & Bs & & & Planillas de avance \\ \hline
+FE2 & Reparaciones después de la recepción provisional & & & & & Libro de Órdenes; C.5 \\ \hline
+FE3 & Multas y plazo adicional atribuibles a fallas de calidad & & Bs & & & Resolución de la Fiscalización \\ \hline
+\multicolumn{5}{|r|}{\textbf{Subtotal $C_{FE}$}} & & \\ \hline
+\end{longtable}}
+
+\noindent{\small\textbf{Detalle de FI1: desperdicio valorado} ($C_{FI}^{\,mat} = \sum_j (Q_{C,j} - Q_{T,j})\,p_j$; cantidades de la ficha C.4)}\par\smallskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{1.2cm}|Q{2.0cm}|Q{2.0cm}|Q{2.0cm}|Q{2.4cm}|Q{2.2cm}|@{}}
+\hline
+\textbf{Material} & \textbf{Unidad} & \textbf{$Q_T$} & \textbf{$Q_C$} & \textbf{$Q_C - Q_T$} & \textbf{$p_j$ (Bs, APU)} & \textbf{Costo (Bs)} \\ \hline
+Viguetas pretensadas & m & & & & & \\ \hline
+Complemento EPS & pza & & & & & \\ \hline
+Acero de refuerzo & kg & & & & & \\ \hline
+Hormigón H25 & \mtres{} & & & & & \\ \hline
+Alambre de amarre & kg & & & & & \\ \hline
+\multicolumn{6}{|r|}{\textbf{Total $C_{FI}^{\,mat}$}} & \\ \hline
+\end{tabularx}
+
+\medskip
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{3.2cm}|L|Q{3.2cm}|@{}}
+\hline
+\multicolumn{4}{|@{\,}l|}{\cellcolor{gray!15}\textbf{Resumen e indicadores del periodo}} \\ \hline
+Costo de la calidad $CC = C_P + C_E$ (Bs) & & Costo de no calidad $CNC = C_{FI} + C_{FE}$ (Bs) & \\ \hline
+$CC$ en \% de $C_{\text{ítem}}$ & & $\%CNC = CNC / C_{\text{ítem}} \times 100$ (meta OC11) & \\ \hline
+Costo total de la calidad $CC + CNC$ (Bs) & & Retrabajos (FI2) en \% de $C_{\text{ítem}}$ (meta $\leq 1$~\%) & \\ \hline
+\multicolumn{4}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\firma{Elaboró (encargado de calidad)}\hfill\firma{Revisó (Director de obra)}\hfill\firma{Tomó conocimiento (Supervisor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
+\end{tabularx}\par}
+
+% =====================================================================
+\clearpage
+\section*{C.7 Guía de entrevista semiestructurada}
+\addcontentsline{toc}{section}{C.7 Guía de entrevista semiestructurada}
+
+{\setstretch{1.15}\small
+\textbf{Objetivo.} Recoger la experiencia del Residente de obra (R), del Supervisor de obra (S) y del Fiscal de obra (F) sobre la gestión de la calidad y el control de materiales en la primera losa, para completar y contrastar el análisis documental (OE1). La entrevista es semiestructurada: se sigue una guía de preguntas y el entrevistador puede introducir preguntas adicionales para precisar conceptos u obtener más información \parencite[p.~449]{hernandez2018}. Duración prevista: 40 a 60 minutos.\par}
+
+\medskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.35}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|L|@{}}
+\hline
+\multicolumn{3}{|@{\,}l|}{\cellcolor{gray!15}\textbf{Datos de la entrevista}} \\ \hline
+\campo{Código de entrevista} & \campo{Fecha} & \campo{Lugar} \\
+\campo{Cargo: \casilla\ R \casilla\ S \casilla\ F} & \campo{Institución o empresa} & \campo{Años de experiencia} \\
+\campo{Hora de inicio} & \campo{Hora de fin} & \campo{Entrevistador} \\
+\hline
+\multicolumn{3}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\textbf{Consentimiento informado.} La participación es voluntaria y puede interrumpirse en cualquier momento. La información se usará solo con fines académicos, de forma confidencial y sin identificar al entrevistado por su nombre. Las preguntas buscan comprender los procesos de la obra y no evaluar a las personas. Autorizo la grabación en audio: \casilla\ Sí \casilla\ No \par\firma{Firma del entrevistado}\hfill\firma{Firma del entrevistador}\par\vspace{2pt}} \\ \hline
+\end{tabularx}\par}
+
+\medskip
+{\setstretch{1.15}\small
+\textbf{Indicaciones para el entrevistador.} Lea la pregunta tal como está redactada, sin sugerir respuestas; pida ejemplos y documentos de respaldo (fechas, planillas, fotografías); anote las respuestas textuales relevantes; y cierre cada bloque con una repregunta del tipo «¿Hay algún registro de eso?». Los hallazgos sobre cantidades son inconsistencias documentales por verificar y deben tratarse como tales, sin atribuir responsabilidades.\par}
+
+\medskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}|Q{0.7cm}|P{11.6cm}|Q{1.5cm}|Q{1.6cm}|@{}}
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Pregunta guía} & \textbf{Dirigida a} & \textbf{Bloque} \\ \hline
+\endfirsthead
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Pregunta guía} & \textbf{Dirigida a} & \textbf{Bloque} \\ \hline
+\endhead
+1 & ¿Cómo se planificó la ejecución de la primera losa (programa, pedidos de materiales y controles)? ¿Existió un plan de la calidad o un plan de inspecciones? & R, S, F & Planificación \\ \hline
+2 & ¿Cómo se resolvió la diferencia entre la ET (100~$\times$~50~$\times$~20~cm), el Plano~02 (0,15~m) y el complemento EPS suministrado (20~$\times$~100~$\times$~44~cm)? ¿Quién decidió y dónde consta? & R, S & Documentos \\ \hline
+3 & ¿Qué cambios de diseño o de materiales hubo en la losa (por ejemplo, por falta de viguetas de los tamaños requeridos) y cómo se aprobaron? & R, S, F & Cambios \\ \hline
+4 & ¿Cómo se recibían y aceptaban las viguetas, el EPS, el acero y el cemento? ¿Se exigían certificados antes de colocar el material? & R, S & Materiales \\ \hline
+5 & ¿Cómo se almacenaban los materiales y cómo se controlaban las existencias? ¿Había kardex, vales o notas de remisión por paño? & R & Materiales \\ \hline
+6 & ¿Qué sobrantes, roturas o desperdicios recuerda en viguetas, EPS, acero y hormigón? ¿Qué se hizo con ellos y quién asumió su costo? & R, S & Materiales \\ \hline
+7 & ¿Cómo se verificaba cada paño antes del vaciado (apuntalamiento, armado, separadores, instalaciones)? ¿Quedaba algún registro además del Libro de Órdenes? & R, S & Inspección \\ \hline
+8 & ¿Qué defectos o retrabajos ocurrieron en la losa (fugas, nidos de grava, fisuras, correcciones de armado)? ¿Cómo se corrigieron? & R, S, F & Inspección \\ \hline
+9 & ¿Cómo se dosificó y controló el hormigón de la losa (dosificación, asentamiento, muestreo, probetas y curado)? ¿Se ensayaron probetas de la losa? & R, S & Hormigón \\ \hline
+10 & ¿Qué medidas se tomaron frente a la lluvia y a las bajas temperaturas durante el vaciado y el curado? & R, S & Hormigón \\ \hline
+11 & ¿Cómo se midieron y conciliaron las cantidades de la losa y del acero para las planillas? En el cómputo de cierre, el acero de la losa figura como 3~$\times$~4.171,18~kg: ¿cómo se explica esa cifra? & S, F & Cantidades \\ \hline
+12 & ¿En qué ítem se paga el acero de la parrilla y de los negativos de la losa (ítem~8 o ítem~13) y cómo se decidió? & S, F & Cantidades \\ \hline
+13 & ¿Cómo afectaron la escasez de combustible, el suministro de cemento y de acero y el alza de precios a la ejecución y a la calidad de la losa? & R, S, F & Riesgos \\ \hline
+14 & ¿Qué controles considera indispensables para la segunda y la tercera losa y qué obstáculos ve para aplicarlos (costo, tiempo, personal)? & R, S, F & Mejora \\ \hline
+\multicolumn{4}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\textbf{Cierre:} ¿Desea agregar algo que no se haya preguntado? Agradecimiento al entrevistado.} \\ \hline
+\end{longtable}}
+
+{\setstretch{1.15}\small
+\textbf{Procesamiento.} Las entrevistas se transcriben y se codifican con las categorías de los bloques (planificación, documentos, cambios, materiales, inspección, hormigón, cantidades, riesgos y mejora). Cada afirmación se contrasta con los documentos de la obra (triangulación) antes de usarla como hallazgo. \pendiente{aplicar las entrevistas al Residente, al Supervisor y al Fiscal de obra y registrar sus resultados; no se reportan resultados de entrevistas en esta versión.}\par}
+
+% =====================================================================
+\clearpage
+\section*{C.8 Formato de validación por juicio de expertos}
+\addcontentsline{toc}{section}{C.8 Formato de validación por juicio de expertos}
+
+{\setstretch{1.15}\small
+\textbf{Objetivo.} Obtener evidencia de la validez de contenido del SGC y de sus instrumentos mediante el juicio de profesionales con experiencia en la construcción, la supervisión de obras o la gestión de la calidad. La validez de expertos se refiere al grado en que un instrumento mide la variable de interés de acuerdo con expertos en el tema \parencite[p.~235]{hernandez2018}. Se recomienda consultar al menos a tres expertos.\par}
+
+\medskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.35}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|L|@{}}
+\hline
+\multicolumn{2}{|@{\,}l|}{\cellcolor{gray!15}\textbf{1. Datos del experto}} \\ \hline
+\campo{Nombres y apellidos} & \campo{Profesión} \\
+\campo{Grado académico} & \campo{Especialidad} \\
+\campo{Años de experiencia en obras} & \campo{Años en supervisión o gestión de la calidad} \\
+\campo{Institución} & \campo{Cargo actual} \\
+\campo{Correo electrónico o teléfono} & \campo{Fecha de la evaluación} \\
+\hline
+\end{tabularx}\par}
+
+\medskip
+{\setstretch{1.15}\small
+\textbf{2. Instrucciones.} Lea la Sección~\ref{sec:diseno-sgc} y los formatos de este anexo. Califique cada componente con la escala siguiente en cuatro criterios y anote sus observaciones. \emph{Escala:} 1 = no cumple el criterio; 2 = nivel bajo; 3 = nivel moderado; 4 = nivel alto. \emph{Criterios:} \textbf{pertinencia} (el componente responde a una brecha o a un requisito del proceso de la losa); \textbf{claridad} (se comprende sin ambigüedad y sus criterios son precisos); \textbf{suficiencia} (sus ítems o controles bastan para lograr lo que se propone); y \textbf{aplicabilidad} (puede aplicarse en obra con los recursos y el personal disponibles).\par}
+
+\medskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.28}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}|Q{0.7cm}|P{6.4cm}|Q{1.4cm}|Q{1.3cm}|Q{1.4cm}|Q{1.5cm}|P{3.2cm}|@{}}
+\hline
+\multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{3. Evaluación (puntaje de 1 a 4)}} \\ \hline
+\textbf{N.\textsuperscript{o}} & \textbf{Componente o instrumento} & \textbf{Pertinencia} & \textbf{Claridad} & \textbf{Suficiencia} & \textbf{Aplicabilidad} & \textbf{Observaciones} \\ \hline
+\endfirsthead
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Componente o instrumento} & \textbf{Pertinencia} & \textbf{Claridad} & \textbf{Suficiencia} & \textbf{Aplicabilidad} & \textbf{Observaciones} \\ \hline
+\endhead
+1 & Política de la calidad y objetivos con metas (Tabla~\ref{tab:objetivos}) & & & & & \\ \hline
+2 & Matriz de riesgos (Tabla~\ref{tab:riesgos}) & & & & & \\ \hline
+3 & Matriz de responsabilidades RACI (Tabla~\ref{tab:raci}) & & & & & \\ \hline
+4 & Estructura del plan de la calidad (Tabla~\ref{tab:plan-calidad}) & & & & & \\ \hline
+5 & PPI y puntos de espera (Tabla~\ref{tab:ppi}) & & & & & \\ \hline
+6 & PCM-01: recepción y aceptación de materiales & & & & & \\ \hline
+7 & PCM-02: almacenamiento e identificación & & & & & \\ \hline
+8 & PCM-03: despacho y registro de consumos por paño & & & & & \\ \hline
+9 & PCM-04: conciliación de cantidades y umbrales de alerta & & & & & \\ \hline
+10 & PCM-05: control del material no conforme & & & & & \\ \hline
+11 & Control del hormigón: muestreo, aceptación, curado y tiempo frío & & & & & \\ \hline
+12 & Liberación de paños y control de salidas no conformes & & & & & \\ \hline
+13 & Procedimiento de no conformidades y acción correctiva & & & & & \\ \hline
+14 & Registro de costos de la calidad (modelo PAF) & & & & & \\ \hline
+15 & Indicadores, seguimiento y auditoría interna & & & & & \\ \hline
+16 & C.1 Lista de verificación ISO~9001:2026 & & & & & \\ \hline
+17 & C.2 Fichas PPI de liberación por paño & & & & & \\ \hline
+18 & C.3 Ficha de recepción de materiales & & & & & \\ \hline
+19 & C.4 Control de materiales y conciliación & & & & & \\ \hline
+20 & C.5 Registro de no conformidades & & & & & \\ \hline
+21 & C.6 Planilla de costos de la calidad & & & & & \\ \hline
+22 & C.7 Guía de entrevista semiestructurada & & & & & \\ \hline
+\end{longtable}}
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|@{}}
+\hline
+\textbf{4. Opinión de aplicabilidad del SGC:} \quad \casilla\ Aplicable \quad \casilla\ Aplicable después de corregir \quad \casilla\ No aplicable \\
+\textbf{Observaciones y sugerencias:} \\
+\fila \\ \fila \\
+\firma{Firma del experto}\hfill\firma{Sello o registro profesional}\hfill\firma{Fecha}\par\vspace{2pt} \\
+\hline
+\end{tabularx}\par}
+
+\medskip
+{\setstretch{1.15}\small
+\textbf{5. Cálculo del coeficiente V de Aiken (para el investigador).} Para cada componente y criterio se calcula
+\[
+  V = \frac{S}{n\,(c-1)}, \qquad S = \sum_{i=1}^{n} (x_i - l)
+\]
+donde $x_i$ es el puntaje del experto $i$, $l$ el valor mínimo de la escala (1), $n$ el número de expertos y $c$ el número de categorías de la escala (4). Con $n = 5$ expertos, $V = S/15$; con $n = 3$, $V = S/9$. Se aceptan los componentes con $V \geq 0{,}70$ en cada criterio, y los demás se corrigen con las observaciones de los expertos (Sección~\ref{sec:validacion}).\par}
+
+\medskip
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.22}\setlength{\tabcolsep}{2.5pt}
+\begin{longtable}{@{}|Q{0.7cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{0.95cm}|Q{1.0cm}|P{2.0cm}|@{}}
+\hline
+\multirow{2}{*}{\textbf{N.\textsuperscript{o}}} & \multicolumn{2}{c|}{\textbf{Pertinencia}} & \multicolumn{2}{c|}{\textbf{Claridad}} & \multicolumn{2}{c|}{\textbf{Suficiencia}} & \multicolumn{2}{c|}{\textbf{Aplicabilidad}} & \multicolumn{2}{c|}{\textbf{Global}} & \multirow{2}{=}{\centering\textbf{$n$}} & \multirow{2}{=}{\textbf{Decisión}} \\ \cline{2-11}
+ & $S$ & $V$ & $S$ & $V$ & $S$ & $V$ & $S$ & $V$ & $S$ & $V$ & & \\ \hline
+\endfirsthead
+\hline
+\textbf{N.\textsuperscript{o}} & $S_P$ & $V_P$ & $S_C$ & $V_C$ & $S_S$ & $V_S$ & $S_A$ & $V_A$ & $S$ & $V$ & $n$ & \textbf{Decisión} \\ \hline
+\endhead
+1 & & & & & & & & & & & & \\ \hline
+2 & & & & & & & & & & & & \\ \hline
+3 & & & & & & & & & & & & \\ \hline
+4 & & & & & & & & & & & & \\ \hline
+5 & & & & & & & & & & & & \\ \hline
+6 & & & & & & & & & & & & \\ \hline
+7 & & & & & & & & & & & & \\ \hline
+8 & & & & & & & & & & & & \\ \hline
+9 & & & & & & & & & & & & \\ \hline
+10 & & & & & & & & & & & & \\ \hline
+11 & & & & & & & & & & & & \\ \hline
+12 & & & & & & & & & & & & \\ \hline
+13 & & & & & & & & & & & & \\ \hline
+14 & & & & & & & & & & & & \\ \hline
+15 & & & & & & & & & & & & \\ \hline
+16 & & & & & & & & & & & & \\ \hline
+17 & & & & & & & & & & & & \\ \hline
+18 & & & & & & & & & & & & \\ \hline
+19 & & & & & & & & & & & & \\ \hline
+20 & & & & & & & & & & & & \\ \hline
+21 & & & & & & & & & & & & \\ \hline
+22 & & & & & & & & & & & & \\ \hline
+\end{longtable}}
+
+{\setstretch{1.15}\small
+\noindent\emph{Nota.} El valor global se calcula con la suma de los cuatro criterios: $V = S/[4\,n\,(c-1)]$. \pendiente{aplicar el formato a los expertos y completar esta tabla; no se reportan resultados de validación en esta versión.}\par}
