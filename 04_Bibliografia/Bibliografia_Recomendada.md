@@ -6,8 +6,8 @@ Actualizada al 29/10/2026. Cada fuente se verificó en su repositorio, editorial
 
 | Carpeta | Contenido | PDF |
 |---|---|---|
-| `01_Normas_y_Codigos/` | ACI 318-25 (solo local) y Norma Boliviana de Diseño Sísmico 2023 | 2 |
-| `02_Metodologia_y_Redaccion/` | Hernández-Sampieri (solo local) y guía APA 7 | 2 |
+| `01_Normas_y_Codigos/` | ACI 318-25 (obra protegida: solo para la revisión) y Norma Boliviana de Diseño Sísmico 2023 | 2 |
+| `02_Metodologia_y_Redaccion/` | Hernández-Sampieri (2018; obra protegida) y guía APA 7 | 2 |
 | `03_Tesis/` | Tesis de Bolivia, Perú, Ecuador y Colombia | 28 |
 | `04_Articulos_Cientificos/` | Artículos en revistas indexadas | 14 |
 | `05_Documentos_Tecnicos/` | Fichas de fabricantes, INE, Lean Construction y especificaciones | 7 |
@@ -121,7 +121,7 @@ Actualizada al 29/10/2026. Cada fuente se verificó en su repositorio, editorial
 
 | Referencia | Acceso | Aporte |
 |---|---|---|
-| Hernández-Sampieri, R., & Mendoza Torres, C. P. (2018). *Metodología de la investigación: las rutas cuantitativa, cualitativa y mixta*. McGraw-Hill Interamericana Editores. | En tu PC (no se sube a GitHub) | Metodología y diseño cuasi-experimental. |
+| Hernández-Sampieri, R., & Mendoza Torres, C. P. (2018). *Metodología de la investigación: las rutas cuantitativa, cualitativa y mixta*. McGraw-Hill Interamericana Editores. | [PDF](02_Metodologia_y_Redaccion/Hernandez-Sampieri_Mendoza_2018_Metodologia_de_la_Investigacion.pdf) (obra protegida: solo para la revisión) | Metodología y diseño cuasi-experimental. |
 | Gutiérrez Pulido, H. (2014). *Calidad y productividad* (4.ª ed.). McGraw-Hill Interamericana. | Biblioteca / compra | PHVA, herramientas y costos de la calidad. |
 | Montgomery, D. C. (2020). *Introduction to statistical quality control* (8th ed.). Wiley. | Biblioteca / compra | Cartas de control para desperdicio y no conformidades. |
 | Rumane, A. R. (2017). *Quality management in construction projects* (2nd ed.). CRC Press. https://doi.org/10.1201/9781315098425 | Suscripción | Plan de calidad, plan de inspección y ensayos y auditorías en obra. |
@@ -144,7 +144,7 @@ Actualizada al 29/10/2026. Cada fuente se verificó en su repositorio, editorial
 | NB 604:2023; NB 011:2025; NB 596:2016; NB 637, 587 y 588:2018 | Hormigón; cemento; áridos; agua | Normas vigentes de los materiales. |
 | NB 634, 586, 589 y 639; NB 736 y 739 | Muestreo, probetas, asentamiento, compresión; barras de acero | Equivalentes bolivianos de los ensayos ASTM (verificar). |
 | ASTM C31-26b, C39-26, C143-26b, C172-25, C94-26c, C1064-23, A615-26 | Ensayos de hormigón y acero | Validación experimental exigida por el docente. Ojo: fy = 5000 kg/cm² (≈ 490 MPa) no coincide con los grados 60 ni 75 de A615. |
-| ACI CODE-318-25 (tienes copia local), ACI SPEC-117-10, SPEC-301-20, PRC-214-11, PRC-306-16 (tiempo frío), PRC-121-08 (ISO 9001 en obras de hormigón) | Código y guías ACI | Aceptación del hormigón, tolerancias, tiempo frío en Potosí. |
+| ACI CODE-318-25 ([PDF](01_Normas_y_Codigos/ACI_318-25_Building_Code_for_Structural_Concrete.pdf); obra protegida, no redistribuir), ACI SPEC-117-10, SPEC-301-20, PRC-214-11, PRC-306-16 (tiempo frío), PRC-121-08 (ISO 9001 en obras de hormigón) | Código y guías ACI | Aceptación del hormigón, tolerancias, tiempo frío en Potosí. |
 | [Norma Boliviana de Diseño Sísmico 2023 (MOPSV)](01_Normas_y_Codigos/MOPSV_NBDS_2023_Norma_Boliviana_Diseno_Sismico.pdf) | Gratuita | Documento oficial que remite a la NB 1225001. |
 
 ## Legislación boliviana (gratuita)

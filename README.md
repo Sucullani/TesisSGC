@@ -6,6 +6,16 @@
 - Carrera de Ingeniería Civil – UATF · CIV 400 Seminario de Grado II · Modalidad: **Tesis**
 - Título original: *Diseño de un sistema de gestión de calidad para la optimización de costos, control de materiales en losas alivianadas del Edificio de Postgrado – UATF* (el análisis de cambios está en `01_Titulo_y_Consistencia`).
 
+## Guía rápida para el revisor
+
+1. **Borrador de la tesis (PDF):** [05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf).
+   - El texto en rojo marca datos pendientes.
+   - Los recuadros grises son guías de redacción.
+2. **Coherencia título–problema–objetivos–hipótesis:** [Propuesta_de_Titulo_y_Matriz_de_Consistencia.md](01_Titulo_y_Consistencia/Propuesta_de_Titulo_y_Matriz_de_Consistencia.md).
+3. **Índice según la guía del docente (CIV 400):** [Indice_de_Tesis_segun_Guia_Docente.md](02_Indice_y_Capitulos/Indice_de_Tesis_segun_Guia_Docente.md).
+4. **Datos reales de la obra que sustentan el problema:** [Resumen_de_Datos_de_Obra.md](03_Datos_Obra_Edificio_Posgrado/Resumen_de_Datos_de_Obra.md).
+5. **Bibliografía por nivel de fuente:** [Bibliografia_Recomendada.md](04_Bibliografia/Bibliografia_Recomendada.md).
+
 ## Dónde está cada cosa
 
 | Carpeta | Contenido | Documento principal |
@@ -35,18 +45,20 @@
 | `teoria dde teisi.pdf` (era la misma especificación técnica en PDF) | `03_Datos_Obra_Edificio_Posgrado/02_Especificaciones_Tecnicas/ET_Hormigones_y_Losa_Alivianada_Viguetas_Pretensadas.pdf` |
 | `3.- PLANILLA Y COMPUTOS METRICOS PARA RESOLUCION DE CONTRATO.xlsx` | `03_Datos_Obra_Edificio_Posgrado/03_Planillas_y_Computos/PAO_03_Planilla_y_Computos_Metricos_Resolucion_de_Contrato.xlsx` |
 | `HOSO LOSA ALIV.pdf` | `03_Datos_Obra_Edificio_Posgrado/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf` |
-| `Planilla de avanze de obra No2.pdf` (190 MB) | Original: `03_Datos_Obra_Edificio_Posgrado/_originales_pesados/PAO_02_Planilla_Avance_Obra_Kodesh_Sep-Dic_2025_ORIGINAL_190MB.pdf` · Copia comprimida (44 MB, 150 dpi, legible): `03_Datos_Obra_Edificio_Posgrado/03_Planillas_y_Computos/PAO_02_Planilla_Avance_Obra_Kodesh_Sep-Dic_2025.pdf` |
+| `Planilla de avanze de obra No2.pdf` (190 MB) | Copia comprimida para leer (44 MB, 150 dpi): `03_Datos_Obra_Edificio_Posgrado/03_Planillas_y_Computos/PAO_02_Planilla_Avance_Obra_Kodesh_Sep-Dic_2025.pdf` · Original a resolución completa, en 5 partes: `03_Datos_Obra_Edificio_Posgrado/_originales_pesados/PAO_02_..._ORIGINAL_parte1de5_p001-032.pdf` … `parte5de5_p129-139.pdf` |
 | `ACI-318-25-2.pdf` | `04_Bibliografia/01_Normas_y_Codigos/ACI_318-25_Building_Code_for_Structural_Concrete.pdf` |
 | `M13 Metodologia de la Investigacion1 - Hernandez-sampieri, 2018.pdf` | `04_Bibliografia/02_Metodologia_y_Redaccion/Hernandez-Sampieri_Mendoza_2018_Metodologia_de_la_Investigacion.pdf` |
 | `M01 GUÍA NORMAS APA 7MA EDICIÓN.pdf` | `04_Bibliografia/02_Metodologia_y_Redaccion/Guia_Normas_APA_7ma_Edicion.pdf` |
 | `GESTION_DE_LA_CALIDAD_EN_LA_REDUCCION_DE.pdf` | `04_Bibliografia/03_Tesis/Alvarez_Quintero_2014_Gestion_Calidad_Reduccion_Reprocesos_Construccion_UdeCartagena.pdf` |
 
-## Archivos que se guardan solo en tu computadora (no se suben a GitHub)
+## Archivos grandes y temporales
 
-Están listados en `.gitignore`:
-- **`_originales_pesados/`**: el escaneo original de 190 MB. GitHub rechaza archivos de más de 100 MB. En el repositorio está la copia comprimida.
-- **ACI 318-25** y el libro de **Hernández-Sampieri (2018)**: son copias con licencia de uso personal o con derechos de autor, y además pesan 57 MB entre los dos. Siguen en `04_Bibliografia/` en tu PC.
-  Si de todas formas quieres subirlos a tu repositorio privado, borra sus dos líneas en `.gitignore` y haz commit.
+Todo el contenido del proyecto está en el repositorio. Solo `.gitignore` excluye:
+
+- **Escaneo original de la Planilla N.º 2 (190 MB) como archivo único.** GitHub rechaza archivos de más de 100 MB. Por eso se subió dividido en 5 partes de menos de 45 MB, con las mismas imágenes byte a byte (139 páginas en total). Además está la copia comprimida de 44 MB.
+- **Temporales de compilación** (`05_Tesis_LaTeX/build/`) y archivos temporales de Office y Windows. Se regeneran solos; el PDF de la tesis es `Tesis_SGC_Borrador.pdf`.
+
+> **Derechos de autor:** el código **ACI 318-25** y el libro de **Hernández-Sampieri y Mendoza (2018)** son obras protegidas, incluidas solo para la revisión de esta tesis. El PDF del ACI lleva una marca de licencia que prohíbe su redistribución. Mantén este repositorio **privado** y no compartas esos archivos fuera de la revisión.
 
 ## Cómo sincronizar
 
@@ -61,4 +73,4 @@ También puedes usar el panel **Control de código fuente** de VS Code.
 ## Convención de nombres
 - Sin espacios, tildes ni "ñ" en los nombres de archivo (para evitar problemas con Git y otros sistemas).
 - Bibliografía: `Autor_Año_Titulo_Corto.pdf`. Normas: `Emisor_Codigo_Año_Titulo.pdf`. Datos de obra: `Tipo_N.º_Descripcion.ext`.
-- Las carpetas se numeran en el orden del trabajo (00 → 04).
+- Las carpetas se numeran en el orden del trabajo (00 → 05).
