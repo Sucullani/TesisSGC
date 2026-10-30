@@ -19,7 +19,8 @@ Registro de todo lo que se hizo en la sesión de Claude Code en la nube (29 y 30
 | Auditoría general y correcciones | **Pendiente (local)** | [`Plan_de_Auditoria_Pendiente.md`](Plan_de_Auditoria_Pendiente.md) |
 | Presentación de defensa en HTML y PowerPoint | **Pendiente (local)** | Encargo en `Encargos_a_los_Agentes/Encargos_Fase3_Modo_Rapido.md` |
 | Preguntas del tribunal: qué decir y qué no | **Pendiente (local).** La base está en [`Notas_para_la_Defensa.md`](Notas_para_la_Defensa.md). | Encargo en `Encargos_a_los_Agentes/` |
-| Documento Word de toda la tesis | Versión anterior al Capítulo 3. **Regenerar en local** con `python3 07_Entregables/scripts/tesis_a_docx.py`. | `07_Entregables/Tesis_SGC_Borrador_Final.docx` |
+| Documento Word de toda la tesis | **Actualizado** (30/10, 10:00) con la tesis completa: 313 páginas; resumen y abstract sin sangría; ningún resto de LaTeX. | `07_Entregables/Tesis_SGC_Borrador_Final.docx` |
+| Versión sencilla de la tesis (para cualquier lector), en PDF y Word | **Terminada**, sin ninguna tarea pendiente en el texto. La versión académica se conserva. | `07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.pdf` y `.docx` |
 | Trabajo por fases, con commits directos a `main` | Hecho (sin ramas) | Historial de `main` (sección 10) |
 
 La sección 11 resume lo que entregó cada agente al cierre.
@@ -57,7 +58,8 @@ La sección 11 resume lo que entregó cada agente al cierre.
 
 ### Fase 3: entregables (`07_Entregables/`), sin terminar: queda para la sesión local
 
-- **Word de la tesis:** está listo el conversor propio LaTeX → DOCX (`scripts/tesis_a_docx.py`, documentado en `scripts/README_docx.md`). Respeta el formato APA, convierte las figuras TikZ en imágenes y expande las macros del modelo. El `.docx` actual es anterior al Capítulo 3: hay que regenerarlo.
+- **Word de la tesis:** regenerado con la tesis completa mediante el conversor propio LaTeX → DOCX (`scripts/tesis_a_docx.py`, documentado en `scripts/README_docx.md`). Respeta el formato APA, convierte las figuras TikZ en imágenes y expande las macros del modelo. Se corrigieron dos detalles del conversor: `\noindent` (párrafos sin sangría) y el entorno `otherlanguage` del abstract.
+- **Versión sencilla de la tesis** (`Version_Sencilla/`): edición completa en lenguaje claro, escrita por capítulos a partir de la versión académica, con recuadros «En pocas palabras», glosario y cifras exactas. No tiene tareas pendientes: lo que el estudio no hizo se explica como límite del estudio. Se genera con `python3 07_Entregables/Version_Sencilla/generar_version_sencilla.py`.
 - **Explicación sencilla:** borrador en `.md`; faltan el `.docx` y el `.html`.
 - **Preguntas del tribunal, presentación de defensa y citas resaltadas:** se lanzaron, pero la interrupción de la sesión los detuvo antes de que escribieran archivos. Los encargos completos están en `Encargos_a_los_Agentes/`.
 

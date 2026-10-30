@@ -8,7 +8,8 @@
 
 ## Guía rápida para el revisor
 
-1. **Tesis completa (PDF):** [05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · **Word** (versión anterior al Capítulo 3; regenerar con `python3 07_Entregables/scripts/tesis_a_docx.py`): [07_Entregables/Tesis_SGC_Borrador_Final.docx](07_Entregables/Tesis_SGC_Borrador_Final.docx).
+1. **Tesis completa, versión académica:** [PDF](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · [Word](07_Entregables/Tesis_SGC_Borrador_Final.docx).
+   **Versión sencilla, para cualquier lector:** [PDF](07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.pdf) · [Word](07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.docx).
    - El texto en rojo marca datos que solo puede aportar el postulante.
    - Los recuadros grises son guías de redacción.
 2. **Qué se hizo y qué falta:** [08_Registro_de_Trabajo/Bitacora_del_Trabajo.md](08_Registro_de_Trabajo/Bitacora_del_Trabajo.md). La verificación final está pendiente: ver el [plan de auditoría](08_Registro_de_Trabajo/Plan_de_Auditoria_Pendiente.md).
