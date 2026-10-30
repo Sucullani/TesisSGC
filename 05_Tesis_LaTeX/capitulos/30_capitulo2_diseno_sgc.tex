@@ -45,7 +45,7 @@ El diseño es no experimental, porque el SGC no se manipuló en la obra y las va
   \node[caja] (o1) {\textbf{$O_1$: línea base}\\ retrospectiva y documental\\[2pt] Primera losa sin SGC\\ 41 paños; 1.109,84~\mdos{}\\[2pt] IDM, CNC, brechas ISO~9001 y no conformidades\\[2pt] (Sección~\ref{sec:diagnostico})};
   \node[caja, right=0.45cm of o1] (x) {\textbf{$X$: SGC diseñado}\\[2pt] Plan de la calidad (ISO~10005), PPI, procedimientos PCM-01 a PCM-05, no conformidades y costos de la calidad\\[2pt] (Sección~\ref{sec:diseno-sgc})};
   \node[caja, right=0.45cm of x] (o2) {\textbf{$O_2$: posprueba simulada}\\[2pt] Saldo: 2.234,60~\mdos{}\\ Control: sin SGC\\ Tratamiento: con SGC\\ Monte Carlo, \MCiter{} escenarios\\[2pt] (Sección~\ref{sec:modelo-simulacion})};
-  \node[caja, right=0.45cm of o2] (h) {\textbf{Contraste probabilístico}\\[2pt] HG: $P(r \geq 0{,}05) \geq 0{,}95$\\ HE1 y HE2: $P \geq 0{,}95$\\ Sensibilidad y punto de equilibrio\\[2pt] (Secciones~\ref{sec:validacion} y \ref{sec:contraste})};
+  \node[caja, right=0.45cm of o2] (h) {\textbf{Contraste probabilístico}\\[2pt] HG:\\ $P(r \geq 0{,}05) \geq 0{,}95$\\ HE1 y HE2:\\ $P \geq 0{,}95$\\ Sensibilidad y punto de equilibrio\\[2pt] (Secciones~\ref{sec:validacion} y \ref{sec:contraste})};
   \draw[flecha] (o1) -- (x);
   \draw[flecha] (x) -- (o2);
   \draw[flecha] (o2) -- (h);
@@ -62,9 +62,9 @@ El diseño es no experimental, porque el SGC no se manipuló en la obra y las va
 \caption{Fases del modelo de investigación}
 \label{tab:fases}
 \setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\linewidth}{@{}P{2.7cm}LP{4.0cm}P{1.1cm}P{1.35cm}@{}}
+\begin{tabularx}{\linewidth}{@{}P{2.7cm}LP{4.0cm}P{1.0cm}P{1.35cm}@{}}
 \toprule
-\textbf{Fase} & \textbf{Actividades} & \textbf{Productos} & \textbf{Objetivo} & \textbf{Sección} \\
+\textbf{Fase} & \textbf{Actividades} & \textbf{Productos} & \textbf{OE} & \textbf{Sección} \\
 \midrule
 1. Diagnóstico & Análisis documental; aplicación documental de la lista de verificación ISO~9001:2026; identificación de no conformidades; Pareto e Ishikawa & Porcentaje de cumplimiento por cláusula; no conformidades y causas & OE1 & \ref{sec:brechas-iso} a \ref{sec:nc-causas} \\
 2. Línea base ($O_1$) & Cantidades teóricas de planos; cantidades entregadas y pagadas; parámetros de literatura para lo no registrado & IDM y CNC sin SGC; parámetros del escenario de control & OE2 & \ref{sec:linea-base-cuantitativa} \\
@@ -90,7 +90,7 @@ La fase contratada comprende solo la obra gruesa hasta la tercera losa: de un pr
 \subsection{Datos contractuales}
 \label{sec:datos-contractuales}
 
-El contrato de obra N.\textsuperscript{o}~02-2025 resultó de la licitación pública UATF/OBRAS/LP/1/2025/IDH-OTPRO/DEPTO.INFRA, adjudicada a la Empresa Unipersonal Constructora Kodesh mediante la Resolución Administrativa N.\textsuperscript{o}~82-2025, del 4 de abril de 2025, y se firmó el 24 de abril de 2025 \parencite[pp.~91, 112]{uatf2025pao2}. La Tabla~\ref{tab:datos-contractuales} resume sus datos principales y sus modificaciones.
+El contrato de obra N.\textsuperscript{o}~02-2025 resultó de la licitación pública UATF/\allowbreak OBRAS/\allowbreak LP/\allowbreak 1/\allowbreak 2025/\allowbreak IDH-OTPRO/\allowbreak DEPTO.INFRA, adjudicada a la Empresa Unipersonal Constructora Kodesh mediante la Resolución Administrativa N.\textsuperscript{o}~82-2025, del 4 de abril de 2025, y se firmó el 24 de abril de 2025 \parencite[pp.~91, 112]{uatf2025pao2}. La Tabla~\ref{tab:datos-contractuales} resume sus datos principales y sus modificaciones.
 
 \begin{table}[H]
 \caption{Datos del contrato de obra y de sus modificaciones}
@@ -119,7 +119,7 @@ Cierre por resolución (PAO N.\textsuperscript{o}~3, versión firmada el 16/03/2
 Tres rasgos del contrato condicionan la gestión de la calidad del ítem. Primero, los precios unitarios incluyen la provisión de «materiales de calidad» y las «reparaciones por trabajos defectuosos», y no se pagan trabajos que excedan el precio salvo autorización expresa \parencite[p.~92]{uatf2025pao2}; además, no procede ningún reajuste de precios \parencite[p.~95]{uatf2025pao2}. En consecuencia, el desperdicio, los retrabajos y el alza de los materiales los absorbe el contratista. Segundo, el contrato asigna a la Supervisión la responsabilidad directa del control de calidad, pero exige al contratista ensayar los materiales a su costo antes de incorporarlos a la obra \parencite[pp.~101--102]{uatf2025pao2}. Tercero, la medición debe ser neta y no se miden volúmenes excedentes que la Supervisión no haya aprobado por escrito \parencite[p.~99]{uatf2025pao2}. La Tabla~\ref{tab:clausulas-calidad} reúne las cláusulas que se relacionan con la calidad y el control de materiales; son requisitos de la parte interesada principal y, por ello, entradas del SGC.
 
 \begingroup\small\setstretch{1}\setlength{\tabcolsep}{4pt}
-\begin{longtable}{@{}P{1.7cm}P{6.2cm}P{6.0cm}P{1.6cm}@{}}
+\begin{longtable}{@{}P{1.7cm}P{5.8cm}P{6.0cm}P{2.0cm}@{}}
 \caption{Cláusulas del contrato relacionadas con la calidad y el control de materiales}\label{tab:clausulas-calidad}\\
 \toprule
 \textbf{Cláusula} & \textbf{Contenido (paráfrasis)} & \textbf{Implicancia para el SGC} & \textbf{PAO2} \\
@@ -328,7 +328,7 @@ Para medir la distancia entre la gestión real y los requisitos de la norma se a
 \caption{Cumplimiento de los requisitos de ISO~9001 por cláusula: primera losa y diagnósticos de referencia}
 \label{tab:brechas-iso}
 \setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\linewidth}{@{}LQ{1.5cm}Q{1.45cm}Q{2.05cm}Q{2.15cm}Q{2.05cm}@{}}
+\begin{tabularx}{\linewidth}{@{}LQ{1.95cm}Q{1.45cm}Q{2.05cm}Q{2.15cm}Q{2.05cm}@{}}
 \toprule
 \textbf{Cláusula} & \textbf{Requisitos aplicables} & \textbf{Puntaje} & \textbf{Primera losa (esta tesis)} & \textbf{Mamani Calsina (2025)} & \textbf{Peña Callisaya (2024)} \\
 \midrule
@@ -367,7 +367,7 @@ El resultado es menor que el de las dos plantas industriales de viguetas pretens
 El análisis documental revisó, página por página, la Planilla de avance N.\textsuperscript{o}~2, de 139 páginas, que incluye el informe de Supervisión, los cómputos, los croquis, las fotografías, el certificado de laboratorio, los certificados de materiales, el contrato, el Libro de Órdenes y los cronogramas \parencite{uatf2025pao2}; la planilla y los cómputos de cierre \parencite{uatf_pao3}; el expediente del ítem~13 \parencite{uatf_item13}; las ET \parencite{uatf_et}, y los planos 01 a 03. Cada dato se contrastó en al menos dos fuentes. Las coincidencias confirmaron el dato; por ejemplo, las 41 áreas de paño y su total de 1.109,84~\mdos{} son idénticas en cuatro documentos. Las diferencias se registraron como hallazgos y se agrupan en siete temas.
 
 \subsubsection{Control de la resistencia del hormigón}
-El certificado de laboratorio N.\textsuperscript{o}~000293 es el único registro de ensayos de compresión adjunto a la Planilla N.\textsuperscript{o}~2. Comprende 12 probetas cilíndricas de 6~$\times$~12~pulgadas (área de 182,4~cm\textsuperscript{2}) de columnas y vigas, ensayadas el 5 de diciembre de 2025 a edades de 55 a 76 días y «proyectadas» a 28 días con un factor de tiempo (Tabla~\ref{tab:probetas}). El laboratorio aclaró que «las probetas fueron traidas y elaboradas por la empresa solicitante» \parencite[p.~78]{uatf2025pao2}.
+El certificado de laboratorio N.\textsuperscript{o}~000293 es el único registro de ensayos de compresión adjunto a la Planilla N.\textsuperscript{o}~2. Comprende 12 probetas cilíndricas de 6~$\times$~12~pulgadas (área de 182,4~cm\textsuperscript{2}) de columnas y vigas, ensayadas el 5 de diciembre de 2025 a edades de 55 a 76 días y «proyectadas» a 28 días con un factor de tiempo (Tabla~\ref{tab:probetas}). El laboratorio aclaró que «las probetas fueron traidas [\textit{sic}] y elaboradas por la empresa solicitante» \parencite[p.~78]{uatf2025pao2}.
 
 \begingroup\small\setstretch{1}\setlength{\tabcolsep}{4pt}
 \begin{longtable}{@{}Q{0.8cm}P{1.7cm}Q{2.0cm}Q{1.2cm}Q{1.6cm}Q{2.4cm}Q{1.5cm}Q{2.4cm}@{}}
@@ -401,7 +401,7 @@ El certificado de laboratorio N.\textsuperscript{o}~000293 es el único registro
 \multicolumn{7}{@{}l}{Losa alivianada} & sin ensayos \\
 \end{longtable}
 \vspace{-6pt}
-\nota{Transcrito del certificado del Laboratorio de Resistencia de Materiales y Tecnología del Hormigón de la Carrera de Ingeniería Civil de la UATF \parencite{labuatf2025}, adjunto a \textcite[p.~78]{uatf2025pao2}. El certificado no tiene columna de fecha de ensayo; la fecha de la probeta más la edad coincide con el 05/12/2025 en las 12 filas. Estadísticos: cálculo propio. CV: coeficiente de variación.}
+\nota{Transcrito del certificado del Laboratorio de Resistencia de Materiales y Tecnología del Hormigón de la Carrera de Ingeniería Civil de la UATF \parencite{labuatf2025}, adjunto a la Planilla de avance N.\textsuperscript{o}~2 \parencite[p.~78]{uatf2025pao2}. El certificado no tiene columna de fecha de ensayo; la fecha de la probeta más la edad coincide con el 05/12/2025 en las 12 filas. Estadísticos: cálculo propio. CV: coeficiente de variación.}
 \endgroup
 
 Los valores proyectados superan f'c~=~250~kg/cm\textsuperscript{2}, pero el control presenta cinco debilidades:
@@ -508,7 +508,7 @@ Se registraron además inconsistencias menores que muestran un control débil de
 A partir del análisis documental y de la lista de verificación, el investigador identificó 22 no conformidades (NC) respecto de los requisitos de la norma ISO~9001:2026, del contrato, de las ET y de la normativa del hormigón (Tabla~\ref{tab:nc}). Cada NC se clasificó en una categoría del método 6M (materiales, método, mano de obra, medición, maquinaria y medio ambiente) o en la categoría de gestión, que reúne las fallas de planificación, documentación y dirección. Como no existe un registro de NC de la obra, la tabla es una reconstrucción documental y no un registro levantado durante la ejecución.
 
 \begingroup\small\setstretch{1}\setlength{\tabcolsep}{3pt}
-\begin{longtable}{@{}P{1.1cm}P{5.9cm}P{2.6cm}P{3.6cm}P{2.0cm}@{}}
+\begin{longtable}{@{}P{1.3cm}P{5.7cm}P{2.6cm}P{3.6cm}P{2.0cm}@{}}
 \caption{No conformidades identificadas en la ejecución de la primera losa}\label{tab:nc}\\
 \toprule
 \textbf{Código} & \textbf{Descripción} & \textbf{Evidencia} & \textbf{Requisito afectado} & \textbf{Categoría} \\
@@ -570,7 +570,7 @@ Las NC se relacionan con las nueve brechas que orientan el diseño del SGC (Secc
   font=\scriptsize,
   cat/.style={draw, rounded corners=2pt, fill=gray!12, font=\footnotesize\bfseries,
               inner sep=3pt, minimum width=3.6cm},
-  lista/.style={align=left, text width=3.75cm, inner sep=2pt},
+  lista/.style={align=left, text width=3.95cm, inner sep=2pt, font=\footnotesize},
   espina/.style={-{Stealth[length=3.5mm]}, line width=1.4pt},
   rama/.style={-{Stealth[length=2.5mm]}, thick, black!75}]
   % Espina principal y efecto
@@ -579,38 +579,38 @@ Las NC se relacionan con las nueve brechas que orientan el diseño del SGC (Secc
         font=\footnotesize] (efecto) at (14.25,0)
         {\textbf{Desperdicio de materiales y sobrecostos} de la losa alivianada (primera losa)};
   % Ramas superiores
-  \node[cat] (cMat) at (1.95,5.45) {Materiales};
+  \node[cat] (cMat) at (2.0,5.6) {Materiales};
   \node[lista, below=1pt of cMat] (lMat) {%
     -- Viguetas inexistentes en los tamaños requeridos; cambio sin registro\\
     -- Acero entregado en 30~\%; demoras por combustible\\
     -- EPS distinto de la ET; 2.350 piezas sin conciliar\\
     -- Certificados tardíos; sin $\phi$6, $\phi$10, cemento ni áridos};
-  \node[cat] (cMet) at (6.05,5.45) {Método};
+  \node[cat] (cMet) at (6.1,5.6) {Método};
   \node[lista, below=1pt of cMet] (lMet) {%
     -- Sin plan de la calidad ni PPI\\
     -- Sin despiece ni pedido por paño; sin kardex ni vales\\
     -- Acopio sin recepción ni inventario\\
     -- Sin dosificación aprobada ni curado registrado; vaciado con carretillas};
-  \node[cat] (cMO) at (10.15,5.45) {Mano de obra};
+  \node[cat] (cMO) at (10.2,5.6) {Mano de obra};
   \node[lista, below=1pt of cMO] (lMO) {%
     -- Competencia y capacitación no registradas\\
     -- Parrilla pisada y sin separadores visibles\\
     -- Supervisión apoyada por pasantes\\
     -- Presión por recuperar el retraso};
   % Ramas inferiores
-  \node[lista, anchor=south] (lMed) at (1.95,-5.1) {%
+  \node[lista, anchor=south] (lMed) at (2.0,-5.35) {%
     -- Losa sin probetas; pago antes de los 28 días\\
     -- Acero de la losa sin planilla de armado; factor 3 en el cierre\\
     -- Tres cifras del acero acumulado; correcciones posteriores\\
     -- Calidad «buena» sin evidencia objetiva};
   \node[cat, below=1pt of lMed] (cMed) {Medición};
-  \node[lista, anchor=south] (lAmb) at (6.05,-5.1) {%
+  \node[lista, anchor=south] (lAmb) at (6.1,-5.35) {%
     -- Lluvias durante el armado (12, 13 y 21/11/2025)\\
     -- Bajas temperaturas a 3.650~m~s.~n.~m. sin plan de tiempo frío\\
     -- Escasez de diésel y alza de precios\\
     -- Contrato sin reajuste de precios};
   \node[cat, below=1pt of lAmb] (cAmb) {Medio ambiente};
-  \node[lista, anchor=south] (lGes) at (10.15,-5.1) {%
+  \node[lista, anchor=south] (lGes) at (10.2,-5.35) {%
     -- Libro de Órdenes sin NC ni constancia del Director\\
     -- Documentos incoherentes (ET, Plano~02, certificados)\\
     -- Cronograma desactualizado; riesgos no gestionados\\
@@ -641,7 +641,7 @@ La línea base cuantitativa ($O_1$) expresa, para cada material, la cantidad te�
 \caption{Cantidades teóricas de materiales de la primera losa y del saldo}
 \label{tab:cantidades-teoricas}
 \setlength{\tabcolsep}{4pt}
-\begin{tabularx}{\linewidth}{@{}P{2.4cm}P{2.7cm}P{2.5cm}P{2.2cm}L@{}}
+\begin{tabularx}{\linewidth}{@{}P{2.75cm}P{2.6cm}P{2.45cm}P{2.55cm}L@{}}
 \toprule
 \textbf{Material} & \textbf{Primera losa (1.109,84~\mdos{})} & \textbf{Por \mdos{}} & \textbf{Saldo (2.234,60~\mdos{})} & \textbf{Supuestos principales} \\
 \midrule
@@ -660,7 +660,7 @@ Acero & 3.572,8~kg & 3,22~kg (malla 2,42; negativos 0,30; nervios 0,50) & 7.193,
 \caption{Cantidades teóricas, entregadas y pagadas de la primera losa e índices de la línea base}
 \label{tab:linea-base}
 \setlength{\tabcolsep}{3.5pt}
-\begin{tabularx}{\linewidth}{@{}P{1.9cm}P{2.3cm}P{2.3cm}P{2.9cm}LP{2.4cm}@{}}
+\begin{tabularx}{\linewidth}{@{}P{1.9cm}P{2.3cm}P{2.3cm}P{2.9cm}LP{2.6cm}@{}}
 \toprule
 \textbf{Material} & \textbf{Teórico} & \textbf{Entregado} & \textbf{Pagado o medido} & \textbf{Índice de la línea base} & \textbf{Tipo de dato} \\
 \midrule
@@ -685,7 +685,7 @@ Para las viguetas y el hormigón no existen notas de entrega, remisiones, vales 
 \caption{Parámetros de la línea base (escenario de control) del modelo de costos}
 \label{tab:parametros-linea-base}
 \setlength{\tabcolsep}{3.5pt}
-\begin{tabularx}{\linewidth}{@{}P{2.9cm}Q{1.25cm}Q{1.25cm}Q{1.25cm}P{2.6cm}L@{}}
+\begin{tabularx}{\linewidth}{@{}P{2.7cm}Q{1.55cm}Q{1.55cm}Q{1.55cm}P{2.5cm}L@{}}
 \toprule
 \textbf{Parámetro} & \textbf{Mínimo} & \textbf{Moda} & \textbf{Máximo} & \textbf{Tipo de dato} & \textbf{Fuente} \\
 \midrule

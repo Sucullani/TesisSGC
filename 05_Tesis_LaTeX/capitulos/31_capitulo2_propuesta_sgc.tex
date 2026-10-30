@@ -331,43 +331,43 @@ La operación es el núcleo del sistema: traduce los requisitos en controles sob
 \label{fig:mapa-procesos}
 \begin{tikzpicture}[
   proc/.style={draw, rounded corners=2pt, fill=white, align=center, font=\footnotesize,
-               minimum height=1.05cm, text width=#1},
+               minimum height=1.0cm, text width=#1},
   proc/.default=3.5cm,
   lateral/.style={draw, thick, fill=gray!12, align=center, font=\footnotesize,
-                  text width=6.6cm, minimum height=1.15cm, rotate=90},
+                  text width=8.0cm, minimum height=1.15cm, rotate=90},
   etq/.style={font=\scriptsize\bfseries, anchor=west},
   flecha/.style={-{Stealth[length=2.6mm]}, thick}]
   % Bandas
-  \fill[blue!6, rounded corners=4pt]   (-6.45, 1.45) rectangle (6.45, 3.55);
-  \fill[green!8, rounded corners=4pt]  (-6.45,-1.25) rectangle (6.45, 1.25);
-  \fill[orange!10, rounded corners=4pt](-6.45,-3.55) rectangle (6.45,-1.45);
-  \node[etq] at (-6.35, 3.32) {PROCESOS ESTRATÉGICOS};
-  \node[etq] at (-6.35, 1.02) {PROCESOS OPERATIVOS};
-  \node[etq] at (-6.35,-1.68) {PROCESOS DE APOYO};
+  \fill[blue!6, rounded corners=4pt]   (-6.45, 2.55) rectangle (6.45, 4.35);
+  \fill[green!8, rounded corners=4pt]  (-6.45,-1.75) rectangle (6.45, 2.35);
+  \fill[orange!10, rounded corners=4pt](-6.45,-4.10) rectangle (6.45,-1.95);
+  \node[etq] at (-6.35, 4.15) {PROCESOS ESTRATÉGICOS};
+  \node[etq] at (-6.35, 2.15) {PROCESOS OPERATIVOS};
+  \node[etq] at (-6.35,-2.15) {PROCESOS DE APOYO};
   % Estratégicos
-  \node[proc] (e1) at (-4.15, 2.3) {Planificación de la calidad\\(plan, riesgos, objetivos)};
-  \node[proc] (e2) at (0, 2.3)     {Gestión del contrato\\y de los cambios};
-  \node[proc] (e3) at (4.15, 2.3)  {Revisión de la dirección\\y mejora continua};
+  \node[proc=3.9cm] (e1) at (-4.3, 3.25) {Planificación de la calidad\\(plan, riesgos, objetivos)};
+  \node[proc=3.6cm] (e2) at (0, 3.25)     {Gestión del contrato\\y de los cambios};
+  \node[proc=3.6cm] (e3) at (4.25, 3.25)  {Revisión de la dirección\\y mejora continua};
   % Operativos
-  \node[proc=3.6cm, minimum height=1.6cm] (o1) at (-4.15,-0.1) {\textbf{Abastecimiento}\\compra, recepción (PCM-01)\\y almacenamiento (PCM-02)};
-  \node[proc=3.6cm, minimum height=1.6cm] (o2) at (0,-0.1)     {\textbf{Ejecución de la losa}\\apuntalamiento, viguetas, EPS,\\armado, instalaciones, vaciado,\\curado y desapuntalamiento};
-  \node[proc=3.6cm, minimum height=1.6cm] (o3) at (4.15,-0.1)  {\textbf{Control de calidad}\\\textbf{y de cantidades}\\PPI, ensayos, liberación\\y conciliación (PCM-04)};
+  \node[proc=3.8cm, minimum height=2.5cm] (o1) at (-4.25, 0.3) {\textbf{Abastecimiento}\\[2pt]compra, recepción\\(PCM-01) y\\almacenamiento (PCM-02)};
+  \node[proc=3.8cm, minimum height=2.5cm] (o2) at (0, 0.3)     {\textbf{Ejecución de la losa}\\[2pt]apuntalamiento, viguetas\\y EPS, armado, instalaciones,\\vaciado, curado y\\desapuntalamiento};
+  \node[proc=3.8cm, minimum height=2.5cm] (o3) at (4.25, 0.3)  {\textbf{Control de calidad}\\\textbf{y de cantidades}\\[2pt]PPI, ensayos, liberación\\y conciliación (PCM-04)};
   \draw[flecha] (o1) -- (o2);
   \draw[flecha] (o2) -- (o3);
   % Apoyo
-  \node[proc=2.1cm] (a1) at (-5.05,-2.55) {Almacén, vales\\y kardex (PCM-03)};
-  \node[proc=2.1cm] (a2) at (-2.52,-2.55) {Laboratorio\\de ensayos};
-  \node[proc=2.1cm] (a3) at (0,-2.55)     {Documentos\\y registros};
-  \node[proc=2.1cm] (a4) at (2.52,-2.55)  {Competencia\\del personal};
-  \node[proc=2.1cm] (a5) at (5.05,-2.55)  {Equipos\\de medición};
+  \node[proc=2.1cm] (a1) at (-5.05,-3.15) {Almacén y kardex\\(PCM-03)};
+  \node[proc=2.1cm] (a2) at (-2.52,-3.15) {Laboratorio\\de ensayos};
+  \node[proc=2.1cm] (a3) at (0,-3.15)     {Documentos\\y registros};
+  \node[proc=2.1cm] (a4) at (2.52,-3.15)  {Competencia\\del personal};
+  \node[proc=2.1cm] (a5) at (5.05,-3.15)  {Equipos\\de medición};
   % Entradas y salidas
-  \node[lateral] (ent) at (-7.1, 0) {\textbf{Entradas:} requisitos de la UATF y de las partes interesadas (contrato, ET, planos, normas)};
-  \node[lateral] (sal) at (7.1, 0)  {\textbf{Salidas:} losa conforme, cantidades conciliadas y pagadas; satisfacción de la UATF};
-  \draw[flecha] (-6.5,-0.1) -- (o1.west);
-  \draw[flecha] (o3.east) -- (6.5,-0.1);
+  \node[lateral] (ent) at (-7.1, 0.12) {\textbf{Entradas:} requisitos de la UATF y de las partes interesadas (contrato, ET, planos y normas)};
+  \node[lateral] (sal) at (7.1, 0.12)  {\textbf{Salidas:} losa conforme; cantidades conciliadas y pagadas; satisfacción de la UATF};
+  \draw[flecha] (-6.5,0.3) -- (o1.west);
+  \draw[flecha] (o3.east) -- (6.5,0.3);
   % Relaciones entre niveles
-  \draw[flecha, very thick, blue!50!black] (0,1.45) -- (0,1.25);
-  \draw[flecha, very thick, orange!60!black] (0,-1.45) -- (0,-1.25);
+  \draw[flecha, very thick, blue!50!black] (0,2.55) -- (0,2.35);
+  \draw[flecha, very thick, orange!60!black] (0,-1.95) -- (0,-1.75);
 \end{tikzpicture}
 \nota{Elaboración propia. PCM: procedimiento de control de materiales; PPI: plan de puntos de inspección y ensayo.}
 \end{figure}
@@ -442,7 +442,7 @@ Operación y control del plan & Aceptación por la Supervisión; aplicación por
 14 & Consumos y conciliación & Cantidades despachadas, devueltas, colocadas y medidas por paño; $IDM$ dentro de la meta; diferencias dentro de la tolerancia & PCM-03 y PCM-04 & Cada paño y planilla & R & C.4; AL y RC \\
 \end{longtable}
 \vspace{-6pt}
-\nota{Elaboración propia con base en las especificaciones técnicas \parencite{uatf_et}, el certificado del fabricante \parencite{pretensa2025}, el código ACI~318-25 \parencite{aci318_2025} y las fuentes indicadas. H: punto de espera; W: punto de aviso; R: revisión de registros. AL: Almacenero; RC: Residente y encargado de calidad; CA: Capataz; SU: Supervisor; LB: laboratorio. Las tolerancias del EPS se toman de la ficha técnica de otro fabricante nacional mientras el proveedor no declare las suyas. Los criterios de recepción de viguetas recogidos por \textcite[pp.~89--92]{capcha2016} provienen de una edición anterior de la NB~997. \pendiente{verificar tolerancias, defectos y criterio de rechazo del lote con la NB~997:2016 y el porcentaje mínimo de masa con la edición vigente de la norma de la barra.} \pendiente{incorporar las instrucciones de montaje del fabricante de viguetas (separación de soleras, contraflecha y plazos de desapuntalamiento) y verificar que no contradigan estos criterios.}}
+\nota{Elaboración propia con base en las especificaciones técnicas \parencite{uatf_et}, el certificado del fabricante \parencite{pretensa2025}, el código ACI~318-25 \parencite{aci318_2025} y las fuentes indicadas. H: punto de espera; W: punto de aviso; R: revisión de registros. AL: Almacenero; RC: Residente y encargado de calidad; CA: Capataz; SU: Supervisor; LB: laboratorio. Las tolerancias del EPS se toman de la ficha técnica de otro fabricante nacional mientras el proveedor no declare las suyas. Los criterios de recepción de viguetas recogidos por \textcite[pp.~89--92]{capcha2016} se basan en la edición de 2005 de la NB~997. \pendiente{verificar tolerancias, defectos y criterio de rechazo del lote con la NB~997:2016 y el porcentaje mínimo de masa con la edición vigente de la norma de la barra.} \pendiente{incorporar las instrucciones de montaje del fabricante de viguetas (separación de soleras, contraflecha y plazos de desapuntalamiento) y verificar que no contradigan estos criterios.}}
 \endgroup
 
 \subsubsection{PCM-01: recepción y aceptación de materiales} \emph{Objetivo:} asegurar que solo se incorporen a la losa materiales conformes, con evidencia obtenida \emph{antes} de su colocación (B2). En la primera losa, los certificados de viguetas y de EPS se emitieron cuando la losa ya se armaba y no hubo inspección de recepción registrada; este procedimiento invierte ese orden. \emph{Responsables:} el Almacenero recibe y cuenta; el encargado de calidad inspecciona y decide; la Supervisión puede presenciar la recepción y revisa los certificados, conforme a las cláusulas 26.6 y 26.9 del contrato \parencite[p.~102]{uatf2025pao2}. \emph{Pasos:}
@@ -677,7 +677,8 @@ Reducción del costo unitario (OC12) & Planilla C.6 y planillas de avance & $r <
   \draw[flecha] (ac) -- (v);
   \draw[flecha] (v) -- (q);
   \draw[flecha] (q) -- node[right, font=\footnotesize]{Sí} (z);
-  \draw[flecha] (q.west) -- ++(-0.9,0) node[above, font=\footnotesize, pos=0.5]{No} |- (a.west);
+  \coordinate (lazo) at ($(a.west)+(-0.55,0)$);
+  \draw[flecha] (q.west) -- node[above, font=\footnotesize]{No} (q.west -| lazo) -- (lazo) -- (a.west);
   \node[anota] at ($(d.east)+(0.3,0)$)  {Cualquier persona del equipo o de la Supervisión; de inmediato};
   \node[anota] at ($(r.east)+(0.3,0)$)  {Encargado de calidad; dentro de las 24~h, con aviso al Director de obra y a la Supervisión};
   \node[anota] at ($(c.east)+(0.3,0)$)  {Capataz y encargado de calidad; antes de continuar la actividad afectada};
@@ -697,11 +698,11 @@ Reducción del costo unitario (OC12) & Planilla C.6 y planillas de avance & $r <
 \subsection{Registro de costos de la calidad}
 \label{sec:sgc-costos}
 
-El registro de costos de la calidad hace visible lo que en la primera losa no se midió (B7) y vincula el SGC con la variable dependiente de la investigación. Se adopta el modelo de prevención, evaluación y fallas (PAF), que sigue siendo el modelo genérico más empleado en las empresas constructoras \parencite[p.~43]{graciavillar2007}. Los costos de prevención corresponden a las actividades que evitan defectos; los de evaluación, a las inspecciones y ensayos que verifican la conformidad; los de fallas internas, a los errores detectados antes de la entrega, como desperdicios y repetición de trabajos; y los de fallas externas, a los que aparecen después de entregado el producto al cliente \parencite[pp.~48--49]{graciavillar2007}. La Tabla~\ref{tab:paf} concreta los conceptos para la losa con base en los ítems de costo de la calidad identificados por \textcite[pp.~5409--5410]{khadim2023}.
+El registro de costos de la calidad hace visible lo que en la primera losa no se midió (B7) y vincula el SGC con la variable dependiente de la investigación. Se adopta el modelo de prevención, evaluación y fallas (PAF) presentado en el Capítulo~1 (Tabla~\ref{tab:paf}), que sigue siendo el modelo genérico más empleado en las empresas constructoras \parencite[p.~43]{graciavillar2007}. Los costos de prevención corresponden a las actividades que evitan defectos; los de evaluación, a las inspecciones y ensayos que verifican la conformidad; los de fallas internas, a los errores detectados antes de la entrega, como desperdicios y repetición de trabajos; y los de fallas externas, a los que aparecen después de entregado el producto al cliente \parencite[pp.~48--49]{graciavillar2007}. La Tabla~\ref{tab:paf-losa} concreta los conceptos para la losa con base en los ítems de costo de la calidad identificados por \textcite[pp.~5409--5410]{khadim2023}.
 
 \begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}P{2.2cm}P{5.6cm}P{5.0cm}P{2.9cm}@{}}
-\caption{Conceptos de costos de la calidad de la losa y su valoración (modelo PAF)}\label{tab:paf}\\
+\caption{Conceptos de costos de la calidad de la losa y su valoración (modelo PAF)}\label{tab:paf-losa}\\
 \toprule
 \textbf{Categoría} & \textbf{Concepto típico en la losa} & \textbf{Base de valoración} & \textbf{Registro} \\
 \midrule

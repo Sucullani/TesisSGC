@@ -182,6 +182,21 @@
 \usepackage[style=apa,backend=biber]{biblatex}
 \setlength{\bibhang}{1.27cm}            % sangría francesa (APA)
 \setlength{\bibitemsep}{0pt}
+
+% «y» entre los dos últimos autores, en citas y referencias, y sin coma antes de
+% la «y» final, como en la guía APA del repositorio (p. 40: «Ayala y Masiero,
+% 2010»; referencias: «Sánchez, C., Ayala, D. y Bocarosa, E.»)
+\AtBeginDocument{%
+  \DeclareDelimFormat[bib,biblist]{finalnamedelim}{%
+    \ifthenelse{\value{listcount}>\maxprtauth}{}{\addspace\bibstring{and}\space}}%
+  \DeclareDelimFormat[parencite,nptextcite,fullcite,fullcitebib]{finalnamedelim}{%
+    \addspace\bibstring{and}\space}}
+\makeatletter
+\renewcommand*{\apablx@ifrevnameappcomma}{%
+  \iftoggle{apablx@wantcomma}
+    {\ifboolexpr{test {\ifnumless{\value{listcount}+1}{\value{liststop}}} or test \ifmorenames}}
+    {\@secondoftwo}}
+\makeatother
 % Todas las fuentes de la carpeta bib/ (una por grupo de fichas)
 \addbibresource{bib/00_base.bib}
 \IfFileExists{bib/tesis_grupo1.bib}{\addbibresource{bib/tesis_grupo1.bib}}{}

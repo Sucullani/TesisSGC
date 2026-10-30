@@ -680,4 +680,108 @@ D.~S.~5597 (2026) & Ajuste excepcional de precios de materiales, maquinaria y eq
 \nota{Elaborado con base en las fuentes citadas. DBC: documento base de contratación; NBDS: Norma Boliviana de Diseño Sísmico; NB-SABS: Normas Básicas del Sistema de Administración de Bienes y Servicios.}
 \endgroup
 
-% [CONTINÚA: 1.8 costos, 1.9 herramientas, 1.10 simulación, 1.11 términos]
+% ---------------------------------------------------------------------
+\section{Control de costos en obras públicas}
+\label{sec:control-costos}
+
+\subsection{Análisis de precios unitarios}
+
+En las obras públicas bolivianas, el costo de cada ítem se expresa en un análisis de precios unitarios (APU) con el formulario B-2 del modelo de documento base de contratación \parencite[p.~257]{cocarico2022}. El precio unitario se compone de costos directos (materiales, mano de obra, y equipo, maquinaria y herramientas) y de costos indirectos o incidencias (beneficios sociales, herramientas, gastos generales, utilidad e impuestos) \parencite[p.~254]{cocarico2022}. En el formulario B-2, cada incidencia se aplica sobre una base distinta \parencite[pp.~256--257]{cocarico2022}: los beneficios sociales, sobre la mano de obra; el impuesto al valor agregado de la mano de obra, sobre la mano de obra más los beneficios sociales; las herramientas, sobre el total de la mano de obra; los gastos generales, sobre los costos directos; la utilidad, sobre los costos directos más los gastos generales; y el impuesto a las transacciones, sobre todo lo anterior. Con esas bases, el precio unitario resulta
+\begin{equation}
+  PU = \underbrace{\left[M + MO\,(1+b)(1+i_v)(1+h) + E\right]}_{CD}\,(1+g)\,(1+u)\,(1+t)
+  \label{eq:apu}
+\end{equation}
+donde $M$ es el costo de los materiales, $MO$ el de la mano de obra, $E$ el del equipo y la maquinaria, $CD$ el costo directo, y $b$, $i_v$, $h$, $g$, $u$ y $t$ las incidencias de beneficios sociales, impuesto al valor agregado, herramientas, gastos generales, utilidad e impuesto a las transacciones. En un APU boliviano documentado se adoptaron $b = 71~\%$, $h = 5~\%$, $g = 13~\%$, $u = 10~\%$, $i_v = 14{,}94~\%$ y $t = 3{,}09~\%$ \parencite[p.~256]{cocarico2022}. Con esos valores, cada boliviano de costo directo se convierte en unos 1,28 bolivianos de precio unitario (cálculo propio: $1{,}13 \times 1{,}10 \times 1{,}0309 \approx 1{,}281$). La ecuación muestra también que el desperdicio de materiales no solo aumenta $M$: arrastra los gastos generales, la utilidad y los impuestos calculados sobre él.
+
+El efecto económico del desperdicio depende de quién lo absorbe. El porcentaje de pérdidas que el proponente incluye en las cantidades de su APU lo paga la entidad dentro del precio unitario; el desperdicio que excede ese porcentaje y el retrabajo los absorbe el contratista, porque el precio unitario es fijo. Si los costos de producción suben de forma imprevista, el constructor solo puede trasladarlos al cliente o reducir su margen \parencite[p.~24]{pons2014}; en un contrato público sin reajuste de precios, como el de la obra estudiada \parencite[p.~95]{uatf2025pao2}, solo queda la segunda opción. Para la entidad, en cambio, el riesgo es pagar cantidades no ejecutadas o mal medidas.
+
+\subsection{Cómputos métricos, planillas de avance y modificaciones}
+
+Los cómputos métricos determinan las cantidades de cada ítem a partir de los planos, por elemento y por nivel \parencite[p.~254]{cocarico2022}. Su criterio de medición debe estar definido de antemano: un pliego de especificaciones de referencia mide las losas con viguetas prefabricadas por metro cuadrado entre ejes de las vigas, y el volumen de hormigón como un ítem distinto \parencite[p.~19]{ucb2025et}, mientras que en la obra estudiada el ítem de la losa se paga por metro cuadrado \parencite[p.~16]{uatf2025pao2} e incluye el hormigón \parencite[p.~3]{uatf_et}. El cómputo de la cantidad teórica es, además, la referencia del índice de desperdicio (ecuación~\ref{eq:idm-marco}).
+
+El pago sigue el avance de la obra. Según el modelo de contrato, el contratista presenta cada mes una planilla o certificado de pago, que el Supervisor revisa y aprueba \parencite[cláusula~28, p.~75]{dbc2022}, después de medir la obra junto con el contratista \parencite[cláusula~26.3, p.~72]{dbc2022}. Las obras se miden netas, no se pagan volúmenes excedentes sin aprobación escrita del Supervisor \parencite[cláusula~27, p.~75]{dbc2022}, y la planilla de cantidades finales debe basarse en la obra efectiva y realmente ejecutada \parencite[cláusula~38.1, p.~86]{dbc2022}. El Supervisor certifica los volúmenes y la calidad de los ítems ejecutados y aprueba los certificados de pago \parencite[p.~14]{cajias2023}.
+
+Los cambios de cantidades se formalizan con tres instrumentos. La orden de trabajo redistribuye cantidades sin cambiar el precio ni el plazo y sin crear ítems \parencite[p.~20]{dbc2022}; la orden de cambio y el contrato modificatorio modifican el precio, el plazo o el alcance dentro de los límites del art.~89 de las NB-SABS (sección~\ref{sec:marco-normativo}). Todos deben emitirse antes de ejecutar los trabajos y no sirven para regularizar lo ya ejecutado \parencite[cláusula~30.5, p.~78]{dbc2022}, y por sus resultados responden conjuntamente el Fiscal, el Supervisor y el contratista \parencite[p.~20]{dbc2022}. Cuando los precios de los insumos suben, los decretos de ajuste excepcional permiten actualizar solo el componente de materiales del APU mediante un contrato modificatorio: la variación de precio de cada material es la diferencia entre su precio actual y el precio inicial del contrato, y el monto del ajuste es la suma de esas variaciones multiplicadas por las cantidades pendientes \parencite[art.~2]{ds5452_2025}.
+
+Desde la gestión de la calidad, estos instrumentos tienen dos lecturas. La conciliación entre el cómputo teórico, la cantidad consumida y la cantidad pagada es un control de la calidad de la información, porque una diferencia no explicada revela desperdicio, sobremedición o un error de cómputo. Y las sobremediciones corregidas en planillas posteriores son fallas externas en el sentido del modelo PEF: se detectan después de que el producto ---la planilla--- fue entregado al cliente.
+
+% ---------------------------------------------------------------------
+\section{Herramientas de la calidad}
+\label{sec:herramientas}
+
+Las herramientas básicas de la calidad sirven para recoger datos, ordenar problemas, buscar causas y seguir la variabilidad de los procesos. Según la clasificación que recoge \textcite[p.~26]{zurita2024}, son siete: la hoja de control o de recogida de datos, el histograma, el diagrama de Pareto, el diagrama de causa y efecto, la estratificación, el diagrama de dispersión y el gráfico de control, a las que se suma el diagrama de flujo. Su valor no está en cada herramienta aislada, sino en su uso encadenado: la hoja de verificación produce los datos, el diagrama de Pareto prioriza los problemas, el diagrama de Ishikawa busca sus causas, y el histograma y la carta de control muestran si el proceso mejora. A ellas se agregan dos herramientas de planificación: el plan de puntos de inspección, que organiza los controles de la obra, y la técnica 5W2H, que estructura las acciones de mejora. La Tabla~\ref{tab:herramientas} resume para qué sirve cada una y cómo se usa en esta tesis.
+
+{\setlength{\tabcolsep}{4pt}
+\begin{table}[H]
+\caption{Herramientas de la calidad y su uso en esta tesis}
+\label{tab:herramientas}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}P{2.4cm}P{5.1cm}LP{2.7cm}@{}}
+\toprule
+\textbf{Herramienta} & \textbf{Para qué sirve} & \textbf{Uso en esta tesis} & \textbf{Fuente} \\
+\midrule
+Hoja de verificación & Registrar datos de forma ordenada para distinguir hechos de opiniones y comprobar la repetición de un problema o defecto & Fichas de recepción de materiales, de consumo por paño y de inspección del PPI; lista de verificación de los requisitos de la ISO~9001 & \textcite[p.~27]{gudiel2020} \\
+\addlinespace
+Diagrama de Pareto & Ordenar las causas o los defectos de mayor a menor frecuencia o costo para atender primero los pocos que explican la mayor parte del problema (regla 80/20) & Priorizar las no conformidades y las pérdidas de la línea base por su costo; elegir las partidas de control & \textcite[pp.~32--35]{gudiel2020}; \textcite[p.~70]{alfaro2011} \\
+\addlinespace
+Diagrama de Ishikawa & Representar las posibles causas de un problema agrupadas por categorías (materiales, personal, métodos, maquinaria) & Analizar las causas del desperdicio y de las no conformidades de la primera losa & \textcite[pp.~29--31]{gudiel2020} \\
+\addlinespace
+Histograma & Mostrar la distribución, la dispersión y la tendencia de un conjunto de mediciones & Distribución de las resistencias del hormigón y de la reducción del costo simulada & \textcite[pp.~36--38]{gudiel2020} \\
+\addlinespace
+Carta de control & Seguir en el tiempo la variabilidad de un proceso y distinguir las causas comunes de las especiales & Seguimiento del índice de desperdicio por vaciado y de las resistencias por losa & \textcite[pp.~11--12]{aguilar2016}; \textcite[p.~331]{formoso1999} \\
+\addlinespace
+Plan de puntos de inspección (PPI) & Definir para cada inspección el criterio de aprobación, el lote, la frecuencia, el responsable y los puntos de parada & PPI de la losa, con puntos de espera antes del vaciado y en la recepción de materiales (capítulo~2) & \textcite[anexo~4]{muro2020}; \textcite[p.~64]{ferrer2018} \\
+\addlinespace
+5W2H & Planificar una acción respondiendo qué, por qué, dónde, cuándo, quién, cómo y cuánto cuesta & Planes de acción correctiva de las no conformidades y del plan de implantación del SGC & Técnica de uso general \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en las fuentes citadas; la columna de uso es de elaboración propia.}
+\end{table}}
+
+En esta tesis las herramientas cumplen funciones precisas. La hoja de verificación es la base de los registros del SGC: sin ella no hay datos para calcular el índice de desperdicio ni el costo de no calidad. El diagrama de Pareto permite concentrar el control en lo que más cuesta, como hizo \textcite[p.~70]{alfaro2011} al elegir las partidas de control de su obra. El diagrama de Ishikawa ordena las causas de las pérdidas de la losa en las categorías de la Tabla~\ref{tab:causas}. El histograma y la carta de control se aplican a las resistencias del hormigón, cuya variabilidad es el fundamento de los criterios estadísticos de aceptación \parencite[p.~58]{alcon2009}, y a los índices de desperdicio de cada vaciado, para distinguir una variación normal de una causa especial que exige acción \parencite[p.~27]{cepeda2017}. El PPI convierte el plan de la calidad en controles concretos, y la técnica 5W2H asegura que cada acción correctiva tenga responsable, plazo y costo, de modo que la mejora pueda verificarse.
+
+% ---------------------------------------------------------------------
+\section{Evaluación \emph{ex ante} y simulación}
+\label{sec:simulacion-marco}
+
+\subsection{Modelo de simulación teórica con tratamiento de control}
+
+La guía del docente reconoce cuatro tipos de modelo de investigación: el desarrollo teórico, la modelación teórica, la modelación experimental y la modelación de simulación teórica \parencite[diapositiva~4]{barrios2021modelo}. Todo modelo debe incluir, entre sus tratamientos, uno de control que sirva de comparación, generalmente un no tratamiento \parencite[diapositiva~8]{barrios2021modelo}, y debe permitir calcular el grado de incertidumbre, es decir, la probabilidad de obtener los resultados observados solo por efecto del azar \parencite[diapositiva~9]{barrios2021modelo}. Su estructura avanza de la conceptualización y el alcance a la definición de factores y variables, el procedimiento y la toma de observaciones, la validación de las observaciones y el contraste de hipótesis y resultados \parencite[diapositiva~12]{barrios2021modelo}, secuencia que sigue el capítulo~2. La esencia de un experimento es la manipulación intencional de una acción para analizar sus posibles resultados \parencite[p.~151]{hernandez2018}, y su grupo de control es el que no recibe el tratamiento \parencite[p.~154]{hernandez2018}.
+
+Cuando el tratamiento no puede aplicarse en el objeto real durante la investigación, como ocurre con un SGC cuya obra se paralizó, la comparación puede hacerse sobre un modelo. Una evaluación \emph{ex ante} estima el efecto de una intervención antes de aplicarla: se representa el sistema con un modelo de costos, se simula en la condición de control (sin SGC) y en la de tratamiento (con SGC), y la diferencia se atribuye al tratamiento tal como el modelo lo representa. Su validez depende de que los supuestos y los parámetros sean explícitos, trazables a sus fuentes y verificables cuando la obra se ejecute. Los antecedentes muestran ambos lados de esta exigencia: \textcite[p.~148]{chino2024} proyectaron un método de control del acero sobre niveles ya construidos con el método convencional, y \textcite[pp.~23--24, 51--52]{delavega2023} simularon patrones de corte del acero sin informar el desperdicio de la línea base, lo que impide cuantificar la reducción. La lección es declarar siempre la línea base, los parámetros y la regla de decisión.
+
+\subsection{Método de Monte Carlo}
+
+El método de Monte Carlo estima la distribución de una variable de salida $Y = g(X_1, \dots, X_k)$ cuando las variables de entrada $X_j$ son inciertas y se representan con distribuciones de probabilidad. El procedimiento consta de cinco pasos: (1) formular el modelo determinista $g$; (2) asignar a cada entrada incierta una distribución; (3) generar $N$ juegos de valores aleatorios de las entradas; (4) calcular $Y$ para cada juego; y (5) analizar la muestra resultante $\{Y_1, \dots, Y_N\}$ mediante su media, su desviación estándar, sus percentiles y las probabilidades de interés. La media y una probabilidad se estiman, con sus errores estándar, como
+\begin{equation}
+  \bar{Y}_N = \frac{1}{N}\sum_{k=1}^{N} Y_k, \qquad EE\!\left(\bar{Y}_N\right) = \frac{s_Y}{\sqrt{N}}, \qquad
+  \hat{p} = \frac{1}{N}\sum_{k=1}^{N} \mathbf{1}\!\left(r_k \geq r^{*}\right), \qquad EE\!\left(\hat{p}\right) = \sqrt{\frac{\hat{p}\,(1-\hat{p})}{N}}
+  \label{eq:montecarlo}
+\end{equation}
+donde $s_Y$ es la desviación estándar de la muestra simulada, $\mathbf{1}(\cdot)$ vale 1 si se cumple la condición y 0 si no, $r_k$ es la reducción relativa del costo unitario en la iteración $k$ y $r^{*}$ el umbral de la hipótesis.
+
+En un modelo con tratamiento de control, en cada iteración se calculan ambas condiciones con el mismo juego de parámetros de la línea base, de modo que la diferencia entre ellas solo refleja el efecto del tratamiento. La proporción de iteraciones en que la reducción alcanza el umbral es la probabilidad de cumplir la hipótesis, que expresa el grado de incertidumbre que pide la guía del docente. Una regla de decisión de la forma $\hat{P}(r \geq r^{*}) \geq 0{,}95$ equivale a exigir que el percentil 5 de la reducción simulada sea mayor o igual que $r^{*}$, y es el análogo probabilístico de un contraste unilateral con $\alpha = 0{,}05$; su aplicación en esta tesis se describe en la sección~\ref{sec:contraste}.
+
+\subsection{Distribución triangular}
+
+Cuando de una variable solo se conocen el rango plausible y el valor más probable, como ocurre con los datos de una sola obra o con los rangos que reporta la literatura, se la representa con una distribución triangular de mínimo $a$, moda $m$ y máximo $b$. Su función de densidad, su media y su varianza son
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    \dfrac{2\,(x-a)}{(b-a)(m-a)}, & a \leq x \leq m \\[8pt]
+    \dfrac{2\,(b-x)}{(b-a)(b-m)}, & m < x \leq b
+  \end{cases}
+  \qquad
+  E[X] = \frac{a+m+b}{3}, \qquad
+  \operatorname{Var}[X] = \frac{a^2+m^2+b^2-am-ab-mb}{18}
+  \label{eq:triangular}
+\end{equation}
+Para generar valores se usa la transformación inversa: si $u$ es un número aleatorio uniforme entre 0 y 1 y $F_m = (m-a)/(b-a)$, el valor simulado es $x = a + \sqrt{u\,(b-a)(m-a)}$ cuando $u \leq F_m$, y $x = b - \sqrt{(1-u)(b-a)(b-m)}$ en caso contrario. La distribución triangular es fácil de explicar y de justificar con datos limitados, pero tiene dos limitaciones: los resultados dependen de los extremos elegidos y no admite valores fuera del rango. Ambas se controlan con el análisis de sensibilidad.
+
+\subsection{Convergencia y análisis de sensibilidad}
+
+La convergencia indica si el número de iteraciones es suficiente. Se verifica representando la estimación acumulada de la media y de la probabilidad de interés a medida que crece $N$: cuando las curvas se estabilizan y la semiamplitud del intervalo de confianza al 95~\% es menor que la precisión buscada, la simulación ha convergido. Para una probabilidad, esa semiamplitud nunca supera $1{,}96 \times 0{,}5/\sqrt{N}$; con 10.000 iteraciones, por ejemplo, es de 0,0098 como máximo (cálculo propio). Para que los resultados sean reproducibles, el generador de números aleatorios se inicia con una semilla fija.
+
+El análisis de sensibilidad identifica qué entradas explican la incertidumbre de la salida. Se aplican dos técnicas complementarias. En la de un factor a la vez, cada parámetro se lleva a su mínimo y a su máximo mientras los demás quedan en su moda, y las variaciones resultantes de la salida se ordenan en un diagrama de tornado. En la correlación de rangos de Spearman, se mide la asociación monótona entre los valores simulados de cada entrada y los de la salida en todas las iteraciones. Ambas señalan qué parámetros conviene medir mejor y si la conclusión se mantiene dentro de los rangos plausibles. Por último, un resultado \emph{ex ante} es condicional a sus supuestos: debe acompañarse de la verificación del código frente a un cálculo manual y de un protocolo para contrastarlo con mediciones reales cuando la obra se ejecute (sección~\ref{sec:verificacion-futura}).
+
+% [CONTINÚA: 1.11 términos]

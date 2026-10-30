@@ -1928,7 +1928,7 @@ class Transformador:
             'setcounter': (2, 0), 'addtocounter': (2, 0), 'stepcounter': (1, 0), 'enlargethispage': (1, 0),
             'linespread': (1, 0), 'fontsize': (2, 0), 'color': (1, 1), 'setlist': (1, 1),
             'pdfbookmark': (2, 1), 'hypersetup': (1, 0), 'graphicspath': (1, 0), 'sisetup': (1, 0),
-            'label': (1, 0), 'index': (1, 0), 'markboth': (2, 0), 'markright': (1, 0),
+            'index': (1, 0), 'markboth': (2, 0), 'markright': (1, 0),
             'renewcommand': (2, 1), 'newcounter': (1, 1), 'selectlanguage': (1, 0), 'hyphenation': (1, 0),
             'newpage': (0, 0), 'definecolor': (3, 0), 'usetikzlibrary': (1, 0), 'tikzset': (1, 0),
             'pgfplotsset': (1, 0), 'arrayrulecolor': (1, 0), 'rowcolors': (3, 0), 'newgeometry': (1, 0),
@@ -1941,6 +1941,9 @@ class Transformador:
             if no == 0 and nopc == 0:
                 continue
             s = reemplazar_comando(s, cmd, lambda o, b, e: '', n_obl=no, n_opc=nopc, estrella=True)
+        # \label: se conservan solo los de los títulos (tit1, tit2...), que pandoc usa como marcadores
+        s = reemplazar_comando(s, 'label', lambda o, b, e: None if re.fullmatch(r'tit\d+', b[0].strip()) else '',
+                               n_obl=1)
         s = reemplazar_comando(s, 'hspace', lambda o, b, e: ' ', n_obl=1, estrella=True)
         s = re.sub(r'\\par(?![A-Za-z@])', '\n\n', s)
         sueltos = ('centering', 'raggedright', 'RaggedRight', 'raggedleft', 'RaggedLeft', 'noindent', 'indent',

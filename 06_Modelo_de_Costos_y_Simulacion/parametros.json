@@ -200,7 +200,7 @@
         "min": 0.025,
         "moda": 0.0501,
         "max": 0.0751,
-        "fuente": "Documentado: 2.350 piezas entregadas (certificado UNICON) frente a 2.237,9 teóricas = 5.01 %; rango ±50 %"
+        "fuente": "Documentado: 2.350 piezas entregadas (certificado UNICON) frente a 2.237,9 teóricas = 5,01 %; rango ±50 %"
       },
       "eficacia_sgc": {
         "min": 0.1,
@@ -262,7 +262,7 @@
         "min": 0.07,
         "moda": 0.1675,
         "max": 0.26,
-        "fuente": "Documentado: 4.171,18 kg pagados (PAO 2) frente a 3.572,80 kg teóricos = 16.75 %; rango: Galarza Meza (2011, p. 75) 7 % y Maciel et al. (2016, p. 106) hasta 26 %; coincide con Chino Quispe y Zarate Chilqquetuma (2024): 14,58–17,09 %"
+        "fuente": "Documentado: 4.171,18 kg pagados (PAO 2) frente a 3.572,80 kg teóricos = 16,75 %; rango: Galarza Meza (2011, p. 75) 7 % y Maciel et al. (2016, p. 106) hasta 26 %; coincide con Chino Quispe y Zarate Chilqquetuma (2024): 14,58–17,09 %"
       },
       "eficacia_sgc": {
         "min": 0.1,

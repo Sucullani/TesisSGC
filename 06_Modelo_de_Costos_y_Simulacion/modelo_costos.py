@@ -64,6 +64,15 @@ def fmt(x: float, dec: int = 2) -> str:
     return s.replace(",", "X").replace(".", ",").replace("X", ".")
 
 
+def tex(texto) -> str:
+    """Escapa caracteres especiales de LaTeX en textos de fuentes y descripciones."""
+    t = str(texto)
+    for a, b in (("\\", r"\textbackslash{}"), ("&", r"\&"), ("%", r"\%"), ("#", r"\#"),
+                 ("_", r"\_"), ("$", r"\$"), ("~", r"\textasciitilde{}")):
+        t = t.replace(a, b)
+    return t
+
+
 def pct(x: float, dec: int = 2) -> str:
     return fmt(100 * x, dec) + r"~\%"
 
@@ -548,7 +557,7 @@ def tabla_apu(filas, tot, kappa, precio_contrato, unidad_item):
         lin.append(f"\\multicolumn{{6}}{{@{{}}l}}{{\\textbf{{{NOMBRE_GRUPO[grupo]}}}}} \\\\")
         for g, ins, un, cant, pb, parc, fte in filas:
             if g == grupo:
-                lin.append(f"{ins} & {un} & {fmt(cant, 4)} & {fmt(pb)} & {fmt(parc)} & {fte} \\\\")
+                lin.append(f"{tex(ins)} & {tex(un)} & {fmt(cant, 4)} & {fmt(pb)} & {fmt(parc)} & {tex(fte)} \\\\")
     lin.append("\\midrule")
     lin.append(f"\\multicolumn{{4}}{{@{{}}l}}{{Subtotal materiales}} & {fmt(tot['materiales'])} & \\\\")
     lin.append(f"\\multicolumn{{4}}{{@{{}}l}}{{Mano de obra (sin cargas)}} & {fmt(tot['mano_obra'])} & \\\\")
@@ -572,7 +581,7 @@ tabla("tab_apu_acero", tabla_apu(FILASAC, TOTAC, KAPPAAC, PU_ACERO, "Bs/kg"))
 def fila_tri(etq, spec, es_pct=True, unidad=""):
     f = (lambda v: pct(v, 1)) if es_pct else (lambda v: fmt(v, 0))
     return (f"{etq} & {f(float(spec['min']))} & {f(float(spec['moda']))} & {f(float(spec['max']))} & "
-            f"{spec.get('fuente', '')} \\\\")
+            f"{tex(spec.get('fuente', ''))} \\\\")
 
 
 lp = []
@@ -585,7 +594,7 @@ for m in MATS:
 lp.append(fila_tri("Fracción de retrabajo sin SGC ($\\rho$)", P["retrabajo"]["fraccion_sin_sgc"]))
 lp.append(fila_tri("Eficacia del SGC en retrabajos ($e_R$)", P["retrabajo"]["eficacia_sgc"]))
 for c in P["costos_sgc"]["componentes"].values():
-    lp.append(fila_tri(f"{c['descripcion']} (Bs)", c["Bs_total"], es_pct=False))
+    lp.append(fila_tri(f"{tex(c['descripcion'])} (Bs)", c["Bs_total"], es_pct=False))
 tabla("tab_parametros",
       "\\begin{longtable}{@{}P{4.3cm}rrrP{6.0cm}@{}}\n\\toprule\n"
       "\\textbf{Parámetro} & \\textbf{Mín.} & \\textbf{Moda} & \\textbf{Máx.} & \\textbf{Fuente o justificación} \\\\\n\\midrule\n\\endhead\n"
