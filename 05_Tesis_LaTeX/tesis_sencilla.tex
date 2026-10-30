@@ -1,0 +1,61 @@
+% !TeX program = latexmk
+% !TeX encoding = UTF-8
+% =====================================================================
+%  TESIS DE GRADO – VERSIÓN SENCILLA (borrador final para presentar)
+%  Mismo formato APA que tesis.tex; contenido simplificado y sin notas.
+%  Compilar desde esta carpeta con:   latexmk tesis_sencilla.tex
+%  (PDF en build/tesis_sencilla.pdf)
+% =====================================================================
+\documentclass[12pt,letterpaper,oneside]{report}
+\input{preambulo}
+% Cifras del modelo de costos y de la simulación (generadas por modelo_costos.py)
+\IfFileExists{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo.tex}{\input{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo.tex}}{}
+\IfFileExists{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo_en.tex}{\input{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo_en.tex}}{}
+\newcommand{\tablamodelo}[1]{\input{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/#1}}
+
+% ---- Datos generales (carátula y propiedades del PDF)
+\newcommand{\titulotesis}{DISEÑO DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BASADO EN LA NORMA ISO~9001 PARA REDUCIR COSTOS MEDIANTE EL CONTROL DE MATERIALES EN LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS, POTOSÍ}
+% Escriba sus nombres en lugar de las líneas:
+\newcommand{\postulante}{\rule{8cm}{0.4pt}}
+\newcommand{\tutor}{\rule{8cm}{0.4pt}}
+\newcommand{\lugar}{POTOSÍ -- BOLIVIA}
+\newcommand{\anio}{2026}
+
+\hypersetup{pdftitle={Diseño de un Sistema de Gestión de la Calidad para reducir costos mediante el control de materiales en losas alivianadas - Edificio de Posgrado UATF},
+            pdfsubject={Tesis de grado - Ingeniería Civil - UATF}}
+
+% ---- Versión final: sin guías ni notas de borrador
+\borradorfalse
+
+\begin{document}
+
+% ---------------- Carátula y páginas preliminares (numeración romana)
+\input{capitulos_sencilla/00_caratula}
+\pagenumbering{roman}
+\input{capitulos_sencilla/01_resumen}
+
+\tableofcontents
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\input{capitulos/02_abreviaturas}
+
+% ---------------- Cuerpo (numeración arábiga)
+\clearpage
+\pagenumbering{arabic}
+\IfFileExists{capitulos_sencilla/10_introduccion.tex}{\input{capitulos_sencilla/10_introduccion}}{}
+\IfFileExists{capitulos_sencilla/20_capitulo1.tex}{\input{capitulos_sencilla/20_capitulo1}}{}
+\IfFileExists{capitulos_sencilla/30_capitulo2_diagnostico.tex}{\input{capitulos_sencilla/30_capitulo2_diagnostico}}{}
+\IfFileExists{capitulos_sencilla/31_capitulo2_sgc.tex}{\input{capitulos_sencilla/31_capitulo2_sgc}}{}
+\IfFileExists{capitulos_sencilla/32_capitulo2_evaluacion.tex}{\input{capitulos_sencilla/32_capitulo2_evaluacion}}{}
+\IfFileExists{capitulos_sencilla/40_capitulo3.tex}{\input{capitulos_sencilla/40_capitulo3}}{}
+\IfFileExists{capitulos_sencilla/50_conclusiones.tex}{\input{capitulos_sencilla/50_conclusiones}}{}
+
+% ---------------- Bibliografía (APA 7.ª ed., orden alfabético)
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+
+% ---------------- Anexos
+\input{capitulos_sencilla/90_anexos}
+
+\end{document}

@@ -52,7 +52,7 @@ Como se vio en el Capítulo 1, la **losa alivianada** es un sándwich de 25 cm: 
 
 La primera losa tiene 41 **paños**, que son los recuadros de losa rodeados de vigas, como los cuadros de un piso de baldosas grandes. Miden de 1,40 a 52,38 m² y suman 1.109,84 m² (Figura 2.1).
 
-![**Figura 2.1.** Paños de la primera losa (Plano 01). Cómo leerla: es la losa vista desde arriba. Cada recuadro rayado es un paño, con su nombre y su área; el plano usa punto decimal: «A1 = 35.86 M2» son 35,86 m². Las franjas entre paños son las vigas, y los cuadrados negros, las columnas.](07_Entregables/Version_Sencilla/figuras/plano01_geometria_primera_losa.png){width=90%}
+![**Figura 2.1.** Paños de la primera losa (Plano 01). Cómo leerla: es la losa vista desde arriba. Cada recuadro rayado es un paño, con su nombre y su área; el plano usa punto decimal: «A1 = 35.86 M2» son 35,86 m². Las franjas entre paños son las vigas, y los cuadrados negros, las columnas.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano01_geometria_primera_losa.png){width=90%}
 
 Los documentos no coinciden en el bloque: las especificaciones técnicas piden piezas de 100 × 50 × 20 cm, se entregaron 2.350 de 20 × 100 × 44 cm y el corte del Plano 02 dibuja un bloque de 15 cm, que daría una losa de 20 cm (Figura 1.4). La tesis considera que el plano tiene un error, porque los demás documentos dicen 25 cm, el mínimo que exige la Norma Boliviana de Diseño Sísmico para que esta losa trabaje como una pieza rígida (MOPSV, 2023). Conviene aclararlo con la Supervisión.
 
@@ -102,7 +102,7 @@ El cumplimiento global fue de **19,8 %**: ningún requisito se cumplió por comp
 
 Dos fábricas bolivianas de viguetas obtuvieron más (Figura 2.2): 24 % (Mamani Calsina, 2025) y 43 % (Peña Callisaya, 2024). Una fábrica repite sus procesos con personal estable; la losa de una obra pública es un trabajo temporal, controlado casi solo por la Supervisión. La comparación es solo orientativa. Según Peña Callisaya (2024), con 50 % o menos se necesita diseñar un sistema, no solo mejorar prácticas sueltas.
 
-![**Figura 2.2.** Cumplimiento de la norma ISO 9001 por cláusula. Cómo leerla: cada grupo de barras es una cláusula, y el de la derecha, el resultado global. La barra azul es la primera losa; la naranja y la verde, las dos fábricas. Más alta la barra, más se cumple; «n. e.»: no evaluado.](07_Entregables/Version_Sencilla/figuras/fig_brechas_iso9001.png){width=90%}
+![**Figura 2.2.** Cumplimiento de la norma ISO 9001 por cláusula. Cómo leerla: cada grupo de barras es una cláusula, y el de la derecha, el resultado global. La barra azul es la primera losa; la naranja y la verde, las dos fábricas. Más alta la barra, más se cumple; «n. e.»: no evaluado.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_brechas_iso9001.png){width=90%}
 
 Un 0 indica que el requisito no dejó rastro en los documentos, no necesariamente que la práctica no existió.
 
@@ -127,7 +127,7 @@ Se clasificaron en las **6M**, seis familias de causas (materiales, método, man
 
 La Figura 2.3 es un **diagrama de Pareto**: ordena los problemas de mayor a menor, porque pocos factores suelen explicar la mayoría de los problemas (Alfaro Félix, 2011). Medición y gestión reúnen 12 de las 22 no conformidades (54,5 %); con materiales y método llegan al 86,4 %.
 
-![**Figura 2.3.** Diagrama de Pareto de las no conformidades. Cómo leerla: cada barra es un tipo, con su cantidad (n) y su porcentaje. La línea naranja va sumando los porcentajes; la línea gris marca el 80 %.](07_Entregables/Version_Sencilla/figuras/fig_pareto_nc.png){width=90%}
+![**Figura 2.3.** Diagrama de Pareto de las no conformidades. Cómo leerla: cada barra es un tipo, con su cantidad (n) y su porcentaje. La línea naranja va sumando los porcentajes; la línea gris marca el 80 %.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_pareto_nc.png){width=90%}
 
 Un diagrama de **Ishikawa**, o de «espina de pescado», ordenó las causas. Las externas (escasez de combustible y de viguetas, subida de precios y lluvias) se volvieron problemas porque ningún sistema las anticipó: sin plan de compras, se recibieron materiales sin inspección; sin cantidades por paño, el material de más no se detectó; sin ensayos, no se pudo demostrar que el hormigón cumplía. La causa de fondo es la ausencia de un sistema de calidad: la calidad se confió a la revisión de la Supervisión antes de cada vaciado.
 

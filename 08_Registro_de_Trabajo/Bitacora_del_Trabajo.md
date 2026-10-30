@@ -20,7 +20,8 @@ Registro de todo lo que se hizo en la sesión de Claude Code en la nube (29 y 30
 | Presentación de defensa en HTML y PowerPoint | **Pendiente (local)** | Encargo en `Encargos_a_los_Agentes/Encargos_Fase3_Modo_Rapido.md` |
 | Preguntas del tribunal: qué decir y qué no | **Pendiente (local).** La base está en [`Notas_para_la_Defensa.md`](Notas_para_la_Defensa.md). | Encargo en `Encargos_a_los_Agentes/` |
 | Documento Word de toda la tesis | **Actualizado** (30/10, 10:00) con la tesis completa: 313 páginas; resumen y abstract sin sangría; ningún resto de LaTeX. | `07_Entregables/Tesis_SGC_Borrador_Final.docx` |
-| Versión sencilla de la tesis (para cualquier lector), en PDF y Word | **Terminada**, sin ninguna tarea pendiente en el texto. La versión académica se conserva. | `07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.pdf` y `.docx` |
+| **Tesis para presentar: versión sencilla** (mismo formato APA, contenido simplificado, sin notas) | **En preparación.** Listos: estructura, carátula, resumen, conclusiones y anexos. Faltan la introducción y los capítulos 1 a 3 simplificados (los agentes se detuvieron antes de escribirlos). | `05_Tesis_LaTeX/Tesis_SGC_Version_Sencilla.pdf` y `07_Entregables/Tesis_SGC_Version_Sencilla.docx` (fuente: `05_Tesis_LaTeX/tesis_sencilla.tex` y `capitulos_sencilla/`) |
+| Explicación de la tesis para todo público (lenguaje cotidiano) | Terminada | `07_Entregables/Explicacion_Para_Todo_Publico/` (PDF y Word) |
 | Trabajo por fases, con commits directos a `main` | Hecho (sin ramas) | Historial de `main` (sección 10) |
 
 La sección 11 resume lo que entregó cada agente al cierre.
@@ -59,7 +60,12 @@ La sección 11 resume lo que entregó cada agente al cierre.
 ### Fase 3: entregables (`07_Entregables/`), sin terminar: queda para la sesión local
 
 - **Word de la tesis:** regenerado con la tesis completa mediante el conversor propio LaTeX → DOCX (`scripts/tesis_a_docx.py`, documentado en `scripts/README_docx.md`). Respeta el formato APA, convierte las figuras TikZ en imágenes y expande las macros del modelo. Se corrigieron dos detalles del conversor: `\noindent` (párrafos sin sangría) y el entorno `otherlanguage` del abstract.
-- **Versión sencilla de la tesis** (`Version_Sencilla/`): edición completa en lenguaje claro, escrita por capítulos a partir de la versión académica, con recuadros «En pocas palabras», glosario y cifras exactas. No tiene tareas pendientes: lo que el estudio no hizo se explica como límite del estudio. Se genera con `python3 07_Entregables/Version_Sencilla/generar_version_sencilla.py`.
+- **Tesis para presentar, versión sencilla** (`05_Tesis_LaTeX/tesis_sencilla.tex` y `capitulos_sencilla/`):
+  - mismo preámbulo y formato APA que la tesis académica, en modo final (`\borradorfalse`), sin notas ni tareas pendientes;
+  - capítulos simplificados a partir de los académicos, con las mismas citas, figuras y macros del modelo;
+  - anexos esenciales: matriz, operacionalización, instrumentos, validación, planos, cómputos, certificados, ensayos, APU, documentos de contexto y modelo.
+  - Se compila con `latexmk tesis_sencilla.tex`. El Word se genera con `python3 07_Entregables/scripts/tesis_a_docx.py --principal tesis_sencilla.tex --aux 05_Tesis_LaTeX/build/tesis_sencilla.aux --salida 07_Entregables/Tesis_SGC_Version_Sencilla.docx --trabajo 07_Entregables/scripts/_trabajo_sencilla`.
+- **Explicación para todo público** (`Explicacion_Para_Todo_Publico/`): la tesis contada en lenguaje cotidiano, con recuadros «En pocas palabras», glosario y cifras exactas. Se genera con `python3 07_Entregables/Explicacion_Para_Todo_Publico/generar_explicacion.py`.
 - **Explicación sencilla:** borrador en `.md`; faltan el `.docx` y el `.html`.
 - **Preguntas del tribunal, presentación de defensa y citas resaltadas:** se lanzaron, pero la interrupción de la sesión los detuvo antes de que escribieran archivos. Los encargos completos están en `Encargos_a_los_Agentes/`.
 

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Genera la VERSIÓN SENCILLA de la tesis en Word y PDF.
+Genera la EXPLICACIÓN DE LA TESIS PARA TODO PÚBLICO en Word y PDF (lenguaje coloquial).
 
-Entrada:  07_Entregables/Version_Sencilla/partes/*.md (un archivo por capítulo, en orden)
-Salida:   07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.md   (texto unido)
-          07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.docx (Word con índice)
-          07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.pdf  (PDF con índice paginado)
+Entrada:  07_Entregables/Explicacion_Para_Todo_Publico/partes/*.md (un archivo por capítulo, en orden)
+Salida:   07_Entregables/Explicacion_Para_Todo_Publico/Tesis_SGC_Version_Sencilla.md   (texto unido)
+          07_Entregables/Explicacion_Para_Todo_Publico/Tesis_SGC_Version_Sencilla.docx (Word con índice)
+          07_Entregables/Explicacion_Para_Todo_Publico/Tesis_SGC_Version_Sencilla.pdf  (PDF con índice paginado)
 
 Uso (desde la raíz del repositorio):
-    python3 07_Entregables/Version_Sencilla/generar_version_sencilla.py
+    python3 07_Entregables/Explicacion_Para_Todo_Publico/generar_version_sencilla.py
 
 Requiere pandoc, python-docx y LibreOffice (para el PDF).
 """
@@ -31,11 +31,11 @@ from docx.shared import Cm, Pt, RGBColor
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[1]
 PARTES = AQUI / "partes"
-NOMBRE = "Tesis_SGC_Version_Sencilla"
+NOMBRE = "Tesis_Explicada_para_Todo_Publico"
 MD = AQUI / f"{NOMBRE}.md"
 DOCX = AQUI / f"{NOMBRE}.docx"
 PDF = AQUI / f"{NOMBRE}.pdf"
-REF = AQUI / "estilo_version_sencilla.docx"
+REF = AQUI / "estilo_explicacion.docx"
 
 AZUL = RGBColor(0x1F, 0x38, 0x64)
 AZUL_MEDIO = RGBColor(0x2E, 0x5C, 0x8A)
@@ -43,7 +43,7 @@ FUENTE = "Calibri"  # en LibreOffice se sustituye por Carlito (mismas medidas)
 
 METADATOS = """---
 title: "Diseño de un Sistema de Gestión de la Calidad basado en la norma ISO 9001 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías, Potosí"
-subtitle: "Versión sencilla de la tesis de grado, escrita para cualquier lector"
+subtitle: "La tesis explicada para todo público"
 date: "Universidad Autónoma Tomás Frías · Facultad de Ingeniería · Carrera de Ingeniería Civil · Potosí, 2026"
 lang: es-BO
 toc-title: "Contenido"
@@ -257,7 +257,7 @@ def pdf_con_libreoffice():
     s.bind(("127.0.0.1", 0))
     puerto = s.getsockname()[1]
     s.close()
-    perfil = tempfile.mkdtemp(prefix="lo_vs_")
+    perfil = tempfile.mkdtemp(prefix="lo_exp_")
     proc = subprocess.Popen(["soffice", "--headless", "--invisible", "--nologo", "--norestore", "--nodefault",
                              f"-env:UserInstallation={Path(perfil).as_uri()}",
                              f"--accept=socket,host=127.0.0.1,port={puerto};urp;StarOffice.ComponentContext"],

@@ -8,15 +8,17 @@
 
 ## Guía rápida para el revisor
 
-1. **Tesis completa, versión académica:** [PDF](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · [Word](07_Entregables/Tesis_SGC_Borrador_Final.docx).
-   **Versión sencilla, para cualquier lector:** [PDF](07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.pdf) · [Word](07_Entregables/Version_Sencilla/Tesis_SGC_Version_Sencilla.docx).
+1. **Versión académica completa** (con notas de borrador): [PDF](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · [Word](07_Entregables/Tesis_SGC_Borrador_Final.docx).
+   - **Tesis para presentar (versión sencilla, sin notas):** en preparación en `05_Tesis_LaTeX/tesis_sencilla.tex` y `capitulos_sencilla/`. Tiene el mismo formato APA, con contenido más simple.
+     - Listos: carátula, resumen, conclusiones y anexos.
+     - Faltan: la introducción y los capítulos 1 a 3 simplificados.
+   - **Explicación para todo público** (lenguaje cotidiano): [PDF](07_Entregables/Explicacion_Para_Todo_Publico/Tesis_Explicada_para_Todo_Publico.pdf) · [Word](07_Entregables/Explicacion_Para_Todo_Publico/Tesis_Explicada_para_Todo_Publico.docx).
    - El texto en rojo marca datos que solo puede aportar el postulante.
    - Los recuadros grises son guías de redacción.
 2. **Qué se hizo y qué falta:** [08_Registro_de_Trabajo/Bitacora_del_Trabajo.md](08_Registro_de_Trabajo/Bitacora_del_Trabajo.md). La verificación final está pendiente: ver el [plan de auditoría](08_Registro_de_Trabajo/Plan_de_Auditoria_Pendiente.md).
-3. **La tesis explicada en lenguaje sencillo (borrador):** [07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md](07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md).
-4. **Defensa:** la presentación (HTML y PowerPoint) y las preguntas del tribunal están pendientes (Fase 3, en la sesión local). Por ahora, ver las [notas para la defensa](08_Registro_de_Trabajo/Notas_para_la_Defensa.md).
-5. **Citas resaltadas en los PDF de la bibliografía:** pendiente (script listo en `04_Bibliografia/08_Citas_Resaltadas/scripts/resaltar_citas.py`).
-6. **Modelo de costos y simulación:** [06_Modelo_de_Costos_y_Simulacion/README.md](06_Modelo_de_Costos_y_Simulacion/README.md).
+3. **Defensa:** la presentación (HTML y PowerPoint) y las preguntas del tribunal están pendientes (Fase 3, en la sesión local). Por ahora, ver las [notas para la defensa](08_Registro_de_Trabajo/Notas_para_la_Defensa.md).
+4. **Citas resaltadas en los PDF de la bibliografía:** pendiente (script listo en `04_Bibliografia/08_Citas_Resaltadas/scripts/resaltar_citas.py`).
+5. **Modelo de costos y simulación:** [06_Modelo_de_Costos_y_Simulacion/README.md](06_Modelo_de_Costos_y_Simulacion/README.md).
 
 ## Dónde está cada cosa
 

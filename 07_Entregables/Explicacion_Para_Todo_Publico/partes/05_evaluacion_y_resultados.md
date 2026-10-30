@@ -99,7 +99,7 @@ La **línea base** es la foto del «antes». Solo dos materiales tuvieron un dat
 
 Con los valores más probables, el desperdicio ponderado por costo fue de 7,47 %, y el **costo de no calidad**, de Bs 19,60 por m²: el 7,12 % del costo sin sistema (Figura 3.1). Para el plastoformo no se hallaron valores de referencia en otros estudios: el 5,01 % es un primer dato documental.
 
-![**Figura 3.1.** Costo de no calidad por componente (valores más probables). Cómo leerla: en cada par, la barra gris es el costo sin sistema y la azul, con sistema, en bolivianos por m². Las mayores pérdidas están en el acero, los retrabajos y el hormigón, y todas las azules son más bajas.](07_Entregables/Version_Sencilla/figuras/fig_cnc_por_componente.png){width=90%}
+![**Figura 3.1.** Costo de no calidad por componente (valores más probables). Cómo leerla: en cada par, la barra gris es el costo sin sistema y la azul, con sistema, en bolivianos por m². Las mayores pérdidas están en el acero, los retrabajos y el hormigón, y todas las azules son más bajas.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_cnc_por_componente.png){width=90%}
 
 > **En pocas palabras:** sin sistema, cada m² perdía Bs 19,60 en material desperdiciado y trabajos rehechos: el 7,12 % de su costo.
 
@@ -135,11 +135,11 @@ El costo promedio de 1 m² fue de Bs 278,59 sin sistema, casi igual al precio de
 
 *Nota:* el 90 % central de los escenarios queda entre P5 y P95. Un ahorro negativo significa que el sistema costó más de lo que ahorró.
 
-![**Figura 3.2.** Reducción del costo de 1 m² en los 20.000 escenarios. Cómo leerla: cada barra cuenta los escenarios de un tramo de reducción. La línea negra es el promedio (1,47 %) y la anaranjada discontinua, la meta del 5 %. Casi todas quedan a la derecha del cero (con ahorro) y casi ninguna cerca de la meta.](07_Entregables/Version_Sencilla/figuras/fig_histograma_reduccion.png){width=90%}
+![**Figura 3.2.** Reducción del costo de 1 m² en los 20.000 escenarios. Cómo leerla: cada barra cuenta los escenarios de un tramo de reducción. La línea negra es el promedio (1,47 %) y la anaranjada discontinua, la meta del 5 %. Casi todas quedan a la derecha del cero (con ahorro) y casi ninguna cerca de la meta.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_histograma_reduccion.png){width=90%}
 
-![**Figura 3.3.** Costo de 1 m² sin sistema y con sistema (distribución acumulada). Cómo leerla: se elige un costo abajo y se sube hasta la curva; la altura indica qué parte de los escenarios cuesta eso o menos. La curva azul (con sistema) queda siempre a la izquierda de la gris: cuesta menos en cada nivel de probabilidad. La línea punteada es el precio del contrato.](07_Entregables/Version_Sencilla/figuras/fig_acumulada_costo_unitario.png){width=90%}
+![**Figura 3.3.** Costo de 1 m² sin sistema y con sistema (distribución acumulada). Cómo leerla: se elige un costo abajo y se sube hasta la curva; la altura indica qué parte de los escenarios cuesta eso o menos. La curva azul (con sistema) queda siempre a la izquierda de la gris: cuesta menos en cada nivel de probabilidad. La línea punteada es el precio del contrato.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_acumulada_costo_unitario.png){width=90%}
 
-![**Figura 3.4.** Promedio de la reducción según el número de tiradas. Cómo leerla: la escala de abajo crece de diez en diez veces. El promedio salta al principio y, tras unas mil tiradas, casi no se mueve, cerca de 1,47 %: 20.000 tiradas bastan.](07_Entregables/Version_Sencilla/figuras/fig_convergencia.png){width=90%}
+![**Figura 3.4.** Promedio de la reducción según el número de tiradas. Cómo leerla: la escala de abajo crece de diez en diez veces. El promedio salta al principio y, tras unas mil tiradas, casi no se mueve, cerca de 1,47 %: 20.000 tiradas bastan.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_convergencia.png){width=90%}
 
 > **En pocas palabras:** en promedio, el sistema baja el costo de 1 m² en 1,47 %, reduce casi a la mitad el costo de no calidad y ahorra Bs 9.177 en el saldo, pero casi nunca llega al 5 %.
 
@@ -163,7 +163,7 @@ En cambio, el desperdicio y el costo de no calidad bajaron en todos los escenari
 
 Lo que más mueve la reducción es el costo del sistema, la fracción de retrabajo sin sistema y la eficacia sobre los retrabajos; las viguetas y el plastoformo pesan poco (Figura 3.5). Solo el costo máximo del sistema vuelve negativa la reducción (−0,67 %), y ningún dato llega al 5 %: el mejor caso es 3,20 %.
 
-![**Figura 3.5.** Efecto de cada dato sobre la reducción del costo (diagrama de tornado). Cómo leerla: cada barra es un dato; sus extremos dan la reducción con su mínimo y su máximo, y cuanto más larga, más pesa. La línea negra es el caso más probable (1,43 %) y la anaranjada discontinua, la meta del 5 %, que ninguna barra alcanza. En el costo del sistema, el extremo izquierdo es el máximo.](07_Entregables/Version_Sencilla/figuras/fig_tornado_sensibilidad.png){width=90%}
+![**Figura 3.5.** Efecto de cada dato sobre la reducción del costo (diagrama de tornado). Cómo leerla: cada barra es un dato; sus extremos dan la reducción con su mínimo y su máximo, y cuanto más larga, más pesa. La línea negra es el caso más probable (1,43 %) y la anaranjada discontinua, la meta del 5 %, que ninguna barra alcanza. En el costo del sistema, el extremo izquierdo es el máximo.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_tornado_sensibilidad.png){width=90%}
 
 **Punto de equilibrio.** Como en un negocio, es el punto en que lo ahorrado iguala lo gastado. Con una eficacia igual para todo, el sistema paga su costo con 24,8 % y llega al 5 % recién con 95,1 % (con eficacia total, 5,35 %); los estudios usados reportan máximos de 70 % a 89 %.
 

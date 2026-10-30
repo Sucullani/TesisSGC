@@ -6,7 +6,7 @@ La tesis estudia la calidad, el control de los materiales y los costos de las lo
 
 Una **losa** es la placa de hormigón que hace de techo de un piso y de suelo del siguiente. La losa **alivianada** pesa menos porque combina tres piezas (Figura I.1). Las **viguetas pretensadas** son piezas de hormigón hechas en fábrica, con alambres de acero tensados, y cargan el peso. Los bloques de **plastoformo**, el material blanco de los embalajes, solo ocupan espacio. Encima, una capa de hormigón vaciada en la obra une todo.
 
-![**Figura I.1.** Corte de la losa alivianada (Plano 02 del proyecto). Cómo leerla: las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo, y la franja de arriba, la capa de hormigón o carpeta de compresión.](07_Entregables/Version_Sencilla/figuras/plano02_seccion_losa_viguetas.png){width=60%}
+![**Figura I.1.** Corte de la losa alivianada (Plano 02 del proyecto). Cómo leerla: las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo, y la franja de arriba, la capa de hormigón o carpeta de compresión.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano02_seccion_losa_viguetas.png){width=60%}
 
 Las obras pierden dinero por tres causas frecuentes: los **retrabajos** (rehacer lo que salió mal), el **desperdicio** (material comprado que no queda en la obra) y el incumplimiento de las especificaciones técnicas. Estas fijan cómo debe ser cada material y trabajo. Según Álvarez Quintero (2014), los retrabajos llegan hasta el 12,4 % del costo de un proyecto.
 

@@ -63,7 +63,7 @@ La norma se divide en capítulos llamados **cláusulas**; las cláusulas 4 a 10 
 
 Las cláusulas siguen el **ciclo PHVA** (Zurita Ferrel, 2024), como una cocinera que planifica el menú, cocina, prueba y ajusta la receta. Planificar es la cláusula 6; hacer, la 7 y la 8; verificar, la 9; y actuar, la 10 (Figura 1.1). En una obra, cada losa puede recorrer el ciclo.
 
-![**Figura 1.1.** La norma ISO 9001 en el ciclo PHVA. Cómo leerla: las cajas de color son los pasos del ciclo, con su número de cláusula; el liderazgo está al centro. A la izquierda, lo que entra al sistema; a la derecha, lo que sale. Basada en la ISO 9001:2026 y en Zurita Ferrel (2024).](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_1694af51624b76f04e5e.png){width=90%}
+![**Figura 1.1.** La norma ISO 9001 en el ciclo PHVA. Cómo leerla: las cajas de color son los pasos del ciclo, con su número de cláusula; el liderazgo está al centro. A la izquierda, lo que entra al sistema; a la derecha, lo que sale. Basada en la ISO 9001:2026 y en Zurita Ferrel (2024).](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_1694af51624b76f04e5e.png){width=90%}
 
 ### Los siete principios
 
@@ -90,7 +90,7 @@ Las fallas forman el **costo de no calidad**, que nunca está en el presupuesto 
 
 Según la regla 1-10-100 que recogen Khadim et al. (2023), es mejor invertir una unidad en prevención que gastar diez en corregir o cien en una falla. Como cada aumento de la prevención rinde menos, el costo total tiene un **punto óptimo** (Figura 1.2), que no es cero fallas: no existe el proceso perfecto (Gracia Villar y Dzul López, 2007).
 
-![**Figura 1.2.** Las curvas de los costos de la calidad. Cómo leerla: hacia la derecha crece la inversión en prevenir. La línea azul (prevención y evaluación) sube, la roja (fallas) baja y la negra, su suma, tiene el óptimo en su punto más bajo. Curvas ilustrativas, adaptadas de Gracia Villar y Dzul López (2007).](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_de8bf16d8fe4eacf7bae.png){width=90%}
+![**Figura 1.2.** Las curvas de los costos de la calidad. Cómo leerla: hacia la derecha crece la inversión en prevenir. La línea azul (prevención y evaluación) sube, la roja (fallas) baja y la negra, su suma, tiene el óptimo en su punto más bajo. Curvas ilustrativas, adaptadas de Gracia Villar y Dzul López (2007).](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_de8bf16d8fe4eacf7bae.png){width=90%}
 
 > **En pocas palabras:** prevenir y revisar cuesta; equivocarse cuesta más, porque obliga a pagar dos veces. Un poco de prevención ahorra mucho en correcciones.
 
@@ -118,13 +118,13 @@ Una **losa** es la placa de hormigón que hace de techo de un piso y de piso del
 
 Unos **nervios** de hormigón cruzan las viguetas para darles rigidez. Con 17 cm de alto, una losa así pesa 173,80 kg/m², y una llena, 408,00 kg/m² (Alcón Aranda, 2009).
 
-![**Figura 1.3.** Sección de la losa. Cómo leerla: es la losa cortada como un pan. Las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo; la franja de arriba, la carpeta. Tomada del Plano 02.](07_Entregables/Version_Sencilla/figuras/plano02_seccion_losa_viguetas.png){width=90%}
+![**Figura 1.3.** Sección de la losa. Cómo leerla: es la losa cortada como un pan. Las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo; la franja de arriba, la carpeta. Tomada del Plano 02.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano02_seccion_losa_viguetas.png){width=90%}
 
 ### Los materiales
 
 Las especificaciones técnicas piden viguetas certificadas por IBNORCA e ISO; plastoformo de 100 × 50 × 20 cm; hormigón de 250 kg/cm² (H25) con al menos 400 kg de cemento por metro cúbico; y fierro para la malla y para los **negativos**, refuerzos sobre los apoyos. El fabricante de las viguetas certificó una losa de 20 + 5 = 25 cm con ejes cada 50 cm (PRETENSA, 2025). Pero el proveedor del plastoformo certificó 2.350 bloques de otra medida, 20 × 100 × 44 cm (UNICON, 2025), y el corte del Plano 02 marca 15 + 5 cm (Figura 1.4). El capítulo 2 analiza estas diferencias.
 
-![**Figura 1.4.** Corte transversal de la losa. Cómo leerla: viguetas cada 0,50 m, plastoformo entre ellas y, encima, la carpeta de 5 cm con malla de 6 mm cada 20 cm («φ6c/20»). A la derecha: 0,05 m de carpeta y 0,15 m de bloque. Tomado del Plano 02.](07_Entregables/Version_Sencilla/figuras/plano02_corte_transversal.png){width=90%}
+![**Figura 1.4.** Corte transversal de la losa. Cómo leerla: viguetas cada 0,50 m, plastoformo entre ellas y, encima, la carpeta de 5 cm con malla de 6 mm cada 20 cm («φ6c/20»). A la derecha: 0,05 m de carpeta y 0,15 m de bloque. Tomado del Plano 02.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano02_corte_transversal.png){width=90%}
 
 ### Cómo se construye y qué se revisa
 

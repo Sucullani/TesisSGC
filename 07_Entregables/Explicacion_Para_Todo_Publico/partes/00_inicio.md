@@ -2,9 +2,9 @@
 
 ## Qué es este documento
 
-Este documento es la **versión sencilla** de una tesis de grado de Ingeniería Civil de la Universidad Autónoma Tomás Frías (UATF), en Potosí. Cuenta el trabajo completo: el problema, lo que se hizo, lo que se encontró y lo que se recomienda. Está escrito para cualquier persona: familias, autoridades, estudiantes y trabajadores de la construcción.
+Este documento explica, en lenguaje cotidiano, una tesis de grado de Ingeniería Civil de la Universidad Autónoma Tomás Frías (UATF), en Potosí. Cuenta el trabajo completo: el problema, lo que se hizo, lo que se encontró y lo que se recomienda. Está escrito para cualquier persona: familias, autoridades, estudiantes y trabajadores de la construcción.
 
-La **versión académica** es el documento oficial que evalúa el tribunal. Tiene todas las citas, las fórmulas, las tablas técnicas y los anexos. Esta versión sencilla no la reemplaza: la acompaña y ayuda a entenderla.
+El documento que se presenta al tribunal es la tesis, con su formato oficial, sus citas y sus anexos. Esta explicación no la reemplaza: la acompaña y ayuda a entenderla.
 
 ## Cómo leerlo
 

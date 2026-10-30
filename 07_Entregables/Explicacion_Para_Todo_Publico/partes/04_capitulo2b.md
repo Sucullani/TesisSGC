@@ -14,13 +14,13 @@ Lo aplica la empresa que construya esas losas, porque compra y coloca los materi
 
 El sistema gira en el ciclo **PHVA** (Figura 2.10), como una receta que también dice cómo comprobar que todo salió bien. Se **planifica** (metas, riesgos y capacitación), se **hace** (compra, armado, vaciado y curado), se **verifica** (liberación de paños, conciliación y ensayos) y se **actúa** (corrección de problemas y ajuste de metas). Como las losas restantes repiten la forma de la primera, cada vuelta aprovecha las lecciones de la anterior.
 
-![**Figura 2.10.** El ciclo planificar-hacer-verificar-actuar aplicado a la losa alivianada. Cómo leerla: el ciclo gira en el sentido de las flechas, desde «Planificar» (arriba a la izquierda) hasta «Actuar», que vuelve a empezar. Arriba entran los requisitos de la obra y abajo salen los resultados.](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_b1113ccb13014bbbbbe2.png){width=90%}
+![**Figura 2.10.** El ciclo planificar-hacer-verificar-actuar aplicado a la losa alivianada. Cómo leerla: el ciclo gira en el sentido de las flechas, desde «Planificar» (arriba a la izquierda) hasta «Actuar», que vuelve a empezar. Arriba entran los requisitos de la obra y abajo salen los resultados.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_b1113ccb13014bbbbbe2.png){width=90%}
 
 ### El mapa de procesos
 
 Un **proceso** es un grupo de tareas que convierte lo que entra en lo que sale. El mapa de la Figura 2.11 los ordena en tres franjas: los estratégicos dirigen, los operativos construyen y controlan, y los de apoyo sostienen a los demás. El control de cantidades es parte del trabajo diario. Una diferencia descubierta al cerrar el contrato, como la del acero de la primera losa, ya no se corrige a tiempo.
 
-![**Figura 2.11.** Mapa de procesos de la losa alivianada. Cómo leerla: de izquierda a derecha, entran los requisitos (contrato, especificaciones, planos y normas) y sale la losa conforme, con las cantidades conciliadas y pagadas.](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_ef0d407eba42c9b93f4d.png){width=90%}
+![**Figura 2.11.** Mapa de procesos de la losa alivianada. Cómo leerla: de izquierda a derecha, entran los requisitos (contrato, especificaciones, planos y normas) y sale la losa conforme, con las cantidades conciliadas y pagadas.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_ef0d407eba42c9b93f4d.png){width=90%}
 
 ### Quién hace qué
 
@@ -148,7 +148,7 @@ Corregir no es eliminar la causa. Ante una gotera, secar el piso es la correcci�
 
 Si un paño vaciado tiene un defecto, como nidos de grava (huecos en el hormigón), la Supervisión decide si se repara, se refuerza, se demuele o se acepta por escrito, y su pago se retiene. En la primera losa, ninguna de las 24 anotaciones del Libro de Órdenes registró un problema.
 
-![**Figura 2.12.** Flujo del procedimiento de no conformidades. Cómo leerla: se baja paso a paso, desde la detección hasta el cierre; a la derecha figura quién actúa y en qué plazo. Si la acción no funcionó, la flecha «No» vuelve al análisis de la causa.](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_d2b305aed1f48392c842.png){width=90%}
+![**Figura 2.12.** Flujo del procedimiento de no conformidades. Cómo leerla: se baja paso a paso, desde la detección hasta el cierre; a la derecha figura quién actúa y en qué plazo. Si la acción no funcionó, la flecha «No» vuelve al análisis de la causa.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_d2b305aed1f48392c842.png){width=90%}
 
 > **En pocas palabras:** cada problema se anota en 24 horas, se corrige, se elimina su causa y se cierra en 7 días o menos.
 

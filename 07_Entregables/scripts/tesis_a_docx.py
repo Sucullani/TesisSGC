@@ -66,6 +66,8 @@ def main():
     ap.add_argument('--dir-tesis', default=str(RAIZ / '05_Tesis_LaTeX'),
                     help='carpeta de la tesis LaTeX (por defecto: %(default)s)')
     ap.add_argument('--trabajo', default=str(TRABAJO), help='carpeta de archivos intermedios y caché')
+    ap.add_argument('--principal', default='tesis.tex',
+                    help='archivo principal dentro de --dir-tesis (por defecto: %(default)s; p. ej. tesis_sencilla.tex)')
     ap.add_argument('--sin-compilar', action='store_true', help='no compila LaTeX; usa el último .aux válido')
     ap.add_argument('--aux', help='usar este .aux en lugar de compilar')
     ap.add_argument('--regenerar-plantilla', action='store_true', help='vuelve a crear plantilla_apa.docx')
@@ -105,7 +107,7 @@ def main():
 
     # 2-3. LaTeX -> LaTeX para pandoc (+ figuras)
     paso('Aplanando y transformando la fuente LaTeX...')
-    fuente = Fuente(DIR_TESIS, avisos=avisos).cargar()
+    fuente = Fuente(DIR_TESIS, archivo=args.principal, avisos=avisos).cargar()
     graficos = Graficos(DIR_TESIS, trabajo, fuente, avisos, dpi_tikz=max(200, args.dpi_tikz),
                         dpi_pdf=args.dpi_pdf)
     aux = leer_aux(ruta_aux) if ruta_aux else {}

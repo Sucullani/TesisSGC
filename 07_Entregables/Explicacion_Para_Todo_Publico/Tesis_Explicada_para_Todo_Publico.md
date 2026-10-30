@@ -1,6 +1,6 @@
 ---
 title: "Diseño de un Sistema de Gestión de la Calidad basado en la norma ISO 9001 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías, Potosí"
-subtitle: "Versión sencilla de la tesis de grado, escrita para cualquier lector"
+subtitle: "La tesis explicada para todo público"
 date: "Universidad Autónoma Tomás Frías · Facultad de Ingeniería · Carrera de Ingeniería Civil · Potosí, 2026"
 lang: es-BO
 toc-title: "Contenido"
@@ -10,9 +10,9 @@ toc-title: "Contenido"
 
 ## Qué es este documento
 
-Este documento es la **versión sencilla** de una tesis de grado de Ingeniería Civil de la Universidad Autónoma Tomás Frías (UATF), en Potosí. Cuenta el trabajo completo: el problema, lo que se hizo, lo que se encontró y lo que se recomienda. Está escrito para cualquier persona: familias, autoridades, estudiantes y trabajadores de la construcción.
+Este documento explica, en lenguaje cotidiano, una tesis de grado de Ingeniería Civil de la Universidad Autónoma Tomás Frías (UATF), en Potosí. Cuenta el trabajo completo: el problema, lo que se hizo, lo que se encontró y lo que se recomienda. Está escrito para cualquier persona: familias, autoridades, estudiantes y trabajadores de la construcción.
 
-La **versión académica** es el documento oficial que evalúa el tribunal. Tiene todas las citas, las fórmulas, las tablas técnicas y los anexos. Esta versión sencilla no la reemplaza: la acompaña y ayuda a entenderla.
+El documento que se presenta al tribunal es la tesis, con su formato oficial, sus citas y sus anexos. Esta explicación no la reemplaza: la acompaña y ayuda a entenderla.
 
 ## Cómo leerlo
 
@@ -61,7 +61,7 @@ La tesis estudia la calidad, el control de los materiales y los costos de las lo
 
 Una **losa** es la placa de hormigón que hace de techo de un piso y de suelo del siguiente. La losa **alivianada** pesa menos porque combina tres piezas (Figura I.1). Las **viguetas pretensadas** son piezas de hormigón hechas en fábrica, con alambres de acero tensados, y cargan el peso. Los bloques de **plastoformo**, el material blanco de los embalajes, solo ocupan espacio. Encima, una capa de hormigón vaciada en la obra une todo.
 
-![**Figura I.1.** Corte de la losa alivianada (Plano 02 del proyecto). Cómo leerla: las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo, y la franja de arriba, la capa de hormigón o carpeta de compresión.](07_Entregables/Version_Sencilla/figuras/plano02_seccion_losa_viguetas.png){width=60%}
+![**Figura I.1.** Corte de la losa alivianada (Plano 02 del proyecto). Cómo leerla: las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo, y la franja de arriba, la capa de hormigón o carpeta de compresión.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano02_seccion_losa_viguetas.png){width=60%}
 
 Las obras pierden dinero por tres causas frecuentes: los **retrabajos** (rehacer lo que salió mal), el **desperdicio** (material comprado que no queda en la obra) y el incumplimiento de las especificaciones técnicas. Estas fijan cómo debe ser cada material y trabajo. Según Álvarez Quintero (2014), los retrabajos llegan hasta el 12,4 % del costo de un proyecto.
 
@@ -267,7 +267,7 @@ La norma se divide en capítulos llamados **cláusulas**; las cláusulas 4 a 10 
 
 Las cláusulas siguen el **ciclo PHVA** (Zurita Ferrel, 2024), como una cocinera que planifica el menú, cocina, prueba y ajusta la receta. Planificar es la cláusula 6; hacer, la 7 y la 8; verificar, la 9; y actuar, la 10 (Figura 1.1). En una obra, cada losa puede recorrer el ciclo.
 
-![**Figura 1.1.** La norma ISO 9001 en el ciclo PHVA. Cómo leerla: las cajas de color son los pasos del ciclo, con su número de cláusula; el liderazgo está al centro. A la izquierda, lo que entra al sistema; a la derecha, lo que sale. Basada en la ISO 9001:2026 y en Zurita Ferrel (2024).](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_1694af51624b76f04e5e.png){width=90%}
+![**Figura 1.1.** La norma ISO 9001 en el ciclo PHVA. Cómo leerla: las cajas de color son los pasos del ciclo, con su número de cláusula; el liderazgo está al centro. A la izquierda, lo que entra al sistema; a la derecha, lo que sale. Basada en la ISO 9001:2026 y en Zurita Ferrel (2024).](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_1694af51624b76f04e5e.png){width=90%}
 
 ### Los siete principios
 
@@ -294,7 +294,7 @@ Las fallas forman el **costo de no calidad**, que nunca está en el presupuesto 
 
 Según la regla 1-10-100 que recogen Khadim et al. (2023), es mejor invertir una unidad en prevención que gastar diez en corregir o cien en una falla. Como cada aumento de la prevención rinde menos, el costo total tiene un **punto óptimo** (Figura 1.2), que no es cero fallas: no existe el proceso perfecto (Gracia Villar y Dzul López, 2007).
 
-![**Figura 1.2.** Las curvas de los costos de la calidad. Cómo leerla: hacia la derecha crece la inversión en prevenir. La línea azul (prevención y evaluación) sube, la roja (fallas) baja y la negra, su suma, tiene el óptimo en su punto más bajo. Curvas ilustrativas, adaptadas de Gracia Villar y Dzul López (2007).](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_de8bf16d8fe4eacf7bae.png){width=90%}
+![**Figura 1.2.** Las curvas de los costos de la calidad. Cómo leerla: hacia la derecha crece la inversión en prevenir. La línea azul (prevención y evaluación) sube, la roja (fallas) baja y la negra, su suma, tiene el óptimo en su punto más bajo. Curvas ilustrativas, adaptadas de Gracia Villar y Dzul López (2007).](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_de8bf16d8fe4eacf7bae.png){width=90%}
 
 > **En pocas palabras:** prevenir y revisar cuesta; equivocarse cuesta más, porque obliga a pagar dos veces. Un poco de prevención ahorra mucho en correcciones.
 
@@ -322,13 +322,13 @@ Una **losa** es la placa de hormigón que hace de techo de un piso y de piso del
 
 Unos **nervios** de hormigón cruzan las viguetas para darles rigidez. Con 17 cm de alto, una losa así pesa 173,80 kg/m², y una llena, 408,00 kg/m² (Alcón Aranda, 2009).
 
-![**Figura 1.3.** Sección de la losa. Cómo leerla: es la losa cortada como un pan. Las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo; la franja de arriba, la carpeta. Tomada del Plano 02.](07_Entregables/Version_Sencilla/figuras/plano02_seccion_losa_viguetas.png){width=90%}
+![**Figura 1.3.** Sección de la losa. Cómo leerla: es la losa cortada como un pan. Las «T» invertidas son las viguetas; los bloques con puntitos, el plastoformo; la franja de arriba, la carpeta. Tomada del Plano 02.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano02_seccion_losa_viguetas.png){width=90%}
 
 ### Los materiales
 
 Las especificaciones técnicas piden viguetas certificadas por IBNORCA e ISO; plastoformo de 100 × 50 × 20 cm; hormigón de 250 kg/cm² (H25) con al menos 400 kg de cemento por metro cúbico; y fierro para la malla y para los **negativos**, refuerzos sobre los apoyos. El fabricante de las viguetas certificó una losa de 20 + 5 = 25 cm con ejes cada 50 cm (PRETENSA, 2025). Pero el proveedor del plastoformo certificó 2.350 bloques de otra medida, 20 × 100 × 44 cm (UNICON, 2025), y el corte del Plano 02 marca 15 + 5 cm (Figura 1.4). El capítulo 2 analiza estas diferencias.
 
-![**Figura 1.4.** Corte transversal de la losa. Cómo leerla: viguetas cada 0,50 m, plastoformo entre ellas y, encima, la carpeta de 5 cm con malla de 6 mm cada 20 cm («φ6c/20»). A la derecha: 0,05 m de carpeta y 0,15 m de bloque. Tomado del Plano 02.](07_Entregables/Version_Sencilla/figuras/plano02_corte_transversal.png){width=90%}
+![**Figura 1.4.** Corte transversal de la losa. Cómo leerla: viguetas cada 0,50 m, plastoformo entre ellas y, encima, la carpeta de 5 cm con malla de 6 mm cada 20 cm («φ6c/20»). A la derecha: 0,05 m de carpeta y 0,15 m de bloque. Tomado del Plano 02.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano02_corte_transversal.png){width=90%}
 
 ### Cómo se construye y qué se revisa
 
@@ -432,7 +432,7 @@ Como se vio en el Capítulo 1, la **losa alivianada** es un sándwich de 25 cm: 
 
 La primera losa tiene 41 **paños**, que son los recuadros de losa rodeados de vigas, como los cuadros de un piso de baldosas grandes. Miden de 1,40 a 52,38 m² y suman 1.109,84 m² (Figura 2.1).
 
-![**Figura 2.1.** Paños de la primera losa (Plano 01). Cómo leerla: es la losa vista desde arriba. Cada recuadro rayado es un paño, con su nombre y su área; el plano usa punto decimal: «A1 = 35.86 M2» son 35,86 m². Las franjas entre paños son las vigas, y los cuadrados negros, las columnas.](07_Entregables/Version_Sencilla/figuras/plano01_geometria_primera_losa.png){width=90%}
+![**Figura 2.1.** Paños de la primera losa (Plano 01). Cómo leerla: es la losa vista desde arriba. Cada recuadro rayado es un paño, con su nombre y su área; el plano usa punto decimal: «A1 = 35.86 M2» son 35,86 m². Las franjas entre paños son las vigas, y los cuadrados negros, las columnas.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/plano01_geometria_primera_losa.png){width=90%}
 
 Los documentos no coinciden en el bloque: las especificaciones técnicas piden piezas de 100 × 50 × 20 cm, se entregaron 2.350 de 20 × 100 × 44 cm y el corte del Plano 02 dibuja un bloque de 15 cm, que daría una losa de 20 cm (Figura 1.4). La tesis considera que el plano tiene un error, porque los demás documentos dicen 25 cm, el mínimo que exige la Norma Boliviana de Diseño Sísmico para que esta losa trabaje como una pieza rígida (MOPSV, 2023). Conviene aclararlo con la Supervisión.
 
@@ -482,7 +482,7 @@ El cumplimiento global fue de **19,8 %**: ningún requisito se cumplió por comp
 
 Dos fábricas bolivianas de viguetas obtuvieron más (Figura 2.2): 24 % (Mamani Calsina, 2025) y 43 % (Peña Callisaya, 2024). Una fábrica repite sus procesos con personal estable; la losa de una obra pública es un trabajo temporal, controlado casi solo por la Supervisión. La comparación es solo orientativa. Según Peña Callisaya (2024), con 50 % o menos se necesita diseñar un sistema, no solo mejorar prácticas sueltas.
 
-![**Figura 2.2.** Cumplimiento de la norma ISO 9001 por cláusula. Cómo leerla: cada grupo de barras es una cláusula, y el de la derecha, el resultado global. La barra azul es la primera losa; la naranja y la verde, las dos fábricas. Más alta la barra, más se cumple; «n. e.»: no evaluado.](07_Entregables/Version_Sencilla/figuras/fig_brechas_iso9001.png){width=90%}
+![**Figura 2.2.** Cumplimiento de la norma ISO 9001 por cláusula. Cómo leerla: cada grupo de barras es una cláusula, y el de la derecha, el resultado global. La barra azul es la primera losa; la naranja y la verde, las dos fábricas. Más alta la barra, más se cumple; «n. e.»: no evaluado.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_brechas_iso9001.png){width=90%}
 
 Un 0 indica que el requisito no dejó rastro en los documentos, no necesariamente que la práctica no existió.
 
@@ -507,7 +507,7 @@ Se clasificaron en las **6M**, seis familias de causas (materiales, método, man
 
 La Figura 2.3 es un **diagrama de Pareto**: ordena los problemas de mayor a menor, porque pocos factores suelen explicar la mayoría de los problemas (Alfaro Félix, 2011). Medición y gestión reúnen 12 de las 22 no conformidades (54,5 %); con materiales y método llegan al 86,4 %.
 
-![**Figura 2.3.** Diagrama de Pareto de las no conformidades. Cómo leerla: cada barra es un tipo, con su cantidad (n) y su porcentaje. La línea naranja va sumando los porcentajes; la línea gris marca el 80 %.](07_Entregables/Version_Sencilla/figuras/fig_pareto_nc.png){width=90%}
+![**Figura 2.3.** Diagrama de Pareto de las no conformidades. Cómo leerla: cada barra es un tipo, con su cantidad (n) y su porcentaje. La línea naranja va sumando los porcentajes; la línea gris marca el 80 %.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_pareto_nc.png){width=90%}
 
 Un diagrama de **Ishikawa**, o de «espina de pescado», ordenó las causas. Las externas (escasez de combustible y de viguetas, subida de precios y lluvias) se volvieron problemas porque ningún sistema las anticipó: sin plan de compras, se recibieron materiales sin inspección; sin cantidades por paño, el material de más no se detectó; sin ensayos, no se pudo demostrar que el hormigón cumplía. La causa de fondo es la ausencia de un sistema de calidad: la calidad se confió a la revisión de la Supervisión antes de cada vaciado.
 
@@ -572,13 +572,13 @@ Lo aplica la empresa que construya esas losas, porque compra y coloca los materi
 
 El sistema gira en el ciclo **PHVA** (Figura 2.10), como una receta que también dice cómo comprobar que todo salió bien. Se **planifica** (metas, riesgos y capacitación), se **hace** (compra, armado, vaciado y curado), se **verifica** (liberación de paños, conciliación y ensayos) y se **actúa** (corrección de problemas y ajuste de metas). Como las losas restantes repiten la forma de la primera, cada vuelta aprovecha las lecciones de la anterior.
 
-![**Figura 2.10.** El ciclo planificar-hacer-verificar-actuar aplicado a la losa alivianada. Cómo leerla: el ciclo gira en el sentido de las flechas, desde «Planificar» (arriba a la izquierda) hasta «Actuar», que vuelve a empezar. Arriba entran los requisitos de la obra y abajo salen los resultados.](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_b1113ccb13014bbbbbe2.png){width=90%}
+![**Figura 2.10.** El ciclo planificar-hacer-verificar-actuar aplicado a la losa alivianada. Cómo leerla: el ciclo gira en el sentido de las flechas, desde «Planificar» (arriba a la izquierda) hasta «Actuar», que vuelve a empezar. Arriba entran los requisitos de la obra y abajo salen los resultados.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_b1113ccb13014bbbbbe2.png){width=90%}
 
 ### El mapa de procesos
 
 Un **proceso** es un grupo de tareas que convierte lo que entra en lo que sale. El mapa de la Figura 2.11 los ordena en tres franjas: los estratégicos dirigen, los operativos construyen y controlan, y los de apoyo sostienen a los demás. El control de cantidades es parte del trabajo diario. Una diferencia descubierta al cerrar el contrato, como la del acero de la primera losa, ya no se corrige a tiempo.
 
-![**Figura 2.11.** Mapa de procesos de la losa alivianada. Cómo leerla: de izquierda a derecha, entran los requisitos (contrato, especificaciones, planos y normas) y sale la losa conforme, con las cantidades conciliadas y pagadas.](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_ef0d407eba42c9b93f4d.png){width=90%}
+![**Figura 2.11.** Mapa de procesos de la losa alivianada. Cómo leerla: de izquierda a derecha, entran los requisitos (contrato, especificaciones, planos y normas) y sale la losa conforme, con las cantidades conciliadas y pagadas.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_ef0d407eba42c9b93f4d.png){width=90%}
 
 ### Quién hace qué
 
@@ -706,7 +706,7 @@ Corregir no es eliminar la causa. Ante una gotera, secar el piso es la correcci�
 
 Si un paño vaciado tiene un defecto, como nidos de grava (huecos en el hormigón), la Supervisión decide si se repara, se refuerza, se demuele o se acepta por escrito, y su pago se retiene. En la primera losa, ninguna de las 24 anotaciones del Libro de Órdenes registró un problema.
 
-![**Figura 2.12.** Flujo del procedimiento de no conformidades. Cómo leerla: se baja paso a paso, desde la detección hasta el cierre; a la derecha figura quién actúa y en qué plazo. Si la acción no funcionó, la flecha «No» vuelve al análisis de la causa.](07_Entregables/Version_Sencilla/figuras/diagramas/tikz_d2b305aed1f48392c842.png){width=90%}
+![**Figura 2.12.** Flujo del procedimiento de no conformidades. Cómo leerla: se baja paso a paso, desde la detección hasta el cierre; a la derecha figura quién actúa y en qué plazo. Si la acción no funcionó, la flecha «No» vuelve al análisis de la causa.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/diagramas/tikz_d2b305aed1f48392c842.png){width=90%}
 
 > **En pocas palabras:** cada problema se anota en 24 horas, se corrige, se elimina su causa y se cierra en 7 días o menos.
 
@@ -883,7 +883,7 @@ La **línea base** es la foto del «antes». Solo dos materiales tuvieron un dat
 
 Con los valores más probables, el desperdicio ponderado por costo fue de 7,47 %, y el **costo de no calidad**, de Bs 19,60 por m²: el 7,12 % del costo sin sistema (Figura 3.1). Para el plastoformo no se hallaron valores de referencia en otros estudios: el 5,01 % es un primer dato documental.
 
-![**Figura 3.1.** Costo de no calidad por componente (valores más probables). Cómo leerla: en cada par, la barra gris es el costo sin sistema y la azul, con sistema, en bolivianos por m². Las mayores pérdidas están en el acero, los retrabajos y el hormigón, y todas las azules son más bajas.](07_Entregables/Version_Sencilla/figuras/fig_cnc_por_componente.png){width=90%}
+![**Figura 3.1.** Costo de no calidad por componente (valores más probables). Cómo leerla: en cada par, la barra gris es el costo sin sistema y la azul, con sistema, en bolivianos por m². Las mayores pérdidas están en el acero, los retrabajos y el hormigón, y todas las azules son más bajas.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_cnc_por_componente.png){width=90%}
 
 > **En pocas palabras:** sin sistema, cada m² perdía Bs 19,60 en material desperdiciado y trabajos rehechos: el 7,12 % de su costo.
 
@@ -919,11 +919,11 @@ El costo promedio de 1 m² fue de Bs 278,59 sin sistema, casi igual al precio de
 
 *Nota:* el 90 % central de los escenarios queda entre P5 y P95. Un ahorro negativo significa que el sistema costó más de lo que ahorró.
 
-![**Figura 3.2.** Reducción del costo de 1 m² en los 20.000 escenarios. Cómo leerla: cada barra cuenta los escenarios de un tramo de reducción. La línea negra es el promedio (1,47 %) y la anaranjada discontinua, la meta del 5 %. Casi todas quedan a la derecha del cero (con ahorro) y casi ninguna cerca de la meta.](07_Entregables/Version_Sencilla/figuras/fig_histograma_reduccion.png){width=90%}
+![**Figura 3.2.** Reducción del costo de 1 m² en los 20.000 escenarios. Cómo leerla: cada barra cuenta los escenarios de un tramo de reducción. La línea negra es el promedio (1,47 %) y la anaranjada discontinua, la meta del 5 %. Casi todas quedan a la derecha del cero (con ahorro) y casi ninguna cerca de la meta.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_histograma_reduccion.png){width=90%}
 
-![**Figura 3.3.** Costo de 1 m² sin sistema y con sistema (distribución acumulada). Cómo leerla: se elige un costo abajo y se sube hasta la curva; la altura indica qué parte de los escenarios cuesta eso o menos. La curva azul (con sistema) queda siempre a la izquierda de la gris: cuesta menos en cada nivel de probabilidad. La línea punteada es el precio del contrato.](07_Entregables/Version_Sencilla/figuras/fig_acumulada_costo_unitario.png){width=90%}
+![**Figura 3.3.** Costo de 1 m² sin sistema y con sistema (distribución acumulada). Cómo leerla: se elige un costo abajo y se sube hasta la curva; la altura indica qué parte de los escenarios cuesta eso o menos. La curva azul (con sistema) queda siempre a la izquierda de la gris: cuesta menos en cada nivel de probabilidad. La línea punteada es el precio del contrato.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_acumulada_costo_unitario.png){width=90%}
 
-![**Figura 3.4.** Promedio de la reducción según el número de tiradas. Cómo leerla: la escala de abajo crece de diez en diez veces. El promedio salta al principio y, tras unas mil tiradas, casi no se mueve, cerca de 1,47 %: 20.000 tiradas bastan.](07_Entregables/Version_Sencilla/figuras/fig_convergencia.png){width=90%}
+![**Figura 3.4.** Promedio de la reducción según el número de tiradas. Cómo leerla: la escala de abajo crece de diez en diez veces. El promedio salta al principio y, tras unas mil tiradas, casi no se mueve, cerca de 1,47 %: 20.000 tiradas bastan.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_convergencia.png){width=90%}
 
 > **En pocas palabras:** en promedio, el sistema baja el costo de 1 m² en 1,47 %, reduce casi a la mitad el costo de no calidad y ahorra Bs 9.177 en el saldo, pero casi nunca llega al 5 %.
 
@@ -947,7 +947,7 @@ En cambio, el desperdicio y el costo de no calidad bajaron en todos los escenari
 
 Lo que más mueve la reducción es el costo del sistema, la fracción de retrabajo sin sistema y la eficacia sobre los retrabajos; las viguetas y el plastoformo pesan poco (Figura 3.5). Solo el costo máximo del sistema vuelve negativa la reducción (−0,67 %), y ningún dato llega al 5 %: el mejor caso es 3,20 %.
 
-![**Figura 3.5.** Efecto de cada dato sobre la reducción del costo (diagrama de tornado). Cómo leerla: cada barra es un dato; sus extremos dan la reducción con su mínimo y su máximo, y cuanto más larga, más pesa. La línea negra es el caso más probable (1,43 %) y la anaranjada discontinua, la meta del 5 %, que ninguna barra alcanza. En el costo del sistema, el extremo izquierdo es el máximo.](07_Entregables/Version_Sencilla/figuras/fig_tornado_sensibilidad.png){width=90%}
+![**Figura 3.5.** Efecto de cada dato sobre la reducción del costo (diagrama de tornado). Cómo leerla: cada barra es un dato; sus extremos dan la reducción con su mínimo y su máximo, y cuanto más larga, más pesa. La línea negra es el caso más probable (1,43 %) y la anaranjada discontinua, la meta del 5 %, que ninguna barra alcanza. En el costo del sistema, el extremo izquierdo es el máximo.](07_Entregables/Explicacion_Para_Todo_Publico/figuras/fig_tornado_sensibilidad.png){width=90%}
 
 **Punto de equilibrio.** Como en un negocio, es el punto en que lo ahorrado iguala lo gastado. Con una eficacia igual para todo, el sistema paga su costo con 24,8 % y llega al 5 % recién con 95,1 % (con eficacia total, 5,35 %); los estudios usados reportan máximos de 70 % a 89 %.
 
