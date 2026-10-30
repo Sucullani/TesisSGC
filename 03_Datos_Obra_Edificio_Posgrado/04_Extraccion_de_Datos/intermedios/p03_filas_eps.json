@@ -1,0 +1,289 @@
+{
+ "A1": {
+  "dir": "H",
+  "niveles": 4,
+  "filas_moda": 18,
+  "filas_max": 18,
+  "n_vig": 19
+ },
+ "A2": {
+  "dir": "H",
+  "niveles": 5,
+  "filas_moda": 20,
+  "filas_max": 20,
+  "n_vig": 19
+ },
+ "A3": {
+  "dir": "H",
+  "niveles": 4,
+  "filas_moda": 20,
+  "filas_max": 20,
+  "n_vig": 19
+ },
+ "A4": {
+  "dir": "H",
+  "niveles": 5,
+  "filas_moda": 20,
+  "filas_max": 20,
+  "n_vig": 19
+ },
+ "A5": {
+  "dir": "H",
+  "niveles": 6,
+  "filas_moda": 20,
+  "filas_max": 20,
+  "n_vig": 19
+ },
+ "A6": {
+  "dir": "H",
+  "niveles": 6,
+  "filas_moda": 20,
+  "filas_max": 20,
+  "n_vig": 19
+ },
+ "A7": {
+  "dir": "H",
+  "niveles": 5,
+  "filas_moda": 20,
+  "filas_max": 20,
+  "n_vig": 19
+ },
+ "A8": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 23,
+  "filas_max": 23,
+  "n_vig": 22
+ },
+ "A9": {
+  "dir": "V",
+  "niveles": 0,
+  "filas_moda": 0,
+  "filas_max": 0,
+  "n_vig": 8
+ },
+ "A10": {
+  "dir": "V",
+  "niveles": 1,
+  "filas_moda": 9,
+  "filas_max": 9,
+  "n_vig": 8
+ },
+ "A11": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 3,
+  "filas_max": 3,
+  "n_vig": 2
+ },
+ "A12": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A13": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 5,
+  "filas_max": 5,
+  "n_vig": 7
+ },
+ "A14": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A15": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 12,
+  "filas_max": 12,
+  "n_vig": 11
+ },
+ "A16": {
+  "dir": "H",
+  "niveles": 0,
+  "filas_moda": 0,
+  "filas_max": 0,
+  "n_vig": 0
+ },
+ "A17": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A18": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 6,
+  "filas_max": 12,
+  "n_vig": 10
+ },
+ "A19": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 10,
+  "filas_max": 10,
+  "n_vig": 9
+ },
+ "A20": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A21": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A22": {
+  "dir": "H",
+  "niveles": 5,
+  "filas_moda": 13,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A23": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 2,
+  "filas_max": 6,
+  "n_vig": 6
+ },
+ "A24": {
+  "dir": "V",
+  "niveles": 2,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A25": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A26": {
+  "dir": "V",
+  "niveles": 0,
+  "filas_moda": 0,
+  "filas_max": 0,
+  "n_vig": 14
+ },
+ "A27": {
+  "dir": "V",
+  "niveles": 0,
+  "filas_moda": 0,
+  "filas_max": 0,
+  "n_vig": 10
+ },
+ "A28": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 23,
+  "filas_max": 23,
+  "n_vig": 22
+ },
+ "A29": {
+  "dir": "V",
+  "niveles": 1,
+  "filas_moda": 9,
+  "filas_max": 9,
+  "n_vig": 8
+ },
+ "A30": {
+  "dir": "V",
+  "niveles": 0,
+  "filas_moda": 0,
+  "filas_max": 0,
+  "n_vig": 8
+ },
+ "A31": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 3,
+  "filas_max": 3,
+  "n_vig": 2
+ },
+ "A32": {
+  "dir": "V",
+  "niveles": 5,
+  "filas_moda": 15,
+  "filas_max": 15,
+  "n_vig": 14
+ },
+ "A33": {
+  "dir": "V",
+  "niveles": 6,
+  "filas_moda": 5,
+  "filas_max": 5,
+  "n_vig": 8
+ },
+ "A34": {
+  "dir": "H",
+  "niveles": 4,
+  "filas_moda": 16,
+  "filas_max": 16,
+  "n_vig": 18
+ },
+ "A35": {
+  "dir": "H",
+  "niveles": 5,
+  "filas_moda": 17,
+  "filas_max": 17,
+  "n_vig": 18
+ },
+ "A36": {
+  "dir": "H",
+  "niveles": 4,
+  "filas_moda": 17,
+  "filas_max": 17,
+  "n_vig": 18
+ },
+ "A37": {
+  "dir": "H",
+  "niveles": 4,
+  "filas_moda": 4,
+  "filas_max": 4,
+  "n_vig": 4
+ },
+ "A38": {
+  "dir": "H",
+  "niveles": 4,
+  "filas_moda": 19,
+  "filas_max": 19,
+  "n_vig": 19
+ },
+ "A39": {
+  "dir": "H",
+  "niveles": 2,
+  "filas_moda": 9,
+  "filas_max": 9,
+  "n_vig": 8
+ },
+ "A40": {
+  "dir": "V",
+  "niveles": 4,
+  "filas_moda": 12,
+  "filas_max": 14,
+  "n_vig": 14
+ },
+ "A41": {
+  "dir": "V",
+  "niveles": 4,
+  "filas_moda": 10,
+  "filas_max": 13,
+  "n_vig": 13
+ }
+}
