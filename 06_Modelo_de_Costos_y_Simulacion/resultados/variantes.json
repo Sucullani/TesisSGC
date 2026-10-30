@@ -1,0 +1,62 @@
+[
+  {
+    "variante": "Caso principal",
+    "r_media": 0.012697144000420468,
+    "r_p05": -0.0020519519423464637,
+    "P_umbral": 0.0004,
+    "P_pos": 0.9155,
+    "r_max": 0.04814671055859892,
+    "kappa13": 0.9507934355873625,
+    "cc_m2": 4.864405262686835
+  },
+  {
+    "variante": "Sin ensayos de hormigón en el costo del SGC (obligación contractual)",
+    "r_media": 0.01472841969420424,
+    "r_p05": 2.5549646851502126e-05,
+    "P_umbral": 0.0006,
+    "P_pos": 0.95055,
+    "r_max": 0.05009873600917145,
+    "kappa13": 0.9507934355873625,
+    "cc_m2": 4.327396402040634
+  },
+  {
+    "variante": "Mano de obra del APU según Alcón (2009): 1,00 h/m² de albañil y de ayudante",
+    "r_media": 0.010526680587298819,
+    "r_p05": -0.003800965814275765,
+    "P_umbral": 0.0002,
+    "P_pos": 0.87395,
+    "r_max": 0.04355664594594796,
+    "kappa13": 0.7887521168068957,
+    "cc_m2": 4.864405262686835
+  },
+  {
+    "variante": "Eficacia del SGC más baja (moda y máximo reducidos)",
+    "r_media": -0.0005511658690042896,
+    "r_p05": -0.010607659942465897,
+    "P_umbral": 0.0,
+    "P_pos": 0.4558,
+    "r_max": 0.04814671055859892,
+    "kappa13": 0.9507934355873625,
+    "cc_m2": 4.864405262686835
+  },
+  {
+    "variante": "Costo del SGC duplicado",
+    "r_media": -0.00925313056683027,
+    "r_p05": -0.028134137297698356,
+    "P_umbral": 0.0,
+    "P_pos": 0.2128,
+    "r_max": 0.03046461335216306,
+    "kappa13": 0.9507934355873625,
+    "cc_m2": 9.72881052537367
+  },
+  {
+    "variante": "Desperdicio de hormigón y acero más alto (moda desplazada al máximo)",
+    "r_media": 0.0149642481954999,
+    "r_p05": -0.00010149689275357375,
+    "P_umbral": 0.0007,
+    "P_pos": 0.94835,
+    "r_max": 0.06422381817309236,
+    "kappa13": 0.9507934355873625,
+    "cc_m2": 4.864405262686835
+  }
+]

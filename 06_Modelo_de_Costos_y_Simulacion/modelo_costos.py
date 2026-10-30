@@ -43,7 +43,9 @@ TEX = AQUI / "tablas_latex"
 for d in (FIG, RES, TEX):
     d.mkdir(exist_ok=True)
 
-P = json.loads((AQUI / "parametros.json").read_text(encoding="utf-8"))
+import os
+SOLO_RESUMEN = os.environ.get("MODELO_SOLO_RESUMEN") == "1"
+P = json.loads(Path(os.environ.get("MODELO_PARAMS", AQUI / "parametros.json")).read_text(encoding="utf-8"))
 SIM = P["simulacion"]
 N = int(SIM["iteraciones"])
 RNG = np.random.default_rng(int(SIM["semilla"]))
@@ -384,6 +386,11 @@ salida = {
     "punto_equilibrio": {"eficacia_para_r_0": k_equilibrio, "eficacia_para_umbral": k_umbral,
                           "r_con_eficacia_100": r_max_teorico},
 }
+if SOLO_RESUMEN:
+    print(json.dumps({"r_media": float(np.mean(R)), "r_p05": float(np.percentile(R, 5)),
+                      "P_umbral": p_hg, "P_pos": p_r_pos, "r_max": r_max_teorico,
+                      "kappa13": KAPPA13, "cc_m2": coc_con_det}))
+    raise SystemExit(0)
 (RES / "resumen_resultados.json").write_text(json.dumps(salida, indent=2, ensure_ascii=False),
                                              encoding="utf-8")
 
@@ -404,7 +411,19 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
 GRIS, AZUL, NAR = "#555555", "#2b6cb0", "#c05621"
 
 
-def guardar(fig, nombre):
+from matplotlib.ticker import FuncFormatter  # noqa: E402
+
+COMA = FuncFormatter(lambda v, _: (f"{v:,.2f}".rstrip("0").rstrip(".") if abs(v) < 1e4 else f"{v:,.0f}")
+                     .replace(",", "X").replace(".", ",").replace("X", "."))
+
+
+def guardar(fig, nombre, ejes=("x", "y")):
+    """Guarda la figura con coma decimal en los ejes numéricos indicados."""
+    for ax in fig.axes:
+        if "x" in ejes and ax.get_xscale() == "linear":
+            ax.xaxis.set_major_formatter(COMA)
+        if "y" in ejes and ax.get_yscale() == "linear":
+            ax.yaxis.set_major_formatter(COMA)
     fig.tight_layout()
     fig.savefig(FIG / f"{nombre}.pdf")
     fig.savefig(FIG / f"{nombre}.png", dpi=200)
@@ -433,17 +452,21 @@ ax.legend(frameon=False, fontsize=8)
 guardar(fig, "fig_acumulada_costo_unitario")
 
 # Tornado (un factor a la vez)
-fig, ax = plt.subplots(figsize=(6.3, 0.42 * len(oat) + 1.0))
+fig, ax = plt.subplots(figsize=(6.3, 0.42 * len(oat) + 1.4))
 ys = np.arange(len(oat))[::-1]
 for y, (f, a, b) in zip(ys, oat):
     lo, hi = min(a, b), max(a, b)
     ax.barh(y, 100 * (hi - lo), left=100 * lo, color=AZUL, alpha=0.8)
-ax.axvline(100 * r_det, color="black", lw=1)
-ax.axvline(100 * UMBRAL, color=NAR, ls="--", lw=1.2)
+ax.axvline(100 * r_det, color="black", lw=1, label=f"Caso base con valores más probables ({fmt(100*r_det)} %)")
+ax.axvline(100 * UMBRAL, color=NAR, ls="--", lw=1.2, label=f"Umbral de la hipótesis ({fmt(100*UMBRAL,0)} %)")
+lo_all = min(min(a, b) for _, a, b in oat)
+hi_all = max(max(a, b) for _, a, b in oat)
+ax.set_xlim(100 * lo_all - 0.4, max(100 * hi_all, 100 * UMBRAL) + 0.4)
+ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.45, -0.12), ncol=2)
 ax.set_yticks(ys)
 ax.set_yticklabels([t[0] for t in oat], fontsize=8)
 ax.set_xlabel("Reducción del costo unitario, r (%)")
-guardar(fig, "fig_tornado_sensibilidad")
+guardar(fig, "fig_tornado_sensibilidad", ejes=("x",))
 
 # Convergencia
 fig, ax = plt.subplots(figsize=(6.3, 3.0))
@@ -451,7 +474,7 @@ ax.plot(idx, 100 * media_acum, color=AZUL, lw=1.2)
 ax.set_xscale("log")
 ax.set_xlabel("Número de iteraciones (escala logarítmica)")
 ax.set_ylabel("Media acumulada de r (%)")
-guardar(fig, "fig_convergencia")
+guardar(fig, "fig_convergencia", ejes=("y",))
 
 # Composición del costo de no calidad (determinista)
 fig, ax = plt.subplots(figsize=(6.3, 3.4))
@@ -465,7 +488,7 @@ ax.set_xticks(x)
 ax.set_xticklabels(etqs, fontsize=8)
 ax.set_ylabel("Costo de no calidad (Bs/m²)")
 ax.legend(frameon=False, fontsize=8)
-guardar(fig, "fig_cnc_por_componente")
+guardar(fig, "fig_cnc_por_componente", ejes=("y",))
 
 # ---------------------------- Tablas LaTeX ----------------------------------
 def tabla(nombre: str, contenido: str):
