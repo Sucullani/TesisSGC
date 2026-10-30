@@ -229,8 +229,9 @@ with open(csv_path, 'w', newline='', encoding='utf-8') as fh:
         kg = pi['kg_malla'] + neg_kg[k] + pi['kg_nerv']
         o = [f"etiqueta Plano 03: {ETIQ[k]}", f"dirección viguetas: {pi['dir']}", f"filas EPS: {pi['filas']}",
              f"nervio transversal (S1): {pi['n_nerv']}"]
-        if len(set(pi['L_lista'])) > 1:
+        if max(pi['L_lista']) - min(pi['L_lista']) > 0.15:
             o.append('longitudes de vigueta (m): ' + '; '.join(f'{x:.2f}' for x in pi['L_lista']))
+        o.append(f"luz libre media {pi['Lclear_media']:.2f} m; long. = luz libre + 2 × 0,05 m")
         o += pi['obs']
         if abs(AREA_XL[k] - AREA_PLANO[k]) > 0.005:
             o.append(f'área Plano 01 ≠ Excel ({AREA_PLANO[k]} vs {AREA_XL[k]})')
