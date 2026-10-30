@@ -1,0 +1,14 @@
+# --- Archivos pesados (GitHub rechaza archivos > 100 MB) ---
+03_Datos_Obra_Edificio_Posgrado/_originales_pesados/
+
+# --- Copias con licencia de uso personal / derechos de autor (se guardan solo en local) ---
+04_Bibliografia/01_Normas_y_Codigos/ACI_318-25_Building_Code_for_Structural_Concrete.pdf
+04_Bibliografia/02_Metodologia_y_Redaccion/Hernandez-Sampieri_Mendoza_2018_Metodologia_de_la_Investigacion.pdf
+
+# --- Temporales de Office, LibreOffice y Windows ---
+~$*
+.~lock.*#
+*.tmp
+*.bak
+Thumbs.db
+desktop.ini
