@@ -233,6 +233,21 @@ _, CU_CON_F, _, _, _ = cnc_y_cu(W_CON_F, RHO_CON_F, COC_CON, CD_TEO)
 R_F = (CU_SIN - CU_CON_F) / CU_SIN
 
 
+# Escenario complementario: costos ocultos de no calidad (tiempos muertos,
+# supervisión adicional, horas extra), que el modelo principal no incluye.
+ESC_OC = P.get("escenario_costos_ocultos")
+if ESC_OC:
+    rho_h_media = media_tri(ESC_OC["fraccion_sin_sgc"])
+    CD_TEO_H = (PU_LOSA - perd_sin_media - COC_SIN) / (1.0 + rho_sin_media + rho_h_media)
+    RHO_H_SIN = tri(ESC_OC["fraccion_sin_sgc"])
+    RHO_H_CON = RHO_H_SIN * (1 - E_RET)
+    _, CU_SIN_H, _, _, _ = cnc_y_cu(W_SIN, RHO_SIN + RHO_H_SIN, COC_SIN, CD_TEO_H)
+    _, CU_CON_H, _, _, _ = cnc_y_cu(W_CON, RHO_CON + RHO_H_CON, COC_CON, CD_TEO_H)
+    R_H = (CU_SIN_H - CU_CON_H) / CU_SIN_H
+else:
+    R_H = None
+
+
 def resumen(x: np.ndarray) -> dict:
     return {
         "media": float(np.mean(x)), "desv_est": float(np.std(x, ddof=1)),
@@ -362,6 +377,8 @@ salida = {
     "sgc_no_aplicado": {"prob_falla": PI_FALLA, "r": resumen(R_F),
                          "P(r>=umbral)": float(np.mean(R_F >= UMBRAL)),
                          "P(r>0)": float(np.mean(R_F > 0))},
+    "costos_ocultos": None if R_H is None else {
+        "r": resumen(R_H), "P(r>=umbral)": float(np.mean(R_H >= UMBRAL)), "P(r>0)": float(np.mean(R_H > 0))},
     "sensibilidad_spearman": spearman,
     "sensibilidad_un_factor": [{"factor": f, "r_min": a, "r_max": b} for f, a, b in oat],
     "punto_equilibrio": {"eficacia_para_r_0": k_equilibrio, "eficacia_para_umbral": k_umbral,
@@ -591,6 +608,9 @@ mac = [
     macro("KequilibrioCero", pct(k_equilibrio, 1) if k_equilibrio is not None else "no alcanzable"),
     macro("KequilibrioUmbral", pct(k_umbral, 1) if k_umbral is not None else "no alcanzable"),
     macro("rMaxTeorico", pct(r_max_teorico)),
+    macro("rMediaOcultos", pct(float(np.mean(R_H))) if R_H is not None else "--"),
+    macro("rPcincoOcultos", pct(float(np.percentile(R_H, 5))) if R_H is not None else "--"),
+    macro("PHGocultos", fmt(float(np.mean(R_H >= UMBRAL)), 4) if R_H is not None else "--"),
     macro("KappaTrece", fmt(KAPPA13, 3)), macro("KappaAcero", fmt(KAPPAAC, 3)),
     macro("FactorInd", fmt(F_IND, 4)),
     macro("APUtreceBase", fmt(TOT13["precio_base"])), macro("APUaceroBase", fmt(TOTAC["precio_base"], 2)),
