@@ -1,0 +1,23 @@
+# Notas del coordinador para el documento de preguntas del tribunal
+
+## Debilidades reales del trabajo y línea de defensa
+1. **No hubo posprueba real (O2):** la segunda losa no se construyó (contrato resuelto: carta notariada 05/01/2026, respuesta 10/02/2026). Defensa: el perfil ya preveía la alternativa ex ante; el Taller 4 acepta la «modelación de simulación teórica» con tratamiento de control y cálculo de incertidumbre; se deja un protocolo de verificación con datos de obra (sección 2.9.1). NO decir «simulé porque era más fácil».
+2. **Línea base parcialmente documental:** no existen registros de consumo (kardex, vales, volúmenes vaciados). Defensa: esa ausencia ES un hallazgo del diagnóstico; los datos documentados (EPS 2.350 pza, acero pagado, áreas) se usaron; lo demás proviene de rangos de literatura con página; la conclusión sobre HG es robusta porque ni con eficacia del 100 % se llega al 5 %.
+3. **La hipótesis general no se acepta (umbral 5 %).** Defensa: resultado honesto; el 5 % se fijó en el perfil con promedios de retrabajo a nivel de proyecto (6,59 %); en un solo ítem el costo de no calidad es ≈ 5–8 % del costo unitario y el propio SGC cuesta ≈ 1,7 %; aun así el SGC reduce el costo con probabilidad ≈ 0,9 y el costo de no calidad ≈ 45–50 %; con costos ocultos (Khadim) la reducción llega a ≈ 3 %. NO decir «la hipótesis estaba mal»; decir «la magnitud esperada se sobreestimó; el sentido del efecto se confirma».
+4. **Validación por expertos pendiente.** Defensa: instrumento listo (C.8, V de Aiken ≥ 0,70); aplicarla ANTES de la defensa (3–5 ingenieros: laboratorio UATF, supervisores, docentes). Llevar las fichas firmadas.
+5. **APU contractual no disponible:** se reconstruyó un APU de referencia calibrado (κ ≈ 0,95). Defensa: estructura boliviana documentada (Cocarico 2022), precio INE; κ cercano a 1 valida la reconstrucción; solicitar el APU real a la Fiscalización.
+6. **Texto de ISO 9001:2026 no disponible en el repositorio** (norma de pago). Defensa: el diseño usa la estructura de cláusulas 4–10, estable en la edición 2026; RECOMENDACIÓN: adquirir NB/ISO 9001:2026 en IBNORCA antes de la defensa y verificar la numeración de subcláusulas.
+7. **Diagnóstico ISO documental sin entrevistas.** Defensa: evidencia objetiva con documento y página; entrevistas como verificación complementaria (guía C.7).
+8. **Hallazgos sensibles de cantidades** (acero 3 × 4.171,18 kg en el cierre; tres cifras de acumulado; descuento −1.915,16 kg). Defensa: son inconsistencias documentales que la Supervisión y la Fiscalización deben verificar; el aporte de la tesis es el procedimiento de conciliación (PCM-04) que las detecta a tiempo. NUNCA decir «hubo sobrepago», «corrupción» ni nombrar personas.
+9. **Un solo caso de estudio:** validez externa limitada; el método y los instrumentos son replicables.
+10. **¿«Sistema» para un solo ítem?** Es el SGC del proyecto concretado en un plan de la calidad (ISO 10005) para el ítem crítico (21,45 % del contrato); escalable a otros ítems.
+11. **¿Costo de quién?** Costo de ejecución (recursos) a precios constantes del contrato: lo asume el contratista; la entidad se beneficia por menos fallas, cumplimiento de ensayos y control de cantidades pagadas.
+12. **¿Por qué no prueba t?** Con datos simulados el valor p depende del número de iteraciones; se usó una regla probabilística equivalente a α = 0,05; la t pareada/Wilcoxon queda para la verificación con datos reales.
+13. **¿Por qué triangular?** Estándar cuando solo se conocen mínimo, moda y máximo; las fuentes dan rangos.
+14. **Plano 02 dice 0,15 m de complemento** y la ET/certificados 20 cm: inconsistencia documental; se usó lo construido (certificados PRETENSA y UNICON).
+15. **¿Qué norma de hormigón?** La ET cita CBH-87 (obligatoria por D.S. 22976/1991); la NB 1225001 se basa en ACI 318; se adoptaron los criterios de aceptación de ACI 318-25 (capítulo 26) por ser la fuente técnica actual y la base de la norma boliviana vigente.
+16. **Clima de Potosí (3.650 m):** curado y protección en tiempo frío; lluvias de noviembre (7 días notificados).
+17. **¿Quién paga el SGC y cuánto?** ≈ Bs 10.900 (moda) para 2.234,60 m² (≈ 1,7 % del costo); recomendable exigirlo en el DBC del saldo de obra.
+
+## Cifras que el postulante debe saber de memoria (verificar con el PDF final)
+Contrato Bs 3.367.031,95 → 3.610.125,43 (+7,22 %); plazo 270 → 360 días; ítem 13: Bs 215,68/m², 21,45 % del contrato; primera losa 1.109,84 m² (41 paños); saldo 2.234,60 m²; probetas de losa: 0; certificado 000293: 12 probetas a 55–76 días; acero de losa 4.171,18 kg (3,76 kg/m²); EPS 2.350 pza; resultados del modelo: usar las macros de valores_modelo.tex.

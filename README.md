@@ -8,13 +8,14 @@
 
 ## Guía rápida para el revisor
 
-1. **Borrador de la tesis (PDF):** [05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf).
-   - El texto en rojo marca datos pendientes.
+1. **Tesis completa (PDF):** [05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · **Word:** [07_Entregables/Tesis_SGC_Borrador_Final.docx](07_Entregables/Tesis_SGC_Borrador_Final.docx).
+   - El texto en rojo marca datos que solo puede aportar el postulante.
    - Los recuadros grises son guías de redacción.
-2. **Coherencia título–problema–objetivos–hipótesis:** [Propuesta_de_Titulo_y_Matriz_de_Consistencia.md](01_Titulo_y_Consistencia/Propuesta_de_Titulo_y_Matriz_de_Consistencia.md).
-3. **Índice según la guía del docente (CIV 400):** [Indice_de_Tesis_segun_Guia_Docente.md](02_Indice_y_Capitulos/Indice_de_Tesis_segun_Guia_Docente.md).
-4. **Datos reales de la obra que sustentan el problema:** [Resumen_de_Datos_de_Obra.md](03_Datos_Obra_Edificio_Posgrado/Resumen_de_Datos_de_Obra.md).
-5. **Bibliografía por nivel de fuente:** [Bibliografia_Recomendada.md](04_Bibliografia/Bibliografia_Recomendada.md).
+2. **Qué se hizo y qué falta:** [08_Registro_de_Trabajo/Bitacora_del_Trabajo.md](08_Registro_de_Trabajo/Bitacora_del_Trabajo.md). La verificación final está pendiente: ver el [plan de auditoría](08_Registro_de_Trabajo/Plan_de_Auditoria_Pendiente.md).
+3. **La tesis explicada en lenguaje sencillo:** [07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md](07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md) (también en `.docx` y `.html`).
+4. **Defensa:** presentación en [07_Entregables/Presentacion_Defensa/](07_Entregables/Presentacion_Defensa/) (HTML y PowerPoint) y [preguntas del tribunal](07_Entregables/Preguntas_del_Tribunal_y_Respuestas.md).
+5. **Citas resaltadas en los PDF de la bibliografía:** [04_Bibliografia/08_Citas_Resaltadas/](04_Bibliografia/08_Citas_Resaltadas/) (índice `Indice_de_Citas.md`).
+6. **Modelo de costos y simulación:** [06_Modelo_de_Costos_y_Simulacion/README.md](06_Modelo_de_Costos_y_Simulacion/README.md).
 
 ## Dónde está cada cosa
 
@@ -24,8 +25,11 @@
 | `01_Titulo_y_Consistencia/` | Diagnóstico del título, alternativas, problema, objetivos, hipótesis, variables y matriz de consistencia | [Propuesta_de_Titulo_y_Matriz_de_Consistencia.md](01_Titulo_y_Consistencia/Propuesta_de_Titulo_y_Matriz_de_Consistencia.md) |
 | `02_Indice_y_Capitulos/` | Índice según la guía del docente (y, más adelante, los capítulos) | [Indice_de_Tesis_segun_Guia_Docente.md](02_Indice_y_Capitulos/Indice_de_Tesis_segun_Guia_Docente.md) |
 | `03_Datos_Obra_Edificio_Posgrado/` | Planos, especificaciones técnicas, planillas de avance, cómputos y expediente del ítem losa alivianada | [Resumen_de_Datos_de_Obra.md](03_Datos_Obra_Edificio_Posgrado/Resumen_de_Datos_de_Obra.md) |
-| `04_Bibliografia/` | 64 PDF: normas, metodología, 28 tesis, 14 artículos, documentos técnicos y legislación boliviana | [Bibliografia_Recomendada.md](04_Bibliografia/Bibliografia_Recomendada.md) |
-| **`05_Tesis_LaTeX/`** | **Documento de la tesis en LaTeX** (carátula, introducción redactada, capítulos con guías, anexos con planos y certificados) | [Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · [cómo usarlo](05_Tesis_LaTeX/README.md) |
+| `04_Bibliografia/` | PDF de normas, metodología, tesis, artículos, documentos técnicos y legislación boliviana; 725 fichas de citas verificadas (`07_Fichas_de_Citas/`) y citas resaltadas (`08_Citas_Resaltadas/`) | [Bibliografia_Recomendada.md](04_Bibliografia/Bibliografia_Recomendada.md) |
+| **`05_Tesis_LaTeX/`** | **Documento de la tesis en LaTeX** (resumen, introducción, capítulos 1 a 3, conclusiones, bibliografía y anexos A a L) | [Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · [cómo usarlo](05_Tesis_LaTeX/README.md) |
+| `06_Modelo_de_Costos_y_Simulacion/` | Modelo de costos y simulación de Monte Carlo: parámetros con fuentes, código, resultados, figuras y tablas que la tesis inserta | [README.md](06_Modelo_de_Costos_y_Simulacion/README.md) |
+| `07_Entregables/` | Word de la tesis, explicación en lenguaje sencillo, presentación de defensa (HTML y PowerPoint), preguntas del tribunal y scripts | [Tesis_SGC_Borrador_Final.docx](07_Entregables/Tesis_SGC_Borrador_Final.docx) |
+| `08_Registro_de_Trabajo/` | Bitácora del trabajo, contexto maestro, notas para la defensa, plan de auditoría pendiente y encargos a los agentes | [Bitacora_del_Trabajo.md](08_Registro_de_Trabajo/Bitacora_del_Trabajo.md) |
 
 ## Cambios de nombre de archivos
 
@@ -73,4 +77,4 @@ También puedes usar el panel **Control de código fuente** de VS Code.
 ## Convención de nombres
 - Sin espacios, tildes ni "ñ" en los nombres de archivo (para evitar problemas con Git y otros sistemas).
 - Bibliografía: `Autor_Año_Titulo_Corto.pdf`. Normas: `Emisor_Codigo_Año_Titulo.pdf`. Datos de obra: `Tipo_N.º_Descripcion.ext`.
-- Las carpetas se numeran en el orden del trabajo (00 → 05).
+- Las carpetas se numeran en el orden del trabajo (00 → 08).
