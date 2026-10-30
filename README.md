@@ -8,13 +8,13 @@
 
 ## Guía rápida para el revisor
 
-1. **Tesis completa (PDF):** [05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · **Word:** [07_Entregables/Tesis_SGC_Borrador_Final.docx](07_Entregables/Tesis_SGC_Borrador_Final.docx).
+1. **Tesis completa (PDF):** [05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · **Word** (versión anterior al Capítulo 3; regenerar con `python3 07_Entregables/scripts/tesis_a_docx.py`): [07_Entregables/Tesis_SGC_Borrador_Final.docx](07_Entregables/Tesis_SGC_Borrador_Final.docx).
    - El texto en rojo marca datos que solo puede aportar el postulante.
    - Los recuadros grises son guías de redacción.
 2. **Qué se hizo y qué falta:** [08_Registro_de_Trabajo/Bitacora_del_Trabajo.md](08_Registro_de_Trabajo/Bitacora_del_Trabajo.md). La verificación final está pendiente: ver el [plan de auditoría](08_Registro_de_Trabajo/Plan_de_Auditoria_Pendiente.md).
-3. **La tesis explicada en lenguaje sencillo:** [07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md](07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md) (también en `.docx` y `.html`).
-4. **Defensa:** presentación en [07_Entregables/Presentacion_Defensa/](07_Entregables/Presentacion_Defensa/) (HTML y PowerPoint) y [preguntas del tribunal](07_Entregables/Preguntas_del_Tribunal_y_Respuestas.md).
-5. **Citas resaltadas en los PDF de la bibliografía:** [04_Bibliografia/08_Citas_Resaltadas/](04_Bibliografia/08_Citas_Resaltadas/) (índice `Indice_de_Citas.md`).
+3. **La tesis explicada en lenguaje sencillo (borrador):** [07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md](07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md).
+4. **Defensa:** la presentación (HTML y PowerPoint) y las preguntas del tribunal están pendientes (Fase 3, en la sesión local). Por ahora, ver las [notas para la defensa](08_Registro_de_Trabajo/Notas_para_la_Defensa.md).
+5. **Citas resaltadas en los PDF de la bibliografía:** pendiente (script listo en `04_Bibliografia/08_Citas_Resaltadas/scripts/resaltar_citas.py`).
 6. **Modelo de costos y simulación:** [06_Modelo_de_Costos_y_Simulacion/README.md](06_Modelo_de_Costos_y_Simulacion/README.md).
 
 ## Dónde está cada cosa

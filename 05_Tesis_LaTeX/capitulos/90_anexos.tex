@@ -11,70 +11,89 @@
 \chapter{MATRIZ DE CONSISTENCIA}
 \label{anx:matriz}
 \begingroup\small\setstretch{1}
-\begin{longtable}{@{}P{4.6cm}P{4.5cm}P{4.2cm}P{4.3cm}P{3.6cm}@{}}
+\begin{longtable}{@{}P{4.4cm}P{4.4cm}P{4.6cm}P{4.0cm}P{4.3cm}@{}}
+\caption{Matriz de consistencia de la investigación}\label{tab:matriz-consistencia}\\
+\toprule
+\textbf{Problema} & \textbf{Objetivos} & \textbf{Hipótesis} & \textbf{Variables e indicadores} & \textbf{Metodología} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{@{}l}{\textit{(continuación)}}\\
 \toprule
 \textbf{Problema} & \textbf{Objetivos} & \textbf{Hipótesis} & \textbf{Variables e indicadores} & \textbf{Metodología} \\
 \midrule
 \endhead
-\textbf{General:} ¿De qué manera un SGC basado en la norma ISO~9001, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF?
-& \textbf{General:} Diseñar un SGC basado en la norma ISO~9001, centrado en el control de materiales, para reducir los costos de ejecución de dichas losas.
-& \textbf{General:} El SGC reduce en al menos 5~\% el costo unitario (Bs/\mdos{}, a precios constantes) respecto de la línea base.
-& \textbf{X:} SGC (planificación, control de materiales, control del proceso, mejora). \newline \textbf{Y:} costo de ejecución (costo directo, desperdicio, CNC, costo de la calidad, conformidad del hormigón).
-& Aplicada; cuantitativa; explicativa. Cuasi-experimental $O_1$--$X$--$O_2$. \\
-\midrule
-\textbf{PE1:} ¿Cómo se gestionaron la calidad y el control de materiales en la primera losa?
-& \textbf{OE1:} Caracterizar la gestión actual e identificar las no conformidades y sus causas.
-& (Descriptivo)
-& Porcentaje de cumplimiento ISO~9001; número de no conformidades.
-& Lista de verificación, análisis documental, Pareto e Ishikawa. \\
-\midrule
-\textbf{PE2:} ¿Cuál es el desperdicio de materiales y el costo de no calidad de la primera losa?
-& \textbf{OE2:} Cuantificar la línea base del índice de desperdicio y del costo de no calidad.
-& (Descriptivo: valor de referencia)
-& $IDM_i$; Bs/\mdos{}; \%CNC.
-& Fichas de materiales, cómputos y planillas. \\
-\midrule
-\textbf{PE3:} ¿Qué componentes debe tener el SGC para este proceso constructivo?
-& \textbf{OE3:} Establecer el plan de la calidad, el PPI, los procedimientos y los registros.
-& ---
-& Componentes del SGC.
-& ISO~9001, ISO~10005, ACI~318-25 y ASTM. \\
-\midrule
-\textbf{PE4:} ¿En qué medida el SGC reduce el costo y el desperdicio?
-& \textbf{OE4 y OE5:} Evaluar el efecto, comprobar la hipótesis y validar el SGC con expertos.
-& \textbf{HE1:} reduce el $IDM$. \newline \textbf{HE2:} reduce el CNC.
-& $IDM_i$, CNC y Bs/\mdos{}.
-& Prueba \emph{t} o Wilcoxon ($\alpha = 0{,}05$); V de Aiken. \\
 \bottomrule
+\endfoot
+\textbf{General:} ¿De qué manera un Sistema de Gestión de la Calidad basado en la norma ISO~9001, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías?
+& \textbf{General:} Diseñar un Sistema de Gestión de la Calidad basado en la norma ISO~9001, centrado en el control de materiales, para reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías.
+& \textbf{HG:} La aplicación de un Sistema de Gestión de la Calidad basado en la norma ISO~9001, centrado en el control de materiales, reduce en al menos un 5~\% el costo unitario de ejecución (Bs/\mdos{}, a precios constantes del contrato) de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF, respecto de la línea base de la primera losa.
+& \textbf{X:} SGC (planificación de la calidad, control de materiales, control del proceso, seguimiento y mejora). \newline \textbf{Y:} costo de ejecución de la losa (costo directo, desperdicio, costo de no calidad, costo de la calidad, conformidad del hormigón). \newline \textbf{Interviniente controlada:} precios (constantes del contrato).
+& Tipo aplicada; enfoque cuantitativo; nivel explicativo, con fase descriptiva y componente propositivo. Diseño no experimental: línea base retrospectiva y documental de la primera losa ($O_1$), SGC diseñado ($X$) y evaluación \emph{ex ante} ($O_2$ simulado) con un modelo de costos y una simulación de Monte Carlo de \MCiter{} iteraciones. Se acepta $H_1$ si $P \ge 0{,}95$ ($\alpha = 0{,}05$). \\
+\midrule
+\textbf{PE1:} ¿Cómo se gestionaron la calidad y el control de materiales en la ejecución de la primera losa alivianada del Edificio de Posgrado?
+& \textbf{OE1:} Caracterizar la gestión de la calidad y el control de materiales aplicados en la ejecución de la primera losa alivianada (1.109,84~\mdos{}) e identificar las no conformidades y sus causas.
+& Descriptivo (sin hipótesis).
+& Porcentaje de cumplimiento de los requisitos ISO~9001:2026 por cláusula; número de no conformidades y sus causas.
+& Análisis documental (planillas, Libro de Órdenes, certificados, contrato, planos y ET); lista de verificación C.1; Pareto e Ishikawa. \\
+\midrule
+\textbf{PE2:} ¿Cuál es el nivel de desperdicio de materiales (hormigón, acero, viguetas pretensadas y plastoformo) y cuál es el costo de no calidad de la primera losa?
+& \textbf{OE2:} Cuantificar la línea base del índice de desperdicio de materiales (hormigón, acero, viguetas pretensadas y plastoformo) y del costo de no calidad de la primera losa. Para ello se compararán las cantidades teóricas, adquiridas y pagadas.
+& Descriptivo: valores de referencia de la línea base.
+& $IDM_i$ (ecuación~\eqref{eq:idm}); costo de no calidad en Bs/\mdos{} y en \% del costo unitario.
+& Cantidades teóricas por paño (Planos 01 a 03) frente a las cantidades entregadas y pagadas (certificados y planillas); rangos de la literatura cuando no hubo registros. \\
+\midrule
+\textbf{PE3:} ¿Qué componentes debe tener un SGC para el proceso constructivo de losas alivianadas con viguetas pretensadas?
+& \textbf{OE3:} Establecer los componentes del SGC: plan de la calidad, plan de puntos de inspección y ensayo (PPI), procedimientos de control de materiales, gestión de no conformidades y registro de costos de la calidad. Se basarán en las normas ISO~9001:2026 e ISO~10005:2018, en la normativa de hormigón estructural y en los ensayos ASTM.
+& Propositivo (sin hipótesis).
+& Componentes del SGC: plan de la calidad, PPI, procedimientos PCM-01 a PCM-05, gestión de no conformidades y planilla de costos de la calidad.
+& Diseño a partir de la ISO~9001:2026, la ISO~10005:2018, el ACI~318-25 (capítulo~26), la NB~997 y las normas ASTM; formatos C.2 a C.6. \\
+\midrule
+\textbf{PE4:} ¿En qué medida el SGC propuesto reduce el costo unitario y el desperdicio de materiales respecto de la línea base?
+& \textbf{OE4:} Evaluar \emph{ex ante}, mediante un modelo de costos y simulación de Monte Carlo, el efecto del SGC sobre el costo unitario (Bs/\mdos{}) y el desperdicio de materiales de los 2.234,60~\mdos{} de losa restantes, respecto de la línea base. \newline \textbf{OE5:} Contrastar la hipótesis mediante reglas de decisión probabilísticas con $\alpha = 0{,}05$ y validar el SGC mediante juicio de expertos.
+& \textbf{HE1:} El SGC reduce el índice de desperdicio de materiales de la losa con respecto a la línea base. \newline \textbf{HE2:} El SGC reduce el costo de no calidad (fallas internas y externas) del ítem con respecto a la línea base. \newline \textbf{HG} (fila general).
+& Costo unitario (ecuación~\eqref{eq:cu-modelo}); costo de no calidad (ecuación~\eqref{eq:cnc-modelo}); $IDM$ ponderado; reducción relativa $r$ (ecuación~\eqref{eq:r-modelo}); coeficiente V de Aiken (ecuación~\eqref{eq:aiken}).
+& Modelo de costos y simulación de Monte Carlo (Sección~\ref{sec:modelo-simulacion}); reglas de decisión de la Tabla~\ref{tab:reglas-decision}; sensibilidad y punto de equilibrio; validación por juicio de expertos con el formato C.8 (pendiente). \\
 \end{longtable}
 \endgroup
+\nota{Elaboración propia. Las formulaciones del problema, los objetivos y las hipótesis son las de la Introducción.}
 
 % ---------------------------------------------------------------------
 \chapter{OPERACIONALIZACIÓN DE VARIABLES}
 \label{anx:operacionalizacion}
 \begingroup\small\setstretch{1}
-\begin{longtable}{@{}P{2.6cm}P{3.6cm}P{6.2cm}P{5.2cm}P{3.6cm}@{}}
+\begin{longtable}{@{}P{2.4cm}P{3.0cm}P{4.6cm}P{3.6cm}P{3.3cm}P{4.6cm}@{}}
+\caption{Operacionalización de las variables}\label{tab:operacionalizacion}\\
 \toprule
-\textbf{Variable} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Fórmula o unidad} & \textbf{Instrumento} \\
+\textbf{Variable} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Fórmula o unidad} & \textbf{Instrumento} & \textbf{Medición en esta tesis} \\
+\midrule
+\endfirsthead
+\multicolumn{6}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Variable} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Fórmula o unidad} & \textbf{Instrumento} & \textbf{Medición en esta tesis} \\
 \midrule
 \endhead
+\bottomrule
+\endfoot
 \textbf{X:} Sistema de Gestión de la Calidad
-& Planificación de la calidad & Cumplimiento de requisitos ISO~9001:2026 (cláusulas 4 a 10) & \% de requisitos cumplidos & Lista de verificación \\
-& Control de materiales & Lotes con certificado o ensayo conforme & \% de lotes conformes & Ficha de recepción \\
-& & Trazabilidad de consumos & Kardex al día; vales por paño & Kardex y vales \\
-& Control del proceso (PPI) & Puntos de inspección ejecutados frente a programados & \% & Fichas PPI \\
-& Seguimiento y mejora & No conformidades detectadas y cerradas & N.\textsuperscript{o}; \% cerradas; días de cierre & Registro de NC \\
+& Planificación de la calidad & Cumplimiento de los requisitos ISO~9001:2026 (cláusulas 4 a 10) & \% de requisitos cumplidos & Lista de verificación C.1 & Línea base documental; verificación futura en obra \\
+& Control de materiales & Lotes recibidos con certificado o ensayo conforme & \% de lotes conformes & Ficha de recepción C.3 (PCM-01) & Verificación futura en obra \\
+& & Conciliación de cantidades por paño (teórica, entregada, colocada y pagada) & Diferencia en \% & Ficha C.4 (PCM-02 a PCM-04) & Línea base documental; verificación futura \\
+& Control del proceso (PPI) & Puntos de inspección ejecutados frente a programados & \% & Fichas PPI C.2 & Verificación futura en obra \\
+& Seguimiento y mejora & No conformidades detectadas y cerradas & N.\textsuperscript{o}; \% cerradas; días de cierre & Registro de NC C.5 & Línea base documental; verificación futura \\
 \midrule
 \textbf{Y:} Costo de ejecución de la losa
-& Costo directo & Costo unitario real frente al contractual & Bs/\mdos{} (ec.~\ref{eq:cu}); desviación \% & APU y planillas \\
-& Desperdicio de materiales & Índice de desperdicio por material & $IDM_i$ (ec.~\ref{eq:idm}) & Ficha de control de materiales \\
-& & Consumo unitario real & \mtres{}/\mdos{}; kg/\mdos{}; m/\mdos{}; pza/\mdos{} & Ficha de control de materiales \\
-& Costo de no calidad & Fallas internas y externas & Bs; \%CNC (ec.~\ref{eq:cnc}) & Planilla de costos de calidad \\
-& Costo de la calidad & Prevención y evaluación & Bs; \% del costo del ítem & Planilla de costos de calidad \\
-& Conformidad del hormigón & Ensayos que cumplen ACI~318-25 (26.12.3.1) & \% de ensayos conformes & Ensayos ASTM C31, C39 y C143 \\
-\bottomrule
+& Costo directo & Costo unitario de ejecución & Bs/\mdos{} (ecuación~\eqref{eq:cu-modelo}) & APU de referencia (Anexo~\ref{anx:apu}) y modelo (Anexo~\ref{anx:modelo}) & Línea base calibrada; simulación \emph{ex ante} \\
+& Desperdicio de materiales & Índice de desperdicio por material & $IDM_i$ (ecuación~\eqref{eq:idm}) & Ficha C.4; planillas y certificados & Línea base (EPS y acero documentados; viguetas y hormigón, literatura); simulación \emph{ex ante} \\
+& Costo de no calidad & Pérdidas de materiales y retrabajos & Bs/\mdos{}; \% del costo unitario (ecuación~\eqref{eq:cnc-modelo}) & Planilla de costos de la calidad C.6; modelo & Simulación \emph{ex ante} \\
+& Costo de la calidad & Costos de prevención y evaluación del SGC & Bs/\mdos{}; \% del costo unitario & Planilla C.6; modelo & Simulación \emph{ex ante} \\
+& Conformidad del hormigón & Ensayos de aceptación conformes (ACI~318-25, 26.12.3.1) y frecuencia de muestreo & \% de ensayos conformes; n.\textsuperscript{o} de muestras (ecuación~\eqref{eq:nensayos}) & Ensayos ASTM C31, C39 y C143 & Línea base documental; verificación futura \\
+& Efecto del SGC & Reducción relativa del costo unitario & $r$ en \% (ecuación~\eqref{eq:r-modelo}) & Modelo y simulación (Anexo~\ref{anx:modelo}) & Simulación \emph{ex ante} \\
+\midrule
+\textbf{Interviniente:} precios de los materiales
+& Variación de precios 2025--2026 & Control de la variable & Precios constantes del contrato & --- & Controlada en el modelo \\
 \end{longtable}
 \endgroup
+\nota{Elaboración propia. Los instrumentos C.1 a C.8 están en el Anexo~\ref{anx:instrumentos}. La verificación futura en obra sigue el protocolo de la Sección~\ref{sec:verificacion-futura}.}
 \end{landscape}
 
 % ---------------------------------------------------------------------
@@ -95,7 +114,28 @@
 
 % ---------------------------------------------------------------------
 \chapter{VALIDACIÓN DE INSTRUMENTOS POR JUICIO DE EXPERTOS}
-\guia{Fichas de validación firmadas por cada experto, la tabla de cálculo del coeficiente V de Aiken y los currículos resumidos de los expertos.}
+\label{anx:validacion}
+Este anexo reúne la validación del SGC y de sus instrumentos por juicio de expertos, prevista en el OE5. El procedimiento se describe en la Sección~\ref{sec:validacion}: entre tres y cinco ingenieros civiles con experiencia en supervisión de obras, control del hormigón o gestión de la calidad califican cada componente con el formato C.8 del Anexo~\ref{anx:instrumentos}, y para cada componente se calcula el coeficiente V de Aiken con la ecuación~\eqref{eq:aiken}.
+
+\begin{table}[H]
+\caption{Resultados de la validación por juicio de expertos (formato para completar)}
+\label{tab:resultados-aiken}
+\begin{tabularx}{\linewidth}{@{}P{5.8cm}CCCCCCC@{}}
+\toprule
+\textbf{Componente evaluado} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{E4} & \textbf{E5} & \textbf{V} & \textbf{Decisión} \\
+\midrule
+Plan de la calidad & & & & & & & \\
+Plan de puntos de inspección (PPI) & & & & & & & \\
+Procedimientos de control de materiales (PCM-01 a PCM-05) & & & & & & & \\
+Gestión de no conformidades & & & & & & & \\
+Planilla de costos de la calidad & & & & & & & \\
+Instrumentos de recolección (C.1 a C.7) & & & & & & & \\
+\bottomrule
+\end{tabularx}
+\nota{E1 a E5: calificación de cada experto. V: coeficiente V de Aiken. Decisión: se acepta el componente si V $\ge$ 0,70.}
+\end{table}
+
+\pendiente{aplicar el formato C.8 a los expertos, completar esta tabla y adjuntar las fichas firmadas y los currículos resumidos de los expertos. No se reportan resultados de validación en esta versión.}
 
 % ---------------------------------------------------------------------
 \chapter{PLANOS DE LA PRIMERA LOSA}
@@ -120,7 +160,8 @@ Certificados de calidad de las viguetas pretensadas (PRETENSA) y de los compleme
 \chapter{RESULTADOS DE ENSAYOS DE LABORATORIO}
 Certificado de laboratorio N.\textsuperscript{o}~000293 del Laboratorio de Resistencia de Materiales y Tecnología del Hormigón de la Carrera de Ingeniería Civil (UATF).
 \includepdf[pages=78,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/PAO_02_Planilla_Avance_Obra_Kodesh_Sep-Dic_2025.pdf}
-\pendiente{agregar los resultados de los ensayos de la losa obtenidos durante la aplicación del SGC.}
+De la primera losa no se ensayó ninguna probeta: el certificado N.\textsuperscript{o}~000293 corresponde solo a 10 probetas de columnas y 2 de vigas (Sección~\ref{sec:analisis-documental}).
+\pendiente{agregar los resultados de los ensayos de aceptación del hormigón de las losas que se ejecuten con el SGC, según el protocolo de verificación de la Sección~\ref{sec:verificacion-futura}.}
 
 % ---------------------------------------------------------------------
 \chapter{ANÁLISIS DE PRECIOS UNITARIOS DE REFERENCIA}
@@ -141,7 +182,7 @@ El análisis de precios unitarios (APU) contractual del ítem~13 no forma parte 
 % ---------------------------------------------------------------------
 \chapter{PANEL FOTOGRÁFICO}
 \includepdf[pages={5,6,7},scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf}
-\pendiente{agregar fotografías propias de la aplicación del SGC (inspecciones, recepción de materiales, ensayos).}
+\pendiente{agregar fotografías propias de la obra y, si se aplica el SGC en el saldo de la obra, de las inspecciones, la recepción de materiales y los ensayos.}
 
 % ---------------------------------------------------------------------
 \chapter{DOCUMENTOS DE CONTEXTO}

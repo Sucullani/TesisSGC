@@ -2,19 +2,24 @@
 
 Registro de todo lo que se hizo en la sesión de Claude Code en la nube (29 y 30 de octubre de 2026), para continuar en una sesión local.
 
-**Estado al cierre:** la tesis está redactada completa y hay borradores de todos los entregables. La **auditoría general (verificación) no se hizo**, porque el usuario pidió terminar rápido y dejarla para después. El plan está listo en [`Plan_de_Auditoria_Pendiente.md`](Plan_de_Auditoria_Pendiente.md).
+**Estado al cierre (30/10/2026, 09:45):**
+
+- **Fase 1** (datos y fuentes) y **Fase 2** (redacción de la tesis): terminadas. La tesis compila sin errores, sin referencias ni citas indefinidas, y tiene 286 páginas.
+- **Fase 3** (entregables) y **Fase 4** (auditoría): quedan para la sesión local, como pidió el usuario.
+  - Hay un borrador de la explicación sencilla y un Word de la versión anterior.
+  - Los encargos para terminar están en `Encargos_a_los_Agentes/` y el plan de auditoría en [`Plan_de_Auditoria_Pendiente.md`](Plan_de_Auditoria_Pendiente.md).
 
 ## 1. Estado de cada pedido
 
 | Pedido del usuario | Estado | Dónde está |
 |---|---|---|
-| Borrador final de la tesis (APA del repositorio) | Redactado completo. Falta la auditoría. | [`05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf`](../05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) (fuente LaTeX en `05_Tesis_LaTeX/`) |
-| Explicación en lenguaje sencillo | Borrador terminado, sin revisión | `07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md` (+ `.docx` y `.html`) |
-| Citas resaltadas en la bibliografía, con comentario y página | Script y PDF resaltados, sin revisión | `04_Bibliografia/08_Citas_Resaltadas/` (índice `Indice_de_Citas.md/.csv/.xlsx`) |
-| Auditoría general y correcciones | **Pendiente** (plan listo) | [`Plan_de_Auditoria_Pendiente.md`](Plan_de_Auditoria_Pendiente.md) |
-| Presentación de defensa en HTML y PowerPoint | Borrador, sin revisión | `07_Entregables/Presentacion_Defensa/` |
-| Preguntas del tribunal: qué decir y qué no | Borrador, sin revisión | `07_Entregables/Preguntas_del_Tribunal_y_Respuestas.md` (+ `.docx`) |
-| Documento Word de toda la tesis | Regenerado al cierre | `07_Entregables/Tesis_SGC_Borrador_Final.docx` |
+| Borrador final de la tesis (APA del repositorio) | **Terminado** (Fase 2). Falta la auditoría. | [`05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf`](../05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) (fuente LaTeX en `05_Tesis_LaTeX/`) |
+| Explicación en lenguaje sencillo | Borrador en `.md` (≈ 6.800 palabras, sin revisión). Faltan `.docx` y `.html`. | `07_Entregables/Tesis_Explicada_en_Lenguaje_Sencillo.md` |
+| Citas resaltadas en la bibliografía, con comentario y página | **Pendiente (local).** El script está escrito pero no se ha ejecutado. | `04_Bibliografia/08_Citas_Resaltadas/scripts/resaltar_citas.py` |
+| Auditoría general y correcciones | **Pendiente (local)** | [`Plan_de_Auditoria_Pendiente.md`](Plan_de_Auditoria_Pendiente.md) |
+| Presentación de defensa en HTML y PowerPoint | **Pendiente (local)** | Encargo en `Encargos_a_los_Agentes/Encargos_Fase3_Modo_Rapido.md` |
+| Preguntas del tribunal: qué decir y qué no | **Pendiente (local).** La base está en [`Notas_para_la_Defensa.md`](Notas_para_la_Defensa.md). | Encargo en `Encargos_a_los_Agentes/` |
+| Documento Word de toda la tesis | Versión anterior al Capítulo 3. **Regenerar en local** con `python3 07_Entregables/scripts/tesis_a_docx.py`. | `07_Entregables/Tesis_SGC_Borrador_Final.docx` |
 | Trabajo por fases, con commits directos a `main` | Hecho (sin ramas) | Historial de `main` (sección 10) |
 
 La sección 11 resume lo que entregó cada agente al cierre.
@@ -50,13 +55,11 @@ La sección 11 resume lo que entregó cada agente al cierre.
   - Anexos A a L.
 - **Modelo de costos y simulación de Monte Carlo** en `06_Modelo_de_Costos_y_Simulacion/`. Usa 20.000 iteraciones con la semilla 2026 y genera las tablas, las figuras y las macros de cifras (`tablas_latex/valores_modelo.tex`). Así el texto de la tesis se actualiza solo.
 
-### Fase 3: entregables (`07_Entregables/`)
+### Fase 3: entregables (`07_Entregables/`), sin terminar: queda para la sesión local
 
-- **Word de la tesis:** conversor propio LaTeX → DOCX (`scripts/tesis_a_docx.py`, documentado en `scripts/README_docx.md`). Respeta el formato APA, convierte las figuras TikZ en imágenes y expande las macros del modelo.
-- **Explicación sencilla:** archivos `.md`, `.docx` y `.html`.
-- **Preguntas del tribunal:** archivos `.md` y `.docx`.
-- **Presentación de defensa:** `.html` autocontenido, `.pptx` con notas del orador y guion con tiempos.
-- **Citas resaltadas:** en `04_Bibliografia/08_Citas_Resaltadas/`.
+- **Word de la tesis:** está listo el conversor propio LaTeX → DOCX (`scripts/tesis_a_docx.py`, documentado en `scripts/README_docx.md`). Respeta el formato APA, convierte las figuras TikZ en imágenes y expande las macros del modelo. El `.docx` actual es anterior al Capítulo 3: hay que regenerarlo.
+- **Explicación sencilla:** borrador en `.md`; faltan el `.docx` y el `.html`.
+- **Preguntas del tribunal, presentación de defensa y citas resaltadas:** se lanzaron, pero la interrupción de la sesión los detuvo antes de que escribieran archivos. Los encargos completos están en `Encargos_a_los_Agentes/`.
 
 ### Fase 4: auditoría
 
@@ -203,4 +206,12 @@ Commits principales:
 
 ## 11. Informe de cierre de cada agente
 
-Se completa al final de la sesión.
+| Encargo | Resultado |
+|---|---|
+| Fichas de normas, legislación y metodología | 298 citas verificadas (ver `04_Bibliografia/07_Fichas_de_Citas/Fichas_Normas_Legislacion_Metodologia.md`). |
+| Integración de las fichas de normas en los capítulos 1–2 | Terminado en modo rápido: páginas y cláusulas del ACI 318-25 y de Hernández-Sampieri corregidas; CBH-87, NBDS, DBC y D.S. 5597 actualizados; frase del Plano 02. Lo que no alcanzó a revisar está en [`Informes_de_Agentes/Informe_Normas_y_Citas_Normativas.md`](Informes_de_Agentes/Informe_Normas_y_Citas_Normativas.md). |
+| Capítulo 3 y conclusiones | Terminado: 9 secciones (incluida la discusión), tabla de robustez (`tab:variantes`) y conclusiones por objetivo, recomendaciones y limitaciones. Sin la verificación con cuatro revisores que estaba prevista. |
+| Anexos A, B, D, H y J | Rehechos por el coordinador con el diseño final: matriz y operacionalización con título APA, formato de resultados de la V de Aiken y pendientes actualizados. El Anexo F (páginas de la PAO 2 y de la PAO 3 firmada) sigue como `\pendiente`. |
+| Resumen y *Abstract* | Terminados (≈ 247 y 224 palabras), con las cifras del modelo como macros (`valores_modelo.tex` y `valores_modelo_en.tex`). |
+| Explicación sencilla | Borrador en `.md`; la interrupción detuvo la generación del `.docx` y del `.html`. |
+| Preguntas del tribunal, presentación y citas resaltadas | Interrumpidos antes de escribir archivos: quedan para la sesión local. |
