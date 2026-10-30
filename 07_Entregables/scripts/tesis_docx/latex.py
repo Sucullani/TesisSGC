@@ -2029,6 +2029,12 @@ class Transformador:
                                n_obl=1)
         s = reemplazar_comando(s, 'hspace', lambda o, b, e: ' ', n_obl=1, estrella=True)
         s = re.sub(r'\\par(?![A-Za-z@])', '\n\n', s)
+        # otherlanguage (Abstract en inglés): se quita el entorno y su argumento de idioma
+        s = re.sub(r'\\begin\{otherlanguage\*?\}\{[^}]*\}', '', s)
+        s = re.sub(r'\\end\{otherlanguage\*?\}', '', s)
+        # \noindent → marcador que el posproceso convierte en párrafo sin sangría (p. ej., Resumen y Abstract)
+        # (solo ante texto: si lo siguen una tabla, un grupo o un entorno, se elimina como antes)
+        s = re.sub(r'\\noindent(?![A-Za-z@])(?!\s*(?:⟦|\{|\\begin|\\noindent|\\par(?![A-Za-z@])))\s*', '⟦NI⟧', s)
         sueltos = ('centering', 'raggedright', 'RaggedRight', 'raggedleft', 'RaggedLeft', 'noindent', 'indent',
                    'small', 'footnotesize', 'scriptsize', 'tiny', 'normalsize', 'large', 'Large', 'LARGE',
                    'huge', 'Huge', 'singlespacing', 'onehalfspacing', 'doublespacing', 'begingroup',
