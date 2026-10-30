@@ -1,0 +1,143 @@
+% =====================================================================
+%  PREÁMBULO DE LA TESIS: paquetes y formato
+%  Ajuste aquí márgenes, letra e interlineado si el Reglamento de
+%  Graduación de la Carrera de Ingeniería Civil (UATF) exige otros valores.
+% =====================================================================
+
+% --- Idioma, codificación y letra ------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-noshorthands,es-lcroman]{babel}
+\usepackage{amsmath}
+\usepackage{newtxtext,newtxmath}      % letra tipo Times New Roman
+\renewcommand{\ttdefault}{lmtt}       % monoespaciada (rutas y DOI): Latin Modern
+% El mapa de fuentes de MiKTeX de este equipo no registra newtx (MiKTeX
+% indica "User/administrator updates are out-of-sync"); se carga aquí:
+\pdfmapfile{+newtx.map}
+\pdfmapfile{+qtm.map}   % TeX Gyre Termes (símbolos TS1 de newtxtext)
+\pdfmapfile{+qhv.map}   % TeX Gyre Heros (sans)
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage[autostyle]{csquotes}
+
+% --- Página: tamaño carta, márgenes e interlineado --------------------
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=3cm,right=2.5cm,
+            headheight=15pt,footskip=1.2cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing                         % interlineado 1,5
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% --- Colores, cajas y utilidades --------------------------------------
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{etoolbox}
+\usepackage[inline]{enumitem}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=*}
+
+% --- Títulos de capítulos y secciones ---------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\large\bfseries\centering}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter}{6pt}{\MakeUppercase}
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\large\bfseries\centering}{}{0pt}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\itshape}{\thesubsubsection.}{0.6em}{}
+\titlespacing*{\section}{0pt}{12pt}{4pt}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{8pt}{2pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% --- Nombres en español ------------------------------------------------
+\addto\captionsspanish{%
+  \renewcommand{\contentsname}{Índice general}%
+  \renewcommand{\listtablename}{Índice de tablas}%
+  \renewcommand{\listfigurename}{Índice de figuras}%
+  \renewcommand{\appendixname}{Anexo}%
+  \renewcommand{\bibname}{Bibliografía}%
+}
+
+% --- Índices (tabla de contenido) -------------------------------------
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchappresnum}{\chaptername\ }
+\renewcommand{\cftchapaftersnum}{.}
+\setlength{\cftchapnumwidth}{6.4em}
+\setlength{\cftbeforechapskip}{6pt}
+\renewcommand{\cfttabpresnum}{Tabla\ }
+\renewcommand{\cftfigpresnum}{Figura\ }
+\renewcommand{\cfttabaftersnum}{.}
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cfttabnumwidth}{5.2em}
+\setlength{\cftfignumwidth}{5.6em}
+\setlength{\cfttabindent}{0pt}
+\setlength{\cftfigindent}{0pt}
+
+% --- Tablas ------------------------------------------------------------
+\usepackage{array,booktabs,tabularx,longtable,multirow,makecell}
+\renewcommand{\arraystretch}{1.15}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Q}[1]{>{\centering\arraybackslash}p{#1}}
+\AtBeginEnvironment{table}{\small\setstretch{1}}
+\AtBeginEnvironment{figure}{\setstretch{1}}
+
+% --- Leyendas de tablas y figuras (estilo APA 7) -----------------------
+%     Número en negrita y título en cursiva en la línea siguiente.
+\usepackage{caption}
+\captionsetup{font={small,stretch=1},labelfont=bf,textfont=it,
+              labelsep=newline,justification=raggedright,
+              singlelinecheck=false,skip=4pt}
+\counterwithout{table}{chapter}         % Tabla 1, 2, 3...
+\counterwithout{figure}{chapter}        % Figura 1, 2, 3...
+\counterwithout{equation}{chapter}      % (1), (2), (3)...
+% Nota debajo de una tabla o figura: \nota{Elaborado con base en ...}
+\newcommand{\nota}[1]{\par\vspace{2pt}{\small\setstretch{1}\textit{Nota.} #1\par}}
+
+% --- Figuras, planos y diagramas -----------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figuras/}}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,babel}
+
+% --- Unidades y números (coma decimal, punto de miles) ------------------
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},group-separator={.},
+         group-minimum-digits=4,per-mode=symbol}
+\newcommand{\mdos}{m\textsuperscript{2}}    % metro cuadrado
+\newcommand{\mtres}{m\textsuperscript{3}}   % metro cúbico
+
+% --- Encabezado y pie de página --------------------------------------
+\usepackage{fancyhdr}
+\fancypagestyle{tesis}{\fancyhf{}\fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+\pagestyle{tesis}
+
+% --- Marcas de borrador -------------------------------------------------
+%  \pendiente{...} : texto o dato que falta completar (rojo).
+%  \guia{...}      : instrucciones para redactar una sección (recuadro gris).
+%  Ambas desaparecen al poner \borradorfalse en tesis.tex.
+\newif\ifborrador
+\newcommand{\pendiente}[1]{\ifborrador{\color{BrickRed}\textbf{[Pendiente:} #1\textbf{]}}\fi}
+\newcommand{\guia}[1]{\ifborrador\par\noindent
+  \fcolorbox{gray!60}{gray!8}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+  \small\setstretch{1}\textbf{Guía de desarrollo.} #1}}\par\fi}
+
+% --- Ruta a los datos de obra del repositorio -----------------------------
+\newcommand{\datos}{../03_Datos_Obra_Edificio_Posgrado}
+
+% --- Bibliografía APA 7.ª edición -----------------------------------------
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% --- Hipervínculos (cargar al final) --------------------------------------
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}

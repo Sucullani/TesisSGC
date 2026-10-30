@@ -1,7 +1,7 @@
 # Tesis SGC – Edificio de Posgrado UATF
 
 **Título de trabajo (propuesta A):**
-*Diseño de un Sistema de Gestión de la Calidad basado en la norma ISO 9001:2015 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías, Potosí.*
+*Diseño de un Sistema de Gestión de la Calidad basado en la norma ISO 9001 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías, Potosí.*
 
 - Carrera de Ingeniería Civil – UATF · CIV 400 Seminario de Grado II · Modalidad: **Tesis**
 - Título original: *Diseño de un sistema de gestión de calidad para la optimización de costos, control de materiales en losas alivianadas del Edificio de Postgrado – UATF* (el análisis de cambios está en `01_Titulo_y_Consistencia`).
@@ -14,7 +14,8 @@
 | `01_Titulo_y_Consistencia/` | Diagnóstico del título, alternativas, problema, objetivos, hipótesis, variables y matriz de consistencia | [Propuesta_de_Titulo_y_Matriz_de_Consistencia.md](01_Titulo_y_Consistencia/Propuesta_de_Titulo_y_Matriz_de_Consistencia.md) |
 | `02_Indice_y_Capitulos/` | Índice según la guía del docente (y, más adelante, los capítulos) | [Indice_de_Tesis_segun_Guia_Docente.md](02_Indice_y_Capitulos/Indice_de_Tesis_segun_Guia_Docente.md) |
 | `03_Datos_Obra_Edificio_Posgrado/` | Planos, especificaciones técnicas, planillas de avance, cómputos y expediente del ítem losa alivianada | [Resumen_de_Datos_de_Obra.md](03_Datos_Obra_Edificio_Posgrado/Resumen_de_Datos_de_Obra.md) |
-| `04_Bibliografia/` | Normas, metodología, tesis, artículos y documentos técnicos | [Bibliografia_Recomendada.md](04_Bibliografia/Bibliografia_Recomendada.md) |
+| `04_Bibliografia/` | 64 PDF: normas, metodología, 28 tesis, 14 artículos, documentos técnicos y legislación boliviana | [Bibliografia_Recomendada.md](04_Bibliografia/Bibliografia_Recomendada.md) |
+| **`05_Tesis_LaTeX/`** | **Documento de la tesis en LaTeX** (carátula, introducción redactada, capítulos con guías, anexos con planos y certificados) | [Tesis_SGC_Borrador.pdf](05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) · [cómo usarlo](05_Tesis_LaTeX/README.md) |
 
 ## Cambios de nombre de archivos
 

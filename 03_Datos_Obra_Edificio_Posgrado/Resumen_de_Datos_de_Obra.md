@@ -60,7 +60,19 @@
 
 ### Certificados de calidad en el expediente
 - **PRETENSA** (27/11/2025): viguetas pretensadas VP, sobrecarga admisible de 400 kg/m², losa de 20 + 5 = 25 cm, separación entre ejes de 50 cm, luz máxima de vigueta de 7,50 m, simplemente apoyada y f'c mínimo de la carpeta de 21 MPa. Certificación **NB-997 e ISO 9001**.
-- **UNICON**: certificado del poliestireno expandido (plastoformo).
+- **UNICON** (27/11/2025): certificado del poliestireno expandido marca PLASTOSUR. Producto **Plastobloq de 20 × 100 × 44 cm**, densidad **10 kg/m³**, **2.350 piezas**.
+
+### Discrepancias entre documentos (hallazgo para el diagnóstico: control de documentos)
+| Documento | Complemento de plastoformo |
+|---|---|
+| Especificación técnica | 100 × 50 × 20 cm |
+| Plano 02 (corte transversal) | Altura acotada de **0,15 m** + carpeta de 0,05 m |
+| Certificado UNICON (material entregado) | 20 × 100 × **44** cm |
+
+**Estimación preliminar de exceso de plastoformo:**
+- Con ejes cada 0,50 m y bloques de 1,00 m de largo, se necesitan **2 piezas/m²** en bruto.
+- Para 1.109,84 m², eso da ≈ **2.220 piezas teóricas**, frente a **2.350 entregadas**: **≈ 130 piezas (≈ 6 %) de más**.
+- Esta cifra todavía no descuenta nervios ni bordes. Falta verificar si toda la entrega fue para la primera losa.
 
 ## 4. Indicios del problema (para la situación problemática)
 

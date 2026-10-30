@@ -14,7 +14,7 @@
 |---|---|---|---|
 | 1 | Hay **dos fines unidos por una coma** ("optimización de costos, control de materiales"). | No se sabe si hay dos variables dependientes o si el control de materiales es el medio para reducir costos. Cada fin exigiría su propio objetivo, hipótesis e indicadores. | Usar una relación **medio → fin**: "…para **reducir costos mediante el control de materiales**…". Así, el control de materiales pasa a ser una dimensión del SGC (variable independiente). |
 | 2 | **"Optimización"** supone un modelo matemático (función objetivo y restricciones) que la tesis no plantea. | El tribunal puede pedir ese modelo. Además, "optimizar" no fija cuánto se espera mejorar. | Decir **"reducción de costos"**, que se mide en % respecto de una línea base. |
-| 3 | El término ISO correcto es "Sistema de Gestión **de la** Calidad". En un proyecto concreto, la herramienta ISO es el **plan de la calidad** (ISO 10005:2018), que forma parte del SGC. | El tribunal puede objetar que se diseña un "sistema" para un solo ítem. | Indicar que el SGC está **"basado en la norma ISO 9001:2015"** y aclarar en el alcance que se concreta en un plan de la calidad del ítem. |
+| 3 | El término ISO correcto es "Sistema de Gestión **de la** Calidad". En un proyecto concreto, la herramienta ISO es el **plan de la calidad** (ISO 10005:2018), que forma parte del SGC. | El tribunal puede objetar que se diseña un "sistema" para un solo ítem. | Indicar que el SGC está **"basado en la norma ISO 9001"** (edición vigente: 2026) y aclarar en el alcance que se concreta en un plan de la calidad del ítem. |
 | 4 | "Losas alivianadas" es genérico. | No delimita el objeto de estudio: hay losas alivianadas con viguetas pretensadas, reticulares, con bovedilla de cerámica, etc. | "…losas alivianadas **con viguetas pretensadas** (y complemento de plastoformo)…". |
 | 5 | Usa la sigla "UATF" con guion. | En un título no deben aparecer siglas sin desarrollar. | "…del Edificio de Posgrado de la **Universidad Autónoma Tomás Frías, Potosí**". |
 | 6 | Dice "Postgrado". | La RAE prefiere **"posgrado"**, aunque ambas formas son válidas. Los documentos de la obra usan las dos. | Elegir **"Posgrado"** y usarlo siempre igual. |
@@ -26,9 +26,9 @@
 
 | Opción | Título | Nivel y diseño | Cuándo conviene |
 |---|---|---|---|
-| **A (recomendada)** | **DISEÑO DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BASADO EN LA NORMA ISO 9001:2015 PARA REDUCIR COSTOS MEDIANTE EL CONTROL DE MATERIALES EN LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS, POTOSÍ** | Aplicada, propositiva y explicativa. Cuasi-experimental: primera losa (sin SGC) frente a segunda losa (con SGC). | Conserva tu idea original y corrige los 7 problemas. Funciona con medición en obra o con evaluación ex ante. |
+| **A (recomendada)** | **DISEÑO DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BASADO EN LA NORMA ISO 9001 PARA REDUCIR COSTOS MEDIANTE EL CONTROL DE MATERIALES EN LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS, POTOSÍ** | Aplicada, propositiva y explicativa. Cuasi-experimental: primera losa (sin SGC) frente a segunda losa (con SGC). | Conserva tu idea original y corrige los 7 problemas. Funciona con medición en obra o con evaluación ex ante. |
 | B | SISTEMA DE GESTIÓN DE LA CALIDAD Y SU INFLUENCIA EN EL COSTO Y EL DESPERDICIO DE MATERIALES DE LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS: CASO EDIFICIO DE POSGRADO, UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS | Explicativa pura (causa → efecto) con dos variables dependientes. | Solo si **seguro** podrás medir la segunda losa en obra. |
-| C | PLAN DE GESTIÓN DE LA CALIDAD BASADO EN LAS NORMAS ISO 9001:2015 E ISO 10005:2018 PARA REDUCIR EL DESPERDICIO DE MATERIALES Y LOS COSTOS DE NO CALIDAD EN LOSAS ALIVIANADAS DEL EDIFICIO DE POSGRADO DE LA UATF, POTOSÍ | Aplicada y propositiva. Usa el modelo de costos de calidad PAF (prevención, evaluación y fallas). | Si el tutor objeta la palabra "sistema" para un solo ítem: es la opción más precisa en términos ISO. |
+| C | PLAN DE GESTIÓN DE LA CALIDAD BASADO EN LAS NORMAS ISO 9001 E ISO 10005 PARA REDUCIR EL DESPERDICIO DE MATERIALES Y LOS COSTOS DE NO CALIDAD EN LOSAS ALIVIANADAS DEL EDIFICIO DE POSGRADO DE LA UATF, POTOSÍ | Aplicada y propositiva. Usa el modelo de costos de calidad PAF (prevención, evaluación y fallas). | Si el tutor objeta la palabra "sistema" para un solo ítem: es la opción más precisa en términos ISO. |
 | D | EVALUACIÓN DE LOS COSTOS DE CALIDAD Y NO CALIDAD EN LA EJECUCIÓN DE LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS Y PROPUESTA DE UN SISTEMA DE GESTIÓN DE LA CALIDAD: EDIFICIO DE POSGRADO, UATF (2025–2026) | Descriptiva y propositiva. No experimental, con evaluación ex ante y validación por juicio de expertos. | Ruta segura si la obra **no** continúa durante tu tesis (el contrato con Kodesh se resolvió). |
 
 **Versión corta** (si te piden ≤ 20 palabras): *Sistema de Gestión de la Calidad para reducir costos y desperdicio de materiales en losas alivianadas del Edificio de Posgrado, UATF*.
@@ -38,6 +38,8 @@
 - **Si no se construirá**, elige **A** o **D** con *evaluación ex ante*: línea base real de la primera losa, simulación del costo de los 2.234,60 m² restantes con el SGC y validación del SGC por expertos.
 
 > El resto de este documento desarrolla la **Opción A**.
+
+> **Actualización (29/10/2026):** la norma **ISO 9001:2026** se publicó el 16/09/2026 y reemplaza a la edición 2015. En Bolivia, IBNORCA la adoptó como **NB/ISO 9001:2026**; los certificados 2015 tienen transición hasta 2029. Por eso el título recomendado dice «ISO 9001», sin año, y el diseño del SGC usa la edición 2026.
 
 ---
 
@@ -58,36 +60,38 @@ Los registros de la propia obra lo confirman:
 - Las 12 probetas de columnas y vigas se ensayaron a **55–76 días** en lugar de 28. Las elaboró la propia contratista.
 - La Supervisión tuvo que pedir que se presentaran las **garantías de los materiales**, la **rotura de probetas** y las **dosificaciones** de los hormigones.
 
-En la literatura, los reprocesos representan alrededor del **5 % del costo total** de construcción (Hwang et al., 2009, citado en Álvarez Quintero, 2014). Una implementación eficaz de un SGC los reduce **hasta en 84,82 %** (Álvarez Quintero, 2014).
+En la literatura, los costos por reprocesos llegan **hasta el 12,4 % del costo** de los proyectos de construcción, con un promedio de **6,59 %**. Una implementación eficaz de un SGC los reduce **hasta en 84,82 %** (Álvarez Quintero, 2014).
+
+> El Taller 2 pide no citar fuentes de segunda mano. Por eso, para el dato de Hwang et al. (2009), consigue y cita el artículo original.
 
 ### 3.2 Problema científico
-**¿De qué manera un Sistema de Gestión de la Calidad basado en la norma ISO 9001:2015, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías?**
+**¿De qué manera un Sistema de Gestión de la Calidad basado en la norma ISO 9001, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías?**
 
 ### 3.3 Objeto de estudio y campo de acción
 - **Objeto de estudio:** el proceso constructivo de losas alivianadas con viguetas pretensadas y complemento de poliestireno expandido (plastoformo) en edificaciones.
 - **Campo de acción:** la gestión de la calidad, el control de materiales y los costos del ítem "losa alivianada h = 25 cm" del Edificio de Posgrado de la UATF.
 
 ### 3.4 Objetivo general
-**Diseñar un Sistema de Gestión de la Calidad basado en la norma ISO 9001:2015, centrado en el control de materiales, para reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías.**
+**Diseñar un Sistema de Gestión de la Calidad basado en la norma ISO 9001, centrado en el control de materiales, para reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías.**
 
 ### 3.5 Objetivos específicos (verbos según el nivel indicado en el Taller 1)
 1. **Caracterizar** la gestión de la calidad y el control de materiales aplicados en la ejecución de la primera losa alivianada (1.109,84 m²) e **identificar** las no conformidades y sus causas. *(descriptivo)*
 2. **Cuantificar** la línea base del índice de desperdicio de materiales (hormigón, acero, viguetas pretensadas y plastoformo) y del costo de no calidad de la primera losa. Para ello se **compararán** las cantidades teóricas (planos), adquiridas y pagadas (planillas). *(descriptivo)*
-3. **Establecer** los componentes del SGC: plan de la calidad, plan de puntos de inspección y ensayo (PPI), procedimientos de control de materiales, gestión de no conformidades y registro de costos de calidad. Se basarán en ISO 9001:2015, ISO 10005:2018, NB 1225001/ACI 318-25, NB 997 y ensayos ASTM. *(explicativo y propositivo)*
+3. **Establecer** los componentes del SGC: plan de la calidad, plan de puntos de inspección y ensayo (PPI), procedimientos de control de materiales, gestión de no conformidades y registro de costos de calidad. Se basarán en ISO 9001:2026, ISO 10005:2018, NB 1225001/ACI 318-25, NB 997 y ensayos ASTM. *(explicativo y propositivo)*
 4. **Evaluar** el efecto del SGC sobre el costo unitario (Bs/m²) y el desperdicio de materiales de la segunda losa, o de los 2.234,60 m² restantes mediante simulación, con respecto a la línea base. *(explicativo)*
 5. **Comprobar** la hipótesis mediante pruebas estadísticas y **validar** el SGC mediante juicio de expertos. *(explicativo)*
 
 ### 3.6 Hipótesis
-- **Hipótesis general (H₁):** la aplicación de un Sistema de Gestión de la Calidad basado en la norma ISO 9001:2015, centrado en el control de materiales, **reduce en al menos un 5 % el costo unitario de ejecución** (Bs/m², a precios constantes del contrato) de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF, respecto de la línea base de la primera losa.
+- **Hipótesis general (H₁):** la aplicación de un Sistema de Gestión de la Calidad basado en la norma ISO 9001, centrado en el control de materiales, **reduce en al menos un 5 % el costo unitario de ejecución** (Bs/m², a precios constantes del contrato) de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF, respecto de la línea base de la primera losa.
   - *H₀:* el SGC no reduce el costo unitario, o lo reduce en menos de 5 %.
-  - *Nota:* el umbral del 5 % es una propuesta inicial. **Debes ajustarlo cuando obtengas la línea base** (OE2), tomando como referencia el ≈ 5 % de reprocesos citado arriba y los índices de desperdicio de la bibliografía.
+  - *Nota:* el umbral del 5 % es una propuesta inicial. **Debes ajustarlo cuando obtengas la línea base** (OE2), tomando como referencia el promedio de 6,59 % de reprocesos citado arriba y los índices de desperdicio de la bibliografía.
 - **Hipótesis específica 1:** el SGC reduce el índice de desperdicio de materiales (IDM) de la losa con respecto a la línea base.
 - **Hipótesis específica 2:** el SGC reduce el costo de no calidad (fallas internas y externas) del ítem con respecto a la línea base.
 
 ### 3.7 Variables
 | Tipo | Variable | Definición breve |
 |---|---|---|
-| Independiente (X) | **Sistema de Gestión de la Calidad (SGC)** | Conjunto de políticas, objetivos, procesos, controles y registros (ISO 9000:2015, ISO 9001:2015) aplicados al proceso constructivo de la losa, con énfasis en el control de materiales. |
+| Independiente (X) | **Sistema de Gestión de la Calidad (SGC)** | Conjunto de políticas, objetivos, procesos, controles y registros (ISO 9000:2026, ISO 9001:2026) aplicados al proceso constructivo de la losa, con énfasis en el control de materiales. |
 | Dependiente (Y) | **Costo de ejecución de la losa alivianada** | Costo por m² para ejecutar la losa conforme a las especificaciones. Incluye los costos de la calidad (prevención y evaluación) y de la no calidad (fallas internas y externas), según el modelo PAF. |
 | Interviniente (controlada) | Precios de los materiales (inflación 2025–2026) | Se controla calculando los costos a **precios constantes del contrato** (Bs 215,68/m² y los APU contractuales). Así, la diferencia medida se debe a cantidades, desperdicios y reprocesos, y no a la inflación. |
 
@@ -97,7 +101,7 @@ En la literatura, los reprocesos representan alrededor del **5 % del costo total
 
 | Variable | Dimensión | Indicador | Fórmula / unidad | Instrumento |
 |---|---|---|---|---|
-| **X: SGC** | D1. Planificación de la calidad | Cumplimiento de requisitos ISO 9001:2015 aplicables (cláusulas 4 a 10) | % de requisitos cumplidos | Lista de verificación (diagnóstico de brechas) |
+| **X: SGC** | D1. Planificación de la calidad | Cumplimiento de requisitos ISO 9001:2026 aplicables (cláusulas 4 a 10) | % de requisitos cumplidos | Lista de verificación (diagnóstico de brechas) |
 | | D2. Control de materiales | Lotes recibidos con certificado o ensayo conforme (viguetas NB 997, EPS, acero ASTM A615, cemento, áridos) | % de lotes conformes | Ficha de recepción de materiales |
 | | | Trazabilidad de consumos | Kardex de almacén al día (sí/no); vales de salida por paño | Kardex, vales |
 | | D3. Control del proceso (PPI) | Puntos de inspección ejecutados frente a programados (apuntalamiento, viguetas, plastoformo, armadura, hormigonado, curado) | % | Fichas PPI |
@@ -132,7 +136,7 @@ En la literatura, los reprocesos representan alrededor del **5 % del costo total
 
 | Problema | Objetivo | Hipótesis | Variables / indicadores | Metodología |
 |---|---|---|---|---|
-| **PG:** ¿De qué manera un SGC basado en ISO 9001:2015, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF? | **OG:** Diseñar un SGC basado en ISO 9001:2015, centrado en el control de materiales, para reducir los costos de ejecución de dichas losas. | **HG:** El SGC reduce en ≥ 5 % el costo unitario (Bs/m², precios constantes) respecto de la línea base. | X: SGC (D1–D4). Y: costo de ejecución (D1–D5). | Aplicada, cuantitativa, explicativa; cuasi-experimental O₁–X–O₂ |
+| **PG:** ¿De qué manera un SGC basado en ISO 9001, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF? | **OG:** Diseñar un SGC basado en ISO 9001, centrado en el control de materiales, para reducir los costos de ejecución de dichas losas. | **HG:** El SGC reduce en ≥ 5 % el costo unitario (Bs/m², precios constantes) respecto de la línea base. | X: SGC (D1–D4). Y: costo de ejecución (D1–D5). | Aplicada, cuantitativa, explicativa; cuasi-experimental O₁–X–O₂ |
 | **PE1:** ¿Cómo se gestionaron la calidad y el control de materiales en la primera losa? | **OE1:** Caracterizar la gestión actual e identificar las NC y sus causas. | (Descriptivo: no requiere hipótesis) | % de cumplimiento ISO 9001; N.º de NC | Lista de verificación, análisis documental, Pareto, Ishikawa |
 | **PE2:** ¿Cuál es el desperdicio de materiales y el costo de no calidad de la primera losa? | **OE2:** Cuantificar la línea base del IDM y del costo de no calidad. | (Descriptivo: fija el valor de referencia) | IDMᵢ; Bs/m²; CNC % | Fichas de materiales, cómputos, planillas |
 | **PE3:** ¿Qué componentes debe tener el SGC para este proceso constructivo? | **OE3:** Establecer el plan de la calidad, el PPI, los procedimientos y los registros. | — | Componentes del SGC | ISO 9001/10005, NB 1225001, ACI 318-25, ASTM |

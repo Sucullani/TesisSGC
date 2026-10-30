@@ -5,6 +5,11 @@
 04_Bibliografia/01_Normas_y_Codigos/ACI_318-25_Building_Code_for_Structural_Concrete.pdf
 04_Bibliografia/02_Metodologia_y_Redaccion/Hernandez-Sampieri_Mendoza_2018_Metodologia_de_la_Investigacion.pdf
 
+# --- Compilación LaTeX (el PDF final se copia a 05_Tesis_LaTeX/Tesis_SGC_Borrador.pdf) ---
+05_Tesis_LaTeX/build/
+05_Tesis_LaTeX/build_log_latexmk.txt
+*.synctex.gz
+
 # --- Temporales de Office, LibreOffice y Windows ---
 ~$*
 .~lock.*#

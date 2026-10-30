@@ -1,6 +1,6 @@
 # Índice de la tesis según la guía del docente
 
-**Título de trabajo (Opción A):** *Diseño de un Sistema de Gestión de la Calidad basado en la norma ISO 9001:2015 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías, Potosí.*
+**Título de trabajo (Opción A):** *Diseño de un Sistema de Gestión de la Calidad basado en la norma ISO 9001 para reducir costos mediante el control de materiales en losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías, Potosí.*
 
 ## Base del índice (Material docente, CIV 400)
 
@@ -59,8 +59,8 @@
 1.2. La calidad en la construcción
    1.2.1. Conceptos de calidad, control, aseguramiento y gestión de la calidad
    1.2.2. Evolución del enfoque de calidad (Deming, Juran, Crosby, Feigenbaum)
-   1.2.3. Principios de la gestión de la calidad (ISO 9000:2015)
-1.3. Sistema de Gestión de la Calidad según ISO 9001:2015
+   1.2.3. Principios de la gestión de la calidad (ISO 9000:2026)
+1.3. Sistema de Gestión de la Calidad según ISO 9001:2026
    1.3.1. Estructura de la norma (cláusulas 4 a 10) y ciclo PHVA
    1.3.2. Pensamiento basado en riesgos
    1.3.3. Planes de la calidad para proyectos (ISO 10005:2018) y gestión de la calidad en proyectos (ISO 10006:2017)
@@ -98,7 +98,7 @@
 2.3. **Definición de factores y variables** (operacionalización, indicadores y fórmulas)
 2.4. Población y muestra (unidad de análisis: el paño de losa)
 2.5. Diagnóstico de la situación actual (línea base, O₁)
-   2.5.1. Diagnóstico de brechas frente a ISO 9001:2015
+   2.5.1. Diagnóstico de brechas frente a ISO 9001:2026
    2.5.2. Análisis documental de la primera losa: cómputos, planillas, Libro de Órdenes
    2.5.3. No conformidades y análisis de causas (Pareto e Ishikawa)
    2.5.4. Cuantificación del desperdicio de materiales y del costo de no calidad

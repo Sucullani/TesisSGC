@@ -1,0 +1,54 @@
+% !TeX program = latexmk
+% !TeX encoding = UTF-8
+% =====================================================================
+%  TESIS DE GRADO – CARRERA DE INGENIERÍA CIVIL – UATF
+%  Compilar desde esta carpeta con:   latexmk
+%  (pdflatex + biber; configuración en .latexmkrc; PDF en build/tesis.pdf)
+% =====================================================================
+\documentclass[12pt,letterpaper,oneside]{report}
+\input{preambulo}
+
+% ---- Datos generales (se usan en la carátula y en las propiedades del PDF)
+\newcommand{\titulotesis}{DISEÑO DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BASADO EN LA NORMA ISO~9001 PARA REDUCIR COSTOS MEDIANTE EL CONTROL DE MATERIALES EN LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS, POTOSÍ}
+\newcommand{\postulante}{[Nombres y apellidos del postulante]}
+\newcommand{\tutor}{Ing.\ [Nombres y apellidos del tutor]}
+\newcommand{\lugar}{POTOSÍ -- BOLIVIA}
+\newcommand{\anio}{2026}
+
+\hypersetup{pdftitle={Diseño de un Sistema de Gestión de la Calidad para reducir costos mediante el control de materiales en losas alivianadas - Edificio de Posgrado UATF},
+            pdfsubject={Tesis de grado - Ingeniería Civil - UATF}}
+
+% ---- Modo borrador: muestra guías y pendientes.
+%      Para la versión final cambie a \borradorfalse
+\borradortrue
+
+\begin{document}
+
+% ---------------- Carátula y páginas preliminares (numeración romana)
+\input{capitulos/00_caratula}
+\pagenumbering{roman}
+\input{capitulos/01_preliminares}
+
+\tableofcontents
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\input{capitulos/02_abreviaturas}
+
+% ---------------- Cuerpo (numeración arábiga)
+\clearpage
+\pagenumbering{arabic}
+\input{capitulos/10_introduccion}
+\input{capitulos/20_capitulo1_marco_teorico}
+\input{capitulos/30_capitulo2_diseno_sgc}
+\input{capitulos/40_capitulo3_resultados}
+\input{capitulos/50_conclusiones}
+
+% ---------------- Bibliografía (APA 7.ª ed., orden alfabético)
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+
+% ---------------- Anexos
+\input{capitulos/90_anexos}
+
+\end{document}

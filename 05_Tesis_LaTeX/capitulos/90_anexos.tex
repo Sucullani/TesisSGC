@@ -1,0 +1,135 @@
+% =====================================================================
+%  ANEXOS
+% =====================================================================
+\appendix
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\ }}
+\chapter*{Anexos}
+\phantomsection\addcontentsline{toc}{chapter}{ANEXOS}
+
+% ---------------------------------------------------------------------
+\begin{landscape}
+\chapter{MATRIZ DE CONSISTENCIA}
+\label{anx:matriz}
+\begingroup\small\setstretch{1}
+\begin{longtable}{@{}P{4.6cm}P{4.5cm}P{4.2cm}P{4.3cm}P{3.6cm}@{}}
+\toprule
+\textbf{Problema} & \textbf{Objetivos} & \textbf{Hipótesis} & \textbf{Variables e indicadores} & \textbf{Metodología} \\
+\midrule
+\endhead
+\textbf{General:} ¿De qué manera un SGC basado en la norma ISO~9001, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF?
+& \textbf{General:} Diseñar un SGC basado en la norma ISO~9001, centrado en el control de materiales, para reducir los costos de ejecución de dichas losas.
+& \textbf{General:} El SGC reduce en al menos 5~\% el costo unitario (Bs/\mdos{}, a precios constantes) respecto de la línea base.
+& \textbf{X:} SGC (planificación, control de materiales, control del proceso, mejora). \newline \textbf{Y:} costo de ejecución (costo directo, desperdicio, CNC, costo de la calidad, conformidad del hormigón).
+& Aplicada; cuantitativa; explicativa. Cuasi-experimental $O_1$--$X$--$O_2$. \\
+\midrule
+\textbf{PE1:} ¿Cómo se gestionaron la calidad y el control de materiales en la primera losa?
+& \textbf{OE1:} Caracterizar la gestión actual e identificar las no conformidades y sus causas.
+& (Descriptivo)
+& Porcentaje de cumplimiento ISO~9001; número de no conformidades.
+& Lista de verificación, análisis documental, Pareto e Ishikawa. \\
+\midrule
+\textbf{PE2:} ¿Cuál es el desperdicio de materiales y el costo de no calidad de la primera losa?
+& \textbf{OE2:} Cuantificar la línea base del índice de desperdicio y del costo de no calidad.
+& (Descriptivo: valor de referencia)
+& $IDM_i$; Bs/\mdos{}; \%CNC.
+& Fichas de materiales, cómputos y planillas. \\
+\midrule
+\textbf{PE3:} ¿Qué componentes debe tener el SGC para este proceso constructivo?
+& \textbf{OE3:} Establecer el plan de la calidad, el PPI, los procedimientos y los registros.
+& ---
+& Componentes del SGC.
+& ISO~9001, ISO~10005, ACI~318-25 y ASTM. \\
+\midrule
+\textbf{PE4:} ¿En qué medida el SGC reduce el costo y el desperdicio?
+& \textbf{OE4 y OE5:} Evaluar el efecto, comprobar la hipótesis y validar el SGC con expertos.
+& \textbf{HE1:} reduce el $IDM$. \newline \textbf{HE2:} reduce el CNC.
+& $IDM_i$, CNC y Bs/\mdos{}.
+& Prueba \emph{t} o Wilcoxon ($\alpha = 0{,}05$); V de Aiken. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+% ---------------------------------------------------------------------
+\chapter{OPERACIONALIZACIÓN DE VARIABLES}
+\label{anx:operacionalizacion}
+\begingroup\small\setstretch{1}
+\begin{longtable}{@{}P{2.6cm}P{3.6cm}P{6.2cm}P{5.2cm}P{3.6cm}@{}}
+\toprule
+\textbf{Variable} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Fórmula o unidad} & \textbf{Instrumento} \\
+\midrule
+\endhead
+\textbf{X:} Sistema de Gestión de la Calidad
+& Planificación de la calidad & Cumplimiento de requisitos ISO~9001:2026 (cláusulas 4 a 10) & \% de requisitos cumplidos & Lista de verificación \\
+& Control de materiales & Lotes con certificado o ensayo conforme & \% de lotes conformes & Ficha de recepción \\
+& & Trazabilidad de consumos & Kardex al día; vales por paño & Kardex y vales \\
+& Control del proceso (PPI) & Puntos de inspección ejecutados frente a programados & \% & Fichas PPI \\
+& Seguimiento y mejora & No conformidades detectadas y cerradas & N.\textsuperscript{o}; \% cerradas; días de cierre & Registro de NC \\
+\midrule
+\textbf{Y:} Costo de ejecución de la losa
+& Costo directo & Costo unitario real frente al contractual & Bs/\mdos{} (ec.~\ref{eq:cu}); desviación \% & APU y planillas \\
+& Desperdicio de materiales & Índice de desperdicio por material & $IDM_i$ (ec.~\ref{eq:idm}) & Ficha de control de materiales \\
+& & Consumo unitario real & \mtres{}/\mdos{}; kg/\mdos{}; m/\mdos{}; pza/\mdos{} & Ficha de control de materiales \\
+& Costo de no calidad & Fallas internas y externas & Bs; \%CNC (ec.~\ref{eq:cnc}) & Planilla de costos de calidad \\
+& Costo de la calidad & Prevención y evaluación & Bs; \% del costo del ítem & Planilla de costos de calidad \\
+& Conformidad del hormigón & Ensayos que cumplen ACI~318-25 (26.12.3.1) & \% de ensayos conformes & Ensayos ASTM C31, C39 y C143 \\
+\bottomrule
+\end{longtable}
+\endgroup
+\end{landscape}
+
+% ---------------------------------------------------------------------
+\chapter{INSTRUMENTOS DE RECOLECCIÓN DE DATOS}
+\label{anx:instrumentos}
+\guia{Incluir los formatos definitivos:
+\begin{enumerate}[label=C.\arabic*]
+  \item lista de verificación ISO~9001:2026;
+  \item fichas del PPI por actividad;
+  \item ficha de recepción de materiales;
+  \item ficha de control de materiales por paño o vaciado;
+  \item registro de no conformidades;
+  \item planilla de costos de calidad y no calidad;
+  \item guía de entrevista.
+\end{enumerate}}
+
+% ---------------------------------------------------------------------
+\chapter{VALIDACIÓN DE INSTRUMENTOS POR JUICIO DE EXPERTOS}
+\guia{Fichas de validación firmadas por cada experto, la tabla de cálculo del coeficiente V de Aiken y los currículos resumidos de los expertos.}
+
+% ---------------------------------------------------------------------
+\chapter{PLANOS DE LA PRIMERA LOSA}
+Se incluyen los planos del proyecto: geometría y sistema de ejes de la primera losa, sección y detalles de la losa con viguetas pretensadas, y cantidad de viguetas por paño.
+\includepdf[pages=1,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/01_Planos/Plano_01_Geometria_Sistema_de_Ejes_Primera_Losa.pdf}
+\includepdf[pages=1,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/01_Planos/Plano_02_Seccion_y_Detalles_Losa_Viguetas_Pretensadas.pdf}
+\includepdf[pages=1,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/01_Planos/Plano_03_Cantidad_de_Viguetas_Primera_Losa.pdf}
+
+% ---------------------------------------------------------------------
+\chapter{CÓMPUTOS MÉTRICOS Y PLANILLAS DE AVANCE}
+\pendiente{incluir las páginas pertinentes de la Planilla de avance N.\textsuperscript{o}~2 y de la planilla de resolución (PAO N.\textsuperscript{o}~3) correspondientes al ítem 13. Los archivos están en la carpeta de planillas y cómputos de los datos de obra del repositorio.}
+
+Cómputo de los paños de la primera losa (ítem 13):
+\includepdf[pages={2,3},scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf}
+
+% ---------------------------------------------------------------------
+\chapter{CERTIFICADOS DE CALIDAD DE MATERIALES}
+Certificados de calidad de las viguetas pretensadas (PRETENSA) y de los complementos de poliestireno expandido (UNICON), del 27 de noviembre de 2025.
+\includepdf[pages={8,9},scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf}
+
+% ---------------------------------------------------------------------
+\chapter{RESULTADOS DE ENSAYOS DE LABORATORIO}
+Certificado de laboratorio N.\textsuperscript{o}~000293 del Laboratorio de Resistencia de Materiales y Tecnología del Hormigón de la Carrera de Ingeniería Civil (UATF).
+\includepdf[pages=78,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/PAO_02_Planilla_Avance_Obra_Kodesh_Sep-Dic_2025.pdf}
+\pendiente{agregar los resultados de los ensayos de la losa obtenidos durante la aplicación del SGC.}
+
+% ---------------------------------------------------------------------
+\chapter{ANÁLISIS DE PRECIOS UNITARIOS}
+\pendiente{incluir el APU contractual del ítem 13 (solicitar a la Fiscalización) y el APU recalculado con el SGC.}
+
+% ---------------------------------------------------------------------
+\chapter{PANEL FOTOGRÁFICO}
+\includepdf[pages={5,6,7},scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf}
+\pendiente{agregar fotografías propias de la aplicación del SGC (inspecciones, recepción de materiales, ensayos).}
+
+% ---------------------------------------------------------------------
+\chapter{DOCUMENTOS DE CONTEXTO}
+Comunicado de FANCESA sobre la paralización de su producción (12/06/2025) y pronunciamiento de la Cámara de la Construcción de Tarija sobre el incremento del precio del cemento (09/10/2025).
+\includepdf[pages=26,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf}
