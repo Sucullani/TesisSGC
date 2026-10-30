@@ -749,9 +749,35 @@ class Transformador:
         s = reemplazar_comando(s, 'hypertarget', lambda o, b, e: b[1], n_obl=2)
         s = reemplazar_comando(s, 'foreignlanguage', lambda o, b, e: b[1], n_obl=2, n_opc=1)
         s = reemplazar_comando(s, 'ensuremath', lambda o, b, e: '$%s$' % b[0], n_obl=1)
+        for nombre, valor in self.f.nombres.items():
+            s = re.sub(r'\\' + nombre + r'(?![A-Za-z@])(\{\})?', lambda m, v=valor: v, s)
+        # Elementos de formularios: líneas para llenar, casillas y recuadros
+        def r_rule(o, b, e):
+            w = a_cm(b[0])
+            if w is None or w < 0.05:
+                return ''
+            return '\\_' * max(3, int(round(w / 0.2)))
+        s = reemplazar_comando(s, 'rule', r_rule, n_obl=2, n_opc=1)
+        s = re.sub(r'\\hrulefill(?![A-Za-z@])', '\\\\_' * 14, s)
+        s = re.sub(r'\\dotfill(?![A-Za-z@])', '.' * 14, s)
+        s = reemplazar_comando(s, 'cellcolor', lambda o, b, e: '', n_obl=1, n_opc=1)
+        s = reemplazar_comando(s, 'columncolor', lambda o, b, e: '', n_obl=1, n_opc=1)
+
+        def caja(contenido):
+            limpio = re.sub(r'\\(rule|strut|vphantom|hphantom)(\[[^\]]*\])?(\{[^{}]*\})*', '', contenido).strip()
+            if not limpio:
+                return '☐'
+            if len(texto_plano(limpio)) > 60 or re.search(r'\\par\b|\\begin\{|\n\s*\n|\\parbox', limpio):
+                return '\n\n\\begin{recuadro}\n%s\n\\end{recuadro}\n\n' % limpio
+            return limpio
+        s = reemplazar_comando(s, 'fcolorbox', lambda o, b, e: caja(b[2]), n_obl=3, n_opc=1)
+        s = reemplazar_comando(s, 'colorbox', lambda o, b, e: b[1], n_obl=2, n_opc=1)
+        s = reemplazar_comando(s, 'fbox', lambda o, b, e: caja(b[0]), n_obl=1)
+        s = reemplazar_comando(s, 'framebox', lambda o, b, e: caja(b[0]), n_obl=1, n_opc=2)
         s = reemplazar_comando(s, 'mbox', lambda o, b, e: b[0], n_obl=1)
         s = reemplazar_comando(s, 'makebox', lambda o, b, e: b[0], n_obl=1, n_opc=2)
-        s = reemplazar_comando(s, 'parbox', lambda o, b, e: b[1], n_obl=2, n_opc=3)
+        s = reemplazar_comando(s, 'raisebox', lambda o, b, e: b[1], n_obl=2, n_opc=2)
+        s = reemplazar_comando(s, 'parbox', lambda o, b, e: self._celda_multilinea(b[1]), n_obl=2, n_opc=3)
         s = reemplazar_comando(s, 'makecell', lambda o, b, e: self._celda_multilinea(b[0]), n_obl=1, n_opc=1)
         s = reemplazar_comando(s, 'shortstack', lambda o, b, e: self._celda_multilinea(b[0]), n_obl=1, n_opc=1)
         s = reemplazar_comando(s, 'thead', lambda o, b, e: self._celda_multilinea(b[0]), n_obl=1, n_opc=1)
