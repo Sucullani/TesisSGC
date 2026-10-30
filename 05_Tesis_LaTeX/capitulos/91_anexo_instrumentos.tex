@@ -15,7 +15,7 @@
 \newcommand{\cabeceraformato}[2]{%
   \par\noindent{\footnotesize\setstretch{1}%
   \renewcommand{\arraystretch}{1.35}%
-  \begin{tabular}{@{}|p{0.30\linewidth}|p{0.44\linewidth}|p{0.183\linewidth}|@{}}
+  \begin{tabular}{@{}|p{0.29\linewidth}|p{0.43\linewidth}|p{0.18\linewidth}|@{}}
   \hline
   \textbf{UATF -- Edificio de Posgrado} & \multirow{2}{=}{\centering\textbf{#2}} & \textbf{Código:} #1 \\
   Ítem 13: losa alivianada h~=~25~cm & & Versión 0 \\
@@ -113,6 +113,7 @@ E9 & Registro del vaciado & Hora de inicio y fin; volumen; pastones; bolsas de c
 \ppifirmas{Liberación E (antes de vaciar)}{\firma{Encargado de calidad}\hfill\firma{Liberó (Supervisor)}\hfill\firma{Libro de Órdenes, hoja N.\textsuperscript{o}}\hfill\firma{Fecha y hora}}
 \end{longtable}}
 
+\noindent\begin{minipage}{\linewidth}
 \noindent{\small\setstretch{1.1}\textbf{F. Registro de curado (W).} Curado mínimo de 7 días con el hormigón a 10~$^{\circ}$C o más; si no se cumple la temperatura, se prolonga el curado.\par}
 \smallskip
 {\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
@@ -128,8 +129,10 @@ E9 & Registro del vaciado & Hora de inicio y fin; volumen; pastones; bolsas de c
 7 & & & & & & \\ \hline
 \fila & & & & & & \\ \hline
 \end{tabularx}\par}
+\end{minipage}
 
 \medskip
+\noindent\begin{minipage}{\linewidth}
 \noindent{\small\setstretch{1.1}\textbf{G. Desapuntalamiento (H) y aceptación del paño.}\par}
 \smallskip
 {\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}
@@ -142,6 +145,7 @@ G3 & Cargas y estado & Sin cargas de construcción excesivas; sin fisuras ni fle
 G4 & Aceptación para pago & Ensayos de aceptación del vaciado conformes; conciliación C.4 cerrada; ninguna NC abierta & & & Ensayos N.\textsuperscript{o}: \\ \hline
 \multicolumn{6}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\textbf{Liberación G}\par\firma{Encargado de calidad}\hfill\firma{Liberó (Supervisor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
 \end{tabularx}\par}
+\end{minipage}
 
 % =====================================================================
 \clearpage
@@ -275,9 +279,9 @@ Identificación del lote aceptado (tarjeta verde) con el código \underline{\hsp
 \medskip
 \noindent{\small\textbf{(c) Conciliación del paño} \quad Losa N.\textsuperscript{o} \underline{\hspace{1cm}} \quad Paño N.\textsuperscript{o} \underline{\hspace{1cm}} \quad Área (\mdos{}) \underline{\hspace{1.4cm}} \quad Fechas \underline{\hspace{3cm}}}\par\smallskip
 {\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{2.5pt}
-\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{0.9cm}|Q{1.3cm}|Q{1.3cm}|Q{1.3cm}|Q{1.4cm}|Q{1.2cm}|Q{0.9cm}|Q{1.3cm}|Q{1.2cm}|Q{0.9cm}|@{}}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{1.0cm}|Q{1.25cm}|Q{1.2cm}|Q{1.2cm}|Q{1.0cm}|Q{1.1cm}|Q{0.9cm}|Q{1.2cm}|Q{1.1cm}|Q{1.1cm}|@{}}
 \hline
-\textbf{Material} & \textbf{Unidad} & \textbf{$Q_T$ teórica (planos)} & \textbf{$Q_D$ despachada} & \textbf{$Q_V$ devuelta} & \textbf{$Q_C = Q_D - Q_V$} & \textbf{$IDM$ (\%)} & \textbf{Meta (\%)} & \textbf{$Q_M$ medida} & \textbf{$\delta_{M/T}$ (\%)} & \textbf{Alerta (S/N)} \\ \hline
+\textbf{Material} & \textbf{Unidad} & \textbf{$Q_T$ (planos)} & \textbf{$Q_D$ (vales)} & \textbf{$Q_V$ (devol.)} & \textbf{$Q_C$} & \textbf{$IDM$ (\%)} & \textbf{Meta (\%)} & \textbf{$Q_M$ (medida)} & \textbf{$\delta_{M/T}$ (\%)} & \textbf{Alerta (S/N)} \\ \hline
 Viguetas tipo \underline{\hspace{0.6cm}} & m & & & & & & 1 & & & \\ \hline
 Viguetas tipo \underline{\hspace{0.6cm}} & m & & & & & & 1 & & & \\ \hline
 Complemento EPS & pza & & & & & & 3 & & & \\ \hline
@@ -294,9 +298,9 @@ Alambre de amarre & kg & & & & & & & & & \\ \hline
 \medskip
 \noindent{\small\textbf{(d) Conciliación acumulada para la planilla de avance N.\textsuperscript{o}} \underline{\hspace{1cm}} \quad Periodo \underline{\hspace{3.5cm}}}\par\smallskip
 {\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{2.5pt}
-\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{1.25cm}|Q{1.25cm}|Q{1.25cm}|Q{1.1cm}|Q{1.1cm}|Q{1.25cm}|Q{1.25cm}|Q{1.1cm}|Q{1.0cm}|Q{0.9cm}|@{}}
+\noindent\begin{tabularx}{\linewidth}{@{}|L|Q{1.1cm}|Q{1.25cm}|Q{1.2cm}|Q{1.0cm}|Q{1.0cm}|Q{1.1cm}|Q{1.1cm}|Q{1.1cm}|Q{1.1cm}|Q{1.1cm}|@{}}
 \hline
-\textbf{Ítem o material (ítem de pago)} & \textbf{$Q_T$ acum.} & \textbf{$Q_E$ acum. (remisiones)} & \textbf{$Q_C$ acum. (vales)} & \textbf{$I_F$ físico} & \textbf{$\Delta_I$} & \textbf{$Q_M$ acum. (medición)} & \textbf{$Q_P$ acum. (planilla)} & \textbf{$\delta_{P/M}$ (\%)} & \textbf{kg/\mdos{}} & \textbf{Alerta} \\ \hline
+\textbf{Ítem o material (ítem de pago)} & \textbf{$Q_T$} & \textbf{$Q_E$ (remis.)} & \textbf{$Q_C$ (vales)} & \textbf{$I_F$} & \textbf{$\Delta_I$} & \textbf{$Q_M$} & \textbf{$Q_P$} & \textbf{$\delta_{P/M}$ (\%)} & \textbf{kg/\mdos{}} & \textbf{Alerta} \\ \hline
 Ítem 13 (\mdos{}) & & --- & --- & --- & --- & & & & --- & \\ \hline
 Acero de la losa (kg); ítem \underline{\hspace{0.5cm}} & & & & & & & & & & \\ \hline
 Viguetas (m) & & & & & & --- & --- & --- & --- & \\ \hline
@@ -305,7 +309,8 @@ Cemento (bolsas) & & & & & & --- & --- & --- & --- & \\ \hline
 Hormigón (\mtres{}) & & & & --- & --- & & & & --- & \\ \hline
 \multicolumn{11}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\fila Coherencia entre documentos (misma cifra en planilla, cómputo e informes): \casilla\ Sí \casilla\ No \qquad Acero de la losa pagado en un solo ítem: \casilla\ Sí \casilla\ No} \\ \hline
 \multicolumn{11}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\firma{Elaboró (encargado de calidad)}\hfill\firma{Revisó (Almacenero)}\hfill\firma{Aprobó (Supervisor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
-\end{tabularx}\par}
+\end{tabularx}\par
+\noindent\emph{Nota.} Cantidades acumuladas a la fecha de la planilla. $Q_T$: teórica; $Q_E$: entregada según remisiones; $Q_C$: colocada según vales; $I_F$: existencia física; $\Delta_I = Q_E - Q_C - I_F$; $Q_M$: medida con la Supervisión; $Q_P$: pagada; $\delta_{P/M} = (Q_P - Q_M)/Q_M \times 100$; kg/\mdos{}: cuantía de acero de la losa.\par}
 
 % =====================================================================
 \clearpage
@@ -322,7 +327,7 @@ Hormigón (\mtres{}) & & & & --- & --- & & & & --- & \\ \hline
 \hline
 \campo{NC N.\textsuperscript{o}} & \campo{Fecha de detección} & \campo{Detectada por} \\
 \campo{Losa / paño / lote} & \campo{Requisito incumplido (plano, ET, PPI, PCM, contrato)} & \campo{Referencia} \\
-\multicolumn{3}{|@{\,}l|}{Proceso: \casilla\ Recepción \casilla\ Almacén \casilla\ Ejecución del paño \casilla\ Hormigón \casilla\ Cantidades \casilla\ Documentos \quad Clasificación: \casilla\ Crítica \casilla\ Mayor \casilla\ Menor} \\
+\multicolumn{3}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{Proceso: \casilla\ Recepción \casilla\ Almacén \casilla\ Ejecución del paño \casilla\ Hormigón \casilla\ Cantidades \casilla\ Documentos\par Clasificación: \casilla\ Crítica \casilla\ Mayor \casilla\ Menor} \\
 \hline
 \end{tabularx}
 
@@ -362,7 +367,7 @@ Hormigón (\mtres{}) & & & & --- & --- & & & & --- & \\ \hline
 \multicolumn{2}{|@{\,}l|}{\textbf{6. Costo asociado (precios constantes del contrato)} \quad Categoría: \casilla\ Falla interna \casilla\ Falla externa} \\ \hline
 \campo{Mano de obra: horas-hombre $\times$ costo horario = Bs} & \campo{Materiales: cantidad $\times$ precio = Bs} \\
 \campo{Equipo y ensayos = Bs} & \campo{\textbf{Total de la NC = Bs}} \\ \hline
-\multicolumn{2}{|@{\,}l|}{\textbf{7. Cierre} \quad Fecha de cierre \underline{\hspace{2.2cm}} \quad Días desde la detección \underline{\hspace{1.2cm}} (meta: $\leq 7$) \quad Actualizar: \casilla\ Riesgos \casilla\ PPI \casilla\ Procedimiento} \\
+\multicolumn{2}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\textbf{7. Cierre} \quad Fecha de cierre \underline{\hspace{2.2cm}} \quad Días desde la detección \underline{\hspace{1.2cm}} (meta: $\leq 7$)\par Actualizar: \casilla\ Riesgos \casilla\ PPI \casilla\ Procedimiento} \\
 \multicolumn{2}{|@{\,}p{\dimexpr\linewidth-2\tabcolsep\relax}|}{\firma{Encargado de calidad}\hfill\firma{Director de obra}\hfill\firma{Supervisor (si es crítica o mayor)}\hfill\firma{Fecha}\par\vspace{2pt}} \\ \hline
 \end{tabularx}\par}
 
@@ -482,7 +487,7 @@ Costo total de la calidad $CC + CNC$ (Bs) & & Retrabajos (FI2) en \% de $C_{\tex
 
 \medskip
 {\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3pt}
-\begin{longtable}{@{}|Q{0.7cm}|P{11.6cm}|Q{1.5cm}|Q{1.6cm}|@{}}
+\begin{longtable}{@{}|Q{0.7cm}|P{11.2cm}|Q{1.5cm}|Q{2.0cm}|@{}}
 \hline
 \textbf{N.\textsuperscript{o}} & \textbf{Pregunta guía} & \textbf{Dirigida a} & \textbf{Bloque} \\ \hline
 \endfirsthead
@@ -536,13 +541,13 @@ Costo total de la calidad $CC + CNC$ (Bs) & & Retrabajos (FI2) en \% de $C_{\tex
 
 \medskip
 {\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.28}\setlength{\tabcolsep}{3pt}
-\begin{longtable}{@{}|Q{0.7cm}|P{6.4cm}|Q{1.4cm}|Q{1.3cm}|Q{1.4cm}|Q{1.5cm}|P{3.2cm}|@{}}
+\begin{longtable}{@{}|Q{0.7cm}|P{5.9cm}|Q{1.4cm}|Q{1.3cm}|Q{1.4cm}|Q{1.5cm}|P{2.6cm}|@{}}
 \hline
 \multicolumn{7}{|@{\,}l|}{\cellcolor{gray!15}\textbf{3. Evaluación (puntaje de 1 a 4)}} \\ \hline
-\textbf{N.\textsuperscript{o}} & \textbf{Componente o instrumento} & \textbf{Pertinencia} & \textbf{Claridad} & \textbf{Suficiencia} & \textbf{Aplicabilidad} & \textbf{Observaciones} \\ \hline
+\textbf{N.\textsuperscript{o}} & \textbf{Componente o instrumento} & {\scriptsize\textbf{Pertinencia}} & {\scriptsize\textbf{Claridad}} & {\scriptsize\textbf{Suficiencia}} & {\scriptsize\textbf{Aplicabilidad}} & \textbf{Observaciones} \\ \hline
 \endfirsthead
 \hline
-\textbf{N.\textsuperscript{o}} & \textbf{Componente o instrumento} & \textbf{Pertinencia} & \textbf{Claridad} & \textbf{Suficiencia} & \textbf{Aplicabilidad} & \textbf{Observaciones} \\ \hline
+\textbf{N.\textsuperscript{o}} & \textbf{Componente o instrumento} & {\scriptsize\textbf{Pertinencia}} & {\scriptsize\textbf{Claridad}} & {\scriptsize\textbf{Suficiencia}} & {\scriptsize\textbf{Aplicabilidad}} & \textbf{Observaciones} \\ \hline
 \endhead
 1 & Política de la calidad y objetivos con metas (Tabla~\ref{tab:objetivos}) & & & & & \\ \hline
 2 & Matriz de riesgos (Tabla~\ref{tab:riesgos}) & & & & & \\ \hline

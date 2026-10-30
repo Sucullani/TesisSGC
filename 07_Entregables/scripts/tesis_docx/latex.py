@@ -695,6 +695,7 @@ class Transformador:
         self.ecuaciones = 0
         self.n_titulo = 0
         self.refs_faltantes = []
+        self.duplicadas = []
         # contadores (como en LaTeX)
         self.c = {'chapter': 0, 'section': 0, 'subsection': 0, 'subsubsection': 0,
                   'paragraph': 0, 'subparagraph': 0, 'table': 0, 'figure': 0, 'equation': 0}
@@ -980,7 +981,10 @@ class Transformador:
         return str(c.get(contador, ''))
 
     def _registrar_etiqueta(self, nombre, num, tipo, titulo=''):
-        self.etiquetas[nombre.strip()] = {'num': num, 'tipo': tipo, 'titulo': titulo}
+        nombre = nombre.strip()
+        if nombre in self.etiquetas:
+            self.duplicadas.append(nombre)
+        self.etiquetas[nombre] = {'num': num, 'tipo': tipo, 'titulo': titulo}
 
     def numerar(self, s):
         salida = []
@@ -1527,7 +1531,14 @@ class Transformador:
     # ------------------------------------------------------------------
     #  Figuras: TikZ, \includegraphics e \includepdf
     def _bloque_imagen(self, png, ancho_cm):
-        return '\n\n\\begin{apafigura}\n\\includegraphics[width=%.3fcm]{%s}\n\\end{apafigura}\n\n' % (ancho_cm, png)
+        # Marcador provisional: se convierte en LaTeX al final de transformar_graficos
+        return '\n\n⟦IMG:%.3f|%s⟧\n\n' % (ancho_cm, png)
+
+    @staticmethod
+    def _imagenes_finales(s):
+        return re.sub(r'⟦IMG:([0-9.]+)\|([^⟧]+)⟧',
+                      lambda m: '\\begin{apafigura}\n\\includegraphics[width=%scm]{%s}\n\\end{apafigura}'
+                      % (m.group(1), m.group(2)), s)
 
     def transformar_graficos(self, s):
         codigos = []
@@ -1580,7 +1591,7 @@ class Transformador:
                 partes.append('\n\n⟦PDFPAG:%s⟧\n\n' % ('H' if horizontal else 'V') + self._bloque_imagen(png, w))
             return ''.join(partes)
         s = reemplazar_comando(s, 'includepdf', r_pdf, n_obl=1, n_opc=1)
-        return s
+        return self._imagenes_finales(s)
 
     def _ajustar(self, ancho, alto, max_ancho=ANCHO_UTIL_CM, max_alto=ALTO_UTIL_CM - 4.5):
         """Ancho final (cm) que respeta el ancho útil y una altura máxima."""
