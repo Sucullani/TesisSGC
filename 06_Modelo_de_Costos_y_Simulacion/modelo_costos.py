@@ -595,10 +595,15 @@ lp.append(fila_tri("Fracción de retrabajo sin SGC ($\\rho$)", P["retrabajo"]["f
 lp.append(fila_tri("Eficacia del SGC en retrabajos ($e_R$)", P["retrabajo"]["eficacia_sgc"]))
 for c in P["costos_sgc"]["componentes"].values():
     lp.append(fila_tri(f"{tex(c['descripcion'])} (Bs)", c["Bs_total"], es_pct=False))
+ENC_PARAM = ("\\toprule\n\\textbf{Parámetro} & \\textbf{Mín.} & \\textbf{Moda} & \\textbf{Máx.} & "
+             "\\textbf{Fuente o justificación} \\\\\n\\midrule\n")
 tabla("tab_parametros",
-      "\\begin{longtable}{@{}P{4.3cm}rrrP{6.0cm}@{}}\n\\toprule\n"
-      "\\textbf{Parámetro} & \\textbf{Mín.} & \\textbf{Moda} & \\textbf{Máx.} & \\textbf{Fuente o justificación} \\\\\n\\midrule\n\\endhead\n"
-      + "\n".join(lp) + "\n\\bottomrule\n\\end{longtable}\n")
+      "\\begin{longtable}{@{}P{4.3cm}rrrP{6.0cm}@{}}\n"
+      "\\caption{Parámetros inciertos del modelo de costos y sus fuentes}\\label{tab:parametros-modelo}\\\\\n"
+      + ENC_PARAM + "\\endfirsthead\n"
+      "\\multicolumn{5}{@{}l}{\\textit{(continuación)}}\\\\\n" + ENC_PARAM + "\\endhead\n"
+      "\\bottomrule\n\\endfoot\n"
+      + "\n".join(lp) + "\n\\end{longtable}\n")
 
 # ------------------- Macros con las cifras clave (para el texto) ------------
 def macro(nombre: str, valor: str) -> str:
@@ -662,3 +667,7 @@ print(json.dumps({"PU_losa": PU_LOSA, "CD_teo": CD_TEO, "r_det": r_det,
                   "r_media": float(np.mean(R)), "P(r>=umbral)": p_hg, "P(r>0)": p_r_pos,
                   "P_HE1": p_he1, "P_HE2": p_he2, "k_equilibrio": k_equilibrio,
                   "k_umbral": k_umbral, "r_max": r_max_teorico}, indent=2, ensure_ascii=False))
+
+# Macros en inglés para el Abstract (leen el JSON recién escrito).
+import runpy  # noqa: E402
+runpy.run_path(str(Path(__file__).with_name("macros_en.py")))

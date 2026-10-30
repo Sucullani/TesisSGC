@@ -4,7 +4,7 @@
 \chapter{MODELO DE COSTOS Y SIMULACIÓN DE MONTE CARLO}
 \label{anx:modelo}
 
-Este anexo documenta los parámetros, las fuentes y el código del modelo descrito en la Sección~\ref{sec:modelo-simulacion}. Todos los archivos están en la carpeta \texttt{06\_Modelo\_de\_Costos\_y\_Simulacion} del repositorio de la tesis. Para reproducir los resultados basta ejecutar \texttt{python3 modelo\_costos.py}: el programa lee \texttt{parametros.json}, realiza las \MCiter{} iteraciones con la semilla \MCsemilla{} y regenera las tablas, las figuras y las cifras que se citan en el texto.
+Este anexo documenta los parámetros, las fuentes y el código del modelo descrito en la Sección~\ref{sec:modelo-simulacion}. Todos los archivos están en la carpeta \texttt{06\_Modelo\_de\_Costos\_y\_Simulacion} del repositorio de la tesis. Para reproducir los resultados basta ejecutar \texttt{python3 modelo\_costos.py}: el programa lee \texttt{parametros.json}, realiza las \MCiter{} iteraciones con la semilla \MCsemilla{} y regenera las tablas, las figuras y las cifras que se citan en el texto. El análisis de robustez (Tabla~\ref{tab:variantes}) se reproduce con \texttt{python3 variantes.py}, que repite la simulación con cada variante de los parámetros.
 
 \section*{L.1. Parámetros inciertos y sus fuentes}
 \addcontentsline{toc}{section}{L.1. Parámetros inciertos y sus fuentes}
@@ -24,3 +24,7 @@ Este anexo documenta los parámetros, las fuentes y el código del modelo descri
 \section*{L.3. Código del modelo}
 \addcontentsline{toc}{section}{L.3. Código del modelo}
 \VerbatimInput{../06_Modelo_de_Costos_y_Simulacion/modelo_costos.py}
+
+\section*{L.4. Código del análisis de robustez}
+\addcontentsline{toc}{section}{L.4. Código del análisis de robustez}
+\VerbatimInput{../06_Modelo_de_Costos_y_Simulacion/variantes.py}
