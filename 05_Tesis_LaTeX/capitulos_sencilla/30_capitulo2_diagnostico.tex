@@ -1,0 +1,704 @@
+% =====================================================================
+%  CAPÍTULO 2. DISEÑO E IMPLEMENTACIÓN DEL MODELO (SGC)
+%  Estructura del modelo científico según el Taller 4:
+%  conceptualización y alcance -> factores y variables -> procedimiento
+%  y toma de observaciones -> validación -> contraste de hipótesis.
+%  Este archivo contiene las secciones 2.1 a 2.5; la 2.6 está en
+%  31_capitulo2_propuesta_sgc.tex y las 2.7 a 2.9 en
+%  32_capitulo2_implementacion.tex.
+%  Figuras de datos: 03_Datos_Obra_Edificio_Posgrado/04_Extraccion_de_Datos/
+%  scripts/cap2_diagnostico_figuras.py
+% =====================================================================
+\chapter{DISEÑO E IMPLEMENTACIÓN DEL SISTEMA DE GESTIÓN DE LA CALIDAD}
+\label{cap:diseno}
+
+Este capítulo desarrolla el modelo de investigación con la secuencia que propone la guía del Seminario de Grado: conceptualización y alcance, factores y variables, procedimiento y toma de observaciones, validación de las observaciones y contraste de hipótesis \parencite{barrios2021modelo}. Las secciones 2.1 a 2.5 definen el modelo, caracterizan el caso, operacionalizan las variables, delimitan la población y presentan el diagnóstico de la primera losa, que constituye la línea base. La Sección~\ref{sec:diseno-sgc} presenta el diseño del Sistema de Gestión de la Calidad (SGC) y las secciones \ref{sec:implementacion} a \ref{sec:contraste} describen su implementación prevista, la evaluación \emph{ex ante} por simulación, la validación y el plan de contraste de hipótesis.
+
+% =====================================================================
+\section{Conceptualización y alcance del modelo de investigación}
+\label{sec:conceptualizacion}
+
+El modelo de investigación representa la relación causal que plantea la hipótesis: la aplicación de un SGC basado en la norma ISO~9001 ($X$) modifica el costo de ejecución de la losa alivianada ($Y$) por dos vías, la reducción del desperdicio de materiales y la reducción del costo de no calidad, a cambio de un costo de prevención y evaluación. El perfil de la investigación previó un diseño de un solo grupo con medición antes y después del tratamiento ($O_1$--$X$--$O_2$): la primera losa, ejecutada sin SGC, sería la preprueba, y la segunda losa, ejecutada con el SGC, la posprueba. Ese diseño compara paños de la misma geometría, pero por sí solo no permite atribuir con certeza la diferencia al tratamiento, porque carece de un grupo de comparación y queda expuesto a hechos externos que ocurren entre las dos mediciones \parencite[p.~163]{hernandez2018}.
+
+La ejecución de la obra impidió la posprueba en campo. El 5 de enero de 2026 la empresa contratista presentó a la entidad una carta notariada de intención de resolución consensuada del contrato por fuerza mayor o caso fortuito, atribuida al Decreto Supremo N.\textsuperscript{o}~5503, que retiró la subvención estatal a la gasolina y al diésel, y solicitó la paralización de la obra; la Supervisión le instruyó seguir el procedimiento contractual \parencite[pp.~1, 14]{uatf_item13}. La UATF respondió favorablemente el 10 de febrero de 2026, y el contrato se cerró con una planilla de avance por resolución, firmada el 16 de marzo de 2026, con un avance total del 57,43~\% \parencite[pp.~1--2]{uatf_item13}. Durante la investigación no se ejecutó la segunda losa. Por ello se aplicó el diseño alternativo previsto en el perfil, que conserva la lógica $O_1$--$X$--$O_2$ y reemplaza la posprueba de campo por una evaluación \emph{ex ante} (Figura~\ref{fig:modelo}):
+
+\begin{enumerate}
+  \item \textbf{Línea base ($O_1$), retrospectiva y documental.} Es la primera losa: 41 paños y 1.109,84~\mdos{} ejecutados sin SGC entre noviembre y diciembre de 2025. Se reconstruyó con los planos, las especificaciones técnicas (ET), los cómputos, las planillas de avance, los certificados, el Libro de Órdenes y el contrato (Sección~\ref{sec:diagnostico}).
+  \item \textbf{Tratamiento ($X$).} Es el SGC diseñado: plan de la calidad elaborado con las directrices de ISO~10005:2018, plan de puntos de inspección y ensayo (PPI), procedimientos de control de materiales, tratamiento de no conformidades y registro de costos de la calidad (Sección~\ref{sec:diseno-sgc}).
+  \item \textbf{Posprueba simulada ($O_2$).} Es un modelo de costos a precios constantes del contrato con simulación de Monte Carlo, que estima el costo de ejecutar los 2.234,60~\mdos{} restantes (segunda y tercera losa, con paños homólogos a los de la primera) en dos escenarios: \emph{control}, sin SGC, con el desempeño de la línea base, y \emph{tratamiento}, con SGC (Sección~\ref{sec:modelo-simulacion}).
+\end{enumerate}
+
+La guía del Seminario de Grado admite la modelación de simulación teórica como modelo de investigación, siempre que incluya un tratamiento de control y permita calcular el grado de incertidumbre de los resultados \parencite{barrios2021modelo}. El escenario de control cumple la función del grupo que no recibe el tratamiento en un experimento \parencite[p.~154]{hernandez2018}; la diferencia es que aquí ambos escenarios se calculan sobre la misma geometría y con los mismos precios, de modo que el único factor que cambia entre ellos es el SGC. La incertidumbre se representa con distribuciones de probabilidad de los parámetros y se traslada al resultado. Por eso el contraste de hipótesis es probabilístico: la hipótesis general se acepta si la probabilidad de que la reducción relativa del costo unitario ($r$) sea de al menos el 5~\% es igual o mayor que 0,95, lo que equivale a un nivel de significancia de 0,05 en un contraste unilateral (Sección~\ref{sec:contraste}).
+
+El diseño es no experimental, porque el SGC no se manipuló en la obra y las variables de la línea base se observaron tal como ocurrieron \parencite[p.~175]{hernandez2018}; la línea base es longitudinal y retrospectiva, porque se reconstruyó con documentos producidos en distintos momentos de la ejecución \parencite[p.~180]{hernandez2018}. La evaluación del tratamiento es \emph{ex ante} y queda sujeta a verificación cuando se ejecute la segunda losa (Sección~\ref{sec:verificacion-futura}).
+
+\begin{figure}[H]
+\centering
+\caption{Esquema del modelo de investigación con posprueba simulada}
+\label{fig:modelo}
+\begin{tikzpicture}[
+  caja/.style={draw, rounded corners=2pt, align=center, text width=3.45cm,
+               minimum height=3.3cm, font=\footnotesize, fill=gray!8, inner sep=3pt},
+  futura/.style={draw, dashed, rounded corners=2pt, align=center, text width=7.6cm,
+               font=\footnotesize, inner sep=4pt},
+  flecha/.style={-{Stealth[length=3mm]}, thick}]
+  \node[caja] (o1) {\textbf{$O_1$: línea base}\\ retrospectiva y documental\\[2pt] Primera losa sin SGC\\ 41 paños; 1.109,84~\mdos{}\\[2pt] IDM, CNC, brechas ISO~9001 y no conformidades\\[2pt] (Sección~\ref{sec:diagnostico})};
+  \node[caja, right=0.45cm of o1] (x) {\textbf{$X$: SGC diseñado}\\[2pt] Plan de la calidad (ISO~10005), PPI, procedimientos PCM-01 a PCM-05, no conformidades y costos de la calidad\\[2pt] (Sección~\ref{sec:diseno-sgc})};
+  \node[caja, right=0.45cm of x] (o2) {\textbf{$O_2$: posprueba simulada}\\[2pt] Saldo: 2.234,60~\mdos{}\\ Control: sin SGC\\ Tratamiento: con SGC\\ Monte Carlo, \MCiter{} escenarios\\[2pt] (Sección~\ref{sec:modelo-simulacion})};
+  \node[caja, right=0.45cm of o2] (h) {\textbf{Contraste probabilístico}\\[2pt] HG:\\ $P(r \geq 0{,}05) \geq 0{,}95$\\ HE1 y HE2:\\ $P \geq 0{,}95$\\ Sensibilidad y punto de equilibrio\\[2pt] (Secciones~\ref{sec:validacion} y \ref{sec:contraste})};
+  \draw[flecha] (o1) -- (x);
+  \draw[flecha] (x) -- (o2);
+  \draw[flecha] (o2) -- (h);
+  \node[futura, below=0.55cm of $(x.south)!0.5!(o2.south)$] (f) {\textbf{Verificación futura en obra:} segunda losa con SGC, paños homólogos, prueba \emph{t} para muestras relacionadas o de Wilcoxon (Sección~\ref{sec:verificacion-futura})};
+  \draw[flecha, dashed] (x.south) -- (x.south |- f.north);
+  \draw[flecha, dashed] (f.east) -| (h.south);
+\end{tikzpicture}
+\nota{Elaboración propia. IDM: índice de desperdicio de materiales; CNC: costo de no calidad; PPI: plan de puntos de inspección y ensayo; PCM: procedimiento de control de materiales; $r$: reducción relativa del costo unitario. La línea discontinua indica la verificación que queda pendiente porque la segunda losa no se ejecutó durante la investigación.}
+\end{figure}
+
+\textbf{Alcance.} El modelo abarca el ítem~13 del contrato, «H\textsuperscript{o}S\textsuperscript{o} losa alivianada con vigueta simple pretensada y plastoformo h~=~25~cm», y el acero de la losa, que se mide y paga en el ítem~8 \parencite[pp.~16, 20]{uatf2025pao2}. Considera los cuatro materiales principales del sistema (viguetas pretensadas, complementos de poliestireno expandido o EPS, hormigón y acero), los retrabajos y los costos de prevención y evaluación del SGC. Los costos se valoran a precios constantes del contrato, que no admite reajuste de precios \parencite[p.~95]{uatf2025pao2}; así, el alza de precios de 2025 y 2026 no se confunde con el efecto del SGC. Temporalmente, la línea base cubre el periodo de la Planilla de avance N.\textsuperscript{o}~2 (04/09/2025 a 08/12/2025), en el que se armó, vació y certificó la primera losa, más los documentos de cierre del contrato. La Tabla~\ref{tab:fases} resume las fases del modelo, sus productos y el objetivo específico al que responde cada una.
+
+\begin{table}[H]
+\caption{Fases del modelo de investigación}
+\label{tab:fases}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{2.7cm}LP{4.0cm}P{1.0cm}P{1.35cm}@{}}
+\toprule
+\textbf{Fase} & \textbf{Actividades} & \textbf{Productos} & \textbf{OE} & \textbf{Sección} \\
+\midrule
+1. Diagnóstico & Análisis documental; aplicación documental de la lista de verificación ISO~9001:2026; identificación de no conformidades; Pareto e Ishikawa & Porcentaje de cumplimiento por cláusula; no conformidades y causas & OE1 & \ref{sec:brechas-iso} a \ref{sec:nc-causas} \\
+2. Línea base ($O_1$) & Cantidades teóricas de planos; cantidades entregadas y pagadas; parámetros de literatura para lo no registrado & IDM y CNC sin SGC; parámetros del escenario de control & OE2 & \ref{sec:linea-base-cuantitativa} \\
+3. Diseño ($X$) & Plan de la calidad, PPI, procedimientos, formatos y costos de la calidad & SGC del ítem losa alivianada & OE3 & \ref{sec:diseno-sgc} \\
+4. Evaluación \emph{ex ante} ($O_2$) & Modelo de costos y simulación de Monte Carlo con escenarios de control y de tratamiento & Distribuciones de $CU$, IDM, CNC y $r$ & OE4 & \ref{sec:implementacion} \\
+5. Contraste y validación & Reglas de decisión probabilísticas; sensibilidad; juicio de expertos (pendiente) & Decisión sobre las hipótesis; grado de incertidumbre & OE5 & \ref{sec:validacion} y \ref{sec:contraste} \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia. OE: objetivo específico; $CU$: costo unitario; $r$: reducción relativa del costo unitario.}
+\end{table}
+
+% =====================================================================
+\section{Caracterización del caso de estudio}
+\label{sec:caso}
+
+\subsection{Ubicación y descripción del edificio}
+\label{sec:ubicacion}
+
+El Edificio de Posgrado se construye en la Ciudadela Universitaria de la UATF, en el sector noreste, junto al edificio del Vicerrectorado, sobre la avenida Las Banderas, frente a la terminal nueva, en la zona Las Lecherías de la ciudad de Potosí. Sus coordenadas son 19°33'21,84''~S y 65°45'47,73''~O, a 3.650~m~s.~n.~m. \parencite[pp.~8--9]{uatf2025pao2}. El proyecto tiene seis niveles destinados a dos auditorios de 180 personas, aulas de clase y de defensa de tesis, laboratorios, biblioteca, áreas administrativas y de servicios, alojamiento para docentes visitantes y una cafetería; la planta baja presenta desniveles en tres sectores por la pendiente del terreno \parencite[p.~1]{uatf_item13}.
+
+La fase contratada comprende solo la obra gruesa hasta la tercera losa: de un proyecto de seis plantas «solo se ejecutarán el arranque del suelo y tres losas» \parencite[p.~8]{uatf2025pao2}. Se organizó en tres módulos: obra gruesa (fundaciones, columnas, vigas, losas alivianadas y escaleras de hormigón armado), instalaciones eléctricas y sanitarias embebidas en losas, vigas y columnas. La obra retomó una estructura iniciada antes: combinó trabajos nuevos con el refuerzo de elementos existentes, como la limpieza de pozos con zapatas ya vaciadas, la ampliación de zapatas y el encamisado de columnas \parencite[p.~8]{uatf2025pao2}. El proyecto, con código CUCE 25-0143-00-1531493-1-1, se financia con recursos del Impuesto Directo a los Hidrocarburos (IDH) y lo administra el Departamento de Infraestructura de la UATF \parencite[pp.~3, 7]{uatf2025pao2}.
+
+\subsection{Datos contractuales}
+\label{sec:datos-contractuales}
+
+El contrato de obra N.\textsuperscript{o}~02-2025 resultó de la licitación pública UATF/\allowbreak OBRAS/\allowbreak LP/\allowbreak 1/\allowbreak 2025/\allowbreak IDH-OTPRO/\allowbreak DEPTO.INFRA, adjudicada a la Empresa Unipersonal Constructora Kodesh mediante la Resolución Administrativa N.\textsuperscript{o}~82-2025, del 4 de abril de 2025, y se firmó el 24 de abril de 2025 \parencite[pp.~91, 112]{uatf2025pao2}. La Tabla~\ref{tab:datos-contractuales} resume sus datos principales y sus modificaciones.
+
+\begin{table}[H]
+\caption{Datos del contrato de obra y de sus modificaciones}
+\label{tab:datos-contractuales}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{4.6cm}LP{2.4cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Dato} & \textbf{Fuente (PAO2)} \\
+\midrule
+Firma del contrato & 24/04/2025 & p.~112 \\
+Orden de proceder y acta de inicio & 06/05/2025, a las 08:30 & pp.~127--128 \\
+Monto original & Bs~3.367.031,95; sin anticipo & pp.~92, 127 \\
+Relación con el precio referencial & Oferta del 84,18~\% del precio referencial implícito (Bs~3.999.929,35; cálculo propio con la garantía adicional) & p.~92 \\
+Contrato modificatorio N.\textsuperscript{o}~1 & +Bs~243.093,48 (+7,22~\%); incluye ítems nuevos por Bs~79.087,22 & pp.~7, 14, 16 \\
+Monto modificado & Bs~3.610.125,43 & pp.~3, 7 \\
+Plazo & 270 días; ampliación N.\textsuperscript{o}~1, 13 días; ampliación N.\textsuperscript{o}~2, 77 días; total 360 días (+33,3~\%) & p.~7 \\
+Entrega provisional & 30/01/2026 $\rightarrow$ 12/02/2026 $\rightarrow$ 30/04/2026 & p.~7 \\
+Garantías (Banco Nacional de Bolivia) & Cumplimiento de contrato, Bs~235.693,00 (7~\% del monto original), y garantía adicional, Bs~32.908,00; ambas vencen el 14/04/2026 & pp.~92, 130--131 \\
+Avance al 08/12/2025 (PAO N.\textsuperscript{o}~2) & Bs~2.056.555,27 (56,97~\%) & p.~3 \\
+Cierre por resolución (PAO N.\textsuperscript{o}~3, versión firmada el 16/03/2026) & Ejecutado en el periodo: Bs~16.837,41; avance total: Bs~2.073.392,68 (57,43~\%); saldo no ejecutado: Bs~1.536.732,75 (cálculo propio) & Exp., p.~2 \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en \textcite{uatf2025pao2} y \textcite[p.~2]{uatf_item13} (Exp.). Existe una segunda versión de la planilla de cierre, en archivo digital, con un avance de Bs~2.075.082,47 (57,48~\%) \parencite{uatf_pao3}; la diferencia se analiza en la Sección~\ref{sec:analisis-documental}. El precio referencial implícito se obtuvo de la cláusula de la garantía adicional, que equivale a la diferencia entre el 85~\% del precio referencial y la propuesta: $(3.367.031{,}95 + 32.908)/0{,}85$. El contrato modificatorio respondió a actividades nuevas por el tipo de suelo, a la perforación de zapatas para anclajes, al recálculo de la estructura y al ajuste de volúmenes medidos en obra \parencite[p.~1]{uatf_item13}.}
+\end{table}
+
+Tres rasgos del contrato condicionan la gestión de la calidad del ítem. Primero, los precios unitarios incluyen la provisión de «materiales de calidad» y las «reparaciones por trabajos defectuosos», y no se pagan trabajos que excedan el precio salvo autorización expresa \parencite[p.~92]{uatf2025pao2}; además, no procede ningún reajuste de precios \parencite[p.~95]{uatf2025pao2}. En consecuencia, el desperdicio, los retrabajos y el alza de los materiales los absorbe el contratista. Segundo, el contrato asigna a la Supervisión la responsabilidad directa del control de calidad, pero exige al contratista ensayar los materiales a su costo antes de incorporarlos a la obra \parencite[pp.~101--102]{uatf2025pao2}. Tercero, la medición debe ser neta y no se miden volúmenes excedentes que la Supervisión no haya aprobado por escrito \parencite[p.~99]{uatf2025pao2}. La Tabla~\ref{tab:clausulas-calidad} reúne las cláusulas que se relacionan con la calidad y el control de materiales; son requisitos de la parte interesada principal y, por ello, entradas del SGC.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{1.7cm}P{5.8cm}P{6.0cm}P{2.0cm}@{}}
+\caption{Cláusulas del contrato relacionadas con la calidad y el control de materiales}\label{tab:clausulas-calidad}\\
+\toprule
+\textbf{Cláusula} & \textbf{Contenido (paráfrasis)} & \textbf{Implicancia para el SGC} & \textbf{PAO2} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Cláusula} & \textbf{Contenido (paráfrasis)} & \textbf{Implicancia para el SGC} & \textbf{PAO2} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+5.ª & Los precios unitarios incluyen materiales de calidad y la reparación de trabajos defectuosos; no se paga lo que exceda el precio sin autorización escrita & El costo de no calidad recae en el contratista: el SGC protege su margen & p.~92 \\
+16.ª & No procede reajuste de precios & El desperdicio se paga a precios crecientes del mercado & p.~95 \\
+20.ª & El mal tiempo no extraordinario y las demoras en la entrega de materiales no son fuerza mayor; el contratista debe preverlos & Clima y abastecimiento son riesgos del contratista que deben planificarse & p.~96 \\
+25.ª & Libro de Órdenes abierto ante notario; cada orden con fecha, firma del Supervisor y constancia firmada del Director de Obra & Registro formal de liberaciones, instrucciones y no conformidades & p.~100 \\
+26.3 & Control técnico del trabajo; notificación y corrección de defectos; el control de calidad es responsabilidad directa de la Supervisión & La Supervisión participa en los puntos de espera y en el cierre de no conformidades & p.~101 \\
+26.6 & Materiales sujetos a inspección y ensayos antes de su incorporación; costo de los ensayos a cargo del contratista & Recepción documentada y ensayos previos al uso & p.~102 \\
+26.9 & Acopio en zonas limpias aprobadas; materiales inspeccionados y aprobados antes de su uso & Almacén, preservación e inventario & p.~102 \\
+26.10 & Inspección permanente; rechazo de material defectuoso; ningún trabajo se cubre sin aprobación previa & Puntos de espera del PPI antes de cubrir o vaciar & pp.~99, 102 \\
+26.11 a 26.13 & Pruebas adicionales, corrección de defectos y estimación del costo de los no corregidos & Tratamiento de no conformidades y su costo & p.~99 \\
+27.ª & Medición conjunta y neta; no se miden volúmenes excedentes no aprobados por escrito & El desperdicio no es cantidad pagable; conciliación de cantidades antes de cada planilla & p.~99 \\
+32.ª & Cronograma aprobado como documento de control; multas por día de retraso en cada hito & El retraso por retrabajos o desabastecimiento tiene un costo contractual & pp.~105--106 \\
+33.ª & Obra defectuosa corregida por cuenta del contratista dentro del tercer día; retención de planillas & Costo de fallas internas y externas & p.~107 \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en el contrato de obra adjunto a la Planilla de avance N.\textsuperscript{o}~2 \parencite{uatf2025pao2}. PAO2: página del archivo PDF de la planilla.}
+\endgroup
+
+\subsection{Cronología de la ejecución}
+\label{sec:cronologia}
+
+La Tabla~\ref{tab:cronologia} ordena los hechos documentados desde la adjudicación hasta el cierre del contrato. Integra el Libro de Órdenes de la Planilla N.\textsuperscript{o}~2 (24 asientos, del 10/09 al 28/11/2025), los asientos posteriores copiados en el expediente del ítem~13, las cartas y certificados de los proveedores y los comunicados que describen el contexto de desabastecimiento.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{2.3cm}P{10.4cm}P{2.8cm}@{}}
+\caption{Cronología de la ejecución del proyecto y de la primera losa}\label{tab:cronologia}\\
+\toprule
+\textbf{Fecha} & \textbf{Hecho} & \textbf{Fuente} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Fecha} & \textbf{Hecho} & \textbf{Fuente} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+04/04/2025 & Adjudicación de la licitación a la Empresa Constructora Kodesh (R.~A. N.\textsuperscript{o}~82-2025). & PAO2, p.~91 \\
+14/04/2025 & Emisión de las boletas de garantía de cumplimiento (Bs~235.693,00) y adicional (Bs~32.908,00), con vigencia hasta el 14/04/2026. & PAO2, pp.~130--131 \\
+24/04/2025 & Firma del contrato N.\textsuperscript{o}~02-2025. & PAO2, p.~112 \\
+06/05/2025 & Orden de proceder y acta de inicio: Bs~3.367.031,95; 270 días; conclusión prevista el 30/01/2026. & PAO2, pp.~127--128 \\
+12/06/2025 & FANCESA comunica la paralización temporal de su producción de cemento por falta de diésel. & \textcite{fancesa2025}; Exp., p.~26 \\
+13/06/2025 & La contratista solicita la protocolización del contrato; al 08/12/2025 seguía pendiente por falta de la firma del Rector. & PAO2, pp.~88--89 \\
+16/06/2025 & Import Export Las Lomas Ltda. informa que, por el desabastecimiento de combustibles y los bloqueos de carreteras, de una compra de 20~t de fierro corrugado solo entregó el 30~\%. & \textcite{laslomas2025}; Exp., p.~27 \\
+04/09/2025 & Inicio del periodo de la Planilla de avance N.\textsuperscript{o}~2. & PAO2, p.~3 \\
+10/09 a 31/10/2025 & Siete solicitudes de verificación y vaciado (5 columnas de arranque y 7 ejes de vigas de arriostre; luego 75 columnas), todas autorizadas el mismo día. Lluvias notificadas el 09/09, 14/09, 17/09 y 15/10. & PAO2, pp.~114--121 \\
+20/09 a 11/10/2025 & Fechas de elaboración de las 12 probetas de columnas y vigas del certificado N.\textsuperscript{o}~000293. & PAO2, p.~78 \\
+09/10/2025 & La Cámara de la Construcción de Tarija se pronuncia sobre el alza del precio del cemento y la escasez de combustibles. & \textcite{cadeco2025}; Exp., p.~26 \\
+23/10 y 31/10/2025 & La Supervisión instruye cuidar la dosificación (23/10) y el contenido de agua y la toma de muestras de hormigón (31/10). & PAO2, pp.~120--121 \\
+14/11/2025 & «Se viene armando las vigas y losa del primer nivel»; lluvias del 12 y 13/11. & PAO2, p.~122 \\
+17/11/2025 & La contratista informa que, por la escasez de combustible, los materiales tardan mucho en llegar. & PAO2, p.~123 \\
+21/11/2025 & Continúa el armado de vigas y losa; lluvia. La Supervisión instruye documentar los hechos con reportes del SENAMHI. & PAO2, p.~124 \\
+27/11/2025 & Certificados de calidad de PRETENSA (viguetas) y de UNICON (2.350 piezas de EPS de 20~$\times$~100~$\times$~44~cm). & PAO2, pp.~80--81 \\
+28/11/2025 & El Director de Obra informa que concluyó el armado de la losa y pide su verificación; la Supervisión informa que verificó «la losa, instalaciones, agregados, etc.», autoriza el vaciado «desde dos frentes» y recomienda cumplir especificaciones, dosificaciones y curado. No instruye tomar probetas ni consta la fecha del hormigonado. & PAO2, p.~125 \\
+05/12/2025 & Certificado de laboratorio N.\textsuperscript{o}~000293: 10 probetas de columnas y 2 de vigas; ninguna de la losa. & PAO2, p.~78 \\
+08/12/2025 & Cierre de la Planilla N.\textsuperscript{o}~2 (95 días trabajados): se certifica la primera losa completa (1.109,84~\mdos{}; Bs~239.365,07) y 13.548,49~kg de acero, de los cuales 4.171,18~kg corresponden a «losa alivianada». La Supervisión aprueba la planilla el mismo día. & PAO2, pp.~5, 12, 16, 19--20 \\
+11/12/2025 & El Fiscal de Obras y el Jefe de Infraestructura aprueban la planilla y se solicita su pago a la Dirección Administrativa y Financiera. & PAO2, pp.~2--4, 14 \\
+16/12/2025 & Verificación y autorización del vaciado de las columnas del segundo nivel (los asientos llevan por error el año 2026). & Exp., p.~13 \\
+23/12/2025 & Inicio programado del ítem~13 en el cronograma «actualizado» de 360 días (hasta el 21/04/2026), cuando la primera losa ya estaba ejecutada. & PAO2, p.~137 \\
+26/12/2025 & Primera fecha en que el hormigón de la losa, vaciado después de la autorización del 28/11/2025, podía cumplir 28 días (cálculo propio). & --- \\
+05/01/2026 & Carta notariada de intención de resolución del contrato por fuerza mayor, atribuida al D.~S. N.\textsuperscript{o}~5503 (retiro de la subvención a la gasolina y al diésel); solicitud de paralización. La Supervisión instruye seguir el procedimiento contractual. & Exp., pp.~1, 14 \\
+10/02/2026 & La UATF responde favorablemente a la solicitud de resolución concertada. & Exp., p.~1 \\
+16/03/2026 & Planilla de avance N.\textsuperscript{o}~3 de cierre por resolución del contrato, firmada por la contratista y la Supervisión: Bs~16.837,41 en el periodo, avance total de 57,43~\% y descuento de 1.862,81~kg de acero. Una segunda versión, en archivo digital, descuenta 1.915,16~kg y llega a 57,48~\%. & Exp., p.~2; \textcite{uatf_pao3} \\
+30/03/2026 & D.~S. N.\textsuperscript{o}~5597 de ajuste de precios de materiales de construcción en contratos de obra, posterior a la paralización. & \textcite{ds5597_2026} \\
+14/04/2026 & Vencimiento de las boletas de garantía, 16 días antes de la entrega provisional vigente. & PAO2, pp.~130--131 \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en \textcite{uatf2025pao2} (PAO2), \textcite{uatf_item13} (Exp.), \textcite{uatf_pao3}, \textcite{fancesa2025}, \textcite{laslomas2025}, \textcite{cadeco2025} y \textcite{ds5597_2026}. Las páginas son las del archivo PDF. El año de la respuesta del 10 de febrero no figura en el expediente; se deduce de la secuencia de los hechos.}
+\endgroup
+
+\subsection{Sistema de losa: planos, especificaciones y certificados}
+\label{sec:sistema-losa}
+
+La primera losa se divide en 41 paños, de 1,40 a 52,38~\mdos{} cada uno, que suman 1.109,84~\mdos{} (Figura~\ref{fig:geometria}). Las áreas son iguales en el Plano~01, en el plano adjunto a la planilla, en el cómputo métrico de la Planilla N.\textsuperscript{o}~2 y en el de la planilla de cierre \parencite[pp.~28--29, 60]{uatf2025pao2}. El área media es de 27,07~\mdos{} y la mediana de 33,87~\mdos{}; siete paños miden menos de 6~\mdos{} y seis superan los 40~\mdos{} (cálculo propio). La losa se apoya en vigas de hormigón armado de secciones variables, de 15~$\times$~30 a 30~$\times$~95~cm, además de una viga plana curva de 30~$\times$~25~cm, y las viguetas siguen la dirección de los ejes literales o numéricos según el paño \parencite[Plano~03]{uatf_planos}.
+
+\begin{figure}[H]
+\centering
+\caption{Geometría y paños de la primera losa del Edificio de Posgrado}
+\label{fig:geometria}
+\includegraphics[width=\linewidth]{plano01_geometria_primera_losa}
+\nota{Tomado del Plano~01 «Geometría sistema de ejes primera losa» (escala original 1:100). Las áreas A1 a A41 son los paños computados en el ítem~13.}
+\end{figure}
+
+La Tabla~\ref{tab:sistema} reúne las características del sistema según los documentos del proyecto. La ET define la losa como un sistema de viguetas pretensadas de fabricación industrial con complemento de plastoformo de 20~cm de altura, nervios, diafragmas y sus refuerzos, que se vacía de manera monolítica con las vigas y por franjas \parencite[p.~3]{uatf_et}. Los documentos no coinciden en la geometría del complemento, como se analiza en la Sección~\ref{sec:analisis-documental}.
+
+\begin{table}[H]
+\caption{Características de la losa alivianada según los documentos del proyecto}
+\label{tab:sistema}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{4.0cm}LP{3.3cm}@{}}
+\toprule
+\textbf{Característica} & \textbf{Valor} & \textbf{Fuente} \\
+\midrule
+Espesor total & 25~cm: complemento de 20~cm y carpeta de 5~cm & ET, p.~3; PRETENSA \\
+Altura del complemento en el corte & 0,15~m, con carpeta de 0,05~m & Plano~02 \\
+Separación entre ejes de viguetas & 50~cm & PRETENSA \\
+Luz máxima de vigueta & 7,50~m, simplemente apoyada & PRETENSA \\
+Sobrecarga admisible & 400~kg/\mdos{} & PRETENSA \\
+Viguetas & Hormigón de 350 a 400~kg/cm\textsuperscript{2}; acero de pretensado con rotura de 18.000~kg/cm\textsuperscript{2}; certificación IBNORCA e ISO & ET, p.~3 \\
+Hormigón de carpeta y nervios & H25 (f'c~=~250~kg/cm\textsuperscript{2} a 28 días), cemento $\geq$~400~kg/\mtres{}; el fabricante exige al menos 21~MPa & ET, pp.~3--4; PRETENSA \\
+Armadura de distribución & $\phi$6~c/20~cm en ambas direcciones & Plano~02 \\
+Nervios transversales & Sección de 0,10~$\times$~0,15~m con 2~$\phi$10 inferiores y 2~$\phi$10 superiores & Plano~02 \\
+Complemento según la ET & Plastoformo de 100~$\times$~50~$\times$~20~cm & ET, p.~3 \\
+Complemento suministrado & Plastobloq de 20~$\times$~100~$\times$~44~cm, densidad 10~kg/\mtres{}, 2.350 piezas & UNICON \\
+Medición y pago & Ítem~13 por \mdos{} (Bs~215,6753/\mdos{}); acero de la losa por kg en el ítem~8 (Bs~16,75584/kg) & PAO2, pp.~16, 20 \\
+\bottomrule
+\end{tabularx}
+\nota{ET: especificaciones técnicas \parencite{uatf_et}; Plano~02: sección y detalles de la losa \parencite{uatf_planos}, reproducido en el Anexo de planos; PRETENSA: \textcite{pretensa2025}; UNICON: \textcite{unicon2025}; PAO2: \textcite{uatf2025pao2}.}
+\end{table}
+
+% =====================================================================
+\section{Definición de factores y variables}
+\label{sec:variables}
+
+Los factores del modelo se dividen en controlables, que el SGC puede modificar (recepción de materiales, despacho por paño, inspección antes del vaciado, control del hormigón y conciliación de cantidades), y no controlables, que dependen del entorno (precios, clima y abastecimiento). La Tabla~\ref{tab:factores} relaciona cada factor o variable con su indicador y con la forma en que se trata en el modelo de la Sección~\ref{sec:modelo-simulacion}. Las dimensiones, indicadores e instrumentos de cada variable se detallan en el Anexo~\ref{anx:operacionalizacion}.
+
+\begin{table}[H]
+\caption{Factores, variables e indicadores del modelo}
+\label{tab:factores}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{3.2cm}P{2.6cm}P{3.6cm}L@{}}
+\toprule
+\textbf{Factor o variable} & \textbf{Tipo} & \textbf{Indicador y unidad} & \textbf{Tratamiento en el modelo} \\
+\midrule
+SGC (control de materiales y del proceso) & Independiente ($X$); controlable & Cumplimiento ISO~9001 (\%); eficacias $e_i$ y $e_R$ & Escenario de tratamiento (con SGC) frente al de control (sin SGC) \\
+Costo unitario de ejecución & Dependiente ($Y$) & $CU$ (Bs/\mdos{}), ecuación~\eqref{eq:cu} & Se descompone en costo directo teórico, CNC y costo de la calidad (ecuación~\ref{eq:cu-modelo}) \\
+Desperdicio de materiales & Dependiente (HE1) & $IDM_i$ (\%), ecuación~\eqref{eq:idm} & Distribución triangular por material; línea base documentada o de literatura \\
+Costo de no calidad & Dependiente (HE2) & $CNC$ (Bs/\mdos{}; \%), ecuación~\eqref{eq:cnc} & Desperdicio valorado más retrabajo (ecuación~\ref{eq:cnc-modelo}) \\
+Costo de la calidad & Interviniente & $CC$ (Bs/\mdos{}) & Costos de prevención y evaluación del SGC repartidos en el saldo \\
+Geometría de los paños & Controlada & Área, número y longitud de viguetas & Igual en ambos escenarios (paños homólogos) \\
+Precios de los insumos & Controlada & Bs a precios del contrato & Constantes en ambos escenarios \\
+Clima, abastecimiento e inflación & No controlable & Días de lluvia; demoras; variación de precios & Fuera del modelo de costos; se gestionan como riesgos del SGC \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia. HE1 y HE2: hipótesis específicas. Las ecuaciones~\eqref{eq:cu-modelo} y \eqref{eq:cnc-modelo} se presentan en la Sección~\ref{sec:modelo-simulacion}.}
+\end{table}
+
+Los indicadores principales se calculan de la siguiente manera.
+
+\textbf{Índice de desperdicio del material $i$:}
+\begin{equation}
+  IDM_i = \frac{Q_{\text{real},i} - Q_{\text{teórica},i}}{Q_{\text{teórica},i}} \times 100
+  \label{eq:idm}
+\end{equation}
+donde $Q_{\text{real},i}$ es la cantidad consumida (entregada menos sobrante recuperable) y $Q_{\text{teórica},i}$ es la cantidad según planos y cómputos. En el modelo, $IDM_{i,s}$ es este mismo índice en el escenario $s$ (sin o con SGC), expresado como fracción. Como el hormigón solo puede medirse por vaciado, para ese material la unidad del indicador es el vaciado y su desperdicio se asigna a los paños en proporción a su volumen teórico.
+
+\textbf{Costo unitario a precios constantes del contrato:}
+\begin{equation}
+  CU = \frac{\sum_{j} Q_{j}\, p_{j} + C_{MO} + C_{EQ}}{A}
+  \label{eq:cu}
+\end{equation}
+donde $Q_j$ es la cantidad real del insumo $j$, $p_j$ su precio en el análisis de precios unitarios, $C_{MO}$ y $C_{EQ}$ los costos de mano de obra y equipo, y $A$ la superficie ejecutada (\mdos{}). Si en la ecuación~\eqref{eq:cu} se reemplaza la cantidad real por la teórica más el desperdicio, $Q_j = q_{teo,j}\,A\,(1 + IDM_j)$, el costo unitario se separa en el costo directo teórico ($CD_{teo}$), que no depende del SGC, y el costo del desperdicio, que sí depende de él. Esa separación es la base de la ecuación~\eqref{eq:cu-modelo}, que añade el retrabajo y el costo de la calidad.
+
+\textbf{Costo de la calidad y costo de no calidad (modelo PAF):}
+\begin{equation}
+  CC = C_{P} + C_{E}, \qquad CNC = C_{FI} + C_{FE}, \qquad \%CNC = \frac{CNC}{C_{\text{ítem}}} \times 100
+  \label{eq:cnc}
+\end{equation}
+donde $C_P$ son los costos de prevención, $C_E$ los de evaluación, $C_{FI}$ los de fallas internas (desperdicio, retrabajo y reparaciones) y $C_{FE}$ los de fallas externas (sobremediciones corregidas, ampliaciones y multas). El modelo de la Sección~\ref{sec:modelo-simulacion} cuantifica las fallas internas, que consumen recursos de la losa; las fallas externas de la línea base se documentan en el diagnóstico (Sección~\ref{sec:analisis-documental}), pero no se simulan, porque son correcciones de pago o sanciones y no consumo de materiales.
+
+\textbf{Reducción relativa del costo en el paño homólogo $k$:}
+\begin{equation}
+  r_k = \frac{CU_{\text{sin},k} - CU_{\text{con},k}}{CU_{\text{sin},k}}
+  \label{eq:reduccion}
+\end{equation}
+La ecuación~\eqref{eq:reduccion} es el indicador de la verificación futura con datos de obra, paño por paño (Sección~\ref{sec:verificacion-futura}); en la evaluación \emph{ex ante} se aplica al costo unitario del saldo completo (ecuación~\ref{eq:r-modelo}).
+
+% =====================================================================
+\section{Población y muestra}
+\label{sec:poblacion}
+
+\textbf{Población.} La población son las losas alivianadas con viguetas pretensadas de la fase contratada: tres losas con 3.344,44~\mdos{}, que es la cantidad del ítem~13 en el contrato modificado; la cantidad original era de 3.348,75~\mdos{} \parencite[p.~16]{uatf2025pao2}.
+
+\textbf{Unidad de análisis.} La unidad de análisis es el paño de losa, delimitado por vigas y caracterizado por su área, el número y la longitud de sus viguetas y el número de complementos. Para el hormigón, la unidad es el vaciado (Sección~\ref{sec:variables}).
+
+\textbf{Línea base censal.} La línea base estudia los 41 paños de la primera losa (1.109,84~\mdos{}), es decir, todos los paños ejecutados; por ello es un censo y no una muestra \parencite[p.~196]{hernandez2018}. Su elección no fue probabilística: es la única losa que se ejecutó antes de la resolución del contrato \parencite[p.~200]{hernandez2018}.
+
+\textbf{Saldo y paños homólogos.} La evaluación \emph{ex ante} se aplica al saldo no ejecutado del ítem: 2.234,60~\mdos{} de la segunda y la tercera losa \parencite[p.~16]{uatf2025pao2}. El cómputo del contrato modificado calcula la «segunda y tercera losa» con los mismos 41 paños de la primera, cada uno multiplicado por dos \parencite[pp.~18--19]{uatf_item13}. Solo cambian cinco áreas: A1 y A34 (38,11~\mdos{} en lugar de 35,86), A2 y A35 (36,00 en lugar de 34,67) y A40 (28,76 en lugar de 28,46). Por ello cada losa superior mide 1.117,30~\mdos{}, 7,46~\mdos{} (0,7~\%) más que la primera, y las dos suman exactamente el saldo: $2 \times 1.117{,}30 = 2.234{,}60$~\mdos{} (cálculo propio). Como la geometría, el número de paños y el sistema de viguetas se repiten, los paños de las losas superiores se consideran homólogos de los de la primera, y el modelo aplica al saldo las cantidades teóricas por \mdos{} de la primera losa (Sección~\ref{sec:linea-base-cuantitativa}).
+
+El mismo cómputo explica una pequeña diferencia documental. Su total es de 3.344,74~\mdos{}, porque registra la primera losa con 1.110,14~\mdos{} (A40 = 28,76~\mdos{}) \parencite[p.~18]{uatf_item13}; la tabla de tiempos de la contratista usa también 3.344,74~\mdos{} \parencite[p.~25]{uatf_item13}. El contrato modificado y las planillas, en cambio, consignan 3.344,44~\mdos{} \parencite[p.~16]{uatf2025pao2}: la diferencia de 0,30~\mdos{} corresponde al paño A40 de la primera losa, que se midió con 28,46~\mdos{} (cálculo propio).
+
+% =====================================================================
+\section{Diagnóstico de la situación actual (línea base)}
+\label{sec:diagnostico}
+
+El diagnóstico caracteriza la gestión de la calidad y el control de materiales con que se ejecutó la primera losa (OE1) y cuantifica su línea base (OE2). Tiene cuatro partes: las brechas frente a la norma ISO~9001:2026 (Sección~\ref{sec:brechas-iso}), el análisis documental de la primera losa (Sección~\ref{sec:analisis-documental}), las no conformidades y sus causas (Sección~\ref{sec:nc-causas}) y la línea base cuantitativa (Sección~\ref{sec:linea-base-cuantitativa}). Todos los hallazgos provienen de documentos del repositorio de la tesis y se citan con su página. Los que se refieren a cantidades o pagos se presentan como inconsistencias documentales que la Supervisión y la Fiscalización deben verificar con los respaldos que no forman parte de la documentación revisada; no constituyen una imputación de errores ni de pagos indebidos.
+
+% ---------------------------------------------------------------------
+\subsection{Brechas frente a la norma ISO~9001:2026}
+\label{sec:brechas-iso}
+
+Para medir la distancia entre la gestión real y los requisitos de la norma se aplicó, de manera documental, la lista de verificación C.1 del Anexo~\ref{anx:instrumentos}. La lista contiene 50 requisitos redactados por el autor para el proceso de la losa, a partir de la estructura de cláusulas 4 a 10 de la norma ISO~9001:2026 \parencite{iso9001_2026}; dos de ellos no aplican: el diseño y desarrollo, que corresponde al proyectista de la UATF, y la propiedad del cliente, porque la entidad no suministró materiales. Cada uno de los 48 requisitos aplicables se calificó con 1 (cumple), 0,5 (cumple parcialmente) o 0 (no cumple o sin evidencia documental), con la evidencia encontrada en los documentos y su página. El porcentaje de cada cláusula es la suma de las calificaciones dividida entre el número de requisitos aplicables. La Tabla~\ref{tab:brechas-iso} y la Figura~\ref{fig:brechas-iso} presentan los resultados y los comparan con dos diagnósticos bolivianos recientes.
+
+\begin{table}[H]
+\caption{Cumplimiento de los requisitos de ISO~9001 por cláusula: primera losa y diagnósticos de referencia}
+\label{tab:brechas-iso}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}LQ{1.95cm}Q{1.45cm}Q{2.05cm}Q{2.15cm}Q{2.05cm}@{}}
+\toprule
+\textbf{Cláusula} & \textbf{Requisitos aplicables} & \textbf{Puntaje} & \textbf{Primera losa (esta tesis)} & \textbf{Mamani Calsina (2025)} & \textbf{Peña Callisaya (2024)} \\
+\midrule
+4. Contexto de la organización & 4 & 1,0 & 25,0~\% & 19~\% & 30~\% \\
+5. Liderazgo & 5 & 1,0 & 20,0~\% & 38~\% & 60~\% \\
+6. Planificación & 4 & 0,5 & 12,5~\% & 26~\% & 26~\% \\
+7. Apoyo & 10 & 2,5 & 25,0~\% & 26~\% & 47~\% \\
+8. Operación & 14 & 2,5 & 17,9~\% & 37~\% & 42~\% \\
+9. Evaluación del desempeño & 6 & 1,5 & 25,0~\% & 11~\% & n.~e. \\
+10. Mejora & 5 & 0,5 & 10,0~\% & 24~\% & n.~e. \\
+\midrule
+\textbf{Global} & \textbf{48} & \textbf{9,5} & \textbf{19,8~\%} & \textbf{24~\%} & \textbf{43~\%} \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con la lista de verificación C.1 (Anexo~\ref{anx:instrumentos}). Los diagnósticos de referencia corresponden a dos plantas industriales de viguetas pretensadas: Prensocret \parencite[pp.~47, 49]{mamanicalsina2025} e ISOCRET \parencite[p.~71]{pena2024}, evaluadas con la edición 2015 de la norma y con escalas de calificación propias. n.~e.: cláusula no evaluada. El cumplimiento global de esta tesis es el puntaje total entre los requisitos aplicables (9,5/48); el promedio simple de las siete cláusulas es 19,3~\%.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\caption{Cumplimiento de los requisitos de ISO~9001 por cláusula en la primera losa y en dos diagnósticos de referencia}
+\label{fig:brechas-iso}
+\includegraphics[width=\linewidth]{fig_brechas_iso9001}
+\nota{Elaboración propia con los datos de la Tabla~\ref{tab:brechas-iso}. Las referencias son plantas de viguetas pretensadas \parencite{mamanicalsina2025,pena2024}; n.~e.: no evaluado. Figura generada con el script \texttt{cap2\_diagnostico\_figuras.py} de la carpeta de extracción de datos de obra.}
+\end{figure}
+
+El cumplimiento global fue de 19,8~\%. Ningún requisito alcanzó el cumplimiento pleno: 19 se cumplieron parcialmente y 29 no se cumplieron. Con la escala de \textcite[p.~42]{mamanicalsina2025}, todas las cláusulas se ubican en el rango «deficiente o no implementado» (0 a 25~\%); con el criterio de \textcite[p.~70]{pena2024}, que recomienda diseñar el sistema cuando el resultado no supera el 50~\%, el caso exige diseñar un SGC y no solo mejorar prácticas existentes. Las cláusulas más débiles fueron la mejora (10,0~\%), porque no hubo registro de no conformidades ni análisis de causas, y la planificación (12,5~\%), porque los riesgos de suministro, precios y clima no se identificaron antes de materializarse. La operación (17,9~\%) concentró la mayor cantidad de requisitos incumplidos (9 de 14), en particular el control del hormigón, la verificación de los suministros, la trazabilidad y el control de las salidas no conformes. Los puntajes parciales provienen sobre todo de controles contractuales que sí funcionaron: el Libro de Órdenes como canal de comunicación, la verificación del armado antes de cada vaciado, la medición conjunta de cantidades y los cambios contractuales tramitados formalmente.
+
+El resultado es menor que el de las dos plantas industriales de viguetas pretensadas tomadas como referencia: 24~\% en Prensocret, con un mínimo de 11~\% en la evaluación del desempeño \parencite[pp.~48--49]{mamanicalsina2025}, y 43~\% en ISOCRET, con un mínimo de 26~\% en la planificación \parencite[p.~71]{pena2024}. La diferencia es coherente con la naturaleza de cada organización: una planta tiene procesos repetitivos, personal estable y documentación propia, mientras que la ejecución de una losa en una obra pública es un proceso temporal, cuyo control descansa casi por completo en la Supervisión. Coinciden, en cambio, en que la planificación, la evaluación y la mejora están entre las cláusulas más débiles. La comparación es solo indicativa, porque las escalas, la edición de la norma y las técnicas difieren: Peña Callisaya se basó en entrevistas y observación de los procesos \parencite[p.~67]{pena2024} y no evaluó las cláusulas 9 y 10.
+
+\textbf{Limitación.} La evaluación fue documental y la realizó el investigador. Una calificación de 0 indica que el requisito no dejó evidencia en los documentos revisados, no que la práctica no haya existido. Las entrevistas de la guía C.7 (Anexo~\ref{anx:instrumentos}) a la Dirección de Obra, a la Supervisión y a la Fiscalización quedan como verificación complementaria. \pendiente{aplicar la guía de entrevista C.7 y ajustar, si corresponde, las calificaciones de la lista C.1.}
+
+% ---------------------------------------------------------------------
+\subsection{Análisis documental de la primera losa}
+\label{sec:analisis-documental}
+
+El análisis documental revisó, página por página, la Planilla de avance N.\textsuperscript{o}~2, de 139 páginas, que incluye el informe de Supervisión, los cómputos, los croquis, las fotografías, el certificado de laboratorio, los certificados de materiales, el contrato, el Libro de Órdenes y los cronogramas \parencite{uatf2025pao2}; la planilla y los cómputos de cierre \parencite{uatf_pao3}; el expediente del ítem~13 \parencite{uatf_item13}; las ET \parencite{uatf_et}, y los planos 01 a 03. Cada dato se contrastó en al menos dos fuentes. Las coincidencias confirmaron el dato; por ejemplo, las 41 áreas de paño y su total de 1.109,84~\mdos{} son idénticas en cuatro documentos. Las diferencias se registraron como hallazgos y se agrupan en siete temas.
+
+\subsubsection{Control de la resistencia del hormigón}
+El certificado de laboratorio N.\textsuperscript{o}~000293 es el único registro de ensayos de compresión adjunto a la Planilla N.\textsuperscript{o}~2. Comprende 12 probetas cilíndricas de 6~$\times$~12~pulgadas (área de 182,4~cm\textsuperscript{2}) de columnas y vigas, ensayadas el 5 de diciembre de 2025 a edades de 55 a 76 días y «proyectadas» a 28 días con un factor de tiempo (Tabla~\ref{tab:probetas}). El laboratorio aclaró que «las probetas fueron traidas [\textit{sic}] y elaboradas por la empresa solicitante» \parencite[p.~78]{uatf2025pao2}.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}Q{0.8cm}P{1.7cm}Q{2.0cm}Q{1.2cm}Q{1.6cm}Q{2.4cm}Q{1.5cm}Q{2.4cm}@{}}
+\caption{Resultados del certificado de laboratorio N.\textsuperscript{o}~000293 por probeta}\label{tab:probetas}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Elemento} & \textbf{Fecha de la probeta} & \textbf{Edad (días)} & \textbf{Carga (kg)} & \textbf{Resistencia a la edad de ensayo (kg/cm\textsuperscript{2})} & \textbf{Factor de tiempo} & \textbf{Resistencia proyectada a 28 días (kg/cm\textsuperscript{2})} \\
+\midrule
+\endfirsthead
+\multicolumn{8}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Elemento} & \textbf{Fecha de la probeta} & \textbf{Edad (días)} & \textbf{Carga (kg)} & \textbf{Resistencia a la edad de ensayo (kg/cm\textsuperscript{2})} & \textbf{Factor de tiempo} & \textbf{Resistencia proyectada a 28 días (kg/cm\textsuperscript{2})} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Columna & 01/10/2025 & 65 & 56.200 & 308,1 & 0,877 & 270,2 \\
+2 & Columna & 02/10/2025 & 64 & 53.200 & 291,6 & 0,879 & 256,2 \\
+3 & Columna & 02/10/2025 & 64 & 53.600 & 293,8 & 0,879 & 258,2 \\
+4 & Columna & 04/10/2025 & 62 & 56.000 & 307,0 & 0,882 & 270,8 \\
+5 & Columna & 04/10/2025 & 62 & 55.000 & 301,5 & 0,882 & 266,0 \\
+6 & Columna & 08/10/2025 & 58 & 59.000 & 323,4 & 0,890 & 287,8 \\
+7 & Columna & 08/10/2025 & 58 & 52.000 & 285,1 & 0,890 & 253,6 \\
+8 & Columna & 11/10/2025 & 55 & 54.000 & 296,0 & 0,896 & 265,3 \\
+9 & Columna & 11/10/2025 & 55 & 55.000 & 301,5 & 0,896 & 270,2 \\
+10 & Columna & 20/09/2025 & 76 & 58.000 & 318,0 & 0,861 & 273,7 \\
+11 & Viga & 20/09/2025 & 76 & 55.400 & 303,7 & 0,861 & 261,4 \\
+12 & Viga & 20/09/2025 & 76 & 53.400 & 292,7 & 0,861 & 252,0 \\
+\midrule
+\multicolumn{7}{@{}l}{Columnas ($n = 10$): media 267,2; desviación estándar 9,9; CV 3,7~\%} & 253,6 -- 287,8 \\
+\multicolumn{7}{@{}l}{Vigas ($n = 2$): media 256,7; desviación estándar 6,6; CV 2,6~\%} & 252,0 -- 261,4 \\
+\multicolumn{7}{@{}l}{Losa alivianada} & sin ensayos \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Transcrito del certificado del Laboratorio de Resistencia de Materiales y Tecnología del Hormigón de la Carrera de Ingeniería Civil de la UATF \parencite{labuatf2025}, adjunto a la Planilla de avance N.\textsuperscript{o}~2 \parencite[p.~78]{uatf2025pao2}. El certificado no tiene columna de fecha de ensayo; la fecha de la probeta más la edad coincide con el 05/12/2025 en las 12 filas. Estadísticos: cálculo propio. CV: coeficiente de variación.}
+\endgroup
+
+Los valores proyectados superan f'c~=~250~kg/cm\textsuperscript{2}, pero el control presenta cinco debilidades:
+\begin{enumerate*}[label=(\roman*)]
+  \item no hay probetas de la losa alivianada, aunque el criterio de superficie de ACI~318-25 exige al menos una muestra por cada $\approx$~464,5~\mdos{} de losa, es decir, al menos tres muestras para la primera losa \parencite[sección~26.12.2.1, p.~603]{aci318_2025};
+  \item las probetas no se ensayaron a la edad especificada de 28 días, sino a 55--76 días, y se convirtieron con un factor de tiempo cuyo origen no se declara;
+  \item las elaboró la propia contratista, sin muestreo independiente ni planilla de muestreo, cuando la norma exige que los ensayos del hormigón fresco y la elaboración de probetas estén a cargo de técnicos certificados \parencite[sección~26.12.1.1, p.~602]{aci318_2025};
+  \item el certificado no identifica la muestra ni la amasada de cada probeta, de modo que no pueden formarse «ensayos de resistencia» como promedio de dos probetas de una misma muestra \parencite[sección~26.12.1.1, p.~601]{aci318_2025}; y
+  \item cuatro de los doce valores están por debajo de 260~kg/cm\textsuperscript{2}, con poco margen sobre la resistencia especificada.
+\end{enumerate*}
+Además, la primera losa se certificó para pago el 8 de diciembre de 2025 \parencite[p.~16]{uatf2025pao2}, antes del 26 de diciembre, primera fecha en que su hormigón, vaciado después de la autorización del 28 de noviembre, podía cumplir 28 días (cálculo propio). En la documentación revisada no constan ensayos posteriores del hormigón de la losa.
+
+\subsubsection{Recomendaciones y afirmaciones de la Supervisión}
+En su informe de la Planilla N.\textsuperscript{o}~2, la Supervisión recomendó a la contratista «presentar las garantías de todos los materiales empleados en obra», «realizar la rotura de probetas de los elementos vaciados» y «presentar las dosificaciones para los diferentes tipos de elementos» \parencite[p.~9]{uatf2025pao2}. Al cierre del periodo en que se ejecutó la losa no se contaba, por tanto, con esos controles básicos. Dos páginas después, el mismo informe afirma que «los trabajos realizados durante el periodo presentan buena calidad», que se verificaron los materiales, los encofrados y las armaduras, y que se realizó la rotura de probetas en el laboratorio de la UATF \parencite[p.~11]{uatf2025pao2}. Ninguna de las dos páginas indica qué elementos se ensayaron ni con qué registros se verificaron los materiales. La calificación de la calidad carece de evidencia objetiva y contradice las recomendaciones de la p.~9; para la losa, el único certificado disponible no contiene ninguna probeta.
+
+\subsubsection{Libro de Órdenes}
+La copia del Libro de Órdenes adjunta a la Planilla N.\textsuperscript{o}~2 comprende 12 hojas notariales (N.\textsuperscript{o}~000019 a 000030) con 24 asientos, del 10 de septiembre al 28 de noviembre de 2025 \parencite[pp.~114--125]{uatf2025pao2}. La Tabla~\ref{tab:libro-ordenes} resume su contenido.
+
+\begin{table}[H]
+\caption{Síntesis del Libro de Órdenes del periodo de ejecución de la primera losa}
+\label{tab:libro-ordenes}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{5.4cm}P{2.8cm}L@{}}
+\toprule
+\textbf{Indicador} & \textbf{Valor} & \textbf{Observación} \\
+\midrule
+Asientos & 24 (12 del Director de Obra y 12 de la Supervisión) & Respuesta de la Supervisión el mismo día en los 12 casos \\
+Solicitudes de verificación y vaciado & 8 & 8 autorizadas el mismo día (100~\%) \\
+Elementos cuyo vaciado se autorizó & 5 columnas de arranque, 7 ejes de vigas de arriostre, 75 columnas y la losa del primer nivel & La losa, el 28/11/2025, «desde dos frentes» \\
+No conformidades, rechazos, órdenes de corrección o retrabajos & 0 & Ningún asiento registra defectos \\
+Instrucciones de calidad & 3 específicas y 3 genéricas & Dosificación (23/10); contenido de agua y toma de muestras (31/10); especificaciones, dosificaciones y curado (28/11), sin registro asociado \\
+Instrucción de muestreo al autorizar la losa & No & Sí se instruyó el 31/10/2025 para columnas \\
+Días de lluvia notificados & 7 & 09/09, 14/09, 17/09, 15/10, 12/11, 13/11 y 21/11/2025 \\
+Demoras de materiales por escasez de combustible & 1 asiento & 17/11/2025 \\
+Constancia firmada del Director de Obra & 0 de 12 hojas & Exigida por la cláusula 25.ª \\
+Encabezado (contratante, obra, fecha) & Vacío en las 12 hojas & --- \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en \textcite[pp.~100, 114--125]{uatf2025pao2}. Cálculos propios sobre la transcripción completa de los 24 asientos.}
+\end{table}
+
+El Libro de Órdenes funcionó como canal de comunicación, pero no como registro de control de la calidad. Todas las solicitudes se aprobaron el mismo día sin observaciones; las instrucciones sobre dosificación, contenido de agua y curado se repitieron sin que conste una dosificación aprobada, un control de asentamiento o un registro de curado. El 28 de noviembre de 2025 la Supervisión informó que había verificado «la losa, instalaciones, agregados, etc.» y autorizó el vaciado «desde dos frentes»; a diferencia de la autorización del 31 de octubre para columnas, no instruyó tomar probetas \parencite[pp.~121, 125]{uatf2025pao2}. No se registró la fecha real del hormigonado; como la losa se certificó completa en la planilla cerrada el 8 de diciembre, se infiere que se vació entre esas dos fechas. Que no haya no conformidades registradas no prueba que no hubiera defectos: muestra que el instrumento contractual de control no dejó constancia de ellos. Los asientos posteriores, copiados en el expediente del ítem~13, registran la autorización del vaciado de las columnas del segundo nivel, el 16 de diciembre, y la carta notariada del 5 de enero de 2026 \parencite[pp.~13--14]{uatf_item13}.
+
+\subsubsection{Coherencia técnica de los documentos}
+Los documentos del proyecto describen de manera distinta el complemento de la losa:
+\begin{enumerate*}[label=(\alph*)]
+  \item la ET exige plastoformo de 100~$\times$~50~$\times$~20~cm \parencite[p.~3]{uatf_et};
+  \item el corte transversal del Plano~02 acota un complemento de 0,15~m de altura con una carpeta de 0,05~m, es decir, una losa de 20~cm \parencite[Plano~02]{uatf_planos}; y
+  \item el certificado del proveedor corresponde a 2.350 piezas de Plastobloq de 20~$\times$~100~$\times$~44~cm \parencite{unicon2025}, compatibles con la separación de 50~cm entre ejes de viguetas que indica el fabricante de las viguetas \parencite{pretensa2025}.
+\end{enumerate*}
+Además, mientras que la ET y el ítem~13 describen una losa de «h~=~25~cm» y el certificado del fabricante de las viguetas indica 20~+~5~=~25~cm \parencite{pretensa2025}, la sección de 0,20~m del Plano~02 no alcanzaría la altura mínima de 250~mm, incluida la carpeta de compresión, que la NBDS exige para que una losa de viguetas prefabricadas funcione como diafragma rígido \parencite[art.~12.I, inc.~b, p.~22]{mopsv2023nbds}, lo que refuerza que se trata de un error del plano que la Supervisión debe aclarar. No se encontró una orden de cambio ni una aclaración que resuelva estas diferencias. Los planos tampoco son completos ni del todo coherentes. El Plano~02 detalla un nervio transversal de 0,10~$\times$~0,15~m con cuatro barras de $\phi$10 y la armadura de momentos negativos sobre los apoyos, pero ningún plano ubica los nervios ni fija el diámetro, la separación o la longitud de los negativos: las leyendas remiten a una «armadura de acuerdo a planos» que no figura en el juego de planos revisado. En el Plano~03, la etiqueta del paño A7 indica 10 viguetas y hay 19 dibujadas; los paños A34 a A36 y A38 llevan la etiqueta 20 y tienen 18 o 19 viguetas dibujadas; y el paño A16 tiene la etiqueta 2 sin viguetas dibujadas \parencite{uatf_planos}. Estas omisiones impiden calcular sin supuestos la cantidad teórica de acero, que es justamente la base para controlar lo que se mide y se paga (Sección~\ref{sec:linea-base-cuantitativa}). Además, la ET exige cumplir la norma CBH-87 y las normas bolivianas de cemento (NB~2.1-001 a 2.1-014), áridos (NB~596-91 a 612-91) y agua (NB~587-91 y 588-91) \parencite[pp.~1--2]{uatf_et}, y no menciona la NB~1225001, basada en el código ACI~318. Por último, la ET del ítem~13 incluye entre los materiales del ítem el «fierro corrugado (parrilla de compresión y refuerzo momentos negativos)» \parencite[p.~3]{uatf_et}, mientras que el acero de la losa se midió y pagó en el ítem~8 \parencite[p.~20]{uatf2025pao2}. Sin el análisis de precios unitarios contractual del ítem~13, que no forma parte de la documentación revisada, no puede saberse si ese precio incluye el acero; la superposición debe verificarse.
+
+\subsubsection{Control de cantidades}
+\textbf{Ítem~13.} La primera losa se certificó completa en la Planilla N.\textsuperscript{o}~2: 1.109,84~\mdos{} por Bs~239.365,07, el 33,18~\% de la cantidad modificada, sin avance anterior \parencite[p.~16]{uatf2025pao2}. El cómputo lista los 41 paños solo con su área, sin dimensiones ni cantidades de materiales \parencite[pp.~28--29]{uatf2025pao2}.
+
+\textbf{Acero de la losa.} En el mismo periodo, el ítem~8 certificó 13.548,49~kg (Bs~227.016,33): 9.377,31~kg de vigas y una línea «LOSA ALIVIANADA» de 1,00~$\times$~4.171,18~kg, anotada en las columnas de largo y volumen y sin planilla de armado que la respalde \parencite[pp.~19--20]{uatf2025pao2}. Esa cantidad equivale a 3,76~kg/\mdos{} (cálculo propio) y se compara con la cantidad teórica en la Sección~\ref{sec:linea-base-cuantitativa}.
+
+\textbf{Planilla de cierre en dos versiones.} El documento oficial de cierre es la Planilla de avance N.\textsuperscript{o}~3 firmada el 16 de marzo de 2026, que paga Bs~16.837,41 en el periodo, llega a un avance total de Bs~2.073.392,68 (57,43~\%) y descuenta 1.862,81~kg de acero (Bs~$-$31.212,95), el 3,55~\% de los 52.424,65~kg acumulados; el acumulado del ítem~8 queda en 50.561,84~kg, la misma cifra que usa el detalle de descuento por agua potable \parencite[pp.~2, 12]{uatf_item13}. Existe una segunda versión del mismo documento en archivo digital, que descuenta 1.915,16~kg (Bs~$-$32.090,11; 3,65~\%), deja un acumulado de 50.509,49~kg, paga además la limpieza general (Bs~2.566,96) y suma Bs~18.527,21 en el periodo y 57,48~\% de avance \parencite{uatf_pao3}. Las dos versiones difieren en 52,35~kg de acero ($\approx$~Bs~877,17) y en el pago de la limpieza general; la Supervisión y la Fiscalización deben verificar cuál se tramitó. El cómputo métrico de la versión digital es, además, la única fuente que desglosa el acero por elementos: en él, la línea de la losa aparece como 3~$\times$~4.171,18~kg~=~12.513,54~kg, aunque solo se ejecutó una losa \parencite[hoja «Cómputos métricos», filas 375--541]{uatf_pao3}. Como el total de ese cómputo bajó respecto del acumulado anterior, las demás partidas debieron bajar 10.257,78~kg. La Tabla~\ref{tab:acero-grupos} concilia ambos documentos por grupos de elementos.
+
+\begin{table}[H]
+\caption{Conciliación del acero acumulado entre la Planilla N.\textsuperscript{o}~2 y el cómputo de cierre, por grupos de elementos}
+\label{tab:acero-grupos}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{5.0cm}RRR@{}}
+\toprule
+\textbf{Grupo de elementos} & \textbf{Acumulado en la PAO~N.\textsuperscript{o}~2 (kg)} & \textbf{Cómputo de cierre, versión digital (kg)} & \textbf{Diferencia (kg)} \\
+\midrule
+Zapatas a encalzar y zapatas nuevas & \multirow{3}{*}{38.876,16\textsuperscript{a}} & 8.527,47 & \multirow{3}{*}{$-$10.215,02} \\
+Columnas a encamisar, nuevas y que se mantienen & & 17.780,20 & \\
+Vigas de arriostre & & 2.353,47 & \\
+Vigas de H\textsuperscript{o}A\textsuperscript{o} & 9.377,31 & 9.334,55 & $-$42,76 \\
+Losa alivianada & 4.171,18 (1~$\times$~4.171,18) & 12.513,54 (3~$\times$~4.171,18) & +8.342,36 \\
+Gradas del primer nivel & --- & 773,92\textsuperscript{b} & --- \\
+\midrule
+Total del cómputo de cierre (versión digital) & 52.424,65 & 50.509,23 & $-$1.915,42 \\
+Planilla de cierre, versión digital & 52.424,65 & 50.509,49 & $-$1.915,16 \\
+Planilla de cierre firmada (oficial) y descuento por agua potable & 52.424,65 & 50.561,84\textsuperscript{c} & $-$1.862,81 \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia (cálculos propios) con base en \textcite[pp.~16, 19--20]{uatf2025pao2}, \textcite{uatf_pao3} (hoja «Cómputos métricos», filas 375 a 541; subtotales por grupo: zapatas a encalzar 3.629,47; zapatas nuevas 4.898,00; columnas a encamisar 4.170,02; columnas nuevas 11.395,18; columnas que se mantienen 2.215,00) y \textcite[pp.~2, 12]{uatf_item13}. \textsuperscript{a}~Avance de la Planilla N.\textsuperscript{o}~1, sin desglose por elementos en los documentos revisados; por diferencia corresponde a los elementos distintos de las vigas y la losa. \textsuperscript{b}~Anotado sin cantidad parcial; no se suma al total. \textsuperscript{c}~Sin desglose por elementos: la versión firmada no adjunta un cómputo del acero.}
+\end{table}
+
+La conciliación muestra cuatro inconsistencias que la Supervisión y la Fiscalización deben verificar. Primera, la línea de la losa pasa de 1 a 3 veces 4.171,18~kg sin respaldo, lo que llevaría la cuantía a 11,28~kg/\mdos{} para la losa ejecutada. Segunda, la reducción de 10.215,02~kg en zapatas, columnas y vigas de arriostre no tiene explicación línea por línea; con la documentación disponible no puede saberse cuál de las dos cifras es la correcta. Tercera, coexisten tres cifras del acero acumulado: 52.424,65~kg en la Planilla N.\textsuperscript{o}~2, 50.561,84~kg en la planilla de cierre firmada y 50.509,49~kg en su versión digital, más un total de 50.509,23~kg en el cómputo de la versión digital, que difiere en 0,26~kg de su propia planilla. Cuarta, la tabla de tiempos con la que la contratista sustentó la ampliación de plazo N.\textsuperscript{o}~2 usa para el ítem~8 una cantidad autorizada de 85.777,46~kg, 7.797,95~kg más que los 77.979,51~kg del contrato modificatorio \parencite[pp.~17, 25]{uatf_item13}. A esto se suma la posible superposición del acero de la losa entre los ítems~8 y~13 descrita antes. En conjunto, estos hallazgos no prueban un error ni un pago indebido, pero muestran que las cantidades se controlaron al cierre del contrato y no en el mes en que se originaron, que es lo que el procedimiento de conciliación del SGC propone corregir (Sección~\ref{sec:sgc-operacion}).
+
+\textbf{Otras correcciones.} La Planilla N.\textsuperscript{o}~2 corrigió la excavación del ítem~4 en $-$5,66~\mtres{} (Bs~$-$403,14), porque la Planilla N.\textsuperscript{o}~1 había certificado más de lo que luego se computó \parencite[pp.~16, 18]{uatf2025pao2}. Además, las cantidades del contrato original y del actualizado difieren entre $-$80,8~\% y +46,7~\% según el ítem (acero, +32,1~\%; hormigón de zapatas, +16,0~\%; escaleras, +46,7~\%; columnas, $-$8,5~\%; vigas, $-$7,9~\%), y la Supervisión anunció otra orden de cambio por incremento de volúmenes \parencite[pp.~11, 16]{uatf2025pao2}.
+
+\subsubsection{Suministro y gestión de materiales}
+El abastecimiento fue el punto más expuesto al entorno. La Supervisión informó que se hicieron «modificaciones estructurales debido a la inexistencia de viguetas en el mercado de los tamaños requeridos» \parencite[p.~11]{uatf2025pao2}, sin que se adjunte un documento que describa el cambio, su cálculo o su aprobación. El distribuidor de acero comunicó el 16 de junio de 2025 que, de una compra de 20 toneladas de fierro corrugado, solo había entregado el 30~\%, por el desabastecimiento de combustibles y los bloqueos de carreteras \parencite{laslomas2025}, y el 17 de noviembre de 2025, en pleno armado de la losa, la contratista informó que los materiales tardaban mucho en llegar por la misma causa \parencite[p.~123]{uatf2025pao2}. Ninguno de estos hechos dio lugar a una acción documentada sobre los proveedores ni a un plan de compras anticipado.
+
+La recepción de materiales fue documental y tardía. Los certificados de PRETENSA y de UNICON están fechados el 27 de noviembre de 2025, después de que comenzara el armado de la losa (14 de noviembre); no llevan firma, y el de las viguetas no indica cantidad, lote ni resultados de ensayo \parencite[pp.~80--81, 122]{uatf2025pao2}. Los certificados de acero corresponden a barras de 20, 16, 12, 9,5 y 8~mm producidas entre abril y mayo de 2025 y emitidos al distribuidor; no hay certificados de las barras de 6 y 10~mm que, según el Plano~02, forman la parrilla y los nervios de la losa, ni de cemento y áridos \parencite[pp.~82--86]{uatf2025pao2}. La masa lineal certificada de las barras es entre 1,8~\% y 5,8~\% menor que la nominal (cálculo propio): un balance por peso que no lo considere confundiría esa diferencia con desperdicio.
+
+La gestión de los materiales en obra fue mínima. El plan de acopio de la contratista «consiste en transportar el material y ubicarlo cerca de la obra con el resguardo necesario y satisfactorio» \parencite[p.~10]{uatf2025pao2}, sin criterios de recepción, almacenamiento ni control de existencias, pese a que el contrato exige acopiar en zonas aprobadas e inspeccionar los materiales antes de su uso \parencite[p.~102]{uatf2025pao2}. No se encontraron notas de remisión, kardex ni vales de salida. De las 2.350 piezas de EPS entregadas \parencite{unicon2025} no consta cuántas se colocaron, cuántas sobraron ni si toda la entrega correspondió a la primera losa. Las fotografías muestran material y restos dispersos en el terreno, el vaciado con carretillas y la parrilla de la carpeta pisada durante el hormigonado, sin separadores visibles a la resolución disponible \parencite[pp.~75--76]{uatf2025pao2}; ese tránsito sobre los complementos colocados es una causa conocida de mayor consumo de hormigón de la carpeta \parencite{concretec2016plastoformo}.
+
+\subsubsection{Planificación y plazo}
+El cronograma de actividades «actualizado» a 360 días programó la losa alivianada del 23 de diciembre de 2025 al 21 de abril de 2026 y todo el acero estructural del 19 de junio al 28 de julio de 2025 \parencite[p.~137]{uatf2025pao2}. Según el Libro de Órdenes, la losa se armó en noviembre y su vaciado se autorizó el 28 de noviembre, 25 días antes del inicio programado, y el acero se armó entre septiembre y noviembre \parencite[pp.~114--125]{uatf2025pao2}. El cronograma, que el contrato define como documento fundamental de control \parencite[p.~105]{uatf2025pao2}, no reflejaba la secuencia real. Al 8 de diciembre de 2025 el avance acumulado era de 56,97~\% frente a 60,00~\% previsto: un retraso de 3,03 puntos que la Supervisión reconoció \parencite[p.~10]{uatf2025pao2}. El mismo informe consigna un «desfase del periodo» de 3,03~\%, cuando el del periodo es de 1,07~\% (29,00~\% previsto frente a 27,93~\% ejecutado; cálculo propio). Con el cronograma de desembolsos, interpolado linealmente entre los días 209 y 270, el avance previsto al 8 de diciembre sería de $\approx$~63,8~\% (cálculo propio con supuestos) \parencite[p.~139]{uatf2025pao2}.
+
+\subsubsection{Otros hallazgos de control documental}
+Se registraron además inconsistencias menores que muestran un control débil de la información documentada: el certificado de avance consigna un anticipo del 10~\% en un contrato sin anticipo \parencite[p.~14]{uatf2025pao2}; una columna tipo~5 tiene 6 unidades en el rótulo y 7 en la planilla de armado, y una hoja de armado está duplicada \parencite[pp.~38, 51--52]{uatf2025pao2}; las boletas de garantía vencen el 14 de abril de 2026, 16 días antes de la entrega provisional vigente, y equivalen al 7~\% del monto original \parencite[pp.~130--131]{uatf2025pao2}; dos de los tres certificados del seguro obligatorio de accidentes adjuntos vencieron el 3 de junio de 2025 \parencite[pp.~134--135]{uatf2025pao2}; el contrato seguía sin protocolizar al 8 de diciembre de 2025 \parencite[p.~88]{uatf2025pao2}; y el archivo de la planilla de cierre conserva una hoja de un contrato de 2023 de otra empresa \parencite{uatf_pao3}.
+
+% ---------------------------------------------------------------------
+\subsection{No conformidades y análisis de causas}
+\label{sec:nc-causas}
+
+A partir del análisis documental y de la lista de verificación, el investigador identificó 22 no conformidades (NC) respecto de los requisitos de la norma ISO~9001:2026, del contrato, de las ET y de la normativa del hormigón (Tabla~\ref{tab:nc}). Cada NC se clasificó en una categoría del método 6M (materiales, método, mano de obra, medición, maquinaria y medio ambiente) o en la categoría de gestión, que reúne las fallas de planificación, documentación y dirección. Como no existe un registro de NC de la obra, la tabla es una reconstrucción documental y no un registro levantado durante la ejecución.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{1.3cm}P{5.7cm}P{2.6cm}P{3.6cm}P{2.0cm}@{}}
+\caption{No conformidades identificadas en la ejecución de la primera losa}\label{tab:nc}\\
+\toprule
+\textbf{Código} & \textbf{Descripción} & \textbf{Evidencia} & \textbf{Requisito afectado} & \textbf{Categoría} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Código} & \textbf{Descripción} & \textbf{Evidencia} & \textbf{Requisito afectado} & \textbf{Categoría} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+NC-01 & El hormigón de la losa no tiene ensayos de resistencia; la losa se certificó para pago antes de la primera fecha en que podía tener 28 días & PAO2, pp.~16, 78, 125 & ISO 8.5.1 y 8.6; ACI~318-25, 26.12; cl.~26.6 & Medición \\
+NC-02 & Probetas de columnas y vigas ensayadas a 55--76 días y proyectadas con un factor sin fuente; elaboradas por la contratista y sin identificación de la muestra & PAO2, p.~78 & ISO 7.1.5 y 8.5.2; ACI~318-25, 26.12 & Medición \\
+NC-03 & Sin dosificación aprobada ni registros de asentamiento y curado, pese a tres instrucciones de la Supervisión & PAO2, pp.~9, 120, 121, 125 & ISO 8.5.1; ET; ACI~318-25, 26.4 y 26.5 & Método \\
+NC-04 & Certificados de viguetas y EPS posteriores al inicio del armado y sin firma; el de viguetas sin cantidad, lote ni ensayos; sin inspección de recepción & PAO2, pp.~80--81, 122 & ISO 8.4.2; cl.~26.6 & Materiales \\
+NC-05 & Sin certificados de las barras de $\phi$6 y $\phi$10 de la losa, ni de cemento y áridos & PAO2, pp.~82--86; Plano~02 & ISO 8.4.2; ET; ACI~318-25, 26.6 & Materiales \\
+NC-06 & Tres geometrías del complemento EPS (ET, Plano~02 y certificado) sin aclaración ni orden de cambio & ET, p.~3; Plano~02; PAO2, p.~81 & ISO 7.5.3 y 8.2.3 & Gestión \\
+NC-07 & ET con la CBH-87 y normas bolivianas antiguas de cemento, áridos y agua & ET, pp.~1--2 & ISO 7.5.3 y 8.2.2 & Gestión \\
+NC-08 & Modificaciones estructurales por falta de viguetas de los tamaños requeridos, sin documento del cambio ni de su aprobación & PAO2, p.~11 & ISO 6.3, 8.4.1 y 8.5.6 & Materiales \\
+NC-09 & Libro de Órdenes con encabezados vacíos y sin la constancia firmada del Director de Obra en las 12 hojas & PAO2, pp.~114--125 & ISO 7.4 y 7.5.2; cl.~25.ª & Gestión \\
+NC-10 & Liberaciones de vaciado sin lista de verificación ni criterios; la de la losa no instruye muestreo ni registra la fecha del hormigonado & PAO2, pp.~114--125 & ISO 8.5.1 y 8.6; ACI~318-25, 26.13 & Método \\
+NC-11 & Ninguna no conformidad, rechazo o retrabajo registrado en el periodo & PAO2, pp.~6--11, 114--125 & ISO 8.7 y 10.2 & Gestión \\
+NC-12 & Calidad calificada de «buena» y ensayos y verificaciones afirmados sin registros, en contradicción con las recomendaciones de la misma Supervisión & PAO2, pp.~9, 11 & ISO 9.1.2 y 9.1.3 & Medición \\
+NC-13 & Acero de la losa computado en el ítem~8 sin planilla de armado; la ET del ítem~13 incluye la parrilla y los negativos (posible doble cómputo, a verificar) & PAO2, p.~20; ET, p.~3 & ISO 9.1.1; cl.~27.ª & Medición \\
+NC-14 & Cómputo de cierre con 3~$\times$~4.171,18~kg para una sola losa; dos versiones de la planilla de cierre y tres cifras del acero acumulado (a conciliar) & PAO3; PAO2, p.~16; Exp., pp.~2, 12 & ISO 7.5.3 y 9.1.1; cl.~27.ª & Medición \\
+NC-15 & Cantidades corregidas después de pagadas (ítem~4 y acero) sin análisis de causas & PAO2, pp.~16, 18; PAO3 & ISO 10.2 & Medición \\
+NC-16 & Sin cantidades de materiales por paño ni control de consumos; 2.350 piezas de EPS entregadas sin conciliación con lo colocado & PAO2, pp.~28--29, 81 & ISO 8.1 y 8.5.2 & Materiales \\
+NC-17 & Acopio sin recepción, inspección, inventario ni protección; material y restos dispersos & PAO2, pp.~10, 75--76 & ISO 8.5.4; cl.~26.9 & Método \\
+NC-18 & Parrilla sin separadores visibles y pisada durante el vaciado (observación fotográfica por confirmar) & PAO2, p.~76 & ISO 7.3 y 8.5.1; ACI~318-25, 26.6 & Mano de obra \\
+NC-19 & Competencia y capacitación del personal de obra no determinadas ni registradas; Supervisión con apoyo de pasantes & PAO2, pp.~9--10 & ISO 7.2 & Mano de obra \\
+NC-20 & Cronograma «actualizado» que no refleja la ejecución; retraso de 3,03 puntos y desfase del periodo mal calculado & PAO2, pp.~10, 137 & ISO 6.2, 8.1 y 9.1.3; cl.~32.ª & Gestión \\
+NC-21 & Riesgos de suministro y de precios no identificados ni tratados (combustible, acero, viguetas) & PAO2, pp.~11, 123; Las Lomas & ISO 6.1 & Gestión \\
+NC-22 & Sin previsiones para lluvias y bajas temperaturas en el vaciado y el curado & PAO2, pp.~122, 124 & ISO 6.1 y 7.1.4; ACI~318-25, 26.5 & Medio ambiente \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. PAO2: \textcite{uatf2025pao2}; PAO3: \textcite{uatf_pao3}; Exp.: \textcite{uatf_item13}; ET: \textcite{uatf_et}; Las Lomas: \textcite{laslomas2025}; ACI~318-25: \textcite{aci318_2025}; cl.: cláusula del contrato. Los numerales de ISO~9001 corresponden a la lista C.1.}
+\endgroup
+
+Las NC se relacionan con las nueve brechas que orientan el diseño del SGC (Sección~\ref{sec:diseno-sgc}): el control del hormigón (B1) agrupa las NC-01 a NC-03 y la NC-10; las evidencias de conformidad entregadas solo a pedido (B2), las NC-04, NC-05 y NC-12; la información documentada incoherente (B3), las NC-06, NC-07 y NC-09; el control de cantidades (B4), las NC-13 a NC-15; la falta de registro de consumos (B5), las NC-16 y NC-17; la falta de puntos de inspección (B6), las NC-10, NC-18 y NC-19; la falta de registro de NC y de costos de la calidad (B7), la NC-11; los riesgos de suministro y precios (B8), las NC-08, NC-20 y NC-21; y el clima (B9), la NC-22.
+
+\textbf{Diagrama de Pareto.} La Figura~\ref{fig:pareto-nc} ordena las NC por categoría. La medición y la gestión reúnen 12 de las 22 NC (54,5~\%); con los materiales llegan al 72,7~\% y con el método, al 86,4~\%. Esta concentración es coherente con la regla de Pareto, según la cual pocos factores explican la mayor parte de los problemas de calidad de una obra \parencite[p.~70]{alfaro2011}. Las «pocas causas vitales» de la primera losa no están en la mano de obra ni en el clima, sino en la ausencia de un sistema que mida, registre y concilie: ensayos, recepción de materiales, consumos y cantidades. No se identificaron NC en la categoría de maquinaria; el vaciado con carretillas se consideró parte del método.
+
+\begin{figure}[H]
+\centering
+\caption{Diagrama de Pareto de las no conformidades de la primera losa por categoría}
+\label{fig:pareto-nc}
+\includegraphics[width=\linewidth]{fig_pareto_nc}
+\nota{Elaboración propia con los datos de la Tabla~\ref{tab:nc} ($n = 22$). Las barras indican el porcentaje de NC de cada categoría y la línea, el porcentaje acumulado; la línea discontinua marca el 80~\%. Figura generada con el script \texttt{cap2\_diagnostico\_figuras.py}.}
+\end{figure}
+
+\textbf{Diagrama de Ishikawa.} Las causas del desperdicio de materiales y de los sobrecostos de la losa se organizaron en un diagrama de causa y efecto (Figura~\ref{fig:ishikawa}). El efecto analizado es el costo adicional de la losa respecto de su costo teórico: materiales entregados por encima de lo necesario, hormigón y acero sin control de consumo, cantidades que hubo que corregir y riesgo de retrabajos por un hormigón no verificado.
+
+\begin{figure}[H]
+\centering
+\caption{Diagrama de Ishikawa del desperdicio de materiales y los sobrecostos de la primera losa}
+\label{fig:ishikawa}
+\begin{tikzpicture}[
+  font=\scriptsize,
+  cat/.style={draw, rounded corners=2pt, fill=gray!12, font=\footnotesize\bfseries,
+              inner sep=3pt, minimum width=3.6cm},
+  lista/.style={align=left, text width=3.8cm, inner sep=2pt},
+  espina/.style={-{Stealth[length=3.5mm]}, line width=1.4pt},
+  rama/.style={-{Stealth[length=2.5mm]}, thick, black!75}]
+  % Espina principal y efecto
+  \draw[espina] (0,0) -- (12.55,0);
+  \node[draw, thick, fill=gray!8, align=center, text width=3.0cm, minimum height=2.0cm,
+        font=\footnotesize] (efecto) at (14.25,0)
+        {\textbf{Desperdicio de materiales y sobrecostos} de la losa alivianada (primera losa)};
+  % Ramas superiores
+  \node[cat] (cMat) at (2.0,4.75) {Materiales};
+  \node[lista, below=1pt of cMat] (lMat) {%
+    -- Viguetas inexistentes en los tamaños requeridos; cambio sin registro\\
+    -- Acero entregado en 30~\%; demoras por combustible\\
+    -- EPS distinto de la ET; 2.350 piezas sin conciliar\\
+    -- Certificados tardíos; sin $\phi$6, $\phi$10, cemento ni áridos};
+  \node[cat] (cMet) at (6.1,4.75) {Método};
+  \node[lista, below=1pt of cMet] (lMet) {%
+    -- Sin plan de la calidad ni PPI\\
+    -- Sin despiece ni pedido por paño; sin kardex ni vales\\
+    -- Acopio sin recepción ni inventario\\
+    -- Sin dosificación aprobada ni curado registrado; vaciado con carretillas};
+  \node[cat] (cMO) at (10.2,4.75) {Mano de obra};
+  \node[lista, below=1pt of cMO] (lMO) {%
+    -- Competencia y capacitación no registradas\\
+    -- Parrilla pisada y sin separadores visibles\\
+    -- Supervisión apoyada por pasantes\\
+    -- Presión por recuperar el retraso};
+  % Ramas inferiores
+  \node[lista, anchor=south] (lMed) at (2.0,-4.45) {%
+    -- Losa sin probetas; pago antes de los 28 días\\
+    -- Acero de la losa sin planilla de armado; factor 3 en el cierre\\
+    -- Tres cifras del acero acumulado; correcciones posteriores\\
+    -- Calidad «buena» sin evidencia objetiva};
+  \node[cat, below=1pt of lMed] (cMed) {Medición};
+  \node[lista, anchor=south] (lAmb) at (6.1,-4.45) {%
+    -- Lluvias durante el armado (12, 13 y 21/11/2025)\\
+    -- Bajas temperaturas a 3.650~m~s.~n.~m. sin plan de tiempo frío\\
+    -- Escasez de diésel y alza de precios\\
+    -- Contrato sin reajuste de precios};
+  \node[cat, below=1pt of lAmb] (cAmb) {Medio ambiente};
+  \node[lista, anchor=south] (lGes) at (10.2,-4.45) {%
+    -- Libro de Órdenes sin NC ni constancia del Director\\
+    -- Documentos incoherentes (ET, Plano~02, certificados)\\
+    -- Cronograma desactualizado; riesgos no gestionados\\
+    -- Sin registro de costos de la calidad};
+  \node[cat, below=1pt of lGes] (cGes) {Gestión};
+  % Conectores hacia la espina
+  \foreach \l/\x in {lMat/3.35, lMet/7.45, lMO/11.55} {
+    \draw[rama] (\l.south) -- (\x,0.05);
+  }
+  \foreach \l/\x in {lMed/3.35, lAmb/7.45, lGes/11.55} {
+    \draw[rama] (\l.north) -- (\x,-0.05);
+  }
+\end{tikzpicture}
+\nota{Elaboración propia con base en las no conformidades de la Tabla~\ref{tab:nc} y en el análisis documental de la Sección~\ref{sec:analisis-documental}. No se identificaron causas documentadas en la categoría de maquinaria.}
+\end{figure}
+
+El diagrama muestra que las causas se refuerzan entre sí. Las externas (escasez de combustible, falta de viguetas, alza de precios y lluvias) se convirtieron en problemas de la losa porque no había un sistema que las anticipara: sin plan de compras ni existencias mínimas, el desabastecimiento obligó a cambiar el diseño y a recibir materiales sin inspección; sin cantidades teóricas por paño, el excedente de materiales no pudo detectarse; y sin ensayos ni registros, la conformidad del hormigón y de las cantidades quedó sin demostrar. La causa raíz común es la falta de un sistema de gestión de la calidad del ítem: la calidad se confió a la verificación puntual de la Supervisión antes de cada vaciado, sin criterios escritos, registros ni seguimiento. Como el contrato no admite reajuste de precios y los precios unitarios incluyen la reparación de trabajos defectuosos \parencite[pp.~92, 95]{uatf2025pao2}, el costo de estas causas recae en el contratista; es la justificación económica del SGC que se diseña en la Sección~\ref{sec:diseno-sgc}.
+
+% ---------------------------------------------------------------------
+\subsection{Línea base cuantitativa}
+\label{sec:linea-base-cuantitativa}
+
+La línea base cuantitativa ($O_1$) expresa, para cada material, la cantidad teórica de la primera losa, la cantidad entregada y la pagada, el índice de desperdicio que puede documentarse y los parámetros con que el modelo representa el escenario de control (sin SGC). En ella se distinguen tres tipos de dato: \emph{hechos documentados}, que son las cantidades entregadas y pagadas con su fuente; \emph{cálculos propios} reproducibles, que son las cantidades teóricas y los índices calculados con ellas; y \emph{supuestos con fuente}, que se usan para los materiales sin registros de consumo.
+
+\textbf{Cantidades teóricas.} Las cantidades teóricas se calcularon paño por paño con los planos 01 a 03 \parencite{uatf_planos}. Las 41 áreas del Plano~01 coinciden con las del cómputo. Las viguetas se contaron y midieron en el Plano~03, corrigiendo las etiquetas con el dibujo cuando no coincidían, y su longitud se tomó como la luz libre más 5~cm de apoyo en cada extremo, según el detalle de apoyo del Plano~02. Los complementos se contaron por filas entre viguetas, con la pieza suministrada de 20~$\times$~100~$\times$~44~cm. El hormigón es el volumen de la losa de 25~cm menos el de los complementos y el de las viguetas. El acero comprende la malla de $\phi$6~c/20~cm en ambas direcciones, con anclajes y traslapes, los negativos sobre los apoyos y los nervios transversales. Como ningún plano ubica los nervios ni define los negativos, el escenario base supone un nervio a media luz en los paños con luz libre media de 4,0~m o más y una barra de $\phi$8 por vigueta sobre cada apoyo continuo; con otros supuestos razonables, el acero teórico varía entre 2,72 y 3,44~kg/\mdos{}. La Tabla~\ref{tab:cantidades-teoricas} presenta los resultados; el cálculo por paño, sus supuestos y su análisis de sensibilidad se conservan en la carpeta de extracción de datos de obra del repositorio (\texttt{Cantidades\_Teoricas\_Primera\_Losa\_por\_Pano.csv} y \texttt{Metodo\_Cantidades\_Teoricas.md}).
+
+\begin{table}[H]
+\caption{Cantidades teóricas de materiales de la primera losa y del saldo}
+\label{tab:cantidades-teoricas}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{2.75cm}P{2.6cm}P{2.45cm}P{2.55cm}L@{}}
+\toprule
+\textbf{Material} & \textbf{Primera losa (1.109,84~\mdos{})} & \textbf{Por \mdos{}} & \textbf{Saldo (2.234,60~\mdos{})} & \textbf{Supuestos principales} \\
+\midrule
+Viguetas pretensadas & 531 piezas; 2.205,1~m & 1,987~m (0,478 piezas) & 4.439,8~m & Longitud igual a la luz libre más 2~$\times$~0,05~m; etiquetas del Plano~03 corregidas con el dibujo \\
+Complementos de EPS & 2.237,9 piezas & 2,016 piezas & 4.505,9 piezas & Piezas netas por fila; nervio a media luz si la luz es de 4,0~m o más (sin nervios: 2,048 piezas/\mdos{}) \\
+Hormigón vaciado en obra & 79,31~\mtres{} & 0,0715~\mtres{} & 159,7~\mtres{} & Complemento de 0,20~m (el suministrado); vigueta de 17,2~kg/m según una ficha técnica de referencia \\
+Acero & 3.572,8~kg & 3,22~kg (malla 2,42; negativos 0,30; nervios 0,50) & 7.193,6~kg & Rango de 2,72 a 3,44~kg/\mdos{} según la ubicación de los nervios y la cuantía de los negativos \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia (cálculo propio) con base en los planos 01 a 03 \parencite{uatf_planos}, el certificado de los complementos \parencite{unicon2025} y la ficha de viguetas de \textcite{concretec2018viguetas}. El saldo resulta de multiplicar las cantidades por \mdos{} de la primera losa por 2.234,60~\mdos{}, porque los paños de la segunda y la tercera losa son homólogos (Sección~\ref{sec:poblacion}).}
+\end{table}
+
+\textbf{Cantidades entregadas, pagadas e índices documentados.} La Tabla~\ref{tab:linea-base} compara las cantidades teóricas con las entregadas y las pagadas. Solo dos materiales tienen un dato documental que permite calcular un índice: el EPS, por la cantidad entregada, y el acero, por la cantidad pagada.
+
+\begin{table}[H]
+\caption{Cantidades teóricas, entregadas y pagadas de la primera losa e índices de la línea base}
+\label{tab:linea-base}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\linewidth}{@{}P{1.9cm}P{2.3cm}P{2.3cm}P{2.9cm}LP{2.6cm}@{}}
+\toprule
+\textbf{Material} & \textbf{Teórico} & \textbf{Entregado} & \textbf{Pagado o medido} & \textbf{Índice de la línea base} & \textbf{Tipo de dato} \\
+\midrule
+Viguetas & 531 piezas; 2.205,1~m & Sin notas de entrega & Incluidas en el ítem~13 (1.109,84~\mdos{}) & No documentado & Supuesto del autor \\
+EPS & 2.237,9 piezas & 2.350 piezas & Incluido en el ítem~13 & IDM = +5,01~\% (+112 piezas); entre +3,4 y +5,9~\% según los supuestos & Documentado y cálculo propio \\
+Hormigón & 79,31~\mtres{} & Sin remisiones ni vales de cemento & Incluido en el ítem~13 & No documentado & Supuesto de literatura \\
+Acero & 3.572,8~kg (3,22~kg/\mdos{}) & Sin registro de entregas para la losa & 4.171,18~kg (3,76~kg/\mdos{}) en el ítem~8; 3~$\times$~4.171,18~kg en el cómputo de cierre & Pagado frente a teórico: +16,75~\%; entre +9,2 y +38,3~\% según los supuestos & Documentado y cálculo propio (aproximación del IDM) \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con base en la Tabla~\ref{tab:cantidades-teoricas}, \textcite{unicon2025}, \textcite[pp.~16, 19--20]{uatf2025pao2} y \textcite[hoja «Cómputos métricos», fila 538]{uatf_pao3}. IDM: ecuación~\eqref{eq:idm}.}
+\end{table}
+
+En el EPS se entregaron 2.350 piezas frente a 2.237,9 teóricas: 112 piezas más, es decir, un IDM de +5,01~\% (cálculo propio). Si no se construyeran nervios, el índice sería de +3,4~\%, y con la regla simplificada de dos piezas por \mdos{}, de +5,9~\%. Si cada fila se completara con piezas enteras, sin reaprovechar los recortes, se necesitarían unas 2.476 piezas, más que las entregadas; la cantidad recibida solo alcanza si los recortes se reaprovecharon, lo que es compatible con un desperdicio de 3~\% a 6~\% sobre el consumo neto. El índice supone que todas las piezas se destinaron a la primera losa y que no hubo devoluciones ni sobrantes, lo que no puede verificarse sin notas de entrega ni kardex.
+
+En el acero, la única cantidad documentada de la losa es la pagada en la Planilla N.\textsuperscript{o}~2: 4.171,18~kg, es decir, 3,76~kg/\mdos{}, un 16,75~\% más que la cantidad teórica del escenario base (cálculo propio). La cantidad pagada supera la teórica con todos los supuestos ensayados: de +9,2~\% si se colocaran nervios en todas las luces de 3~m o más, a +38,3~\% si no hubiera nervios. La documentación no permite separar en esa diferencia el desperdicio real (recortes y traslapes no previstos), una medición superior a la ejecutada o armaduras que los planos no definen; por eso el índice se usa como una aproximación del desperdicio de acero de la línea base, no como una medición directa. El valor coincide con los desperdicios de 14,58~\% y 17,09~\% que \textcite[pp.~147, 169]{chino2024} midieron con el método convencional de habilitado del acero. La cifra de 12.513,54~kg del cómputo de cierre, 3,5 veces la cantidad teórica de una losa, no se usó, porque no corresponde a una losa ejecutada (Sección~\ref{sec:analisis-documental}).
+
+Para las viguetas y el hormigón no existen notas de entrega, remisiones, vales de cemento ni volúmenes por vaciado, por lo que su desperdicio en la primera losa no puede medirse. Para el hormigón se adoptó el rango de la literatura: 5~\% como valor típico y hasta 22~\% en obras sin control volumétrico \parencite[pp.~53, 73]{galarza2011}, pérdidas reales de 14~\% a 27~\% en vaciados semanales sin control \parencite[pp.~33, 40]{rojas2018} y de 1,5~\% a 13~\% para el hormigón premezclado en Brasil \parencite[p.~106]{maciel2016}. Para las viguetas, que se fabrican a medida según el Plano~03, se supuso un desperdicio pequeño por rotura en la manipulación. Tampoco hay registros de retrabajos en la primera losa (NC-11), lo que no prueba que no los hubiera; su costo se representó como una fracción del costo directo tomada de la literatura: fallas visibles de 2,34~\% del costo total en 25 proyectos \parencite[p.~5421]{khadim2023}, costos de no calidad de 2,7~\% a 5,1~\% en la partida de hormigón armado \parencite[p.~1]{gudiel2020} y reprocesos de 6,5~\% en proyectos sin SGC \parencite[p.~12]{alvarez2014}.
+
+\textbf{Parámetros del escenario de control.} La Tabla~\ref{tab:parametros-linea-base} resume los parámetros de la línea base que usa el modelo, con distribuciones triangulares (mínimo, moda y máximo). La tabla completa, con las eficacias del SGC y sus costos, está en el Anexo~\ref{anx:modelo}.
+
+\begin{table}[H]
+\caption{Parámetros de la línea base (escenario de control) del modelo de costos}
+\label{tab:parametros-linea-base}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\linewidth}{@{}P{2.7cm}Q{1.55cm}Q{1.55cm}Q{1.55cm}P{2.5cm}L@{}}
+\toprule
+\textbf{Parámetro} & \textbf{Mínimo} & \textbf{Moda} & \textbf{Máximo} & \textbf{Tipo de dato} & \textbf{Fuente} \\
+\midrule
+IDM de las viguetas & 0,0~\% & \IDMsinVig & 3,0~\% & Supuesto del autor & Viguetas fabricadas a medida; rotura en la manipulación \\
+IDM del EPS & 2,5~\% & \IDMsinEps & 7,5~\% & Documentado (moda); rango supuesto de $\pm$50~\% & 2.350 piezas entregadas frente a 2.237,9 teóricas \\
+IDM del hormigón & 5,0~\% & \IDMsinHor & 22,0~\% & Literatura & \textcite{galarza2011}; \textcite{rojas2018}; \textcite{maciel2016} \\
+IDM del acero & 7,0~\% & \IDMsinAce & 26,0~\% & Documentado (moda); rango de literatura & 4.171,18~kg pagados frente a 3.572,8~kg teóricos; \textcite{galarza2011}; \textcite{maciel2016} \\
+Retrabajo ($\rho$), fracción del costo directo & 0,5~\% & 2,34~\% & 6,5~\% & Literatura & \textcite{khadim2023}; \textcite{gudiel2020}; \textcite{alvarez2014} \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con los parámetros del modelo (archivo \texttt{parametros.json}, Anexo~\ref{anx:modelo}). Las páginas de las fuentes se indican en el texto. IDM: índice de desperdicio de materiales.}
+\end{table}
+
+\textbf{Costo de no calidad de la línea base.} Los materiales se valoraron con el análisis de precios unitarios de referencia, calibrado al precio del contrato (Anexo~\ref{anx:apu}). El costo teórico por \mdos{} de los materiales de la losa es de Bs~\CostoVig{} para las viguetas, Bs~\CostoEps{} para el EPS, Bs~\CostoHor{} para el hormigón y Bs~\CostoAce{} para el acero, en total Bs~\CMteo/\mdos{}, dentro de un costo directo teórico de Bs~\CDteo/\mdos{}. Con los valores más probables de los parámetros, el desperdicio ponderado por el costo de los materiales ---el IDM ponderado--- es de \IDMsinDet{}, y el costo de no calidad, que suma el desperdicio valorado y los retrabajos, es de Bs~\CNCsinDet/\mdos{}, el \CNCsinDetPct{} del costo unitario sin SGC (Bs~\CUsinDet/\mdos{}). Estos valores son la referencia $O_1$ de las hipótesis específicas: el escenario de control repite este desempeño en el saldo de 2.234,60~\mdos{}. Las distribuciones de probabilidad de estos indicadores y su comparación con el escenario con SGC se presentan en el Capítulo~\ref{cap:resultados}.
+
+Las cantidades teóricas por paño también son la base del control que propone el SGC: con ellas se emite la lista de materiales de cada paño antes de ejecutarlo y se concilian las cantidades entregadas, colocadas, medidas y pagadas (Sección~\ref{sec:sgc-operacion}). En la primera losa ese control no existió, y por eso solo dos de los cuatro materiales tienen una línea base documentada. \pendiente{completar la línea base con las notas de entrega de PRETENSA y UNICON, los vales de cemento y los volúmenes por vaciado, si la Supervisión o la contratista los facilitan; con ellos se recalcularán los IDM de las viguetas y del hormigón.}

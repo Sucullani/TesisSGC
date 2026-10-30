@@ -1,6 +1,6 @@
 # Documento de la tesis (LaTeX)
 
-**Tesis para presentar (versión sencilla, sin notas):** en preparación. Fuente: `tesis_sencilla.tex` y `capitulos_sencilla/`. Faltan la introducción y los capítulos 1 a 3 simplificados.
+**Tesis para presentar (versión final, sin notas):** [`Tesis_SGC_Version_Sencilla.pdf`](Tesis_SGC_Version_Sencilla.pdf) · [Word](../07_Entregables/Tesis_SGC_Version_Sencilla.docx). Fuente: `tesis_sencilla.tex` y `capitulos_sencilla/`.
 
 **Versión académica completa:** [`Tesis_SGC_Borrador.pdf`](Tesis_SGC_Borrador.pdf) · [Word](../07_Entregables/Tesis_SGC_Borrador_Final.docx). Fuente: `tesis.tex` y `capitulos/`.
 

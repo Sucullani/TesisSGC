@@ -1,0 +1,119 @@
+% =====================================================================
+%  CAPÍTULO 2 (continuación): 2.7 a 2.9
+%  Procedimiento de implementación y toma de observaciones, validación
+%  y plan de contraste de hipótesis.
+% =====================================================================
+
+% ---------------------------------------------------------------------
+\section{Procedimiento de implementación y toma de observaciones}
+\label{sec:implementacion}
+
+\subsection{Implementación prevista en la segunda y tercera losa}
+\label{sec:implementacion-prevista}
+
+El SGC se concibió para aplicarse en la ejecución de la segunda y tercera losa del edificio, cuyos paños son homólogos a los de la primera (Sección~\ref{sec:poblacion}). La Tabla~\ref{tab:implementacion} resume la secuencia de implementación: cada actividad se apoya en un componente del sistema descrito en la Sección~\ref{sec:diseno-sgc} y deja un registro verificable.
+
+\begin{table}[H]
+\caption{Secuencia de implementación del SGC en una losa}
+\label{tab:implementacion}
+\begin{tabularx}{\linewidth}{@{}P{2.3cm}LP{3.6cm}P{2.6cm}@{}}
+\toprule
+\textbf{Etapa} & \textbf{Actividades} & \textbf{Registro} & \textbf{Responsable} \\
+\midrule
+0. Preparación & Aprobación del plan de la calidad por la Supervisión; lista maestra de documentos; resolución de discrepancias (complemento EPS, normas citadas en la ET); capacitación del personal & Acta de aprobación; lista de asistencia & Director de obra; Supervisor \\
+1. Abastecimiento & Pedido por paño con base en las cantidades teóricas; recepción y aceptación de viguetas, complementos, acero, cemento y áridos & Ficha de recepción (C.3); kardex & Almacenero; encargado de calidad \\
+2. Ejecución por paño & Apuntalamiento, colocación de viguetas y complementos, armado, instalaciones; liberación en los puntos de espera del PPI & Fichas PPI (C.2) & Residente; Supervisor \\
+3. Hormigonado & Verificación de dosificación, asentamiento, vaciado por franjas, muestreo de probetas, curado y protección en tiempo frío & Planilla de hormigonado; planilla de muestreo & Residente; laboratorio \\
+4. Control de consumos & Registro de entregas, colocación y sobrantes; conciliación de cantidades teóricas, entregadas, colocadas, medidas y pagadas & Ficha de control de materiales (C.4) & Almacenero; encargado de calidad \\
+5. Verificación & Ensayos a 28 días y aceptación del hormigón; no conformidades y acciones correctivas & Certificados de laboratorio; registro de NC (C.5) & Encargado de calidad; Supervisor \\
+6. Revisión & Reunión semanal de indicadores; registro de costos de la calidad; ajustes del plan & Planilla de costos de la calidad (C.6); acta & Director de obra \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con base en la estructura del plan de la calidad (Sección~\ref{sec:diseno-sgc}).}
+\end{table}
+
+Esta secuencia no pudo aplicarse en obra durante la investigación. El 5 de enero de 2026 la empresa contratista solicitó la paralización de la obra y la resolución concertada del contrato, y la UATF respondió favorablemente el 10 de febrero de 2026 \parencite{uatf_item13}. Hasta la conclusión de este trabajo no se había contratado la ejecución del saldo de la obra, por lo que no existió una segunda losa sobre la cual medir la posprueba ($O_2$). Por ello, conforme a la alternativa prevista en el diseño de la investigación, el efecto del SGC se evaluó \emph{ex ante} mediante un modelo de costos y una simulación, y el procedimiento de la Tabla~\ref{tab:implementacion} se conserva como protocolo de implementación y de verificación futura (Sección~\ref{sec:verificacion-futura}).
+
+\subsection{Evaluación ex ante mediante modelación y simulación}
+\label{sec:modelo-simulacion}
+
+La guía del Seminario de Grado reconoce la \emph{modelación de simulación teórica} como un tipo de modelo de investigación. Según esa guía, el modelo debe incluir un tratamiento de control (sin tratamiento) que sirva de comparación y debe permitir calcular el grado de incertidumbre de los resultados \parencite{barrios2021modelo}. El modelo de esta tesis cumple ambas condiciones: compara el costo de ejecutar los 2.234,60~\mdos{} restantes \textbf{sin SGC} (control, con el desempeño de la línea base) y \textbf{con SGC} (tratamiento), y expresa el resultado como una distribución de probabilidad.
+
+\textbf{Estructura del modelo.} Para cada escenario $s \in \{\text{sin}, \text{con}\}$, el costo unitario de ejecución a precios constantes del contrato se descompone en el costo directo teórico, el costo de no calidad y el costo de la calidad:
+\begin{equation}
+  CU_s = CD_{teo} + CNC_s + CC_s
+  \label{eq:cu-modelo}
+\end{equation}
+\begin{equation}
+  CNC_s = \sum_{i} q_{teo,i}\; p_i\; IDM_{i,s} \;+\; \rho_s\, CD_{teo}
+  \label{eq:cnc-modelo}
+\end{equation}
+donde $CD_{teo}$ es el costo directo de la losa con las cantidades teóricas (sin pérdidas), $q_{teo,i}$ la cantidad teórica del material $i$ por \mdos{} (viguetas, complementos de EPS, hormigón y acero), $p_i$ su precio de valoración a precios del contrato, $IDM_{i,s}$ su índice de desperdicio (ecuación~\ref{eq:idm}), $\rho_s$ la fracción del costo directo que se pierde en retrabajos y reparaciones, y $CC_s$ el costo de prevención y evaluación por \mdos{} (modelo PAF, ecuación~\ref{eq:cnc}). El primer término de la ecuación~\eqref{eq:cnc-modelo} corresponde al costo de las pérdidas de materiales definido por \textcite{rossi2001}: diferencia entre el consumo real y el teórico multiplicada por el costo unitario.
+
+\textbf{Efecto del SGC.} El tratamiento actúa reduciendo las pérdidas y los retrabajos en una proporción $e$ (eficacia), y añade su propio costo de la calidad:
+\begin{equation}
+  IDM_{i,\text{con}} = IDM_{i,\text{sin}}\,(1 - e_i), \qquad
+  \rho_{\text{con}} = \rho_{\text{sin}}\,(1 - e_R), \qquad
+  CC_{\text{con}} = \frac{C_P + C_E}{A_{saldo}}
+  \label{eq:efecto-sgc}
+\end{equation}
+donde $e_i$ y $e_R$ son las eficacias del SGC sobre el desperdicio del material $i$ y sobre los retrabajos, $C_P$ y $C_E$ los costos totales de prevención y de evaluación del sistema y $A_{saldo} = 2.234{,}60$~\mdos{}. La reducción relativa del costo unitario es:
+\begin{equation}
+  r = \frac{CU_{\text{sin}} - CU_{\text{con}}}{CU_{\text{sin}}}
+  \label{eq:r-modelo}
+\end{equation}
+
+\textbf{Calibración.} El costo directo teórico se calibró para que el costo esperado de la línea base coincida con el precio contractual de la losa, que incluye el ítem~13 (Bs~\PUitemTrece/\mdos{}) y el acero de la losa medido en el ítem~8 (Bs~\PUaceroLosa/\mdos{}), es decir, Bs~\PUlosa/\mdos{}. Así, el modelo parte del supuesto de que el precio adjudicado refleja el costo de ejecutar la losa con la práctica habitual, incluidos sus desperdicios; con ese supuesto, $CD_{teo} = $~Bs~\CDteo/\mdos{}. Los precios de valoración $p_i$ provienen del análisis de precios unitarios de referencia reconstruido en el Anexo~\ref{anx:apu}.
+
+\textbf{Parámetros inciertos.} Los índices de desperdicio de la línea base, las eficacias del SGC, la fracción de retrabajo y los costos del sistema se representaron con distribuciones triangulares (mínimo, moda y máximo). Esta distribución es adecuada cuando solo se conocen el rango plausible y el valor más probable de una variable, como ocurre con los datos documentales de una sola obra y con los rangos que reporta la literatura. Cada parámetro, su distribución y su fuente se detallan en la Sección~\ref{sec:linea-base-cuantitativa} y en el Anexo~\ref{anx:modelo}.
+
+\textbf{Simulación.} Se generaron \MCiter{} escenarios independientes con una semilla fija (\MCsemilla) para que los resultados sean reproducibles. En cada escenario se muestrearon todos los parámetros inciertos y se calcularon $CU_{\text{sin}}$, $CU_{\text{con}}$, $CNC$, $IDM$ y $r$ con las ecuaciones \eqref{eq:cu-modelo} a \eqref{eq:r-modelo}. El cálculo se programó en Python con las bibliotecas NumPy y SciPy; el código y los parámetros se presentan en el Anexo~\ref{anx:modelo} y en la carpeta \texttt{06\_Modelo\_de\_Costos\_y\_Simulacion} del repositorio de la tesis.
+
+\textbf{Escenario de SGC no aplicado.} \textcite{romero2007} advierten que la certificación no garantiza que los principios de la gestión de la calidad se cumplan en la obra. Para representar ese riesgo, se simuló un escenario adicional en el que, con una probabilidad del \PiFalla{}, el SGC se paga pero no se aplica en obra (eficacia nula).
+
+% ---------------------------------------------------------------------
+\section{Validación de las observaciones, del modelo y de los instrumentos}
+\label{sec:validacion}
+
+\textbf{Validación de los datos documentales.} Los datos de la línea base se validaron por triangulación: cada cantidad se contrastó en al menos dos fuentes independientes (plano, cómputo métrico, planilla de avance, certificado del proveedor o Libro de Órdenes). Las coincidencias confirmaron el dato y las diferencias se registraron como hallazgos del diagnóstico (Sección~\ref{sec:analisis-documental}).
+
+\textbf{Verificación del modelo.} Se comprobó que el modelo reproduce, con los valores más probables de los parámetros, el cálculo manual del caso determinista (Tabla~\ref{tab:resultado-determinista}), que todas las magnitudes tienen unidades coherentes (Bs/\mdos{}) y que el costo esperado de la línea base coincide con el precio contractual usado en la calibración.
+
+\textbf{Convergencia.} La estabilidad de la simulación se verificó con la media acumulada de $r$ y con su error estándar, que al final de las \MCiter{} iteraciones fue de \SEr{}, valor despreciable frente al umbral de la hipótesis.
+
+\textbf{Sensibilidad.} Se identificaron los parámetros que más influyen en el resultado con dos técnicas: la variación de un factor a la vez entre su mínimo y su máximo (diagrama de tornado) y la correlación de rangos de Spearman entre cada parámetro muestreado y $r$.
+
+\textbf{Validación de los instrumentos y del SGC por juicio de expertos.} La validez de contenido de los instrumentos (Anexo~\ref{anx:instrumentos}) y del SGC se evaluará con el juicio de al menos tres expertos \parencite[pp.~230, 235]{hernandez2018}, ingenieros civiles con experiencia en supervisión, control de calidad del hormigón o gestión de la calidad. Cada experto calificará los criterios de pertinencia, claridad, suficiencia y aplicabilidad con una escala de 1 a 4 en el formato C.8, y se calculará para cada ítem el coeficiente V de Aiken:
+\begin{equation}
+  V = \frac{S}{n\,(c-1)}
+  \label{eq:aiken}
+\end{equation}
+donde $S$ es la suma de las puntuaciones de los jueces menos el valor mínimo de la escala, $n$ el número de jueces y $c$ el número de categorías. Se aceptarán los ítems con $V \geq 0{,}70$; los que no alcancen ese valor se corregirán con las observaciones de los expertos. \pendiente{aplicar el formato C.8 a los expertos, calcular V y registrar los resultados en el Anexo D y en la Sección~\ref{sec:resultados-expertos}; citar una fuente específica del coeficiente V de Aiken, que no figura en Hernández-Sampieri y Mendoza (2018).}
+
+% ---------------------------------------------------------------------
+\section{Plan de análisis y contraste de hipótesis}
+\label{sec:contraste}
+
+Como la posprueba es simulada, el contraste de hipótesis se planteó en términos de probabilidad, de manera coherente con el nivel de significancia $\alpha = 0{,}05$ fijado en el diseño de la investigación. Para cada hipótesis se calculó, sobre los \MCiter{} escenarios, la proporción en que se cumple la condición de la hipótesis alterna, y se aplicaron las reglas de decisión de la Tabla~\ref{tab:reglas-decision}.
+
+\begin{table}[H]
+\caption{Reglas de decisión para el contraste de hipótesis}
+\label{tab:reglas-decision}
+\begin{tabularx}{\linewidth}{@{}P{2.4cm}LL@{}}
+\toprule
+\textbf{Hipótesis} & \textbf{Hipótesis nula ($H_0$) y alterna ($H_1$)} & \textbf{Regla de decisión} \\
+\midrule
+General (HG) & $H_0$: el SGC no reduce el costo unitario o lo reduce en menos del 5~\%. $H_1$: $r \geq 0{,}05$. & Se acepta $H_1$ si $P(r \geq 0{,}05) \geq 0{,}95$ \\
+Específica 1 (HE1) & $H_0$: el SGC no reduce el índice de desperdicio ponderado. $H_1$: $IDM_{\text{con}} < IDM_{\text{sin}}$. & Se acepta $H_1$ si $P(IDM_{\text{con}} < IDM_{\text{sin}}) \geq 0{,}95$ \\
+Específica 2 (HE2) & $H_0$: el SGC no reduce el costo de no calidad. $H_1$: $CNC_{\text{con}} < CNC_{\text{sin}}$. & Se acepta $H_1$ si $P(CNC_{\text{con}} < CNC_{\text{sin}}) \geq 0{,}95$ \\
+\bottomrule
+\end{tabularx}
+\nota{La probabilidad mínima de 0,95 equivale a un nivel de significancia de 0,05 en un contraste unilateral. El índice de desperdicio ponderado pondera el IDM de cada material por su costo teórico por \mdos{}.}
+\end{table}
+
+Además de las decisiones, se informan como indicadores complementarios: la probabilidad de que el SGC reduzca el costo en cualquier magnitud, $P(r > 0)$; la reducción que se alcanza con un 95~\% de probabilidad (percentil 5 de $r$); el ahorro esperado en el saldo de la obra; y la eficacia mínima del SGC que se requiere para que $r = 0$ (punto de equilibrio) y para que $r = 5~\%$.
+
+\subsection{Verificación futura con datos de obra}
+\label{sec:verificacion-futura}
+
+Cuando se ejecute la segunda losa con el SGC, la hipótesis podrá verificarse con datos medidos en obra. Para ello se registrarán, con las fichas C.2 a C.6, el consumo real de cada material y el costo de la calidad por paño. Se calcularán el $IDM$, el $CNC$ y el costo unitario de cada paño homólogo, y se compararán con los de la línea base mediante la prueba \emph{t} de Student para muestras relacionadas \parencite[pp.~352--353, 372]{hernandez2018}, que supone la normalidad de la variable \parencite[p.~345]{hernandez2018}, o mediante la prueba de Wilcoxon para pares de rangos, prevista para muestras correlacionadas \parencite[p.~372]{hernandez2018}, si una prueba de normalidad, como la de Shapiro-Wilk, la rechaza para las diferencias, con $\alpha = 0{,}05$ \parencite[p.~342]{hernandez2018}. \pendiente{citar una fuente estadística específica para las pruebas de Shapiro-Wilk y de Wilcoxon; Hernández-Sampieri y Mendoza (2018) no tratan la primera y solo nombran la segunda} Esa verificación permitirá contrastar los resultados de la simulación con el desempeño real del sistema.

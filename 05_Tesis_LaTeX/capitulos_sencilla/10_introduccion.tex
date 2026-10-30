@@ -1,0 +1,315 @@
+% =====================================================================
+%  INTRODUCCIÓN
+%  (secciones numeradas 1, 2, 3... sin número de capítulo)
+% =====================================================================
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{INTRODUCCIÓN}
+\setcounter{section}{0}
+\renewcommand{\thesection}{\arabic{section}}
+
+% ---------------------------------------------------------------------
+\section{Antecedentes}
+
+\subsection{Antecedentes generales}
+
+La construcción de edificaciones es una actividad de alta variabilidad: cada obra es un proyecto único, se ejecuta en condiciones cambiantes, emplea mucha mano de obra y depende del suministro oportuno de materiales. En ese contexto, los reprocesos o retrabajos, el desperdicio de materiales y el incumplimiento de las especificaciones técnicas son fuentes frecuentes de sobrecostos y de retrasos. A partir de una revisión crítica de estudios internacionales, \textcite[p.~5]{alvarez2014} reporta que los costos por reprocesos llegan hasta el 12,4~\% del costo de los proyectos de construcción, con un promedio de 6,59~\%. El mismo autor estima que un sistema de gestión de la calidad implementado de forma efectiva podría reducirlos en 84,82~\%, al llevarlos a cerca del 1~\% del costo del proyecto; esa cifra es un cálculo del autor a partir de promedios publicados, no una medición en obra \parencite[pp.~5, 20]{alvarez2014}.
+
+Para controlar estas pérdidas, la industria ha adoptado progresivamente los sistemas de gestión de la calidad (SGC) basados en la familia de normas ISO~9000. La norma ISO~9001 establece los requisitos de un SGC con enfoque a procesos, estructurado según el ciclo Planificar--Hacer--Verificar--Actuar (PHVA) y el pensamiento basado en riesgos. Su edición vigente es la ISO~9001:2026, publicada el 16 de septiembre de 2026, que sustituyó a la edición de 2015 y fue adoptada en Bolivia como NB/ISO~9001:2026 \parencite{iso9001_2026,ibnorca9001_2026}. En el ámbito de un proyecto o contrato específico, la norma ISO~10005:2018 orienta la elaboración de \emph{planes de la calidad}, que definen los controles, las inspecciones y los registros necesarios para cumplir los requisitos \parencite{iso10005_2018}.
+
+\subsection{Antecedentes de investigación}
+
+Se revisaron catorce investigaciones sobre costos de la calidad, sistemas de gestión de la calidad en la construcción y control de materiales, agrupadas en internacionales, latinoamericanas y nacionales. De cada una se indican el método y los resultados que se relacionan con esta tesis.
+
+\textbf{Internacionales.} \textcite{forcada2017} estudiaron los factores que influyen en el costo de los retrabajos a partir de 788 incidencias registradas en 40 proyectos de una constructora española que documentaba sus no conformidades conforme a su certificación ISO~9001:2008; el 72,5~\% de los proyectos fue de infraestructura civil y el 27,5~\% de edificación \parencite[pp.~1, 4, 6]{forcada2017}. El costo de los retrabajos equivalió al 2,75~\% del valor original del contrato y se debió a errores y defectos asumidos por el contratista, mientras que el crecimiento medio del costo de los proyectos, del 11~\%, se explicó sobre todo por ampliaciones de alcance pedidas por el cliente; los proyectos de edificación presentaron costos de retrabajo mayores que los de obra civil \parencite[pp.~8, 10, 16]{forcada2017}.
+
+\textcite{khadim2023} aplicaron en Pakistán un modelo de prevención, evaluación y fallas ampliado con los costos ocultos de la mala calidad a 25 proyectos de edificación. El costo de la calidad promedio fue el 12,76~\% del costo total de los proyectos \parencite[p.~5423]{khadim2023}; las fallas visibles representaron el 2,34~\% y las ocultas el 8,59~\%, y la inversión en prevención y evaluación (1,83~\%) fue menor que el costo de las fallas visibles \parencite[pp.~5420--5421]{khadim2023}.
+
+\textcite{pradoroman2018} encuestaron a los responsables de calidad de 302 constructoras españolas de ingeniería civil y obtuvieron 126 respuestas válidas, una tasa de respuesta del 41,72~\% \parencite[pp.~150, 157]{pradoroman2018}. El 74,4~\% de las empresas calificó la certificación ISO~9001 como muy o extremadamente relevante para mejorar sus procesos organizativos y el 53,7~\% para mejorar sus operaciones \parencite[p.~163]{pradoroman2018}. El análisis de varianza mostró que el tamaño de la empresa no condiciona esos beneficios y que la antigüedad de la certificación sí: las diferencias entre las empresas con más y con menos de cinco años de certificación fueron significativas en todos los efectos internos, de modo que las mejoras aparecen de forma gradual \parencite[pp.~161--162, 164]{pradoroman2018}.
+
+\textcite{shaikh2020} midieron, mediante un cuestionario a profesionales de empresas certificadas del sector de la construcción de Pakistán y con el índice de importancia relativa (RII), el grado de implementación de 34 elementos de la ISO~9001 \parencite[p.~1138]{shaikh2020}. La inspección del material antes de su uso alcanzó un RII de 0,83, mientras que el rechazo de los materiales que no cumplen los requisitos y especificaciones fue el elemento menos implementado, con un RII de 0,66, el último de 34 \parencite[p.~1139]{shaikh2020}. A la vez, la disminución del desperdicio de material resultó la segunda ventaja más importante de implantar la norma \parencite[p.~1140]{shaikh2020}.
+
+\textbf{Latinoamericanos.} En Chile, \textcite{romero2007} encuestaron mediante entrevista personal a 118 personas de 11 constructoras habitacionales certificadas con ISO~9001:2000 \parencite[p.~197]{romero2007}. Cerca del 39~\% de los profesionales cree que las no conformidades se entienden como un castigo, otro 39~\% que se usan para «cubrir sus espaldas» y solo el 23~\% que sirven para mejorar los procesos \parencite[p.~202]{romero2007}. Los autores concluyen que esas empresas cumplen solo parcialmente los principios de la gestión de la calidad y que sus sistemas «funcionan en el papel perfectamente», pero en la práctica presentan varias falencias \parencite[pp.~208--209]{romero2007}.
+
+En el Perú, \textcite{salazar2018} evaluó, en una tesis de Ingeniería Industrial, el efecto de la guía del PMBOK en los costos de una empresa de construcción metalmecánica de Talara. Con un diseño cuasiexperimental comparó dos proyectos homólogos, uno ejecutado sin la guía (control) y otro con ella (tratamiento), con 13 observaciones mensuales de costos cada uno \parencite[p.~22]{salazar2018}. La razón entre el costo real y el planificado promedió 103,43~\% sin la guía y 94,50~\% con ella \parencite[p.~40]{salazar2018}; con la prueba \emph{t} para muestras relacionadas ($p = 0{,}011$) el autor aceptó la hipótesis y cuantificó la reducción en 8,93~\% respecto del costo planificado \parencite[p.~41]{salazar2018}. Su comparación entre un escenario de control y uno de tratamiento es análoga a la que plantea esta tesis.
+
+\textcite{gudiel2020} analizaron proyectos de edificación de pequeñas y medianas empresas de Lima. En seis edificios, el costo de la no calidad de la partida de concreto armado varió entre el 2,7~\% y el 5,1~\% del costo de la partida \parencite[p.~1]{gudiel2020}; de los cinco proyectos analizados en detalle, solo uno contaba con un plan de calidad \parencite[p.~80]{gudiel2020}, y el costo medio de la no calidad por obra, de S/~54.986,53, superó el costo estimado de implementar un área de calidad, de S/~50.600,00 \parencite[p.~95]{gudiel2020}.
+
+En el control de materiales, \textcite{galarza2011} propuso un sistema de medición y control del desperdicio en cinco etapas ---identificación, medición, evaluación, intervención y control--- \parencite[pp.~39--40]{galarza2011} y lo aplicó en dos edificios de Lima. En una obra sin muestreo de campo estimó un desperdicio de hormigón del orden del 22~\% al comparar los 4.796~\mtres{} de las guías de compra con los 3.918~\mtres{} del metrado del presupuesto \parencite[p.~53]{galarza2011}, procedimiento análogo a la reconstrucción documental de una línea base. Con el prearmado en banco y el uso parcial de acero dimensionado, el desperdicio de acero fue de 4,04~\%, frente al 7~\% previsto en el presupuesto, y con pedidos de hormigón limitados a un 2~\% sobre el metrado, el desperdicio de hormigón fue de 2,8~\% \parencite[pp.~60, 73, 75]{galarza2011}.
+
+\textcite{chino2024} midieron, en dos edificios multifamiliares del Cusco, desperdicios de acero de refuerzo de 14,58~\% y 17,09~\% con el método convencional y de 3,15~\% y 3,19~\% en los niveles en que aplicaron el despiece previo a la ejecución \parencite[pp.~147, 169]{chino2024}; para los niveles ya construidos con el método convencional estimaron en forma teórica que, con el despiece, el desperdicio habría sido de 8,94~\% y 6,71~\% \parencite[pp.~148, 192]{chino2024}, un precedente de evaluación \emph{ex ante} como la de esta tesis.
+
+En Colombia, \textcite{rojas2018} compararon la cubicación teórica del hormigón con las mediciones de campo en una torre de vivienda de Cajicá. Frente a un desperdicio previsto de 3~\% a 6~\% por el bombeo \parencite[p.~33]{rojas2018}, las pérdidas reales promediaron 9~\% en las placas y 23~\% en los muros, y el costo final del hormigón de las placas superó en 15~\% lo presupuestado \parencite[pp.~63--64, 69]{rojas2018}. Los autores concluyen que, sin una supervisión que controle las actividades de mayor desperdicio, los presupuestos aumentan \parencite[p.~69]{rojas2018}.
+
+\textbf{Nacionales.} En Bolivia, los antecedentes más cercanos corresponden a los fabricantes del mismo sistema de losa. \textcite{capcha2016} diagnosticó en la empresa PREVITEC S.R.L. un incumplimiento del 88~\% de la NB~997 \parencite[p.~132]{capcha2016} y estimó costos de calidad y de no calidad de Bs~292.851 en 2016, de los cuales Bs~91.000 correspondían a fallas externas; con el SGC y la certificación proyectó un costo de Bs~540.431 el primer año, que incluía la implementación, y de Bs~161.323 a Bs~193.550 anuales entre 2017 y 2020, frente a Bs~295.290 a Bs~391.294 sin el proyecto \parencite[p.~128]{capcha2016}.
+
+\textcite{mamanicalsina2025} diseñó un SGC basado en la NB~ISO~9001:2015 para PRENSOCRET, fabricante de viguetas pretensadas y plastoformo de El Alto. El diagnóstico inicial arrojó un cumplimiento global del 24~\% \parencite[pp.~47--49]{mamanicalsina2025}; los costos de no calidad percibidos se aproximaron a Bs~89.000 al año, y la relación beneficio/costo del sistema fue de 1,11 \parencite[pp.~98--99, 117]{mamanicalsina2025}. \textcite{pena2024} diagnosticó un cumplimiento del 43~\% de la NB/ISO~9001:2015 en el área de producción de ISOCRET, otra fabricante de viguetas pretensadas y de poliestireno expandido de El Alto, y vinculó la liberación de las viguetas con los requisitos de la NB~997 \parencite[pp.~71, 74]{pena2024}.
+
+Finalmente, \textcite{alcon2009} evaluó la fabricación y la aplicación de viguetas pretensadas en estructuras. En la planta observó que, con una supervisión adecuada, el producto alcanza una calidad óptima o buena y, sin ella, mala o regular \parencite[p.~150]{alcon2009}; en la obra, señaló la recepción de las viguetas como uno de los aspectos más importantes para que la obra sea de calidad \parencite[p.~115]{alcon2009}.
+
+\pendiente{revisar el repositorio de tesis de la Carrera de Ingeniería Civil de la UATF e incorporar los antecedentes locales que correspondan.}
+
+\textbf{Vacío de conocimiento.} Los antecedentes revisados cuantifican el retrabajo, los costos de la calidad y el desperdicio de materiales en obras en ejecución, evalúan los efectos y el grado de aplicación de la ISO~9001 en empresas constructoras, o diseñan sistemas de gestión de la calidad para fabricantes de viguetas y complementos. En la bibliografía revisada no se encontraron investigaciones bolivianas que apliquen un SGC a la ejecución en obra de losas alivianadas con viguetas pretensadas ni que estimen su efecto sobre el costo unitario y el desperdicio de materiales a partir de una línea base documentada, con un escenario de control y con el grado de incertidumbre del resultado. Ese es el vacío que aborda esta tesis.
+
+\subsection{Antecedentes del caso de estudio}
+
+La Universidad Autónoma Tomás Frías ejecuta el proyecto «Construcción Edificio de Posgrado» (CUCE 25-0143-00-1531493-1-1) en la Ciudadela Universitaria de la ciudad de Potosí, sobre la avenida Las Banderas, a 3.650~m~s.~n.~m. El edificio, de seis niveles, está destinado a las actividades académicas y administrativas del área de posgrado. Contará con dos auditorios de 180 personas cada uno, aulas y salas de defensa de tesis, laboratorios, biblioteca, área administrativa, cafetería y espacios de alojamiento para docentes visitantes \parencite[p.~1]{uatf_item13}.
+
+La fase contratada con la empresa Constructora Kodesh comprende la obra gruesa desde las fundaciones hasta la tercera losa \parencite[p.~8]{uatf2025pao2}. El contrato se firmó el 24 de abril de 2025 \parencite[p.~112]{uatf2025pao2}, por un monto de Bs~3.367.031,95 y un plazo de 270 días calendario computados desde la Orden de Proceder, emitida el 6 de mayo de 2025 \parencite[pp.~127--128]{uatf2025pao2}. No se otorgó anticipo, y los precios unitarios de la propuesta adjudicada incluyen la provisión de «materiales de calidad» y las «reparaciones por trabajos defectuosos» \parencite[p.~92]{uatf2025pao2}; además, el contrato excluye el reajuste de precios \parencite[p.~95]{uatf2025pao2}. La garantía adicional de Bs~32.908 equivale a la diferencia entre el 85~\% del precio referencial y la propuesta económica \parencite[p.~92]{uatf2025pao2}; de ella se deduce que el precio referencial fue de Bs~3.999.929,35 y que la oferta adjudicada representó el 84,18~\% de ese precio (cálculo propio). La obra cuenta con Supervisión técnica y Fiscalización del Departamento de Infraestructura de la UATF, y se financia con recursos del Impuesto Directo a los Hidrocarburos \parencite[pp.~3, 5, 91]{uatf2025pao2}.
+
+% ---------------------------------------------------------------------
+\section{Situación problemática}
+
+Durante la ejecución del proyecto se presentaron desviaciones respecto de lo planificado. Mediante un contrato modificatorio y dos ampliaciones de plazo, el monto del contrato aumentó en 7,22~\% y el plazo en 33,3~\%; al resolverse el contrato, la planilla de cierre firmada registró un avance financiero acumulado del 57,43~\% (Tabla~\ref{tab:contrato}). Las causas registradas de las modificaciones fueron actividades nuevas por el tipo de suelo, la perforación de anclajes en zapatas, el recálculo de la estructura y el ajuste de los volúmenes a las mediciones de obra \parencite[p.~1]{uatf_item13}.
+
+\begin{table}[H]
+\caption{Variación del monto y del plazo del contrato de obra}
+\label{tab:contrato}
+\begin{tabularx}{\linewidth}{@{}Lrrr@{}}
+\toprule
+\textbf{Indicador} & \textbf{Original} & \textbf{Actualizado} & \textbf{Variación} \\
+\midrule
+Monto del contrato (Bs) & 3.367.031,95 & 3.610.125,43 & +7,22~\% \\
+Plazo de ejecución (días calendario) & 270 & 360 & +33,3~\% \\
+Entrega provisional prevista & 30/01/2026 & 30/04/2026 & +3 meses \\
+Avance financiero acumulado al 08/12/2025 (Bs) & \multicolumn{2}{r}{2.056.555,27} & 56,97~\% \\
+Avance financiero acumulado al cierre del contrato (Bs) & \multicolumn{2}{r}{2.073.392,68} & 57,43~\% \\
+\bottomrule
+\end{tabularx}
+\nota{Elaborado con base en la Planilla de avance de obra N.\textsuperscript{o}~2 \parencite[pp.~3, 7, 14]{uatf2025pao2} y en la planilla de cierre por resolución del contrato, versión firmada \parencite[p.~2]{uatf_item13}.}
+\end{table}
+
+Las cantidades de varios ítems también variaron entre el contrato original y el modificado (cálculo propio con base en \cite[p.~16]{uatf2025pao2}):
+\begin{itemize}
+  \item el acero estructural pasó de 59.029,92~kg a 77.979,51~kg (+32,1~\%);
+  \item el hormigón de zapatas aumentó un 16,0~\% y el de escaleras un 46,7~\%, mientras que el de columnas disminuyó un 8,5~\% y el de vigas un 7,9~\%.
+\end{itemize}
+
+El ítem «H\textsuperscript{o}S\textsuperscript{o} losa alivianada con vigueta simple pretensada y plastoformo h~=~25~cm» representa el 21,45~\% del monto original del contrato, con un precio unitario de Bs~215,68/\mdos{} (Tabla~\ref{tab:item13}). La primera losa (41 paños; 1.109,84~\mdos{}) se certificó completa en la Planilla N.\textsuperscript{o}~2, sin avance anterior \parencite[pp.~16, 28--29]{uatf2025pao2}, y fue la única que se ejecutó: el 33,18~\% de la cantidad modificada \parencite[p.~2]{uatf_item13}. El saldo de 2.234,60~\mdos{} corresponde a la segunda y la tercera losa, que el cómputo del contrato modificado calcula con los mismos 41 paños, cinco de ellos algo mayores (paños 1, 2, 34, 35 y 40), de modo que cada una mide 1.117,30~\mdos{} (cálculo propio con base en \cite[pp.~18--19]{uatf_item13}).
+
+\begin{table}[H]
+\caption{Cantidades y montos del ítem losa alivianada con viguetas pretensadas}
+\label{tab:item13}
+\begin{tabularx}{\linewidth}{@{}Lrrr@{}}
+\toprule
+\textbf{Concepto} & \textbf{Cantidad (\mdos)} & \textbf{Monto (Bs)} & \textbf{Porcentaje} \\
+\midrule
+Contrato original & 3.348,75 & 722.242,66 & 21,45~\% del contrato \\
+Contrato modificado & 3.344,44 & 721.313,10 & 100,00~\% del ítem \\
+Ejecutado (primera losa, 41 paños) & 1.109,84 & 239.365,07 & 33,18~\% \\
+Saldo no ejecutado (segunda y tercera losa) & 2.234,60 & 481.948,03 & 66,82~\% \\
+\bottomrule
+\end{tabularx}
+\nota{Precio unitario contractual: Bs~215,6753/\mdos{}, redondeado a Bs~215,68/\mdos{}. Cada losa superior mide 1.117,30~\mdos{} según el cómputo del contrato modificado (cálculo propio). Elaborado con base en la Planilla de avance de obra N.\textsuperscript{o}~2 \parencite[p.~16]{uatf2025pao2} y en la planilla de cierre firmada y el cómputo del contrato modificado \parencite[pp.~2, 18--19]{uatf_item13}.}
+\end{table}
+
+El abastecimiento y el precio de los materiales se vieron afectados por la escasez de combustibles. En junio de 2025, la Fábrica Nacional de Cemento S.~A. comunicó la paralización temporal de su producción por falta de diésel \parencite{fancesa2025}. El 16 de junio de 2025, el distribuidor del acero informó a la contratista que, de una compra de 20 toneladas de fierro corrugado, solo había entregado el 30~\%, debido al desabastecimiento de combustibles y a los bloqueos de carreteras \parencite{laslomas2025}. El 17 de noviembre de 2025, mientras se armaban las vigas y la losa del primer nivel, la contratista registró en el Libro de Órdenes que los materiales demoraban en llegar por la escasez de combustible \parencite[pp.~122--123]{uatf2025pao2}. El informe de la Supervisión del mismo periodo señala que se realizaron «modificaciones estructurales debido a la inexistencia de viguetas en el mercado de los tamaños requeridos», sin detallar qué se modificó \parencite[p.~11]{uatf2025pao2}. En octubre de 2025, la Cámara de la Construcción de Tarija se pronunció sobre el incremento del precio del cemento, la escasez de combustibles y la variación del tipo de cambio \parencite{cadeco2025}. Los precios promedio que publica el Instituto Nacional de Estadística para Potosí muestran la magnitud del alza (Tabla~\ref{tab:precios}), que el Gobierno reconoció con decretos de ajuste excepcional de precios en contratos de obra: el D.~S.~5321 de 2025 y el D.~S.~5597 de 2026 \parencite{ds5321_2025,ds5597_2026}. El contrato de la obra, sin embargo, excluye el reajuste de precios y no considera fuerza mayor las demoras en la entrega de materiales \parencite[pp.~95--96]{uatf2025pao2}.
+
+\begin{table}[H]
+\caption{Precios promedio de materiales de construcción en Potosí}
+\label{tab:precios}
+\begin{tabularx}{\linewidth}{@{}Lrrrr@{}}
+\toprule
+\textbf{Material} & \textbf{Dic. 2023} & \textbf{Dic. 2025} & \textbf{Sep. 2026} & \textbf{Variación} \\
+\midrule
+Cemento portland gris, bolsa de 50~kg (Bs) & 45,00 & 83,09 & 78,32 & +74,1~\% \\
+Fierro corrugado de 1/2'', tonelada (Bs) & 6.885,56 & 12.733,71 & 11.412,22 & +65,7~\% \\
+Vigueta pretensada con plastoformo, \mdos{} (Bs) & 77,25 & 112,97 & 124,84 & +61,6~\% \\
+Alambre de amarre, kg (Bs) & 11,11 & 17,41 & 19,68 & +77,1~\% \\
+\bottomrule
+\end{tabularx}
+\nota{La variación compara septiembre de 2026 con diciembre de 2023. Elaborado con base en \textcite{ine2026precios}. \pendiente{archivar en el repositorio el conjunto de datos del INE del que se tomaron estos precios.}}
+\end{table}
+
+En cuanto a la gestión de la calidad, los documentos de la obra no muestran un sistema de planificación, control y registro de la calidad de la losa:
+\begin{itemize}
+  \item \textbf{Hormigón de la losa sin ensayos de resistencia.} El único certificado de ensayos de compresión adjunto a la Planilla N.\textsuperscript{o}~2, del 5 de diciembre de 2025, corresponde a diez probetas de columnas y dos de vigas, ensayadas a edades de 55 a 76 días y con resistencias «proyectadas» a 28 días; las probetas fueron traídas y elaboradas por la propia contratista, y ninguna corresponde a la losa \parencites{labuatf2025}[p.~78]{uatf2025pao2}. La losa se certificó para el pago en esa planilla, cerrada el 8 de diciembre de 2025, sin resultados de resistencia: los 28 días contados desde la autorización del vaciado (28/11/2025) se cumplían el 26 de diciembre de 2025 (cálculo propio con base en \cite[pp.~16, 125]{uatf2025pao2}).
+  \item \textbf{Libro de Órdenes sin registro de no conformidades.} Los 24 asientos del periodo, del 10 de septiembre al 28 de noviembre de 2025, no registran ninguna no conformidad, rechazo de material ni retrabajo, y las ocho solicitudes de vaciado se autorizaron el mismo día en que se presentaron \parencite[pp.~114--125]{uatf2025pao2}. El 28 de noviembre de 2025, la Supervisión autorizó el vaciado de la losa «desde dos frentes» y recomendó cumplir las especificaciones, las dosificaciones y el curado, sin instruir la toma de probetas \parencite[p.~125]{uatf2025pao2}, como sí lo había hecho el 31 de octubre para las columnas \parencite[p.~121]{uatf2025pao2}.
+  \item \textbf{Certificados de materiales posteriores al armado.} Los certificados de calidad de las viguetas (PRETENSA) y del complemento de poliestireno expandido (UNICON) están fechados el 27 de noviembre de 2025, cuando el armado de la losa estaba en curso al menos desde el 14 de noviembre; ninguno muestra firma ni sello, y el de las viguetas no indica cantidad, lote ni resultados de ensayo \parencites[pp.~80--81, 122]{uatf2025pao2}{pretensa2025,unicon2025}. El complemento certificado (20~$\times$~100~$\times$~44~cm) no coincide con el que fija la especificación técnica (100~$\times$~50~$\times$~20~cm) \parencite[p.~3]{uatf_et}. Los certificados de acero adjuntos solo cubren barras de 8 a 20~mm: no hay certificados de las barras de 6~mm, que forman la parrilla de la losa según el Plano~02 del proyecto, ni de las de 10~mm \parencite[pp.~82--86]{uatf2025pao2}.
+  \item \textbf{Observaciones de la Supervisión.} En su informe de la Planilla N.\textsuperscript{o}~2, la Supervisión recomendó al constructor presentar las garantías de todos los materiales empleados, realizar la rotura de probetas de los elementos vaciados y presentar las dosificaciones \parencite[p.~9]{uatf2025pao2}; en el mismo informe afirmó que los trabajos del periodo «presentan buena calidad», sin citar ensayos ni inspecciones \parencite[p.~11]{uatf2025pao2}.
+\end{itemize}
+
+Los documentos de pago presentan, además, inconsistencias en las cantidades de acero estructural (ítem~8) que la Supervisión y la Fiscalización deben verificar:
+\begin{itemize}
+  \item La planilla de cierre firmada descuenta 1.862,81~kg (Bs~31.212,95) de los 52.424,65~kg pagados hasta la Planilla N.\textsuperscript{o}~2, es decir, el 3,55~\% (cálculo propio), y deja un acumulado de 50.561,84~kg \parencites[p.~16]{uatf2025pao2}[p.~2]{uatf_item13}, la misma cifra que consigna el detalle de descuento por agua potable del expediente \parencite[p.~12]{uatf_item13}. Una versión en Excel de la misma planilla registra, en cambio, un descuento de 1.915,16~kg (Bs~32.090,11) y un monto del periodo de Bs~18.527,21, frente a los Bs~16.837,41 de la versión firmada \parencites{uatf_pao3}[p.~2]{uatf_item13}.
+  \item En la Planilla N.\textsuperscript{o}~2, el acero de la losa se computa una sola vez («LOSA ALIVIANADA», 1,00~$\times$~4.171,18~kg) y sin planilla de armado \parencite[p.~20]{uatf2025pao2}; en el cómputo de cierre que acompaña a la versión en Excel, la misma línea figura como 3~$\times$~4.171,18~kg~=~12.513,54~kg, aunque solo se ejecutó una losa \parencite{uatf_pao3}. Además, la especificación técnica del ítem~13 incluye entre los materiales de ese ítem el «Fierro Corrugado (parrilla de compresión y refuerzo momentos negativos)» \parencite[p.~3]{uatf_et}, lo que plantea un posible doble cómputo con el ítem~8 que debe verificarse con el análisis de precios unitarios del ítem.
+\end{itemize}
+
+En esta tesis se adoptan como oficiales las cifras de la planilla de cierre firmada; la conciliación de las demás versiones y cómputos corresponde a la Supervisión y la Fiscalización.
+
+El 5 de enero de 2026, el Director de Obra registró en el Libro de Órdenes la presentación, a la Máxima Autoridad Ejecutiva de la UATF, de una carta notariada de intención de resolución consensuada del contrato por fuerza mayor o caso fortuito. La contratista invocó el D.~S.~5503, que, según su comunicación, quitó la subvención estatal a la gasolina y al diésel e incrementó el costo de los materiales, del transporte y de la mano de obra, y solicitó la paralización de la obra; la Supervisión le instruyó seguir el procedimiento de paralización previsto en el contrato \parencite[p.~14]{uatf_item13}. La UATF respondió favorablemente el 10 de febrero de 2026 \parencite[p.~1]{uatf_item13}. Al resolverse el contrato solo se había ejecutado la primera losa, y la segunda no se ejecutó durante esta investigación.
+
+En síntesis, la primera losa se ejecutó y se pagó sin registros de resistencia del hormigón, de recepción de los materiales, de no conformidades ni de consumos, por lo que su desperdicio y su costo de no calidad no pueden conocerse directamente. Si los 2.234,60~\mdos{} de losa restantes se ejecutan sin un sistema que planifique, controle y registre la calidad del proceso constructivo y el uso de los materiales, existe el riesgo de que se repitan las mismas deficiencias.
+
+% ---------------------------------------------------------------------
+\section{Formulación del problema}
+
+\subsection{Problema general}
+¿De qué manera un Sistema de Gestión de la Calidad basado en la norma ISO~9001, centrado en el control de materiales, permite reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías?
+
+\subsection{Problemas específicos}
+\begin{enumerate}[label=\textbf{PE\arabic*.}]
+  \item ¿Cómo se gestionaron la calidad y el control de materiales en la ejecución de la primera losa alivianada del Edificio de Posgrado?
+  \item ¿Cuál es el nivel de desperdicio de materiales (hormigón, acero, viguetas pretensadas y plastoformo) y cuál es el costo de no calidad de la primera losa?
+  \item ¿Qué componentes debe tener un SGC para el proceso constructivo de losas alivianadas con viguetas pretensadas?
+  \item ¿En qué medida el SGC propuesto reduce el costo unitario y el desperdicio de materiales respecto de la línea base?
+\end{enumerate}
+
+% ---------------------------------------------------------------------
+\section{Objeto de estudio y campo de acción}
+
+\textbf{Objeto de estudio:} el proceso constructivo de losas alivianadas con viguetas pretensadas y complemento de poliestireno expandido (plastoformo) en edificaciones.
+
+\textbf{Campo de acción:} la gestión de la calidad, el control de materiales y los costos del ítem «losa alivianada h~=~25~cm» del Edificio de Posgrado de la UATF.
+
+% ---------------------------------------------------------------------
+\section{Objetivos}
+
+\subsection{Objetivo general}
+Diseñar un Sistema de Gestión de la Calidad basado en la norma ISO~9001, centrado en el control de materiales, para reducir los costos de ejecución de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la Universidad Autónoma Tomás Frías.
+
+\subsection{Objetivos específicos}
+\begin{enumerate}[label=\textbf{OE\arabic*.}]
+  \item Caracterizar la gestión de la calidad y el control de materiales aplicados en la ejecución de la primera losa alivianada (1.109,84~\mdos{}) e identificar las no conformidades y sus causas.
+  \item Cuantificar la línea base del índice de desperdicio de materiales (hormigón, acero, viguetas pretensadas y plastoformo) y del costo de no calidad de la primera losa. Para ello se compararán las cantidades teóricas, adquiridas y pagadas.
+  \item Establecer los componentes del SGC: plan de la calidad, plan de puntos de inspección y ensayo (PPI), procedimientos de control de materiales, gestión de no conformidades y registro de costos de la calidad. Se basarán en las normas ISO~9001:2026 e ISO~10005:2018, en la normativa de hormigón estructural y en los ensayos ASTM.
+  \item Evaluar \emph{ex ante}, mediante un modelo de costos y simulación de Monte Carlo, el efecto del SGC sobre el costo unitario (Bs/\mdos{}) y el desperdicio de materiales de los 2.234,60~\mdos{} de losa restantes, respecto de la línea base.
+  \item Contrastar la hipótesis mediante reglas de decisión probabilísticas con $\alpha = 0{,}05$ y validar el SGC mediante juicio de expertos.
+\end{enumerate}
+
+% ---------------------------------------------------------------------
+\section{Hipótesis}
+
+\subsection{Hipótesis general}
+La aplicación de un Sistema de Gestión de la Calidad basado en la norma ISO~9001, centrado en el control de materiales, reduce en al menos un 5~\% el costo unitario de ejecución (Bs/\mdos{}, a precios constantes del contrato) de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado de la UATF, respecto de la línea base de la primera losa.
+
+La hipótesis nula correspondiente ($H_0$) sostiene que el SGC no reduce el costo unitario o lo reduce en menos del 5~\%, es decir, que niega lo que afirma la hipótesis de investigación \parencite[p.~133]{hernandez2018}. Las hipótesis nulas de las hipótesis específicas y las reglas de decisión se presentan en la Sección~\ref{sec:contraste}.
+
+\subsection{Hipótesis específicas}
+\begin{enumerate}[label=\textbf{HE\arabic*.}]
+  \item El SGC reduce el índice de desperdicio de materiales de la losa con respecto a la línea base.
+  \item El SGC reduce el costo de no calidad (fallas internas y externas) del ítem con respecto a la línea base.
+\end{enumerate}
+
+% ---------------------------------------------------------------------
+\section{Variables}
+
+\subsection{Identificación de variables}
+
+\begin{table}[H]
+\caption{Identificación de las variables de investigación}
+\label{tab:variables}
+\begin{tabularx}{\linewidth}{@{}P{2.6cm}P{3.1cm}LP{3.5cm}@{}}
+\toprule
+\textbf{Tipo} & \textbf{Variable} & \textbf{Definición conceptual} & \textbf{Dimensiones} \\
+\midrule
+Independiente (X) & Sistema de Gestión de la Calidad (SGC) & Conjunto de políticas, objetivos, procesos, controles y registros (ISO~9000:2026; ISO~9001:2026) aplicados al proceso constructivo de la losa, con énfasis en el control de materiales. & Planificación de la calidad; control de materiales; control del proceso (PPI); seguimiento y mejora. \\
+\addlinespace
+Dependiente (Y) & Costo de ejecución de la losa alivianada & Costo por \mdos{} para ejecutar la losa conforme a las especificaciones. Incluye los costos de la calidad (prevención y evaluación) y de la no calidad (fallas internas y externas). & Costo directo; desperdicio de materiales; costo de no calidad; costo de la calidad; conformidad del hormigón. \\
+\addlinespace
+Interviniente (controlada) & Precios de los materiales & Variación de precios de insumos en 2025--2026. Se controla calculando los costos a precios constantes del contrato. & --- \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia.}
+\end{table}
+
+\subsection{Operacionalización de variables}
+La operacionalización completa (dimensiones, indicadores, fórmulas e instrumentos) se presenta en el Anexo~\ref{anx:operacionalizacion}, y la matriz de consistencia de la investigación en el Anexo~\ref{anx:matriz}.
+
+% ---------------------------------------------------------------------
+\section{Justificación}
+
+\subsection{Justificación técnica}
+La investigación dará un procedimiento sistemático para planificar, inspeccionar y aceptar los materiales y las actividades del proceso constructivo de losas alivianadas con viguetas pretensadas. Ese procedimiento será coherente con la norma ISO~9001:2026, con las especificaciones técnicas del proyecto y con los criterios de evaluación y aceptación del hormigón del código ACI~318-25 \parencite[sección~26.12, pp.~601--607]{aci318_2025}, y usará ensayos normalizados ASTM. Ese código exige, en losas, al menos una muestra de hormigón por cada 5.000~ft\textsuperscript{2} ($\approx$~464,5~\mdos{}) de superficie \parencite[sección~26.12.2.1, p.~603]{aci318_2025}; para los 1.109,84~\mdos{} de la primera losa corresponderían al menos tres muestras (cálculo propio), y no se registró ninguna. El control del hormigón de la carpeta de compresión y de los nervios es determinante para el comportamiento estructural de la losa.
+
+\subsection{Justificación económica}
+Las losas alivianadas representan el 21,45~\% del monto original del contrato, y quedan por ejecutar 2.234,60~\mdos{} (Bs~481.948,03 a precios del contrato). Como referencia, si el SGC alcanzara el umbral de la hipótesis general ---una reducción del 5~\% del costo unitario---, el ahorro en ese saldo sería de aproximadamente Bs~24.097 (0,05~$\times$~Bs~481.948,03). Este cálculo es ilustrativo: indica el ahorro que implicaría alcanzar el umbral, no el que se espera obtener; el ahorro estimado con el modelo de costos y la simulación se presenta en el Capítulo~\ref{cap:resultados}. Tampoco incluye los posibles beneficios en otros ítems de hormigón armado, que esta investigación no cuantifica.
+
+Por otra parte, el contrato excluye el reajuste de precios y sus precios unitarios incluyen las reparaciones por trabajos defectuosos \parencite[pp.~92, 95]{uatf2025pao2}, y la oferta adjudicada fue un 15,8~\% inferior al precio referencial (cálculo propio). En esas condiciones, el costo del desperdicio y de los retrabajos lo asume el contratista; con los precios de los materiales en alza, reducirlos protege la ejecución de la obra y los recursos públicos invertidos en ella.
+
+\subsection{Justificación social e institucional}
+El Edificio de Posgrado beneficiará a la comunidad universitaria de la UATF y a la región, con espacios para la formación posgradual. Interesa a la institución que la obra concluya a tiempo y con la calidad especificada. El Departamento de Infraestructura de la UATF podrá adoptar el SGC propuesto en otras obras.
+
+\subsection{Justificación metodológica}
+La investigación propone indicadores e instrumentos reutilizables en otras obras y en investigaciones posteriores sobre gestión de la calidad en la construcción: lista de verificación ISO~9001:2026, plan de puntos de inspección, fichas de control de materiales y planilla de costos de la calidad. Además, aplica un procedimiento de evaluación \emph{ex ante} ---un modelo de costos a precios constantes del contrato con un escenario de control y una simulación de Monte Carlo--- que permite estimar, con su grado de incertidumbre, el efecto de un SGC cuando no es posible medirlo en obra, como ocurrió en este caso.
+
+% ---------------------------------------------------------------------
+\section{Alcances y delimitación}
+
+\subsection{Alcance}
+El SGC se diseña para el proceso constructivo del ítem losa alivianada con viguetas pretensadas, desde la compra y la recepción de los materiales hasta la medición y el pago, y su efecto se evalúa \emph{ex ante} sobre el saldo de 2.234,60~\mdos{}. No comprende el diseño estructural de la losa, los demás ítems de la obra, la certificación del SGC de la empresa constructora ni la implementación del sistema en obra, que queda planteada como protocolo para la ejecución del saldo (Sección~\ref{sec:implementacion}).
+
+\subsection{Delimitación espacial}
+Edificio de Posgrado, Ciudadela Universitaria de la UATF, avenida Las Banderas, ciudad de Potosí (19$^{\circ}$33'21,84''~S; 65$^{\circ}$45'47,73''~O; 3.650~m~s.~n.~m.).
+
+\subsection{Delimitación temporal}
+La línea base se construye con documentos de obra de mayo a diciembre de 2025, desde la Orden de Proceder (6 de mayo de 2025) hasta el cierre de la Planilla N.\textsuperscript{o}~2 (8 de diciembre de 2025); en ese periodo se ejecutó la primera losa, cuyo armado estaba en curso el 14 de noviembre y cuyo vaciado se autorizó el 28 de noviembre de 2025. La evaluación \emph{ex ante} del SGC se realiza con la información disponible hasta octubre de 2026, que incluye la paralización de la obra y la resolución del contrato.
+
+\subsection{Delimitación temática}
+Gestión de la calidad (ISO~9001:2026 e ISO~10005:2018), control de materiales (hormigón, acero de refuerzo de la losa, viguetas pretensadas y complementos de poliestireno expandido), costos de la calidad (modelo de prevención, evaluación y fallas) y evaluación \emph{ex ante} mediante modelación de costos y simulación de Monte Carlo.
+
+% ---------------------------------------------------------------------
+\section{Metodología de la investigación}
+
+\subsection{Tipo, enfoque y nivel de investigación}
+La investigación es \textbf{aplicada}, porque busca resolver un problema práctico de una obra pública. Tiene \textbf{enfoque cuantitativo}, porque estima magnitudes ---costo unitario, índices de desperdicio y costo de no calidad--- y somete hipótesis a prueba \parencite[p.~6]{hernandez2018}. Su \textbf{nivel es explicativo}, porque busca establecer el efecto del SGC sobre el costo de la losa \parencite[p.~110]{hernandez2018}, con una \textbf{fase descriptiva}, la caracterización documental de la primera losa \parencite[p.~108]{hernandez2018}, y un \textbf{componente propositivo}, el diseño del SGC; un estudio puede tener un alcance principal y contener elementos de otros \parencite[p.~113]{hernandez2018}. Esta clasificación sigue los tipos de investigación del Seminario de Grado: exploratoria, descriptiva, explicativa y propositiva \parencite[diapositiva~12]{barrios2021documento}.
+
+\subsection{Diseño de investigación}
+El diseño previsto en el perfil fue cuasiexperimental, de preprueba y posprueba con un solo grupo: la primera losa como preprueba y la segunda como posprueba. Para el caso de que la segunda losa no se ejecutara durante la investigación, el perfil previó como alternativa un diseño no experimental con evaluación \emph{ex ante}, mediante simulación de costos, y validación por juicio de expertos. Esa alternativa fue la que se aplicó: el 5 de enero de 2026 la contratista solicitó la paralización de la obra y la resolución del contrato, y la UATF respondió favorablemente el 10 de febrero de 2026 \parencite[pp.~1, 14]{uatf_item13}, de modo que no hubo una segunda losa sobre la cual medir la posprueba en obra.
+
+En consecuencia, el diseño es \textbf{no experimental}, porque el SGC no se aplicó ni se manipuló en obra \parencite[pp.~151, 175]{hernandez2018}, y tiene dos componentes:
+\begin{equation*}
+  O_1 \longrightarrow X \longrightarrow O_2^{\,\text{sim}}
+\end{equation*}
+donde $O_1$ es la \textbf{línea base retrospectiva y documental}: la primera losa (41 paños; 1.109,84~\mdos{}), ejecutada sin SGC, se reconstruye a partir de planillas, cómputos métricos, certificados y el Libro de Órdenes, con un diseño longitudinal retrospectivo \parencite[p.~180]{hernandez2018}; $X$ es el SGC diseñado (plan de la calidad, plan de puntos de inspección y ensayo, procedimientos de control de materiales, gestión de no conformidades y registro de costos de la calidad), y $O_2^{\,\text{sim}}$ es la \textbf{evaluación \emph{ex ante} del tratamiento}: un modelo de costos a precios constantes del contrato y una simulación de Monte Carlo estiman el costo de ejecutar los 2.234,60~\mdos{} restantes sin SGC (control) y con SGC (tratamiento).
+
+La guía del Seminario de Grado reconoce la modelación de simulación teórica como un tipo de modelo de investigación, y exige que el modelo incluya un tratamiento de control y permita calcular el grado de incertidumbre de los resultados \parencite[diapositivas~4, 8 y 9]{barrios2021modelo}. El modelo de esta tesis cumple ambas condiciones: el escenario sin SGC actúa como control y la simulación expresa el resultado como una distribución de probabilidad. El procedimiento, la validación y el plan de contraste se detallan en las Secciones~\ref{sec:implementacion} a~\ref{sec:contraste}.
+
+\subsection{Población, unidad de análisis y muestra}
+La \textbf{población} está constituida por las losas alivianadas de la fase contratada: tres losas con 3.344,44~\mdos{} según el contrato modificado \parencite[pp.~8, 16]{uatf2025pao2}. La \textbf{unidad de análisis} es el paño de losa. La línea base comprende todos los paños de la primera losa ---41 paños, de 1,40 a 52,38~\mdos{}, que suman 1.109,84~\mdos{} \parencite[pp.~28--29, 60]{uatf2025pao2}---, por lo que constituye un censo de esa losa y no una muestra \parencite[p.~196]{hernandez2018}; el caso se eligió de forma no probabilística, por sus características y por el acceso a sus documentos \parencite[p.~200]{hernandez2018}. La evaluación \emph{ex ante} se aplica al saldo de 2.234,60~\mdos{}, correspondiente a la segunda y la tercera losa, de 1.117,30~\mdos{} cada una, cuyos paños son homólogos a los de la primera, con áreas ligeramente mayores en cinco de ellos (cálculo propio con base en \cite[pp.~18--19]{uatf_item13}).
+
+\subsection{Métodos}
+Se emplean los métodos analítico-sintético (descomposición del proceso constructivo en actividades y controles), inductivo-deductivo (de los datos por paño a conclusiones sobre el ítem), estadístico (descripción de los datos y contraste de hipótesis) y de modelación y simulación (representación del costo de la losa con un modelo de costos y propagación de la incertidumbre de sus parámetros mediante la simulación de Monte Carlo).
+
+\subsection{Técnicas e instrumentos de recolección de datos}
+
+\begin{table}[H]
+\caption{Técnicas e instrumentos de recolección de datos}
+\label{tab:tecnicas}
+\begin{tabularx}{\linewidth}{@{}P{3.2cm}LP{3.3cm}P{1.7cm}@{}}
+\toprule
+\textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuente o informante} & \textbf{Objetivo} \\
+\midrule
+Análisis documental & Ficha de registro documental: planillas de avance, cómputos métricos, Libro de Órdenes, certificados, contrato, planos y especificaciones técnicas & Expediente de la obra (Departamento de Infraestructura, Supervisión y Fiscalización) & OE1, OE2 \\
+Diagnóstico documental de brechas & Lista de verificación de requisitos de la ISO~9001:2026, aplicada sobre la evidencia documental & Documentos de la obra & OE1, OE3 \\
+Modelación y simulación & Modelo de costos a precios constantes del contrato y simulación de Monte Carlo programada en Python & Línea base, análisis de precios unitarios de referencia y antecedentes & OE4, OE5 \\
+Juicio de expertos (pendiente) & Formato de validación con el coeficiente V de Aiken & Ingenieros civiles con experiencia en supervisión, control del hormigón o gestión de la calidad & OE5 \\
+Entrevista (complementaria) & Guía de entrevista semiestructurada & Director de obra, Supervisión y Fiscalización & OE1 \\
+\bottomrule
+\end{tabularx}
+\nota{El juicio de expertos queda pendiente de aplicación, y las entrevistas complementan la evidencia documental sin sustituirla. Los formatos de recepción de materiales, de inspección y de control de consumos del SGC (Anexo~\ref{anx:instrumentos}) no se aplicaron en obra; se emplearán en la verificación futura con datos de obra (Sección~\ref{sec:verificacion-futura}). Elaboración propia.}
+\end{table}
+
+\subsection{Procesamiento y análisis de datos}
+Los datos se procesan con hoja de cálculo y con un programa en Python (bibliotecas NumPy y SciPy):
+\begin{itemize}
+  \item Estadística descriptiva: media, desviación estándar y coeficiente de variación.
+  \item Análisis de causas: diagramas de Pareto e Ishikawa.
+  \item Simulación de Monte Carlo con \MCiter{} iteraciones y semilla fija, con distribuciones triangulares para los parámetros inciertos (Sección~\ref{sec:modelo-simulacion}).
+  \item Contraste de hipótesis con reglas de decisión probabilísticas: se acepta la hipótesis alterna si la probabilidad de que se cumpla su condición es de al menos 0,95, lo que equivale a un nivel de significancia $\alpha = 0{,}05$ en un contraste unilateral \parencite[p.~342]{hernandez2018}.
+  \item Análisis de sensibilidad: variación de un factor a la vez (diagrama de tornado) y correlación de rangos de Spearman.
+\end{itemize}
+
+La prueba \emph{t} de Student para muestras relacionadas \parencite[pp.~352--353, 372]{hernandez2018}, o una prueba no paramétrica para muestras relacionadas, como la de Wilcoxon para pares de rangos, si las diferencias no siguen una distribución normal \parencite[pp.~362, 372]{hernandez2018}, queda reservada para la verificación futura con datos de obra (Sección~\ref{sec:verificacion-futura}). Los costos se expresan a precios constantes del contrato, para aislar el efecto de la inflación.
+
+% ---------------------------------------------------------------------
+\section{Estructura del documento}
+
+\begin{itemize}
+  \item El \textbf{Capítulo~\ref{cap:marco}} presenta el marco teórico: la gestión de la calidad y la norma ISO~9001:2026, los planes de la calidad, los costos de la calidad, las pérdidas y el desperdicio de materiales en la construcción, el sistema de losas alivianadas con viguetas pretensadas, el marco normativo aplicable y los fundamentos de la evaluación \emph{ex ante} mediante simulación.
+  \item El \textbf{Capítulo~\ref{cap:diseno}} describe el modelo de investigación, caracteriza el caso de estudio, define las variables, la población y la muestra, establece la línea base mediante el diagnóstico documental de la primera losa y desarrolla el diseño del SGC (Sección~\ref{sec:diseno-sgc}). Luego expone el procedimiento de implementación previsto y la evaluación \emph{ex ante} mediante el modelo de costos y la simulación (Sección~\ref{sec:implementacion}), la validación de las observaciones, del modelo y de los instrumentos (Sección~\ref{sec:validacion}) y el plan de contraste de hipótesis (Sección~\ref{sec:contraste}).
+  \item El \textbf{Capítulo~\ref{cap:resultados}} presenta los resultados del diagnóstico y de la línea base, los resultados del modelo de costos y de la simulación de Monte Carlo, el contraste de las hipótesis, el análisis de sensibilidad y la discusión con los antecedentes; la validación por juicio de expertos queda pendiente de aplicación.
+  \item Finalmente se exponen las conclusiones y recomendaciones, la bibliografía y los anexos, entre ellos la matriz de consistencia, la operacionalización de variables, los instrumentos del SGC, los planos y cómputos de la primera losa, los certificados de materiales, el análisis de precios unitarios de referencia y el código del modelo de costos y de la simulación.
+\end{itemize}
+
+% Restablece la numeración normal de secciones para los capítulos
+\renewcommand{\thesection}{\thechapter.\arabic{section}}

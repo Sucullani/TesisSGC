@@ -1,0 +1,748 @@
+% =====================================================================
+%  CAPÍTULO 1. MARCO TEÓRICO
+%  Fuentes: fichas verificadas de 04_Bibliografia/07_Fichas_de_Citas/ y
+%  páginas comprobadas en los PDF del repositorio. No se cita de segunda
+%  mano: cuando una fuente reporta datos de otros autores, se cita la
+%  fuente consultada y se advierte el origen del dato.
+% =====================================================================
+\chapter{MARCO TEÓRICO DE LA GESTIÓN DE LA CALIDAD Y DEL CONTROL DE MATERIALES EN LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS}
+\label{cap:marco}
+
+Este capítulo reúne el conocimiento existente sobre el problema y lo integra con la investigación, como pide la guía del Seminario de Grado \parencite[diapositiva~8]{barrios2021citas}. Parte del estado del arte y del vacío de conocimiento; sigue con la gestión de la calidad, la norma ISO~9001:2026, los costos de la calidad y las pérdidas de materiales; describe el sistema de losa, el marco normativo y el control de costos en las obras públicas; y termina con las herramientas de la calidad, los fundamentos de la evaluación \emph{ex ante} y los términos básicos. Solo se citan documentos consultados directamente: cuando una fuente reporta datos de otros autores, se cita la fuente consultada y se advierte el origen del dato, porque la guía del docente prohíbe las citas de cita \parencite[diapositiva~18]{barrios2021citas}.
+
+% ---------------------------------------------------------------------
+\section{Estado del arte}
+\label{sec:estado-arte}
+
+La revisión abarcó los documentos del repositorio de la tesis: 14 artículos científicos, 26 trabajos de grado de Bolivia, Perú, Colombia y Ecuador, y documentos técnicos y normativos. Conforme a la jerarquía de fuentes del docente \parencite[diapositiva~24]{barrios2021documento}, se dio prioridad a los artículos y a las tesis. Los resultados se organizan en cuatro ejes: (a) calidad, retrabajo y costos de la calidad en la construcción; (b) desperdicio de materiales y su medición; (c) sistemas y planes de gestión de la calidad en obras y en fabricantes bolivianos de viguetas; y (d) losas con viguetas pretensadas. La Tabla~\ref{tab:antecedentes} resume los antecedentes principales, y los apartados siguientes los contrastan.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{3.0cm}P{1.45cm}P{3.5cm}P{4.0cm}P{3.65cm}@{}}
+\caption{Antecedentes de la investigación}\label{tab:antecedentes}\\
+\toprule
+\textbf{Autor y año} & \textbf{País} & \textbf{Diseño y muestra} & \textbf{Resultado principal} & \textbf{Aporte a esta tesis} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Autor y año} & \textbf{País} & \textbf{Diseño y muestra} & \textbf{Resultado principal} & \textbf{Aporte a esta tesis} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{5}{@{}l}{\textit{(a) Calidad, retrabajo y costos de la calidad}}\\*
+\textcite{forcada2017} & España & 788 incidencias de 40 proyectos de una constructora certificada & Retrabajo: 2,75~\% del valor del contrato & Registro estructurado de no conformidades \\
+\textcite{khadim2023} & Pakistán & Modelo PAF con fallas ocultas; 102 expertos y 25 edificios & Costo de la calidad: 12,76~\%; fallas visibles 2,34~\% y ocultas 8,59~\%; conformidad 1,83~\% & Rubros PAF y costos ocultos \\
+\textcite{alvarez2014} & Colombia & Revisión de estudios internacionales (2000--2014) & Reprocesos: 6,59~\% en promedio; 0,72~\% con SGC & Reducción esperable; datos compilados \\
+\textcite{gudiel2020} & Perú & Edificios de Lima; Pareto, Ishikawa y 10 expertos & No calidad: 2,7~\% a 5,1~\% del concreto armado; 80~\% sin plan de calidad & Herramientas de la calidad \\
+\multicolumn{5}{@{}l}{\textit{(b) Desperdicio de materiales y su medición}}\\*
+\textcite{galarza2011} & Perú & Dos edificios de Lima; medición en cinco etapas & Hormigón: 22~\% sin control y 2,8~\% con pedidos limitados; acero: 4,04~\% & Protocolo de medición y control de pedidos \\
+\textcite{chino2024} & Perú & Dos edificios del Cusco; acero ingresado frente al metrado & Acero: 14,58~\% y 17,09~\% convencional; 3,15~\% y 3,19~\% con despiece previo & Medición del acero; proyección \emph{ex ante} \\
+\textcite{rojas2018} & Colombia & Estudio de caso; cubicación teórica frente a metrado & Hormigón: 9~\% en placas y 23~\% en muros & Brecha entre lo presupuestado y lo real \\
+\multicolumn{5}{@{}l}{\textit{(c) Sistemas y planes de gestión de la calidad}}\\*
+\textcite{pradoroman2018} & España & Cuestionario a 302 constructoras (126 respuestas) & ISO~9001 muy relevante para procesos (74,4~\%) y operaciones (53,7~\%) & Beneficios graduales \\
+\textcite{romero2007} & Chile & Encuesta a 118 personas de 11 constructoras certificadas & Principios cumplidos en parte; 39~\% ve las no conformidades como castigo & Riesgo de un SGC «de papel» \\
+\textcite{muro2020} & Perú & Plan de calidad con PPI en una estructura; 15 operaciones & 96 no conformidades (76~\% por mano de obra); costo de la calidad: 0,55~\% & PPI con puntos de parada \\
+\textcite{capcha2016} & Bolivia & Certificación NB~997 y SGC de PREVITEC & Incumplimiento de la NB~997: 88~\% & Recepción de viguetas por lote \\
+\textcite{pajarito2015} & Bolivia & Diagnóstico antes y después del SGC de TENSOCRET & Cumplimiento de 33,43~\% a 81~\%; fallas estimadas de Bs~35.950 a Bs~16.943,75 al año & PAF con y sin SGC \\
+\textcite{mamanigutierrez2018} & Bolivia & Sistema integrado en la línea de viguetas de TECNOPOR & Cumplimiento ISO~9001 de 12~\%; de 86~\% a 94~\% tras implantarlo & Brecha aun con NB~997 \\
+\textcite{pena2024} & Bolivia & Diagnóstico y diseño del SGC de ISOCRET & Cumplimiento de 43~\%; B/C de 1,24 & Liberación de viguetas \\
+\textcite{mamanicalsina2025} & Bolivia & Lista de verificación y diseño del SGC de PRENSOCRET & Cumplimiento de 24~\% (cláusula~9: 11~\%); B/C de 1,11 & Diagnóstico de brechas \\
+\multicolumn{5}{@{}l}{\textit{(d) Losas con viguetas pretensadas}}\\*
+\textcite{alcon2009} & Bolivia & Fabricación en planta y aplicación en obra & Viguetas: $f_m = 443{,}50$~kg/\cmdos{}, $S = 25{,}97$~kg/\cmdos{} & Recepción y consumos por \mdos{} \\
+\textcite{castaneda2017} & Perú & Losa de 271,05~\mdos{} frente a la aligerada convencional & Costo 27~\% menor y tiempo 40~\% menor & Ventajas del sistema \\
+\textcite{cocarico2022} & Bolivia & Dos modelos del Edificio Ares (25 niveles) & Losa postensada 2,53~\% más económica que la de hormigón armado & Estructura boliviana del precio unitario \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en las fuentes citadas en la tabla. PAF: prevención, evaluación y fallas; PPI: plan de puntos de inspección; B/C: relación beneficio/costo; $f_m$: resistencia media; $S$: desviación típica.}
+\endgroup
+
+\subsection{Calidad, retrabajo y costos de la calidad en la construcción}
+
+Las cifras sobre el costo de la mala calidad varían en un orden de magnitud según qué se mide y cómo se mide. El retrabajo registrado en los informes de no conformidad de una constructora certificada fue del 2,75~\% del valor original del contrato \parencite[p.~8]{forcada2017}, mientras que un modelo que añade las fallas ocultas estimó un costo de la calidad del 12,76~\% del costo total de 25 edificios \parencite[pp.~5420--5423]{khadim2023}. Los dos resultados no se contradicen: el primero mide lo que captura un sistema de registro; el segundo muestra que la mayor parte del costo de las fallas nunca llega a registrarse. Sobre el efecto de la prevención, la evidencia es consistente en el signo, pero débil en la magnitud: la reducción de los reprocesos del 6,5~\% al 0,72~\% del valor del contrato en proyectos con SGC procede de promedios compilados de otros estudios, no de una medición en obra \parencite[pp.~12, 20]{alvarez2014}. De este eje se derivan dos lecciones: los porcentajes no son comparables si no se declaran la base de cálculo y el alcance de las fallas consideradas, y siempre debe distinguirse lo medido de lo estimado (sección~\ref{sec:costos-calidad}).
+
+\subsection{Desperdicio de materiales y su medición}
+
+\textcite[pp.~326--327]{formoso1999} sintetizaron los estudios brasileños previos en tres constataciones que la literatura posterior confirma: el desperdicio real es muy superior a los porcentajes nominales de los presupuestos; varía mucho incluso entre obras similares, lo que indica que en gran parte es evitable; y sus causas están más en el sistema de gestión que en la falta de calificación de los trabajadores. Las mediciones posteriores lo corroboran. Las pérdidas reales de hormigón superaron ampliamente el desperdicio previsto en el presupuesto \parencite[pp.~33, 69]{rojas2018}, y los índices bajaron a una fracción de los obtenidos sin control cuando se limitaron los pedidos de hormigón \parencite[pp.~53, 73]{galarza2011} o se aplicó el despiece previo del acero \parencite[pp.~147, 169]{chino2024}. Estos trabajos coinciden en el método ---comparar la cantidad consumida, según guías de compra, registros de almacén o vales de salida, con la cantidad teórica de los planos--- y en su limitación: los índices dependen de la calidad de los registros y no se pueden extrapolar de una obra a otra \parencite[p.~39]{galarza2011}. Ninguno mide el desperdicio de viguetas pretensadas ni de complementos de poliestireno expandido.
+
+\subsection{Sistemas y planes de gestión de la calidad en obras y en fabricantes de viguetas}
+
+En las constructoras, los beneficios de la certificación ISO~9001 son reales, pero graduales y condicionados a una implantación efectiva: dependen de la antigüedad de la certificación y no del tamaño de la empresa \parencite[pp.~161--164]{pradoroman2018}, y conviven con prácticas débiles, como el escaso rechazo de los materiales no conformes \parencite[pp.~1139--1140]{shaikh2020} o sistemas que «funcionan en el papel» \parencite[pp.~202, 209]{romero2007}. En las obras, los planes de la calidad con puntos de inspección producen resultados medibles a bajo costo: en la estructura de un centro comercial se registraron 96 no conformidades con un costo total de la calidad del 0,55~\% del presupuesto \parencite[pp.~16--17, 49]{muro2020}. En cambio, el 80~\% de los proyectos analizados por \textcite[p.~80]{gudiel2020} no tenía plan de calidad.
+
+En Bolivia, los SGC estudiados corresponden a fabricantes de viguetas y de complementos. Sus diagnósticos iniciales muestran un cumplimiento bajo de la norma (Tabla~\ref{tab:antecedentes}), con la evaluación del desempeño como el requisito más débil \parencite[p.~48]{mamanicalsina2025} \parencite[p.~77]{pajarito2015}. Solo dos trabajos repitieron el diagnóstico después de implantar el sistema, con mediciones de las propias autoras \parencite[p.~134]{pajarito2015} \parencite[p.~130]{mamanigutierrez2018}, y los efectos económicos son, en su mayoría, proyecciones: \textcite[p.~110]{mamanicalsina2025} supone que el SGC elimina por completo las fallas, y \textcite[pp.~142--143]{pajarito2015} estima que los costos de falla bajarían un 52,9~\% (cálculo propio), aunque advierte el riesgo de un «sistema de gestión de calidad de papel» \parencite[p.~148]{pajarito2015}.
+
+\subsection{Losas alivianadas con viguetas pretensadas}
+
+Los estudios sobre el sistema se centran en la fabricación de las viguetas y en comparaciones técnico-económicas. \textcite[pp.~58, 150]{alcon2009} encontró un control excelente del hormigón de las viguetas en planta y una calidad del producto en obra que dependió de la supervisión, y destacó la recepción como uno de los aspectos más importantes para la calidad \parencite[p.~115]{alcon2009}. \textcite[pp.~48--49]{castaneda2017} reportó una losa 27~\% más económica y 40~\% más rápida que la aligerada convencional, aunque su afirmación de que es 14~\% más liviana no concuerda con su propia tabla, que da una diferencia cercana al 4,3~\% (cálculo propio). \textcite[pp.~268--271]{cocarico2022} comparó losas nervadas postensadas y de hormigón armado, no de viguetas prefabricadas; su aporte a esta tesis es la estructura boliviana del precio unitario (sección~\ref{sec:control-costos}).
+
+\subsection{Vacío de conocimiento}
+
+La síntesis anterior permite delimitar el vacío de conocimiento en cuatro puntos:
+\begin{enumerate}
+  \item La literatura sobre costos de la calidad y desperdicio de materiales es internacional y mide sobre todo hormigón, acero y mampostería; no se encontraron mediciones del desperdicio de viguetas ni de complementos de poliestireno expandido.
+  \item Las investigaciones bolivianas sobre SGC se refieren a plantas de fabricación de viguetas: evalúan el cumplimiento de la norma con listas de verificación y estiman los beneficios económicos con supuestos que no se contrastan.
+  \item Los estudios bolivianos sobre el sistema de losa tratan la fabricación del producto o comparan sistemas estructurales, sin analizar el control de la calidad durante la ejecución.
+  \item En el plano metodológico, varios antecedentes aceptan sus hipótesis sin un tratamiento de control ni una medida de la incertidumbre: \textcite[p.~57]{delavega2023} da por correcta su hipótesis sin una línea base cuantificada, y \textcite[p.~7]{mamanigutierrez2018} la contrasta solo de forma cualitativa.
+\end{enumerate}
+En consecuencia, no se encontraron estudios bolivianos que apliquen un SGC a la ejecución en obra de las losas alivianadas con viguetas pretensadas ni que cuantifiquen su efecto en el costo unitario y en el desperdicio de materiales. Esta tesis aborda ese vacío: diseña un SGC basado en la norma ISO~9001:2026 para el proceso constructivo de la losa, centrado en el control de materiales, y evalúa su efecto comparando un escenario de control (sin SGC) con uno de tratamiento (con SGC), con el cálculo explícito de la incertidumbre.
+
+% ---------------------------------------------------------------------
+\section{La calidad en la construcción}
+\label{sec:calidad-construccion}
+
+\subsection{Conceptos de calidad, control, aseguramiento y gestión de la calidad}
+
+En el vocabulario de la familia de normas ISO~9000, la calidad es el grado en que un conjunto de características inherentes de un objeto cumple con los requisitos, y un requisito es una necesidad o expectativa establecida, generalmente implícita u obligatoria \parencite{iso9000_2026}; las tesis del repositorio recogen estas definiciones en su versión de 2015 \parencite[pp.~21--22]{mamanicalsina2025}. La definición es relativa: no hay una calidad absoluta, sino conformidad con requisitos definidos, idea más cercana a la de Crosby, «la conformidad con los requisitos», que a la de Juran, «la aptitud para el uso» \parencite[pp.~24, 31]{cepeda2017}. En una obra, los requisitos están en los documentos de construcción, y la inspección consiste en observar, verificar y documentar la conformidad de los materiales y los trabajos con esos documentos \parencite[sección~2.3, pp.~39, 43]{aci318_2025}. En la losa estudiada son requisitos, por ejemplo, un hormigón de 250~kg/\cmdos{} con al menos 400~kg/\mtres{} de cemento y viguetas con certificación de IBNORCA e ISO \parencite[p.~3]{uatf_et}. A partir de esas definiciones se distinguen cuatro conceptos, de lo particular a lo general \parencite{iso9000_2026}:
+\begin{itemize}
+  \item El \textbf{control de la calidad} es la parte de la gestión de la calidad orientada a cumplir los requisitos: inspección, ensayos y decisión de aceptar o rechazar. Detecta, pero no previene.
+  \item El \textbf{aseguramiento de la calidad} es la parte orientada a dar confianza en que se cumplirán los requisitos, mediante acciones planificadas, sistemáticas y demostrables \parencite[p.~21]{alfaro2011}; es un control preventivo, que busca la certeza anticipada de que los materiales son los indicados \parencite[p.~60]{cajias2023}.
+  \item La \textbf{gestión de la calidad} comprende la política, los objetivos y los procesos para alcanzarlos mediante la planificación, el aseguramiento, el control y la mejora de la calidad.
+  \item El \textbf{sistema de gestión de la calidad} (SGC) es la parte del sistema de gestión de una organización que establece la política, los objetivos y los procesos para lograr resultados respecto de la calidad.
+\end{itemize}
+La diferencia entre control y aseguramiento se aprecia en el hormigón de una losa. Romper probetas a los 28 días es control: confirma o no la resistencia cuando el hormigón ya está colocado. Aprobar la dosificación antes de usarla y no autorizar el vaciado hasta verificar el armado es aseguramiento, porque da confianza antes de que el error ocurra.
+
+\subsection{Evolución del enfoque de la calidad}
+
+La forma de entender la calidad pasó de la inspección del producto terminado a la gestión de todo el sistema. A inicios del siglo~XX la calidad se buscaba con la inspección final, que separaba lo aceptable de lo defectuoso a costa de rehacer o desechar \parencite[p.~9]{alfaro2011}; en 1924, Shewhart introdujo la carta de control, base del control estadístico de procesos \parencite[pp.~11--12]{aguilar2016}. En la posguerra, Deming difundió en Japón el ciclo planificar, hacer, verificar y actuar (PHVA) y propuso dejar de depender de la inspección masiva, y Juran organizó la gestión en planificación, control y mejora \parencite[pp.~14--19]{aguilar2016}. Feigenbaum extendió el control a todas las etapas, desde el diseño hasta la venta \parencite[p.~14]{alfaro2011}, y Crosby propuso la meta de cero defectos y el costo de la calidad como medida del desempeño \parencite[pp.~29--30]{cepeda2017}. La serie ISO~9000 de 1987 normalizó modelos contractuales de aseguramiento entre cliente y proveedor \parencite[pp.~15--16]{alfaro2011}; la revisión del año 2000 pasó a la gestión basada en principios y en el enfoque a procesos \parencite[pp.~19--20]{alfaro2011}, y la de 2015 incorporó el enfoque basado en riesgos y la estructura de alto nivel común a las normas de sistemas de gestión \parencite[p.~20]{mamanicalsina2025}. En la ejecución de una losa, ese tránsito equivale a pasar de revisar la losa terminada, cuando el defecto ya está incorporado, a controlar la recepción de los materiales, liberar cada paño antes del vaciado y mejorar de una losa a la siguiente.
+
+En la construcción esta evolución está incompleta. El modelo tradicional de gestión de proyectos mantiene un control de calidad ineficaz \parencite[p.~11]{pons2014}, y la inspección por sí sola no mejora las etapas previas, aunque entre el 60~\% y el 70~\% de los defectos se originan en fases como el diseño o la selección de proveedores y subcontratistas \parencite[p.~11]{alfaro2011}. En la primera losa del Edificio de Posgrado, el control se limitó a la verificación previa al vaciado, sin registros de recepción de materiales ni ensayos del hormigón de la losa (sección~\ref{sec:analisis-documental}), una práctica propia de la etapa de inspección.
+
+\subsection{Principios de la gestión de la calidad}
+
+La gestión de la calidad se fundamenta en principios que orientan a la dirección. La edición 2000 de la norma enunciaba ocho \parencite[p.~199]{romero2007}, y la de 2015 los redujo a siete: enfoque al cliente, liderazgo, compromiso de las personas, enfoque a procesos, mejora, toma de decisiones basada en la evidencia y gestión de las relaciones \parencite[p.~59]{pena2024}. Esta tesis adopta esa formulación, que es la que recogen las fuentes del repositorio. \pendiente{verificar en el texto de la ISO~9000:2026 si se mantienen los siete principios y su denominación}
+
+Los principios no son requisitos verificables, sino fundamentos cuyo valor depende de que se apliquen: la norma solo produce beneficios cuando se implanta junto con el desarrollo interno de principios como la sistematización de los procesos, la mejora continua y la participación de toda la empresa \parencite[p.~152]{pradoroman2018}. La Tabla~\ref{tab:principios} traduce cada principio a la ejecución de una losa alivianada.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{6pt}
+\begin{longtable}{@{}P{3.3cm}P{4.6cm}P{7.7cm}@{}}
+\caption{Principios de la gestión de la calidad y su lectura en la ejecución de una losa}\label{tab:principios}\\
+\toprule
+\textbf{Principio} & \textbf{Idea central} & \textbf{Lectura en la ejecución de la losa} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Principio} & \textbf{Idea central} & \textbf{Lectura en la ejecución de la losa} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Enfoque al cliente & Comprender y cumplir las necesidades actuales y futuras del cliente & La entidad contratante requiere una losa conforme a los planos y a las especificaciones, pagada según lo realmente ejecutado; sus requisitos se convierten en criterios de aceptación por paño \\
+\addlinespace
+Liderazgo & Los líderes establecen la unidad de propósito y la dirección & El director de obra aprueba el plan de la calidad, asigna los recursos y no permite vaciar un paño que no haya sido liberado \\
+\addlinespace
+Compromiso de las personas & Personas competentes y comprometidas en todos los niveles & Capacitación de armadores y albañiles en el montaje de viguetas y complementos y en el vibrado; autocontrol del capataz \\
+\addlinespace
+Enfoque a procesos & Las actividades se gestionan como procesos interrelacionados & Abastecimiento, apuntalamiento, montaje, armado, hormigonado, curado y desapuntalamiento con entradas, salidas y controles definidos \\
+\addlinespace
+Mejora & La mejora del desempeño es un objetivo permanente & Las no conformidades y los desperdicios de una losa ajustan los procedimientos de la siguiente \\
+\addlinespace
+Toma de decisiones basada en la evidencia & Las decisiones se basan en el análisis de datos & El hormigón se acepta con ensayos a 28 días y las cantidades se pagan conciliadas con registros, no con estimaciones \\
+\addlinespace
+Gestión de las relaciones & Relaciones mutuamente beneficiosas con proveedores y partes interesadas & Pedidos exactos por paño; evaluación de los proveedores de viguetas, complementos, acero y hormigón; comunicación oportuna con la Supervisión \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Las dos primeras columnas se elaboraron con base en \textcite[pp.~55, 59]{pena2024}; la tercera es de elaboración propia.}
+\endgroup
+
+% ---------------------------------------------------------------------
+\section{Sistema de gestión de la calidad según la norma ISO~9001:2026}
+\label{sec:sgc-iso}
+
+\subsection{Estructura de la norma y ciclo PHVA}
+
+La norma ISO~9001 especifica los requisitos de un SGC y es la única de la familia ISO~9000 que admite certificación \parencite[p.~17]{zurita2024}; a la primera edición de 1987 siguieron las de 1994, 2000, 2008 y 2015 \parencite[p.~14]{zurita2024}. La sexta edición, ISO~9001:2026, se publicó el 16 de septiembre de 2026, sustituye a la de 2015 y conserva su estructura de cláusulas \parencite{iso9001_2026}; en Bolivia, el Instituto Boliviano de Normalización y Calidad (IBNORCA) la adoptó como NB/ISO~9001:2026 \parencite{ibnorca9001_2026}.
+
+Las cláusulas 0 a 3 son introductorias, y las cláusulas 4 a 10 contienen los requisitos del sistema \parencite[p.~15]{zurita2024}. Su contenido general, común a las ediciones de 2015 y 2026, es el siguiente \parencite{iso9001_2026}: el contexto de la organización (4) comprende las cuestiones externas e internas, las partes interesadas, el alcance y los procesos; el liderazgo (5), el compromiso de la alta dirección, la política de la calidad y los roles; la planificación (6), las acciones ante riesgos y oportunidades, los objetivos de la calidad y la planificación de los cambios; el apoyo (7), los recursos, la competencia, la toma de conciencia, la comunicación y la información documentada; la operación (8), la planificación y el control operacional, los requisitos del producto, el control de los procesos y productos suministrados externamente, la producción, la liberación y el control de las salidas no conformes; la evaluación del desempeño (9), el seguimiento, la medición, la auditoría interna y la revisión por la dirección; y la mejora (10), las no conformidades, las acciones correctivas y la mejora continua.
+
+Esta estructura sigue el ciclo PHVA de Deming \parencite[pp.~15--16]{zurita2024}: la planificación (cláusula~6) parte del contexto y del liderazgo, que ocupa el centro del sistema; hacer corresponde al apoyo y a la operación (cláusulas 7 y 8); verificar, a la evaluación del desempeño (cláusula~9); y actuar, a la mejora (cláusula~10). Las entradas del sistema son el contexto, los requisitos del cliente y las necesidades de las partes interesadas, y sus salidas, los productos conformes, la satisfacción del cliente y los resultados del SGC (Figura~\ref{fig:iso-phva}). El ciclo funciona en el sistema completo y en cada proceso; en una obra, cada losa e incluso cada paño puede recorrerlo, como muestra la Figura~\ref{fig:phva} del capítulo~2.
+
+\begin{figure}[H]
+\centering
+\caption{Estructura de la norma ISO~9001 representada en el ciclo PHVA}
+\label{fig:iso-phva}
+\begin{tikzpicture}[
+  font=\footnotesize,
+  ext/.style={draw, rounded corners=2pt, align=center, text width=2.35cm,
+              minimum height=1.2cm, fill=gray!8},
+  fase/.style={draw, thick, rounded corners=3pt, align=center, text width=2.45cm,
+               minimum height=1.25cm},
+  ciclo/.style={-{Stealth[length=2.6mm]}, very thick, black!65},
+  flecha/.style={-{Stealth[length=2.6mm]}, thick}]
+  \node[fase, fill=blue!6]   (P) at (0, 2.15)   {\textbf{Planificar}\\ Planificación (6)};
+  \node[fase, fill=green!7]  (H) at (2.95, 0)   {\textbf{Hacer}\\ Apoyo (7)\\ Operación (8)};
+  \node[fase, fill=orange!9] (V) at (0, -2.15)  {\textbf{Verificar}\\ Evaluación del\\ desempeño (9)};
+  \node[fase, fill=red!6]    (A) at (-2.95, 0)  {\textbf{Actuar}\\ Mejora (10)};
+  \node[circle, draw, very thick, fill=white, align=center, minimum size=1.75cm,
+        inner sep=1pt] (L) at (0,0) {\textbf{Liderazgo}\\ (5)};
+  \draw[ciclo] (P.east)  to[out=0,   in=90]  (H.north);
+  \draw[ciclo] (H.south) to[out=-90, in=0]   (V.east);
+  \draw[ciclo] (V.west)  to[out=180, in=-90] (A.south);
+  \draw[ciclo] (A.north) to[out=90,  in=180] (P.west);
+  \node[draw, dashed, rounded corners=6pt, fit=(P)(H)(V)(A), inner sep=8pt,
+        label={[font=\footnotesize\itshape]above:Sistema de gestión de la calidad (4)}] (SGC) {};
+  \node[ext, anchor=east] (E1) at ($(SGC.west)+(-0.55,1.5)$)  {Organización y su contexto (4)};
+  \node[ext, anchor=east] (E2) at ($(SGC.west)+(-0.55,0)$)    {Requisitos del cliente};
+  \node[ext, anchor=east] (E3) at ($(SGC.west)+(-0.55,-1.5)$) {Necesidades y expectativas de las partes interesadas (4)};
+  \node[ext, anchor=west] (S1) at ($(SGC.east)+(0.55,1.5)$)   {Resultados del SGC};
+  \node[ext, anchor=west] (S2) at ($(SGC.east)+(0.55,0)$)     {Satisfacción del cliente};
+  \node[ext, anchor=west] (S3) at ($(SGC.east)+(0.55,-1.5)$)  {Productos y servicios conformes};
+  \foreach \e in {E1,E2,E3} \draw[flecha] (\e.east) -- (\e.east -| SGC.west);
+  \foreach \s in {S1,S2,S3} \draw[flecha] (\s.west -| SGC.east) -- (\s.west);
+\end{tikzpicture}
+\nota{Elaborado con base en la estructura de cláusulas de la norma \parencite{iso9001_2026} y en \textcite[pp.~15--16]{zurita2024}. Los números entre paréntesis indican la cláusula correspondiente. La aplicación del ciclo a la losa se presenta en la Figura~\ref{fig:phva}.}
+\end{figure}
+
+El enfoque a procesos sostiene que los resultados son más coherentes y previsibles cuando las actividades se gestionan como procesos interrelacionados que funcionan como un sistema \parencite[p.~59]{pena2024}; los procesos se clasifican en estratégicos, operativos y de apoyo, y su mapa es el punto de partida de toda mejora \parencite[pp.~18, 50]{zurita2024}. En la losa, el proceso operativo es la ejecución; los de apoyo, las compras, el almacén y el laboratorio; y los estratégicos, la dirección de la obra y la gestión de la calidad.
+
+\subsection{Pensamiento basado en riesgos}
+
+La edición de 2015 incorporó el enfoque basado en riesgos como base para prevenir problemas y aprovechar oportunidades \parencite[p.~20]{mamanicalsina2025}. El riesgo es el efecto de la incertidumbre sobre los resultados esperados \parencite[p.~22]{mamanicalsina2025}, y la norma exige determinar los riesgos y las oportunidades que pueden afectar la conformidad de los productos y la satisfacción del cliente, y planificar acciones proporcionales a su efecto (cláusula~6.1) \parencite{iso9001_2026}. Así, el SGC se concibe como una herramienta de prevención: se identifican los riesgos y se decide cuáles eliminar, controlar o aceptar, sin perjuicio de actuar sobre las no conformidades que ocurran \parencite[pp.~57--58]{pena2024}. En la losa, los riesgos principales son conocidos: la rotura de viguetas en el transporte o el montaje \parencite[p.~116]{alcon2009}; la colocación de complementos sobre viguetas sin apuntalar, que puede deformar e incluso hacer caer la losa, y el pisado de los complementos, que aumenta el consumo de hormigón \parencite[hoja~3]{concretec2016plastoformo}; la segregación y las cangrejeras por un vaciado deficiente \parencite[p.~17]{muro2020}; el curado insuficiente en el clima frío de Potosí \parencite[sección~26.5.4.2, p.~583]{aci318_2025}; y el desabastecimiento y el alza de precios de los insumos, como ocurrió con el cemento y el acero en 2025 \parencite{fancesa2025,laslomas2025}. La matriz de riesgos del capítulo~2 (Tabla~\ref{tab:riesgos}) los valora y asigna a cada uno su control.
+
+\subsection{Novedades de la edición 2026}
+\label{sec:iso2026}
+
+La ISO~9001:2026 no cambia la lógica del sistema: conserva las cláusulas 4 a 10, el ciclo PHVA, el enfoque a procesos y el pensamiento basado en riesgos. Sus cambios, descritos aquí de forma general, refuerzan cuatro aspectos \parencite{iso9001_2026}:
+\begin{itemize}
+  \item la cultura de la calidad y el comportamiento ético, como parte del liderazgo;
+  \item el cambio climático, como cuestión del contexto que la organización debe considerar cuando es pertinente para su sistema;
+  \item el tratamiento de los riesgos y de las oportunidades;
+  \item la planificación de los cambios, para que se realicen de forma controlada.
+\end{itemize}
+La norma de fundamentos y vocabulario también se actualizó en 2026 como ISO~9000:2026 \parencite{iso9000_2026}. Las organizaciones certificadas con la edición de 2015 tienen un periodo de transición hasta el 30 de septiembre de 2029. \pendiente{citar la fuente oficial del periodo de transición (organismo de acreditación o de certificación)}
+
+Estos cambios tienen una lectura directa en la losa. El comportamiento ético se refleja en medir y pagar solo cantidades conciliadas con registros. La consideración del clima, en la planificación ante las lluvias y las bajas temperaturas de Potosí. La planificación de los cambios, en la gestión documentada de toda sustitución de materiales o de diseño, como las modificaciones estructurales que se hicieron en la obra por la falta de viguetas de los tamaños requeridos \parencite[p.~11]{uatf2025pao2}.
+
+\subsection{Planes de la calidad según la norma ISO~10005:2018}
+
+Un plan de la calidad especifica qué procesos, procedimientos y recursos se aplicarán, quién los aplicará y cuándo, para cumplir los requisitos de un objeto concreto, como un proyecto o un contrato \parencite{iso10005_2018}. Es el instrumento natural de una obra, porque permite aplicar los principios de la ISO~9001 a un proyecto único aunque la empresa no tenga un SGC certificado. La norma ISO~10005:2018 orienta su contenido: alcance, objetivos de la calidad, responsabilidades, información documentada, recursos, control de los suministros externos, producción, identificación y trazabilidad, control de las salidas no conformes, seguimiento y medición, y auditorías \parencite{iso10005_2018}. En la obra, el plan se concreta en el programa de puntos de inspección (PPI), que define para cada inspección el criterio de aprobación, el lote, la frecuencia y el responsable, y señala los puntos de parada, en los que la actividad no continúa hasta obtener la conformidad \parencite[anexo~4]{muro2020}; también fija las condiciones de suministro, recepción, almacenamiento y manipulación de cada material \parencite[p.~83]{cepeda2017}.
+
+\subsection{Gestión de la calidad en proyectos según la norma ISO~10006:2017}
+
+La norma ISO~10006:2017 orienta la aplicación de los principios y las prácticas de la gestión de la calidad a los procesos de gestión de un proyecto, entendido como un proceso único y temporal con fechas de inicio y fin, sin ser una guía de dirección de proyectos \parencite{iso10006_2017}. Dos de sus ideas son pertinentes para el caso: la calidad depende de varias organizaciones ---entidad contratante, contratista, Supervisión, Fiscalización, proveedores y laboratorio---, cuyas responsabilidades deben definirse de antemano; y depende también de procesos de gestión como el control de los cambios, el abastecimiento y la comunicación. En la primera losa del Edificio de Posgrado, las demoras de materiales, las lluvias y las modificaciones del contrato afectaron la ejecución (sección~\ref{sec:analisis-documental}), lo que confirma que el SGC de una obra no puede limitarse a inspeccionar el producto.
+
+\subsection{Evidencia empírica sobre ISO~9001 en la construcción}
+
+Entre los efectos internos de la norma en las constructoras figuran el mejor uso de los recursos, la reducción de los costos de inspección, logística y producción, y la disminución de las no conformidades y de los gastos por mala calidad \parencite[p.~156]{pradoroman2018}. Esos efectos fueron muy relevantes para el 74,4~\% de las empresas en los procesos organizativos y para el 53,7~\% en las operaciones, pero solo para el 34,2~\% en los resultados financieros, y aparecieron de forma gradual \parencite[pp.~163--164]{pradoroman2018}; los autores advierten un posible sesgo, porque respondieron los responsables de calidad \parencite[p.~165]{pradoroman2018}. La inspección del material antes de su uso es uno de los elementos más aplicados de la norma, y el rechazo de los materiales no conformes, el menos aplicado, aunque la disminución del desperdicio de material es la segunda ventaja percibida \parencite[pp.~1139--1140]{shaikh2020}. En Brasil, el nivel de pérdidas de la construcción disminuyó con la adopción de planes de calidad y de certificaciones ISO desde los años noventa \parencite[p.~106]{maciel2016}. Según \textcite[p.~43]{dzul2009}, el 43~\% de las empresas certificadas de la Comunidad Valenciana redujo sus costos totales aun después de descontar los gastos de implantación, dato que toman de un estudio anterior.
+
+La evidencia también señala los límites: el 40~\% del personal de las constructoras chilenas certificadas cree que los indicadores se miden solo para cumplir \parencite[pp.~202, 208]{romero2007}. Para la tesis, la lección es doble: el SGC de la losa debe concentrarse en controles operativos con registros e indicadores útiles, y su efecto no puede suponerse completo; por eso, en la evaluación \emph{ex ante} la eficacia del sistema es un parámetro incierto (sección~\ref{sec:modelo-simulacion}).
+
+% ---------------------------------------------------------------------
+\section{Costos de la calidad}
+\label{sec:costos-calidad}
+
+\subsection{Modelo de prevención, evaluación y fallas}
+
+Los costos de la calidad son la suma de los costos de conformidad, que son el precio de prevenir la mala calidad, y de no conformidad, que son el costo de no cumplir los requisitos \parencite[p.~44]{graciavillar2007}. El modelo más empleado para clasificarlos, también en las constructoras, es el de prevención, evaluación y fallas (PEF, o PAF por sus siglas en inglés) \parencite[p.~43]{graciavillar2007} \parencite[p.~42]{dzul2009}. La prevención agrupa las actividades que evitan defectos desde el diseño, como la revisión de planos, los planes de aseguramiento y la capacitación \parencite[p.~12]{alfaro2011}; la evaluación, las que comprueban que una actividad se hizo bien, como la inspección y los ensayos de los materiales; las fallas internas, los errores detectados antes de que el cliente acepte el producto, como los desperdicios y la repetición del trabajo \parencite[p.~49]{graciavillar2007}; y las fallas externas, las que se detectan después de la entrega, como las garantías y las reparaciones \parencite[p.~13]{alfaro2011}. La prevención y la evaluación son costos controlables o de conformidad, y las fallas, costos resultantes o de no conformidad \parencite[p.~48]{graciavillar2007}. El costo total de la calidad ($CTC$) se expresa entonces como
+\begin{equation}
+  CTC = \underbrace{C_P + C_E}_{CC} \; + \; \underbrace{C_{FI} + C_{FE}}_{CNC}
+  \label{eq:ctc}
+\end{equation}
+donde $C_P$, $C_E$, $C_{FI}$ y $C_{FE}$ son los costos de prevención, evaluación, fallas internas y fallas externas; $CC$ es el costo de conformidad y $CNC$ el costo de no conformidad o de no calidad \parencite[p.~150]{zurita2024}. \textcite[p.~5416]{khadim2023} amplían el modelo: dividen las fallas en visibles (internas y externas) y ocultas, tangibles e intangibles, que no aparecen en la contabilidad. La Tabla~\ref{tab:paf} aplica las categorías a la ejecución de la losa.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{6pt}
+\begin{longtable}{@{}P{2.4cm}P{4.4cm}P{8.8cm}@{}}
+\caption{Categorías del modelo de prevención, evaluación y fallas en la ejecución de la losa}\label{tab:paf}\\
+\toprule
+\textbf{Categoría} & \textbf{Definición} & \textbf{Ejemplos en la ejecución de la losa} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Categoría} & \textbf{Definición} & \textbf{Ejemplos en la ejecución de la losa} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Prevención & Actividades para evitar defectos & Plan de la calidad y PPI; revisión de planos y especificaciones; capacitación del personal; evaluación de proveedores; planificación de los pedidos por paño \\
+\addlinespace
+Evaluación & Actividades para verificar la conformidad & Inspección de recepción de viguetas, complementos y acero; ensayos de asentamiento y de resistencia del hormigón; verificación del armado antes del vaciado; conciliación de cantidades \\
+\addlinespace
+Fallas internas & Errores detectados antes de la entrega & Viguetas rotas y complementos dañados; hormigón y acero desperdiciados; retrabajo del armado; reparación de cangrejeras; paralizaciones por material no conforme \\
+\addlinespace
+Fallas externas & Errores detectados después de la entrega & Reparación de fisuras o flechas de la losa recibida; descuentos por sobremedición en las planillas; extracción de núcleos y evaluaciones adicionales \\
+\addlinespace
+Fallas ocultas & Pérdidas que no se registran & Sobreconsumos no medidos, esperas y pérdidas de productividad, deterioro de la relación con el contratante \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en \textcite[pp.~12--13]{alfaro2011}, \textcite[pp.~46--49]{graciavillar2007} y \textcite[p.~5416]{khadim2023}. Los ejemplos son de elaboración propia.}
+\endgroup
+
+La relación entre las categorías explica por qué conviene prevenir. Según la regla 1-10-100 que recogen \textcite[p.~5407]{khadim2023}, es preferible invertir una unidad en prevención que gastar diez en corrección o cien en una falla. \textcite[p.~49]{graciavillar2007} describen la relación con una curva (Figura~\ref{fig:costo-optimo}): al aumentar la prevención y la evaluación, las fallas disminuyen, pero cada incremento es menos eficaz que el anterior, de modo que la suma de ambas curvas tiene un mínimo, el punto óptimo operativo provisional. Es provisional porque se desplaza a medida que la mejora reduce los errores, y por eso los modelos más recientes incorporan el costo y el valor de la mejora continua \parencite[pp.~47--48]{graciavillar2007}.
+
+Muchas empresas operan a la izquierda del óptimo: en los proyectos estudiados por \textcite[p.~5420]{khadim2023}, las fallas visibles (2,34~\%) superaron la inversión en conformidad (1,83~\%), y en un fabricante boliviano de viguetas, antes del SGC, las fallas externas representaban el 50~\% del costo de la calidad y la prevención apenas el 16~\% \parencite[p.~143]{pajarito2015}. La recomendación que recogen \textcite[sección~2.2.1]{palanisamy2025} orienta la inversión: menos del 2~\% en prevención y evaluación aumenta inevitablemente los costos de falla, y más del 4~\% probablemente no tiene retorno. El óptimo no implica cero fallas: los estándares de costo deben admitir un margen controlado de no calidad, porque no existe el proceso perfecto \parencite[p.~53]{graciavillar2007}, y un sistema de costos de la calidad no resuelve por sí mismo los problemas, sino que sirve para dimensionarlos \parencite[p.~56]{graciavillar2007}.
+
+\begin{figure}[H]
+\centering
+\caption{Curvas de los costos de la calidad y punto óptimo operativo provisional}
+\label{fig:costo-optimo}
+\begin{tikzpicture}[x=1.0cm, y=0.58cm, font=\footnotesize]
+  \draw[-{Stealth[length=2.5mm]}] (0,0) -- (10.2,0);
+  \draw[-{Stealth[length=2.5mm]}] (0,0) -- (0,8.4) node[above] {Costo};
+  \node[anchor=north] at (5.1,-0.25) {Inversión en prevención y evaluación (nivel de conformidad) $\longrightarrow$};
+  \draw[very thick, blue!70!black, domain=0.5:9.6, samples=80, smooth]
+       plot (\x, {0.30*\x+0.018*\x*\x}) node[right] {Prevención y evaluación};
+  \draw[very thick, red!70!black, dashed, domain=0.5:9.6, samples=80, smooth]
+       plot (\x, {7.5/(\x+0.6)}) node[right] {Fallas internas y externas};
+  \draw[ultra thick, black, domain=0.5:9.6, samples=80, smooth]
+       plot (\x, {0.30*\x+0.018*\x*\x+7.5/(\x+0.6)}) node[right] {Costo total de la calidad};
+  \draw[densely dotted] (3.58,0) -- (3.58,3.10);
+  \fill (3.58,3.10) circle (2.2pt);
+  \node[align=left, anchor=west] (opt) at (4.6,6.4) {Punto óptimo\\ operativo provisional};
+  \draw[-{Stealth[length=2mm]}] (opt.west) to[out=180, in=80] (3.62,3.35);
+  \node[align=center, text=black!70] at (1.75,1.0) {Zona de fallas\\ elevadas};
+  \node[align=center, text=black!70] at (7.2,1.95) {Zona de rendimiento\\ decreciente};
+\end{tikzpicture}
+\nota{Adaptado de la figura~2 de \textcite[p.~49]{graciavillar2007}. Las curvas son ilustrativas y no representan datos de la obra.}
+\end{figure}
+
+\subsection{Costo de no calidad y retrabajo}
+
+Los costos de no calidad son los gastos adicionales para rehacer o reparar lo que se hizo mal: el retrabajo, el reemplazo de los materiales que no cumplen los requisitos y el tiempo para completar los trabajos retrasados; como nunca se presupuestan, constituyen una pérdida neta \parencite[p.~38]{alfaro2011}. El retrabajo es el esfuerzo innecesario de rehacer una actividad o un proceso que se ejecutó incorrectamente la primera vez, según la definición que adoptan \textcite[p.~2]{forcada2017}, y su origen es la variabilidad de los procesos: una parte de lo producido no cumple la especificación y debe desecharse o rehacerse \parencite[p.~14]{koskela1992}. Una parte de estos costos permanece oculta \parencite[p.~5421]{khadim2023}: son los reprocesos ocultos, errores que generan más errores, como una zapata vaciada con hormigón de menor resistencia que solo se detecta cuando ya se avanzó con los trabajos siguientes \parencite[p.~19]{alvarez2014}. En una losa ocurre lo mismo: si no se toman probetas del hormigón de la carpeta, una resistencia insuficiente permanece oculta hasta que se manifiesta como fisuras o flechas.
+
+Las magnitudes reportadas dependen de la base de cálculo, del alcance de las fallas consideradas y del método. Con datos tomados de otros autores, \textcite[p.~42]{dzul2009} sitúan los costos de la calidad entre el 8~\% y el 15~\% del costo total de la construcción, y \textcite[p.~35]{koskela1992} reporta un costo de la mala calidad medido en obra del 10~\% al 20~\% del costo total del proyecto. Las mediciones de lo registrado dan valores menores: un retrabajo del 2,75~\% del valor original del contrato \parencite[p.~8]{forcada2017}, una no calidad del 2,7~\% al 5,1~\% del costo de la partida de concreto armado \parencite[p.~1]{gudiel2020} y un costo total de la calidad del 0,55~\% del presupuesto en una obra con plan de calidad \parencite[p.~49]{muro2020}. En 16 edificios, el costo total de la calidad varió entre el 1,571~\% y el 12,29~\% del valor del proyecto, y solo los costos de falla influyeron significativamente en él \parencite[secciones~2.2 y 3.3]{palanisamy2025}. Cuando se añaden las fallas ocultas, el costo de la calidad llega al 12,76~\% del costo total, del que el 8,59~\% corresponde a esas fallas \parencite[pp.~5420--5423]{khadim2023}. En la revisión de \textcite[pp.~5, 12]{alvarez2014}, los reprocesos promediaron el 6,59~\% del costo de los proyectos, y en los datos compilados que reporta bajaron del 6,5~\% al 0,72~\% del valor del contrato en los proyectos con SGC.
+
+Para esta tesis se derivan tres criterios: el costo de no calidad de la losa se expresa sobre una sola base, el costo del ítem; se separan las fallas documentadas de las estimadas; y la fracción de retrabajo y los costos del sistema se representan con rangos tomados de la literatura, no con valores únicos, en el modelo de evaluación \emph{ex ante} (sección~\ref{sec:modelo-simulacion}).
+
+% ---------------------------------------------------------------------
+\section{Pérdidas y desperdicio de materiales en la construcción}
+\label{sec:perdidas}
+
+\subsection{La nueva filosofía de producción y la construcción sin pérdidas}
+
+\textcite{koskela1992} propuso aplicar a la construcción la nueva filosofía de producción de la industria manufacturera. Su aporte central es concebir la producción no solo como la conversión de insumos en productos, sino también como un flujo de material e información en el que el material se procesa, se inspecciona, espera o se traslada \parencite[p.~15]{koskela1992}. Todas esas actividades consumen tiempo y costo, pero solo las de conversión agregan valor, entendido como el cumplimiento de los requisitos del cliente \parencite[pp.~15--16]{koskela1992}; las demás son desperdicio: actividades que ocupan tiempo, recursos o espacio sin agregar valor \parencite[p.~17]{koskela1992}. Para mejorar los flujos, Koskela formuló once principios, entre ellos reducir las actividades que no agregan valor, reducir la variabilidad, aumentar la transparencia, enfocar el control en el proceso completo e incorporar la mejora continua \parencite[p.~16]{koskela1992}.
+
+La aplicación de estos principios a todo el ciclo de vida de un proyecto se conoce como Lean Construction o construcción sin pérdidas \parencite[p.~26]{pons2014}, cuyo objetivo es reducir o eliminar las actividades que no agregan valor y optimizar las que sí lo hacen \parencite[p.~35]{porrasdiaz2014}. \textcite[pp.~18--19]{pons2014} adapta a la construcción los siete desperdicios de la producción industrial ---sobreproducción, esperas, transporte innecesario, sobreprocesamiento, exceso de inventario, movimientos innecesarios y defectos de calidad--- y añade el talento desaprovechado; además, explica que el desperdicio persiste porque no se mide y, por eso, no se conoce cuánto cuesta \parencite[p.~20]{pons2014}. Implantar este enfoque exige una cultura de mejora continua de la producción \parencite[p.~38]{porrasdiaz2014}.
+
+La construcción sin pérdidas y el SGC son complementarios. La ISO~9001 aporta la estructura de gestión ---requisitos, procesos, registros, acciones correctivas y revisión por la dirección---, y la filosofía de Koskela, la mirada del flujo. Varios principios coinciden: reducir la variabilidad y enfocar el control en el proceso completo equivale a gestionar por procesos; aumentar la transparencia, a decidir con evidencia; e incorporar la mejora continua, al ciclo PHVA. \textcite[p.~334]{formoso1999} concluyen que el control del desperdicio debe integrarse en la planificación y el control de la producción, y esa es la función del control de materiales dentro del SGC propuesto.
+
+\subsection{Clasificación y causas de las pérdidas}
+
+\textcite[p.~328]{formoso1999} definen el desperdicio como toda pérdida producida por actividades que generan costos directos o indirectos sin agregar valor al producto desde el punto de vista del cliente, y lo clasifican con tres criterios. Según la posibilidad de control, es inevitable cuando reducirlo cuesta más de lo que ahorra, y evitable en caso contrario \parencite[p.~328]{formoso1999}. Según su naturaleza, distinguen nueve tipos, entre ellos los productos defectuosos, que provocan retrabajo o la incorporación de materiales innecesarios, y los inventarios excesivos, que generan pérdidas por deterioro, malas condiciones de acopio o robo \parencite[p.~329]{formoso1999}. Según su origen, una parte importante nace antes de la producción, en el diseño, la planificación o el suministro \parencite[p.~327]{formoso1999}. Además, el desperdicio puede ser directo, cuando el material se retira como desmonte, o indirecto, cuando se coloca en la obra un material que no está previsto en los planos ni en las especificaciones \parencite[p.~15]{ccoyllo2016}; este último, que \textcite[p.~106]{maciel2016} llaman pérdida incorporada, suele asociarse con un control de calidad deficiente \parencite[pp.~15--16]{ccoyllo2016}. En la losa, las viguetas rotas y los recortes de complementos y de acero son desperdicio directo, y una carpeta más gruesa que la especificada o el hormigón que llena los complementos deformados, pérdidas incorporadas.
+
+En cuanto a las causas, \textcite[pp.~1, 9]{luangcharoenrat2019} depuraron 166 factores de la literatura hasta 28, agrupados en cuatro categorías: diseño y documentación, materiales y adquisiciones, métodos constructivos y planificación, y recursos humanos. Según 178 contratistas, la categoría de mayor influencia es el diseño y la documentación, y los factores más influyentes son el cambio de diseño, las actitudes de trabajo descuidadas y el almacenamiento inadecuado de los materiales \parencite[pp.~12--13]{luangcharoenrat2019}. A ellos se suma la recepción de materiales sin control de cantidades \parencite[p.~32]{ccoyllo2016}. Las fuentes coinciden en que las causas dominantes son de gestión y no de motivación de los trabajadores \parencite[p.~327]{formoso1999}.
+
+\subsection{Medición del desperdicio y valores de referencia}
+
+Toda pérdida es relativa a una referencia: para medirla hay que definir antes la cantidad necesaria. \textcite[p.~9]{galarza2011} considera desperdicio todo consumo de un material en cantidades mayores que las necesarias para elaborar el producto según los documentos técnicos; en el hormigón, por razones geométricas, la situación ideal es consumir un metro cúbico por cada metro cúbico de elemento. De forma equivalente, la pérdida de materiales es la diferencia entre la cantidad realmente empleada y la cantidad necesaria según el diseño \parencite[sección~2]{rossi2001}. El índice de desperdicio del material $i$ se expresa como
+\begin{equation}
+  IDM_i = \frac{Q_{\text{real},i} - Q_{\text{teórica},i}}{Q_{\text{teórica},i}} \times 100
+  \label{eq:idm-marco}
+\end{equation}
+donde $Q_{\text{teórica},i}$ es la cantidad que resulta de los planos y los cómputos, y $Q_{\text{real},i}$ la cantidad consumida. El capítulo~2 aplica este índice a cada material de la losa (ecuación~\ref{eq:idm}).
+
+La validez del índice depende de cómo se obtienen sus dos términos. La cantidad teórica debe calcularse con la geometría del elemento y, en el acero, con la planilla de despiece, porque sumar a las longitudes un porcentaje fijo de desperdicio subestima el acero necesario: habría que aplicar un 19,5~\% en lugar del 10~\% recomendado para igualar el cálculo optimizado \parencite[pp.~589--590]{abbott2008}. La cantidad real se obtiene de las guías de compra, los registros de almacén y los vales de salida \parencite[pp.~53, 64]{galarza2011}, complementados con inventarios periódicos del material acopiado \parencite[p.~331]{formoso1999}, y la medición debe ser frecuente ---semanal o por vaciado--- para corregir a tiempo y no solo constatar la pérdida al final de la obra \parencite[p.~334]{formoso1999}.
+
+Para valorar las pérdidas, \textcite[sección~4.5]{rossi2001} proponen calcular el costo de las pérdidas de materiales como la diferencia entre el consumo real y el teórico multiplicada por el costo unitario:
+\begin{equation}
+  CPM_i = \left(CR_i - CT_i\right) p_i
+  \label{eq:cpm}
+\end{equation}
+donde $CR_i$ es el consumo real del material $i$, $CT_i$ su consumo teórico y $p_i$ su costo unitario. Con este método, en dos obras de mampostería, las pérdidas sumaron el 38,5~\% y el 49,2~\% del costo de producción, con un mayor peso de la mano de obra que de los materiales \parencite[secciones~5.1 y 5.2]{rossi2001}. Las pérdidas, por tanto, no se limitan a los materiales: incluyen tiempos improductivos que el modelo de costos de la tesis considera a través del retrabajo.
+
+La Tabla~\ref{tab:desperdicio-ref} reúne los valores de referencia de desperdicio que reporta la literatura revisada. Los valores son muy dispersos y dependen del tipo de control; por eso sirven como rangos plausibles y no como metas. No se encontraron en el repositorio valores de referencia para viguetas pretensadas ni para complementos de poliestireno expandido.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{6pt}
+\begin{longtable}{@{}P{2.5cm}P{2.4cm}P{6.7cm}P{3.6cm}@{}}
+\caption{Valores de referencia del desperdicio de materiales en la literatura revisada}\label{tab:desperdicio-ref}\\
+\toprule
+\textbf{Material} & \textbf{Desperdicio} & \textbf{Condición} & \textbf{Fuente} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Material} & \textbf{Desperdicio} & \textbf{Condición} & \textbf{Fuente} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Hormigón & 22~\% & Obra sin control en campo; compras frente al metrado del presupuesto & \textcite[p.~53]{galarza2011} \\
+Hormigón & 5~\% & Sótanos vaciados con bomba; igual al valor del presupuesto & \textcite[p.~73]{galarza2011} \\
+Hormigón & 2,8~\% & Torre vaciada con grúa y pedidos limitados al 2~\% sobre el metrado & \textcite[p.~73]{galarza2011} \\
+Hormigón en placas y muros & 9~\% y 23~\% & Pérdidas reales promedio, frente a un 3~\% a 6~\% previsto por el bombeo & \textcite[pp.~33, 69]{rojas2018} \\
+Hormigón premezclado & 1,5~\% a 13~\% & Compilación de estudios brasileños & \textcite[p.~106]{maciel2016} \\
+Mezcla de concreto & 5~\% & Valor aceptable de referencia según la Cámara Peruana de la Construcción & \textcite[p.~14]{ccoyllo2016} \\
+\addlinespace
+Acero de refuerzo & 7~\% y 4,04~\% & Presupuestado y obtenido con prearmado & \textcite[p.~75]{galarza2011} \\
+Acero de refuerzo & 3,75~\% & Con acero predimensionado & \textcite[p.~76]{galarza2011} \\
+Acero de refuerzo & 14,58~\% y 17,09~\% & Método convencional en dos edificios & \textcite[pp.~147, 169]{chino2024} \\
+Acero de refuerzo & 3,15~\% y 3,19~\% & Con despiece previo a la ejecución & \textcite[pp.~147, 169]{chino2024} \\
+Acero de refuerzo & 11~\% a 26~\% & Compilación de estudios brasileños & \textcite[p.~106]{maciel2016} \\
+Acero de refuerzo & 10~\% y menos de 1~\% & Cortado en obra y precortado en fábrica; dato que los autores toman de otra fuente & \textcite[p.~583]{abbott2008} \\
+Acero de refuerzo & 3~\% a 10~\% & Valores aceptables según el diámetro, de la Cámara Peruana de la Construcción & \textcite[p.~14]{ccoyllo2016} \\
+\addlinespace
+Materiales en general & 10~\% (5~\% a 30~\%) & Consumo excesivo promedio en obra según un estudio sueco & \textcite[p.~35]{koskela1992} \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en las fuentes citadas. Cuando el valor proviene de otro estudio, se cita la fuente consultada que lo reporta.}
+\endgroup
+
+% ---------------------------------------------------------------------
+\section{Losas alivianadas con viguetas pretensadas y complemento de plastoformo}
+\label{sec:losas}
+
+\subsection{Descripción del sistema y de sus componentes}
+
+La vigueta es el elemento de una losa alivianada que absorbe los esfuerzos de flexión de los nervios y transmite las cargas de uso a la estructura \parencite[hoja~1]{concretec2018viguetas}. La losa del Edificio de Posgrado es una losa nervada unidireccional formada por viguetas pretensadas de fabricación industrial, colocadas en paralelo con una separación constante entre ejes; complementos de poliestireno expandido (plastoformo), apoyados en las alas de las viguetas, que aligeran la losa; nervios transversales rigidizadores; y una carpeta de compresión de hormigón vaciado en obra, con armadura de distribución, que se vacía junto con los nervios y las vigas de apoyo (Figura~\ref{fig:seccion}).
+
+Las viguetas se fabrican con hormigón de alta resistencia y acero de pretensado: en la ficha de un fabricante boliviano, la sección mide 56~mm en la cabeza, 110~mm en la base y 114,4~mm de alto, con acero de una resistencia de 18.000~kg/\cmdos{} y hormigón de 350~kg/\cmdos{}, y sus tolerancias son de $\pm$5 en la sección y de +30/$-$20 en la longitud, según la NB~997:2016 \parencite[hoja~2]{concretec2018viguetas}. El sistema admite separaciones entre ejes de 50 a 60~cm con vigueta simple, complementos de 10 a 25~cm de altura y una carpeta de 5~cm \parencite[hoja~3]{concretec2018viguetas}. El poliestireno expandido es un plástico espumado, ligero, resistente a la humedad y capaz de absorber impactos, que se fabrica con densidades de 8 a 10~kg/\mtres{} y tolerancias de $\pm$2~cm en el largo y $\pm$1~cm en el ancho \parencite[hoja~1]{concretec2016plastoformo}. Al reducir el peso propio, el sistema reduce las cargas: para 17~cm de altura, la losa con viguetas y plastoformo pesa 173,80~kg/\mdos{}, frente a 408,00~kg/\mdos{} de una losa llena \parencite[p.~151]{alcon2009}.
+
+\begin{figure}[H]
+\centering
+\caption{Sección típica de la losa alivianada con viguetas pretensadas}
+\label{fig:seccion}
+\includegraphics[width=0.60\linewidth]{plano02_seccion_losa_viguetas}
+\nota{Tomado del Plano~02 del proyecto «Construcción Edificio de Posgrado» de la UATF.}
+\end{figure}
+
+Las especificaciones técnicas del proyecto exigen viguetas de hormigón de 350 a 400~kg/\cmdos{} y acero con una tensión de rotura de 18.000~kg/\cmdos{}, con superficie superior rugosa y certificación de IBNORCA e ISO; complementos de plastoformo de 100~$\times$~50~$\times$~20~cm; hormigón de 250~kg/\cmdos{} de resistencia característica, con al menos 400~kg/\mtres{} de cemento, vaciado de forma monolítica con las vigas; y parrilla de compresión y refuerzo de momentos negativos de fierro corrugado \parencite[p.~3]{uatf_et}. El certificado del fabricante de las viguetas indica ejes a 50~cm, un espesor de 20~+~5~=~25~cm, una sobrecarga admisible de 400~kg/\mdos{} y una luz máxima de 7,50~m simplemente apoyada, y exige una carpeta de al menos 21~MPa, aceros de continuidad y el cumplimiento de los pasos de montaje del fabricante \parencite{pretensa2025}. El proveedor de los complementos certificó 2.350 piezas de 20~$\times$~100~$\times$~44~cm y 10~kg/\mtres{} \parencite{unicon2025}, una medida distinta de la especificada. La Figura~\ref{fig:corte} muestra el corte transversal con la armadura de distribución de $\phi$6~c/20~cm en ambas direcciones.
+
+\begin{figure}[H]
+\centering
+\caption{Corte transversal de la losa con la carpeta de compresión y la armadura de distribución}
+\label{fig:corte}
+\includegraphics[width=0.85\linewidth]{plano02_corte_transversal}
+\nota{Tomado del Plano~02 del proyecto. El corte acota 0,15~m de altura de complemento y 0,05~m de carpeta, mientras que las especificaciones técnicas y el certificado del fabricante indican 20~+~5~cm. Esta discrepancia se analiza en la sección~\ref{sec:analisis-documental}.}
+\end{figure}
+
+\subsection{Proceso constructivo y puntos críticos de calidad}
+
+La ejecución sigue once actividades, desde la recepción de los materiales hasta el desapuntalamiento (Tabla~\ref{tab:proceso-losa}). En cada una hay un punto crítico: una característica que, si no se verifica en ese momento, no puede corregirse después sin retrabajo o desperdicio. El primero es la recepción, porque detectar un material defectuoso cuando ya está colocado obliga a retirarlo, detiene la obra y genera pérdidas de tiempo y de dinero \parencite[p.~115]{alcon2009}. El segundo es la liberación previa al vaciado, un punto de espera \parencite[anexo~4]{muro2020}: ningún elemento estructural debería vaciarse sin la autorización expresa de la Supervisión \parencite[p.~8]{ucb2025et}. El tercero es el hormigón, cuyo muestreo debe presenciar el supervisor \parencite[p.~37]{cajias2023}, con probetas elaboradas en el lugar de colocación y no a la salida de la hormigonera \parencite[p.~13]{ucb2025et}.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{0.55cm}P{2.65cm}P{8.8cm}P{3.65cm}@{}}
+\caption{Proceso constructivo de la losa alivianada y puntos críticos de calidad}\label{tab:proceso-losa}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Actividad} & \textbf{Punto crítico de calidad} & \textbf{Criterio o referencia} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Actividad} & \textbf{Punto crítico de calidad} & \textbf{Criterio o referencia} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Recepción y acopio de viguetas & Cantidad, tipo y longitud según el plano de montaje del proveedor; piezas sin fisuras, oquedades ni armadura expuesta; tolerancias dimensionales & \textcite[pp.~115--116]{alcon2009}; NB~997:2016; certificado del fabricante \\
+2 & Recepción y acopio de complementos & Dimensiones y densidad del pedido; piezas enteras; acopio protegido & Tolerancias de la ficha técnica; certificado del proveedor \\
+3 & Recepción de cemento, áridos, agua y acero & Cemento con sello, bajo techo y en pilas de hasta 10 bolsas; agua limpia a más de 5~$^{\circ}$C; acero con certificado de fábrica, sin oxidación excesiva, barro ni aceite & ET, pp.~1--2; ACI~318-25, 26.6.1.2; pliego de referencia, p.~17 \\
+4 & Replanteo y apuntalamiento & Puntales colocados antes de montar los complementos; niveles de apoyo según los planos & Ficha técnica de los complementos \\
+5 & Colocación de viguetas & Separación de 50~cm entre ejes; tipo correcto en cada paño; empotramiento mínimo de 100~mm en vigas de borde y de 70~mm en vigas centrales & Certificado del fabricante; NBDS, art.~12 \\
+6 & Colocación de complementos & Piezas enteras y bien asentadas; prohibido pisarlas & Ficha técnica de los complementos \\
+7 & Nervios transversales y armaduras & Nervios rigidizadores según los planos; parrilla $\phi$6~c/20 en ambas direcciones; acero de continuidad sobre los apoyos; armadura apoyada dentro de las tolerancias & ET, p.~3; Plano~02; certificado del fabricante; ACI~318-25, 26.6.2 \\
+8 & Instalaciones embebidas & Ductos y cajas fijados antes del vaciado sin desplazar la armadura & ACI~318-25, 26.13.3.3 \\
+9 & Liberación para el vaciado & Punto de espera: verificación del armado, de las instalaciones y de la limpieza; mezcla aprobada para el elemento; autorización escrita de la Supervisión & ACI~318-25, 26.13.3.2 y 26.13.3.3; Supervisión \\
+10 & Hormigonado & Vaciado monolítico con las vigas, por franjas y continuo hasta completar el paño; asentamiento controlado; compactación sin segregación; sin añadir agua más allá de lo que admite ASTM~C94; muestreo aleatorio & ET, p.~3; ACI~318-25, 26.5.2.2 y 26.12.2.1 \\
+11 & Curado y desapuntalamiento & Humedad mantenida al menos 7 días con el hormigón a 10~$^{\circ}$C o más; protección en tiempo frío; puntales retirados solo cuando las probetas curadas en obra alcanzan la resistencia requerida & ACI~318-25, 26.5.3, 26.5.4 y 26.12.4 \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia con base en \textcite[pp.~115--116]{alcon2009}, las especificaciones técnicas del proyecto (ET) \parencite[pp.~1--3]{uatf_et}, el certificado del fabricante de las viguetas \parencite{pretensa2025}, las fichas técnicas \parencite[hoja~2]{concretec2018viguetas} \parencite[hojas~1 y 3]{concretec2016plastoformo}, la Norma Boliviana de Diseño Sísmico (NBDS) \parencite[p.~22]{mopsv2023nbds}, el código ACI~318-25 \parencite[secciones~26.5 a 26.13, pp.~578--611]{aci318_2025} y un pliego de especificaciones de referencia \parencite[pp.~8, 12--13, 17]{ucb2025et}.}
+\endgroup
+
+\subsection{Consumos teóricos de materiales por metro cuadrado}
+
+Los consumos teóricos por metro cuadrado son la cantidad de referencia del índice de desperdicio (ecuación~\ref{eq:idm-marco}). Para una losa de viguetas simples con separación entre ejes $D$ y complementos de largo $L$, la geometría da directamente la longitud de vigueta por metro cuadrado, $1/D$, y el número de complementos, $1/(D \cdot L)$; el volumen mínimo de hormigón es el de la carpeta, $h_2 \times 1$~\mdos{}. Las fichas técnicas del fabricante dan la geometría del sistema, pero no tablas de consumo por metro cuadrado, por lo que estas cantidades son un cálculo propio sin descontar apoyos, bordes ni nervios transversales \parencite[hoja~3]{concretec2018viguetas}. \textcite[p.~103]{alcon2009} sí publicó consumos medidos para una losa de complemento de 15~cm, carpeta de 5~cm y ejes a 0,50~m: 2,00 piezas de complemento por metro cuadrado y 0,0666~\mtres{} de hormigón por metro cuadrado, valores promedio de diez mediciones. La Tabla~\ref{tab:consumos} compara ambas referencias.
+
+\begingroup\small\setstretch{1}\setlength{\tabcolsep}{6pt}
+\begin{longtable}{@{}P{3.3cm}P{3.4cm}P{3.4cm}P{5.1cm}@{}}
+\caption{Consumos teóricos de referencia por metro cuadrado de losa}\label{tab:consumos}\\
+\toprule
+\textbf{Concepto} & \textbf{Alcón Aranda (2009): complemento de 15~cm, carpeta de 5~cm, $D = 0{,}50$~m} & \textbf{Geometría con $D = 0{,}50$~m y $L = 1{,}00$~m (cálculo propio)} & \textbf{Observación} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Concepto} & \textbf{Alcón Aranda (2009): complemento de 15~cm, carpeta de 5~cm, $D = 0{,}50$~m} & \textbf{Geometría con $D = 0{,}50$~m y $L = 1{,}00$~m (cálculo propio)} & \textbf{Observación} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Vigueta (m/\mdos{}) & 2,00 (35,00~kg/\mdos{} con 17,50~kg/m) & $1/D = 2{,}00$ & La longitud real depende de la luz de cada paño y de los apoyos \\
+\addlinespace
+Complementos (pza/\mdos{}) & 2,00 & $1/(D \cdot L) = 2{,}00$ & Piezas de 1,00~m de largo; se descuentan nervios y bordes \\
+\addlinespace
+Hormigón (\mtres{}/\mdos{}) & 0,0666 (333~\cmdos{} de sección por cada eje) & $\geq 0{,}05$ (solo la carpeta de 5~cm) & El volumen de los nervios depende de la sección de la vigueta y del perfil del complemento \\
+\addlinespace
+Peso propio (kg/\mdos{}) & 196,13 (hormigón 159,84; vigueta 35,00; complemento 1,29) & --- & Valor para la losa de 15~+~5~cm \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en \textcite[p.~103]{alcon2009} y en la geometría de las fichas técnicas \parencite[hoja~3]{concretec2018viguetas}. Los valores de la tercera columna son cálculo propio, sin desperdicio y sin descontar apoyos, bordes ni nervios transversales.}
+\endgroup
+
+Para la losa del Edificio de Posgrado, con ejes a 0,50~m y piezas de 1,00~m de largo, la geometría da 2,00 complementos por metro cuadrado, es decir, unas 2.220 piezas teóricas brutas para los 1.109,84~\mdos{} de la primera losa (cálculo propio), frente a las 2.350 piezas certificadas por el proveedor \parencite{unicon2025}: una diferencia preliminar de unas 130 piezas ($\approx$~6~\%) antes de descontar nervios y bordes. En el acero, el cómputo de la planilla N.\textsuperscript{o}~2 asigna a la losa 4.171,18~kg \parencite[pp.~19--20]{uatf2025pao2}, equivalentes a 3,76~kg/\mdos{} (cálculo propio). Ambas cifras son preliminares: el capítulo~2 las precisa con el Plano~03 y las concilia con los demás documentos de la obra (sección~\ref{sec:analisis-documental}).
+
+\subsection{Defectos frecuentes y su prevención}
+
+Los defectos de la losa tienen tres orígenes: el producto prefabricado, el montaje y el hormigonado. En las viguetas, \textcite[p.~116]{alcon2009} distingue los defectos leves, que no implican riesgo estructural pero dificultan el montaje y cuya aceptación queda a criterio del supervisor, de los graves, que implican riesgo para la estructura o impiden el montaje y obligan a devolver el material al proveedor. La NB~997, en la versión que recoge \textcite[pp.~89--92]{capcha2016}, exige viguetas sin discontinuidades de hormigonado visibles, oquedades, armaduras expuestas ni fisuras, y rechaza el lote cuando los defectos principales o secundarios superan los límites; esa versión es anterior a la NB~997:2016, con la que debe contrastarse. En el hormigonado, los defectos más frecuentes son la segregación y las cangrejeras, que representaron el 42,7~\% de las no conformidades en la estructura estudiada por \textcite[pp.~16--17]{muro2020}; el vibrado fue la actividad con más no conformidades en la obra estudiada por \textcite[p.~86]{ferrer2018}, por falta de capacitación, ausencia del encargado y equipos inadecuados. La Tabla~\ref{tab:defectos} resume los defectos frecuentes de la losa, sus causas y su prevención.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{3.2cm}P{3.6cm}P{6.2cm}P{2.6cm}@{}}
+\caption{Defectos frecuentes de la losa alivianada, causas y prevención}\label{tab:defectos}\\
+\toprule
+\textbf{Defecto} & \textbf{Causa probable} & \textbf{Prevención y control} & \textbf{Referencia} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Defecto} & \textbf{Causa probable} & \textbf{Prevención y control} & \textbf{Referencia} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Viguetas fisuradas, rotas o con armadura expuesta & Fabricación deficiente; golpes en el transporte, la descarga o el montaje & Inspección en la descarga; devolución de las piezas con defectos graves & \textcite[p.~116]{alcon2009}; NB~997 \\
+Vigueta de tipo o longitud equivocados & Pedido sin el plano de montaje del proveedor & Verificar tipo y cantidad contra el plano de montaje & \textcite[p.~116]{alcon2009} \\
+Deformación o caída de la losa durante el montaje & Complementos colocados sobre viguetas sin apuntalar & Apuntalar las viguetas antes de colocar los complementos & \textcite[hoja~3]{concretec2016plastoformo} \\
+Mayor consumo de hormigón en la carpeta & Complementos pisados y deformados & No pisar las piezas colocadas & \textcite[hoja~3]{concretec2016plastoformo} \\
+Segregación y cangrejeras & Vibrado deficiente; incumplimiento del procedimiento de vaciado; personal sin capacitación & Procedimiento de vaciado y vibrado; capacitación; inspección continua del vaciado & \textcite[pp.~16--17]{muro2020}; ACI~318-25, 26.5.2.2 \\
+Juntas frías & Interrupciones del vaciado & Vaciado continuo hasta completar el paño o una junta prevista; vaciado por franjas & ACI~318-25, 26.5.2.2; ET, p.~3 \\
+Armadura desplazada o con recubrimiento insuficiente & Falta de apoyos o separadores; tránsito sobre la armadura & Apoyar la armadura para que no se desplace durante el vaciado; verificar tolerancias & ACI~318-25, 26.6.2 \\
+Falta de continuidad sobre los apoyos & Omisión del acero de continuidad o de los negativos & Verificar el acero sobre los apoyos antes de liberar el paño & Certificado del fabricante; NBDS, art.~12 \\
+Resistencia insuficiente del hormigón & Dosificación sin aprobar; agua añadida; curado insuficiente; tiempo frío & Dosificación aprobada; no añadir agua más allá de lo que admite ASTM~C94; curado de 7 días; plan de tiempo frío; aceptación con ensayos & ACI~318-25, 26.4.4, 26.5.2.2, 26.5.3, 26.5.4 y 26.12.3 \\
+Fisuras y flechas excesivas & Desapuntalamiento prematuro & Retirar los puntales solo con probetas curadas en obra que alcancen la resistencia requerida & ACI~318-25, 26.12.4 \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia con base en las fuentes indicadas: \textcite[p.~116]{alcon2009}, \textcite[hoja~3]{concretec2016plastoformo}, \textcite[pp.~16--17]{muro2020}, el código ACI~318-25 \parencite[secciones~26.4 a 26.12, pp.~577--604]{aci318_2025}, las especificaciones técnicas del proyecto (ET) \parencite[p.~3]{uatf_et}, el certificado del fabricante \parencite{pretensa2025} y la NBDS \parencite[p.~22]{mopsv2023nbds}.}
+\endgroup
+
+% ---------------------------------------------------------------------
+\section{Marco normativo}
+\label{sec:marco-normativo}
+
+El SGC de la losa se apoya en las normas de gestión de la calidad, que definen la estructura del sistema; en las normas técnicas, que fijan los requisitos de los materiales, de la ejecución y de los ensayos; y en la legislación de contratación pública, que define los roles, los documentos y las reglas económicas del contrato (Tabla~\ref{tab:marco-normativo}).
+
+\subsection{Normas de gestión de la calidad}
+
+Las normas ISO~9000:2026 (fundamentos y vocabulario), ISO~9001:2026 (requisitos del SGC), ISO~10005:2018 (planes de la calidad) e ISO~10006:2017 (gestión de la calidad en proyectos) se describieron en la sección~\ref{sec:sgc-iso}. Su aplicación es voluntaria, pero se vuelve obligatoria cuando se incorpora a los documentos del contrato: las especificaciones técnicas forman parte del documento base de contratación, las elabora la entidad contratante y fijan las características técnicas de la obra \parencite[art.~5, inc.~m, p.~21]{ds0181_2025compilado}. Por eso, el plan de la calidad y el plan de puntos de inspección de la losa deben incluirse en las especificaciones del documento de contratación del saldo de la obra.
+
+\subsection{Normas técnicas del hormigón, de las viguetas y de los ensayos}
+
+Las especificaciones técnicas del proyecto exigen que los hormigones y la losa cumplan la Norma Boliviana del Hormigón Armado CBH-87 y normas bolivianas de cemento, áridos y agua de ediciones antiguas \parencite[pp.~1--3]{uatf_et}. La norma técnica boliviana actual de hormigón estructural es la NB~1225001-1:2017 \parencite{nb1225001_2017}, basada en el código ACI~318 \parencite[p.~4]{cocarico2022}. La Norma Boliviana de Diseño Sísmico (NBDS) remite a ella como norma de diseño específica para el hormigón estructural y dispone que ambas se apliquen en conjunto, con prevalencia de la norma sísmica en caso de contradicción \parencite[arts.~1 y 10, pp.~1, 19]{mopsv2023nbds}; no menciona la CBH-87. La R.~M.~271/2023 del Ministerio de Obras Públicas, Servicios y Vivienda, que aprueba la NBDS, la declara de aplicación obligatoria en todo el país \parencite[R.~M.~271/2023, resuelve tercero]{mopsv2023nbds}, pero en los documentos del repositorio no consta un instrumento que declare obligatorias la NB~1225001 o la CBH-87. Por eso, esta tesis trata la CBH-87 como la norma que cita la especificación técnica del ítem y toma como marco técnico vigente la NBDS y la NB~1225001. \pendiente{verificar si existen instrumentos legales vigentes que declaren obligatorias la CBH-87 (la bibliografía recomendada menciona el D.~S.~22976 de 1991) y la NB~1225001 (R.~M. del MOPSV 172/2020); ninguno de ellos está en el repositorio}
+
+Como el texto de la NB~1225001 no está disponible en el repositorio y esa norma se basa en el código ACI~318, esta tesis adopta como referencia técnica para el control y la aceptación del hormigón el capítulo~26 del ACI~CODE-318-25, sin atribuirle la numeración de la norma boliviana. Un ensayo de resistencia es el promedio de al menos dos cilindros de la misma muestra, tomada en el punto de entrega según ASTM~C172, curados según ASTM~C31 y ensayados según ASTM~C39 a los 28 días \parencite[sección~26.12.1.1, p.~601]{aci318_2025}. Se toma al menos una muestra por día, por cada 150~yd\textsuperscript{3} ($\approx$~114,7~\mtres{}) y, en losas, por cada 5.000~ft\textsuperscript{2} ($\approx$~464,5~\mdos{}) de superficie; si esa frecuencia diera menos de cinco ensayos para una mezcla, las probetas se elaboran de al menos cinco pastones elegidos al azar \parencite[sección~26.12.2.1, p.~603]{aci318_2025}. Para los 1.109,84~\mdos{} de la primera losa, el criterio de superficie exige al menos tres muestras (cálculo propio). La resistencia se acepta si todo promedio de tres ensayos consecutivos iguala o supera $f'_c$ y ningún ensayo queda por debajo de $f'_c$ en más de 500~psi cuando $f'_c \leq 5.000$~psi \parencite[sección~26.12.3.1, p.~603]{aci318_2025}; para el H25 de la losa, ningún ensayo puede ser menor de unos 214,8~kg/\cmdos{} (cálculo propio). Ante resultados bajos se extraen tres núcleos por ensayo deficiente, y el hormigón es adecuado si su promedio alcanza el 85~\% de $f'_c$ y ningún núcleo baja del 75~\% \parencite[sección~26.12.7, p.~606]{aci318_2025}. El código exige además mantener la humedad del hormigón durante 7 días a 10~$^{\circ}$C o más \parencite[sección~26.5.3.2, p.~581]{aci318_2025}, presentar un plan de hormigonado en tiempo frío \parencite[sección~26.5.4.2, p.~583]{aci318_2025} e inspeccionar la conformidad con los documentos de construcción en todas las etapas, con registros conservados al menos dos años \parencite[secciones~26.13.1.2 y 26.13.2.1, pp.~608, 610]{aci318_2025}.
+
+Para las losas de viguetas prefabricadas que deben funcionar como diafragma rígido, la norma sísmica exige una altura mínima de 250~mm con la carpeta, una carpeta de al menos 50~mm con malla de 6~mm cada 250~mm, el empotramiento de las viguetas en las vigas, nervios rigidizadores a no más de 2,50~m, una separación entre ejes no mayor que el doble de la altura y el hormigonado simultáneo de la losa con sus vigas de apoyo \parencite[art.~12, p.~22]{mopsv2023nbds}; además, fija una resistencia mínima del hormigón de 21~MPa y recomienda 25~MPa \parencite[art.~16, p.~28]{mopsv2023nbds}. La especificación de la obra (20~+~5~cm, ejes a 50~cm, parrilla $\phi$6~c/20 y vaciado monolítico con las vigas) es coherente con esos mínimos, no así el corte del Plano~02, que acota una altura total de 0,20~m (Figura~\ref{fig:corte}); la discrepancia debe resolverla la Supervisión con el proyectista.
+
+Las viguetas se rigen por la NB~997:2016, que establece sus requisitos y métodos de ensayo \parencite{nb997_2016} y cuyo cumplimiento declara el certificado del fabricante de la obra \parencite{pretensa2025}. Los ensayos se basan en normas ASTM, como pide la guía del docente \parencite[diapositiva~25]{barrios2021documento}: C172, C31 y C39 para el muestreo, las probetas y la resistencia; C143 para el asentamiento; y A615 para las barras corrugadas, que el código ACI admite como refuerzo \parencite[sección~20.2.1.3, p.~409]{aci318_2025}.
+
+\subsection{Legislación de contratación pública}
+
+La Ley~1178 de Administración y Control Gubernamentales crea el Sistema de Administración de Bienes y Servicios, que debe identificar a los responsables de las decisiones de contratación en relación con la calidad, la oportunidad y el precio de lo contratado \parencite[art.~10]{ley1178_1990}. La misma ley establece el control interno previo, que se aplica antes de que las operaciones surtan efecto \parencite[arts.~13--14]{ley1178_1990}, lógica equivalente a la de los puntos de espera de un plan de inspección. Sus normas básicas, el D.~S.~0181 (NB-SABS), regulan las modificaciones de los contratos de obra \parencite[art.~89, pp.~91--93]{ds0181_2025compilado}:
+\begin{itemize}
+  \item el \textbf{contrato modificatorio} procede cuando cambian el alcance, el monto o el plazo sin aumentar los precios unitarios; uno o varios, sumados, no pueden superar el 10~\% del monto del contrato principal, y los precios de los ítems nuevos se negocian;
+  \item la \textbf{orden de cambio}, exclusiva de obras, modifica el precio o el plazo sin aumentar los precios unitarios ni crear ítems nuevos, y no puede superar el 5~\%;
+  \item en licitación pública, ambos instrumentos sumados no pueden exceder el 15~\% del monto del contrato principal.
+\end{itemize}
+Las mismas normas establecen la recepción provisional y definitiva de las obras \parencite[art.~39, p.~54]{ds0181_2025compilado}. Los modelos de documento base de contratación de obras vigentes fueron aprobados por la R.~M.~048/2024 del Ministerio de Economía y Finanzas Públicas, que sustituyó a los de 2022 \parencite{rm048_2024}. El modelo de 2022, disponible en el repositorio, define las figuras contractuales que el SGC debe operar: el Libro de Órdenes, en el que el Supervisor anota sus instrucciones \parencite[cláusula~25, p.~71]{dbc2022}; la responsabilidad de la Supervisión sobre el control de calidad y los ensayos a cargo del contratista \parencite[cláusulas~26.3 y 26.6, p.~73]{dbc2022}; y la prohibición de cubrir un trabajo sin aprobación previa \parencite[cláusula~26.10, p.~74]{dbc2022}. Esas cláusulas deben contrastarse con el contrato real de la obra.
+
+Frente al alza de precios de 2025 y 2026 se dictaron decretos de ajuste excepcional. El D.~S.~5321 permitió ajustar, mediante un contrato modificatorio, el precio de los materiales importados de su anexo ---entre ellos el acero corrugado---, considerando solo el componente de materiales del análisis de precios unitarios y aun por encima de los porcentajes del art.~89 \parencite[arts.~3--4 y anexo]{ds5321_2025}; los D.~S.~5406 y 5452 ampliaron su plazo y fijaron la fórmula del ajuste \parencite{ds5406_2025,ds5452_2025}. El D.~S.~5597 extendió el ajuste a todos los materiales, maquinaria y equipo hasta el 31 de diciembre de 2026 y previó la resolución del contrato por una situación ajena a las partes cuando el incremento de precios no sea viable, inviabilidad que puede considerarse caso fortuito y que no da lugar a registrar al contratista como impedido en el Sistema de Contrataciones Estatales (SICOES) ni a ejecutar su garantía de cumplimiento \parencite[art.~4 y disposición adicional quinta]{ds5597_2026}. Las NB-SABS definen la fuerza mayor como un obstáculo externo, imprevisto o inevitable, ajeno al hombre, como un incendio, una inundación u otro desastre natural, y el caso fortuito como un obstáculo interno atribuible al hombre, imprevisto o inevitable, como una conmoción civil, una huelga o un bloqueo \parencite[art.~5, incs.~c y p, pp.~20, 22]{ds0181_2025compilado}. En la obra estudiada, el contrato excluía el reajuste de precios \parencite[p.~95]{uatf2025pao2}, el contrato modificatorio (+7,22~\%) quedó dentro del límite del 10~\% (Tabla~\ref{tab:datos-contractuales}) y la solicitud de resolución del contratista (5 de enero de 2026), que invocó la fuerza mayor o el caso fortuito \parencite[p.~14]{uatf_item13}, es anterior al D.~S.~5597, cuya aplicabilidad al caso corresponde valorar a la asesoría legal de la entidad. Para aislar el efecto del SGC de estas variaciones, la evaluación de la tesis se hace a precios constantes del contrato.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{3.0cm}P{4.0cm}P{5.1cm}P{3.5cm}@{}}
+\caption{Marco normativo del SGC de la losa alivianada}\label{tab:marco-normativo}\\
+\toprule
+\textbf{Norma o instrumento} & \textbf{Objeto} & \textbf{Aplicación en esta tesis} & \textbf{Fuente} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Norma o instrumento} & \textbf{Objeto} & \textbf{Aplicación en esta tesis} & \textbf{Fuente} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{4}{@{}l}{\textit{Gestión de la calidad}}\\*
+ISO~9000:2026 & Fundamentos, principios y vocabulario & Definiciones de calidad, requisito, no conformidad y acción correctiva & \textcite{iso9000_2026} \\
+ISO~9001:2026; NB/ISO~9001:2026 & Requisitos de un SGC (cláusulas 4 a 10) & Estructura del SGC propuesto & \textcite{iso9001_2026}; \textcite{ibnorca9001_2026} \\
+ISO~10005:2018 & Directrices para los planes de la calidad & Plan de la calidad de la losa & \textcite{iso10005_2018} \\
+ISO~10006:2017 & Directrices para la gestión de la calidad en los proyectos & Responsabilidades de las organizaciones del proyecto y control de los cambios & \textcite{iso10006_2017} \\
+\multicolumn{4}{@{}l}{\textit{Normas técnicas}}\\*
+CBH-87 & Norma boliviana de hormigón armado citada en las especificaciones del proyecto & Requisitos contractuales de materiales y ejecución & \textcite[pp.~1--3]{uatf_et} \\
+NB~1225001-1:2017 & Hormigón estructural, basada en el código ACI~318 & Norma técnica boliviana de referencia, a la que remite la NBDS & \textcite{nb1225001_2017}; \textcite[p.~4]{cocarico2022}; \textcite[arts.~1 y 10]{mopsv2023nbds} \\
+ACI~CODE-318-25, capítulo~26 & Producción, colocación, curado, evaluación, aceptación e inspección del hormigón & Muestreo (26.12.2.1), aceptación (26.12.3.1), curado (26.5.3), tiempo frío (26.5.4), armaduras (26.6) e inspección (26.13) & \textcite{aci318_2025} \\
+NBDS 2023 (R.~M.~271/2023), art.~12 & Norma sísmica de aplicación obligatoria; losas de viguetas prefabricadas como diafragma rígido & Verificación de la altura, la carpeta, los apoyos y el hormigonado de la losa & \textcite[resuelve tercero; art.~12, p.~22]{mopsv2023nbds} \\
+NB~997:2016 & Viguetas prefabricadas de hormigón pretensado: requisitos y métodos de ensayo & Recepción y liberación de viguetas por lote & \textcite{nb997_2016}; \textcite{pretensa2025} \\
+ASTM~C172, C31 y C39 & Muestreo del hormigón fresco, elaboración y curado de probetas, y ensayo de compresión & Plan de muestreo y ensayos de aceptación del hormigón & \textcite[sección~26.12.1.1, p.~601]{aci318_2025} \\
+ASTM~C143 & Asentamiento del hormigón fresco con el cono de Abrams & Control de la consistencia de cada pastón muestreado & \textcite[diapositiva~25]{barrios2021documento}; \textcite[p.~9]{ucb2025et} \\
+ASTM~A615 & Barras corrugadas de acero al carbono & Recepción del acero con certificado de fábrica & \textcite[secciones~20.2.1.3 y 26.6.1.2, pp.~409, 587]{aci318_2025} \\
+\multicolumn{4}{@{}l}{\textit{Legislación de contratación pública}}\\*
+Ley~1178 (SAFCO) & Administración y control gubernamentales & Responsabilidad por la calidad de lo contratado; control interno previo & \textcite[arts.~10, 13 y 14]{ley1178_1990} \\
+D.~S.~0181 (NB-SABS) & Normas básicas de contratación de bienes, obras y servicios & Contrato modificatorio $\leq$ 10~\%; orden de cambio $\leq$ 5~\%; ambos $\leq$ 15~\% en licitación pública (art.~89); recepción provisional y definitiva (art.~39) & \textcite[pp.~54, 91--93]{ds0181_2025compilado} \\
+R.~M.~048/2024; modelo de DBC de 2022 (sustituido) & Modelos de documento base de contratación de obras & Supervisor y Fiscal, Libro de Órdenes, ensayos a cargo del contratista, medición neta y planillas & \textcite{rm048_2024}; \textcite[pp.~71--75]{dbc2022} \\
+D.~S.~5321, 5406 y 5452 (2025) & Ajuste excepcional de precios de materiales importados & Contexto de precios; el modelo de la tesis usa precios constantes & \textcite{ds5321_2025}; \textcite{ds5406_2025}; \textcite{ds5452_2025} \\
+D.~S.~5597 (2026) & Ajuste excepcional de precios de materiales, maquinaria y equipo; resolución por situación ajena a las partes & Contexto de la paralización y de la contratación del saldo de la obra & \textcite{ds5597_2026} \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en las fuentes citadas. DBC: documento base de contratación; NBDS: Norma Boliviana de Diseño Sísmico; NB-SABS: Normas Básicas del Sistema de Administración de Bienes y Servicios.}
+\endgroup
+
+% ---------------------------------------------------------------------
+\section{Control de costos en obras públicas}
+\label{sec:control-costos}
+
+\subsection{Análisis de precios unitarios}
+
+En las obras públicas bolivianas, el costo de cada ítem se expresa en un análisis de precios unitarios (APU) con el formulario B-2 del modelo de documento base de contratación \parencite[p.~257]{cocarico2022}, que suma a los costos directos ---materiales, mano de obra y equipo--- las incidencias de beneficios sociales, herramientas, gastos generales, utilidad e impuestos \parencite[p.~254]{cocarico2022}. Como cada incidencia se aplica sobre una base distinta \parencite[pp.~256--257]{cocarico2022}, el precio unitario resulta
+\begin{equation}
+  PU = \underbrace{\left[M + MO\,(1+b)(1+i_v)(1+h) + E\right]}_{CD}\,(1+g)\,(1+u)\,(1+t)
+  \label{eq:apu}
+\end{equation}
+donde $M$ es el costo de los materiales, $MO$ el de la mano de obra, $E$ el del equipo y la maquinaria, $CD$ el costo directo, y $b$, $i_v$, $h$, $g$, $u$ y $t$ las incidencias de beneficios sociales, impuesto al valor agregado, herramientas, gastos generales, utilidad e impuesto a las transacciones. En un APU boliviano documentado se adoptaron $b = 71~\%$, $h = 5~\%$, $g = 13~\%$, $u = 10~\%$, $i_v = 14{,}94~\%$ y $t = 3{,}09~\%$ \parencite[p.~256]{cocarico2022}. Con esos valores, cada boliviano de costo directo se convierte en unos 1,28 bolivianos de precio unitario (cálculo propio: $1{,}13 \times 1{,}10 \times 1{,}0309 \approx 1{,}281$). La ecuación muestra también que el desperdicio de materiales no solo aumenta $M$: arrastra los gastos generales, la utilidad y los impuestos calculados sobre él.
+
+El efecto económico del desperdicio depende de quién lo absorbe. El porcentaje de pérdidas que el proponente incluye en las cantidades de su APU lo paga la entidad dentro del precio unitario; el desperdicio que excede ese porcentaje y el retrabajo los absorbe el contratista, porque el precio unitario es fijo. Si los costos de producción suben de forma imprevista, el constructor solo puede trasladarlos al cliente o reducir su margen \parencite[p.~24]{pons2014}; en un contrato público sin reajuste de precios, como el de la obra estudiada \parencite[p.~95]{uatf2025pao2}, solo queda la segunda opción. Para la entidad, en cambio, el riesgo es pagar cantidades no ejecutadas o mal medidas.
+
+\subsection{Cómputos métricos, planillas de avance y modificaciones}
+
+Los cómputos métricos determinan las cantidades de cada ítem a partir de los planos, por elemento y por nivel \parencite[p.~254]{cocarico2022}. Su criterio de medición debe estar definido de antemano: un pliego de especificaciones de referencia mide las losas con viguetas prefabricadas por metro cuadrado entre ejes de las vigas, y el volumen de hormigón como un ítem distinto \parencite[p.~19]{ucb2025et}, mientras que en la obra estudiada el ítem de la losa se paga por metro cuadrado \parencite[p.~16]{uatf2025pao2} e incluye el hormigón \parencite[p.~3]{uatf_et}. El cómputo de la cantidad teórica es, además, la referencia del índice de desperdicio (ecuación~\ref{eq:idm-marco}).
+
+El pago sigue el avance de la obra: el contratista presenta cada mes una planilla o certificado de pago, que el Supervisor revisa y aprueba \parencite[cláusula~28, p.~75]{dbc2022} después de medir la obra junto con el contratista \parencite[cláusula~26.3, p.~72]{dbc2022}. Las obras se miden netas, sin pagar volúmenes excedentes no aprobados por escrito \parencite[cláusula~27, p.~75]{dbc2022}, y la planilla de cantidades finales debe basarse en la obra realmente ejecutada \parencite[cláusula~38.1, p.~86]{dbc2022}; el Supervisor certifica los volúmenes y la calidad de los ítems ejecutados \parencite[p.~14]{cajias2023}.
+
+Los cambios de cantidades se formalizan con tres instrumentos. La orden de trabajo redistribuye cantidades sin cambiar el precio ni el plazo y sin crear ítems \parencite[p.~20]{dbc2022}; la orden de cambio y el contrato modificatorio modifican el precio, el plazo o el alcance dentro de los límites del art.~89 de las NB-SABS (sección~\ref{sec:marco-normativo}). Todos deben emitirse antes de ejecutar los trabajos y no sirven para regularizar lo ya ejecutado \parencite[cláusula~30.5, p.~78]{dbc2022}. En el reajuste excepcional de precios, la variación de cada material es la diferencia entre su precio actual y el precio inicial del contrato, y el monto del ajuste es la suma de esas variaciones multiplicadas por las cantidades pendientes \parencite[art.~2]{ds5452_2025}.
+
+Desde la gestión de la calidad, estos instrumentos tienen dos lecturas. La conciliación entre el cómputo teórico, la cantidad consumida y la cantidad pagada es un control de la calidad de la información, porque una diferencia no explicada revela desperdicio, sobremedición o un error de cómputo. Y las sobremediciones corregidas en planillas posteriores son fallas externas en el sentido del modelo PEF: se detectan después de que el producto ---la planilla--- fue entregado al cliente.
+
+% ---------------------------------------------------------------------
+\section{Herramientas de la calidad}
+\label{sec:herramientas}
+
+Según la clasificación que recoge \textcite[p.~26]{zurita2024}, las herramientas básicas de la calidad son siete: la hoja de recogida de datos, el histograma, el diagrama de Pareto, el diagrama de causa y efecto, la estratificación, el diagrama de dispersión y el gráfico de control, a las que se suma el diagrama de flujo. Su valor está en su uso encadenado: la hoja de verificación produce los datos, el diagrama de Pareto prioriza los problemas, el diagrama de Ishikawa busca sus causas, y el histograma y la carta de control muestran si el proceso mejora. A ellas se agregan el plan de puntos de inspección, que organiza los controles de la obra, y la técnica 5W2H, que estructura las acciones de mejora (Tabla~\ref{tab:herramientas}).
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{2.4cm}P{4.9cm}P{5.4cm}P{2.9cm}@{}}
+\caption{Herramientas de la calidad y su uso en esta tesis}\label{tab:herramientas}\\
+\toprule
+\textbf{Herramienta} & \textbf{Para qué sirve} & \textbf{Uso en esta tesis} & \textbf{Fuente} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Herramienta} & \textbf{Para qué sirve} & \textbf{Uso en esta tesis} & \textbf{Fuente} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Hoja de verificación & Registrar datos de forma ordenada para distinguir hechos de opiniones y comprobar la repetición de un problema o defecto & Fichas de recepción de materiales, de consumo por paño y de inspección del PPI; lista de verificación de los requisitos de la ISO~9001 & \textcite[p.~27]{gudiel2020} \\
+\addlinespace
+Diagrama de Pareto & Ordenar las causas o los defectos de mayor a menor frecuencia o costo para atender primero los pocos que explican la mayor parte del problema (regla 80/20) & Priorizar las no conformidades y las pérdidas de la línea base por su costo; elegir las partidas de control & \textcite[pp.~32--35]{gudiel2020}; \textcite[p.~70]{alfaro2011} \\
+\addlinespace
+Diagrama de Ishikawa & Representar las posibles causas de un problema agrupadas por categorías (materiales, personal, métodos, maquinaria) & Analizar las causas del desperdicio y de las no conformidades de la primera losa & \textcite[pp.~29--31]{gudiel2020} \\
+\addlinespace
+Histograma & Mostrar la distribución, la dispersión y la tendencia de un conjunto de mediciones & Distribución de las resistencias del hormigón y de la reducción del costo simulada & \textcite[pp.~36--38]{gudiel2020} \\
+\addlinespace
+Carta de control & Seguir en el tiempo la variabilidad de un proceso y distinguir las causas comunes de las especiales & Seguimiento del índice de desperdicio por vaciado y de las resistencias por losa & \textcite[pp.~11--12]{aguilar2016}; \textcite[p.~331]{formoso1999} \\
+\addlinespace
+Plan de puntos de inspección (PPI) & Definir para cada inspección el criterio de aprobación, el lote, la frecuencia, el responsable y los puntos de parada & PPI de la losa, con puntos de espera antes del vaciado y en la recepción de materiales (capítulo~2) & \textcite[anexo~4]{muro2020}; \textcite[p.~64]{ferrer2018} \\
+\addlinespace
+5W2H & Planificar una acción respondiendo qué, por qué, dónde, cuándo, quién, cómo y cuánto cuesta & Planes de acción correctiva de las no conformidades y del plan de implantación del SGC & Técnica de uso general \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en las fuentes citadas; la columna de uso es de elaboración propia.}
+\endgroup
+
+En esta tesis, la hoja de verificación es la base de los registros del SGC: sin ella no hay datos para calcular el índice de desperdicio ni el costo de no calidad. El diagrama de Ishikawa ordena las causas de las pérdidas de la losa en las categorías de \textcite[pp.~12--13]{luangcharoenrat2019}, y el histograma y la carta de control se aplican a las resistencias del hormigón, cuya variabilidad fundamenta los criterios estadísticos de aceptación \parencite[p.~58]{alcon2009}, y a los índices de desperdicio de cada vaciado, para distinguir una variación normal de una causa especial que exige acción \parencite[p.~27]{cepeda2017}. La técnica 5W2H asegura que cada acción correctiva tenga responsable, plazo y costo, de modo que la mejora pueda verificarse.
+
+% ---------------------------------------------------------------------
+\section{Evaluación \emph{ex ante} y simulación}
+\label{sec:simulacion-marco}
+
+\subsection{Modelo de simulación teórica con tratamiento de control}
+
+La guía del docente reconoce cuatro tipos de modelo de investigación: el desarrollo teórico, la modelación teórica, la modelación experimental y la modelación de simulación teórica \parencite[diapositiva~4]{barrios2021modelo}. Todo modelo debe incluir un tratamiento de control que sirva de comparación, generalmente un no tratamiento \parencite[diapositiva~8]{barrios2021modelo}, y debe permitir calcular el grado de incertidumbre, es decir, la probabilidad de obtener los resultados observados solo por efecto del azar \parencite[diapositiva~9]{barrios2021modelo}. Su estructura avanza de la conceptualización y el alcance a la definición de factores y variables, el procedimiento y la toma de observaciones, la validación de las observaciones y el contraste de hipótesis y resultados \parencite[diapositiva~12]{barrios2021modelo}, secuencia que sigue el capítulo~2. En términos experimentales, la esencia de un experimento es la manipulación intencional de una acción para analizar sus posibles resultados \parencite[p.~151]{hernandez2018}, y el grupo de control es el que no recibe el tratamiento \parencite[p.~154]{hernandez2018}.
+
+Cuando el tratamiento no puede aplicarse en el objeto real, como ocurre con un SGC cuya obra se paralizó, la comparación se hace sobre un modelo. Una evaluación \emph{ex ante} estima el efecto de una intervención antes de aplicarla: el sistema se representa con un modelo de costos, se simula sin SGC (control) y con SGC (tratamiento), y la diferencia se atribuye al tratamiento tal como el modelo lo representa. Su validez depende de que los supuestos y los parámetros sean explícitos, trazables y verificables, exigencia que no cumplen todos los antecedentes: \textcite[p.~148]{chino2024} proyectaron un método de control del acero sobre niveles ya construidos con el método convencional, y \textcite[pp.~23--24, 51--52]{delavega2023} simularon patrones de corte del acero sin informar el desperdicio de la línea base, lo que impide cuantificar la reducción.
+
+\subsection{Método de Monte Carlo}
+
+Sea $Y = g(X_1, \dots, X_k)$ una variable de salida cuyas entradas $X_j$ son inciertas y se representan con distribuciones de probabilidad; el método de Monte Carlo estima la distribución de $Y$ por muestreo aleatorio. Consta de cinco pasos: formular el modelo determinista $g$; asignar a cada entrada incierta una distribución; generar $N$ juegos de valores aleatorios de las entradas; calcular $Y$ para cada juego; y analizar la muestra $\{Y_1, \dots, Y_N\}$ mediante su media, su desviación estándar, sus percentiles y las probabilidades de interés. La media y una probabilidad se estiman, con sus errores estándar, como
+\begin{equation}
+  \bar{Y}_N = \frac{1}{N}\sum_{k=1}^{N} Y_k, \qquad EE\!\left(\bar{Y}_N\right) = \frac{s_Y}{\sqrt{N}}, \qquad
+  \hat{p} = \frac{1}{N}\sum_{k=1}^{N} \mathbf{1}\!\left(r_k \geq r^{*}\right), \qquad EE\!\left(\hat{p}\right) = \sqrt{\frac{\hat{p}\,(1-\hat{p})}{N}}
+  \label{eq:montecarlo}
+\end{equation}
+donde $s_Y$ es la desviación estándar de la muestra simulada, $\mathbf{1}(\cdot)$ vale 1 si se cumple la condición y 0 si no, $r_k$ es la reducción relativa del costo unitario en la iteración $k$ y $r^{*}$ el umbral de la hipótesis. En un modelo con tratamiento de control, en cada iteración se calculan ambas condiciones con el mismo juego de parámetros de la línea base, de modo que su diferencia solo refleja el efecto del tratamiento. La proporción de iteraciones en que la reducción alcanza el umbral es la probabilidad de cumplir la hipótesis, que expresa el grado de incertidumbre que pide la guía del docente. Una regla de decisión de la forma $\hat{P}(r \geq r^{*}) \geq 0{,}95$ equivale a exigir que el percentil 5 de la reducción simulada sea mayor o igual que $r^{*}$, y es el análogo probabilístico de un contraste unilateral con $\alpha = 0{,}05$ (sección~\ref{sec:contraste}).
+
+\subsection{Distribución triangular}
+
+Cuando de una variable solo se conocen el rango plausible y el valor más probable, como ocurre con los datos de una sola obra o con los rangos de la literatura, se la representa con una distribución triangular de mínimo $a$, moda $m$ y máximo $b$, cuya función de densidad es
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    \dfrac{2\,(x-a)}{(b-a)(m-a)}, & a \leq x \leq m \\[8pt]
+    \dfrac{2\,(b-x)}{(b-a)(b-m)}, & m < x \leq b
+  \end{cases}
+  \label{eq:triangular}
+\end{equation}
+y cuyas media y varianza son
+\begin{equation}
+  E[X] = \frac{a+m+b}{3}, \qquad
+  \operatorname{Var}[X] = \frac{a^2+m^2+b^2-am-ab-mb}{18}
+  \label{eq:triangular-momentos}
+\end{equation}
+Los valores se generan por transformación inversa a partir de números aleatorios uniformes. La distribución es fácil de justificar con datos limitados, pero los resultados dependen de los extremos elegidos y no admite valores fuera del rango; ambas limitaciones se controlan con el análisis de sensibilidad.
+
+\subsection{Convergencia y análisis de sensibilidad}
+
+La convergencia indica si el número de iteraciones es suficiente. Se verifica con la estimación acumulada de la media y de la probabilidad de interés a medida que crece $N$: la simulación ha convergido cuando las curvas se estabilizan y la semiamplitud del intervalo de confianza al 95~\% es menor que la precisión buscada. Para una probabilidad, esa semiamplitud nunca supera $1{,}96 \times 0{,}5/\sqrt{N}$; con 10.000 iteraciones, por ejemplo, es de 0,0098 como máximo (cálculo propio). Para que los resultados sean reproducibles, el generador de números aleatorios se inicia con una semilla fija.
+
+El análisis de sensibilidad identifica qué entradas explican la incertidumbre de la salida. En la técnica de un factor a la vez, cada parámetro se lleva a su mínimo y a su máximo mientras los demás quedan en su moda, y las variaciones de la salida se ordenan en un diagrama de tornado; en la correlación de rangos de Spearman, se mide la asociación monótona entre los valores simulados de cada entrada y los de la salida. Ambas señalan qué parámetros conviene medir mejor y si la conclusión se mantiene dentro de los rangos plausibles. Por último, un resultado \emph{ex ante} es condicional a sus supuestos: debe acompañarse de la verificación del código frente a un cálculo manual y de un protocolo para contrastarlo con mediciones reales cuando la obra se ejecute (sección~\ref{sec:verificacion-futura}).
+
+% ---------------------------------------------------------------------
+\section{Definición de términos básicos}
+\label{sec:terminos}
+
+La Tabla~\ref{tab:terminos} define los términos que se usan con un sentido preciso en esta tesis. Las definiciones de gestión de la calidad siguen el vocabulario de la familia ISO~9000 en la formulación que recogen las fuentes citadas, y las técnicas provienen de las normas y de las fichas aplicables a la losa.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{3.1cm}P{12.7cm}@{}}
+\caption{Definición de términos básicos}\label{tab:terminos}\\
+\toprule
+\textbf{Término} & \textbf{Definición} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Término} & \textbf{Definición} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Calidad & Grado en que un conjunto de características inherentes de un producto, servicio o proceso cumple con los requisitos establecidos \parencite[p.~21]{mamanicalsina2025}; en la losa, los de los planos, las especificaciones, las normas y el contrato. \\
+\addlinespace
+Conformidad & Cumplimiento de un requisito \parencite[p.~31]{zurita2024}. En la obra se deja registrada; por ejemplo, la del material recibido, con la firma del documento de entrega \parencite[anexo~4]{muro2020}. \\
+\addlinespace
+No conformidad & Incumplimiento de un requisito especificado \parencite[p.~21]{mamanicalsina2025}. Con base en la ISO~9000:2005, \textcite[p.~2]{forcada2017} distinguen el defecto: el incumplimiento de un requisito asociado a un uso previsto. El modelo de contrato de obras llama trabajo defectuoso a toda parte de la obra que no cumple las especificaciones, los planos u otros documentos \parencite[cláusula~26.12, p.~74]{dbc2022}. \\
+\addlinespace
+Acción correctiva & Medida para eliminar la causa raíz de una no conformidad \parencite[p.~21]{mamanicalsina2025}, de modo que el problema no se repita \parencite[p.~19]{mamanicalsina2025}. Se distingue del tratamiento del producto no conforme: reproceso con nuevo control, aceptación o rechazo \parencite[p.~140]{pena2024}. \\
+\addlinespace
+Desperdicio & Consumo de un material en cantidades mayores que las necesarias según los documentos técnicos \parencite[p.~9]{galarza2011}; en sentido amplio, toda pérdida producida por actividades que generan costos sin agregar valor \parencite[p.~328]{formoso1999}. \\
+\addlinespace
+Pérdida & Operación o consumo de recursos que no agrega valor; la pérdida de materiales es la diferencia entre la cantidad empleada y la necesaria según el diseño \parencite[sección~2]{rossi2001}. Puede ser directa (desmonte) o indirecta \parencite[p.~15]{ccoyllo2016}, llamada también pérdida incorporada \parencite[p.~106]{maciel2016}. \\
+\addlinespace
+Retrabajo & Esfuerzo innecesario de rehacer una actividad que se ejecutó incorrectamente la primera vez, según la definición que adoptan \textcite[p.~2]{forcada2017}; su costo es un costo de falla. \\
+\addlinespace
+Costo de no calidad & Suma de los costos de falla interna y externa (costos de no conformidad); con los de prevención y evaluación forma el costo total de la calidad \parencite[p.~150]{zurita2024} (ecuación~\ref{eq:ctc}). \\
+\addlinespace
+Punto de inspección & Control del PPI con criterio de aprobación, lote, frecuencia y responsable definidos; los puntos de parada obligan a detener la actividad hasta obtener la conformidad \parencite[anexo~4]{muro2020}. La inspección comprende observar, verificar y documentar la conformidad con los documentos de construcción \parencite[sección~2.3, p.~43]{aci318_2025}. \\
+\addlinespace
+Liberación & Aprobación documentada de una partida, verificada con su protocolo, que autoriza la actividad siguiente; si no se aprueba, se observa, se corrige y se verifica de nuevo \parencite[pp.~62--64]{gudiel2020}. \\
+\addlinespace
+Trazabilidad & Capacidad de conocer la localización de un material colocado en la obra mediante una identificación registrada \parencite[anexo~4]{muro2020}. En las viguetas incluye la fecha de producción, el número de lote, la medida y la serie, y enlaza el producto con sus registros de producción y entrega \parencite[p.~117]{capcha2016}. \\
+\addlinespace
+Lote & Parte de la obra o conjunto de unidades de un material que se inspecciona y ensaya como una unidad según el PPI \parencite[anexo~4]{muro2020}. En el hormigón, la frecuencia mínima de muestreo se fija por día, por volumen y, en losas, por superficie \parencite[sección~26.12.2.1, p.~603]{aci318_2025}. \\
+\addlinespace
+Resistencia especificada ($f'_c$) & Resistencia a la compresión del hormigón usada en el diseño y evaluada según el código \parencite[sección~2.3, p.~38]{aci318_2025}, con ensayos de cilindros a los 28 días \parencite[sección~26.12.1.1, p.~601]{aci318_2025}. Las especificaciones de la obra fijan una resistencia característica de 250~kg/\cmdos{} \parencite[p.~3]{uatf_et}, que esta tesis toma como el $f'_c$ del H25. \\
+\addlinespace
+Asentamiento & Medida de la consistencia del hormigón fresco con el cono de Abrams (ASTM~C143): seca (0 a 25~mm), plástica (25 a 75~mm), blanda (75 a 100~mm) o fluida (100 a 150~mm); se recomienda la plástica compactada por vibrado \parencite[p.~9]{ucb2025et}. \\
+\addlinespace
+Carpeta de compresión & Capa de hormigón vaciado en obra sobre viguetas y complementos, de 5~cm en el sistema de viguetas simples \parencite[hoja~3]{concretec2018viguetas}, con malla de distribución (Figura~\ref{fig:corte}); la superficie rugosa de la vigueta garantiza su adherencia \parencite[p.~3]{uatf_et}. \\
+\addlinespace
+Vigueta pretensada & Elemento prefabricado de hormigón de alta resistencia y acero de pretensado que absorbe los esfuerzos de flexión de los nervios de una losa alivianada \parencite[hojas~1 y 2]{concretec2018viguetas}; se rige por la NB~997:2016 \parencite{nb997_2016}. \\
+\addlinespace
+Complemento & Bloque aligerante apoyado entre las viguetas; en la obra, de poliestireno expandido (plastoformo), ligero y resistente a la humedad \parencite[hoja~1]{concretec2016plastoformo}, que reduce el peso de la losa \parencite[hoja~3]{concretec2016plastoformo}. \\
+\addlinespace
+Apuntalamiento & Soporte provisional de las viguetas con puntales, colocado antes de montar los complementos para evitar deformaciones o la caída de la losa \parencite[hoja~3]{concretec2016plastoformo}; los puntales se retiran cuando las probetas curadas en obra alcanzan la resistencia requerida \parencite[sección~26.12.4.1, p.~604]{aci318_2025}. \\
+\addlinespace
+Índice de desperdicio de materiales (IDM) & Diferencia entre la cantidad consumida y la teórica de un material, en porcentaje de la teórica (ecuación~\ref{eq:idm-marco}), con base en \textcite[p.~9]{galarza2011} y \textcite[sección~2]{rossi2001}. \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaborado con base en las fuentes citadas. PPI: programa de puntos de inspección.}
+\endgroup

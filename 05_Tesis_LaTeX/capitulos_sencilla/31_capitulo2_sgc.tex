@@ -1,0 +1,784 @@
+% =====================================================================
+%  CAPÍTULO 2 (continuación). 2.6 DISEÑO DEL SISTEMA DE GESTIÓN DE LA
+%  CALIDAD: propuesta de la tesis (variable independiente X).
+%  Cada componente responde a una brecha del diagnóstico (B1 a B9) y se
+%  resume en la matriz de trazabilidad (Tabla tab:trazabilidad).
+%  Formatos completos: Anexo C (capitulos/91_anexo_instrumentos.tex).
+% =====================================================================
+\section{Diseño del Sistema de Gestión de la Calidad}
+\label{sec:diseno-sgc}
+
+Esta sección presenta la propuesta central de la tesis: el Sistema de Gestión de la Calidad (SGC) para el proceso constructivo de las losas alivianadas con viguetas pretensadas del Edificio de Posgrado. El sistema corresponde a la variable independiente ($X$) del modelo de investigación y se diseñó a partir de las brechas de la línea base, es decir, de la ejecución de la primera losa (41 paños; 1.109,84~\mdos{}) sin un sistema formal de gestión de la calidad (Sección~\ref{sec:analisis-documental}). Las nueve brechas que el sistema debe cerrar agrupan las 22 no conformidades del diagnóstico (Tabla~\ref{tab:nc}):
+
+\begin{enumerate}[label=\textbf{B\arabic*.},leftmargin=1.3cm]
+  \item \textbf{Hormigón sin control.} Ninguna probeta de la losa; las de columnas y vigas, elaboradas por la contratista, se ensayaron a 55--76 días y se «proyectaron» a 28 días \parencite{labuatf2025}; no hay registros de dosificación, asentamiento, vaciado ni curado \parencite[p.~76]{uatf2025pao2}. La losa se certificó para pago sin resultados de resistencia: los 28 días desde la autorización del vaciado (28/11/2025) vencían el 26/12/2025, después del cierre de la planilla N.\textsuperscript{o}~2 (08/12/2025) (cálculo propio).
+  \item \textbf{Evidencias pedidas o posteriores al uso.} La Supervisión tuvo que pedir garantías, roturas de probetas y dosificaciones \parencite[p.~9]{uatf2025pao2}. Los certificados de viguetas y de EPS, sin firma, son del 27/11/2025, con la losa en armado desde el 14/11/2025; el de viguetas no indica cantidad, lote ni ensayos; no hay certificado del acero $\phi$6 ni del $\phi$10 \parencite[pp.~80--86, 122]{uatf2025pao2}.
+  \item \textbf{Documentos incoherentes.} El complemento EPS mide 100~$\times$~50~$\times$~20~cm en la especificación técnica (ET), 0,15~m de altura en el Plano~02 y 20~$\times$~100~$\times$~44~cm en el certificado; la ET cita la CBH-87 y normas antiguas de cemento, áridos y agua \parencite[pp.~1--3]{uatf_et}.
+  \item \textbf{Cantidades sin conciliar.} Al cierre se descontaron 1.915,16~kg de acero ($-$3,65~\%); el acero de la losa figura 1,00 vez en la planilla N.\textsuperscript{o}~2 y «3~$\times$~4.171,18~kg» en el cómputo de cierre, y la ET del ítem~13 incluye la parrilla y los negativos: inconsistencias (posible doble cómputo) que deben verificar la Supervisión y la Fiscalización; el acumulado de acero difiere entre documentos (52.424,65; 50.509,49 y 50.561,84~kg) \parencites[pp.~19--20]{uatf2025pao2}{uatf_pao3}[p.~12]{uatf_item13}.
+  \item \textbf{Consumos sin registro.} No hay kardex, vales ni remisiones; se entregaron 2.350 piezas de EPS frente a $\approx$~2.220 teóricas, sin descontar nervios ni bordes \parencite{unicon2025}.
+  \item \textbf{Sin PPI ni liberación.} El 28/11/2025 la contratista pidió verificar el armado y la Supervisión autorizó el vaciado el mismo día, sin pedir probetas; las ocho solicitudes de vaciado del periodo se autorizaron en el día \parencite[pp.~114--125]{uatf2025pao2}. Las fotografías muestran la parrilla pisada y sin separadores visibles \parencite[p.~76]{uatf2025pao2}.
+  \item \textbf{Sin no conformidades ni costos de la calidad.} Ninguno de los 24 asientos del Libro de Órdenes registra una no conformidad o un retrabajo, y en ninguna hoja firma el Director de obra \parencite[pp.~114--125]{uatf2025pao2}.
+  \item \textbf{Suministro y precios.} Escasez de diésel, paralización de FANCESA, entrega del 30~\% del acero pedido, demoras por falta de combustible y falta de viguetas de los tamaños requeridos \parencites{fancesa2025,laslomas2025}[pp.~11, 123]{uatf2025pao2}; alza de precios reconocida por decretos de ajuste \parencite{ds5321_2025,ds5597_2026}.
+  \item \textbf{Clima.} Siete días de lluvia notificados entre septiembre y noviembre de 2025, tres durante el armado de vigas y losa \parencite[pp.~114--124]{uatf2025pao2}, y riesgo de heladas a 3.650~m~s.~n.~m.
+\end{enumerate}
+
+El diseño se desarrolla en diez bloques: enfoque y estructura del sistema (Sección~\ref{sec:sgc-enfoque}); contexto y alcance (Sección~\ref{sec:sgc-contexto}); liderazgo (Sección~\ref{sec:sgc-liderazgo}); planificación (Sección~\ref{sec:sgc-planificacion}); apoyo (Sección~\ref{sec:sgc-apoyo}); operación (Sección~\ref{sec:sgc-operacion}); evaluación del desempeño (Sección~\ref{sec:sgc-evaluacion}); mejora (Sección~\ref{sec:sgc-mejora}); costos de la calidad (Sección~\ref{sec:sgc-costos}), y matriz de trazabilidad entre brechas, requisitos, componentes e indicadores (Sección~\ref{sec:sgc-trazabilidad}). Los formatos para aplicar el sistema en obra se presentan completos en el Anexo~\ref{anx:instrumentos}.
+
+% ---------------------------------------------------------------------
+\subsection{Enfoque y estructura del sistema}
+\label{sec:sgc-enfoque}
+
+El SGC propuesto es un \emph{sistema de gestión de la calidad del proyecto}: no busca certificar a una empresa, sino asegurar que la ejecución del ítem~13 en los 2.234,60~\mdos{} pendientes cumpla los requisitos con el menor desperdicio posible. Por ello se concreta en un \emph{plan de la calidad del ítem}, elaborado con las directrices de la norma ISO~10005:2018 para planes de la calidad de un proyecto o contrato específico \parencite{iso10005_2018}, y organizado sobre la estructura de cláusulas 4 a 10 de la norma ISO~9001:2026 \parencite{iso9001_2026}. Cada cláusula se desarrolla en un bloque: contexto (4) en la Sección~\ref{sec:sgc-contexto}; liderazgo (5) en la \ref{sec:sgc-liderazgo}; planificación (6) en la \ref{sec:sgc-planificacion}; apoyo (7) en la \ref{sec:sgc-apoyo}; operación (8) en la \ref{sec:sgc-operacion}; evaluación del desempeño (9) en la \ref{sec:sgc-evaluacion}; y mejora (10) en las \ref{sec:sgc-mejora} y \ref{sec:sgc-costos}. Los números de cláusula citados corresponden a la estructura que la edición de 2026 conserva de la de 2015; las descripciones de los requisitos son paráfrasis del autor y no reproducen el texto de la norma. \pendiente{contrastar cada referencia de cláusula con la NB/ISO~9001:2026 adquirida en IBNORCA \parencite{ibnorca9001_2026}.}
+
+El sistema lo aplica la empresa que ejecute la segunda y la tercera losa, que es quien compra, almacena, coloca y vacía los materiales; la UATF, por medio de la Supervisión y la Fiscalización, lo exige, lo aprueba y verifica su cumplimiento. Por ello se recomienda incorporar el plan de la calidad, el plan de puntos de inspección y ensayo (PPI) y los formatos del Anexo~\ref{anx:instrumentos} en las especificaciones del documento base de contratación del saldo de la obra, para que su cumplimiento sea una obligación contractual. El sistema funciona según el ciclo Planificar--Hacer--Verificar--Actuar (PHVA), aplicado a cada paño y a cada losa (Figura~\ref{fig:phva}); como la segunda y la tercera losa repiten la geometría de la primera, cada vuelta del ciclo aprovecha las lecciones de la anterior.
+
+\begin{figure}[H]
+\centering
+\caption{Ciclo PHVA aplicado a la ejecución de la losa alivianada}
+\label{fig:phva}
+\begin{tikzpicture}[
+  fase/.style={draw, rounded corners=3pt, thick, align=left, text width=5.9cm,
+               minimum height=3.1cm, font=\footnotesize, inner sep=5pt},
+  extremo/.style={draw, rounded corners=2pt, align=center, text width=12.6cm,
+               font=\footnotesize, fill=gray!8, inner sep=4pt},
+  flecha/.style={-{Stealth[length=3mm]}, very thick, black!70}]
+  \node[fase, fill=blue!6]   (P) at (-4.1, 2.45)  {\textbf{P --- Planificar} (cláusulas 4 a 7)\\[2pt]
+     -- Contexto, partes interesadas y alcance\\
+     -- Política, objetivos e indicadores (IDM, \%CNC)\\
+     -- Riesgos de suministro, precios y clima\\
+     -- Plan de la calidad, PPI y procedimientos\\
+     -- Capacitación del personal};
+  \node[fase, fill=green!7]  (H) at (4.1, 2.45)   {\textbf{H --- Hacer} (cláusula 8)\\[2pt]
+     -- Compra y recepción de materiales (PCM-01)\\
+     -- Almacén y despacho por paño (PCM-02, PCM-03)\\
+     -- Apuntalamiento, viguetas, EPS y armado\\
+     -- Vaciado, muestreo y curado del hormigón\\
+     -- Registro en fichas y vales};
+  \node[fase, fill=orange!9] (V) at (4.1, -2.45)  {\textbf{V --- Verificar} (cláusula 9)\\[2pt]
+     -- Liberación del paño en los puntos de espera\\
+     -- Conciliación de cantidades (PCM-04)\\
+     -- Ensayos a 28 días (ACI~318-25)\\
+     -- Indicadores, auditoría y revisión mensual\\
+     -- Conciliación con la planilla de avance};
+  \node[fase, fill=red!6]    (A) at (-4.1, -2.45) {\textbf{A --- Actuar} (cláusula 10)\\[2pt]
+     -- No conformidades y acción correctiva\\
+     -- Análisis de causas (5 porqués, Ishikawa)\\
+     -- Costos de la calidad (modelo PAF)\\
+     -- Ajuste de metas y procedimientos\\
+     -- Lecciones aprendidas para la losa siguiente};
+  \node[circle, draw, very thick, fill=white, align=center, minimum size=2.0cm,
+        font=\scriptsize] (C) at (0,0) {\textbf{Liderazgo}\\(cláusula 5)\\política de\\la calidad};
+  \draw[flecha] (P.east) -- (H.west);
+  \draw[flecha] (H.south) -- (V.north);
+  \draw[flecha] (V.west) -- (A.east);
+  \draw[flecha] (A.north) -- (P.south);
+  \node[extremo, above=0.45cm of $(P.north)!0.5!(H.north)$] (E)
+     {\textbf{Entradas:} requisitos de la UATF y de las partes interesadas (contrato, ET, planos 01 a 03, certificados, ACI~318-25, NB~997) y brechas de la primera losa (B1 a B9)};
+  \node[extremo, below=0.45cm of $(A.south)!0.5!(V.south)$] (S)
+     {\textbf{Salidas:} paños liberados y losa conforme; cantidades conciliadas, medidas y pagadas sin diferencias; menor desperdicio y menor costo unitario};
+  \draw[flecha] (E.south) -- ++(0,-0.4);
+  \draw[flecha] ($(S.north)+(0,0.4)$) -- (S.north);
+\end{tikzpicture}
+\nota{Elaboración propia. IDM: índice de desperdicio de materiales; \%CNC: costo de no calidad en porcentaje del costo del ítem; PCM: procedimiento de control de materiales; PAF: prevención, evaluación y fallas.}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Contexto, partes interesadas, alcance y exclusiones}
+\label{sec:sgc-contexto}
+
+\textbf{Cuestiones externas e internas.} Las cuestiones externas pertinentes son la escasez de combustible, que paralizó temporalmente la producción de cemento y retrasó la entrega del acero \parencite{fancesa2025,laslomas2025}; el alza de precios de los materiales \parencite{ds5597_2026}; la falta de viguetas de los tamaños requeridos \parencite[p.~11]{uatf2025pao2}; el clima, con lluvias y bajas temperaturas, coherente con la atención que la edición vigente de la norma presta al cambio climático \parencite{iso9001_2026}; y la normativa de contratación pública. Las internas son la ausencia de registros de consumos, de inspección y de no conformidades; la dependencia de la experiencia del capataz; la información técnica incoherente; y el cambio de contratista para el saldo de la obra. Estas cuestiones se traducen en los riesgos de la Tabla~\ref{tab:riesgos}.
+
+\textbf{Requisitos contractuales.} El contrato fija reglas que el SGC operativiza: los materiales se inspeccionan y ensayan antes de su incorporación, a costa de la contratista (cláusula 26.6), y se acopian en zonas aprobadas (26.9); el control de calidad es responsabilidad directa de la Supervisión (26.3); cada orden del Libro de Órdenes lleva la constancia firmada del Director de obra (25.ª); y las obras se miden netas, sin medir excedentes no aprobados por escrito (27.ª) \parencite[pp.~99--102]{uatf2025pao2}. Como los precios unitarios incluyen las reparaciones por trabajos defectuosos \parencite[p.~92]{uatf2025pao2}, el desperdicio y el retrabajo los absorbe la contratista, que tiene así un incentivo directo para aplicar el sistema.
+
+\textbf{Partes interesadas.} La Tabla~\ref{tab:partes-interesadas} identifica a las partes interesadas pertinentes, sus necesidades y expectativas y el requisito que cada una genera para el SGC.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{3.2cm}P{5.6cm}P{6.9cm}@{}}
+\caption{Partes interesadas, necesidades y requisitos para el SGC}\label{tab:partes-interesadas}\\
+\toprule
+\textbf{Parte interesada} & \textbf{Necesidades y expectativas} & \textbf{Requisito que genera para el SGC} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Parte interesada} & \textbf{Necesidades y expectativas} & \textbf{Requisito que genera para el SGC} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+UATF (propietaria; Departamento de Infraestructura) & Losa conforme a la ET y a los planos, en plazo y dentro del presupuesto; pagar solo lo ejecutado; uso transparente de recursos del IDH & Liberación documentada de cada paño; conciliación de cantidades antes de cada planilla; informe mensual de calidad \\
+Fiscal de obra (UATF) & Control del avance físico y financiero y de las modificaciones del contrato & Trazabilidad de cantidades desde el plano hasta el pago; cambios documentados y aprobados antes de ejecutarse \\
+Supervisor de obra & Verificar el trabajo antes de cada vaciado; contar con certificados, dosificaciones y ensayos sin tener que pedirlos (B2) & Puntos de espera del PPI; expediente de calidad al día; muestreo del hormigón por personal independiente de la producción \\
+Contratista (Director de obra y personal) & Ejecutar sin retrabajos, paralizaciones ni descuentos; reglas de aceptación claras; cobro oportuno & Criterios de aceptación definidos de antemano; formatos simples; control del desperdicio, que es ahorro propio \\
+Proyectista estructural (por medio de la UATF) & Que la losa se ejecute según el diseño: altura del complemento, armaduras, recubrimientos y apoyos & Consulta técnica y aprobación de los cambios; resolución de la discrepancia del complemento EPS (B3) \\
+Proveedores de viguetas y de complementos (PRETENSA, UNICON) & Pedidos exactos por tipo, longitud y cantidad; manipulación y montaje según sus instrucciones & Pedido por paño según el Plano~03; recepción con criterios conocidos; cumplimiento de los pasos de montaje que exige el fabricante \parencite[p.~8]{uatf_item13} \\
+Proveedores de acero, cemento y áridos & Pedidos programados; condiciones de entrega en un mercado con escasez de combustible & Plan de compras anticipado y existencia mínima; certificado por colada (acero) y por lote (cemento) \\
+Laboratorio de ensayos & Muestras representativas, bien elaboradas, identificadas y curadas & Muestreo según ASTM~C172 y C31 por técnico competente; codificación de probetas por paño y vaciado \\
+Usuarios del edificio (comunidad de posgrado) & Estructura segura y durable, sin fisuras ni flechas excesivas & Aceptación del hormigón según ACI~318-25; curado y desapuntalamiento controlados \\
+Órganos de control gubernamental y sociedad & Uso transparente y verificable de recursos públicos & Registros auditables y comportamiento ético en la medición y el pago de cantidades \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia con base en los documentos del caso \parencite{uatf2025pao2,uatf_item13,uatf_et}. B2 y B3: brechas de la línea base.}
+\endgroup
+
+\textbf{Alcance y exclusiones.} El SGC comprende la planificación, el abastecimiento (compra, recepción, almacenamiento y despacho), la ejecución (apuntalamiento, viguetas y complementos, nervios, armaduras, instalaciones embebidas, hormigonado, curado y desapuntalamiento), el control de calidad (inspección, ensayos y liberación) y la medición, conciliación y pago del ítem~13 en la segunda y la tercera losa: 2.234,60~\mdos{}, $\approx$~1.117,30~\mdos{} por losa \parencite{uatf_pao3}. Incluye todo el acero colocado en la losa (parrilla, nervios y negativos), se pague por el ítem~8 o por el 13, para no dejar vacíos entre ítems (B4), y el muestreo de cada vaciado completo, incluidas las vigas que se vacían monolíticamente con la losa \parencite[p.~3]{uatf_et}. Se excluyen el diseño estructural (diseño y desarrollo, cláusula 8.3), que corresponde al proyectista de la UATF y del que el SGC solo gestiona las consultas y los cambios; la fabricación de viguetas y complementos, que se controla como suministro externo mediante certificados e inspección de recepción; y los demás ítems de la obra. Estas exclusiones no afectan la capacidad del sistema para asegurar la conformidad de la losa.
+
+% ---------------------------------------------------------------------
+\subsection{Liderazgo: política de la calidad, organización y responsabilidades}
+\label{sec:sgc-liderazgo}
+
+\textbf{Política de la calidad del proyecto.} La política expresa el compromiso de la dirección de obra y sirve de marco para los objetivos de la Sección~\ref{sec:sgc-planificacion}. Se propone el siguiente texto, que debe firmar el Director de obra, contar con el visto bueno de la Supervisión y exhibirse en la oficina y en el almacén de la obra:
+
+\begin{center}
+\fcolorbox{gray!60}{gray!6}{\parbox{0.92\linewidth}{\setstretch{1.15}\small
+\textbf{Política de la calidad de la ejecución de las losas alivianadas del Edificio de Posgrado (UATF)}\par\smallskip
+La dirección de obra se compromete a:
+\begin{enumerate*}[label=(\arabic*)]
+  \item ejecutar cada paño conforme a los planos aprobados, a las especificaciones técnicas y al código ACI~318-25, sin vaciar ningún paño que no haya sido liberado;
+  \item controlar cada material desde la compra hasta su colocación, para consumir y pagar solo lo necesario y reducir el desperdicio;
+  \item medir y cobrar las cantidades con evidencia verificable, con honestidad y transparencia en el uso de los recursos públicos;
+  \item anticipar los riesgos de suministro, de precios y de clima;
+  \item registrar, corregir y analizar las no conformidades para mejorar de forma continua; y
+  \item capacitar al personal y comunicar oportunamente la información de la calidad a la Supervisión y a la Fiscalización.
+\end{enumerate*}}}
+\end{center}
+
+\textbf{Organización.} En la contratista, el Director de obra es el responsable del SGC: aprueba el plan, asigna los recursos y preside la revisión mensual; el Residente de obra actúa como encargado de calidad (en una obra de este tamaño, con tiempo asignado para inspeccionar, registrar y conciliar); el Almacenero administra el kardex y los vales; y el Capataz dirige a los armadores y ejecuta el autocontrol. Por la UATF, el Supervisor de obra verifica y libera los paños, y el Fiscal de obra controla el contrato, las planillas y las modificaciones. El laboratorio y los proveedores son externos; el laboratorio entrega los informes de ensayo a la Supervisión y a la contratista \parencite[sección 26.12.1.1, p.~602]{aci318_2025}.
+
+\textbf{Matriz de responsabilidades.} La Tabla~\ref{tab:raci} asigna las responsabilidades con la notación RACI: \textbf{R}, ejecuta la actividad; \textbf{A}, aprueba y rinde cuentas por ella (una sola por actividad); \textbf{C}, es consultado antes de decidir; e \textbf{I}, es informado del resultado.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{6.1cm}*{8}{Q{0.98cm}}@{}}
+\caption{Matriz de responsabilidades (RACI) del SGC del ítem losa alivianada}\label{tab:raci}\\
+\toprule
+\textbf{Actividad} & \textbf{DO} & \textbf{RC} & \textbf{AL} & \textbf{CA} & \textbf{LB} & \textbf{SU} & \textbf{FI} & \textbf{PR} \\
+\midrule
+\endfirsthead
+\multicolumn{9}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Actividad} & \textbf{DO} & \textbf{RC} & \textbf{AL} & \textbf{CA} & \textbf{LB} & \textbf{SU} & \textbf{FI} & \textbf{PR} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1. Elaborar el plan de la calidad, el PPI y los procedimientos & A & R & C & C & C & I & I & -- \\
+2. Revisar y aprobar el plan de la calidad, el PPI y la dosificación del hormigón & I & C & -- & -- & C & A & I & -- \\
+3. Planificar las compras y evaluar a los proveedores & A & R & C & -- & -- & I & -- & C \\
+4. Recibir, inspeccionar, almacenar y registrar materiales (PCM-01 y PCM-02) & I & A & R & -- & -- & I & -- & C \\
+5. Despachar materiales por paño con vales (PCM-03) & -- & A & R & R & -- & -- & -- & -- \\
+6. Ejecutar apuntalamiento, viguetas, EPS, armado e instalaciones & I & A & -- & R & -- & I & -- & C \\
+7. Inspeccionar y liberar el paño en los puntos de espera & I & R & -- & C & -- & A & I & -- \\
+8. Dosificar, mezclar, vaciar, vibrar y curar el hormigón; desapuntalar & I & A & C & R & C & I & -- & -- \\
+9. Muestrear el hormigón, elaborar y ensayar las probetas e informar & I & C & -- & -- & R & A & I & -- \\
+10. Conciliar cantidades por paño y por planilla (PCM-04) & A & R & C & C & -- & C & I & -- \\
+11. Revisar y aprobar la planilla de avance & C & C & -- & -- & -- & R & A & -- \\
+12. Tratar el material no conforme y las no conformidades (PCM-05; acción correctiva) & A & R & C & C & C & C & I & C \\
+13. Registrar los costos de la calidad (PAF) & A & R & C & -- & -- & -- & I & -- \\
+14. Atender consultas técnicas (p.~ej., complemento EPS) & C & R & -- & -- & -- & A & I & C \\
+15. Aprobar órdenes de cambio o modificaciones con efecto en cantidades o monto & C & C & -- & -- & -- & R & A & -- \\
+16. Reunión semanal de calidad y revisión mensual & A & R & C & C & -- & C & I & -- \\
+17. Auditoría interna simplificada & A & C & C & C & -- & R & I & -- \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. DO: Director de obra; RC: Residente de obra y encargado de calidad; AL: Almacenero; CA: Capataz y armadores; LB: laboratorio de ensayos; SU: Supervisor de obra; FI: Fiscal de obra; PR: proveedores. En la auditoría interna, el responsable de ejecutarla (R) puede ser el Supervisor o un profesional independiente del proceso auditado, designado de común acuerdo.}
+\endgroup
+
+% ---------------------------------------------------------------------
+\subsection{Planificación: riesgos, oportunidades y objetivos de la calidad}
+\label{sec:sgc-planificacion}
+
+\textbf{Método de valoración de riesgos.} Cada riesgo del proceso de la losa se valoró con una probabilidad $P$ y un impacto $I$ en una escala de tres niveles. La probabilidad es baja (1) si no hay antecedentes en la obra, media (2) si el hecho es posible por las condiciones de la obra y alta (3) si ya ocurrió en la primera losa o en el periodo de ejecución. El impacto es bajo (1) si solo genera una corrección menor, medio (2) si causa desperdicio, retrabajo o un retraso de días, y alto (3) si compromete la seguridad estructural, el pago correcto de cantidades o la continuidad de la obra. El nivel de riesgo es $N = P \times I$: bajo de 1 a 2, medio de 3 a 4 y alto de 6 a 9. Todo riesgo alto debe tener un control obligatorio en un procedimiento o en el PPI, un indicador y un responsable. La Tabla~\ref{tab:riesgos} presenta la matriz resultante.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{0.75cm}P{3.25cm}P{3.85cm}Q{0.45cm}Q{0.45cm}Q{0.6cm}P{5.75cm}@{}}
+\caption{Matriz de riesgos del proceso constructivo de la losa alivianada}\label{tab:riesgos}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Riesgo} & \textbf{Causa o evidencia} & \textbf{$P$} & \textbf{$I$} & \textbf{$N$} & \textbf{Control del SGC (respuesta)} \\
+\midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Riesgo} & \textbf{Causa o evidencia} & \textbf{$P$} & \textbf{$I$} & \textbf{$N$} & \textbf{Control del SGC (respuesta)} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+R1 & Hormigón de la losa sin verificación de su resistencia & Sin probetas de la losa; ensayos tardíos y no independientes; losa certificada sin resultados (B1) & 3 & 3 & 9 & Plan de muestreo según ACI~318-25 (Tabla~\ref{tab:muestreo}) a cargo del laboratorio; ensayo a 28 días; pago condicionado a los resultados \\
+R2 & Dosificación no aprobada o variable & Dosificaciones pedidas por la Supervisión (B2) & 3 & 3 & 9 & Dosificación aprobada antes del primer vaciado; cajones calibrados; asentamiento; bolsas de cemento por vaciado \\
+R3 & Materiales sin certificado o no conformes en la obra & Certificados sin firma ni lote y posteriores a la colocación; sin certificado del $\phi$6 ni del $\phi$10 (B2) & 3 & 3 & 9 & PCM-01 y PCM-05: recepción antes de colocar; certificado por lote y por diámetro \\
+R4 & Viguetas fisuradas o EPS roto por manipuleo, acopio, apuntalamiento o tránsito & Prácticas observadas en el medio boliviano \parencite[pp.~122, 137--138]{alcon2009} & 2 & 3 & 6 & Acopio sobre listones; punto de espera del apuntalamiento; pasarelas de tránsito; inspección de fisuras \\
+R5 & Decisiones basadas en documentos incoherentes u obsoletos & Tres geometrías del EPS; ET desactualizada (B3) & 3 & 2 & 6 & Lista maestra; consulta técnica antes de comprar el EPS; ET actualizada \\
+R6 & Pago de cantidades no ejecutadas o computadas dos veces & Acero de la losa computado 1,00 vez en la planilla N.\textsuperscript{o}~2 y 3 veces al cierre; descuento de 3,65~\% (B4) & 2 & 3 & 6 & PCM-04 con umbrales de alerta; registro único de cantidades; revisión cruzada de los ítems 8 y 13 \\
+R7 & Desperdicio de materiales no medido & Sin kardex ni vales; EPS entregado $\approx$~6~\% sobre lo teórico (B5) & 3 & 2 & 6 & PCM-03 y PCM-04; metas de $IDM$; despiece y prearmado del acero \\
+R8 & Paño vaciado con defectos de armado, recubrimiento o instalaciones & Sin PPI; parrilla pisada y sin separadores visibles (B6) & 3 & 3 & 9 & Puntos de espera; separadores y pasarelas; ficha C.2 firmada por la Supervisión antes de vaciar \\
+R9 & Desabastecimiento de cemento, acero o viguetas y alza de precios & Escasez de diésel; FANCESA paralizada; 30~\% del acero entregado; falta de viguetas; decretos de ajuste (B8) & 3 & 3 & 9 & Plan de compras anticipado; existencia mínima como condición de liberación; proveedores alternos; pedido de viguetas por paño con plazos confirmados \\
+R10 & Lluvia durante el vaciado o el curado temprano & Siete días de lluvia notificados en 2025 (B9) & 2 & 2 & 4 & Pronóstico del SENAMHI; cobertores; juntas de construcción planificadas \\
+R11 & Helada durante el vaciado o el curado & Bajas temperaturas a 3.650~m~s.~n.~m. (B9) & 2 & 3 & 6 & Plan de hormigonado en tiempo frío; registro de temperaturas; agua a más de 5~$^{\circ}$C; curado controlado \\
+R12 & Desapuntalamiento prematuro & Sin criterio documentado en la primera losa & 2 & 3 & 6 & Plazo mínimo y cilindros curados en obra; punto de espera \\
+R13 & Personal sin competencia en el sistema o rotación & Cambio de contratista; dependencia de la experiencia del capataz & 2 & 2 & 4 & Programa de capacitación (Sección~\ref{sec:sgc-apoyo}); instrucciones impresas en los formatos \\
+R14 & Cambio de diseño sin registro & Modificaciones estructurales por falta de viguetas, sin detalle de lo modificado (B8) & 2 & 3 & 6 & Gestión de cambios: consulta técnica aprobada y documentos actualizados \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. $P$: probabilidad; $I$: impacto; $N = P \times I$ (bajo: 1--2; medio: 3--4; alto: 6--9). La valoración es cualitativa y se basa en la evidencia de la línea base; debe revisarse en la reunión de inicio de obra. B1 a B9: brechas de la línea base.}
+\endgroup
+
+\textbf{Oportunidades.} El análisis también identificó oportunidades que el sistema debe aprovechar:
+\begin{enumerate*}[label=(\alph*)]
+  \item el despiece previo y el prearmado del acero, con los que \textcite[p.~75]{galarza2011} obtuvo un desperdicio final de 4,04~\% frente al 7~\% previsto en el presupuesto, y con los que \textcite[p.~192]{chino2024} redujeron el desperdicio de 14,58~\% a 8,94~\% y de 17,09~\% a 6,71~\% en dos edificaciones;
+  \item el pedido de viguetas a medida por paño, porque la segunda y la tercera losa repiten la geometría de la primera y el Plano~03 ya define el número y la longitud de las viguetas;
+  \item el uso de los 41 paños de la primera losa como plantilla para comparar paño por paño las cantidades teóricas y reales; y
+  \item la limitación del volumen adicional de hormigón por vaciado, medida con la que \textcite[p.~73]{galarza2011} bajó el desperdicio de hormigón a 2,8~\%.
+\end{enumerate*}
+
+\textbf{Objetivos de la calidad.} Los objetivos de la Tabla~\ref{tab:objetivos} son medibles y tienen meta, frecuencia y responsable; se calculan con las ecuaciones de la Sección~\ref{sec:variables}. Las metas de desperdicio se fundamentan en la literatura: para el hormigón, $IDM \leq 3$~\%, porque \textcite[p.~73]{galarza2011} obtuvo 2,8~\% al limitar el volumen adicional de los pedidos al 2~\% y \textcite[pp.~33, 69]{rojas2018} reportan desperdicios previstos de 3 a 6~\% en placas y muros, frente a pérdidas reales de 9~\% en las placas sin control; para el acero, $IDM \leq 4$~\%, valor logrado con prearmado (4,04~\%) y con acero predimensionado (3,75~\%) \parencite[pp.~75--76]{galarza2011}. Para las viguetas, fabricadas a medida, la meta es $IDM \leq 1$~\% (toda vigueta rota es una no conformidad), y para el EPS, $IDM \leq 3$~\%, la mitad del exceso bruto preliminar de la línea base, a recalibrar con el Plano~03. Estas dos últimas metas son supuestos del autor, a validar por juicio de expertos. Las metas son de gestión; la evaluación \emph{ex ante} modela sus parámetros por separado (Sección~\ref{sec:modelo-simulacion}).
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{0.85cm}P{3.1cm}P{4.4cm}P{2.5cm}P{1.75cm}P{2.45cm}@{}}
+\caption{Objetivos de la calidad, indicadores y metas del SGC}\label{tab:objetivos}\\
+\toprule
+\textbf{Cód.} & \textbf{Objetivo e indicador} & \textbf{Fórmula} & \textbf{Meta} & \textbf{Frecuencia} & \textbf{Fuente y responsable} \\
+\midrule
+\endfirsthead
+\multicolumn{6}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Cód.} & \textbf{Objetivo e indicador} & \textbf{Fórmula} & \textbf{Meta} & \textbf{Frecuencia} & \textbf{Fuente y responsable} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+OC1 & Reducir el desperdicio de hormigón: $IDM_H$ & Ecuación~\eqref{eq:idm} con el volumen producido (pastones $\times$ rendimiento) frente al volumen teórico & $\leq 3$~\% & Cada vaciado & C.4; RC \\
+OC2 & Reducir el desperdicio de acero: $IDM_A$ & Ecuación~\eqref{eq:idm} con los kg despachados menos los devueltos frente a los kg de planos & $\leq 4$~\% & Cada paño y planilla & C.4; RC y AL \\
+OC3 & Reducir el desperdicio de viguetas: $IDM_V$ & Ecuación~\eqref{eq:idm} en metros lineales por tipo de vigueta & $\leq 1$~\% & Cada paño & C.4; RC \\
+OC4 & Reducir el desperdicio de complementos: $IDM_{EPS}$ & Ecuación~\eqref{eq:idm} en piezas (equivalentes a pieza entera) & $\leq 3$~\% & Cada paño & C.4; RC \\
+OC5 & Asegurar materiales conformes: $\%LC$ & (lotes incorporados con recepción aceptada / lotes incorporados) $\times$ 100 & 100~\% & Cada entrega & C.3; AL y RC \\
+OC6 & Liberar los paños antes del vaciado: $\%PL$ & (paños liberados antes de vaciar / paños vaciados) $\times$ 100 & 100~\% & Cada vaciado & C.2; RC y SU \\
+OC7 & Asegurar la resistencia del hormigón: $\%EC$ & (ensayos conformes con la sección 26.12.3.1 / ensayos realizados) $\times$ 100; todo promedio móvil de tres ensayos $\geq f'_c$ & 100~\%; todo ensayo a 28 días & Cada ensayo & Informe del laboratorio; SU \\
+OC8 & Cumplir el plan de muestreo: $\%M$ & (ensayos realizados / $n_{\text{mín}}$) $\times$ 100, con $n_{\text{mín}}$ de la ecuación~\eqref{eq:nensayos} & 100~\% & Cada losa & Planilla de muestreo; LB y SU \\
+OC9 & Cerrar a tiempo las no conformidades: $\%NC_7$ & (NC cerradas en 7 días o menos / NC registradas) $\times$ 100 & $\geq 90$~\%; ninguna NC abierta en un paño que se vaciará & Semanal & C.5; RC \\
+OC10 & Conciliar las cantidades antes de cobrar: $\%CC$ & (ítems conciliados dentro de la tolerancia / ítems de la planilla) $\times$ 100 & 100~\% & Cada planilla & C.4; RC y SU \\
+OC11 & Reducir el costo de no calidad: $\%CNC$ & Ecuación~\eqref{eq:cnc} & $\leq 50$~\% del valor de la línea base; retrabajos $\leq 1$~\% del costo del ítem & Mensual & C.6; RC y DO \\
+OC12 & Reducir el costo unitario de la losa: $r$ & Ecuación~\eqref{eq:reduccion} & $\geq 5$~\% & Cada losa & C.6 y planillas; DO \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. Metas de desperdicio de hormigón y acero con base en \textcite[pp.~73--76]{galarza2011} y \textcite[pp.~33, 69]{rojas2018}; meta de retrabajos con base en \textcite[p.~20]{alvarez2014}, quien estima que un sistema de gestión de la calidad lleva el costo de los reprocesos a un promedio del 1~\% del valor del contrato; la meta de OC12 corresponde a la hipótesis de la investigación. RC: Residente y encargado de calidad; AL: Almacenero; SU: Supervisor; LB: laboratorio; DO: Director de obra; NC: no conformidad.}
+\endgroup
+
+\textbf{Planificación de los cambios.} Todo cambio que afecte a la losa (material, proveedor, dosificación, geometría o procedimiento) se evalúa y se aprueba antes de ejecutarse, con el procedimiento de gestión de cambios de la Sección~\ref{sec:sgc-operacion}.
+
+% ---------------------------------------------------------------------
+\subsection{Apoyo: recursos, competencia, información documentada y comunicación}
+\label{sec:sgc-apoyo}
+
+\textbf{Recursos.} Además de las personas con tiempo asignado (Sección~\ref{sec:sgc-liderazgo}), el sistema requiere almacenamiento y equipos de medición. El cemento se guarda techado, sobre tarimas y en pilas de no más de 10 bolsas \parencite[p.~1]{uatf_et}, y el cemento y los áridos se protegen del deterioro y la contaminación \parencite[sección 26.5.1.1, p.~578]{aci318_2025}; las viguetas se acopian sobre una superficie plana, en listones alineados separados no más de 2~m y con las piezas más largas abajo \parencite[pp.~122--123]{alcon2009}; el EPS se protege del viento, del sol y del fuego; y el acero se acopia sobre durmientes, bajo cubierta y clasificado por diámetro y colada. Los equipos son: cono de Abrams (ASTM~C143); moldes de 15~$\times$~30~cm (ASTM~C31) para un día de vaciado; termómetros para el hormigón y de máxima y mínima; balanza de 0,01~kg para la densidad del EPS y el pesaje de barras; flexómetro y calibrador; cajones dosificadores calibrados; y nivel para el apuntalamiento. Cada equipo se verifica antes de su primer uso. Los ensayos de aceptación los hace un laboratorio que cumpla la norma ASTM~C1077, y el hormigón fresco y las probetas están a cargo de técnicos certificados \parencite[sección 26.12.1.1, pp.~601--602]{aci318_2025}.
+
+\textbf{Competencia, capacitación y toma de conciencia.} La competencia se asegura con tres charlas breves, prácticas y registradas con lista de asistencia, previas a las actividades que controlan: (1) \emph{el SGC de la losa} ---política, objetivos, responsabilidades, PPI y puntos de espera, formatos, no conformidades y Libro de Órdenes---, para todo el personal y la Supervisión, antes del inicio de la losa (2~h, con evaluación breve); (2) \emph{materiales} ---recepción, acopio y manipulación de viguetas y EPS, despiece y prearmado del acero, vales y kardex, medición y reducción del desperdicio---, para el Almacenero, el Capataz y los armadores, antes del primer paño (2~h, con práctica de recepción) \parencite[pp.~122--138]{alcon2009}; y (3) \emph{hormigón} ---dosificación, asentamiento, muestreo y probetas, vaciado por franjas, vibrado, curado y tiempo frío---, para el Capataz, el operador de la mezcladora, el personal de vaciado y el técnico de muestreo, antes del primer vaciado (2~h, con demostración del cono y de las probetas). Su eficacia se verifica observando la primera ejecución de cada actividad, y la charla se repite si una no conformidad revela falta de competencia. La política exhibida en obra y la explicación a cada cuadrilla de cómo su trabajo afecta a la seguridad y al costo refuerzan la toma de conciencia.
+
+\textbf{Información documentada.} Cada documento lleva código, versión y fecha; lo revisa el encargado de calidad y lo aprueba el Director de obra o, si afecta al contrato, la Supervisión. En obra solo circulan copias vigentes. Los registros se archivan en físico y en digital, por losa y por paño, al menos hasta la recepción definitiva; los de inspección del hormigón, al menos dos años después de concluido el proyecto \parencite[sección 26.13.2.1, p.~610]{aci318_2025}. La Tabla~\ref{tab:lista-maestra} es la lista maestra inicial.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{1.7cm}P{6.2cm}P{1.9cm}P{2.3cm}P{3.3cm}@{}}
+\caption{Lista maestra de documentos del SGC del ítem losa alivianada}\label{tab:lista-maestra}\\
+\toprule
+\textbf{Código} & \textbf{Documento} & \textbf{Origen} & \textbf{Aprueba} & \textbf{Estado inicial} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Código} & \textbf{Documento} & \textbf{Origen} & \textbf{Aprueba} & \textbf{Estado inicial} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+PC-01 y PPI-01 & Plan de la calidad del ítem~13 y plan de puntos de inspección y ensayo (Tabla~\ref{tab:ppi}) & Interno & DO y SU & Versión 0, para aprobación \\
+PCM, PHC, PNC y PCC & Procedimientos de control de materiales (PCM-01 a 05), de control del hormigón (PHC-01), de no conformidades (PNC-01) y de costos de la calidad (PCC-01) & Interno & DO; SU para el PHC-01 & Versión 0 \\
+C.1 a C.8 & Formatos y registros (Anexo~\ref{anx:instrumentos}) & Interno & DO & Versión 0 \\
+PL-01 a 03 & Planos 01 (geometría), 02 (sección y detalles) y 03 (cantidad de viguetas) & Externo (UATF) & Proyectista y SU & Plano~02 en revisión (complemento EPS) \\
+ET-13 & Especificaciones técnicas de hormigones y de la losa alivianada & Externo (UATF) & UATF & En actualización \\
+CERT y DOS-01 & Certificados de viguetas, EPS, acero (por colada) y cemento (por lote); dosificación del H25 & Externo & RC; SU & Con cada entrega; dosificación antes del primer vaciado \\
+MAN-01 & Instrucciones de montaje del fabricante de viguetas & Externo & -- & \pendiente{solicitar al fabricante} \\
+NOR & ACI~CODE-318-25; NB~997:2016; NB~1225001-1:2017; ASTM~C31, C39, C143 y C172 & Externo & -- & Consulta en obra \\
+LO & Libro de Órdenes de la obra & Registro contractual & SU y DO & En uso \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. DO: Director de obra; SU: Supervisor de obra; RC: Residente y encargado de calidad.}
+\endgroup
+
+\textbf{Resolución de la discrepancia del complemento EPS (B3).} La geometría del complemento define la altura de la losa, el volumen de hormigón por \mdos{} y las piezas que se deben comprar, por lo que la discrepancia se resuelve antes de comprar el EPS de la segunda losa:
+\begin{enumerate*}[label=(\arabic*)]
+  \item el encargado de calidad registra en el Libro de Órdenes una consulta técnica con los tres documentos y pide definir la altura y el ancho del complemento;
+  \item la Supervisión, con el proyectista, define la geometría de forma coherente con la descripción del ítem (h~=~25~cm) y con el certificado del fabricante de viguetas (20~+~5~cm y 50~cm entre ejes) \parencite{pretensa2025}, y aclara si los 50~cm de la ET son el módulo entre ejes y no el ancho de la pieza;
+  \item si cambian cantidades o precios, la Fiscalización tramita la modificación que corresponda;
+  \item se emiten el Plano~02 en revisión~1 y la enmienda de la ET, se actualiza la lista maestra y se retiran las copias obsoletas; y
+  \item la orden de compra del EPS se emite solo con la geometría aprobada, que es un punto de espera del abastecimiento.
+\end{enumerate*}
+La decisión técnica es del proyectista; el sistema asegura que se tome, se documente y llegue a obra antes de la compra.
+
+\textbf{Actualización de las normas citadas en la ET.} La ET remite a la CBH-87 y a normas bolivianas de cemento (NB~2.1-001 a 2.1-014), de áridos (NB~596-91 a 612-91) y de agua (NB~587-91 y 588-91) \parencite[pp.~1--2]{uatf_et}. Se recomienda actualizarlas a las ediciones vigentes de IBNORCA \pendiente{verificar códigos y ediciones vigentes}, incluir la NBDS, de aplicación obligatoria, con los requisitos de su art.~12 para las losas de viguetas \parencite[p.~22]{mopsv2023nbds}, la NB~1225001-1:2017, a la que la NBDS remite para el hormigón estructural \parencite{nb1225001_2017}, y la NB~997:2016 \parencite{nb997_2016}, y declarar el criterio de aceptación del hormigón; este SGC adopta el del ACI~318-25. La resistencia de la ET (250~kg/cm\textsuperscript{2}) gobierna sobre el mínimo de 21~MPa que el fabricante de viguetas indica para la carpeta \parencite{pretensa2025}.
+
+\textbf{Comunicación.} El Libro de Órdenes es el canal contractual: registra las solicitudes de liberación, las autorizaciones de vaciado, las consultas técnicas y las no conformidades que afectan al contrato, con la firma del Director de obra que la primera losa omitió. La reunión semanal de calidad (Director de obra, encargado de calidad, Capataz, Almacenero y Supervisión) revisa los paños por liberar, los indicadores, las no conformidades abiertas, la conciliación y los riesgos de la semana siguiente (existencias, clima y personal), y deja un acta con responsables y plazos. Además, la liberación de cada paño se solicita al menos 24~h antes del vaciado; las no conformidades se comunican dentro de las 24~h; el pronóstico de lluvia o helada se comunica 24 a 48~h antes de vaciar; los rechazos de lotes se notifican por escrito al proveedor; y el informe mensual de calidad (indicadores, conciliación y costos) acompaña a cada planilla.
+
+% ---------------------------------------------------------------------
+\subsection{Operación: plan de la calidad, inspección y control de materiales}
+\label{sec:sgc-operacion}
+
+La operación es el núcleo del sistema: traduce los requisitos en controles sobre cada material y cada paño. Comprende el mapa de procesos, el plan de la calidad, el PPI, cinco procedimientos de control de materiales (PCM), el control del hormigón, la liberación de los paños y la gestión de los cambios.
+
+\subsubsection{Mapa de procesos del ítem} La Figura~\ref{fig:mapa-procesos} ordena los procesos en tres niveles: estratégicos (planificación de la calidad, gestión del contrato y de los cambios, revisión y mejora), operativos (abastecimiento, ejecución de la losa y control de calidad y de cantidades) y de apoyo (almacén, laboratorio, documentación, competencia y equipos). El control de cantidades forma parte del proceso operativo de control, y no de una tarea administrativa de fin de mes, porque una diferencia detectada al cierre del contrato (B4) ya no se corrige en el proceso.
+
+\begin{figure}[H]
+\centering
+\caption{Mapa de procesos del ítem losa alivianada}
+\label{fig:mapa-procesos}
+\begin{tikzpicture}[
+  proc/.style={draw, rounded corners=2pt, fill=white, align=center, font=\footnotesize,
+               minimum height=1.0cm, text width=#1},
+  proc/.default=3.5cm,
+  lateral/.style={draw, thick, fill=gray!12, align=center, font=\footnotesize,
+                  text width=8.0cm, minimum height=1.15cm, rotate=90},
+  etq/.style={font=\scriptsize\bfseries, anchor=west},
+  flecha/.style={-{Stealth[length=2.6mm]}, thick}]
+  % Bandas
+  \fill[blue!6, rounded corners=4pt]   (-6.45, 2.55) rectangle (6.45, 4.35);
+  \fill[green!8, rounded corners=4pt]  (-6.45,-1.75) rectangle (6.45, 2.35);
+  \fill[orange!10, rounded corners=4pt](-6.45,-4.10) rectangle (6.45,-1.95);
+  \node[etq] at (-6.35, 4.15) {PROCESOS ESTRATÉGICOS};
+  \node[etq] at (-6.35, 2.15) {PROCESOS OPERATIVOS};
+  \node[etq] at (-6.35,-2.15) {PROCESOS DE APOYO};
+  % Estratégicos
+  \node[proc=3.9cm] (e1) at (-4.3, 3.25) {Planificación de la calidad\\(plan, riesgos, objetivos)};
+  \node[proc=3.6cm] (e2) at (0, 3.25)     {Gestión del contrato\\y de los cambios};
+  \node[proc=3.6cm] (e3) at (4.25, 3.25)  {Revisión de la dirección\\y mejora continua};
+  % Operativos
+  \node[proc=3.8cm, minimum height=2.5cm] (o1) at (-4.25, 0.3) {\textbf{Abastecimiento}\\[2pt]compra, recepción\\(PCM-01) y\\almacenamiento (PCM-02)};
+  \node[proc=3.8cm, minimum height=2.5cm] (o2) at (0, 0.3)     {\textbf{Ejecución de la losa}\\[2pt]apuntalamiento, viguetas\\y EPS, armado, instalaciones,\\vaciado, curado y\\desapuntalamiento};
+  \node[proc=3.8cm, minimum height=2.5cm] (o3) at (4.25, 0.3)  {\textbf{Control de calidad}\\\textbf{y de cantidades}\\[2pt]PPI, ensayos, liberación\\y conciliación (PCM-04)};
+  \draw[flecha] (o1) -- (o2);
+  \draw[flecha] (o2) -- (o3);
+  % Apoyo
+  \node[proc=2.1cm] (a1) at (-5.05,-3.15) {Almacén y kardex\\(PCM-03)};
+  \node[proc=2.1cm] (a2) at (-2.52,-3.15) {Laboratorio\\de ensayos};
+  \node[proc=2.1cm] (a3) at (0,-3.15)     {Documentos\\y registros};
+  \node[proc=2.1cm] (a4) at (2.52,-3.15)  {Competencia\\del personal};
+  \node[proc=2.1cm] (a5) at (5.05,-3.15)  {Equipos\\de medición};
+  % Entradas y salidas
+  \node[lateral] (ent) at (-7.1, 0.12) {\textbf{Entradas:} requisitos de la UATF y de las partes interesadas (contrato, ET, planos y normas)};
+  \node[lateral] (sal) at (7.1, 0.12)  {\textbf{Salidas:} losa conforme; cantidades conciliadas y pagadas; satisfacción de la UATF};
+  \draw[flecha] (-6.5,0.3) -- (o1.west);
+  \draw[flecha] (o3.east) -- (6.5,0.3);
+  % Relaciones entre niveles
+  \draw[flecha, very thick, blue!50!black] (0,2.55) -- (0,2.35);
+  \draw[flecha, very thick, orange!60!black] (0,-1.95) -- (0,-1.75);
+\end{tikzpicture}
+\nota{Elaboración propia. PCM: procedimiento de control de materiales; PPI: plan de puntos de inspección y ensayo.}
+\end{figure}
+
+\subsubsection{Estructura del plan de la calidad} El plan de la calidad se estructura con los elementos de contenido que propone la norma ISO~10005:2018 \parencite{iso10005_2018}. La Tabla~\ref{tab:plan-calidad} relaciona cada elemento con su contenido en este proyecto y con la sección o el formato donde se desarrolla. El plan se presenta a la Supervisión para su revisión y aceptación antes del inicio de la segunda losa, se aplica paño por paño y se revisa al concluir cada losa.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{4.4cm}P{8.6cm}P{2.7cm}@{}}
+\caption{Estructura del plan de la calidad del ítem según la norma ISO~10005:2018}\label{tab:plan-calidad}\\
+\toprule
+\textbf{Elemento del plan} & \textbf{Contenido en este proyecto} & \textbf{Desarrollo} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Elemento del plan} & \textbf{Contenido en este proyecto} & \textbf{Desarrollo} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Alcance & Ítem~13 en la segunda y tercera losa (2.234,60~\mdos{}); de la compra al pago; exclusiones & Sección~\ref{sec:sgc-contexto} \\
+Entradas del plan & Contrato; ET; planos 01 a 03; certificados; ACI~318-25; NB~997; brechas B1 a B9 & Secciones~\ref{sec:diseno-sgc} y \ref{sec:sgc-contexto} \\
+Objetivos de la calidad & Doce objetivos con indicador, meta, frecuencia y responsable & Tabla~\ref{tab:objetivos} \\
+Responsabilidades & Funciones y matriz RACI & Tabla~\ref{tab:raci} \\
+Control de la información documentada & Lista maestra; control de cambios de planos y ET; archivo de registros & Tabla~\ref{tab:lista-maestra} \\
+Recursos & Personas con tiempo asignado; almacén; equipos; laboratorio; capacitación & Sección~\ref{sec:sgc-apoyo} \\
+Comunicación con las partes interesadas & Libro de Órdenes, reunión semanal e informe mensual & Sección~\ref{sec:sgc-apoyo} \\
+Diseño y desarrollo & No aplica (diseño de la UATF); consultas técnicas y cambios & Gestión de cambios \\
+Productos y servicios suministrados externamente & Evaluación de proveedores y del laboratorio; recepción antes de colocar & PCM-01; C.3 \\
+Producción y provisión del servicio & Secuencia por paño; PPI con puntos de espera; control del hormigón & Tabla~\ref{tab:ppi} \\
+Identificación y trazabilidad & Códigos de lote, paño y vaciado en tarjetas, vales, kardex y probetas & PCM-02 y PCM-03 \\
+Propiedad de las partes interesadas & Estructura ya ejecutada y documentos de la UATF, protegidos & PCM-02 \\
+Preservación de las salidas & Acopio adecuado; protección del hormigón contra lluvia y helada; curado & PCM-02; hormigón \\
+Control de las salidas no conformes & Retención e identificación; ningún paño sin liberar se vacía & PCM-05; liberación \\
+Seguimiento y medición & Indicadores, ensayos de aceptación y conciliación & Sección~\ref{sec:sgc-evaluacion} \\
+Auditorías & Auditoría interna simplificada con la lista C.1 & Sección~\ref{sec:sgc-evaluacion} \\
+Operación y control del plan & Aceptación por la Supervisión; aplicación por paño; revisión al cerrar cada losa & Secciones~\ref{sec:sgc-evaluacion} y \ref{sec:sgc-mejora} \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. Los nombres de los elementos siguen la estructura de contenido de los planes de la calidad de la norma ISO~10005:2018 \parencite{iso10005_2018}; su desarrollo es propio de este proyecto.}
+\endgroup
+
+\subsubsection{Plan de puntos de inspección y ensayo} El PPI define, para cada inspección, la característica que se controla, el criterio de aceptación, la referencia, la frecuencia, el responsable y el registro, e identifica los \emph{puntos de espera} o de parada: inspecciones que, por su importancia, obligan a detener la actividad hasta obtener la conformidad del cliente o el resultado de un ensayo \parencite[anexo~4]{muro2020}. En este proyecto se usan tres tipos de punto: \textbf{H} (punto de espera: la actividad siguiente no comienza sin la liberación firmada por la Supervisión), \textbf{W} (punto de aviso: se avisa a la Supervisión, que puede presenciar la actividad; si no asiste, se continúa con el autocontrol registrado) y \textbf{R} (revisión de registros y certificados). Los puntos de espera son el apuntalamiento, el armado, el vaciado y el desapuntalamiento (Tabla~\ref{tab:ppi}). Con ellos, la verificación que en la primera losa se hizo una sola vez, con un asiento genérico del Libro de Órdenes, se convierte en una liberación por paño, con criterios explícitos y registro firmado (B6).
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{2.5pt}
+\begin{longtable}{@{}P{0.55cm}P{2.65cm}P{5.05cm}P{2.4cm}P{1.7cm}Q{0.75cm}P{1.85cm}@{}}
+\caption{Plan de puntos de inspección y ensayo (PPI) de la losa alivianada}\label{tab:ppi}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Actividad o punto} & \textbf{Característica y criterio de aceptación} & \textbf{Referencia} & \textbf{Frecuencia} & \textbf{Tipo} & \textbf{Registro y responsable} \\
+\midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{N.\textsuperscript{o}} & \textbf{Actividad o punto} & \textbf{Característica y criterio de aceptación} & \textbf{Referencia} & \textbf{Frecuencia} & \textbf{Tipo} & \textbf{Registro y responsable} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Recepción de materiales & Criterios de la Tabla~\ref{tab:pcm01}: recepción antes de la colocación, con certificado firmado por lote (viguetas y EPS) o por colada y diámetro (acero) & PCM-01 & Cada entrega & R & C.3; AL y RC \\
+2 & Replanteo y encofrado de vigas & Ejes y niveles según el Plano~01; encofrados estancos, arriostrados y limpios; alero de encofrado de al menos 20~cm donde la vigueta corre paralela a una viga & Plano~01; \textcite[p.~125]{alcon2009}; ACI~318-25, 26.11.1.2 & Cada paño & W & C.2-A; CA y RC \\
+3 & \textbf{Apuntalamiento} & Soleras transversales a las viguetas: una para luces de 2 a 4~m, dos para 4,5 a 6~m y tres para 6,5 a 7,5~m; puntales de diámetro $\geq 4''$ cada 0,80 a 1,00~m, sobre tabla o cuña y arriostrados en cruz; contraflecha según el fabricante & \textcite[p.~129]{alcon2009}; instrucciones del fabricante & Cada paño & \textbf{H} & C.2-A; RC y SU \\
+4 & Colocación de viguetas & Tipo, número y longitud por paño según el Plano~03; separación entre ejes de 50~cm; apoyo $\geq 5$~cm si se vacía con la viga y $\geq 10$~cm sobre una viga ya vaciada; sin fisuras ni golpes & Plano~03; \textcite{pretensa2025}; \textcite[pp.~125--126]{alcon2009} & Cada paño & W & C.2-B; CA \\
+5 & Colocación del EPS & Piezas enteras, ajustadas entre viguetas, sin huecos ni roturas; cortes solo en bordes y nervios; tránsito sobre tablones y no sobre las piezas & \textcite{concretec2016plastoformo}; \textcite[p.~128]{alcon2009} & Cada paño & W & C.2-B; CA \\
+6 & \textbf{Nervios, armadura de distribución, negativos y continuidad} & Nervios transversales y armaduras según el Plano~02 ($\phi$6~c/20~cm en ambas direcciones; armadura de nervios y de momentos negativos según planos); aceros de continuidad exigidos por el fabricante; parrilla separada del EPS con separadores que aseguren el recubrimiento; empalmes y amarres completos; barras limpias & Plano~02; \textcite{pretensa2025}; ACI~318-25, 26.13.3.3 & Cada paño & \textbf{H} & C.2-C; RC y SU \\
+7 & Instalaciones embebidas & Ductos y cajas según los planos de instalaciones; sin cortar viguetas ni nervios; cajas y pasos obturados & Planos de instalaciones; ACI~318-25, 26.13.3.3 & Cada paño & W & C.2-D; RC \\
+8 & \textbf{Liberación para el vaciado} & Puntos 2 a 7 conformes; superficie limpia, sin escombros, hielo ni agua estancada, y humedecida; dosificación aprobada; existencia de materiales para el vaciado completo; equipos (incluido vibrador de reserva) y personal de muestreo presentes; pronóstico sin lluvia; plan de tiempo frío activo si se prevé una temperatura menor de 4,4~$^{\circ}$C & ACI~318-25, 26.4.4.1, 26.5.2.2, 26.5.4.2 y 26.13.2.2; ISO~9001, 8.6 & Cada vaciado & \textbf{H} & C.2-E; SU y Libro de Órdenes \\
+9 & Hormigón fresco y vaciado & Asentamiento dentro del rango de la dosificación aprobada; temperatura del hormigón registrada; agua de amasado a más de 5~$^{\circ}$C; vaciado por franjas, continuo hasta completar el paño o la junta prevista, sin juntas frías; vibrado; tránsito de carretillas y personal sobre pasarelas, sin pisar la parrilla ni el EPS & ASTM~C143; ET \parencite[pp.~2--3]{uatf_et}; ACI~318-25, 26.5.2.2 & Cada pastón muestreado; continuo & W & C.2-E; RC \\
+10 & Muestreo y probetas & Muestras de pastones elegidos al azar en el número de la Tabla~\ref{tab:muestreo}; cada ensayo con dos cilindros de 15~$\times$~30~cm a 28 días; probetas codificadas por paño y vaciado; fotografía fechada de la toma de muestras & ACI~318-25, 26.12.1.1 y 26.12.2.1; ASTM~C172 y C31 & Cada vaciado & W & Planilla de muestreo; LB \\
+11 & Curado y protección & Hormigón húmedo al menos 7 días con temperatura $\geq 10$~$^{\circ}$C (o las alternativas del código); protección contra lluvia y helada; registro diario del curado y de las temperaturas, con fotografía fechada & ACI~318-25, 26.5.3.2 y 26.13.2.2 & Diaria durante el curado & W & C.2-F; CA y RC \\
+12 & Resistencia a compresión & Todo promedio de tres ensayos consecutivos $\geq f'_c$; ningún ensayo menor que $f'_c - 3{,}45$~MPa ($\approx$~215~kg/cm\textsuperscript{2} para el H25); ensayos a 28 días, sin resistencias «proyectadas»; el paño se certifica para pago con sus ensayos conformes & ACI~318-25, 26.12.3.1; ASTM~C39 & Cada ensayo & R & Informe del laboratorio; SU \\
+13 & \textbf{Retiro de puntales} & Plazo mínimo de 15 días para luces menores de 5~m y de 21 días para luces mayores; si la Supervisión lo exige, cilindros curados en obra con resistencia $\geq$ la requerida para la etapa; sin cargas de construcción excesivas & \textcite[p.~136]{alcon2009}; ACI~318-25, 26.11.2.1 y 26.12.4.1 & Cada paño & \textbf{H} & C.2-G; RC y SU \\
+14 & Consumos y conciliación & Cantidades despachadas, devueltas, colocadas y medidas por paño; $IDM$ dentro de la meta; diferencias dentro de la tolerancia & PCM-03 y PCM-04 & Cada paño y planilla & R & C.4; AL y RC \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia con base en las especificaciones técnicas \parencite{uatf_et}, el certificado del fabricante \parencite{pretensa2025}, el código ACI~318-25 \parencite{aci318_2025} y las fuentes indicadas. H: punto de espera; W: punto de aviso; R: revisión de registros. AL: Almacenero; RC: Residente y encargado de calidad; CA: Capataz; SU: Supervisor; LB: laboratorio. Las tolerancias del EPS se toman de la ficha técnica de otro fabricante nacional mientras el proveedor no declare las suyas. Los criterios de recepción de viguetas recogidos por \textcite[pp.~89--92]{capcha2016} se basan en la edición de 2005 de la NB~997. \pendiente{verificar tolerancias, defectos y criterio de rechazo del lote con la NB~997:2016 y el porcentaje mínimo de masa con la edición vigente de la norma de la barra.} \pendiente{incorporar las instrucciones de montaje del fabricante de viguetas (separación de soleras, contraflecha y plazos de desapuntalamiento) y verificar que no contradigan estos criterios.}}
+\endgroup
+
+\subsubsection{PCM-01: recepción y aceptación de materiales} \emph{Objetivo:} asegurar que solo se incorporen a la losa materiales conformes, con evidencia obtenida \emph{antes} de su colocación (B2). En la primera losa, los certificados de viguetas y de EPS se emitieron cuando la losa ya se armaba y no hubo inspección de recepción registrada; este procedimiento invierte ese orden. \emph{Responsables:} el Almacenero recibe y cuenta; el encargado de calidad inspecciona y decide; la Supervisión puede presenciar la recepción y revisa los certificados, conforme a las cláusulas 26.6 y 26.9 del contrato \parencite[p.~102]{uatf2025pao2}. \emph{Pasos:}
+\begin{enumerate*}[label=(\arabic*)]
+  \item la orden de compra indica material, norma, cantidad por paño o vaciado y los documentos exigidos (certificado firmado con lote y cantidad; longitudes por paño según el Plano~03; geometría aprobada del EPS; certificado por colada de cada diámetro de acero);
+  \item al llegar, se comparan remisión, factura, certificado y orden, y se cuenta o se cubica lo entregado;
+  \item se inspecciona según la Tabla~\ref{tab:pcm01};
+  \item se decide: aceptado, aceptado bajo concesión escrita de la Supervisión o rechazado (PCM-05);
+  \item el lote aceptado recibe una tarjeta con su código y entra al kardex (PCM-02); y
+  \item se completa y firma la ficha C.3 y se archivan los certificados.
+\end{enumerate*}
+Ningún material se coloca sin su ficha C.3 aceptada: es un punto de espera del proceso de abastecimiento.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{1.9cm}P{3.4cm}P{3.7cm}P{4.2cm}P{2.1cm}@{}}
+\caption{Criterios de recepción y aceptación de materiales (PCM-01)}\label{tab:pcm01}\\
+\toprule
+\textbf{Material} & \textbf{Documento exigido} & \textbf{Verificación en obra y muestra} & \textbf{Criterio de aceptación} & \textbf{Si no cumple} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Material} & \textbf{Documento exigido} & \textbf{Verificación en obra y muestra} & \textbf{Criterio de aceptación} & \textbf{Si no cumple} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Viguetas pretensadas & Certificado firmado del fabricante con lote, cantidad, tipo y conformidad a la NB~997; remisión con las longitudes por paño & Conteo por tipo y longitud (todas); inspección visual (todas); medición de longitud, sección, flecha y contraflecha en cinco viguetas por entrega y tipo; descarga sin golpes y apilado inmediato sobre listones (PCM-02) & Longitudes del Plano~03 con +30/$-$20~mm; sección con +5/$-$2~mm; sin fisuras visibles, oquedades ni armaduras expuestas; sin flecha; contraflecha y flecha lateral $\leq L/300$; lote rechazado con más de 2 defectos principales o más de 4 secundarios en la muestra \parencite[pp.~89--92]{capcha2016} & Rechazo de piezas o del lote (PCM-05); reclamo al proveedor \\
+Complemento EPS & Certificado firmado con lote, cantidad, dimensiones y densidad & Conteo (todas); medición de dimensiones y masa de cinco piezas; densidad = masa / volumen & Geometría aprobada (B3); $\pm 2$~cm en longitud y $\pm 1$~cm en la sección \parencite{concretec2016plastoformo}; densidad media de la muestra no menor que la declarada (10~kg/\mtres{}) \parencite{unicon2025}; piezas enteras & Separar las piezas rotas o deformadas; rechazo del lote si la densidad no cumple \\
+Acero de refuerzo & Certificado por colada de cada diámetro, incluidos el $\phi$6 y el $\phi$10, con fluencia, relación de resistencias y alargamiento; etiqueta de colada en cada paquete & Conteo de barras; verificación del diámetro y del corrugado; pesaje de tres barras por diámetro y colada para obtener la masa por metro & Fluencia $\geq$ 5.000~kg/cm\textsuperscript{2} (contrato); masa por metro $\geq 94$~\% de la nominal (límite de la norma ASTM~A615); sin óxido suelto, aceite ni barro & Retener la colada sin certificado; rechazo si no cumple \\
+Cemento & Guía de despacho con tipo, clase y fecha de fabricación; sello de calidad IBNORCA & Conteo de bolsas; inspección de todas las bolsas & Bolsas intactas, sin grumos, terrones ni costras \parencite[p.~1]{uatf_et}; uso por orden de llegada & Rechazo y retiro de la obra \\
+Áridos & Procedencia; ensayos de granulometría y limpieza que respaldan la dosificación & Cubicación de cada volquete; inspección visual de limpieza y tamaño & Sin arcilla ni materia orgánica; tamaño máximo no mayor que la mitad del espesor de la carpeta ni que un tercio del ancho libre de los nervios \parencite[p.~2]{uatf_et} & Rechazo del volquete \\
+Agua & Fuente aprobada por la Supervisión & Inspección visual; temperatura al amasar & Limpia; más de 5~$^{\circ}$C al amasar \parencite[p.~2]{uatf_et} & No usar; análisis si hay duda \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. Los criterios de las viguetas siguen la tabla de requisitos que \textcite[pp.~89--92]{capcha2016} elaboró con base en la NB~997; las tolerancias del EPS son las de la ficha técnica de otro fabricante nacional, a falta de las del proveedor. El tamaño de la muestra (cinco piezas o tres barras) es una propuesta del autor. El límite de masa del acero y los criterios de la NB~997 deben verificarse con las ediciones vigentes de las normas (véase la nota de la Tabla~\ref{tab:ppi}).}
+\endgroup
+
+\subsubsection{PCM-02: almacenamiento e identificación} \emph{Objetivo:} preservar la conformidad de los materiales aceptados y saber en todo momento qué existe, de qué lote y en qué estado. \emph{Reglas:}
+\begin{enumerate*}[label=(\alph*)]
+  \item cada material se acopia en una zona aprobada por la Supervisión (cláusula 26.9 del contrato), con las condiciones descritas en la Sección~\ref{sec:sgc-apoyo};
+  \item cada lote lleva una tarjeta con el material, el código de lote o colada, la fecha de ingreso y su estado: verde (aceptado), amarillo (retenido, en espera de decisión) o rojo (rechazado);
+  \item el cemento se usa por orden de llegada;
+  \item el kardex de cada material registra entradas (ficha C.3), salidas (vales), devoluciones y saldo;
+  \item cada semana y antes de cada planilla se hace un inventario físico y se compara con el kardex; una diferencia mayor que la tolerancia de la Tabla~\ref{tab:tolerancias} abre una no conformidad; y
+  \item no se acopian materiales sobre paños recién vaciados, y la estructura ya ejecutada de la UATF se protege de golpes y cargas.
+\end{enumerate*}
+
+\subsubsection{PCM-03: despacho y registro de consumos por paño} \emph{Objetivo:} medir lo que realmente consume cada paño, que es el dato que faltó en la primera losa (B5). \emph{Pasos:}
+\begin{enumerate*}[label=(\arabic*)]
+  \item antes de ejecutar el paño, el encargado de calidad emite la lista de cantidades teóricas $Q_T$: viguetas por tipo y longitud (Plano~03), piezas de EPS, despiece del acero por diámetro, volumen de hormigón y bolsas de cemento;
+  \item el Almacenero entrega el material solo contra un vale por paño (formato C.4) firmado por quien entrega y por quien recibe;
+  \item los sobrantes recuperables vuelven al almacén con vale de devolución, y los recortes no aprovechables se cuentan o miden como desperdicio;
+  \item por cada vaciado se registran los pastones, las bolsas de cemento, los áridos, el agua y los paños cubiertos; el volumen producido es el número de pastones por el rendimiento de la dosificación; y
+  \item el acero se registra en barras de 12~m y en longitud (planilla de corte) y se convierte a kilogramos con la masa nominal, para no confundir con desperdicio la diferencia entre la masa real y la nominal de las barras, que en los certificados de la obra fue de 1,8 a 5,8~\% por debajo de la nominal (cálculo propio con los datos de las pp.~82--86 de la planilla N.\textsuperscript{o}~2).
+\end{enumerate*}
+La cantidad colocada en el paño $k$ y su índice de desperdicio se obtienen con
+\begin{equation}
+  Q_{C,k} = Q_{D,k} - Q_{V,k}, \qquad IDM_{k} = \frac{Q_{C,k} - Q_{T,k}}{Q_{T,k}} \times 100
+  \label{eq:consumo-pano}
+\end{equation}
+donde $Q_{D,k}$ es la cantidad despachada con vales, $Q_{V,k}$ la devuelta al almacén y $Q_{T,k}$ la teórica del paño. La segunda expresión es la ecuación~\eqref{eq:idm} aplicada al paño, con $Q_{\text{real}} = Q_{C,k}$.
+
+\subsubsection{PCM-04: conciliación de cantidades por paño y por planilla} \emph{Objetivo:} que cada cantidad que se paga esté respaldada por una cadena verificable desde el plano hasta la planilla, y que las diferencias se detecten en el mes en que se originan y no al cierre del contrato (B4). Para cada material y cada paño se registran cinco cantidades en la ficha C.4: la teórica de planos ($Q_T$), la entregada según remisiones y kardex ($Q_E$), la colocada según vales y devoluciones ($Q_C$), la medida en la medición conjunta con la Supervisión ($Q_M$) y la pagada en la planilla ($Q_P$). Las comparaciones se expresan como desviaciones relativas:
+\begin{equation}
+  \delta_{X/Y} = \frac{Q_X - Q_Y}{Q_Y} \times 100
+  \label{eq:desviacion}
+\end{equation}
+donde $\delta_{C/T}$ es el índice de desperdicio del paño (ecuación~\ref{eq:consumo-pano}), $\delta_{M/T}$ compara la medición con los planos y $\delta_{P/M}$ compara lo pagado con lo medido. A ellas se suman la diferencia de inventario $\Delta_I = Q_E - Q_C - I_F$, donde $I_F$ es la existencia física contada, y la cuantía de acero de la losa en kg/\mdos{}. La Tabla~\ref{tab:tolerancias} fija los umbrales de alerta. Cuando un control supera su umbral, el encargado de calidad abre una no conformidad, informa a la Supervisión y no presenta ese ítem en la planilla hasta explicar o corregir la diferencia. La medición sigue la regla del contrato: las obras se miden netas y no se miden volúmenes excedentes que la Supervisión no haya aprobado por escrito \parencite[p.~99]{uatf2025pao2}; por eso el acero se mide con la planilla de armado de cada paño, documento que faltó en la planilla N.\textsuperscript{o}~2 \parencite[p.~20]{uatf2025pao2}.
+
+\begin{table}[H]
+\caption{Controles de conciliación de cantidades y umbrales de alerta (PCM-04)}
+\label{tab:tolerancias}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{3.6cm}P{3.4cm}P{3.6cm}L@{}}
+\toprule
+\textbf{Control} & \textbf{Expresión} & \textbf{Umbral de alerta} & \textbf{Acción} \\
+\midrule
+Inventario & $\Delta_I = Q_E - Q_C - I_F$ & Piezas y bolsas: 0; áridos: 5~\% de $Q_E$ & Reconteo; no conformidad si persiste \\
+Desperdicio del paño & $\delta_{C/T} = IDM_k$ & Mayor que la meta (OC1 a OC4) & Análisis de causa antes del paño siguiente \\
+Medición frente a planos & $\delta_{M/T}$ & $\pm 1$~\% & Exigir el cambio aprobado; si no existe, se mide lo neto de planos \\
+Pago frente a medición & $\delta_{P/M}$ (acumulado) & Cualquier diferencia & Corregir antes de presentar la planilla \\
+Cuantía de acero de la losa & kg medidos / \mdos{} medidos & $\pm 5$~\% del valor de planos & Revisar la planilla de armado y el cómputo \\
+Coherencia entre documentos & Misma cantidad en planilla, cómputo e informes & Cualquier diferencia & Registro único de cantidades \\
+Ítem de pago & Kg de acero asignados a cada ítem & Superposición distinta de cero & Definir con el APU el único ítem de pago \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia. Los umbrales son propuestas del autor para la gestión del SGC; deben validarse por juicio de expertos y aprobarse con el plan de la calidad. $Q_T$: teórica; $Q_E$: entregada; $Q_C$: colocada; $Q_M$: medida; $Q_P$: pagada; $I_F$: existencia física.}
+\end{table}
+
+\textbf{Aplicación a las inconsistencias del acero de la línea base.} La Tabla~\ref{tab:conciliacion-acero} aplica estos controles, de forma retrospectiva, a los datos documentados del acero. Cada control habría dado una alerta en el mes en que se originó la diferencia, y no al cierre del contrato. El control de cuantía, por ejemplo, habría detectado de inmediato que 12.513,54~kg para 1.109,84~\mdos{} equivalen a 11,28~kg/\mdos{}, el triple de la cuantía de la planilla N.\textsuperscript{o}~2. Los resultados son alertas que exigen explicación; no prueban por sí mismos un error ni un pago indebido, y deben verificarlos la Supervisión y la Fiscalización.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{3.0cm}P{5.6cm}P{3.6cm}P{3.5cm}@{}}
+\caption{Aplicación retrospectiva de la conciliación al acero de la primera losa}\label{tab:conciliacion-acero}\\
+\toprule
+\textbf{Control} & \textbf{Dato documentado} & \textbf{Resultado} & \textbf{Alerta y acción} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Control} & \textbf{Dato documentado} & \textbf{Resultado} & \textbf{Alerta y acción} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Cuantía de acero de la losa & Planilla N.\textsuperscript{o}~2: 1,00~$\times$~4.171,18~kg; cómputo de cierre: 3~$\times$~4.171,18 = 12.513,54~kg; losa medida: 1.109,84~\mdos{} & 3,76~kg/\mdos{} frente a 11,28~kg/\mdos{}: +200~\% & Sí: aclarar a qué corresponde el factor 3 \\
+Pago frente a medición & Acumulado pagado: 52.424,65~kg; medición de cierre: 50.509,49~kg & $\delta_{P/M} = +3{,}79$~\% (descuento de 1.915,16~kg) & Sí: conciliar por elemento en cada planilla \\
+Variación por partidas & La línea de la losa sube 8.342,36~kg y el total baja 1.915,42~kg & Las demás partidas bajan $\approx$~10.257,78~kg sin respaldo línea por línea & Sí: conciliación elemento por elemento \\
+Coherencia entre documentos & 52.424,65; 50.509,49; 50.509,23 y 50.561,84~kg en distintos documentos & Cuatro valores distintos, con 0,26~kg de diferencia entre planilla y cómputo de cierre & Sí: registro único de cantidades \\
+Ítem de pago & Acero de la losa pagado en el ítem~8 (4.171,18~kg) y ET del ítem~13 que incluye la parrilla y los negativos & Posible doble pago & Sí: definir el ítem de pago con el APU \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia (cálculos propios) con base en \textcite[pp.~16, 19--20]{uatf2025pao2}, \textcite{uatf_pao3} (hoja «Cómputos métricos», filas 375 a 541), \textcite[p.~12]{uatf_item13} y \textcite[p.~3]{uatf_et}. $\delta_{P/M} = (52.424{,}65 - 50.509{,}49)/50.509{,}49$. Variación de las demás partidas: $8.342{,}36 + 1.915{,}42 = 10.257{,}78$~kg.}
+\endgroup
+
+\subsubsection{PCM-05: control del material no conforme} \emph{Objetivo:} impedir que un material no conforme se use por error y dejar constancia de su costo. Todo material rechazado o dudoso se identifica con la tarjeta roja «no conforme --- no usar», se separa en una zona exclusiva y se registra en el formato C.5. La disposición la decide el encargado de calidad y, si afecta a requisitos del contrato, la Supervisión: devolución al proveedor, reclasificación para un uso menor aprobado (por ejemplo, piezas de EPS cortadas para bordes), aceptación bajo concesión escrita o descarte. Una vigueta fisurada no se repara ni se coloca. El costo del material no conforme y de su reposición se registra como falla interna en la planilla de costos de la calidad (Sección~\ref{sec:sgc-costos}), y el reclamo al proveedor alimenta su evaluación. Si la no conformidad se detecta después de colocado el material, el paño queda retenido y se aplica el control de salidas no conformes.
+
+\subsubsection{Control de calidad del hormigón de la carpeta y de los nervios} El hormigón de la losa es H25 ($f'_c = 250$~kg/cm\textsuperscript{2} $\approx$ 24,5~MPa; al menos 400~kg/\mtres{} de cemento) y se vacía monolíticamente con las vigas \parencite[pp.~3--4]{uatf_et}. Su control responde a la brecha B1 con los requisitos del capítulo~26 del ACI~318-25, base de la NB~1225001-1:2017. \emph{Dosificación:} antes del primer vaciado la contratista presenta la dosificación con evidencia de ensayos o pastones de prueba \parencite[sección 26.4.4.1]{aci318_2025}; un cambio de cemento, áridos o aditivos es una mezcla distinta y exige nueva aprobación \parencite[sección R26.4.3.1]{aci318_2025}. \emph{Producción:} el hormigón elaborado en obra se dosifica y mezcla según ASTM~C94 o C685 \parencite[sección 26.5.1.1]{aci318_2025}, con control del número de bolsas por pastón. \emph{Muestreo:} un ensayo de resistencia es el promedio de al menos dos cilindros de 15~$\times$~30~cm de una misma muestra tomada según ASTM~C172 en el punto de entrega, curados según ASTM~C31 y ensayados según ASTM~C39 a 28 días, por técnicos certificados \parencite[sección 26.12.1.1]{aci318_2025}; los pastones se eligen al azar antes del vaciado, no por su apariencia ni por conveniencia \parencite[sección R26.12.2.1]{aci318_2025}. \emph{Aceptación:} todo promedio de tres ensayos consecutivos debe ser $\geq f'_c$ y ningún ensayo puede quedar por debajo de $f'_c$ en más de 500~psi (3,45~MPa) \parencite[sección 26.12.3.1]{aci318_2025}; para el H25 el límite individual es $\approx$~215~kg/cm\textsuperscript{2}, y no se aceptan resistencias «proyectadas» desde otras edades. \emph{Resultados bajos:} si falla el criterio de los promedios se ajustan la dosificación, el control del agua o la calidad del ensayo; si un ensayo queda bajo el límite individual se investiga la resistencia en el lugar con tres núcleos por ensayo bajo, aceptables si su promedio alcanza el 85~\% de $f'_c$ y ningún núcleo baja del 75~\% \parencite[sección 26.12.7.1, p.~606]{aci318_2025}. Los informes del laboratorio se entregan a la Supervisión y a la contratista y se registran por paño y vaciado.
+
+El número mínimo de ensayos de resistencia por losa es
+\begin{equation}
+  n_{\text{mín}} = \max\left\{\, n_d,\ \left\lceil \frac{V}{114{,}7} \right\rceil,\ \left\lceil \frac{A}{464{,}5} \right\rceil,\ 5 \,\right\}
+  \label{eq:nensayos}
+\end{equation}
+donde $n_d$ es el número de días de vaciado de la mezcla, $V$ el volumen vaciado (\mtres{}), $A$ la superficie de losa (\mdos{}), 114,7~\mtres{} equivale a 150~yd\textsuperscript{3}, 464,5~\mdos{} a 5.000~ft\textsuperscript{2}, y 5 es el número mínimo de ensayos que el SGC adopta por losa. Las tres primeras frecuencias son las del código \parencite[sección 26.12.2.1]{aci318_2025}. El mínimo de cinco ensayos responde a que, si la frecuencia da menos de cinco ensayos para una mezcla, el código exige muestrear al menos cinco pastones elegidos al azar; además, cinco ensayos por losa permiten evaluar tres promedios móviles de tres ensayos consecutivos dentro de cada losa. La Tabla~\ref{tab:muestreo} aplica la ecuación a una losa de $\approx$~1.117,30~\mdos{}.
+
+\begin{table}[H]
+\caption{Número mínimo de ensayos de resistencia para una losa de 1.117,30~\mdos{}}
+\label{tab:muestreo}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}P{3.3cm}P{3.8cm}LQ{1.9cm}@{}}
+\toprule
+\textbf{Criterio} & \textbf{Regla} & \textbf{Cálculo} & \textbf{Ensayos} \\
+\midrule
+(i) Diario & Al menos una muestra por día de vaciado de la mezcla & $n_d$ días según el programa de vaciado por franjas & $\geq n_d$ \\
+(ii) Volumen & Una muestra por cada 150~yd\textsuperscript{3} (114,7~\mtres{}) & Solo la carpeta suma $0{,}05 \times 1.117{,}30 = 55{,}9$~\mtres{}; con nervios y vigas, $V$ según el cómputo del vaciado & $\lceil V/114{,}7 \rceil$ \\
+(iii) Superficie & Una muestra por cada 5.000~ft\textsuperscript{2} (464,5~\mdos{}) de losa & $1.117{,}30 / 464{,}5 = 2{,}41$ & 3 \\
+Mínimo por mezcla & Al menos cinco pastones al azar si la frecuencia da menos de cinco ensayos & Criterio adoptado por el SGC para cada losa & 5 \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Ensayos adoptados por losa} (mientras $n_d \leq 5$ y $V \leq 573$~\mtres{})} & \textbf{5} \\
+\bottomrule
+\end{tabularx}
+\nota{Elaboración propia con base en \textcite[sección 26.12.2.1]{aci318_2025}. Superficie por losa: 2.234,60~\mdos{} / 2 \parencite{uatf_pao3}. Cada ensayo requiere dos cilindros de 15~$\times$~30~cm a 28 días; el SGC añade un cilindro por muestra a 7 días como alerta temprana, de modo que se elaboran al menos 15 cilindros de curado estándar por losa, más los cilindros curados en obra que exija la Supervisión para el desapuntalamiento. Las secciones citadas del ACI~CODE-318-25 figuran en las pp.~577 a 611 de la edición consultada.}
+\end{table}
+
+\textbf{Curado, tiempo frío y lluvia.} El hormigón se mantiene húmedo al menos 7 días con una temperatura de al menos 10~$^{\circ}$C, o 3 días si alcanza 0,7~$f'_c$ en ese plazo, o hasta que la resistencia en el lugar llegue a 0,7~$f'_c$ \parencite[sección 26.5.3.2]{aci318_2025}; en obra se propone riego continuo o arpilleras húmedas bajo láminas de plástico, con registro diario (ficha C.2-F). A 3.650~m~s.~n.~m., la contratista presenta un plan de hormigonado en tiempo frío antes del primer vaciado; no se usan áridos con terrones congelados o hielo, y encofrados y superficies deben estar libres de escarcha y hielo \parencite[sección 26.5.4.2]{aci318_2025}. Si la temperatura ambiente baja de 4,4~$^{\circ}$C (40~$^{\circ}$F) se registran la temperatura del hormigón y la protección aplicada \parencite[sección 26.13.2.2]{aci318_2025}; si el hormigón no se mantiene a 10~$^{\circ}$C o más, el curado se prolonga y se verifica con cilindros curados en obra. El agua de amasado debe superar los 5~$^{\circ}$C \parencite[p.~2]{uatf_et}. Para la lluvia, el vaciado se programa con el pronóstico del SENAMHI, se dispone de cobertores y se retira el agua estancada \parencite[sección 26.5.2.2]{aci318_2025}. La temperatura que activa el plan se mide con el termómetro de la obra.
+
+\subsubsection{Liberación de los paños y control de las salidas no conformes} La liberación (cláusula 8.6) tiene tres niveles: (1) \emph{para vaciar}, con la ficha C.2 completa en los puntos de espera y en la verificación previa al vaciado (punto 8 del PPI), firmada por el encargado de calidad y el Supervisor y asentada en el Libro de Órdenes con la firma del Director de obra que exige la cláusula 25.ª \parencite[p.~100]{uatf2025pao2}; (2) \emph{para desapuntalar}, con el plazo mínimo y, si corresponde, los cilindros curados en obra con la resistencia requerida \parencite[sección 26.12.4.1]{aci318_2025}; y (3) \emph{para pago}, con los ensayos de aceptación conformes y las cantidades conciliadas (PCM-04). Como los ensayos a 28 días pueden llegar después del cierre de una planilla, como ocurrió en la primera losa, se recomienda que el contrato del saldo de la obra prevea certificar con observación y retención de pago el paño cuyo hormigón aún no tenga resultados.
+
+Una salida no conforme (cláusula 8.7) es un paño que no cumple un criterio del PPI o un ensayo. Antes del vaciado, el paño queda retenido hasta corregirse y reinspeccionarse. Después del vaciado (nidos de grava, fisuras, recubrimiento insuficiente o resistencia baja), el paño se identifica, se registra en el formato C.5, se restringen su carga y su desapuntalamiento, y la Supervisión, con el proyectista si es necesario, decide la disposición: reparación aprobada, refuerzo, demolición o aceptación bajo concesión documentada. El costo se registra como falla interna y el pago del paño se retiene hasta su resolución.
+
+\subsubsection{Gestión de los cambios} Todo cambio de material, proveedor, dosificación, procedimiento o diseño sigue cinco pasos: (1) solicitud escrita en el Libro de Órdenes, con su causa; (2) evaluación del efecto en la calidad, las cantidades, el costo y el plazo; (3) aprobación técnica de la Supervisión (con el proyectista si cambia el diseño) y contractual de la Fiscalización si cambian cantidades o monto; (4) actualización de los documentos y de la lista maestra; y (5) comunicación al personal y verificación en obra. La «modificación estructural» por falta de viguetas de los tamaños requeridos, mencionada sin detalle en el informe de Supervisión \parencite[p.~11]{uatf2025pao2}, habría dejado así registro de su causa, de su aprobación y de su efecto en las cantidades; la resolución de la discrepancia del EPS es otra aplicación del procedimiento.
+
+% ---------------------------------------------------------------------
+\subsection{Evaluación del desempeño}
+\label{sec:sgc-evaluacion}
+
+\textbf{Seguimiento y medición.} Los indicadores de la Tabla~\ref{tab:objetivos} se alimentan de los registros del Anexo~\ref{anx:instrumentos} y se revisan con los umbrales de la Tabla~\ref{tab:seguimiento}, apoyados en gráficos sencillos: el $IDM$ de cada material paño por paño, el promedio móvil de tres ensayos frente a $f'_c$ y las no conformidades abiertas y cerradas. Como las losas repiten los 41 paños de la primera, cada indicador se compara con el de su paño homólogo.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{2.9cm}P{3.6cm}P{4.3cm}P{4.9cm}@{}}
+\caption{Seguimiento de los indicadores: registros, umbrales de reacción y respuesta}\label{tab:seguimiento}\\
+\toprule
+\textbf{Indicador} & \textbf{Registro que lo alimenta} & \textbf{Umbral de reacción} & \textbf{Respuesta} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Indicador} & \textbf{Registro que lo alimenta} & \textbf{Umbral de reacción} & \textbf{Respuesta} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$IDM$ por material (OC1 a OC4) & Ficha C.4; kardex; vales & Un paño o vaciado sobre la meta & Análisis de causa antes del paño siguiente; ajuste del pedido o del despiece \\
+Lotes conformes (OC5) & Ficha C.3 & Cualquier lote incorporado sin recepción aceptada & No conformidad mayor; retención del paño afectado \\
+Paños liberados (OC6) & Ficha C.2; Libro de Órdenes & Cualquier paño vaciado sin liberación & No conformidad crítica; evaluación del paño por la Supervisión \\
+Ensayos conformes (OC7) & Informe del laboratorio & Un promedio de tres ensayos $< f'_c$ o un ensayo $<$ $f'_c - 3{,}45$~MPa & Ajuste de la dosificación; investigación según la sección 26.12.7 \\
+Plan de muestreo (OC8) & Planilla de muestreo & Menos ensayos que $n_{\text{mín}}$ & No conformidad; refuerzo del muestreo en el vaciado siguiente \\
+Cierre de NC (OC9) & Registro C.5 & Menos del 90~\% cerradas en 7 días & Escalamiento al Director de obra en la reunión semanal \\
+Conciliación (OC10) & Ficha C.4 (conciliación por planilla) & Un ítem fuera de tolerancia & El ítem no se presenta en la planilla hasta explicar o corregir la diferencia \\
+$\%CNC$ (OC11) & Planilla C.6 & Valor mensual sobre la meta & Revisión mensual: acciones sobre las fallas de mayor costo (Pareto) \\
+Reducción del costo unitario (OC12) & Planilla C.6 y planillas de avance & $r < 5$~\% al cerrar una losa & Revisión del plan de la calidad antes de la losa siguiente \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. OC: objetivo de la calidad (Tabla~\ref{tab:objetivos}); NC: no conformidad.}
+\endgroup
+
+\textbf{Conciliación mensual con la planilla de avance.} Como el contrato exige notificar la medición con dos días hábiles de anticipación y medir conjuntamente con la Supervisión \parencite[p.~99]{uatf2025pao2}, la conciliación se integra al ciclo de la planilla:
+\begin{enumerate*}[label=(\arabic*)]
+  \item dos días antes de medir, se cierran las fichas C.4 del mes y el kardex;
+  \item se mide de forma conjunta y neta con la Supervisión;
+  \item se completa la conciliación acumulada de cada material e ítem con sus desviaciones y alertas (Tabla~\ref{tab:tolerancias});
+  \item solo se presentan los ítems sin alertas pendientes;
+  \item la conciliación, firmada por el encargado de calidad y el Supervisor, se adjunta a la planilla y al informe mensual que revisa el Fiscal; y
+  \item las cantidades aprobadas actualizan el registro único de cantidades.
+\end{enumerate*}
+
+\textbf{Auditoría interna simplificada.} Dos auditorías por losa, a la mitad y al cierre, con la lista de verificación C.1 y el plan de la calidad como criterios, a cargo del Supervisor o de un profesional independiente del proceso. La muestra mínima abarca todos los puntos de espera de tres paños elegidos al azar, cinco vales contrastados con el kardex, la codificación de las probetas de un vaciado y la última conciliación. Los hallazgos se registran como no conformidades (C.5).
+
+\textbf{Revisión semanal y mensual.} La revisión semanal es operativa (Sección~\ref{sec:sgc-apoyo}). La mensual, presidida por el Director de obra con la Supervisión y la Fiscalización, analiza indicadores y tendencias, no conformidades y acciones correctivas, auditorías, costos de la calidad, conciliación, desempeño de proveedores, riesgos y cambios, y decide mejoras, recursos y ajustes del plan, de las metas y de los riesgos, que constan en un acta.
+
+% ---------------------------------------------------------------------
+\subsection{Mejora: no conformidades, acción correctiva y mejora continua}
+\label{sec:sgc-mejora}
+
+\textbf{Procedimiento de no conformidades y acción correctiva.} Una no conformidad es todo incumplimiento de un requisito del plano, de la ET, del PPI, de un procedimiento o del contrato. Es \emph{crítica} si compromete la seguridad estructural o si un paño se vació sin liberación; \emph{mayor} si afecta a la calidad, a las cantidades o al costo; y \emph{menor} si es documental y sin efecto en el producto. Toda no conformidad se cierra en 7 días o menos (OC9), y las críticas exigen contención inmediata e intervención de la Supervisión (Figura~\ref{fig:flujo-nc}). En la primera losa ninguno de los 24 asientos del Libro de Órdenes registró una no conformidad \parencite[pp.~114--125]{uatf2025pao2}: el procedimiento busca que los defectos dejen de ser invisibles (B7).
+
+\begin{figure}[H]
+\centering
+\caption{Flujo del procedimiento de no conformidades y acción correctiva}
+\label{fig:flujo-nc}
+\begin{tikzpicture}[node distance=0.38cm,
+  paso/.style={draw, rounded corners=2pt, fill=gray!8, align=center, text width=5.3cm,
+               minimum height=0.85cm, font=\footnotesize},
+  decision/.style={draw, diamond, aspect=2.6, fill=orange!14, align=center,
+               font=\footnotesize, inner sep=1.5pt},
+  anota/.style={align=left, text width=5.6cm, font=\scriptsize, anchor=west},
+  flecha/.style={-{Stealth[length=2.5mm]}, thick}]
+  \node[paso] (d)  {\textbf{1. Detección}\\inspección del PPI, recepción, ensayo, conciliación o auditoría};
+  \node[paso, below=of d]  (r)  {\textbf{2. Registro}\\formato C.5: qué, dónde (paño o lote), cuándo y quién};
+  \node[paso, below=of r]  (c)  {\textbf{3. Contención y corrección}\\retener el paño o el lote; corregir el defecto};
+  \node[paso, below=of c]  (a)  {\textbf{4. Análisis de causa}\\5 porqués o diagrama de Ishikawa (6M)};
+  \node[paso, below=of a]  (ac) {\textbf{5. Acción correctiva}\\eliminar la causa: responsable, plazo y recursos};
+  \node[paso, below=of ac] (v)  {\textbf{6. Verificación de la eficacia}\\¿se repite el problema en los paños siguientes?};
+  \node[decision, below=of v] (q) {¿Eficaz?};
+  \node[paso, below=of q, fill=green!10] (z) {\textbf{7. Cierre}\\actualizar riesgos, PPI o procedimiento; costo en C.6};
+  \draw[flecha] (d) -- (r);
+  \draw[flecha] (r) -- (c);
+  \draw[flecha] (c) -- (a);
+  \draw[flecha] (a) -- (ac);
+  \draw[flecha] (ac) -- (v);
+  \draw[flecha] (v) -- (q);
+  \draw[flecha] (q) -- node[right, font=\footnotesize]{Sí} (z);
+  \coordinate (lazo) at ($(a.west)+(-0.55,0)$);
+  \draw[flecha] (q.west) -- node[above, font=\footnotesize]{No} (q.west -| lazo) -- (lazo) -- (a.west);
+  \node[anota] at ($(d.east)+(0.3,0)$)  {Cualquier persona del equipo o de la Supervisión; de inmediato};
+  \node[anota] at ($(r.east)+(0.3,0)$)  {Encargado de calidad; dentro de las 24~h, con aviso al Director de obra y a la Supervisión};
+  \node[anota] at ($(c.east)+(0.3,0)$)  {Capataz y encargado de calidad; antes de continuar la actividad afectada};
+  \node[anota] at ($(a.east)+(0.3,0)$)  {Encargado de calidad con el Capataz y el Almacenero; dentro de los 3 días};
+  \node[anota] at ($(ac.east)+(0.3,0)$) {Aprueba el Director de obra; la Supervisión es informada};
+  \node[anota] at ($(v.east)+(0.3,0)$)  {Encargado de calidad, en los paños o lotes siguientes};
+  \node[anota] at ($(z.east)+(0.3,0)$)  {Cierre en 7 días o menos (objetivo OC9)};
+\end{tikzpicture}
+\nota{Elaboración propia. 6M: mano de obra, método, materiales, maquinaria, medición y medio ambiente.}
+\end{figure}
+
+\textbf{Análisis de causas.} El análisis distingue la corrección (eliminar el defecto) de la acción correctiva (eliminar su causa). Por ejemplo, los 5 porqués aplicados a la brecha B1 dan la cadena siguiente: la losa no tiene probetas porque no se muestreó en el vaciado; no se muestreó porque nadie tenía asignada la tarea ni existía un plan de muestreo; no existía porque no se exigió un plan de la calidad ni un PPI; y no se exigió porque el control descansaba solo en la verificación de la Supervisión, sin requisitos de registro para la contratista. La causa raíz es la falta de planificación de la calidad del ítem, y la acción correctiva es el plan de muestreo con responsables, el PPI y la certificación condicionada. El ejemplo se basa en hallazgos documentales; las causas deben confirmarse con las entrevistas (formato C.7). Para el desperdicio, el diagrama de Ishikawa ordena las causas en las seis categorías de la Figura~\ref{fig:flujo-nc}.
+
+\textbf{Mejora continua.} Al cerrar cada losa, una revisión de cierre compara los indicadores con las metas y con los paños homólogos de la losa anterior, registra las lecciones aprendidas y actualiza el plan, el PPI, los procedimientos y las metas antes de la losa siguiente; las sugerencias del personal se recogen en la reunión semanal. Así se cierra el ciclo PHVA de la Figura~\ref{fig:phva}.
+
+% ---------------------------------------------------------------------
+\subsection{Registro de costos de la calidad}
+\label{sec:sgc-costos}
+
+El registro de costos de la calidad hace visible lo que en la primera losa no se midió (B7) y vincula el SGC con la variable dependiente de la investigación. Se adopta el modelo de prevención, evaluación y fallas (PAF) presentado en el Capítulo~1 (Tabla~\ref{tab:paf}), que sigue siendo el modelo genérico más empleado en las empresas constructoras \parencite[p.~43]{graciavillar2007}. Los costos de prevención corresponden a las actividades que evitan defectos; los de evaluación, a las inspecciones y ensayos que verifican la conformidad; los de fallas internas, a los errores detectados antes de la entrega, como desperdicios y repetición de trabajos; y los de fallas externas, a los que aparecen después de entregado el producto al cliente \parencite[pp.~48--49]{graciavillar2007}. La Tabla~\ref{tab:paf-losa} concreta los conceptos para la losa con base en los ítems de costo de la calidad identificados por \textcite[pp.~5409--5410]{khadim2023}.
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{2.2cm}P{5.6cm}P{5.0cm}P{2.9cm}@{}}
+\caption{Conceptos de costos de la calidad de la losa y su valoración (modelo PAF)}\label{tab:paf-losa}\\
+\toprule
+\textbf{Categoría} & \textbf{Concepto típico en la losa} & \textbf{Base de valoración} & \textbf{Registro} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{Categoría} & \textbf{Concepto típico en la losa} & \textbf{Base de valoración} & \textbf{Registro} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Prevención ($C_P$) & Plan de la calidad, PPI y procedimientos; despiece y planillas de armado; plan de tiempo frío & Horas $\times$ costo horario del APU; materiales de protección & Parte de horas \\
+ & Capacitación (tres charlas) & Horas-hombre de participantes e instructor $\times$ costo horario & Lista de asistencia \\
+ & Evaluación de proveedores y auditoría interna & Horas $\times$ costo horario & Orden de compra; informe \\
+\addlinespace
+Evaluación ($C_E$) & Ensayos de compresión, asentamiento y temperatura & Número de ensayos $\times$ precio del laboratorio; horas del técnico & Facturas; planilla de muestreo \\
+ & Inspecciones del PPI, recepción, pesajes, inventarios y conciliación & Horas del encargado de calidad, del Capataz y del Almacenero $\times$ costo horario & Fichas C.2 a C.4 \\
+\addlinespace
+Fallas internas ($C_{FI}$) & Desperdicio de materiales sobre lo teórico & Ecuación~\eqref{eq:cfi-mat}, a precios del contrato & Ficha C.4 \\
+ & Retrabajos, reparaciones y material no conforme repuesto (nidos de grava, armadura repuesta, viguetas rotas, EPS dañado) & Horas-hombre, materiales y equipo a precios del APU & Registro C.5 \\
+ & Esperas por material faltante o no conforme & Horas improductivas de la cuadrilla $\times$ costo horario & Parte diario \\
+ & Investigación de resistencias bajas & Núcleos $\times$ precio del laboratorio & Informe del laboratorio \\
+\addlinespace
+Fallas externas ($C_{FE}$) & Sobremediciones detectadas y corregidas después de pagadas & Monto descontado en la planilla & Planillas de avance \\
+ & Reparaciones después de la recepción provisional; multas y plazo adicional atribuibles a fallas & Costos a precios del APU; montos de multas y gastos generales & Libro de Órdenes; C.5 \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia con base en \textcite[pp.~48--49]{graciavillar2007} y \textcite[pp.~5409--5410]{khadim2023}. Precios y costos horarios del análisis de precios unitarios (APU) del contrato, a precios constantes. En la línea base, el descuento de 1.915,16~kg de acero (Bs~32.090,11) en la planilla de cierre \parencite{uatf_pao3} es un ejemplo de sobremedición corregida.}
+\endgroup
+
+\textbf{Reglas de valoración.} (1) Todo costo se valora a precios constantes del contrato, como el costo unitario de la ecuación~\eqref{eq:cu}, para aislar el efecto de la inflación. (2) Las horas se valoran con el costo horario de la categoría en el APU. (3) Cada boliviano se registra una sola vez y en una sola categoría: el desperdicio de materiales se obtiene solo de la conciliación (PCM-04) y no se repite como retrabajo. (4) Los costos de prevención y de evaluación se registran por semana, las fallas internas por paño y las externas por planilla, y todos se consolidan por mes y por losa en la planilla C.6. (5) Los costos ocultos, que la contabilidad tradicional no capta \parencite[p.~5403]{khadim2023}, como la pérdida de productividad o de reputación, se anotan de forma cualitativa.
+
+\textbf{Relación con el costo unitario y el costo de no calidad.} El costo de las pérdidas de materiales es la diferencia entre el consumo real y el teórico multiplicada por el costo unitario \parencite[tabla~2]{rossi2001}. Con las cantidades colocadas de la ecuación~\eqref{eq:consumo-pano}:
+\begin{equation}
+  C_{FI}^{\,mat} = \sum_{j} \left( Q_{C,j} - Q_{T,j} \right) p_j = \sum_{j} \frac{IDM_j}{100}\, Q_{T,j}\, p_j
+  \label{eq:cfi-mat}
+\end{equation}
+Como en la ecuación~\eqref{eq:cu} la cantidad real de cada insumo es la teórica más su pérdida, el costo unitario puede descomponerse según el modelo PAF:
+\begin{equation}
+  CU = \underbrace{\frac{\sum_{j} Q_{T,j}\, p_j + C_{MO} + C_{EQ}}{A}}_{CU_T} + \frac{C_{FI}}{A} + \frac{C_P + C_E}{A}
+  \label{eq:cu-paf}
+\end{equation}
+donde $CU_T$ es el costo unitario con cantidades teóricas y con la mano de obra y el equipo productivos, $C_{FI}$ incluye las pérdidas de materiales (ecuación~\ref{eq:cfi-mat}) y los retrabajos, y $C_P + C_E$ es el costo de la calidad $CC$ de la ecuación~\eqref{eq:cnc}. El SGC reduce el costo unitario si la disminución de $C_{FI}$ supera el aumento de $C_P + C_E$; esa es la condición que evalúa la hipótesis mediante la reducción $r$ de la ecuación~\eqref{eq:reduccion}, con el modelo de la Sección~\ref{sec:modelo-simulacion}. Las fallas externas no forman parte del costo de ejecutar la losa, pero se suman al $CNC = C_{FI} + C_{FE}$ y al $\%CNC$ de la ecuación~\eqref{eq:cnc}. Según el contrato, los ensayos corren por cuenta de la contratista y los precios unitarios incluyen las reparaciones por trabajos defectuosos \parencite[pp.~92, 102]{uatf2025pao2}; por ello, $C_E$ y $C_{FI}$ recaen en la contratista, que es también la principal beneficiaria económica de reducir las fallas, mientras que la UATF se beneficia de la conformidad de la losa y del pago correcto de las cantidades.
+
+% ---------------------------------------------------------------------
+\subsection{Matriz de trazabilidad entre brechas, requisitos, componentes e indicadores}
+\label{sec:sgc-trazabilidad}
+
+La Tabla~\ref{tab:trazabilidad} cierra el diseño: muestra que cada brecha de la línea base tiene un requisito de la norma que la respalda, al menos un componente del SGC que la atiende y un indicador que permite verificar si se cerró. Los números de cláusula corresponden a la estructura común de las ediciones 2015 y 2026 de la norma ISO~9001 (Sección~\ref{sec:sgc-enfoque}).
+
+\begingroup\footnotesize\setstretch{1}\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{0.6cm}P{3.0cm}P{1.45cm}P{3.0cm}P{5.15cm}P{1.95cm}@{}}
+\caption{Matriz de trazabilidad: brecha, requisito ISO~9001, componente del SGC e indicador}\label{tab:trazabilidad}\\
+\toprule
+\textbf{B} & \textbf{Brecha de la línea base} & \textbf{NC} & \textbf{Requisito ISO~9001 (cláusula)} & \textbf{Componente del SGC} & \textbf{Indicador} \\
+\midrule
+\endfirsthead
+\multicolumn{6}{@{}l}{\textit{(continuación)}}\\
+\toprule
+\textbf{B} & \textbf{Brecha de la línea base} & \textbf{NC} & \textbf{Requisito ISO~9001 (cláusula)} & \textbf{Componente del SGC} & \textbf{Indicador} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+B1 & Hormigón de la losa sin probetas; ensayos tardíos y no independientes; losa pagada sin resultados & NC-01 a NC-03 & Control de la producción (8.5.1); liberación (8.6); seguimiento y medición (9.1) & Control del hormigón según ACI~318-25; plan de muestreo (Tabla~\ref{tab:muestreo}); PPI, puntos 8 a 12; aceptación para pago condicionada a los ensayos & OC7; OC8 \\
+B2 & Garantías, dosificaciones y ensayos pedidos por la Supervisión; certificados sin firma, sin lote y posteriores a la colocación; sin certificado del acero $\phi$6 y $\phi$10 & NC-04, NC-05 & Control de los productos suministrados externamente (8.4); información documentada (7.5) & PCM-01 con recepción antes de colocar (Tabla~\ref{tab:pcm01}); ficha C.3; dosificación aprobada antes del primer vaciado & OC5 \\
+B3 & Tres geometrías del complemento EPS; ET con normas desactualizadas & NC-06, NC-07 & Control de la información documentada (7.5); planificación y control de los cambios (6.3; 8.5.6) & Lista maestra (Tabla~\ref{tab:lista-maestra}); consulta técnica del EPS antes de la compra; actualización de la ET; gestión de cambios & OC9 (NC documentales cerradas) \\
+B4 & Descuento de 3,65~\% del acero al cierre; factor 3 en la losa; posible doble cómputo; cantidades distintas entre documentos & NC-13 a NC-15 & Seguimiento y medición en la producción (8.5.1); análisis y evaluación (9.1.3); trazabilidad (8.5.2) & PCM-04 con umbrales de alerta (Tablas~\ref{tab:tolerancias} y \ref{tab:conciliacion-acero}); registro único de cantidades; conciliación mensual con la planilla & OC10; OC12 \\
+B5 & Sin kardex, vales ni remisiones; exceso preliminar de EPS & NC-16, NC-17 & Identificación y trazabilidad (8.5.2); preservación (8.5.4) & PCM-02 y PCM-03: vales por paño, devoluciones, kardex e inventarios; ficha C.4 & OC1 a OC4 \\
+B6 & Sin PPI ni registros de liberación; autorización genérica del vaciado; parrilla pisada y sin separadores visibles & NC-10, NC-18, NC-19 & Planificación y control operacional (8.1); control de la producción (8.5.1); liberación (8.6) & PPI con puntos de espera (Tabla~\ref{tab:ppi}); ficha C.2; liberación en tres niveles; pasarelas y separadores & OC6 \\
+B7 & Ningún registro de no conformidades, retrabajos ni costos de la calidad & NC-09, NC-11, NC-12 & Control de las salidas no conformes (8.7); no conformidad y acción correctiva (10.2); mejora (10.3) & Procedimiento de NC (Figura~\ref{fig:flujo-nc}); PCM-05; registro C.5; planilla PAF C.6 & OC9; OC11 \\
+B8 & Escasez de combustible y cemento; acero entregado parcialmente; falta de viguetas; alza de precios & NC-08, NC-20, NC-21 & Contexto (4.1); riesgos y oportunidades (6.1); proveedores externos (8.4) & Matriz de riesgos (R9 y R14); plan de compras anticipado; existencia mínima como condición de liberación; proveedores alternos & OC5; OC6 \\
+B9 & Lluvias y heladas a 3.650~m~s.~n.~m. & NC-22 & Contexto (4.1); riesgos (6.1); control de la producción (8.5.1) & Plan de hormigonado en tiempo frío; pronóstico del SENAMHI; registro de temperaturas y de curado (PPI, puntos 8 y 11) & OC6; OC7 \\
+\end{longtable}
+\vspace{-6pt}
+\nota{Elaboración propia. B: brecha de la línea base (Sección~\ref{sec:diseno-sgc}); NC: no conformidad del diagnóstico (Tabla~\ref{tab:nc}); OC: objetivo de la calidad (Tabla~\ref{tab:objetivos}). Las cláusulas se citan por su número, sin reproducir el texto de la norma.}
+\endgroup
+
+En síntesis, el SGC propuesto convierte cada brecha de la primera losa en un control concreto, con responsable, criterio de aceptación, registro e indicador. Sus metas y sus costos de prevención y evaluación son los insumos del escenario «con SGC» de la evaluación \emph{ex ante} (Sección~\ref{sec:modelo-simulacion}), y su pertinencia, claridad, suficiencia y aplicabilidad se validarán por juicio de expertos con el formato C.8 del Anexo~\ref{anx:instrumentos}.
