@@ -1,0 +1,26 @@
+% =====================================================================
+%  ANEXO L. MODELO DE COSTOS Y SIMULACIÓN DE MONTE CARLO
+% =====================================================================
+\chapter{MODELO DE COSTOS Y SIMULACIÓN DE MONTE CARLO}
+\label{anx:modelo}
+
+Este anexo documenta los parámetros, las fuentes y el código del modelo descrito en la Sección~\ref{sec:modelo-simulacion}. Todos los archivos están en la carpeta \texttt{06\_Modelo\_de\_Costos\_y\_Simulacion} del repositorio de la tesis. Para reproducir los resultados basta ejecutar \texttt{python3 modelo\_costos.py}: el programa lee \texttt{parametros.json}, realiza las \MCiter{} iteraciones con la semilla \MCsemilla{} y regenera las tablas, las figuras y las cifras que se citan en el texto.
+
+\section*{L.1. Parámetros inciertos y sus fuentes}
+\addcontentsline{toc}{section}{L.1. Parámetros inciertos y sus fuentes}
+{\small\setstretch{1}\tablamodelo{tab_parametros}}
+\nota{Distribuciones triangulares (mínimo, moda y máximo). IDM: índice de desperdicio de materiales respecto de la cantidad teórica. Eficacia: proporción del desperdicio o del retrabajo de la línea base que el SGC elimina.}
+
+\section*{L.2. Convergencia de la simulación}
+\addcontentsline{toc}{section}{L.2. Convergencia de la simulación}
+\begin{figure}[H]
+\centering
+\caption{Media acumulada de la reducción del costo unitario según el número de iteraciones}
+\label{fig:convergencia}
+\includegraphics[width=0.85\linewidth]{fig_convergencia}
+\nota{Elaboración propia con el modelo de este anexo.}
+\end{figure}
+
+\section*{L.3. Código del modelo}
+\addcontentsline{toc}{section}{L.3. Código del modelo}
+\VerbatimInput{../06_Modelo_de_Costos_y_Simulacion/modelo_costos.py}

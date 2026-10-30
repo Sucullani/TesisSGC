@@ -1,7 +1,20 @@
 % =====================================================================
 %  PREÁMBULO DE LA TESIS: paquetes y formato
-%  Ajuste aquí márgenes, letra e interlineado si el Reglamento de
-%  Graduación de la Carrera de Ingeniería Civil (UATF) exige otros valores.
+%  Formato según la Guía de Normas APA 7.ª edición del repositorio
+%  (04_Bibliografia/02_Metodologia_y_Redaccion/Guia_Normas_APA_7ma_Edicion.pdf):
+%    - papel carta; márgenes de 2,54 cm en los cuatro lados (pp. 26-27);
+%    - Times New Roman de 12 pt (p. 26);
+%    - interlineado doble, sin espacio adicional entre párrafos (p. 30);
+%    - alineación a la izquierda, sin justificar ni dividir palabras (pp. 31-32);
+%    - sangría de 1,27 cm en la primera línea de cada párrafo (p. 32);
+%    - número de página en la esquina superior derecha (pp. 27-28);
+%    - títulos en negrita: nivel 1 centrado, nivel 2 a la izquierda,
+%      nivel 3 a la izquierda en cursiva (pp. 28-29);
+%    - tablas y figuras: número en negrita y título en cursiva en la línea
+%      siguiente, nota debajo (pp. 17-23);
+%    - referencias con sangría francesa de 1,27 cm (p. 33).
+%  Los capítulos y secciones se numeran porque así lo exige la estructura
+%  del documento de graduación de la Carrera (Taller 1, CIV 400).
 % =====================================================================
 
 % --- Idioma, codificación y letra ------------------------------------
@@ -10,8 +23,8 @@
 \usepackage{amsmath}
 \usepackage{newtxtext,newtxmath}      % letra tipo Times New Roman
 \renewcommand{\ttdefault}{lmtt}       % monoespaciada (rutas y DOI): Latin Modern
-% El mapa de fuentes de MiKTeX de este equipo no registra newtx (MiKTeX
-% indica "User/administrator updates are out-of-sync"); se carga aquí:
+% En el MiKTeX del autor el mapa de fuentes no registra newtx; se carga aquí
+% (en TeX Live estas líneas no tienen efecto adverso):
 \pdfmapfile{+newtx.map}
 \pdfmapfile{+qtm.map}   % TeX Gyre Termes (símbolos TS1 de newtxtext)
 \pdfmapfile{+qhv.map}   % TeX Gyre Heros (sans)
@@ -19,33 +32,44 @@
 \usepackage[autostyle]{csquotes}
 
 % --- Página: tamaño carta, márgenes e interlineado --------------------
-\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=3cm,right=2.5cm,
-            headheight=15pt,footskip=1.2cm]{geometry}
+\usepackage[letterpaper,margin=2.54cm,headheight=15pt,headsep=0.6cm,
+            footskip=1.0cm]{geometry}
 \usepackage{setspace}
-\onehalfspacing                         % interlineado 1,5
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\doublespacing                          % interlineado doble (APA)
+\usepackage{ragged2e}
+\setlength{\RaggedRightParindent}{1.27cm}
+\setlength{\parindent}{1.27cm}          % sangría de primera línea
+\setlength{\parskip}{0pt}               % sin espacio extra entre párrafos
+\AtBeginDocument{\RaggedRight}          % alineado a la izquierda
+% Sin división de palabras al final de línea (APA, p. 32)
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=3em
 
 % --- Colores, cajas y utilidades --------------------------------------
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{etoolbox}
 \usepackage[inline]{enumitem}
-\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=*}
+\setlist{itemsep=0pt,topsep=2pt,parsep=0pt,leftmargin=*}
 
-% --- Títulos de capítulos y secciones ---------------------------------
+% --- Títulos de capítulos y secciones (niveles APA) ---------------------
 \usepackage{titlesec}
+% Nivel 1: centrado, negrita (capítulos)
 \titleformat{\chapter}[display]
-  {\normalfont\large\bfseries\centering}
-  {\MakeUppercase{\chaptertitlename}\ \thechapter}{6pt}{\MakeUppercase}
+  {\normalfont\normalsize\bfseries\centering}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter}{0pt}{\MakeUppercase}
 \titleformat{name=\chapter,numberless}[block]
-  {\normalfont\large\bfseries\centering}{}{0pt}{\MakeUppercase}
-\titlespacing*{\chapter}{0pt}{0pt}{18pt}
-\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{0.6em}{}
-\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.6em}{}
-\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\itshape}{\thesubsubsection.}{0.6em}{}
-\titlespacing*{\section}{0pt}{12pt}{4pt}
-\titlespacing*{\subsection}{0pt}{10pt}{3pt}
-\titlespacing*{\subsubsection}{0pt}{8pt}{2pt}
+  {\normalfont\normalsize\bfseries\centering}{}{0pt}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{12pt}
+% Nivel 2: a la izquierda, negrita
+\titleformat{\section}{\normalfont\normalsize\bfseries\raggedright}{\thesection.}{0.6em}{}
+% Nivel 3: a la izquierda, negrita y cursiva
+\titleformat{\subsection}{\normalfont\normalsize\bfseries\itshape\raggedright}{\thesubsection.}{0.6em}{}
+% Nivel 4: con sangría, negrita, punto final y texto en la misma línea
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}[.]
+\titlespacing*{\section}{0pt}{6pt}{0pt}
+\titlespacing*{\subsection}{0pt}{6pt}{0pt}
+\titlespacing*{\subsubsection}{1.27cm}{3pt}{0.5em}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -59,14 +83,14 @@
 }
 
 % --- Índices (tabla de contenido) -------------------------------------
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}   % títulos de índices con el formato de \chapter*
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftchappagefont}{\bfseries}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchappresnum}{\chaptername\ }
 \renewcommand{\cftchapaftersnum}{.}
 \setlength{\cftchapnumwidth}{6.4em}
-\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforechapskip}{4pt}
 \renewcommand{\cfttabpresnum}{Tabla\ }
 \renewcommand{\cftfigpresnum}{Figura\ }
 \renewcommand{\cfttabaftersnum}{.}
@@ -75,37 +99,52 @@
 \setlength{\cftfignumwidth}{5.6em}
 \setlength{\cfttabindent}{0pt}
 \setlength{\cftfigindent}{0pt}
+% Los índices van a espacio sencillo para que sean legibles
+\AtBeginEnvironment{tableofcontents}{\singlespacing}
 
 % --- Tablas ------------------------------------------------------------
 \usepackage{array,booktabs,tabularx,longtable,multirow,makecell}
 \renewcommand{\arraystretch}{1.15}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
-\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
 \newcolumntype{Q}[1]{>{\centering\arraybackslash}p{#1}}
+% Cuerpo de tablas y figuras a espacio sencillo (APA lo permite, p. 18)
+% Sin sangría de párrafo dentro de las celdas
+\AtBeginEnvironment{tabular}{\setlength{\RaggedRightParindent}{0pt}}
+\AtBeginEnvironment{tabularx}{\setlength{\RaggedRightParindent}{0pt}}
+\AtBeginEnvironment{longtable}{\setlength{\RaggedRightParindent}{0pt}}
 \AtBeginEnvironment{table}{\small\setstretch{1}}
 \AtBeginEnvironment{figure}{\setstretch{1}}
+\AtBeginEnvironment{longtable}{\setstretch{1}}
 
 % --- Leyendas de tablas y figuras (estilo APA 7) -----------------------
 %     Número en negrita y título en cursiva en la línea siguiente.
 \usepackage{caption}
-\captionsetup{font={small,stretch=1},labelfont=bf,textfont=it,
+\captionsetup{font={normalsize,stretch=1.5},labelfont=bf,textfont=it,
               labelsep=newline,justification=raggedright,
               singlelinecheck=false,skip=4pt}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=top}
 \counterwithout{table}{chapter}         % Tabla 1, 2, 3...
 \counterwithout{figure}{chapter}        % Figura 1, 2, 3...
 \counterwithout{equation}{chapter}      % (1), (2), (3)...
 % Nota debajo de una tabla o figura: \nota{Elaborado con base en ...}
-\newcommand{\nota}[1]{\par\vspace{2pt}{\small\setstretch{1}\textit{Nota.} #1\par}}
+\newcommand{\nota}[1]{\par\vspace{3pt}{\small\setstretch{1.15}\RaggedRight\noindent\textit{Nota.} #1\par}}
 
 % --- Figuras, planos y diagramas -----------------------------------------
 \usepackage{graphicx}
-\graphicspath{{figuras/}}
+\graphicspath{{figuras/}{../06_Modelo_de_Costos_y_Simulacion/figuras/}}
 \usepackage{float}
 \usepackage{pdflscape}
 \usepackage{pdfpages}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,babel}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc,babel}
+
+% --- Código fuente en anexos -----------------------------------------
+\usepackage{fancyvrb}
+\fvset{fontsize=\scriptsize,numbers=left,numbersep=4pt,frame=single,framesep=2mm}
 
 % --- Unidades y números (coma decimal, punto de miles) ------------------
 \usepackage{siunitx}
@@ -113,18 +152,22 @@
          group-minimum-digits=4,per-mode=symbol}
 \newcommand{\mdos}{m\textsuperscript{2}}    % metro cuadrado
 \newcommand{\mtres}{m\textsuperscript{3}}   % metro cúbico
+\newcommand{\cmdos}{cm\textsuperscript{2}}  % centímetro cuadrado
 
-% --- Encabezado y pie de página --------------------------------------
+% --- Encabezado y pie de página: número arriba a la derecha (APA) -------
 \usepackage{fancyhdr}
-\fancypagestyle{tesis}{\fancyhf{}\fancyfoot[C]{\thepage}%
+\fancypagestyle{tesis}{\fancyhf{}\fancyhead[R]{\thepage}%
   \renewcommand{\headrulewidth}{0pt}}
-\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}%
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\thepage}%
   \renewcommand{\headrulewidth}{0pt}}
 \pagestyle{tesis}
 
+% --- Citas textuales de más de 40 palabras: bloque con sangría de 1,27 cm
+\renewenvironment{quote}{\par\setlength{\leftskip}{1.27cm}\noindent\ignorespaces}{\par}
+
 % --- Marcas de borrador -------------------------------------------------
-%  \pendiente{...} : texto o dato que falta completar (rojo).
-%  \guia{...}      : instrucciones para redactar una sección (recuadro gris).
+%  \pendiente{...} : dato que solo puede aportar el postulante (rojo).
+%  \guia{...}      : instrucciones de redacción (recuadro gris).
 %  Ambas desaparecen al poner \borradorfalse en tesis.tex.
 \newif\ifborrador
 \newcommand{\pendiente}[1]{\ifborrador{\color{BrickRed}\textbf{[Pendiente:} #1\textbf{]}}\fi}
@@ -137,7 +180,21 @@
 
 % --- Bibliografía APA 7.ª edición -----------------------------------------
 \usepackage[style=apa,backend=biber]{biblatex}
-\addbibresource{bibliografia.bib}
+\setlength{\bibhang}{1.27cm}            % sangría francesa (APA)
+\setlength{\bibitemsep}{0pt}
+% Todas las fuentes de la carpeta bib/ (una por grupo de fichas)
+\addbibresource{bib/00_base.bib}
+\IfFileExists{bib/tesis_grupo1.bib}{\addbibresource{bib/tesis_grupo1.bib}}{}
+\IfFileExists{bib/tesis_grupo2.bib}{\addbibresource{bib/tesis_grupo2.bib}}{}
+\IfFileExists{bib/articulos_tecnicos.bib}{\addbibresource{bib/articulos_tecnicos.bib}}{}
+\IfFileExists{bib/normas_legislacion_metodologia.bib}{\addbibresource{bib/normas_legislacion_metodologia.bib}}{}
+\IfFileExists{bib/caso_estudio.bib}{\addbibresource{bib/caso_estudio.bib}}{}
+\IfFileExists{bib/cap1_marco.bib}{\addbibresource{bib/cap1_marco.bib}}{}
+\IfFileExists{bib/cap2_sgc.bib}{\addbibresource{bib/cap2_sgc.bib}}{}
+\IfFileExists{bib/cap2_diagnostico.bib}{\addbibresource{bib/cap2_diagnostico.bib}}{}
+\IfFileExists{bib/cap3_resultados.bib}{\addbibresource{bib/cap3_resultados.bib}}{}
+\IfFileExists{bib/introduccion.bib}{\addbibresource{bib/introduccion.bib}}{}
 
 % --- Hipervínculos (cargar al final) --------------------------------------
+\usepackage{xurl}
 \usepackage[hidelinks,bookmarksnumbered]{hyperref}

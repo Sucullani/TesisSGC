@@ -1,0 +1,73 @@
+{
+  "_nota": "VERSIÓN PROVISIONAL: cantidades teóricas e índices de la línea base por confirmar con la extracción de planos y documentos.",
+  "superficies": {"primera_losa_m2": 1109.84, "saldo_m2": 2234.60},
+  "precios_contrato": {"item13_Bs_m2": 215.6753, "acero_Bs_kg": 16.75584, "acero_losa_kg_m2_computo": 3.7584,
+    "fuente": "UATF, planilla y cómputos de la resolución del contrato (PAO N.º 3)"},
+  "apu_referencia": {
+    "incidencias": {"beneficios_sociales": 0.71, "iva_mano_obra": 0.1494, "herramientas": 0.05,
+                    "gastos_generales": 0.13, "utilidad": 0.10, "it": 0.0309,
+                    "fuente": "Cocarico Mamani (2022, p. 256)"},
+    "item13": {
+      "materiales": [
+        {"insumo": "Vigueta pretensada", "unidad": "m", "cantidad": "=q:viguetas", "precio_base": 25.75, "fuente": "INE (2026), dic-2023, 2/3 del precio por m² de vigueta con plastoformo"},
+        {"insumo": "Complemento de EPS", "unidad": "pza", "cantidad": "=q:eps", "precio_base": 12.63, "fuente": "INE (2026), dic-2023, 1/3 del precio por m² de vigueta con plastoformo"},
+        {"insumo": "Cemento portland", "unidad": "kg", "cantidad": "=qh:400", "precio_base": 1.00, "fuente": "Cocarico Mamani (2022, p. 255); ET: 400 kg/m³"},
+        {"insumo": "Arena común", "unidad": "m3", "cantidad": "=qh:0.50", "precio_base": 120.00, "fuente": "Cocarico Mamani (2022, p. 255)"},
+        {"insumo": "Grava", "unidad": "m3", "cantidad": "=qh:0.80", "precio_base": 120.00, "fuente": "Cocarico Mamani (2022, p. 255)"},
+        {"insumo": "Madera de construcción", "unidad": "p2", "cantidad": 1.00, "precio_base": 8.00, "fuente": "Cocarico Mamani (2022, p. 255)"},
+        {"insumo": "Clavos", "unidad": "kg", "cantidad": 0.10, "precio_base": 10.00, "fuente": "Cocarico Mamani (2022, p. 255)"},
+        {"insumo": "Alambre de amarre", "unidad": "kg", "cantidad": 0.02, "precio_base": 11.50, "fuente": "Cocarico Mamani (2022, p. 255)"}
+      ],
+      "mano_obra": [
+        {"insumo": "Albañil", "unidad": "h", "cantidad": 0.40, "precio_base": 22.41, "fuente": "Cocarico Mamani (2022, p. 255); rendimiento adaptado de Castañeda Briceño (2017, p. 52)"},
+        {"insumo": "Ayudante", "unidad": "h", "cantidad": 0.70, "precio_base": 13.92, "fuente": "Ídem"},
+        {"insumo": "Encofrador", "unidad": "h", "cantidad": 0.20, "precio_base": 21.07, "fuente": "Ídem"}
+      ],
+      "equipo": [
+        {"insumo": "Mezcladora de 280 L", "unidad": "h", "cantidad": 0.05, "precio_base": 25.24, "fuente": "Cocarico Mamani (2022, p. 256)"},
+        {"insumo": "Vibradora", "unidad": "h", "cantidad": 0.05, "precio_base": 15.29, "fuente": "Cocarico Mamani (2022, p. 256)"}
+      ]
+    },
+    "acero_kg": {
+      "materiales": [
+        {"insumo": "Fierro corrugado", "unidad": "kg", "cantidad": 1.00, "precio_base": 8.35, "fuente": "Cocarico Mamani (2022, p. 255)"},
+        {"insumo": "Alambre de amarre (acero)", "unidad": "kg", "cantidad": 0.03, "precio_base": 11.50, "fuente": "Cocarico Mamani (2022, p. 255)"}
+      ],
+      "mano_obra": [
+        {"insumo": "Armador", "unidad": "h", "cantidad": 0.04, "precio_base": 21.07, "fuente": "Cocarico Mamani (2022, p. 255); rendimiento de Castañeda Briceño (2017, p. 52)"},
+        {"insumo": "Ayudante (acero)", "unidad": "h", "cantidad": 0.04, "precio_base": 13.92, "fuente": "Ídem"}
+      ],
+      "equipo": []
+    }
+  },
+  "materiales": {
+    "viguetas": {"nombre": "Viguetas", "unidad": "m", "q_teorica_m2": 2.0,
+                 "valoracion": {"insumos": [["Vigueta pretensada", 1.0]], "kappa": "item13"},
+                 "idm_sin_sgc": {"min": 0.0, "moda": 0.02, "max": 0.05, "fuente": "provisional"},
+                 "eficacia_sgc": {"min": 0.1, "moda": 0.4, "max": 0.7, "fuente": "provisional"}},
+    "eps": {"nombre": "Plastoformo", "unidad": "pza", "q_teorica_m2": 2.0,
+            "valoracion": {"insumos": [["Complemento de EPS", 1.0]], "kappa": "item13"},
+            "idm_sin_sgc": {"min": 0.03, "moda": 0.06, "max": 0.09, "fuente": "provisional"},
+            "eficacia_sgc": {"min": 0.1, "moda": 0.4, "max": 0.7, "fuente": "provisional"}},
+    "hormigon": {"nombre": "Hormigón", "unidad": "m3", "q_teorica_m2": 0.075,
+                 "valoracion": {"insumos": [["Cemento portland", 400], ["Arena común", 0.50], ["Grava", 0.80]], "kappa": "item13"},
+                 "idm_sin_sgc": {"min": 0.02, "moda": 0.06, "max": 0.12, "fuente": "provisional"},
+                 "eficacia_sgc": {"min": 0.1, "moda": 0.4, "max": 0.7, "fuente": "provisional"}},
+    "acero": {"nombre": "Acero", "unidad": "kg", "q_teorica_m2": 3.76,
+              "valoracion": {"insumos": [["Fierro corrugado", 1.0]], "kappa": "acero"},
+              "idm_sin_sgc": {"min": 0.04, "moda": 0.10, "max": 0.17, "fuente": "provisional"},
+              "eficacia_sgc": {"min": 0.1, "moda": 0.4, "max": 0.7, "fuente": "provisional"}}
+  },
+  "retrabajo": {"fraccion_sin_sgc": {"min": 0.005, "moda": 0.02, "max": 0.04, "fuente": "provisional"},
+                "eficacia_sgc": {"min": 0.2, "moda": 0.5, "max": 0.8, "fuente": "provisional"}},
+  "costos_sgc": {
+    "costo_calidad_sin_sgc_Bs_m2": 0.0,
+    "componentes": {
+      "tecnico_calidad": {"descripcion": "Técnico de control de calidad a tiempo parcial", "Bs_total": {"min": 8000, "moda": 12000, "max": 16000, "fuente": "provisional"}},
+      "ensayos": {"descripcion": "Ensayos de hormigón", "Bs_total": {"min": 1500, "moda": 2500, "max": 4000, "fuente": "provisional"}},
+      "capacitacion": {"descripcion": "Capacitación", "Bs_total": {"min": 500, "moda": 1000, "max": 2000, "fuente": "provisional"}},
+      "documentacion": {"descripcion": "Formatos y registros", "Bs_total": {"min": 300, "moda": 600, "max": 1000, "fuente": "provisional"}}
+    }
+  },
+  "simulacion": {"iteraciones": 20000, "semilla": 2026, "umbral_reduccion": 0.05, "nivel_confianza": 0.95, "prob_sgc_no_aplicado": 0.15}
+}

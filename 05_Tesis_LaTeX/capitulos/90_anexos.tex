@@ -78,6 +78,7 @@
 \end{landscape}
 
 % ---------------------------------------------------------------------
+\IfFileExists{capitulos/91_anexo_instrumentos.tex}{\input{capitulos/91_anexo_instrumentos}}{%
 \chapter{INSTRUMENTOS DE RECOLECCIÓN DE DATOS}
 \label{anx:instrumentos}
 \guia{Incluir los formatos definitivos:
@@ -90,6 +91,7 @@
   \item planilla de costos de calidad y no calidad;
   \item guía de entrevista.
 \end{enumerate}}
+}
 
 % ---------------------------------------------------------------------
 \chapter{VALIDACIÓN DE INSTRUMENTOS POR JUICIO DE EXPERTOS}
@@ -121,8 +123,20 @@ Certificado de laboratorio N.\textsuperscript{o}~000293 del Laboratorio de Resis
 \pendiente{agregar los resultados de los ensayos de la losa obtenidos durante la aplicación del SGC.}
 
 % ---------------------------------------------------------------------
-\chapter{ANÁLISIS DE PRECIOS UNITARIOS}
-\pendiente{incluir el APU contractual del ítem 13 (solicitar a la Fiscalización) y el APU recalculado con el SGC.}
+\chapter{ANÁLISIS DE PRECIOS UNITARIOS DE REFERENCIA}
+\label{anx:apu}
+El análisis de precios unitarios (APU) contractual del ítem~13 no forma parte de la documentación de obra disponible para esta investigación. Para valorar las pérdidas de materiales a precios del contrato se reconstruyó un APU de referencia con las cantidades teóricas de la losa (Sección~\ref{sec:linea-base-cuantitativa}), los precios base de insumos y las incidencias de un APU boliviano documentado \parencite{cocarico2022}, y el precio de la vigueta pretensada con plastoformo publicado por el \textcite{ine2026precios}. El APU reconstruido se calibró al precio contractual con un factor único $\kappa$. Un valor de $\kappa$ cercano a 1 indica que la estructura de costos reconstruida es coherente con el precio adjudicado.
+
+\section*{I.1. Ítem 13: losa alivianada con viguetas pretensadas y plastoformo, h = 25 cm (por \mdos{})}
+\addcontentsline{toc}{section}{I.1. APU de referencia del ítem 13}
+{\small\setstretch{1}\tablamodelo{tab_apu_item13}}
+\nota{Precios base de 2022 y 2023; el factor $\kappa$ lleva el precio reconstruido al nivel del precio contractual de 2025. Las cantidades de hormigón se expresan por \mdos{} de losa (cemento, arena y grava por \mtres{} multiplicados por el volumen teórico).}
+
+\section*{I.2. Acero estructural de la losa (por kg)}
+\addcontentsline{toc}{section}{I.2. APU de referencia del acero}
+{\small\setstretch{1}\tablamodelo{tab_apu_acero}}
+\nota{El acero de la losa se mide y paga en el ítem~8 (Bs~16,75584/kg). El factor $\kappa$ del acero se usa para obtener el precio de valoración del material desperdiciado.}
+\pendiente{reemplazar o contrastar este APU de referencia con el APU contractual del ítem 13, que debe solicitarse a la Fiscalización.}
 
 % ---------------------------------------------------------------------
 \chapter{PANEL FOTOGRÁFICO}
@@ -133,3 +147,6 @@ Certificado de laboratorio N.\textsuperscript{o}~000293 del Laboratorio de Resis
 \chapter{DOCUMENTOS DE CONTEXTO}
 Comunicado de FANCESA sobre la paralización de su producción (12/06/2025) y pronunciamiento de la Cámara de la Construcción de Tarija sobre el incremento del precio del cemento (09/10/2025).
 \includepdf[pages=26,scale=0.92,pagecommand={\thispagestyle{tesis}}]{\datos/03_Planillas_y_Computos/Item13_Losa_Alivianada_Expediente_Computos_Certificados_Fotos.pdf}
+
+% ---------------------------------------------------------------------
+\IfFileExists{capitulos/92_anexo_modelo.tex}{\input{capitulos/92_anexo_modelo}}{}

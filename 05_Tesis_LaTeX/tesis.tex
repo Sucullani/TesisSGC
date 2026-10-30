@@ -7,6 +7,9 @@
 % =====================================================================
 \documentclass[12pt,letterpaper,oneside]{report}
 \input{preambulo}
+% Cifras del modelo de costos y de la simulación (generadas por modelo_costos.py)
+\IfFileExists{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo.tex}{\input{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/valores_modelo.tex}}{}
+\newcommand{\tablamodelo}[1]{\input{../06_Modelo_de_Costos_y_Simulacion/tablas_latex/#1}}
 
 % ---- Datos generales (se usan en la carátula y en las propiedades del PDF)
 \newcommand{\titulotesis}{DISEÑO DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BASADO EN LA NORMA ISO~9001 PARA REDUCIR COSTOS MEDIANTE EL CONTROL DE MATERIALES EN LOSAS ALIVIANADAS CON VIGUETAS PRETENSADAS DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD AUTÓNOMA TOMÁS FRÍAS, POTOSÍ}
@@ -41,7 +44,9 @@
 \pagenumbering{arabic}
 \input{capitulos/10_introduccion}
 \input{capitulos/20_capitulo1_marco_teorico}
-\input{capitulos/30_capitulo2_diseno_sgc}
+\input{capitulos/30_capitulo2_diseno_sgc}          % 2.1-2.5: modelo, caso, variables, línea base
+\IfFileExists{capitulos/31_capitulo2_propuesta_sgc.tex}{\input{capitulos/31_capitulo2_propuesta_sgc}}{} % 2.6: diseño del SGC
+\IfFileExists{capitulos/32_capitulo2_implementacion.tex}{\input{capitulos/32_capitulo2_implementacion}}{} % 2.7-2.9
 \input{capitulos/40_capitulo3_resultados}
 \input{capitulos/50_conclusiones}
 
