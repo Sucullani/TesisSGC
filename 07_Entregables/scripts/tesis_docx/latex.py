@@ -726,6 +726,7 @@ class Transformador:
         s = reemplazar_comando(s, 'nota', lambda o, b, e: self._bloque_nota(b[0]), n_obl=1)
         s = self.transformar_graficos(s)
         s = self.transformar_listas(s)
+        s = self._desenvolver_grupos(s)
         s = self.transformar_titulos(s)
         s = self._indices(s)
         s = self.resolver_referencias(s)
@@ -792,7 +793,55 @@ class Transformador:
         return s
 
     def _celda_multilinea(self, txt):
-        return ' \\newline '.join(p.strip() for p in dividir_nivel_superior(txt, '\\\\'))
+        partes = [p.strip() for p in dividir_nivel_superior(txt, '\\\\')]
+        txt = ' \\newline '.join(p for p in partes if p)
+        return re.sub(r'\\par(?![A-Za-z@])', ' \\\\newline ', txt)
+
+    def _desenvolver_grupos(self, s):
+        """Quita llaves «sueltas» {...} que envuelven contenido de bloque.
+
+        Ej.: {\\small\\setstretch{1}\\begin{longtable}...} o {\\footnotesize ... \\par}.
+        Las llaves que son argumentos de comandos no se tocan.
+        """
+        cambios = True
+        vueltas = 0
+        while cambios and vueltas < 6:
+            cambios = False
+            vueltas += 1
+            salida = []
+            pos = 0
+            i = 0
+            n = len(s)
+            while i < n:
+                c = s[i]
+                if c == '\\':
+                    i += 2
+                    continue
+                if c != '{':
+                    i += 1
+                    continue
+                antes = s[:i].rstrip(' \t')
+                es_argumento = bool(re.search(r'(\\[A-Za-z@]+\*?|[\]}^_=]|\\begin\{[^}]*\})$', antes))
+                try:
+                    contenido, fin = leer_grupo(s, i)
+                except ValueError:
+                    i += 1
+                    continue
+                if not es_argumento and re.search(r'\n\s*\n|\\par(?![A-Za-z@])|\\begin\{|⟦(TBL|EQ|VERB|PDFPAG)',
+                                                  contenido):
+                    contenido = re.sub(r'\\(bfseries|itshape|mdseries|upshape|normalfont|small|footnotesize|'
+                                       r'scriptsize|tiny|normalsize|large|Large|LARGE|huge|Huge)(?![A-Za-z@])',
+                                       '', contenido)
+                    salida.append(s[pos:i])
+                    salida.append('\n' + contenido + '\n')
+                    pos = fin
+                    i = fin
+                    cambios = True
+                    continue
+                i += 1
+            salida.append(s[pos:])
+            s = ''.join(salida)
+        return s
 
     def _normalizar_citas(self, s):
         """Quita ~ de las notas previas y posteriores de las citas (p.~9 -> p. 9)."""
@@ -1318,6 +1367,8 @@ class Transformador:
         c = re.sub(r'\\(centering|raggedright|raggedleft|RaggedRight|RaggedLeft|arraybackslash|noindent|'
                    r'hfill|small|footnotesize|scriptsize|normalsize)(?![A-Za-z])', '', c)
         c = re.sub(r'\n\s*\n', ' \\\\newline ', c)
+        c = re.sub(r'\\par(?![A-Za-z@])', ' \\\\newline ', c)
+        c = re.sub(r'\\vspace\*?\{[^{}]*\}', '', c)
         # \multicolumn{n}{spec}{texto}: se simplifica el formato de columna
         def r_multi(o, b, e):
             spec = self.parsear_columnas(b[1])
@@ -1417,9 +1468,11 @@ class Transformador:
                                    % (ocupadas, ncol, texto_plano(' & '.join(f_['celdas']))[:80]))
         anchos = self._anchos(cols, enc, cuerpo_f, ancho_total)
         k = len(self.tablas)
+        cuadricula = '|' in re.sub(r'\{[^{}]*\}', '', spec)   # formularios con líneas verticales
         self.tablas.append({'anchos_cm': anchos, 'alin': [c['alin'] for c in cols],
                             'n_encabezado': len(enc), 'reglas_cuerpo': reglas_cuerpo,
-                            'bordes': bool(hay_reglas), 'filas': len(enc) + len(cuerpo_f)})
+                            'bordes': 'cuadricula' if cuadricula else ('apa' if hay_reglas else 'ninguno'),
+                            'filas': len(enc) + len(cuerpo_f)})
         lineas = ['\\begin{tabular}{%s}' % ''.join(c['alin'] for c in cols)]
         if enc:
             lineas.append('\\toprule')
