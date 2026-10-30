@@ -187,8 +187,8 @@ for r in runs:
             if (b - a) / ESC > 0.33:  # descarta el interior de las vigas (0,19–0,27 m) y marcas cortas
                 m = (a + b) / 2
                 mx, my = (m, r['off']) if r['o'] == 'H' else (r['off'], m)
-                pieces.append(dict(color=r['color'], o=r['o'], off=round(r['off'], 2), a=round(a, 2), b=round(b, 2),
-                                   L=round((b - a) / ESC, 3), pano=pano_of(mx, my), run=(r['o'], round(r['off'], 2), round(r['s0'], 1))))
+                pieces.append(dict(color=r['color'], o=r['o'], off=round(r['off'], 2), a=round(float(a), 2), b=round(float(b), 2),
+                                   L=round(float(b - a) / ESC, 3), pano=pano_of(mx, my), run=(r['o'], round(r['off'], 2), round(r['s0'], 1))))
             cur = None
 
 # agrupar piezas por paño y por vigueta (misma corrida) → longitud libre (cara a cara) y longitud de EPS (suma de tramos)
@@ -201,14 +201,12 @@ for k in POLY:
     vig = []
     for run, qs in by.items():
         a = min(q['a'] for q in qs); b = max(q['b'] for q in qs)
-        vig.append(dict(o=run[0], off=run[1], L_libre=round((b - a) / ESC, 3), L_tramos=round(sum(q['L'] for q in qs), 3),
-                        n_tramos=len(qs), colores=sorted({q['color'] for q in qs})))
+        vig.append(dict(o=run[0], off=run[1], a=round(float(a), 2), b=round(float(b), 2), L_libre=round((b - a) / ESC, 3),
+                        L_tramos=round(sum(q['L'] for q in qs), 3), n_tramos=len(qs), colores=sorted({q['color'] for q in qs})))
     vig.sort(key=lambda v: v['off'])
     res[k] = vig
 json.dump(dict(POLY=POLY, viguetas=res), open(os.path.join(OUT, 'p03_viguetas_por_pano.json'), 'w'), indent=1, ensure_ascii=False)
-labels = json.load(open(os.path.join(OUT, 'p01_p03_textos.json')))
-for k in POLY:
-    v = res[k]
-    os_ = collections.Counter(q['o'] for q in v)
-    Ls = [q['L_libre'] for q in v]
+if __name__ == '__main__':
+  for k in POLY:
+    v = res[k]; os_ = collections.Counter(q['o'] for q in v); Ls = [q['L_libre'] for q in v]
     print(f"{k:4} n={len(v):3}  dir={dict(os_)}  L_libre: min {min(Ls) if Ls else 0:.2f} max {max(Ls) if Ls else 0:.2f} media {np.mean(Ls) if Ls else 0:.2f}  Σ={sum(Ls):.2f}  colores={sorted({c for q in v for c in q['colores']})}")

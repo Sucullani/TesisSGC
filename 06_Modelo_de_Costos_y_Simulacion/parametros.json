@@ -1,5 +1,5 @@
 {
-  "_nota": "Parámetros de literatura con fuente y página. Pendiente: línea base documentada de EPS y acero (planos).",
+  "_nota": "Parámetros definitivos: cantidades teóricas de los planos, desperdicios documentados (EPS y acero) y de literatura (hormigón, viguetas, retrabajo) con página.",
   "superficies": {
     "primera_losa_m2": 1109.84,
     "saldo_m2": 2234.6
@@ -159,7 +159,7 @@
     "viguetas": {
       "nombre": "Viguetas",
       "unidad": "m",
-      "q_teorica_m2": 2.0,
+      "q_teorica_m2": 1.98688,
       "valoracion": {
         "insumos": [
           [
@@ -180,12 +180,13 @@
         "moda": 0.44,
         "max": 0.7,
         "fuente": "Igual que materiales de obra (Galarza Meza, 2011, p. 73)"
-      }
+      },
+      "fuente_q": "Cálculo por paño con los Planos 01–03 y la sección de la losa (Cantidades_Teoricas_Primera_Losa_por_Pano.csv): 2205.12 para 1.109,84 m²"
     },
     "eps": {
       "nombre": "Plastoformo",
       "unidad": "pza",
-      "q_teorica_m2": 2.0,
+      "q_teorica_m2": 2.01642,
       "valoracion": {
         "insumos": [
           [
@@ -196,22 +197,23 @@
         "kappa": "item13"
       },
       "idm_sin_sgc": {
-        "min": 0.03,
-        "moda": 0.06,
-        "max": 0.09,
-        "fuente": "provisional"
+        "min": 0.025,
+        "moda": 0.0501,
+        "max": 0.0751,
+        "fuente": "Documentado: 2.350 piezas entregadas (certificado UNICON) frente a 2.237,9 teóricas = 5.01 %; rango ±50 %"
       },
       "eficacia_sgc": {
         "min": 0.1,
         "moda": 0.44,
         "max": 0.7,
         "fuente": "Igual que materiales de obra (Galarza Meza, 2011, p. 73)"
-      }
+      },
+      "fuente_q": "Cálculo por paño con los Planos 01–03 y la sección de la losa (Cantidades_Teoricas_Primera_Losa_por_Pano.csv): 2237.90 para 1.109,84 m²"
     },
     "hormigon": {
       "nombre": "Hormigón",
       "unidad": "m3",
-      "q_teorica_m2": 0.075,
+      "q_teorica_m2": 0.07146,
       "valoracion": {
         "insumos": [
           [
@@ -240,12 +242,13 @@
         "moda": 0.44,
         "max": 0.7,
         "fuente": "Galarza Meza (2011, p. 73): de 5 % a 2,8 % con pedidos limitados (44 %); Dzul y Gracia (2009, p. 46): 10 %"
-      }
+      },
+      "fuente_q": "Cálculo por paño con los Planos 01–03 y la sección de la losa (Cantidades_Teoricas_Primera_Losa_por_Pano.csv): 79.31 para 1.109,84 m²"
     },
     "acero": {
       "nombre": "Acero",
       "unidad": "kg",
-      "q_teorica_m2": 3.76,
+      "q_teorica_m2": 3.2192,
       "valoracion": {
         "insumos": [
           [
@@ -256,17 +259,18 @@
         "kappa": "acero"
       },
       "idm_sin_sgc": {
-        "min": 0.04,
-        "moda": 0.1,
-        "max": 0.1709,
-        "fuente": "Galarza Meza (2011, p. 75): 7 % presupuestado; Abbott y Rodríguez (2008, p. 583): hasta 10 % cortado en obra; Chino Quispe y Zarate Chilqquetuma (2024): 14,58–17,09 % con método convencional"
+        "min": 0.07,
+        "moda": 0.1675,
+        "max": 0.26,
+        "fuente": "Documentado: 4.171,18 kg pagados (PAO 2) frente a 3.572,80 kg teóricos = 16.75 %; rango: Galarza Meza (2011, p. 75) 7 % y Maciel et al. (2016, p. 106) hasta 26 %; coincide con Chino Quispe y Zarate Chilqquetuma (2024): 14,58–17,09 %"
       },
       "eficacia_sgc": {
         "min": 0.1,
         "moda": 0.42,
         "max": 0.8,
         "fuente": "Galarza Meza (2011, pp. 75-76): de 7 % a 4,04 % (42 %) y 3,75 % (46 %); Abbott y Rodríguez (2008, p. 583): < 1 % precortado"
-      }
+      },
+      "fuente_q": "Cálculo por paño con los Planos 01–03 y la sección de la losa (Cantidades_Teoricas_Primera_Losa_por_Pano.csv): 3572.80 para 1.109,84 m²"
     }
   },
   "retrabajo": {
