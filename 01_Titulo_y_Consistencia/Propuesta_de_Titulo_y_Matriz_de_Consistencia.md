@@ -53,6 +53,11 @@ La construcción del Edificio de Posgrado de la UATF (CUCE 25-0143-00-1531493-1-
 
 Del ítem **losa alivianada con viguetas pretensadas y plastoformo h = 25 cm** (21,45 % del contrato, Bs 215,68/m²) solo se ejecutaron **1.109,84 m² de 3.344,44 m² (33,18 %)**. En la ejecución no se aplicó un sistema formal de gestión de la calidad. El control de materiales (recepción, almacenamiento, consumo y desperdicio) y de cantidades dependió de la medición en planillas, y no hubo un plan de puntos de inspección ni un registro de costos de calidad.
 
+Los registros de la propia obra lo confirman:
+- El único certificado de laboratorio (N.º 000293, 05/12/2025) **no incluye probetas de la losa**.
+- Las 12 probetas de columnas y vigas se ensayaron a **55–76 días** en lugar de 28. Las elaboró la propia contratista.
+- La Supervisión tuvo que pedir que se presentaran las **garantías de los materiales**, la **rotura de probetas** y las **dosificaciones** de los hormigones.
+
 En la literatura, los reprocesos representan alrededor del **5 % del costo total** de construcción (Hwang et al., 2009, citado en Álvarez Quintero, 2014). Una implementación eficaz de un SGC los reduce **hasta en 84,82 %** (Álvarez Quintero, 2014).
 
 ### 3.2 Problema científico

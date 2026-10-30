@@ -78,7 +78,50 @@
    - Pronunciamiento de **CADECO Tarija** (09/10/2025) sobre el incremento del precio del cemento, la escasez de combustibles y el tipo de cambio. Pide modificar los **D.S. 5321 y 5452** de reajuste de precios.
 6. **Resolución del contrato** con solo el **33 %** de la losa alivianada ejecutada.
 
-## 5. Documentos fuente (en esta carpeta)
+## 5. Control de calidad registrado en la Planilla de Avance N.º 2 (hallazgos para el diagnóstico)
+
+**Certificado de laboratorio N.º 000293** del Laboratorio de Resistencia de Materiales y Tecnología del Hormigón (Carrera de Ingeniería Civil, UATF), del 05/12/2025 (PAO N.º 2, p. 78):
+
+| Elemento | N.º probetas (6" × 12") | Edad de ensayo | Resistencia proyectada a 28 días (kg/cm²) | Media | Desv. est. | CV |
+|---|---|---|---|---|---|---|
+| Columnas | 10 | 55–76 días | 253,6 – 287,8 | 267,2 | 9,9 | 3,7 % |
+| Vigas | 2 | 76 días | 252,0 – 261,4 | 256,7 | 6,6 | 2,6 % |
+| **Losa alivianada** | **0** | — | **sin ensayos** | — | — | — |
+
+Observaciones útiles para el OE1 (diagnóstico):
+1. **No hay probetas de la losa alivianada** en el certificado: el hormigón de la carpeta de compresión y de los nervios no tuvo control de resistencia documentado.
+2. Las probetas se ensayaron a **55–76 días** y se "proyectaron" a 28 días con un factor de tiempo. ASTM C39 y ACI 318-25 (26.12) piden ensayar a la edad especificada (28 días).
+3. El laboratorio aclara que **"las probetas fueron traídas y elaboradas por la empresa solicitante"**: no hubo muestreo independiente (ASTM C172 / C31).
+4. Todas superan f'c = 250 kg/cm², pero con poco margen: el mínimo es 252,0 kg/cm² y 4 de 12 valores están por debajo de 260 kg/cm².
+
+**Recomendaciones de la Supervisión al constructor** (Informe de Supervisión, PAO N.º 2, p. 9). Muestran brechas de gestión de la calidad:
+- "Presentar las garantías de todos los materiales empleados en obra."
+- "Realizar la rotura de probetas de los elementos vaciados."
+- "Presentar las dosificaciones para los diferentes tipos de elementos."
+- Mantener los dos frentes de trabajo para recuperar el retraso del cronograma.
+
+Otros registros de la PAO N.º 2:
+- Certificados de calidad de PRETENSA (viguetas) y UNICON (EPS).
+- Certificados de acero de **Import Export Las Lomas Ltda.** (barras AH 500S).
+- Fotocopia del **Libro de Órdenes** (aprox. pp. 113–125).
+- Contrato, orden de proceder, acta de inicio, boletas de garantía, póliza y cronogramas actualizados.
+- En el periodo se trabajaron 95 días, con 2 frentes de obra civil y 2 de hormigonado (≈ 6 trabajadores cada uno).
+
+## 6. Datos que faltan para la línea base (solicitar a supervisión, fiscalización o contratista)
+
+| Dato | Para qué indicador | A quién pedirlo |
+|---|---|---|
+| Notas de entrega (remisiones) de **viguetas PRETENSA**: cantidad y longitudes por paño | IDM de viguetas (m o pza entregados frente a teóricos del Plano 03) | Contratista / supervisión |
+| Notas de entrega de **plastoformo UNICON** (pza) | IDM del complemento EPS | Contratista / supervisión |
+| Compras o vales de **cemento** (bolsas), **áridos** (m³) y **acero φ6, φ8, φ10** para la losa | IDM de hormigón y acero; consumo de cemento por m³ | Contratista (almacén / kardex) |
+| **Volumen de hormigón por vaciado** de la primera losa (fecha, paños, m³) | Consumo real de m³/m² frente al teórico | Libro de Órdenes / informes de supervisión |
+| **Resultados de probetas** (ASTM C39) y **asentamientos** (ASTM C143) de la losa | Conformidad de f'c = 25 MPa (ACI 318-25, 26.12.3) | Supervisión / laboratorio |
+| Informes mensuales de supervisión y el **Libro de Órdenes completo** | No conformidades, retrabajos y causas (Pareto, Ishikawa) | Supervisión / fiscalización |
+| **APU** contractual del ítem 13 (desglose de materiales, mano de obra y equipo) | Costo directo a precios constantes; peso de cada material | Fiscalización (DBC / propuesta adjudicada) |
+| Aclaración del factor **3 × 4.171,18 kg** de acero en "losa alivianada" | Control de cantidades de acero | Supervisión |
+| Si habrá **nueva contratación** para la 2.ª y 3.ª losa, con sus fechas | Define el diseño: cuasi-experimental o evaluación ex ante | Departamento de Infraestructura UATF |
+
+## 7. Documentos fuente (en esta carpeta)
 
 | Archivo | Contenido |
 |---|---|
